@@ -1,0 +1,350 @@
+{
+ "readAt": "2026-11-21",
+ "source": "www.rox.com/pricing, CSSOM custom properties resolved on body, plus measured header controls and plan cards. Framer token names are opaque hashes. One theme.",
+ "viewport": {
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1
+ },
+ "fonts": [
+  {
+   "family": "Geist",
+   "weight": "500",
+   "style": "italic"
+  },
+  {
+   "family": "Geist",
+   "weight": "700",
+   "style": "italic"
+  },
+  {
+   "family": "Geist",
+   "weight": "700",
+   "style": "normal"
+  },
+  {
+   "family": "Fragment Mono",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "family": "Geist Mono",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "family": "Geist",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "family": "Geist",
+   "weight": "500",
+   "style": "normal"
+  },
+  {
+   "family": "Geist",
+   "weight": "600",
+   "style": "normal"
+  },
+  {
+   "family": "Season Mix-TRIAL Regular Italic",
+   "weight": "420",
+   "style": "italic"
+  },
+  {
+   "family": "Season Mix-TRIAL Regular",
+   "weight": "420",
+   "style": "normal"
+  },
+  {
+   "family": "Inter",
+   "weight": "700",
+   "style": "normal"
+  },
+  {
+   "family": "Inter",
+   "weight": "700",
+   "style": "italic"
+  },
+  {
+   "family": "Inter",
+   "weight": "600",
+   "style": "italic"
+  },
+  {
+   "family": "Inter",
+   "weight": "400",
+   "style": "italic"
+  },
+  {
+   "family": "Season Mix-TRIAL Medium",
+   "weight": "580",
+   "style": "normal"
+  },
+  {
+   "family": "Season Mix-TRIAL Bold Italic",
+   "weight": "780",
+   "style": "italic"
+  },
+  {
+   "family": "Season Serif-TRIAL Regular",
+   "weight": "470",
+   "style": "normal"
+  },
+  {
+   "family": "Inter",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "family": "Inter",
+   "weight": "500",
+   "style": "normal"
+  },
+  {
+   "family": "Inter",
+   "weight": "900",
+   "style": "normal"
+  },
+  {
+   "family": "Inter",
+   "weight": "900",
+   "style": "italic"
+  },
+  {
+   "family": "Geist Placeholder",
+   "weight": "",
+   "style": ""
+  },
+  {
+   "family": "Inter Placeholder",
+   "weight": "",
+   "style": ""
+  }
+ ],
+ "counts": {
+  "names": 194,
+  "resolved": 106
+ },
+ "resolved": {
+  "light": {
+   "--token-4fb7658c-3108-406d-a5ce-1f8e692d783b": "#f5f5f4",
+   "--token-de601748-aac9-469a-81b0-9936599820cf": "#1c1917",
+   "--token-71dc2f90-4dea-4665-984c-a7e75175f98a": "#a6a09b",
+   "--token-13ed7ab0-a47e-4ddf-8a15-66c224820dc7": "#fafafa",
+   "--token-2053c5f5-d3f9-49ad-9e93-3be2d49c4cf9": "#f0efef",
+   "--token-53e1bae7-4ae0-421b-9ba9-edda4727a7f7": "#403f3e",
+   "--token-630d80a1-0a15-456d-976c-8ecc3b0319f2": "#0b63e8",
+   "--token-399bad3d-c3ca-4b94-8577-c74eea0a2670": "#87827d",
+   "--token-ef0d8be8-5112-41a9-9d9b-2feeea09ef18": "#d4d2d1",
+   "--token-58164266-85de-49a9-b68f-119c40e91a80": "#1c191714",
+   "--token-bf72037b-934d-4414-8ebc-039b187b7c87": "#f0c030",
+   "--token-0f614782-e4a7-414f-8463-3bfab488940d": "#efbf2e1a",
+   "--token-1d90a9c4-dbde-4e10-acef-c34b50389c4a": "#fff",
+   "--token-ef0c44f5-40e9-419f-a214-86b1ed3cb823": "#fff",
+   "--token-abc37f8e-3379-4088-8e61-be4a8ab75092": "#fafaf9",
+   "--token-3c2fad9a-49bd-44ee-a969-f14586e89b13": "#f5f5f4",
+   "--token-9e0ca8bb-6f39-4a7c-9bc7-dac2df010547": "#efeeee",
+   "--token-e9b485ee-c4b5-4b05-a118-2a40cc5f5478": "#e7e5e4",
+   "--token-8d541844-20dd-4d65-b31e-f293fac67ed5": "#d6d3d1",
+   "--token-ef86d95f-077b-4fae-8787-51e9f1621103": "#a6a09b",
+   "--token-33530101-6993-4208-9588-64a6659227fa": "#57534d",
+   "--token-c98e0155-40e6-4acb-bb80-ab1d4e86bcd2": "#57534d",
+   "--token-f2abf75c-c003-40e4-a78b-1775a59825f2": "#44403b",
+   "--token-6a5bf534-ed5e-460f-8570-0282301f60c1": "#292524",
+   "--token-9aed6c89-284c-4624-9e8c-c4ee36c26e6a": "#1c1917",
+   "--token-495d978e-be90-4710-92d5-bfb665b88b1c": "#0c0a09",
+   "--token-86c34e8c-1652-4231-90eb-acf17492a54b": "#000",
+   "--token-be0dc2bc-6ea5-4691-8fe2-e0184cd17ac2": "#0c0a09",
+   "--token-1eecbe09-be35-4dab-941d-d37759e6eac9": "#57534d",
+   "--token-800e4030-29cd-44ad-a9fe-d3455ae0fd1f": "#1c19170a",
+   "--token-be213e21-2798-4c3c-9be2-4cc80b4d9abc": "#ececea",
+   "--token-5b6536cc-31af-4b1f-89e2-45687728f090": "#0000000a",
+   "--token-6bec1e2f-3bd4-485b-afda-aa48106c99c1": "#1f18141f",
+   "--token-debda9cb-d82a-4249-86e2-1e328504b4de": "#fff",
+   "--token-ad0670c8-ffcb-47d2-a904-4362b4521617": "#fafaf9",
+   "--token-73237f38-b501-4c2b-8fdc-518ded2818fe": "#fff",
+   "--token-49024cd8-f56f-43eb-b0ff-f41299b319c9": "#0b63e8",
+   "--token-993da07a-5318-41e4-9d2e-5ec69fcc8f16": "#0c0a09",
+   "--token-e2f028e3-7762-4b71-bd78-2bcdd85a6f5c": "#0a0a0a0f",
+   "--token-1a16b020-048f-4a72-b587-1aa683ea1a0d": "#ececea",
+   "--token-4d605114-dc53-4f3c-a746-999093cf6552": "#ffffff80",
+   "--token-687e6bf7-3b4a-4a7f-b7e1-dca12f3533b3": "#fafaf9",
+   "--token-6db08653-6390-4527-90ef-92f89a75e003": "#ebebe8",
+   "--token-1bf9d386-673b-4762-9049-204e05f1071e": "#1d191629",
+   "--token-74a6045e-c314-426b-95aa-bb6e85418524": "#0b64ea1a",
+   "--token-da2c349e-e498-4669-b3d5-d38e47e0deff": "#1c19170a",
+   "--token-b4aa9bc0-e286-4dd6-aaca-2e5f276254e9": "#f9700a",
+   "--token-869b335a-767d-40de-9a14-9ad2d6a43745": "#e5484d",
+   "--token-041e6e59-33d1-49c5-bfed-44602b9d5a57": "#9458ff",
+   "--token-88b534a6-de0d-486e-9913-2a1cc7e55786": "#fafafa00",
+   "--token-f50a08ee-89ba-45ba-bd59-521f4e9cdc51": "#000",
+   "--token-67527bae-cc15-4839-8636-c9b28351e4d7": "#fff",
+   "--token-42cff841-0b54-4377-bc4a-66e7d7690432": "#ffffffa6",
+   "--token-54e6a972-2be4-40f1-88e3-a0431ea81021": "#ffffff1a",
+   "--token-428b3154-1ce8-4615-b597-9ea0f5bd0190": "#1734eb",
+   "--token-430f0c3c-55cd-412e-8b95-fbb21b7ead1d": "#fff",
+   "--token-d00f5a2c-5dd8-4104-8a9a-259d98c13638": "#1a1a1a",
+   "--token-71c74d51-7571-4240-a4db-f4c6daa2be36": "#e7ecf4",
+   "--token-3e42be0d-928d-42df-918c-499987fb595b": "#fff",
+   "--token-4bae144f-bce0-47f9-922c-225954ca6d21": "#0009",
+   "--token-b809bde7-1b7c-408c-96b8-0da9914c1e92": "#e5484d1a",
+   "--token-82da8017-4afc-4c7f-86e9-8df3bb90ef6f": "#e5484d33",
+   "--token-d0eb27bc-a346-4cfe-b9c5-a19c95d1b3c6": "#f9700a1a",
+   "--token-08b7abc6-b409-4bca-bea9-6920fae267aa": "#f9700a33",
+   "--token-9a83ca4d-c3c4-410c-86ae-838d4c02fae0": "#22c55e",
+   "--token-66243b9b-780a-418f-9911-fd4c1218d44d": "#22c55e1a",
+   "--token-a878b323-545a-4e47-bd59-7eef9c97c8f4": "#22c55e33",
+   "--token-3c387835-497e-48aa-bb0b-bc19b30aeaa5": "#ffffffb3",
+   "--token-0acd8363-1531-4b0e-9c02-261d2a9c89c3": "#403931",
+   "--token-bbbefdf5-c1e9-4e86-b041-d38a1af5d93b": "#b28d64",
+   "--token-7335afb6-94e8-4f96-8f0e-8d54b12ca390": "#525252",
+   "--token-931c8dbf-a268-46a8-a496-a5a3b124d0d7": "#d7b58c1a",
+   "--token-c9f7b2e0-a7b9-41fd-95f1-d6824154481e": "#d7b58c33",
+   "--token-da11c5ef-199d-482f-9722-2433ca7c2e5e": "#007d7d24",
+   "--token-a9115b0b-574e-4026-8262-0593f2bc4953": "#002121",
+   "--token-86c9c64e-bf99-494e-88a8-e184e5afe4be": "#0c0a09",
+   "--token-05956bb7-a1e9-4f2b-889c-7dec8df7a3da": "#f1f2ee",
+   "--token-9d9c779d-3287-4a34-94e3-cb04a0dc1c1c": "#2c4b3f",
+   "--token-6183412c-95eb-433b-906c-f86d002677fe": "#2c4b3f80",
+   "--token-fe54c773-aff8-47c4-8652-5561223b83de": "#f54e01",
+   "--token-e55539fb-6550-4fed-9eee-b9665d1748d6": "#f54e011a",
+   "--token-48caac85-edca-4f1b-8678-1d1682665388": "#ebebeb",
+   "--token-311a9a32-f22e-4722-b23a-4c1039b31a0c": "#141414",
+   "--token-72496a23-f1c1-4095-9b70-83bdfd960d11": "#0b63e880",
+   "--token-b67356f4-d4de-49f7-b65a-9aed8dc6f953": "#fafafa80",
+   "--token-f26cee6b-09f3-482a-afac-3ff2242592e1": "#fafafab3",
+   "--token-f05b966f-396c-4daa-86d2-958aa4f641ea": "#fafafa99",
+   "--token-a24b8ce8-60c4-4145-80e4-4c7640d9810e": "#fafafa1a",
+   "--token-bb919303-332c-43a2-824f-c7a6de105ebd": "#fafafa33",
+   "--token-98080bdc-6399-4478-84de-1fe5aa1fb98a": "#fff",
+   "--token-274bb291-e3a2-4094-bf26-fef78fb200c7": "#292929",
+   "--token-622ee684-c13c-4248-a92a-b24a1419f3b6": "#04030169",
+   "--token-b64b8859-2d0f-4508-bc05-58a37e44a2e1": "#fafafacc",
+   "--token-40e20745-8fb8-4444-8d0c-f92f05757fc2": "#fafafa66",
+   "--token-67a8f7d4-daa5-4044-a3cb-82392dcfc30e": "#fafafa4d",
+   "--token-08383337-1e38-4b64-8f14-cea331a352d5": "#fafafacc",
+   "--token-e27ab790-3f9f-4e68-a3cd-ad8beca145a2": "#e3d8c5",
+   "--token-8b167a44-1235-4402-851c-e953878eef1e": "#1c1c1c",
+   "--token-ad0eb21f-a09e-43c0-9205-eac6142b5063": "#f7f6f4",
+   "--token-9beaf617-329d-476f-8be6-c75381f738aa": "#fff",
+   "--token-b856ffc2-de08-4fdb-a559-09bd042f273f": "#fdfefc",
+   "--token-14d3fe29-4ed4-4b53-8eb6-92d02ee1f6d2": "#ececea03",
+   "--token-c280c7c9-f761-4e09-87ca-42555614506f": "#141414",
+   "--framer-will-change-override": "none",
+   "--framer-will-change-filter-override": "none",
+   "--one-if-corner-shape-supported": "1"
+  }
+ },
+ "measured": {
+  "header": {
+   "contact": {
+    "text": "Contact Sales",
+    "w": 118,
+    "h": 30,
+    "backgroundColor": "rgb(250, 250, 250)",
+    "color": "rgb(64, 63, 62)",
+    "fontFamily": "Geist",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "border": "0px none rgb(0, 0, 238)",
+    "padding": "8px 13px",
+    "boxShadow": "rgba(0, 0, 0, 0.04) 0px 1px 2px 0px"
+   },
+   "start": {
+    "text": "Start now",
+    "w": 90,
+    "h": 30,
+    "backgroundColor": "rgb(28, 25, 23)",
+    "color": "rgb(250, 250, 250)",
+    "fontFamily": "Geist",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "border": "0px none rgb(0, 0, 238)",
+    "padding": "8px 13px",
+    "boxShadow": "rgba(255, 255, 255, 0.25) 0.5px 0.5px 0.5px 0px inset, rgba(0, 0, 0, 0.12) -0.5px -0.5px 1px 0px inset, rgba(0, 0, 0, 0.08) 1px 1px 2px 0px inset"
+   },
+   "platform": {
+    "text": "Platform",
+    "w": 102,
+    "h": 64,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(64, 63, 62)",
+    "fontFamily": "Geist",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "border": "0px none rgb(0, 0, 238)",
+    "padding": "0px",
+    "boxShadow": "none"
+   }
+  },
+  "chains": {
+   "startFree": [
+    {
+     "tag": "A",
+     "w": 308,
+     "h": 41,
+     "bg": "rgb(64, 63, 62)",
+     "radius": "0px",
+     "border": "0px rgb(0, 0, 238)",
+     "shadow": "yes"
+    },
+    {
+     "tag": "DIV",
+     "w": 308,
+     "h": 41,
+     "bg": "rgba(0, 0, 0, 0)",
+     "radius": "0px",
+     "border": "0px rgb(0, 0, 0)",
+     "shadow": "none"
+    },
+    {
+     "tag": "DIV",
+     "w": 308,
+     "h": 49,
+     "bg": "rgba(0, 0, 0, 0)",
+     "radius": "0px",
+     "border": "0px rgb(0, 0, 0)",
+     "shadow": "none"
+    },
+    {
+     "tag": "DIV",
+     "w": 308,
+     "h": 49,
+     "bg": "rgba(0, 0, 0, 0)",
+     "radius": "0px",
+     "border": "0px rgb(0, 0, 0)",
+     "shadow": "none"
+    },
+    {
+     "tag": "DIV",
+     "w": 340,
+     "h": 365,
+     "bg": "rgb(250, 249, 247)",
+     "radius": "0px",
+     "border": "0px rgb(0, 0, 0)",
+     "shadow": "yes"
+    },
+    {
+     "tag": "DIV",
+     "w": 340,
+     "h": 503,
+     "bg": "rgba(0, 0, 0, 0)",
+     "radius": "0px",
+     "border": "0px rgb(0, 0, 0)",
+     "shadow": "none"
+    }
+   ],
+   "contactUs": null,
+   "price": null
+  },
+  "cards": []
+ }
+}

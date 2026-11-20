@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rox style guide</title>
+<style>
+:root {
+  --page: #f7f6f4;
+  --paper: #fafafa;
+  --card: #faf9f7;
+  --field: #f4f4f3;
+  --ink: #1c1917;
+  --ink-deep: #0c0a09;
+  --stone: #403f3e;
+  --muted: #a6a09b;
+  --muted-2: #57534d;
+  --on-ink: #fafafa;
+  --blue: #0b63e8;
+  --amber: #f0c030;
+  --orange: #f9700a;
+  --red: #e5484d;
+  --violet: #9458ff;
+  --focus: #005fcc;
+  --white: #ffffff;
+  --black: #000000;
+  --page: #f7f6f4;
+  --ink: #1c1917;
+  --surface: #fafafa;
+  --muted: #a6a09b;
+  --field: #f4f4f3;
+/*LIGHT*/
+  --sg-sans: Geist, Inter, system-ui, sans-serif;
+  --sg-display: "Season Mix-TRIAL Regular", Georgia, serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 14px/1.5 var(--sg-sans); color: var(--ink, #1c1917); background: var(--page, #f7f6f4); }
+main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 420 42px/1.2 var(--sg-display); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); margin: 40px 0 12px; }
+p { max-width: 62ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border: 1px solid rgba(28,25,23,.12); }
+.sw b, .sw span { display: block; font: 500 11px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; opacity: .7; }
+.btn { display: inline-flex; align-items: center; height: 30px; padding: 0 13px; font: 500 14px/1 var(--sg-sans); text-decoration: none; }
+.btn.ink { background: var(--ink, #1c1917); color: #fafafa; }
+.btn.paper { background: #fafafa; color: #403f3e; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.field { background: #f4f4f3; border-radius: 4px; height: 49px; width: 280px; display: flex; align-items: center; padding: 0 16px; color: #1c1917; }
+.card { background: #faf9f7; width: 220px; min-height: 140px; padding: 16px; }
+.type-display { font: 420 56px/1.2 var(--sg-display); letter-spacing: -0.02em; }
+code { font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Rox</h1>
+  <p>Public site tokens, one theme. Values come from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"><div class="sw"><i style="background:#f7f6f4"></i><b>page</b><span>#f7f6f4</span></div><div class="sw"><i style="background:#fafafa"></i><b>paper</b><span>#fafafa</span></div><div class="sw"><i style="background:#faf9f7"></i><b>card</b><span>#faf9f7</span></div><div class="sw"><i style="background:#f4f4f3"></i><b>field</b><span>#f4f4f3</span></div><div class="sw"><i style="background:#1c1917"></i><b>ink</b><span>#1c1917</span></div><div class="sw"><i style="background:#0c0a09"></i><b>ink-deep</b><span>#0c0a09</span></div><div class="sw"><i style="background:#403f3e"></i><b>stone</b><span>#403f3e</span></div><div class="sw"><i style="background:#a6a09b"></i><b>muted</b><span>#a6a09b</span></div><div class="sw"><i style="background:#57534d"></i><b>muted-2</b><span>#57534d</span></div><div class="sw"><i style="background:#fafafa"></i><b>on-ink</b><span>#fafafa</span></div><div class="sw"><i style="background:#0b63e8"></i><b>blue</b><span>#0b63e8</span></div><div class="sw"><i style="background:#f0c030"></i><b>amber</b><span>#f0c030</span></div><div class="sw"><i style="background:#f9700a"></i><b>orange</b><span>#f9700a</span></div><div class="sw"><i style="background:#e5484d"></i><b>red</b><span>#e5484d</span></div><div class="sw"><i style="background:#9458ff"></i><b>violet</b><span>#9458ff</span></div><div class="sw"><i style="background:#005fcc"></i><b>focus</b><span>#005fcc</span></div><div class="sw"><i style="background:#ffffff"></i><b>white</b><span>#ffffff</span></div><div class="sw"><i style="background:#000000"></i><b>black</b><span>#000000</span></div></div>
+  <h2>Type</h2>
+  <p class="type-display">The Revenue Agent</p>
+  <p>Geist 14 / 500 for nav and buttons. Season Mix for display.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn paper">Contact Sales</a>
+    <a class="btn ink">Start now</a>
+    <div class="field">Enter your email</div>
+    <div class="card"><b>Individual</b><p>starts at $100</p></div>
+  </div>
+</main>
+<script>
+const swatches = [
+  ["page", "--page"],
+  ["surface", "--surface"],
+  ["ink", "--ink"],
+  ["muted", "--muted"],
+  ["field", "--field"],
+];
+</script>
+</body>
+</html>
