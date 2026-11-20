@@ -66,12 +66,14 @@ for (let tries = 0; tries < 6 && !page; tries++) {
   await context.close();
 }
 if (!page) { console.log('blocked by the edge on every try; css-vars.json not written'); await browser.close(); process.exit(2); }
-const finalUrl = page.url();
+const finalUrl = page.url().split(/[?#]/)[0];
 // inline sheets read via CSSOM; link sheets via the captured bodies
 const sheets = [...bodies.entries()].concat(inline);
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The probe resolves vw/vh/dvh and @media at the 1440 x 900 the notes below claim; a bare
+// browser.newPage() would give Playwright's 1280 x 720 default (finding 19-1).
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
