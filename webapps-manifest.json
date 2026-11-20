@@ -6330,9 +6330,9 @@
       "description": "Over a billion reviews & contributions for Hotels, Attractions, Restaurants, and more",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.tripadvisor.com/RegistrationController Continue with Google returned to the public homepage. Sign in control disappeared. No account surface.",
+      "notes": "Email probe: https://www.tripadvisor.com/RegistrationController Continue with Google returned to the public homepage. Sign in control disappeared. No account surface. Public walk 2026-11-21: homepage, a destination page, and RegistrationController returned HTTP 403 with a DataDome captcha iframe. Nothing clicked. No package. Skipped this pass.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "captcha",
       "batch": 19
     },
     {
