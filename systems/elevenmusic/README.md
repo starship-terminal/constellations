@@ -102,6 +102,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 - **`faq-answer` was read open.** `faq-item`'s `expanded` reading opened the row and left it open, so `faq-answer`'s default (152px tall against the 68px closed row) is the open item. components.md marks it and no token reads it; `measure.mjs` now closes the row after the reading (edited, not run).
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **Recorded misses.** `player-prev`/`player-next` could not be held under a forced hover — their hover readings are recorded as failures in `raw/components-computed.json`, not values; `player-shuffle` found no stable element and is recorded missing.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

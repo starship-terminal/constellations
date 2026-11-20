@@ -111,6 +111,7 @@ Nothing was signed into, created, submitted or consented to: the email field was
 - **UA defaults are labelled as such.** The `#0000ee`/`#ff0000` on the unstyled logo/social anchors and the `#005fcc` focus ring are browser defaults, tokenised under `core.measured` with that caveat, not Dona design decisions.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **Three readings are recorded as misses, not values.** `legal-link`'s catch-all selector landed on the footer's "Privacy policy" link, so its saved states were dropped — no in-copy legal link is verified. `modal-close`'s focus-visible reading caught the hover fill (the pointer stayed over the button) and is marked contaminated. The mobile cookie banner's marked node read offscreen (555x64 at `top:1138px` in a 390x844 viewport; it never painted on the phone pass), so its real placement is unverified; `core.shadow.banner-mobile` is read from it and says so (recapture needed). The capture script now records the banner missing when the marked node lies outside the viewport (not re-run).
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

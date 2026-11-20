@@ -162,3 +162,4 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### Known gaps (from README.md)
 
 - `light.component.nl-checkbox-box` (16px, the painted checkbox box) was entered by hand at capture time: a probe read the `.checkbox-style` label's `::after` on the live home page, but that reading was never saved, and `raw/components-computed.json` holds only the 13x13 input (`nl-checkbox`). Its source says so; a recapture should record the pseudo-element.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.

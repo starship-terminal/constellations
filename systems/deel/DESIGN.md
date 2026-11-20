@@ -158,6 +158,10 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
 
+### Known gaps (from README.md)
+
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
+
 ### Do and don't (from README.md)
 
 1. **Do spend the purple on the hero.** `#201547` is the home hero panel — a band, not the page; the marketing field stays white. See [home-light-default](screenshots/home-light-default.png).

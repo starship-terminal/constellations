@@ -113,6 +113,7 @@ Nothing was signed into, created, submitted or paid for: the auth cards were mea
 - **Readings to recapture.** `feature-row` is the whole pricing page body (1440 x 5508), kept from the first run after the re-run missed it; `voice-card` is an FAQ row; `menu-link`'s default and pressed states caught a same-href link far down the page, so `core.color.neutral.muted` says so in its source. components.md marks the three entries.
 - **One screenshot was taken past a server-side action.** `home-light-playground-play.png` was shot after the capture pressed the playground's Play, which asks the server to generate speech. `public.mjs` no longer presses it (edited, not run); the shot is kept as evidence.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens or the raw files.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 
