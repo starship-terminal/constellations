@@ -11,6 +11,7 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { execFileSync } from 'node:child_process';
 import { PAGES, SCRATCH, ASSET_HOSTS } from './lib.mjs';
+import { cleanTag } from './sanitize.mjs';
 
 export function rewrite(html) {
   let out = html
@@ -18,9 +19,11 @@ export function rewrite(html) {
     .replace(/<script\b[^>]*\/?>/gi, '')
     .replace(/<link\b[^>]*\bas=["']?script["']?[^>]*>/gi, '')
     .replace(/<link\b[^>]*\brel=["']?preload["']?[^>]*\bas=["']?script["']?[^>]*>/gi, '')
-    // inline handlers (onload=, onerror= ...) and javascript: URLs run script too
-    .replace(/\s+on[a-z]+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '')
-    .replace(/\b(href|src|action|formaction)\s*=\s*(["']?)\s*javascript:[^"'>\s]*\2/gi, '$1="#"');
+    // inline handlers (onload=, onerror= ...) and script URLs run script too:
+    // every start tag is re-read attribute by attribute (so <svg/onload=…>
+    // and href="javascript: …" are caught), and the server adds a
+    // script-src 'none' policy behind it
+    .replace(/<[a-zA-Z](?:"[^"]*"|'[^']*'|[^'">])*>/g, cleanTag);
   for (const host of ASSET_HOSTS) {
     out = out.split(`https://${host}/`).join(`/asset/${host}/`);
     out = out.split(`http://${host}/`).join(`/asset/${host}/`);
