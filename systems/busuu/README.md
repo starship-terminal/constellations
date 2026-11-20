@@ -113,7 +113,7 @@ Nothing was signed into, bought or submitted: the register flow's language optio
 - **The action blue has no fill.** `core.color.brand.blue` (#116eee) was measured on text and borders — picker-option labels, course-CTA text, the hover border on cards. The course CTA itself is a green `#11ee92` pill: its outer anchor computes transparent, its child `<button>` paints the green fill with a 100px radius on the course page's blue band.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **Missing components.** `save-badge`, `m-menu-button` and `m-menu-open` are recorded missing in the measurement file: the kebab is an empty `<a>` with no text for the specs to name, and the SAVE n% badge selector found no match on the captured premium load. The opened menus show in [home-light-menu](screenshots/home-light-menu.png) and [mobile-home-light-menu](screenshots/mobile-home-light-menu.png). `nav-dropdown`, `period-toggle` and `language-item` have no captured focus look — a real keyboard focus could not be held on them.
-- **`nav-dropdown` was read from the wrong element.** Its fallback selector caught the whole 1400 x 40 nav bar, not the dropdown. Needs a recapture; the script no longer falls back to the nav bar (not run since).
+- **`nav-dropdown` was read from the wrong element.** Its selector `.nav-dropdown` is also the class of the whole nav bar, so the reading is `nav.nav-dropdown`, the 1400 x 40 bar, not the dropdown panel (`div.main-nav-dropdown` with its `ul.main-nav-dropdown__list`, visible only while the menu is open). Needs a recapture; the script now targets the panel and records the entry missing when the menu is closed (not run since).
 
 ## Fonts
 
