@@ -291,6 +291,10 @@ async function markPainted(sel, tag, { maxUp = 8, minW = 100, minH = 60, descend
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }
 
+// markPainted returns a never-matching locator on a miss, never null, so a
+// `marked || fallback` never falls back: choose by count() instead.
+const orElse = async (loc, fallback) => ((loc && (await loc.count())) ? loc : fallback);
+
 // Sets the docs surface's theme through its own "Change theme preference"
 // dropdown (a local UI toggle; the preference lives in localStorage). Returns
 // true only once <html> carries the class the chosen option paints — a false
@@ -333,7 +337,7 @@ async function home() {
     if (await t.count()) { await t.hover({ timeout: 5000 }); await page.waitForTimeout(1400); }
   } catch (e) { log('  ! dropdown hover failed', String(e.message).split('\n')[0]); }
   const panel = await markPainted('a[href*="partners"], a[href*="links"], a[href*="analytics"], a[href*="api"]', 'm-panel', { minW: 300, minH: 150 }).catch(() => null);
-  await S('nav-dropdown', panel || q('[data-radix-popper-content-wrapper], [class*="popover" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mega-menu panel', desc: 'The Product mega-menu panel, opened by its own trigger on hover.', sel: 'product mega-menu panel' }, { noScroll: true, noReset: true });
+  await S('nav-dropdown', await orElse(panel, q('[data-radix-popper-content-wrapper], [class*="popover" i]').filter({ visible: true }).first()), ['default'], { group: g, title: 'Mega-menu panel', desc: 'The Product mega-menu panel, opened by its own trigger on hover.', sel: 'product mega-menu panel' }, { noScroll: true, noReset: true });
   // The menu closes as soon as the pointer leaves the trigger, so a reset()
   // between states used to let the global text locator slip to a same-named
   // link further down the page — every state must read one element inside the
@@ -376,13 +380,13 @@ async function pricing() {
   await chrome('pricing');
   const g = G.pricing;
   await S('pricing-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing title', desc: 'The pricing page heading.', sel: 'h1 on /pricing' }, { noScroll: true });
-  await S('billing-toggle', q('button').filter({ hasText: /^\s*Yearly/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing toggle', desc: 'The Monthly/Yearly period toggle ("10% discount + 12x usage upfront"); the yearly option was toggled for the state, never checked out.', sel: 'button "Yearly"' }, { noScroll: true });
+  await S('billing-toggle', q('button').filter({ hasText: /^\s*Yearly/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing toggle', desc: 'The Monthly/Yearly period toggle ("10% discount + 12x usage upfront"), read on its Yearly option at rest, on hover, on keyboard focus and forced pressed; never clicked or checked out.', sel: 'button "Yearly"' }, { noScroll: true });
   await S('plan-name', q('h2, h3').filter({ hasText: /^\s*(Business|Advanced|Enterprise)\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan name', desc: 'A plan card\'s name.', sel: 'plan name' });
-  await S('plan-price', q('span, div, p').filter({ hasText: /^\$\d+/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price', desc: 'A plan card\'s price figure.', sel: 'plan price' });
+  await S('plan-price', q('span, div, p').filter({ hasText: /^\s*\$\d+\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price', desc: 'A plan card\'s price figure.', sel: 'plan price' });
   await S('plan-cta', q('a, button').filter({ hasText: /^\s*Start 14-day trial\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s "Start 14-day trial" action; measured never followed.', sel: '"Start 14-day trial"' });
   const planCard = await markPainted('h2, h3', 'm-plan', { minW: 220, minH: 300 }).catch(() => null);
-  await S('plan-card', planCard || q('[class*="card" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan card', desc: 'The shared pricing panel holding all three plan columns (Business / Advanced / Enterprise).', sel: 'plan card' });
-  await S('faq-trigger', q('button').filter({ hasText: /free trial|refund|cancel/i }).filter({ visible: true }).first(), B4, { group: g, title: 'FAQ accordion', desc: 'A billing-FAQ accordion trigger; toggled for the open state.', sel: 'faq accordion button' });
+  await S('plan-card', await orElse(planCard, q('[class*="card" i]').filter({ visible: true }).first()), ['default'], { group: g, title: 'Plan card', desc: 'The shared pricing panel holding all three plan columns (Business / Advanced / Enterprise).', sel: 'plan card' });
+  await S('faq-trigger', q('button').filter({ hasText: /free trial|refund|cancel/i }).filter({ visible: true }).first(), B4, { group: g, title: 'FAQ accordion', desc: 'A billing-FAQ accordion trigger, read closed: at rest, on hover, on keyboard focus and forced pressed.', sel: 'faq accordion button' });
   save();
 }
 
@@ -407,7 +411,7 @@ async function customers() {
   // The story tile is the painted anchor itself (a.group …, ~144x480 dark);
   // a larger painted ancestor would be the whole logos section.
   const card = await markPainted('a[href*="/customers/"]', 'm-cust', { minW: 120, minH: 100 }).catch(() => null);
-  await S('customer-card', card || q('a[href*="/customers/"]').filter({ visible: true }).first(), B4, { group: g, title: 'Customer card', desc: 'A customer story card/logo tile; measured never followed.', sel: 'customer card' });
+  await S('customer-card', await orElse(card, q('a[href*="/customers/"]').filter({ visible: true }).first()), B4, { group: g, title: 'Customer card', desc: 'A customer story card/logo tile; measured never followed.', sel: 'customer card' });
   save();
 }
 
@@ -422,7 +426,7 @@ async function sales() {
   await S('sales-card', q('div[class*="max-w-[800px]"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Contact form card', desc: 'The centred Talk-to-sales card; never filled past a deleted sample, never submitted.', sel: 'sales form card' });
   await S('sales-email', q('input[type="email"], input[name="email"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'The work-email input; sample text was typed and deleted, nothing sent.', sel: 'input[type=email]' });
   await S('sales-message', q('textarea').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Message textarea', desc: 'The "Tell us about your company\'s needs" textarea; focused only.', sel: 'textarea' });
-  await S('sales-topic', q('button').filter({ hasText: /^\s*(Tools|Legal|Links|Partners|Analytics)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Topic option', desc: 'A selectable topic pill on the contact form (Tools/Legal/…); toggled, never submitted.', sel: 'topic pill button' });
+  await S('sales-topic', q('button').filter({ hasText: /^\s*(Tools|Legal|Links|Partners|Analytics)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Topic option', desc: 'A selectable topic pill on the contact form (Tools/Legal/…), read unselected: at rest, on hover, on keyboard focus and forced pressed; never submitted.', sel: 'topic pill button' });
   await S('sales-submit', q('button[type="submit"], button').filter({ hasText: /^\s*Send message\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Send button', desc: 'The Send-message submit; measured, never pressed (a press would submit the form).', sel: 'button "Send message"' });
   save();
 }

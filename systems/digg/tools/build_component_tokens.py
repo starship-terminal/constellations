@@ -317,15 +317,20 @@ for key, comp, state, desc in [
         fam[key] = {"value": v, "type": "fontFamily",
                     "source": f"computed fontFamily of {comp} {state} (raw/components-computed.json)",
                     "description": desc}
-faces = {f.get("font-family", "").strip('"') for f in V.get("fonts") or []}
-if "vt323" in faces:
-    fam["mono"] = {"value": "vt323, \"vt323 Fallback\", monospace", "type": "fontFamily",
-                   "source": "declared @font-face in the site stylesheet (raw/css-vars.json); the retro bitmap face of the vote-odometer digits",
-                   "description": "vt323 — the pixel-style mono the odometer counts are drawn in."}
-if "ibmPlexSans" in faces:
-    fam["typeset"] = {"value": "ibmPlexSans, \"ibmPlexSans Fallback\", sans-serif", "type": "fontFamily",
-                      "source": "declared @font-face in the site stylesheet (raw/css-vars.json); not exercised on any measured public component",
-                      "description": "ibmPlexSans — the declared typeset/prose face."}
+# vt323 and ibmPlexSans paint no measured component, so their stacks are the
+# declared next/font variables, verbatim (raw/css-vars.json theme bin), never
+# a stack composed here.
+DECL_FONT = {n: v for rule in V.get("theme") or [] for n, v in (rule.get("properties") or {}).items() if n.startswith("--font-")}
+for key, name, why, desc in [
+    ("mono", "--font-vt323", "the retro bitmap face of the vote-odometer digits",
+     "vt323 — the pixel-style mono the odometer counts are drawn in."),
+    ("typeset", "--font-ibm-plex", "not exercised on any measured public component",
+     "ibmPlexSans — the declared typeset/prose face."),
+]:
+    if name in DECL_FONT:
+        fam[key] = {"value": DECL_FONT[name], "type": "fontFamily",
+                    "source": f"declared {name} in the site stylesheet (raw/css-vars.json); {why}",
+                    "description": desc}
 
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
 for key, comp, desc in [
@@ -592,8 +597,8 @@ for key, comp, state, prop, group, prefer, desc in [
 ]:
     try:
         if prop == "_rankone":
-            raw = R.get("--rank-one")
-            src = "the declared --rank-one role, verified in the contributors rail (raw/css-vars.json + screenshots/home-light-default.png)"
+            raw = R["--rank-one"]
+            src = "declared --rank-one (raw/css-vars.json resolved.light); no measured component paints it"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
@@ -649,12 +654,12 @@ for key, name, group, prefer, desc in [
 ]:
     put_sem(sem2, group, key, semcolor(
         D[name],
-        f"declared .dark value of {name} (raw/css-vars.json); painted on the signed-out dark captures (screenshots/home-dark-default.png, story-dark-default.png)",
+        f"declared .dark value of {name} (raw/css-vars.json resolved.dark); no d-* component reading of it",
         desc, theme="dark", prefer=prefer))
 
 put_sem(sem2, "border", "vote-border", semcolor(
-    "rgba(28, 102, 235, 0.2)",
-    "the border-primary/20 recipe — --primary resolves the identical #1c66eb in dark (raw/css-vars.json); measured on the light story vote pill, not re-measured in dark",
+    st("st-vote", "default")["borderTopColor"],
+    "computed borderTopColor of st-vote default (raw/components-computed.json): the border-primary/20 recipe — --primary resolves the identical #1c66eb in dark (raw/css-vars.json); measured on the light story vote pill, not re-measured in dark",
     "The primary-blue @20% border on the story digg-it pill, theme-invariant.",
     theme="dark"))
 
@@ -713,12 +718,26 @@ for key, comp, state, prop, desc in [
 # Cards carry a 0-blur ring shadow (a painted hairline, covered by
 # border.hairline) and every other component reports boxShadow: none.
 sh = SPEC["core"].setdefault("shadow", {})
+SHADOW_LAYER = re.compile(r"(rgba?\([^)]*\))\s+(-?[\d.]+px)\s+(-?[\d.]+px)\s+([\d.]+px)\s+(-?[\d.]+px)")
+
+
+def painted_shadow(box):
+    """Every layer of a computed boxShadow, parsed in full (a layer the pattern cannot read stops the
+    build), minus Tailwind's transparent ring placeholders."""
+    if box in ("", "none"):
+        return []
+    layers = SHADOW_LAYER.findall(box)
+    if SHADOW_LAYER.sub("", box).replace(",", "").strip() or "inset" in box:
+        raise SystemExit(f"boxShadow not fully parsed: {box!r}")
+    return [{"offsetX": x, "offsetY": y, "blur": b, "spread": sp, "color": c}
+            for c, x, y, b, sp in layers if not re.fullmatch(r"rgba\([^)]*,\s*0\)", c)]
+
+
 try:
-    s = st("lg-email", "default")
-    m = re.search(r"rgba\(0, 0, 0, 0\.05\)\s+(\S+)\s+(\S+)\s+(\S+)", s.get("boxShadow", ""))
-    if m:
-        sh["field"] = lit([{"offsetX": m.group(1), "offsetY": m.group(2), "blur": m.group(3), "spread": "0px", "color": "rgba(0, 0, 0, 0.05)"}], "shadow",
-            "computed boxShadow of lg-email default (raw/components-computed.json)",
+    layers = painted_shadow(st("lg-email", "default").get("boxShadow", ""))
+    if layers:
+        sh["field"] = lit(layers, "shadow",
+            "computed boxShadow of lg-email default, transparent ring placeholders left out (raw/components-computed.json)",
             "The auth field's 0 1px 2px rgba(0,0,0,0.05) shadow (shadow-xs).")
 except KeyError:
     pass

@@ -458,21 +458,22 @@ Page: shop. Selector: `product-item`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 398.66 x 498.31 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 45px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Robin Regular 16px/19.2px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #301816 | = | = | = |
-| Text node | p.h5: Robin Semibold 12px/14.4px 600, #301816, ls 0.96px | span.loader-button__text: Robin Semibold 12px/14.4px 500, #ffffff, ls 0.96px | = | - |
-| Transition | none | = | = | = |
-| Icon | 0 x 0, colour #ffffff, fill #000000 | = | = | = |
-| Painted layers | button.button.button--primary 209.8x44.0 bg #301816 image linear-gradient(178deg, #301816, #301816 10%, #000000 @ 0.07 10%, #000000 @ 0.07 100%), li; button::before.button.button--primary 20pxx44px bg #301816; button::after.button.button--primary 20pxx44px bg #301816 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 398.66 x 498.31 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 45px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Robin Regular 16px/19.2px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #301816 | = | - | = |
+| Text node | p.h5: Robin Semibold 12px/14.4px 600, #301816, ls 0.96px | span.loader-button__text: Robin Semibold 12px/14.4px 500, #ffffff, ls 0.96px | - | - |
+| Transition | none | = | - | = |
+| Icon | 0 x 0, colour #ffffff, fill #000000 | = | - | = |
+| Painted layers | button.button.button--primary 209.8x44.0 bg #301816 image linear-gradient(178deg, #301816, #301816 10%, #000000 @ 0.07 10%, #000000 @ 0.07 100%), li; button::before.button.button--primary 20pxx44px bg #301816; button::after.button.button--primary 20pxx44px bg #301816 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `product-card-default.png`, `product-card-hover.png`, `product-card-focus-visible.png`, `product-card-pressed.png`.
 
@@ -586,7 +587,7 @@ Crops: `sort-control-default.png`, `sort-control-hover.png`, `sort-control-focus
 
 Pagination. The grid's pagination, if the catalogue is long enough to need one.
 
-Page: shop. Selector: `pagination`. States: .
+Page: shop. Selector: `pagination`. States: none.
 
 Not found on the page at capture time.
 
@@ -697,20 +698,21 @@ Page: product. Selector: `label.block-swatch__item "6 CANETTES"`. States: defaul
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 106.19 x 36.39 | = | = | = |
-| Padding | 10px | = | = | = |
-| Border | 1px solid #301816 | = | = | = |
-| Radius | 999px | = | = | = |
-| Background | #f26554 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 5px auto #005fcc offset 0px | = |
-| Font | Robin Semibold 12px/14.4px 600 | = | = | = |
-| Letter spacing | 0.96px | = | = | = |
-| Colour | #301816 | = | = | = |
-| Transition | background 0.2s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | label.block-swatch__item.h5 106.2x36.4 bg #f26554 border T:1px solid #301816 / R:1px solid #301816 / B:1px solid #301816 / L:1px solid #301816 r 999px | = | label.block-swatch__item.h5 106.2x36.4 bg #f26554 border T:1px solid #301816 / R:1px solid #301816 / B:1px solid #301816 / L:1px solid #301816 r 999px outline 5px auto #005fcc offset 0px | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 106.19 x 36.39 | = | - | = |
+| Padding | 10px | = | - | = |
+| Border | 1px solid #301816 | = | - | = |
+| Radius | 999px | = | - | = |
+| Background | #f26554 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Robin Semibold 12px/14.4px 600 | = | - | = |
+| Letter spacing | 0.96px | = | - | = |
+| Colour | #301816 | = | - | = |
+| Transition | background 0.2s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | label.block-swatch__item.h5 106.2x36.4 bg #f26554 border T:1px solid #301816 / R:1px solid #301816 / B:1px solid #301816 / L:1px solid #301816 r 999px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `variant-swatch-default.png`, `variant-swatch-hover.png`, `variant-swatch-focus-visible.png`, `variant-swatch-pressed.png`.
 
@@ -722,20 +724,21 @@ Page: product. Selector: `label.block-swatch__item "12 CANETTES"`. States: defau
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 111.83 x 36.39 | = | = | = |
-| Padding | 10px | = | = | = |
-| Border | 1px solid #301816 | = | = | = |
-| Radius | 999px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 5px auto #005fcc offset 0px | = |
-| Font | Robin Semibold 12px/14.4px 600 | = | = | = |
-| Letter spacing | 0.96px | = | = | = |
-| Colour | #301816 | = | = | = |
-| Transition | background 0.2s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | label.block-swatch__item.h5 111.8x36.4 bg #ffffff border T:1px solid #301816 / R:1px solid #301816 / B:1px solid #301816 / L:1px solid #301816 r 999px | = | label.block-swatch__item.h5 111.8x36.4 bg #ffffff border T:1px solid #301816 / R:1px solid #301816 / B:1px solid #301816 / L:1px solid #301816 r 999px outline 5px auto #005fcc offset 0px | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 111.83 x 36.39 | = | - | = |
+| Padding | 10px | = | - | = |
+| Border | 1px solid #301816 | = | - | = |
+| Radius | 999px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Robin Semibold 12px/14.4px 600 | = | - | = |
+| Letter spacing | 0.96px | = | - | = |
+| Colour | #301816 | = | - | = |
+| Transition | background 0.2s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | label.block-swatch__item.h5 111.8x36.4 bg #ffffff border T:1px solid #301816 / R:1px solid #301816 / B:1px solid #301816 / L:1px solid #301816 r 999px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `variant-swatch-2-default.png`, `variant-swatch-2-hover.png`, `variant-swatch-2-focus-visible.png`, `variant-swatch-2-pressed.png`.
 
@@ -898,7 +901,7 @@ Crops: `trio-title-default.png`.
 
 Purchase-option radio. The one-off vs. subscription radio in the buy box (it renders after the pack-size is settled, seen in the variant shot); never toggled past the default.
 
-Page: trio. Selector: `label "ACHAT UNIQUE"`. States: .
+Page: trio. Selector: `label "ACHAT UNIQUE"`. States: none.
 
 Not found on the page at capture time.
 
@@ -980,24 +983,9 @@ Crops: `story-h1-default.png`.
 
 Story paragraph. A body paragraph in the story page, Robin Regular.
 
-Page: story. Selector: `story p`. States: default.
+Page: story. Selector: `story p`. States: none.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 529 x 18.45 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Robin Semibold 12px/18.4615px 500 |
-| Letter spacing | 0.96px |
-| Colour | #301816 |
-| Transition | none |
-| How | at rest |
-
-Crops: `story-lede-default.png`.
+Mismeasured on the first pass and withdrawn: the selector caught the announcement-strip paragraph ("LIVRAISON GRATUITE EN FRANCE METROPOLITAINE A PARTIR DE 50EUR"), not a story body paragraph — no story paragraph was measured. The selector was tightened in tools/capture/public/measure.mjs; a live re-measure is queued.
 
 #### search-title
 
@@ -1394,7 +1382,7 @@ Crops: `newsletter-button-default.png`, `newsletter-button-hover.png`, `newslett
 
 Social icon link. A social link, where the footer paints one (none in the captured DOM).
 
-Page: home. Selector: `footer social a`. States: .
+Page: home. Selector: `footer social a`. States: none.
 
 Not found on the page at capture time.
 
@@ -1534,26 +1522,9 @@ Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visib
 
 Mobile hero title. The Boogy hero heading at 390 (the hidden-tablet-and-up variant).
 
-Page: mobile. Selector: `.image-hero__heading at 390`. States: default.
+Page: mobile. Selector: `.image-hero__heading at 390`. States: none.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 312 x 38 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Robin Regular 16px/19.2px 500 |
-| Letter spacing | normal |
-| Colour | #f6f2e9 |
-| Text node | a.button.button--primary: Robin Semibold 12px/14.4px 500, #ffffff, ls 0.96px |
-| Transition | none |
-| Painted layers | a.button.button--primary 77.7x38.0 bg #301816; a::before.button.button--primary 20pxx38px bg #301816; a::after.button.button--primary 20pxx38px bg #301816 |
-| How | at rest |
-
-Crops: `m-hero-title-default.png`.
+Mismeasured on the first pass and withdrawn: the selector caught the hero SHOP button container, not the mobile Boogy heading — the 390px hero heading was not measured. The selector was tightened in tools/capture/public/measure.mjs; a live re-measure is queued.
 
 #### m-hero-cta
 

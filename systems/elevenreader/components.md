@@ -399,7 +399,7 @@ The 60px Waldenburg pricing display heading. Read as `pricing-h1` on the pricing
 ![Pricing title default](components/crops/pricing-h1-default.png)
 
 #### Billing option (idle)
-The unselected Monthly segment (#57534F text, hover black); the state was toggled for a screenshot, never checked out. Read as `billing-off` on the pricing page.
+The unselected Monthly segment (#57534F text, hover black), read at rest, on hover, on keyboard focus and forced pressed; never clicked or checked out. Read as `billing-off` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -896,7 +896,7 @@ ElevenReader's product — the reader/library app, upload flow, the in-app playe
 
 - **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing. Forced presses shrink the pills (a scale-98 transform is painted on hero-cta, plan-cta, genre-chip, view-all, try-cta and promo-cta).
 - **Disabled, error and loading states** were not seen on the public surface.
-- **Hover on nav links** changes only the fill (transparent to the surface tint); every control that rings draws the same 2px solid black outline at 2px offset.
+- **Hover on nav links** changes only the fill (transparent to the surface tint); every control that rings on its own box draws the same 2px solid #000000 outline, at 2px offset on 19 of 24 (0px on 5: `nav-cta`, `sso-google`, `sso-apple`, `signin-submit`, `signup-google`).
 
 ### Themes
 
