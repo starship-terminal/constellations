@@ -15,6 +15,35 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog  # noqa: E402
 
 
+class NonAsciiTest(unittest.TestCase):
+    def test_git_ignored_recognises_a_non_ascii_name(self):
+        import subprocess
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+            (root / ".gitignore").write_text("dumps/\n")
+            (root / "dumps").mkdir()
+            ignored, kept = root / "dumps" / "café-dark.png", root / "café-light.png"
+            ignored.write_text("x")
+            kept.write_text("x")
+            with mock.patch.object(catalog, "ROOT", root):
+                self.assertEqual(catalog.git_ignored([ignored, kept]), {ignored})
+
+    def test_atomic_write_writes_utf8_whatever_the_locale(self):
+        opened = []
+        real = catalog.os.fdopen
+
+        def fdopen(fd, mode="r", *args, **kwargs):
+            opened.append(kwargs.get("encoding"))
+            return real(fd, mode, *args, **kwargs)
+
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(catalog.os, "fdopen", fdopen):
+            path = Path(tmp) / "out.json"
+            catalog.atomic_write(path, "café\n")
+            self.assertEqual(path.read_bytes(), "café\n".encode("utf-8"))
+        self.assertEqual(opened, ["utf-8"])
+
+
 class UntestedHelpersTest(unittest.TestCase):
     """latest_scores, list_images' preview.exclude, the thumbnail cache, and repo_file's
     guard outside a git checkout."""
