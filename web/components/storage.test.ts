@@ -1,7 +1,7 @@
 // Unit tests for the browser-storage readers. Run with `pnpm test`.
 import assert from "node:assert/strict";
 import { afterEach, describe, it } from "node:test";
-import { migrateStoredProvider, readSavedPaths, readStoredProvider } from "./storage.ts";
+import { migrateStoredProvider, readSavedPaths, readStoredProvider, saveReplyOf } from "./storage.ts";
 
 const store = new Map<string, string>();
 Object.defineProperty(globalThis, "localStorage", {
@@ -49,6 +49,18 @@ describe("readSavedPaths", () => {
   });
 });
 
+describe("saveReplyOf", () => {
+  it("counts only a JSON answer below 500 as the server's decision", () => {
+    assert.deepEqual(saveReplyOf(200, { ok: true }), { ok: true, existing: false, definite: true, error: undefined });
+    assert.equal(saveReplyOf(200, { ok: false, error: "HTTP 401" }).definite, true);
+    assert.equal(saveReplyOf(200, { ok: false, existing: true }).existing, true);
+    assert.equal(saveReplyOf(400, { ok: false, error: "Send a JSON object." }).definite, true);
+    assert.equal(saveReplyOf(500, { ok: false, error: "busy" }).definite, false);
+    assert.deepEqual(saveReplyOf(502, null), { ok: false, existing: false, definite: false, error: "HTTP 502" });
+    assert.equal(saveReplyOf(200, null).definite, false);
+  });
+});
+
 describe("migrateStoredProvider", () => {
   afterEach(() => store.clear());
   const KEY = "sk-old-browser-key-1234567";
@@ -70,21 +82,37 @@ describe("migrateStoredProvider", () => {
     assert.equal(await migrateStoredProvider(async () => assert.fail("no second save")), null);
   });
 
-  it("deletes the stored key even when the server refuses it, and says so without quoting it", async () => {
-    store.set("ds-provider", JSON.stringify(old));
-    const note = await migrateStoredProvider(async () => ({ ok: false, error: `HTTP 401 for ${KEY}` }));
-    assert.equal(store.has("ds-provider"), false);
-    assert.match(String(note), /^Deleted the API key .*enter it again/);
-    assert.ok(!String(note).includes(KEY));
+  it("deletes the stored key once the server has decided against it, and says so without quoting it", async () => {
+    // A failed key test (a JSON 200) and a refused body (a JSON 4xx) are decisions.
+    for (const reply of [{ ok: false, definite: true, error: `HTTP 401 for ${KEY}` }, { ok: false, definite: true, error: "Send a JSON object." }]) {
+      store.set("ds-provider", JSON.stringify(old));
+      const note = await migrateStoredProvider(async () => reply);
+      assert.equal(store.has("ds-provider"), false);
+      assert.match(String(note), /^Deleted the API key .*enter it again/);
+      assert.ok(!String(note).includes(KEY));
+    }
   });
 
-  it("deletes the stored key when the server cannot be reached", async () => {
-    store.set("ds-provider", JSON.stringify(old));
-    const note = await migrateStoredProvider(async () => {
-      throw new Error("offline");
-    });
+  it("keeps the stored key when the server did not answer, answered 5xx or not in JSON", async () => {
+    const outcomes: (() => Promise<{ ok: boolean; definite?: boolean; error?: string }>)[] = [
+      async () => {
+        throw new TypeError("Failed to fetch");
+      },
+      // What saveProvider returns for a proxy's 502 page or a busy store's 500.
+      async () => ({ ok: false, definite: false, error: "HTTP 502" }),
+      async () => ({ ok: false, definite: false, error: "The saved provider file cannot be used." }),
+    ];
+    for (const save of outcomes) {
+      store.set("ds-provider", JSON.stringify(old));
+      const note = await migrateStoredProvider(save);
+      assert.equal(store.get("ds-provider"), JSON.stringify(old), "the only copy stays");
+      assert.match(String(note), /stays here for now/);
+      assert.ok(!String(note).includes(KEY));
+    }
+    // The next page load tries again and, once the server saves it, deletes it.
+    const note = await migrateStoredProvider(async () => ({ ok: true, definite: true }));
+    assert.match(String(note), /^Moved the API key/);
     assert.equal(store.has("ds-provider"), false);
-    assert.match(String(note), /no answer from the server/);
   });
 
   it("keeps the server's own key when it already has one, and says so", async () => {

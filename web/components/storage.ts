@@ -34,7 +34,25 @@ export interface SaveReply {
   ok: boolean;
   /** The server already had a saved provider and kept it. */
   existing?: boolean;
+  /** The server answered and decided: a JSON reply with a status below 500
+      (a save, a kept provider, a refused body or a failed key test). False
+      for a 5xx, a reply that is not JSON or no answer at all, when the
+      browser copy is the only copy and must stay. */
+  definite?: boolean;
   error?: string;
+}
+
+/** Read POST /api/provider's answer: `json` is the parsed body, or null when
+    it was not JSON. Only a JSON answer below 500 is the server's decision; a
+    proxy's 502 page or a busy store's 500 is not. */
+export function saveReplyOf(status: number, json: unknown): SaveReply {
+  const d = json !== null && typeof json === "object" ? (json as Record<string, unknown>) : null;
+  return {
+    ok: !!d?.ok,
+    existing: d?.existing === true,
+    definite: d !== null && status < 500,
+    error: typeof d?.error === "string" ? d.error : status >= 200 && status < 300 ? undefined : `HTTP ${status}`,
+  };
 }
 
 let inflight: Promise<string | null> | null = null;
@@ -42,9 +60,12 @@ let inflight: Promise<string | null> | null = null;
 /** Move a key an older version left in localStorage to the server, once.
     `save` posts the provider to POST /api/provider with `migrate: true`, which
     the server only saves when it has no provider yet, so an old browser never
-    replaces a newer key. The browser copy is deleted whether or not the
-    server kept it, and the returned message says which happened; null when
-    there was nothing to move. A leftover value without a key is deleted
+    replaces a newer key. The browser copy is deleted once the server has
+    decided (it saved the key, kept its own, refused the body or failed the
+    key's test) and kept when the server did not answer, answered 5xx or
+    answered with something that is not JSON, so a restarting API never
+    costs the only copy; a later page load tries again. The returned message
+    says which happened; null when there was nothing to move. A leftover value without a key is deleted
     silently. Calls in one page share one run (React runs a mount effect
     twice in development), and tabs take turns through a Web Lock where the
     browser has one, each reading localStorage again once it holds it. */
@@ -87,10 +108,11 @@ async function migrateOnce(save: (body: Record<string, string | boolean>) => Pro
   try {
     reply = await save(body);
   } catch {
-    reply = { ok: false, error: "no answer from the server" };
-  } finally {
-    drop();
+    reply = { ok: false, definite: false };
   }
+  if (!reply.ok && !reply.existing && !reply.definite)
+    return "The server did not answer, so the API key this browser had saved stays here for now. It moves to the server on a later visit.";
+  drop();
   if (reply.ok) return "Moved the API key this browser had saved to the server. This browser no longer stores it.";
   if (reply.existing)
     return "Deleted the API key this browser had saved. The server already has its own saved key, so it kept that one.";

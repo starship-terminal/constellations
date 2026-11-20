@@ -52,8 +52,12 @@ An older version stored the whole provider, key included, in the browser's
 `localStorage` under `ds-provider`. On the first page load after the update
 the app sends that key to the save route as a migration, which the server
 accepts only when it has no provider saved yet, so an old browser never
-replaces a newer key. The page deletes the browser copy whether or not the
-server kept it, and says which happened (a toast, then a note on Settings).
+replaces a newer key. The page deletes the browser copy once the server has
+decided: it saved the key, kept its own, refused the body or failed the
+key's test. When the server does not answer, answers 5xx or answers with a
+page that is not JSON (a proxy's 502 while the API restarts), the browser
+copy stays and a later visit tries again. Either way the page says what
+happened (a toast, then a note on Settings).
 Tabs take turns, and the other open tabs pick up the change.
 
 The logic lives in [lib/provider-api.ts](lib/provider-api.ts) and
@@ -72,8 +76,10 @@ can read it back.
 The published docs site ([tools/site.py](../tools/site.py)) has the same
 Model provider section. Where a server answers its `/api/` (the home
 server's `server/api.py` behind nginx), it uses the routes above. On a copy
-with no server, such as GitHub Pages, the section says so, stores nothing,
-and deletes a key an older version left in that browser.
+with no server, such as GitHub Pages (its `/api/` answers 404), the section
+says so, stores nothing, and deletes a key an older version left in that
+browser without sending it anywhere. Any other failure to reach `/api/`
+keeps that key, as in the gallery.
 
 ## On the home server
 

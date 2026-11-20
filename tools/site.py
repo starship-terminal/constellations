@@ -271,8 +271,20 @@ SETTINGS_BODY = """<h1>Settings</h1>
     try { legacy = JSON.parse(localStorage.getItem(LEGACY) || 'null'); } catch (e) { legacy = null; }
     var hadKey = !!(legacy && typeof legacy === 'object' && typeof legacy.api_key === 'string' && legacy.api_key);
     var drop = function () { try { localStorage.removeItem(LEGACY); } catch (e) {} };
-    // Move a key an older version left in this browser to the server once,
-    // then delete the browser copy whether or not the server kept it.
+    // POST to the API and keep the status: only a JSON answer below 500 is
+    // the server's decision.
+    var post = function (path, body) {
+      return fetch(API + path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
+        .then(function (r) {
+          return r.json().then(function (d) { return { status: r.status, d: d }; },
+                               function () { return { status: r.status, d: null }; });
+        });
+    };
+    // Move a key an older version left in this browser to the server once.
+    // The browser copy is deleted once the server has decided (saved it, kept
+    // its own, refused the body or failed the key's test) and kept when it
+    // did not answer, answered 5xx or not in JSON: a restarting API must not
+    // cost the only copy, and the next visit tries again.
     function migrate() {
       if (!hadKey) { drop(); return Promise.resolve(); }
       // migrate: the server saves it only when it has no provider yet, so an
@@ -281,8 +293,13 @@ SETTINGS_BODY = """<h1>Settings</h1>
       ['name', 'api', 'base_url', 'key_header', 'models_url', 'model'].forEach(function (k) {
         if (typeof legacy[k] === 'string' && legacy[k]) b[k] = legacy[k];
       });
-      return send('POST', 'provider', b).catch(function () { return { ok: false, error: 'no answer from the server' }; })
-        .then(function (d) {
+      return post('provider', b).catch(function () { return { status: 0, d: null }; })
+        .then(function (res) {
+          var d = res.d && typeof res.d === 'object' ? res.d : null;
+          if (!d || res.status >= 500 || res.status === 0) {
+            notice('The server did not answer, so the API key this browser had saved stays here for now. It moves to the server on a later visit.');
+            return;
+          }
           drop();
           notice(d.ok ? 'Moved the API key this browser had saved to the server. This browser no longer stores it.'
             : d.existing ? 'Deleted the API key this browser had saved. The server already has its own saved key, so it kept that one.'
@@ -291,19 +308,28 @@ SETTINGS_BODY = """<h1>Settings</h1>
         });
     }
     // The API exists only where a server answers /api/ (the gallery app, or
-    // the home server's Python API behind nginx). Elsewhere, on the published
-    // copy, nothing can hold a key: the form stays hidden and nothing is stored.
-    send('GET', 'provider').then(function (d) {
-      if (!d || typeof d.source !== 'string') throw new Error();
-      form.hidden = false;
-      return migrate().then(function () { return send('GET', 'provider'); }).then(function (d2) { show(d2); fill(d2); });
-    }).catch(function () {
+    // the home server's Python API behind nginx). A 404 means this copy has
+    // none (GitHub Pages): nothing can hold a key here, the form stays hidden,
+    // and an old browser key is deleted without being sent anywhere. Any other
+    // failure (no answer, a 502 while the API restarts) keeps that key.
+    fetch(API + 'provider').then(function (r) {
+      return r.json().then(function (d) { return { status: r.status, d: d }; },
+                           function () { return { status: r.status, d: null }; });
+    }, function () { return { status: 0, d: null }; }).then(function (res) {
+      if (res.d && typeof res.d.source === 'string') {
+        form.hidden = false;
+        return migrate().then(function () { return send('GET', 'provider'); }).then(function (d2) { show(d2); fill(d2); });
+      }
       form.hidden = true; off.hidden = false;
+      if (res.status !== 404) {
+        if (hadKey) notice('The server did not answer, so the API key this browser had saved stays here for now.');
+        return;
+      }
       if (legacy !== null) {
         drop();
         if (hadKey) notice('Deleted an API key an older version of this page had saved in this browser. This copy of the site keeps no key.');
       }
-    });
+    }).catch(function () { setStatus('No answer from the server.', true); });
   })();
 </script>
 <script>
