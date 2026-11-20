@@ -92,9 +92,13 @@ const brand = (TOKENS.core && TOKENS.core.color && TOKENS.core.color.brand) || {
 for (const [name, tok] of Object.entries(brand)) {
   const el = document.createElement("div");
   el.className = "sw";
-  el.innerHTML = "<i></i><b>brand." + name + "</b><span></span>";
-  el.querySelector("i").style.background = tok.v;
-  el.querySelector("span").textContent = tok.v;
+  const dot = document.createElement("i");
+  dot.style.background = tok.v;
+  const label = document.createElement("b");
+  label.textContent = "brand." + name;
+  const value = document.createElement("span");
+  value.textContent = tok.v;
+  el.append(dot, label, value);
   box.appendChild(el);
 }
 </script>
