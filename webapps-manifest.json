@@ -232,9 +232,9 @@
       "description": "Create apps that perfectly fit your team's needs",
       "status": "captured",
       "package": "systems/airtable",
-      "notes": "https://airtable.com/login stopped at Verify it is you and reported unusual traffic. No email field was reached.",
+      "notes": "https://airtable.com/login stopped at Verify it is you and reported unusual traffic. No email field was reached. Continue with Google signed in and opened the app. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 1
     },
     {
@@ -1116,9 +1116,9 @@
       "description": "Bring your creative ideas to life",
       "status": "captured",
       "package": "systems/creativemarket",
-      "notes": "https://creativemarket.com/sign-in stopped on a Cloudflare security verification. No email field was reached.",
+      "notes": "https://creativemarket.com/sign-in stopped on a Cloudflare security verification. No email field was reached. Continue with Google signed in and opened the site. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 4
     },
     {
@@ -1813,9 +1813,9 @@
       "description": "Web Search API, AI Search Engine, & Website Crawler",
       "status": "captured",
       "package": "systems/exa",
-      "notes": "https://dashboard.exa.ai/login opens https://auth.exa.ai/ with Google, email, and SSO. Continue with email was blocked: \"This sign-in attempt was blocked for security reasons.\" A Cloudflare turnstile field was present. No code was sent. Do not retry.",
+      "notes": "https://dashboard.exa.ai/login opens https://auth.exa.ai/ with Google, email, and SSO. Continue with email was blocked. Continue with Google signed in and opened the dashboard. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 6
     },
     {
