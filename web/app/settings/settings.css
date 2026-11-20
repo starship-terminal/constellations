@@ -31,7 +31,11 @@
 }
 .st-panel { scroll-margin-top: 20px; }
 /* Below 900px a 52px fixed top bar covers the first screen edge. */
-@media (max-width: 899px) { .st-panel, .st-tabs { scroll-margin-top: 72px; } }
+@media (max-width: 899px) {
+  .st-panel, .st-tabs { scroll-margin-top: 72px; }
+  /* The sticky list clears that bar too (it stops being sticky below 760px). */
+  .st-tabs { top: 72px; }
+}
 @media (max-width: 760px) {
   .st-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .st-tabs {
