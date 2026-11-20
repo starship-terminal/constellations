@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pryzm style guide</title>
+<style>
+:root {
+  --page: #000;
+  --surface: #141414;
+  --raised: #171717;
+  --sidebar: #171717;
+  --text-primary: #fafafa;
+  --text-secondary: #fff9;
+  --text-on-accent: #171717;
+  --border-default: #ffffff1c;
+  --border-input: #ffffff26;
+  --accent: #e5e5e5;
+  --accent-foreground: #171717;
+  --muted: #262626;
+  --secondary: #262626;
+  --destructive: #ff6568;
+  --ring: #a1a1a1;
+  --sidebar-accent: #1447e6;
+  --chart-1: #77d4ff;
+  --chart-2: #00a5ef;
+  --chart-3: #0084cc;
+  --chart-4: #0069a4;
+  --chart-5: #005986;
+  --toast-success-text: hsl(140, 100%, 27%);
+  --toast-warning-text: hsl(31, 92%, 45%);
+  --toast-error-text: hsl(360, 100%, 45%);
+  --toast-info-text: hsl(210, 92%, 45%);
+  --sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --heading: Poppins, ui-sans-serif, system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  --page: #fff;
+  --surface: #fff;
+  --raised: #fff;
+  --sidebar: #f5f5f5;
+  --text-primary: #0a0a0a;
+  --text-secondary: #737373;
+  --text-on-accent: #fafafa;
+  --border-default: #e5e5e5;
+  --border-input: #e5e5e5;
+  --accent: #171717;
+  --accent-foreground: #fafafa;
+  --muted: #e4e4e4;
+  --secondary: #f5f5f5;
+  --destructive: #e40014;
+  --ring: #a1a1a1;
+  --sidebar-accent: #171717;
+  --chart-1: #77d4ff;
+  --chart-2: #00a5ef;
+  --chart-3: #0084cc;
+  --chart-4: #0069a4;
+  --chart-5: #005986;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text-primary); font: 400 14px/1.5 var(--sans); }
+header { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-default); }
+h1 { font: 600 20px/1.2 var(--heading); margin: 0; letter-spacing: -0.02em; }
+button.theme { background: var(--accent); color: var(--accent-foreground); border: 0; border-radius: 8px; height: 32px; padding: 0 12px; font: 500 12px/1 var(--sans); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+h2 { font: 600 28px/1.15 var(--heading); letter-spacing: -0.02em; margin: 40px 0 12px; }
+p.note { color: var(--text-secondary); max-width: 68ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.swatch { background: var(--surface); border: 1px solid var(--border-default); border-radius: 18px; padding: 12px; }
+.swatch i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border-default); }
+.swatch span, .swatch code { display: block; margin-top: 8px; font-size: 12px; }
+.swatch code { color: var(--text-secondary); font-family: var(--mono); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 8px; background: var(--accent); color: var(--accent-foreground); font: 500 12px/1 var(--sans); text-decoration: none; }
+.btn.quiet { background: var(--secondary); color: var(--text-primary); }
+.field { height: 44px; width: 280px; border-radius: 8px; border: 1px solid var(--border-input); background: var(--page); color: var(--text-primary); padding: 0 12px; font: 400 14px/1 var(--sans); }
+.card { width: 220px; background: var(--surface); border-radius: 18px; padding: 12px; }
+.card .art { height: 120px; border-radius: 12px; background: linear-gradient(180deg, #ff4d2e, #2a1240); }
+.badge { display: inline-flex; height: 16px; padding: 0 6px; border-radius: 999px; background: var(--muted); color: var(--text-primary); font: 600 10px/16px var(--sans); }
+.dialog { width: min(420px, 100%); background: var(--surface); border-radius: 18px; padding: 16px; border: 1px solid var(--border-default); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Pryzm</h1>
+  <button class="theme" type="button" id="theme">Show declared light</button>
+</header>
+<main>
+  <p class="note">Values come from tokens.json. The live public site paints the dark set. The light set is declared on :root and is not what the public pages paint. Hover, focus, pressed, disabled and error states that were not measured are not drawn here.</p>
+  <h2>Colour</h2>
+  <div class="grid"><div class="swatch"><i style="background:var(--page)"></i><span>page</span><code>#000</code></div>
+<div class="swatch"><i style="background:var(--surface)"></i><span>surface</span><code>#141414</code></div>
+<div class="swatch"><i style="background:var(--raised)"></i><span>raised</span><code>#171717</code></div>
+<div class="swatch"><i style="background:var(--sidebar)"></i><span>sidebar</span><code>#171717</code></div>
+<div class="swatch"><i style="background:var(--text-primary)"></i><span>text-primary</span><code>#fafafa</code></div>
+<div class="swatch"><i style="background:var(--text-secondary)"></i><span>text-secondary</span><code>#fff9</code></div>
+<div class="swatch"><i style="background:var(--text-on-accent)"></i><span>text-on-accent</span><code>#171717</code></div>
+<div class="swatch"><i style="background:var(--border-default)"></i><span>border-default</span><code>#ffffff1c</code></div>
+<div class="swatch"><i style="background:var(--border-input)"></i><span>border-input</span><code>#ffffff26</code></div>
+<div class="swatch"><i style="background:var(--accent)"></i><span>accent</span><code>#e5e5e5</code></div>
+<div class="swatch"><i style="background:var(--accent-foreground)"></i><span>accent-foreground</span><code>#171717</code></div>
+<div class="swatch"><i style="background:var(--muted)"></i><span>muted</span><code>#262626</code></div>
+<div class="swatch"><i style="background:var(--secondary)"></i><span>secondary</span><code>#262626</code></div>
+<div class="swatch"><i style="background:var(--destructive)"></i><span>destructive</span><code>#ff6568</code></div>
+<div class="swatch"><i style="background:var(--ring)"></i><span>ring</span><code>#a1a1a1</code></div>
+<div class="swatch"><i style="background:var(--sidebar-accent)"></i><span>sidebar-accent</span><code>#1447e6</code></div>
+<div class="swatch"><i style="background:var(--chart-1)"></i><span>chart-1</span><code>#77d4ff</code></div>
+<div class="swatch"><i style="background:var(--chart-2)"></i><span>chart-2</span><code>#00a5ef</code></div>
+<div class="swatch"><i style="background:var(--chart-3)"></i><span>chart-3</span><code>#0084cc</code></div>
+<div class="swatch"><i style="background:var(--chart-4)"></i><span>chart-4</span><code>#0069a4</code></div>
+<div class="swatch"><i style="background:var(--chart-5)"></i><span>chart-5</span><code>#005986</code></div>
+<div class="swatch"><i style="background:var(--toast-success-text)"></i><span>toast-success-text</span><code>hsl(140, 100%, 27%)</code></div>
+<div class="swatch"><i style="background:var(--toast-warning-text)"></i><span>toast-warning-text</span><code>hsl(31, 92%, 45%)</code></div>
+<div class="swatch"><i style="background:var(--toast-error-text)"></i><span>toast-error-text</span><code>hsl(360, 100%, 45%)</code></div>
+<div class="swatch"><i style="background:var(--toast-info-text)"></i><span>toast-info-text</span><code>hsl(210, 92%, 45%)</code></div></div>
+  <h2>Type</h2>
+  <p style="font: 600 48px/1.05 var(--heading); letter-spacing: -0.02em; margin: 0;">Backgrounds nobody else has</p>
+  <p>Body is Inter 14px. Labels are Inter 12px / 500. The PRO badge is Inter 10px / 600.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn" href="#controls">Open studio</a>
+    <a class="btn quiet" href="#controls">Sign in</a>
+    <span class="badge">PRO</span>
+  </div>
+  <p></p>
+  <input class="field" placeholder="Email address" readonly>
+  <h2>Card and dialog</h2>
+  <div class="row">
+    <article class="card"><div class="art"></div><p><span class="badge">PRO</span> Bright Spark</p></article>
+    <div class="dialog"><strong>Export</strong><p class="note">Free PNG export is capped at Preview size. This specimen uses measured surface, radius and type. It is not a screenshot.</p><a class="btn" href="#controls">Download PNG</a></div>
+  </div>
+</main>
+<script>
+document.getElementById('theme').onclick = () => {
+  const html = document.documentElement;
+  const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+  html.dataset.theme = next;
+  document.getElementById('theme').textContent = next === 'dark' ? 'Show declared light' : 'Show live dark';
+};
+</script>
+</body>
+</html>
