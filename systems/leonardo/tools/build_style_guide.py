@@ -4,12 +4,17 @@
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
 `:root` and the `dark` set on `[data-mode="dark"]`. The guide's theme toggle sets data-mode
-on <html>, which switches the docs roles. Aliases like {color.page} become var(--color-page).
+on <html>, which switches the docs roles; the light set holds only those, so the guide chrome
+falls back to them in light (the --sg-* names in the template). Aliases like {color.page} become var(--color-page).
 
 Placeholders in the template:
   /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
   /*TOKENS*/null                  a compact copy of the token tree for the JS tables
   <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
+
+The template is Leonardo's own (title, notes and font copy are written in it), so
+the builder only fills placeholders and never rewrites another product's wording.
+It loads no web fonts: the guide uses system faces and works offline.
 
 Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
 """
@@ -119,12 +124,7 @@ def icon(m):
 
 tpl = (HERE / "tools" / "style-guide.template.html").read_text()
 html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*LIGHT2*/", block("light")).replace("/*DARK*/", block("dark"))
-        .replace("/*TOKENS*/null", data)
-        .replace("Claude style guide", "Leonardo.Ai style guide")
-        .replace("Claude (claude.ai) design tokens and the app's components, rendered from tokens.json with the measured values, in both of its themes.",
-                 "Leonardo.Ai public tokens, rendered from tokens.json. Dark is the live paint. Light is the docs color-mode alternate.")
-        .replace("Anthropic Sans, Serif and Mono are proprietary and not loaded here: the sans falls back to the system face,\n   the serif to Source Serif 4 (a stand-in from Google Fonts with a similar book feel), the mono to ui-monospace.",
-                 "canvaSans, ufficioDisplay, leoSans and leoRenaisans are proprietary and not loaded here. The guide falls back to system fonts."))
+        .replace("/*TOKENS*/null", data))
 (HERE / "style-guide.html").write_text(html)
 print("style-guide.html:", len(html.encode()), "bytes;",
       " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")

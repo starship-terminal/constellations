@@ -52,12 +52,12 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 
 | Role | light |
 |---|---|
-| page | rgb(255 255 255) `light.page` |
-| surface | rgb(255 255 255) `light.surface` |
-| text | rgb(0 0 0) `light.text` |
-| muted | rgb(51 65 85) `light.muted` |
-| accent | rgb(0 170 69) `light.accent` |
-| border | rgb(226 232 240) `light.border` |
+| page | #ffffff `light.page` |
+| surface | #ffffff `light.surface` |
+| text | #000000 `light.text` |
+| muted | #334155 `light.muted` |
+| accent | #00aa45 `light.accent` |
+| border | #e2e8f0 `light.border` |
 
 Fonts: `core.font.family.ui` is Geist, then 1 fallback; `core.font.family.display` is instrument, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 11 type styles (`core.typography`), 8 radius steps (`core.radius`), 13 spacing steps (`core.spacing`).
 
@@ -71,7 +71,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 21.00:1 pass | 21.00:1 pass | 10.35:1 pass | 10.35:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus` 0px 0px 0px 4px rgb(38 38 38); `light.focus` 0px 0px 0px 4px #e1e4e880.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus` 0px 0px 0px 4px #262626; `light.focus` 0px 0px 0px 4px #e1e4e880.
 
 <!-- brief:end -->
 

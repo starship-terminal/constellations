@@ -224,20 +224,21 @@ Page: home. Selector: `announcement pill`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 211.31 x 28 | = | = | = |
-| Padding | 6px 10px 6px 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 12px/16px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #262626 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Ancestor paint | 1 up a.group.flex bg #ffffff | 1 up a.group.flex bg #fafafa | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 211.31 x 28 | = | - | = |
+| Padding | 6px 10px 6px 16px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 12px/16px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #262626 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Ancestor paint | 1 up a.group.flex bg #ffffff | 1 up a.group.flex bg #fafafa | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `hero-badge-default.png`, `hero-badge-hover.png`, `hero-badge-focus-visible.png`, `hero-badge-pressed.png`.
 
@@ -842,22 +843,23 @@ Page: sales. Selector: `button "Send message"`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 123.75 x 40 | = | = | = |
-| Padding | 0px 12px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #e5e5e5 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #f5f5f5 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | 2px solid #000000 @ 0 offset 2px | = | = | = |
-| Font | Inter 14px/20px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #737373 | = | = | = |
-| Text node | div.min-w-0.truncate: Inter 14px/20px 400, #737373 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Painted layers | button.group.flex 123.8x40.0 bg #f5f5f5 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 8px outline 2px solid #000000 @ 0 offset 2px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 123.75 x 40 | = | - | = |
+| Padding | 0px 12px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | 1px solid #e5e5e5 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | #f5f5f5 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | 2px solid #000000 @ 0 offset 2px | = | - | = |
+| Font | Inter 14px/20px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #737373 | = | - | = |
+| Text node | div.min-w-0.truncate: Inter 14px/20px 400, #737373 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Painted layers | button.group.flex 123.8x40.0 bg #f5f5f5 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 8px outline 2px solid #000000 @ 0 offset 2px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `sales-submit-default.png`, `sales-submit-hover.png`, `sales-submit-focus-visible.png`, `sales-submit-pressed.png`.
 
