@@ -1,7 +1,7 @@
 # Mangomint components
 
 Measured on the public pages, 2026-11-18, desktop 1440. Nothing was submitted, signed into, or booked.
-Pressed rows are CDP `forcePseudoState` (`:active` and `:hover`). A focus row whose `via` is `focus failed` did not land. The pressed rows of Book a demo, Try it now, Businesses and Log In equal their default: the 2026-11-18 run forced the first pressed control on each page again, so they are not pressed readings.
+Pressed rows are CDP `forcePseudoState` (`:active` and `:hover`). A focus row that keyboard focus never reached is listed as not captured. The pressed rows of Book a demo, Try it now, Businesses and Log In equal their default: the 2026-11-18 run forced the first pressed control on each page again, so they are not pressed readings.
 
 ## Try it now filled button
 
@@ -92,7 +92,7 @@ Group: Button. URL: `https://www.mangomint.com/demo/`.
 |---|---|---|
 | default | 17px · 540 · rgb(252, 250, 250) · rgb(188, 38, 155) · 56px · at rest | [crop](components/crops/demo-continue-default.png) |
 | hover | 17px · 540 · rgb(252, 250, 250) · rgb(188, 38, 155) · 56px · mouse hover | [crop](components/crops/demo-continue-hover.png) |
-| focus-visible | 17px · 540 · rgb(252, 250, 250) · rgb(188, 38, 155) · 56px · focus failed | [crop](components/crops/demo-continue-focus-visible.png) |
+| focus-visible | not captured: keyboard focus did not reach the element | |
 | pressed | 17px · 540 · rgb(252, 250, 250) · rgb(188, 38, 155) · 56px · CDP forcePseudoState :active:hover | [crop](components/crops/demo-continue-pressed.png) |
 
 ## Trial service chip
