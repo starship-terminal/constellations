@@ -195,7 +195,8 @@ const SURFACES = [
       m += `<div><b>${esc(setname === 'core' ? n : setname + '.' + n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
     }
   }
-  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  const fmt = (v) => Array.isArray(v) ? v.map(fmt).join(', ') : (v && typeof v === 'object' ? Object.entries(v).map(([k, x]) => k + ' ' + fmt(x)).join(' ') : String(v));
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) { const s = fmt(t.v); m += `<div><b>${esc(n)}</b> <span>${esc(s.length > 90 ? s.slice(0, 90) + '…' : s)}</span></div>`; }
   $('#spacing-out').innerHTML = m;
 })();
 
