@@ -5055,9 +5055,9 @@
       "description": "Electric adventure vehicles",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://rivian.com/auth/login shows email and password. Password not submitted. Cookie banner rejected.",
+      "notes": "Email probe: https://rivian.com/auth/login shows email and password. Password not submitted. Cookie banner rejected. Public walk 2026-11-21: header menus open Vehicles, Charging, Technology, Discover, and Gear Shop. Demo drive opens the booking page and was not submitted. Sign in stops at https://rivian.com/auth/login. Have a question opens the assistant iframe and was not filled. Inventory stops at an empty postal-code dialog. The event page shows an empty signup form that was not filled. Cookie Reject All was clicked. No password was submitted. No form was submitted. Locations were not captured because they show street addresses. Signed-in account was not captured. Public package refresh in PR 1569 at b6f6ffe26c76. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
@@ -5242,9 +5242,9 @@
       "description": "Scheduling Software Everyone Will Love",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://savvycal.com/login shows email and password, or Google, Microsoft, or Fastmail. Password not submitted.",
+      "notes": "Email probe: https://savvycal.com/login shows email and password, or Google, Microsoft, or Fastmail. Password not submitted. Public walk 2026-11-21: header opens Features, Pricing, What's New, Log in, and Sign up. Phone Open main menu opens the same set. Footer groups open product, solution, comparison, article, and legal pages. Pricing Monthly and Annual, FAQ summaries, the integrations search, and the /demo calendar stay on the page. Login and signup stop at email and password, or Google, Microsoft, or Fastmail. Those were not clicked. No password was typed. No form was submitted. Signed-in scheduler was not captured. Public package refresh in PR 1570 at 7c2b0297757c. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 16
     },
     {
