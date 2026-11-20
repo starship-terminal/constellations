@@ -134,6 +134,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The conic ring is a ramp, not a circle.** `component.cta-ring` stores the hero CTA's `conic-gradient(from ~412deg, teal, orange, teal)` as a gradient token; in the browser it spins slowly around the pill. The exact angle and animation vary.
 - **oklab whites are recorded as rgba.** Nav text and hover fills compute as `oklab(…/0.72)` etc.; tokens record the equivalent `rgba(255,255,255,…)` with the oklab form noted in source.
 - **`field` colours look inverted.** The contact form sits on a navy band inside a light page: field fill is `nebula` navy with `offwhite` borders — correct, not a bug.

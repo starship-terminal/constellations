@@ -99,6 +99,7 @@ Font sizes on this site are not fluid: Framer serves fixed px steps per breakpoi
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients, photography and the pastel tints band slightly; read exact colours from tokens.json or the raw files.
 - **Several brand fills paint in Display P3.** The token records the sRGB conversion (`#009cff` from `color(display-p3 0 0.599909 1)`, and so on); the P3 original is in the token's description and in css-vars.json, where unresolved P3 strings carry a "colour space not converted" note.
 - **The pressed link colour is `#ff0000`.** Framer's stylesheet declares `a:active { color: red }`; the pressed rows show it. It is a framework default, not a design choice.
