@@ -2663,9 +2663,9 @@
       "description": "Automate business & home",
       "status": "pending",
       "package": null,
-      "notes": "https://ifttt.ai/login asks for email or username and password, or Google, Apple, or Facebook. No code was sent.",
+      "notes": "https://ifttt.ai/login asks for email or username and password, or Google, Apple, or Facebook. No code was sent. Public walk 2026-11-21: https://ifttt.com/ redirects to https://ifttt.ai/. Header opened Explore and Plans. Home and story tabs swapped cards in place. Explore tabs are links. Service, applet, and connection pages share Back, Copy, Share, and filters. Plans has a yearly switch, tooltips, and FAQ details. MCP tabs and the docs menu stay on the page. /privacy lands on /terms#privacy-policy. Log in and Get started stop at the sign-in wall. /settings, /billing, and /create redirect to /join and were not entered. Header search was not submitted. No form was submitted. Public package in PR 1515 at 2c8e6921a. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 8
     },
     {
