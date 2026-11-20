@@ -46,13 +46,18 @@ async function blocked() {
   }).catch(() => true);
 }
 
+// A fixed, neutral place for every context: without it the site reads the capture machine's own location
+// (the 2026-11 run recorded its country, prices in its currency and a distance-sorted nearby studio).
+// The site can still place the run by its IP address; this pins what the browser itself reports.
+const PLACE = { locale: 'en-US', timezoneId: 'America/New_York', geolocation: { latitude: 40.7128, longitude: -74.006 }, permissions: [] };
+
 async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   current = key;
   view = mobile ? 'mobile' : 'desktop';
   const b = context.browser();
   const ctx = await b.newContext(mobile
-    ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
-    : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
+    ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, ...PLACE }
+    : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, ...PLACE });
   await patch(ctx);
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
@@ -337,7 +342,7 @@ async function search() {
   await S('search-box', q('[data-testid="SearchBox"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Search box', desc: 'The activity + location combobox pair on the public results page.', sel: '[data-testid=SearchBox]' }, { noScroll: true });
   // The activity field (empty placeholder — a fill can be typed and cleared
   // without losing a prefilled value).
-  await S('search-field', q('[data-testid="SearchBoxField"] input, input[placeholder*="pilates" i]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Activity field', desc: 'The "Yoga, pilates, massage\u2026" combobox field; filled with sample text then deleted, never searched.', sel: 'SearchBoxField input[placeholder~=pilates]', fillText: 'yoga' });
+  await S('search-field', q('[data-testid="SearchBoxField"] input, input[placeholder*="pilates" i]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Activity field', desc: 'The "Yoga, pilates, massage\u2026" combobox field; filled with sample text then deleted, never searched.', sel: 'SearchBoxField input[placeholder~=pilates]' }, { fillText: 'yoga' });
   // The location field comes prefilled with the geo-detected area — typing
   // and clearing would lose it, so it is focused only.
   await S('search-loc', q('input[placeholder*="neighborhood" i]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Location field', desc: 'The "City, neighborhood" combobox, prefilled with the detected area — focused only so the prefilled value survives.', sel: 'input[placeholder~=neighborhood]' });
