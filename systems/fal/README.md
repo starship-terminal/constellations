@@ -99,6 +99,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## What to distrust
 
+- **Two values were resolved on the wrong viewport.** `tools/capture/vars.mjs` resolved viewport-relative declarations on a default 1280 x 720 probe page while its note says 1440 x 900, so `core.marketing.size.container.default` (`clamp(992px, 100vw, 1920px)`, committed 1280px) and `core.marketing.size.font` are the 1280-wide readings; their sources say a recapture is needed. The script now opens the probe at 1440 x 900 (not run). The same capture wrote hex as `#9b,9b,9b` in [raw/css-vars.json](raw/css-vars.json); `build_tokens.py` still reads that form until a recapture.
 - **Hidden DOM twins ship beside real elements.** The app renders duplicate copies of the sandbox link, nav items, docs headings and card anchors inside `display:none` ancestors; `a` children of the docs cards are `display:contents` and measure 0 x 0. The kit resolves the first candidate with a real bounding box — the painted copy only.
 - **The Products menu panel is `div.top-center`, not the trigger's wrapper.** Earlier reads of `app-nav-menu` through `ancestor::div[2]` land on the 91 x 48 trigger; the painted panel is `ancestor::div[1]` at 322 x 201.
 - **`pager-next` pressed is a real 0 x 0.** The carousel arrow collapses mid-press; the state is measured, not missed.

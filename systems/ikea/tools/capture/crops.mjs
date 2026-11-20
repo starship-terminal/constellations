@@ -2,7 +2,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium } from '/Users/kaichen/.design-systems/pw/node_modules/playwright/index.mjs';
+const pw = await import(process.env.PLAYWRIGHT || 'playwright');
+const { chromium } = pw.default ?? pw;
 import { execFileSync } from 'node:child_process';
 
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');

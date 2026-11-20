@@ -16,10 +16,13 @@
 // Share, Export to Excalidraw+, the AI actions, Reset canvas and every Sign up
 // are measured never pressed.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, pickTool, openMainMenu, setTheme, closeMenus, closeDialog } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour originals stay outside the repo (quantize.py writes screenshots/ from them).
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'excalidraw', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -175,6 +178,11 @@ const dark = {
       await setTheme(p, 'dark');
       await closeMenus(p);
     });
+    // step() swallows a failed toggle: check what painted before naming any shot *-dark-*.
+    if (!(await p.locator('.excalidraw.theme--dark').count().catch(() => 0))) {
+      log('  SKIPPED dark: .excalidraw.theme--dark did not appear after the theme toggle');
+      return;
+    }
     const D = new Shooter(p, S.prefix.replace(/-light$/, '-dark'), S.vw, S.requested.viewport.height, S.dpr, S.requested.sanitizedSourceUrl);
     await D.view('editor');
     await step('dark-menu', async () => { await openMainMenu(p); await D.view('menu'); await closeMenus(p); });

@@ -49,7 +49,6 @@ colors:
   marketing-text: "#000000"
   marketing-muted: "rgba(0, 0, 0, 0.6)"
   marketing-line: "rgba(0, 0, 0, 0.1)"
-  marketing-focus: "#101010"
   marketing-card: "#faf9f5"
   marketing-menu-surface: "#ffffff"
   marketing-menu-hover: "rgba(0, 0, 0, 0.05)"
@@ -77,7 +76,6 @@ colors:
   marketing-label-orchid: "#b074ce"
   marketing-action-hover: "#9b66b5"
   signin-canvas: "#fcfcfc"
-  signin-card: "rgba(0, 0, 0, 0)"
   signin-heading: "#000000"
   signin-text: "#262626"
   signin-field: "#f5f5f5"
@@ -171,3 +169,10 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 6. **Do treat docs dark as the only dark.** The docs flip on `html.dark` to `#0b0a0f` with grey-400 body and white-wash chips; marketing and sign-in have no dark theme, so the dark set is docs-only. See [docs-dark-dark-default](screenshots/docs-dark-dark-default.png).
 7. **Don't style the spreadsheet from this package.** The animated workbook on the marketing pages is a demo mockup; the authenticated product was never reached. See [wb-mockup](components/crops/wb-mockup-default.png) for the mockup only.
 8. **Don't submit from this package.** The sign-in and demo e-mail fields were focused and filled for measurement, then cleared — never sent; the Get-a-demo and plan actions were measured, never followed. See [signin-email](components/crops/signin-email-filled.png).
+
+### Known gaps (from README.md)
+
+- `faq` (FAQ item): `default` and `opened` are the same reading (both 230px, expanded). The capture ran the accordion toggle before every state, so the closed state was never read. Needs a recapture; `measure.mjs` now runs the toggle only for `opened` (edited, not run).
+- `m-drawer` (Mobile nav drawer): the reading is the 390 x 52 header nav, not the drawer the hamburger opens; the selector's `.header__nav, …, nav` first match caught it. Needs a recapture; `measure.mjs` now finds the tall panel holding the drawer links after opening it (edited, not run).
+- `wb-toolbar-button`, `wb-sheet-tab`, `signin-footer` and `m-hamburger`: keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md leaves them out and `raw/measurements.md` shows them as Skipped. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
+- Left out on purpose, listed under `_gaps` in `raw/component-tokens.json`: `light.signin.card` (the card computes a transparent background; `light.signin.canvas` is the surface behind it) and `light.marketing.focus` (the marketing links draw the browser's default `auto` focus ring in #101010, not a product colour).

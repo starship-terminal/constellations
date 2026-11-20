@@ -264,18 +264,22 @@ def core():
         "chat-bubble": "--chat-bubble-border-radius",
         "alert": "--alert-banner-corner-radius",
     }
+    # A variant of a radius that is itself a token stays a sibling (radius.button-medium): nested
+    # under radius.button it would sit inside a token, where DTCG walkers never look.
     for key, var in radii.items():
         if var in LIGHT and rem_to_px(LIGHT[var]):
-            put(c, "radius." + key.replace("-", "."), dim_token(var, LIGHT[var]))
+            path = key if key.split("-")[0] in radii else key.replace("-", ".")
+            put(c, "radius." + path, dim_token(var, LIGHT[var]))
 
-    # Spacing is not published as a scale. Record the 4px step the radii and
-    # the system type sizes share, marked derived.
+    # Spacing is not published as a scale. The 4px steps below are a suggested
+    # scale (the step the radii and the system type sizes share), so they are a
+    # Reconstruction, not a measurement (docs/EVIDENCE.md).
     for step, px in (("1", "4px"), ("2", "8px"), ("3", "12px"), ("4", "16px"), ("5", "20px"), ("6", "24px"), ("8", "32px"), ("10", "40px"), ("12", "48px")):
         put(c, f"spacing.{step}", {
             "$value": px,
             "$type": "dimension",
             "$description": "4px spacing step. Instagram's public CSS does not declare a space scale. The step matches the radius increment and the system type sizes.",
-            "$extensions": {"source": f"Derived 4px scale from --button-corner-radius (4px) and --system-N-font-size steps, {CAPTURED}"},
+            "$extensions": {"source": f"Reconstruction — a suggested 4px scale, entered by hand at capture time; no spacing var is declared (the step matches --button-corner-radius and the --system-N-font-size steps), {CAPTURED}"},
         })
 
     families = {
@@ -390,7 +394,7 @@ def apply_motion(doc):
     }
 
 
-def main():
+def build():
     light = semantic(LIGHT)
     dark = semantic(DARK)
     light["component"] = component_tokens(LIGHT)
@@ -408,6 +412,11 @@ def main():
         },
     }
     apply_motion(doc)
+    return doc
+
+
+def main():
+    doc = build()
     out = HERE / "tokens.json"
     out.write_text(json.dumps(doc, indent=1) + "\n")
     print("wrote", out)

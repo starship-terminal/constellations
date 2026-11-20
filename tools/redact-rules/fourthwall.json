@@ -3,11 +3,11 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@fourthwal\\w*\\.\\w+$",
-   "@fourthw\\w*\\.\\w+$",
-   "@example\\.(com|org|inc)$",
-   "@yourshop\\.\\w+$",
-   "@domain\\.(com|org)$"
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
+   "@domain\\.com$",
+   "@domain\\.org$"
   ],
   "families": []
  }

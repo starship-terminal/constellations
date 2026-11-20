@@ -189,6 +189,8 @@ The lede paragraph under the headline. Read as `hero-sub` on the home page.
 #### Hero CTA
 The green Start-for-Free button in the hero; measured never followed. Read as `hero-cta` on the home page.
 
+**Known wrong; recapture needed.** The reading is an outlined "Start for Free" link (transparent fill, 1px warm-white border), not the green hero CTA: the selector took the last match.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 136.31 x 45; padding 14px 16px; border 1px solid #f1f0ec `color.neutral.warmWhite`; radius 12px; background transparent; text DopplerRepro 15/15 700, #f1f0ec `color.neutral.warmWhite`; transition color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), fill 0.3s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s cubic-bezier(0.4, 0, 0.2, 1) |

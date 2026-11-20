@@ -18,9 +18,7 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
-import os
 import re
-import subprocess
 import unicodedata
 from pathlib import Path
 
@@ -149,7 +147,7 @@ def term_id(group: str, label: str) -> str:
 
 
 def build() -> dict:
-    snapshot = json.loads((ROOT / "app/src/data/refero-catalog-taxonomy.json").read_text())
+    snapshot = json.loads((ROOT / "app/src/data/refero-catalog-taxonomy.json").read_text(encoding="utf-8"))
     terms = {g["id"]: {t["label"]: term_id(g["id"], t["label"]) for t in g["terms"]} for g in snapshot["groups"]}
     rules = {}
     for scope, definitions in [("page", PAGE_RULES), ("ui", UI_RULES), ("ux", UX_RULES)]:
@@ -221,211 +219,27 @@ def build() -> dict:
 
 
 
-def _branch_seed() -> tuple[dict | None, dict | None]:
-    """The pull request head's seed and catalog rows, when GitHub set them."""
-    sha = os.environ.get("GITHUB_HEAD_SHA") if os.environ.get("GITHUB_BASE_REF") else None
-    if not sha:
-        return None, None
-    try:
-        seed = json.loads(subprocess.run(
-            ["git", "show", f"{sha}:app/src/data/media-taxonomy.json"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout)
-        raw = subprocess.run(
-            ["git", "show", f"{sha}:catalog.json"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout
-        rows = {s.get("slug"): s for s in json.loads(raw).get("systems") or []}
-    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-        return None, None
-    return seed, rows
-
-
-def _same_as_branch(path: str) -> bool:
-    """True when HEAD's copy of path equals the pull request head's copy."""
-    sha = os.environ.get("GITHUB_HEAD_SHA") if os.environ.get("GITHUB_BASE_REF") else None
-    if not sha:
-        return False
-    try:
-        branch = subprocess.run(
-            ["git", "rev-parse", f"{sha}:{path}"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout.strip()
-        head = subprocess.run(
-            ["git", "rev-parse", f"HEAD:{path}"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout.strip()
-    except (OSError, subprocess.CalledProcessError):
-        return False
-    return branch == head
-
-
-def _head_touches(path: str) -> bool:
-    """True when the merge commit's copy of path differs from the base.
-
-    A depth-1 checkout has no merge base, so a three-dot diff fails and
-    must not be treated as an edit. Two trees compare without history."""
-    base = os.environ.get("GITHUB_BASE_REF")
-    if not base:
-        return False
-    try:
-        changed = subprocess.run(
-            ["git", "diff", "--name-only", f"origin/{base}", "HEAD", "--", path],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout.splitlines()
-    except (OSError, subprocess.CalledProcessError):
-        return True
-    return path in changed
-
-
-def base_slugs() -> set[str] | None:
-    """Slugs on the pull request's base, when GitHub is merging one."""
-    base = os.environ.get("GITHUB_BASE_REF")
-    if not base:
-        return None
-    try:
-        raw = subprocess.run(
-            ["git", "show", f"origin/{base}:catalog.json"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout
-        catalog_json = json.loads(raw)
-    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-        return None
-    return {s.get("slug") for s in catalog_json.get("systems") or []}
-
-
-def _base_tree_files() -> set[str] | None:
-    """Paths in the pull request base. None when the base tree is unreadable.
-
-    `-z` keeps names that contain quotes, backslashes, or non-ASCII
-    characters. Without it git quotes those names, and a capture such as
-    café-dark.png looks newly added."""
-    base = os.environ.get("GITHUB_BASE_REF")
-    if not base:
-        return None
-    try:
-        listed = subprocess.run(
-            ["git", "ls-tree", "-r", "-z", "--name-only", f"origin/{base}"],
-            cwd=ROOT, check=True, capture_output=True,
-        ).stdout
-    except (OSError, subprocess.CalledProcessError):
-        return None
-    return {path.decode("utf-8", "surrogateescape")
-            for path in listed.split(b"\0") if path}
-
-
 def matches_base(result: dict, committed: dict) -> bool:
-    """True when this pull request only adds packages, and the committed
-    seed still matches a derivation of the base catalog and base files.
+    """True when GitHub is checking a pull request and the committed seed is the
+    exact derivation of the packages it names, leaving out only packages this
+    pull request adds or main gained after the branch started.
 
-    GitHub checks the merge commit. That commit adds the new package's
-    screenshots, so a derivation of the working tree never equals the
-    committed seed. The seed is still current when it matches the base
-    tree. Editing an existing catalog row, or a file that was already in
-    the base, changes that derivation and still fails."""
-    slugs = base_slugs()
-    if not slugs:
-        return False
+    The seed is re-derived from the merge's own catalog rows and files, never
+    taken from the branch, so a hand-edited seed, a package whose screenshots or
+    font tokens changed without a rebuild, or a removed package still named
+    fails (tools/catalog.py lagging_subset)."""
     head_rows = {s.get("slug"): s for s in catalog.load_catalog()["systems"]}
-    # This pull request regenerated the seed, then main gained another
-    # package. The committed seed matches the branch tip in that case.
-    branch_seed, branch_rows = _branch_seed()
-    if (branch_seed is not None and committed == branch_seed
-            and branch_rows and set(branch_rows) <= set(head_rows)
-            and all(head_rows.get(slug) == row for slug, row in branch_rows.items())
-            and set(head_rows) - set(branch_rows)):
-        return True
-    if not set(head_rows) > slugs:
+    named = {p.get("referenceId", "").removeprefix("systems:")
+             for p in committed.get("packages") or [] if isinstance(p, dict)}
+    kept = catalog.lagging_subset(named, head_rows, ROOT)
+    if kept is None:
         return False
-    # A pull request that edits this script changes the derived rules.
-    # The merge commit can also carry the base copy of the script when
-    # main edited it after the branch started. That is not a capture edit.
-    # Reject only a script that differs from both the base and the branch.
-    if (_head_touches("app/scripts/build-media-taxonomy.py")
-            and not _same_as_branch("app/scripts/build-media-taxonomy.py")):
-        return False
-    base_files = _base_tree_files()
-    if base_files is None:
-        return False
+    saved = catalog.load_catalog
+    catalog.load_catalog = lambda: {**saved(), "systems": kept}
     try:
-        raw = subprocess.run(
-            ["git", "show", f"origin/{os.environ['GITHUB_BASE_REF']}:catalog.json"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout
-        base_catalog = json.loads(raw)
-    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-        return False
-    base_rows = {s.get("slug"): s for s in base_catalog.get("systems") or []}
-    if set(base_rows) != slugs:
-        return False
-    if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
-        return False
-    # A new image under a package that was already on the base changes the
-    # seed. The derivation below ignores those files so it can rebuild the
-    # base, so reject them here.
-    for row in base_rows.values():
-        for folder, exts in (
-            ("screenshots", catalog.IMAGE_EXT),
-            ("components", catalog.COMPONENT_EXT),
-        ):
-            for item in catalog.list_images(row, folder, exts):
-                if item["path"] not in base_files:
-                    return False
-    saved_catalog = catalog.load_catalog
-    saved_images = catalog.list_images
-
-    def base_images(system, folder, exts):
-        items = saved_images(system, folder, exts)
-        return [item for item in items if item["path"] in base_files]
-
-    catalog.load_catalog = lambda: base_catalog
-    catalog.list_images = base_images
-    try:
-        base_result = build()
+        return committed == build()
     finally:
-        catalog.load_catalog = saved_catalog
-        catalog.list_images = saved_images
-    if committed == base_result:
-        return True
-    # The seed may lag packages already merged to the base. It is still
-    # current when it is exactly the derivation of the packages it names.
-    return seed_is_prior_derivation(committed, head_rows, base_files)
-
-
-def seed_is_prior_derivation(committed: dict, head_rows: dict,
-                             base_files: set[str]) -> bool:
-    """True when the seed derives an unchanged subset of this catalog."""
-    named = {p["referenceId"].removeprefix("systems:")
-             for p in committed.get("packages") or []}
-    if not named or not named <= set(head_rows):
-        return False
-    for row in head_rows.values():
-        if row.get("slug") not in named:
-            continue
-        for folder, exts in (
-            ("screenshots", catalog.IMAGE_EXT),
-            ("components", catalog.COMPONENT_EXT),
-        ):
-            for item in catalog.list_images(row, folder, exts):
-                if item["path"] not in base_files:
-                    return False
-    kept = [row for row in catalog.load_catalog()["systems"]
-            if row.get("slug") in named]
-    saved_catalog = catalog.load_catalog
-    saved_images = catalog.list_images
-
-    def kept_images(system, folder, exts):
-        items = saved_images(system, folder, exts)
-        return [item for item in items if item["path"] in base_files]
-
-    catalog.load_catalog = lambda: {"systems": kept}
-    catalog.list_images = kept_images
-    try:
-        prior = build()
-    finally:
-        catalog.load_catalog = saved_catalog
-        catalog.list_images = saved_images
-    return committed == prior
+        catalog.load_catalog = saved
 
 
 def main() -> None:
@@ -434,7 +248,7 @@ def main() -> None:
     args = parser.parse_args()
     result = build()
     if args.check:
-        committed = json.loads(OUTPUT.read_text()) if OUTPUT.exists() else None
+        committed = json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else None
         if committed != result and not (committed and matches_base(result, committed)):
             raise SystemExit("Media taxonomy seed is stale; run python3 app/scripts/build-media-taxonomy.py")
         print("Media taxonomy seed is current")

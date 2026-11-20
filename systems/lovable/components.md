@@ -43,7 +43,7 @@ Desktop shots are 1440 x 900 at 1x. `-full` shots are whole pages. Phone shots a
 
 ## Shared values
 
-**Focus.** 17 components were given a real keyboard focus. 15 show a visible focus state: `nav-link` (2px solid oklch(0.60 0.21 267.53)), `nav-menu` (2px solid oklch(0.60 0.21 267.53)), `nav-login` (2px solid oklch(0.60 0.21 267.53)), `nav-cta` (2px solid oklch(0.60 0.21 267.53)), `billing-monthly` (visible change in boxShadow), `billing-yearly` (visible change in boxShadow), `plan-cta` (2px solid oklch(0.52 0.23 264.41)), `credit-select` (2px solid oklch(0.52 0.23 264.41)), `faq-item` (2px solid oklch(0.52 0.23 264.41)), `oauth-google` (2px solid oklch(0.52 0.23 264.41)), `login-continue` (2px solid oklch(0.52 0.23 264.41)), `login-signup-link` (1px auto rgb(0, 95, 204)), `docs-search` (1px auto rgb(0, 149, 255)), `docs-nav` (1px auto rgb(0, 149, 255)), `docs-theme` (1px auto rgb(0, 149, 255)). The other 2 show no change a keyboard user can see: `prompt-build`, `icon-button`.
+**Focus.** 15 components were given a real keyboard focus. 15 show a visible focus state: `nav-link` (2px solid oklch(0.60 0.21 267.53)), `nav-menu` (2px solid oklch(0.60 0.21 267.53)), `nav-login` (2px solid oklch(0.60 0.21 267.53)), `nav-cta` (2px solid oklch(0.60 0.21 267.53)), `billing-monthly` (visible change in boxShadow), `billing-yearly` (visible change in boxShadow), `plan-cta` (2px solid oklch(0.52 0.23 264.41)), `credit-select` (2px solid oklch(0.52 0.23 264.41)), `faq-item` (2px solid oklch(0.52 0.23 264.41)), `oauth-google` (2px solid oklch(0.52 0.23 264.41)), `login-continue` (2px solid oklch(0.52 0.23 264.41)), `login-signup-link` (1px auto rgb(0, 95, 204)), `docs-search` (1px auto rgb(0, 149, 255)), `docs-nav` (1px auto rgb(0, 149, 255)), `docs-theme` (1px auto rgb(0, 149, 255)). Focus could not be captured on 2 more (keyboard focus never landed on them, so their readings are left out): `prompt-build`, `icon-button`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active). Get started, Continue, OAuth and plan CTAs were never given a real press that would sign in or submit.
 
@@ -120,9 +120,9 @@ The Build chip under the composer. Measured, never used to start a build. Read a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 74.84 x 32; padding 6px 10px; radius 3.35e+07px; background transparent; outline 2px solid transparent, offset 2px; text Camera Plain Variable 14/21 400, oklch(0.1 0 0) |
+| default (same: hover, pressed) | size 74.84 x 32; padding 6px 10px; radius 3.35e+07px; background transparent; outline 2px solid transparent, offset 2px; text Camera Plain Variable 14/21 400, oklch(0.1 0 0) |
 
-![Build mode chip default](components/crops/prompt-build-default.png) ![Build mode chip hover](components/crops/prompt-build-hover.png) ![Build mode chip focus-visible](components/crops/prompt-build-focus-visible.png) ![Build mode chip pressed](components/crops/prompt-build-pressed.png)
+![Build mode chip default](components/crops/prompt-build-default.png) ![Build mode chip hover](components/crops/prompt-build-hover.png) ![Build mode chip pressed](components/crops/prompt-build-pressed.png)
 
 ### Home
 
@@ -149,9 +149,9 @@ The icon button beside the composer. Its menu was not opened. Read as `icon-butt
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 32 x 32; radius 3.35e+07px; background oklch(1 0 0 0.8); outline 2px solid transparent, offset 2px; text Camera Plain Variable 14/21 400, oklch(0.1 0 0) |
+| default (same: hover, pressed) | size 32 x 32; radius 3.35e+07px; background oklch(1 0 0 0.8); outline 2px solid transparent, offset 2px; text Camera Plain Variable 14/21 400, oklch(0.1 0 0) |
 
-![Additional actions default](components/crops/icon-button-default.png) ![Additional actions hover](components/crops/icon-button-hover.png) ![Additional actions focus-visible](components/crops/icon-button-focus-visible.png) ![Additional actions pressed](components/crops/icon-button-pressed.png)
+![Additional actions default](components/crops/icon-button-default.png) ![Additional actions hover](components/crops/icon-button-hover.png) ![Additional actions pressed](components/crops/icon-button-pressed.png)
 
 ### Pricing
 

@@ -107,13 +107,15 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One theme only.** The `dark` probe resolves to the same `:root` values — nothing paints dark. `tokens.json` ships no dark set.
 - **Var names are build hashes.** `--1fot7dv` and friends will change on the next site deploy; treat the aliases in `tokens.json` as the stable names and the hash names as provenance.
 - **Roles are verified, not declared.** Every `light` role pairs a var with the component that was measured wearing it; the site itself declares no semantic names. The declared error/sale/purple palette members (`--1mii22u`, `--1xvrmqx`, `--1ffq8ns`) appear in no component reading, so they stay under `core.color` — claiming `status.*` or `accent.*` roles for them would be an inference, not a measurement. Likewise `core.measured.anchor-inherit` is the wrapper anchor's unused inherited `#0000ee`, not the product-link colour (the link text is `text.primary`).
 - **`component.*` tokens are measured**, not site variables. The shop declares no spacing or radius scale — corners are simply 0px.
 - **Channel triplets.** `--18bniqv` ("45,45,45") and `--1cripqf` ("255,255,255") are rgb() channels composed into `rgba(var(--x), α)` — tokenised under `core.color.channel` as composed colours.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 - **The PDP is a sample**, not a fixed product — see `pdp_url`. Prices are SGD (Singapore geo).
+- **`tile-badge` was read from the wrong element.** Its selector caught the whole 335 x 100 tile text block (the product name and price), not the SELLING FAST / MORE COLOURS label, so its Tile badge entry in `components.md` is not the badge. The capture script now targets the label text itself (not run since); the component needs a recapture.
 - **Focus on the header search button did not land** on this pass (recorded as an error state on `search-button`, not evidence). Flyout links have no focus/press states: the flyout closes when focus leaves the nav button.
 
 ### Do and don't (from README.md)

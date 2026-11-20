@@ -60,6 +60,11 @@ def block(setname):
     return "\n".join(lines)
 
 
+def js(obj):
+    """JSON for an inline <script>: a "<" in a value could otherwise close the script early."""
+    return json.dumps(obj).replace("<", "\\u003c")
+
+
 def literal(token):
     """The printed swatch label. An alias to core resolves to that hex."""
     v = token["$value"]
@@ -82,10 +87,8 @@ def swatch(setname, group):
     for name, token in node.items():
         if not isinstance(token, dict) or token.get("$type") != "color":
             continue
-        var = css_name(setname if group != "color" or setname != "core" else "core", f"{group}.{name}" if False else f"{group}.{name}")
         # color group lives on both core and the theme. Specimens use the theme.
-        if group == "color":
-            var = css_name(setname, f"color.{name}")
+        var = css_name(setname, f"{group}.{name}")
         rows.append(
             f'<div class="sw"><i style="background:{var}"></i><div><b>{group}.{name}</b><code>{var}</code></div></div>'
         )
@@ -193,8 +196,8 @@ nav.sample a {{ color: var(--body); text-decoration: none; font: 500 14px var(--
 </main>
 <script>
 const palettes = {{
-  light: {json.dumps({name: literal(T["light"]["color"][name]) for name in T["light"]["color"]})},
-  dark: {json.dumps({name: literal(T["dark"]["color"][name]) for name in T["dark"]["color"]})}
+  light: {js({name: literal(T["light"]["color"][name]) for name in T["light"]["color"]})},
+  dark: {js({name: literal(T["dark"]["color"][name]) for name in T["dark"]["color"]})}
 }};
 const root = document.getElementById("colors");
 function showPalette(mode) {{

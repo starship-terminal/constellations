@@ -86,6 +86,8 @@ The reviews hero gradient was truncated in the reader after the 30% stop. It is 
 
 Hover, focus and pressed colours were not read. A transition at rest is not a hover colour.
 
+[tokens.json](tokens.json) is written by hand from [raw/computed.json](raw/computed.json). `tools/build_tokens.py` does not rebuild it. It checks every measured colour against a reading in that file, and it resolves aliases set first, then core, as Tokens Studio does. That check found five light roles that aliased themselves (`light.color.link` was `{color.link}`) and `light.color.chip-text`, which resolved to the chip background. The five core colours they meant are now `color.link-blue`, `color.band-bg`, `color.faq-bg`, `color.signin-panel-bg` and `color.chip-ink`.
+
 The quote line height of 28px is the body line height on the same family, not a separate computed reading on the quote.
 
 ## Fonts

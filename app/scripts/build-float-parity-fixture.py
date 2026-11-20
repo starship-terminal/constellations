@@ -52,6 +52,11 @@ TOKENS = {
             "$value": {"colorSpace": "srgb", "components": [1.0, 0.5, 0.0], "alpha": 1.0},
             "$type": "color",
         },
+        # 0.3 and 0.7 land on .5 after * 255; round() takes the even side.
+        "half": {
+            "$value": {"colorSpace": "srgb", "components": [0.3, 0.7, 0.5], "alpha": 0.3},
+            "$type": "color",
+        },
     }
 }
 # Written with the spellings a real file uses, which json.dumps would normalise.
@@ -66,6 +71,10 @@ TOKENS_TEXT = """{
     "legacy": {"value": 2.0, "type": "number"},
     "wash": {
       "$value": {"colorSpace": "srgb", "components": [1.0, 0.5, 0.0], "alpha": 1.0},
+      "$type": "color"
+    },
+    "half": {
+      "$value": {"colorSpace": "srgb", "components": [0.3, 0.7, 0.5], "alpha": 0.3},
       "$type": "color"
     }
   }
@@ -101,11 +110,11 @@ def main() -> int:
     args = parser.parse_args()
     text = json.dumps(build(), indent=2, ensure_ascii=False) + "\n"
     if args.check:
-        if not OUTPUT.exists() or OUTPUT.read_text() != text:
+        if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != text:
             print(f"{OUTPUT.relative_to(ROOT)} is stale; rerun without --check")
             return 1
         return 0
-    OUTPUT.write_text(text)
+    OUTPUT.write_text(text, encoding="utf-8")
     print(f"wrote {OUTPUT.relative_to(ROOT)}")
     return 0
 

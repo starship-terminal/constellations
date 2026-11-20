@@ -427,12 +427,21 @@ def build() -> dict:
         "button-glass": "Measured: Sign in on the dark hero, computed background rgba(255, 255, 255, 0.12), border 0.5px rgba(255, 255, 255, 0.08), radius 100px, height 40px",
         "chip": "Measured: Location and Filter by date, computed background rgb(255, 255, 255), border 1px rgb(222, 221, 219), radius 100px, height 32px, padding 0 15px",
         "chip-selected": "Measured: location chip 'Singapore, 00' on /nfl-tickets, computed background rgb(24, 24, 24), color rgb(255, 255, 255), border 1px rgb(222, 221, 219), radius 100px, height 32px",
-        "field": "Measured: home search wrap, computed background rgba(255, 255, 255, 0.12), radius 100px, height 46px. Help textarea wrap is white, radius 20px, border 2px rgb(222, 221, 219)",
+        "field": "Measured: home search wrap, computed background rgba(255, 255, 255, 0.12), radius 100px, height 46px. Help textarea wrap is white, radius 20px, border 2px rgb(222, 221, 219). The token mixes the two: white and 20px from the Help textarea wrap, 46px from the home search wrap",
         "price": "Measured: 'From $42' pill, computed background rgb(24, 24, 24), color rgb(255, 255, 255), radius 6px, height 36px, padding 0 16px, weight 650",
         "card": "Measured: team row radius 12px; trust card border 0.5px rgb(222, 221, 219), radius 12px, padding 20px 24px",
         "nav": "Measured: header height 80px at 1169px and 68px at 390px. About and Help paint the header white; category pages paint it transparent over the hero",
     }
+    # raw/declared-tokens.json's `computed` block holds the Sign in button (button-glass) and the
+    # price pill (price). The other components' styles were read in the preview and typed in here,
+    # so they carry the hand-entered label rather than Measured.
+    in_raw = {"button-glass": "computed.signIn", "price": "computed.pricePill"}
     for key, note in comps.items():
+        if key in in_raw:
+            note = f"{note}. Reading: raw/declared-tokens.json {in_raw[key]}"
+        else:
+            note = ("Reconstruction: entered by hand at capture time from the computed style read in the "
+                    f"preview ({note.removeprefix('Measured: ')}); no raw/ file holds this reading")
         for child in light["component"][key].values():
             child["$extensions"] = {"source": note}
 
@@ -494,10 +503,14 @@ def build() -> dict:
             "gaps": SRC["gaps"],
         },
     }
-    (HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
-    print(f"tokens.json written, light semantic groups {list(light)}")
     return doc
 
 
+def render() -> str:
+    """tokens.json's exact text; nothing is written."""
+    return json.dumps(build(), indent=2) + "\n"
+
+
 if __name__ == "__main__":
-    build()
+    (HERE / "tokens.json").write_text(render())
+    print("tokens.json written")

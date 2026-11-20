@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.gauth.com on 2026-11-18 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from lumalabs.ai on 2026-11-18 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -783,6 +783,6 @@ Crops: `m-signin-default.png`, `m-signin-hover.png`.
 
 ## Transitions declared in the readable stylesheets
 
-Gauth's own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd's CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth's own rules.
+This list holds only the transitions the CSSOM could read on each page; a stylesheet it could not read is not in it. The per-state Transition rows above are computed values and cover every rule.
 
 - home: none

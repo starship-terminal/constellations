@@ -265,10 +265,14 @@ def main():
             {"name": "light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}},
         ],
     }
+    return doc
+
+
+def write():
     out = HERE / "tokens.json"
-    out.write_text(json.dumps(doc, indent=2) + "\n")
+    out.write_text(json.dumps(main(), indent=2) + "\n")
     print(f"wrote {out}")
 
 
 if __name__ == "__main__":
-    main()
+    write()

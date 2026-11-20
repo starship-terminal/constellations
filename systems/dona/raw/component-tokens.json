@@ -100,7 +100,7 @@
     "display-mobile": {
      "type": "dimension",
      "value": "44px",
-     "source": "computed lineHeight of m-hero default (raw/components-computed.json)",
+     "source": "computed lineHeight of m-hero default first text node (span) (raw/components-computed.json)",
      "description": "Mobile display line height."
     },
     "h2": {
@@ -369,20 +369,22 @@
     "type": "dimension",
     "source": "computed borderTopLeftRadius of team-avatar default (raw/components-computed.json)",
     "description": "The 12px team-avatar radius."
-   },
-   "swoosh": {
-    "value": "75%",
-    "type": "dimension",
-    "source": "computed borderRadius of the newsletter form's ::before swoosh (raw/components-computed.json)",
-    "description": "The 75% border-radius that turns the blue ::before layers into elliptical swooshes behind feature tiles and the newsletter field."
-   },
-   "round": {
-    "value": "50%",
-    "type": "dimension",
-    "source": "computed borderTopLeftRadius of modal-close default (raw/components-computed.json)",
-    "description": "The 50% circle on the modal close button."
    }
   },
+  "_notTokenised": [
+   {
+    "name": "radius.swoosh",
+    "value": "75%",
+    "source": "computed borderRadius of the newsletter form's ::before swoosh (raw/components-computed.json)",
+    "why": "a percentage of the box: the 75% radius that turns the blue ::before layers into elliptical swooshes behind feature tiles and the newsletter field"
+   },
+   {
+    "name": "radius.round",
+    "value": "50%",
+    "source": "computed borderTopLeftRadius of modal-close default (raw/components-computed.json)",
+    "why": "a percentage of the box: the 50% circle on the modal close button"
+   }
+  ],
   "shadow": {
    "button": {
     "value": [
@@ -554,7 +556,7 @@
      }
     ],
     "type": "shadow",
-    "source": "computed boxShadow of m-cookie-banner default (raw/components-computed.json)",
+    "source": "computed boxShadow of m-cookie-banner default (raw/components-computed.json); the marked node sat offscreen on the 390 pass and its crop caught body text, so this is not confirmed as the banner; recapture needed",
     "description": "The mobile banner variant's upward shadow (the 8/16/40 layers run negative, the shape of a top-anchored bar) — read from the marked consent node, which sat offscreen on the 390 pass; its real placement is unverified."
    },
    "chip": {
@@ -676,26 +678,26 @@
    "container": {
     "value": "1140px",
     "type": "dimension",
-    "source": "computed maxWidth of Container__Wrapper (measured during the capture probes; the header/feature/newsletter bars share it)",
+    "source": "Reconstruction: entered by hand at capture time from a probe never written to raw/; no reading in raw/ holds it (the maxWidth of Container__Wrapper)",
     "description": "The 1140px content container."
-   },
-   "content": {
-    "value": "1100px",
-    "type": "dimension",
-    "source": "computed width of the header/newsletter wrappers inside the 1140px container with 20px gutters (raw/components-computed.json)",
-    "description": "The 1100px measure the bars actually paint."
    },
    "gutter": {
     "value": "20px",
     "type": "dimension",
-    "source": "computed paddingLeft/Right of Container__Wrapper (capture probes)",
+    "source": "Reconstruction: entered by hand at capture time from a probe never written to raw/; no reading in raw/ holds it (the paddingLeft/Right of Container__Wrapper)",
     "description": "The 20px side gutter inside the container."
    },
    "grid-gap": {
     "value": "32px",
     "type": "dimension",
-    "source": "computed columnGap/rowGap of the pages__Grid feature grid (capture probes)",
+    "source": "Reconstruction: entered by hand at capture time from a probe never written to raw/; no reading in raw/ holds it (the columnGap/rowGap of the pages__Grid feature grid)",
     "description": "The 32px gap in the two-column feature grid."
+   },
+   "content": {
+    "value": "1100px",
+    "type": "dimension",
+    "source": "computed width of header default and newsletter default (raw/components-computed.json)",
+    "description": "The 1100px measure the bars actually paint."
    }
   },
   "spacing": {

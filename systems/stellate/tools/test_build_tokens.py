@@ -3,10 +3,19 @@ import json
 import pathlib
 import unittest
 
+import build_tokens
+
 TOKENS = pathlib.Path(__file__).resolve().parent.parent / "tokens.json"
 
 
 class TokensTest(unittest.TestCase):
+    def test_committed_file_matches_builder(self):
+        # Built in memory; the committed file is never rewritten by the test.
+        self.assertEqual(json.loads(TOKENS.read_text()), build_tokens.build())
+
+    def test_subtle_border_keeps_its_alpha(self):
+        self.assertEqual(build_tokens.build()["light"]["border"]["subtle"]["$value"], "#3b4c6a26")
+
     def test_light_page_and_accent(self):
         data = json.loads(TOKENS.read_text())
         self.assertEqual(data["light"]["surface"]["page"]["$value"], "#f8fafc")

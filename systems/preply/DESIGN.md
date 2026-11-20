@@ -312,6 +312,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Field focus was not re-measured. A second headless load of /en/login hit Cloudflare.
 - Screenshots are 256-colour. Read values from tokens.json.
 - Figtree and Platform are not shipped. The style guide falls back.
+- components.md is typed into tools/build_components_md.py at capture time, not generated from raw/, and tools/build_tokens.py types its values rather than reading raw/. A recapture updates neither; compare a value with raw/home-measured.json or raw/login-fields.json before relying on it.
 
 ### Do and don't (from README.md)
 

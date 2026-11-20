@@ -141,6 +141,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### What to distrust (from README.md)
 
 - **There is no dark theme on these pages.** Do not invent one from the marketing bird palette.
+- **37 values were typed in and not saved to raw/.** [raw/readings.json](raw/readings.json) records the main computed readings and part of the declared palette. The other declared custom properties (the secondary bird colours, the hover fills, the mono stack, three weights, the tracking, easing and duration tokens, the app radius and shadow) and some computed sizes (display, price and legal type, footer and testimonial radii, the sign-in form width, the resume-checker CTA height) are not in it. Those 37 tokens are labelled Reconstruction, entered by hand at capture time; the list is `HAND` in [tools/build_tokens.py](tools/build_tokens.py).
 - **Marketing yellow and app yellow are two readings.** `#f5b501` is the marketing pill. The sign-in button computed `rgb(244, 179, 1)`, which is the app token `--color-accent-500` (`#f4b301`).
 - **App brand `#005249` and marketing teal `#005149` differ by one channel.** Both were read. Do not collapse them.
 - **Hover colours are declarations.** Header links declare `hover:text-[#005149]`. Sign up declares `hover:brightness-95`. Those were not a live pointer hover, because the preview snapshot could not drive a visible hover frame.

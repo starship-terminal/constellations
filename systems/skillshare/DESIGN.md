@@ -10,12 +10,12 @@ colors:
   surface: "#fafafa"
   on-surface: "#0b1215"
   on-surface-variant: "#394649"
-  outline: "#dcdce1"
+  outline: "#dcdee1"
   color-page: "#ffffff"
   color-ink: "#000000"
   color-ink-soft: "#0b1215"
   color-muted: "#394649"
-  color-border: "#dcdce1"
+  color-border: "#dcdee1"
   color-border-strong: "#394649"
   color-accent: "#55da9b"
   color-accent-hover: "#50cf93"
@@ -203,7 +203,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 - **surface (#fafafa):** `light.color.surface-muted`
 - **on-surface (#0b1215):** `light.color.ink-soft`
 - **on-surface-variant (#394649):** `light.color.muted`
-- **outline (#dcdce1):** `light.color.border`
+- **outline (#dcdee1):** `light.color.border`
 
 ## Typography
 

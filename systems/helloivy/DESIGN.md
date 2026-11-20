@@ -164,6 +164,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **`--vc-*` and `--fc-*` variables**: v-calendar and FullCalendar vendor internals from the app bundle — captured in `raw/css-vars.json` but kept out of tokens as widget internals, not product roles.
 - **Reduced motion**: the probe's sampled movers kept moving under `prefers-reduced-motion: reduce` — recorded as behaviour `ignores` in `raw/motion.json`, not suppression.
 - **Font rendering**: Unbounded, Inter and General Sans are declared and measured, not shipped; crops show them, the style guide falls back to system fonts.
+- **Body link colour**: `color.link` `#0099ff` is the `--framer-link-text-color` the default rich-text preset declares (five rules); two other presets point it at the ink tokens, and which preset paints a body link was not measured. `font.weight.bold` 700 and `font.size.xs` 12px were entered by hand (no text node paints them); every other size, weight and family is read from [raw/components-computed.json](raw/components-computed.json), and `font.size.xl` is the plan-card title's measured 20px.
 - **Pressed states** are DevTools-forced; a script-applied mousedown style would not show.
 - **Uncaptured marketing routes**: the remaining feature and alternative pages were probed (same chrome and theme layer); three feature pages and the Notion alternative stand in for the set.
 

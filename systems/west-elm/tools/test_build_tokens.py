@@ -12,6 +12,13 @@ class CheckTest(unittest.TestCase):
     def test_committed_tokens_pass(self):
         build_tokens.check(json.loads(TOKENS.read_text()))
 
+    def test_translucent_colours_are_hex(self):
+        self.assertEqual(build_tokens.color("rgba(0, 0, 0, 0.4)"), "#00000066")
+        bad = {"core": {"scrim": {"$type": "color", "$value": "rgba(0, 0, 0, 0.4)",
+                                  "$extensions": {"source": "test"}}}}
+        with self.assertRaises(ValueError):
+            build_tokens.check(bad)
+
     def test_leaf_needs_a_source(self):
         bad = {"core": {"color": {"ink": {"$type": "color", "$value": "#212121"}}}}
         with self.assertRaises(ValueError):

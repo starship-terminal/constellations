@@ -360,7 +360,10 @@ for k in ["header", "pricing-header", "consent-card", "plan-card", "plan-card-pa
     child = "-"
     if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
         p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        child = f"{re.sub(r'\\..*$', '', p0['node'])} {p0['size'].replace('.0x', 'x').replace('.0', '')}"
+        # The child's tag and classes, so a reader can see which element painted the
+        # shape (a CTA, a badge) rather than the card itself.
+        size = p0["size"].replace(".0x", "x").replace(".0", "")
+        child = f"{p0['node']} {size}"
         if p0.get("bg"):
             child += f", {colour(p0['bg'])}"
         if p0.get("radius"):

@@ -18,6 +18,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { chromium, RAW, SNAPS, metaOf, newContext, openSnap } from './signed-in/lib.mjs';
 import { safeUrl } from './safe-url.mjs';
+import { mergeLayout } from './readings.mjs';
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 const LABELS = fs.readdirSync(SNAPS).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).filter((l) => fs.existsSync(path.join(SNAPS, `${l}.html`))).sort();
@@ -82,7 +83,7 @@ function measure() {
 }
 
 const browser = await chromium.launch();
-const res = {};
+const res = {}, failed = [];
 for (const label of LABELS) {
   const meta = metaOf(label);
   const ctx = await newContext(browser, meta);
@@ -92,9 +93,14 @@ for (const label of LABELS) {
     console.log(label, meta.w);
   } catch (e) {
     console.log('failed', label, e.message.split('\n')[0]);
+    failed.push(label);
   }
   await ctx.close();
 }
 await browser.close();
-fs.writeFileSync(path.join(RAW, 'layout.json'), JSON.stringify(res, null, 1) + '\n');
-console.log('raw/layout.json', Object.keys(res).length, 'copies');
+// A copy that failed to open keeps its earlier reading; nothing is dropped unless every copy opened.
+const file = path.join(RAW, 'layout.json');
+const earlier = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
+const merged = mergeLayout(earlier, res, { failed, labels: LABELS });
+fs.writeFileSync(file, JSON.stringify(merged, null, 1) + '\n');
+console.log('raw/layout.json', Object.keys(res).length, 'copies read,', Object.keys(merged).length - Object.keys(res).length, 'kept from the last run');

@@ -108,13 +108,27 @@ def lit(value, ty, src, desc):
 # ------------------------------------------------------------------- fonts
 
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
-fam["sans"] = lit('booton, "Booton VF", sans-serif', "fontFamily",
-    "computed fontFamily of nav-link, signup-cta, pr-card, st-prose, site-footer (raw/components-computed.json); the auth card reads 'Booton VF'",
-    "Booton — UI, body copy, nav, buttons and every form control.")
-fam["label"] = lit('brett, "brett Fallback", sans-serif', "fontFamily",
-    "computed fontFamily of hero-eyebrow, pr-eyebrow (raw/components-computed.json)",
+
+
+def family(comps):
+    """The computed fontFamily stack, verbatim; every cited component must paint the same one."""
+    stacks = {st(c, "default")["fontFamily"] for c in comps}
+    if len(stacks) != 1:
+        raise SystemExit(f"fontFamily differs across {comps}: {sorted(stacks)}")
+    return stacks.pop()
+
+
+fam["sans"] = lit(family(["nav-link", "signup-cta", "flow-tab", "pr-toggle"]), "fontFamily",
+    "computed fontFamily of nav-link, signup-cta, flow-tab, pr-toggle (raw/components-computed.json); "
+    "pr-card, pr-cta, site-footer and st-prose compute the same stack with Tailwind's fallback list repeated after it",
+    "Booton — UI, body copy, nav, buttons and every form control on descript.com.")
+fam["auth"] = lit(family(["au-email", "au-email-btn", "au-google", "au-password", "au-sso"]), "fontFamily",
+    "computed fontFamily of au-email, au-email-btn, au-google, au-password, au-sso (raw/components-computed.json)",
+    "Booton VF — the auth card on web.descript.com names the variable face instead of booton.")
+fam["label"] = lit(family(["hero-eyebrow", "pr-eyebrow", "m-eyebrow"]), "fontFamily",
+    "computed fontFamily of hero-eyebrow, pr-eyebrow, m-eyebrow (raw/components-computed.json)",
     "Brett — the small uppercase eyebrow labels.")
-fam["display"] = lit('gamuthDisplay, "gamuthDisplay Fallback", Georgia, serif', "fontFamily",
+fam["display"] = lit(family(["hero-display", "section-h2", "pr-display", "vid-h1", "tpl-h1"]), "fontFamily",
     "computed fontFamily of hero-display, section-h2, pr-display, vid-h1, tpl-h1 (raw/components-computed.json)",
     "Gamuth Display — every display heading, hero 88px to section 56px.")
 

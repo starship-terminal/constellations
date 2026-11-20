@@ -15,10 +15,13 @@
 // Nothing is sent or signed into: auth fields are never filled and no
 // submit button is pressed. Promo overlays are hidden, never answered.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots stay outside the repo (the kit's default); quantize.py writes screenshots/.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'district', 'raw-shots') + '/';
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -107,13 +110,18 @@ const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).cat
 
 // The DDS theme layer resolves html[data-theme=light|dark]: dark is real
 // paint flipped through the attribute, not a guess.
+// The check reads what painted (the body background's luminance), not the
+// attribute this function just set, so a failed switch never writes a light
+// page as a *-dark-* shot.
 const setTheme = async (p, t) => {
-  const ok = await p.evaluate((t) => {
-    document.documentElement.setAttribute('data-theme', t);
-    return document.documentElement.getAttribute('data-theme') === t;
-  }, t);
-  if (!ok) throw new Error('setTheme ' + t + ' did not apply');
+  await p.evaluate((t) => document.documentElement.setAttribute('data-theme', t), t);
   await wait(p, 1200);
+  const dark = await p.evaluate(() => {
+    const [r, g, b, a = 1] = (getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g) || []).map(Number);
+    // opaque only: a translucent body shows the page behind it
+    return a === 1 && (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 < 0.25;
+  });
+  if (dark !== (t === 'dark')) throw new Error('setTheme ' + t + ' did not paint: body background is ' + (dark ? 'dark' : 'light'));
 };
 
 const ARTIST = '/events/samay-raina/artist';

@@ -27,8 +27,8 @@ colors:
   borderStrong: "rgba(206, 206, 206, 0.4)"
   focus: "#1f55f1"
   accent: "#1f55f1"
-  accentHover: "rgba(31, 85, 241, 0.08)"
-  accentPressed: "rgba(31, 85, 241, 0.16)"
+  accentHoverGlow: "rgba(31, 85, 241, 0.08)"
+  accentPressedGlow: "rgba(31, 85, 241, 0.16)"
   success: "#338500"
   warning: "#ef9e11"
   danger: "#e12429"
@@ -163,6 +163,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Phone full pages were dropped.** The screenshot height and the CSS page height disagreed by more than one pixel. Viewport phone shots remain.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read exact colours from tokens or the raw JSON.
 - **Medium is 480, not 500.** `--font-weight-medium` resolves to 480.
+- **There is no accent hover fill.** `accentHoverGlow` and `accentPressedGlow` are `--glow-accent-hover` and `--glow-accent-pressed`: tints Lovable paints over a fill, not fills (8% and 16% in light, 16% and 24% in dark). Before the 2026-11 audit they were named `accentHover` and `accentPressed`.
+- **Keyboard focus failed on two controls.** `prompt-build` and `icon-button` record `focus failed`: keyboard focus never landed, so their focus-visible readings are the element at rest. [components.md](components.md) leaves them out and lists them as not captured. They need a recapture (the pk-k recapture tracking issue, 2026-11 audit).
+- **Automation was masked.** The committed readings and screenshots were taken with `navigator.webdriver` hidden by `tools/capture/public/lib.mjs`. The mask has been removed from the script (2026-11 audit); a bot check is now a boundary, not something to get past.
 
 ### Do and don't (from README.md)
 

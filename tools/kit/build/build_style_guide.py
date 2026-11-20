@@ -60,11 +60,17 @@ SETS = [s for s in ("core", "light", "dark") if s in T]
 THEMES = [s for s in SETS if s != "core"]
 
 
+# Only "</style" ends a <style> element early (an svg data URI's "<svg" or "</svg>" does not), so that
+# one sequence is written "<\/style": a CSS escape that reads back as the same "/" in a string or url().
+END_STYLE = re.compile(r"</(style)", re.I)
+ESCAPED = r"<\\/\1"
+
+
 def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
+    return "\n".join(f"  {cssname(n)}: {END_STYLE.sub(ESCAPED, css_val(n, t))};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
 
 
 # a core name and a themed name must not land on the same custom property

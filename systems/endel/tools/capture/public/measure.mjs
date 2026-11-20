@@ -104,7 +104,11 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, view, run, url: URLS[current] }, meta);
+  // The page's own address at measure time (query and hash dropped): the
+  // sign-in components are read on /login after an in-app navigation, not on
+  // the app-login entry URL.
+  const here = (page && page.url() && page.url() !== 'about:blank') ? page.url().split(/[?#]/)[0] : URLS[current];
+  Object.assign(c, { page: current, view, run, url: here }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -290,7 +294,8 @@ async function home() {
   const flyout = await openMore();
   if (flyout) {
     const fly = q('header a').filter({ hasText: /^Manifesto$/ }).first();
-    await S('menu-flyout', fly.count() ? fly : q('header').first(), ['default'], { group: g, title: 'More flyout', desc: 'The expanded nav groups inside the header after More is pressed (Company, Technology, the store links). Read while held open.', sel: 'header a:has-text("Manifesto") while the flyout is open' }, { noScroll: true });
+    // count() is a Promise (always truthy): await it, or the fallback never runs.
+    await S('menu-flyout', (await fly.count()) ? fly : q('header').first(), ['default'], { group: g, title: 'More flyout', desc: 'The expanded nav groups inside the header after More is pressed (Company, Technology, the store links). Read while held open.', sel: 'header a:has-text("Manifesto") while the flyout is open' }, { noScroll: true });
     await S('nav-more-open', q(mod('MenuButton')).first(), ['opened'], { group: g, title: 'More button, open', desc: 'The trigger after its own toggle; the open flyout shows in the crop.', sel: 'MenuButton-module button, open' }, { noScroll: true, cropLoc: q('header'), noToggle: true });
     await page.keyboard.press('Escape'); await page.waitForTimeout(600);
   }
@@ -474,8 +479,12 @@ try {
       continue;
     }
     if (!touched.has(key)) continue;
+    // States a spec no longer lists are pruned on every run once the
+    // component's page visit finished (the old `&& pages.length` pruned them
+    // only on subset runs, so full runs kept stale states forever).
     const want = listed.get(key);
-    if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st) && pages.length) delete c.states[st];
+    const cview = c.view || (key.startsWith('m-') ? 'mobile' : 'desktop');
+    if (want && opened.has(c.page + '|' + cview)) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }
   save();
   await browser.close().catch(() => {});

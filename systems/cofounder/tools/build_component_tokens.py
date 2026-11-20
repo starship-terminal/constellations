@@ -31,7 +31,8 @@ import json, pathlib, re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
-RL = V["resolved"].get("dark") or V["resolved"].get("light") or {}
+# cofounder paints light only (catalog theme list): resolve against the light pass, never a dark probe.
+RL = V["resolved"]["light"]
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
 
@@ -335,10 +336,17 @@ for path, comp, state, prop, desc in [
 # The glass nav/hero buttons paint translucent white gradients (the
 # glass-pill layer) — kept as a measured role because the blur-tint is the
 # surface's signature chrome.
+# Read from the nav pill's painted gradient (the header's paint list): its top stop. raw/css-vars.json holds
+# no .glass-pill rule, so the token cites the reading, not a declaration.
+_glass = next((p_["bgImage"] for p_ in (C.get("header", {}).get("states", {}).get("default", {}).get("paint") or [])
+               if str(p_.get("bgImage", "")).startswith("linear-gradient(rgba(255, 255, 255")), None)
+if not _glass:
+    raise SystemExit("build_component_tokens: no glass gradient in the header's paint list")
+_top = re.match(r"linear-gradient\((rgba\([^)]*\))", _glass).group(1)
 SPEC["light"]["surface"]["glass"] = {
-    "type": "color", "value": "rgba(255, 255, 255, 0.16)",
-    "source": "declared .glass-pill background linear-gradient(#ffffff29 0%, #ffffff14 100%) (raw/css-vars.json) — midpoint of the white-glass tint",
-    "description": "The white-glass tint on the nav pill and hero prompt button (backdrop-blur 16px over it)."}
+    "type": "color", "value": norm_color(_top),
+    "source": f"computed paint bgImage of header default (raw/components-computed.json): {_glass}, its top stop",
+    "description": "The white-glass tint on the nav pill and hero prompt button (backdrop-blur 16px over it); the gradient's top stop."}
 
 # -------------------------------------------------- measured extras (no var)
 
@@ -585,7 +593,7 @@ for key, cname, desc in [
 def count(d):
     if not isinstance(d, dict):
         return 1
-    if "var" in d or "value" in d or "" in d:
+    if "var" in d or "value" in d:
         return 1
     return sum(count(v) for v in d.values())
 

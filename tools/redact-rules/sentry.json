@@ -3,9 +3,17 @@
   "ocr": {
     "email_allow": [
       "@example\\.com$",
-      "^lea(?:rn|m)@sentry\\.io$",
+      "^leam@sentry\\.io$",
+      "^learn@sentry\\.io$",
       "^person@sentry\\.io$",
-      "^c?chenwenlongoffic[il]al@gma[il]l\\.com$"
+      "^chenwenlongofficial@gmail\\.com$",
+      "^chenwenlongofficlal@gmail\\.com$",
+      "^cchenwenlongofficial@gmail\\.com$",
+      "^cchenwenlongofficlal@gmail\\.com$",
+      "^cchenwenlongofficial@gmall\\.com$",
+      "^cchenwenlongofficlal@gmall\\.com$",
+      "^chenwenlongofficial@gmall\\.com$",
+      "^chenwenlongofficlal@gmall\\.com$"
     ]
   },
   "families": [

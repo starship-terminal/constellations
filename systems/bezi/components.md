@@ -181,9 +181,9 @@ The action inside the Free trial band. Measured, never followed. Read as `plan-c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 126.7 x 48; padding 12px 20px; background rgba(0, 0, 0, 0.84) `measured.plancta-fill`; text Space Mono 12/14.4 400, #ffffff `color.ink.0` |
+| default (same: hover, pressed) | size 126.7 x 48; padding 12px 20px; background rgba(0, 0, 0, 0.84) `measured.plancta-fill`; text Space Mono 12/14.4 400, #ffffff `color.ink.0` |
 
-![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
+![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
 #### Plan card
 Read as `plan-card` on the pricing page.

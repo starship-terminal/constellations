@@ -17,7 +17,7 @@ Themes: light, painted. Dark tokens are in the stylesheet and were not painted. 
 | [icons/](icons/INDEX.tsv) | The header wordmark SVG |
 | [screenshots/](screenshots/) | Full page at 1440 and 390, and the 1440 first fold |
 | [raw/](raw/css-vars.json) | Custom properties and computed styles |
-| [tools/](tools/build_tokens.py) | The kit, plus the builders that write the tokens and the style guide |
+| [tools/](tools/build_tokens.py) | The builders that write the tokens and the style guide, their test, and the generic capture helpers copied from the kit |
 
 ## Brief
 

@@ -3,9 +3,9 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@fibery\\.(com|io)$",
-   "@fiber\\w*\\.\\w+$",
-   "example\\.com$"
+   "@fibery\\.com$",
+   "@fibery\\.io$",
+   "@example\\.com$"
   ]
  },
  "families": []

@@ -59,7 +59,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 15.69:1 pass | 15.69:1 pass | 10.40:1 pass | 10.40:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus` #005fcc.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus` #1e2330.
 
 <!-- brief:end -->
 
@@ -89,7 +89,9 @@ Nothing was sent, claimed, purchased, or signed into. Plan buttons, Continue, Go
 - **One painted theme.** Every captured route paints light. The dark probe resolved the same variables, so the `dark` set is empty.
 - **`light.page` is the claim field's white fill.** The body and the nav root paint transparent. The home hero band is chartreuse `#d2e823` (`light.hero`, resolved `--color-chartreuse`). Pricing sits on a light grey. The official profile sits on chartreuse.
 - **`light.band` is the footer**, dahlia `#502274`, not the page ground.
-- **`light.focus` is the browser ring** on the Pricing nav link, `rgb(0, 95, 204)`, not a designed focus token.
+- **`light.focus` is the outer ring of the Log in link's focus** (`#1e2330`, the 4px box-shadow outside a 2px white gap; the Sign up pill, hero and claim buttons draw the same ring). It used to be `#005fcc`, the Pricing nav link's `outlineColor`, which nothing paints: that link's outline is none/0px and it shows focus as a `#eff0ec` fill. Footer links, plan buttons and the profile controls show the browser's own `auto` ring.
+- **`login-continue` focus-visible was not captured.** Keyboard focus never landed (`via: focus failed` in raw); components.md and raw/measurements.md leave it out, and `components/crops/login-continue-focus-visible.png` is the element at rest.
+- **Captured past an automation mask.** Every committed reading and screenshot was taken with `navigator.webdriver` masked. The mask was removed from the capture scripts (bot checks are now recorded as a boundary, not bypassed); the readings were kept and were not retaken.
 - **`plan-card` is the Pro heading**, 65 x 36, not a plan card. The plan buttons are the 336 x 48 pills.
 - **Pressed states shrink some pills** (hero CTA and claim submit go from 300 x 60 to 291 x 58.2) because CDP forced `:active`. Nothing was clicked.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read exact colours from tokens or the raw JSON.

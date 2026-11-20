@@ -363,18 +363,18 @@ The selected "All" category pill; measured, never followed. Read as `pill` on th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 47 x 36; padding 5px 12px 6px 12px; border 2px solid #262626 `color.grey.950`; radius 20px; background transparent; text UntitledSans 16/21 400, #262626 `color.grey.950`; transition color 0.2s ease |
+| default (same: hover, pressed) | size 47 x 36; padding 5px 12px 6px 12px; border 2px solid #262626 `color.grey.950`; radius 20px; background transparent; text UntitledSans 16/21 400, #262626 `color.grey.950`; transition color 0.2s ease |
 
-![Category pill (active) default](components/crops/pill-default.png) ![Category pill (active) hover](components/crops/pill-hover.png) ![Category pill (active) focus-visible](components/crops/pill-focus-visible.png) ![Category pill (active) pressed](components/crops/pill-pressed.png)
+![Category pill (active) default](components/crops/pill-default.png) ![Category pill (active) hover](components/crops/pill-hover.png) ![Category pill (active) pressed](components/crops/pill-pressed.png)
 
 #### Category pill
 An unselected category pill; measured, never followed. Read as `pill-idle` on the Discover page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 106 x 36; padding 6px 13px 7px 13px; border 1px solid #efefef `color.grey.100`; radius 20px; background transparent; text UntitledSans 16/21 400, #262626 `color.grey.950`; transition color 0.2s ease |
+| default (same: hover, pressed) | size 106 x 36; padding 6px 13px 7px 13px; border 1px solid #efefef `color.grey.100`; radius 20px; background transparent; text UntitledSans 16/21 400, #262626 `color.grey.950`; transition color 0.2s ease |
 
-![Category pill default](components/crops/pill-idle-default.png) ![Category pill hover](components/crops/pill-idle-hover.png) ![Category pill focus-visible](components/crops/pill-idle-focus-visible.png) ![Category pill pressed](components/crops/pill-idle-pressed.png)
+![Category pill default](components/crops/pill-idle-default.png) ![Category pill hover](components/crops/pill-idle-hover.png) ![Category pill pressed](components/crops/pill-idle-pressed.png)
 
 #### Post card
 A feed post card: gallery tile on top, author row and title below. Read as `post-card` on the Discover page.

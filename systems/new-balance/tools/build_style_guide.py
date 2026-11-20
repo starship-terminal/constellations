@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Light only: the captured site had no dark theme."""
+import html as htmllib
 import json
 from pathlib import Path
 
@@ -62,13 +63,18 @@ roles = "\n".join(
     ]
 )
 
+def attr(value):
+    """A token value inside a double-quoted attribute or text: a quoted font name must not end the attribute."""
+    return htmllib.escape(str(value), quote=True)
+
+
 type_rows = []
 for name, tok in flat(T["core"]["typography"]):
     v = resolve(f"core.typography.{name}")
     type_rows.append(
-        f'<div class="ty" style="font-family:{v["fontFamily"]};font-weight:{v["fontWeight"]};'
-        f'font-size:{v["fontSize"]};line-height:{v["lineHeight"]}">'
-        f'<code>{name}</code><span>{v["fontSize"]} / {v["lineHeight"]} · {v["fontWeight"]}</span>'
+        f'<div class="ty" style="font-family:{attr(v["fontFamily"])};font-weight:{attr(v["fontWeight"])};'
+        f'font-size:{attr(v["fontSize"])};line-height:{attr(v["lineHeight"])}">'
+        f'<code>{attr(name)}</code><span>{attr(v["fontSize"])} / {attr(v["lineHeight"])} · {attr(v["fontWeight"])}</span>'
         f'<p>New Balance</p></div>'
     )
 

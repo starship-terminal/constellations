@@ -22,7 +22,7 @@ colors:
   accent: "#608bd8"
   accentHover: "#3e6ec1"
   border-default: "#ced2d9"
-  border-subtle: "#3b4c6a"
+  border-subtle: "#3b4c6a26"
   status-magenta: "#ff6b8b"
   status-red: "#ff7752"
   status-green: "#31c48f"

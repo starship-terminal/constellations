@@ -134,7 +134,6 @@ for (const { k, mob } of runs) {
     viewport: { width: vw, height: vh }, deviceScaleFactor: dpr,
     userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US',
   });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   const p = await ctx.newPage();
   log(name, spec.url);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);

@@ -14,7 +14,7 @@ Ballpark is worth a capture because it is a current reference for a clean, edito
 | [patterns.md](patterns.md) | How the components combine: the fixed shell, the CTA vocabulary, the hero, pricing, forms, footer |
 | [components/crops/](components/crops) | 109 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 26 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-solutions-menu`/`-menu-open` the opened states |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the Framer bundle, binned token/app/framer, resolved in a probe), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) (the full-colour captures with `.capture.json` sidecars) |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the Framer bundle, binned token/app/framer, resolved in a probe), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
 ## Brief
@@ -106,6 +106,7 @@ Nothing was sent, downloaded, signed into or trialled. The only presses were loc
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** Every captured route paints light; the bundle declares no dark variant, so no dark set is emitted.
 - **Framer uuid token names.** `--token-<uuid>` names are unstable build artefacts; tokens.json emits them under readable Tailwind/brand names while each leaf keeps the real variable in `$extensions.source`.
 - **Anchor `color` reads `#0000ee`.** Framer paints link/button text on inner spans; the anchor's own computed colour is the UA default. `light.accentText`/`link` read the text child (`textStyle` in the raw file), never the anchor.

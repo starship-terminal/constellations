@@ -20,9 +20,11 @@ data-color-scheme="light", so only light ever paints, but both sets are
 captured. The --amplify-* names are the DLS component aliases, declared on the
 atomic classes, chained to the --palette-* names with var().
 
-A token is an alias ({palette.rausch.600}) when the name's resolved value
-equals a core token's; the dark leaf keeps the literal when its resolved value
-differs. A value DTCG cannot carry (a linear() spring, a gradient inside a
+A token is an alias ({palette.rausch.600}) only when its declaration chain
+names that core variable (var(--palette-rausch600)) and the resolved values
+agree; a name declared as a literal keeps the literal even when the hex happens
+to equal a ramp step, and the dark leaf keeps the literal when its resolved
+value differs. A value DTCG cannot carry (a linear() spring, a gradient inside a
 colour name) is kept raw under type "other". The builder refuses an alias that
 points at nothing and a dimension that is not one px or rem length.
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never
@@ -259,13 +261,15 @@ def leaf(path, spec, theme):
         src = "css-var " + " -> ".join(f"{n} ({s})" for n, s in reversed(chain))
         if spec.get("source"):
             src += "; " + spec["source"]
-        # an alias when the resolved value equals a core token's: the semantic
-        # --palette-bg-* names point at the same hex the ramps hold, so a light
-        # leaf reads {palette.always.white}; in dark the resolved value differs
-        # (the ramps invert), and the dark leaf keeps its literal value
+        # an alias only when the var() chain names a core variable whose core
+        # value is the same: a name the CSS declares as a literal stays a
+        # literal, even when its hex equals some ramp step (an alias by value
+        # alone would recolour an unrelated role when that ramp changes); in
+        # dark the resolved value differs (the ramps invert), and the dark leaf
+        # keeps its literal value
         if ty == "color":
             nv = norm_color(val)
-            tok = ALIAS.get(chain[0][0]) if nv == ALIAS_VAL.get(ALIAS.get(chain[0][0])) else VAL_ALIAS.get(nv)
+            tok = next((ALIAS[n] for n, _ in chain if n in ALIAS and ALIAS_VAL.get(ALIAS[n]) == nv), None)
             val = "{" + tok + "}" if tok else nv
         elif ty == "dimension":
             val = dim(val)
@@ -322,11 +326,9 @@ def collect(node, path=""):
             collect(v, p)
 collect(SPEC["core"])
 
-# the resolved $value of each core token, and the path-by-value map, for
-# alias-vs-literal checks; empty while core itself builds (core leaves never
-# alias out), populated after
+# the resolved $value of each core token, for alias-vs-literal checks; empty
+# while core itself builds (core leaves never alias out), populated after
 ALIAS_VAL = {}
-VAL_ALIAS = {}
 core = build(SPEC["core"], "light")
 
 def _collect_vals(tree, prefix=""):
@@ -336,12 +338,6 @@ def _collect_vals(tree, prefix=""):
         elif isinstance(v, dict):
             _collect_vals(v, prefix + k + ".")
 _collect_vals(core)
-
-# core token path by resolved value, first spec order wins: lets a light leaf
-# alias to the ramp token that holds the same hex (bg.primary -> palette.always.white)
-for _p, _v in ALIAS_VAL.items():
-    if isinstance(_v, str) and not _v.startswith("{"):
-        VAL_ALIAS.setdefault(_v, _p)
 
 light = build(SPEC["light"], "light")
 dark = build(SPEC["dark"], "dark")

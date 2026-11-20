@@ -13,9 +13,16 @@ class CheckTest(unittest.TestCase):
         build_tokens.check(json.loads(TOKENS.read_text()))
 
     def test_rebuild_matches_committed_file(self):
-        before = TOKENS.read_text()
-        build_tokens.build()
-        self.assertEqual(TOKENS.read_text(), before)
+        # Built in memory; the committed file is never rewritten by the test.
+        self.assertEqual(build_tokens.render(build_tokens.build()), TOKENS.read_text())
+
+    def test_no_value_claims_a_reading_raw_does_not_hold(self):
+        # raw/readings.json holds no style values, so nothing may be labelled Measured.
+        doc = build_tokens.build()
+        for name in ("core", "dark"):
+            for path, token in build_tokens.walk(doc[name]):
+                with self.subTest(token=f"{name}.{'.'.join(path)}"):
+                    self.assertNotEqual(token["$extensions"]["source"]["evidence"], "Measured")
 
     def test_missing_alias_fails(self):
         doc = json.loads(TOKENS.read_text())

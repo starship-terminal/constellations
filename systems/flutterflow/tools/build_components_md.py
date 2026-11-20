@@ -24,6 +24,16 @@ T = json.load(open("tokens.json"))
 # --------------------------------------------------------------------------- colours and tokens
 
 
+
+def focus_not_captured(v):
+    """A state whose reading is not what its name says (decision D4, ported
+    from the kit's builder): a skipped one, or a focus-visible reading taken
+    where keyboard focus never landed (via "focus failed") or where the
+    element took focus but did not match :focus-visible. Its style is the
+    element at rest, so it is left out of every table and tally and listed as
+    "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
 def flat(node, prefix=""):
     for k, v in node.items():
         if k.startswith("$"):
@@ -47,14 +57,58 @@ def norm(r, g, b, a=None):
     return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
 
 
+def unlab(c):
+    """CSS lab() (D50, Bradford-adapted) and oklab()/oklch() -> 'rgb(r, g, b)' or
+    'rgba(r, g, b, a)', so colour() can label it like any other reading. The
+    base kit has this; it was lost in this fork (2026-11 audit, finding 18-16)."""
+    import math
+    gam = lambda v: 12.92 * v if v <= 0.0031308 else 1.055 * v ** (1 / 2.4) - 0.055
+    alpha = lambda a: 1.0 if a is None else (float(a[:-1]) / 100 if a.endswith("%") else float(a))
+
+    def out(lin, a):
+        r, g, b = (max(0, min(255, round(gam(max(0.0, v)) * 255))) for v in lin)
+        al = alpha(a)
+        return f"rgb({r}, {g}, {b})" if al == 1 else f"rgba({r}, {g}, {b}, {al:g})"
+
+    m = re.fullmatch(r"lab\(\s*([\d.]+)%?\s+(-?[\d.]+)\s+(-?[\d.]+)\s*(?:/\s*([\d.]+%?))?\s*\)", c.strip())
+    if m:
+        L, A, B, a = m.groups()
+        fy = (float(L) + 16) / 116
+        fx, fz = fy + float(A) / 500, fy - float(B) / 200
+        d = 6 / 29
+        f = lambda t: t ** 3 if t > d else 3 * d ** 2 * (t - 4 / 29)
+        x, y, z = f(fx) * 0.96422, f(fy) * 1.0, f(fz) * 0.82521
+        return out((3.1338561 * x - 1.6168667 * y - 0.4906146 * z,
+                    -0.9787684 * x + 1.9161415 * y + 0.0334540 * z,
+                    0.0719453 * x - 0.2289914 * y + 1.4052427 * z), a)
+    m = re.fullmatch(r"okl(ch|ab)\(\s*([\d.]+%?)\s+(none|-?[\d.]+%?)\s+(none|-?[\d.]+(?:deg)?)\s*(?:/\s*([\d.]+%?))?\s*\)", c.strip())
+    if m:
+        kind, L, x, y, a = m.groups()
+        L = float(L[:-1]) / 100 if L.endswith("%") else float(L)
+        num_ = lambda v, scale: 0.0 if v == "none" else (float(v[:-1]) / 100 * scale if v.endswith("%") else float(v.replace("deg", "")))
+        if kind == "ch":
+            C_, h = num_(x, 0.4), num_(y, 1)
+            A, B = C_ * math.cos(math.radians(h)), C_ * math.sin(math.radians(h))
+        else:
+            A, B = num_(x, 0.4), num_(y, 0.4)
+        l_ = (L + 0.3963377774 * A + 0.2158037573 * B) ** 3
+        m_ = (L - 0.1055613458 * A - 0.0638541728 * B) ** 3
+        s_ = (L - 0.0894841775 * A - 1.2914855480 * B) ** 3
+        return out((4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_,
+                    -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_,
+                    -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_), a)
+    return c
+
+
 def colour(c, tokens=True):
-    """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)'."""
+    """rgb()/rgba()/color(srgb)/lab()/oklab()/oklch() -> '#hex `token`' or 'rgba(...)'."""
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
         tok = BY_COLOR.get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
+    c = re.sub(r"(?:oklab|oklch|lab)\([^)]*\)", lambda m: unlab(m.group(0)), c)
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
     return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
@@ -150,7 +204,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if "style" in c["states"][s] and not focus_not_captured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -320,9 +374,13 @@ W()
 W("Values that apply across entries, from the measurement files.")
 W()
 foc = []
+no_focus = []  # focus-visible readings where focus never landed (D4)
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
+        continue
+    if focus_not_captured(st):
+        no_focus.append(k)
         continue
     s = st["style"]
     base = (c["states"].get("default") or {}).get("style") or {}
@@ -341,6 +399,8 @@ without = [f"`{k}`" for k, r in foc if not r]
 painted_txt = (f" {len(painted)} paint their focus instead of drawing an outline — a 4px ink-6% box-shadow "
                f"ring over a darker border on {', '.join(painted)}.") if painted else ""
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}.{painted_txt} The other {len(without)} show a keyboard user no change: {', '.join(without)}. The ring is `--ff-focus-width` 2px solid `--ff-color-focus` at `--ff-focus-offset` 2px — near-black on the ff-* layer's controls, the accent blue `#0a68e0` on the home skin's buttons and the composer's send.")
+if no_focus:
+    W(f"Focus could not be captured on {len(no_focus)}: keyboard focus never reached them (or they took focus without matching :focus-visible), so their focus look is unknown, not absent: {', '.join(f'`{k}`' for k in no_focus)}.")
 W()
 W("**Pressed.** FlutterFlow's buttons shrink when pressed instead of changing colour: the pill CTAs scale to about 0.94-0.97 (`transform: scale()` at a forced :active). The segmented options and quiet buttons do the same; colour changes on press are minimal.")
 W()

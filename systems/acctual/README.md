@@ -97,6 +97,7 @@ Screenshots were lazily scrolled to settle lazy content, then stored quantised t
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients and photography band slightly; read exact colours from tokens.json or the raw files.
 - **Focus rings are the browser's.** Where the site declares no `:focus-visible` style, the measured 1px `#005fcc` auto ring is headless Chromium's default, not a product choice.
 - **`pressed` is forced `:active`,** not a real mousedown; Framer's sheet paints links `#ff0000` under it.
@@ -169,7 +170,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs home pricing mobile
 ```
 
-`public.mjs` re-takes the screenshot set into `raw/full` (full-page shots tile at 8 chunks max); `python3 tools/capture/quantize.py raw/full` stitches and stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the overlay sweep, the offscreen-element filtering and the `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `raw/full` (full-page shots tile at 8 chunks max); `python3 tools/capture/quantize.py raw/full` stitches and stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the overlay sweep and the offscreen-element filtering (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 

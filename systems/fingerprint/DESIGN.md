@@ -35,7 +35,6 @@ colors:
   form-fieldInk: "#181916"
   form-placeholder: "#a0a09d"
   surface-planCardBg: "#f8f8f6"
-  surface-pillBg: "rgba(0, 0, 0, 0)"
   background-page: "#ffffff"
 rounded:
   default: "8px"
@@ -158,6 +157,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The forms.** Contact-sales, footer/blog newsletter and the demo's fake checkout were typed into then cleared — validation, error, loading and success states are unverified because nothing was submitted.
 - **Detail pages.** The blog, case-studies, resources, integrations, bot-directory, careers and docs lists were captured as indexes or exemplars; individual posts, jobs, bots, integrations and most docs articles were not opened.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
+- **Unpainted fills are not tokens.** The docs code block and the hero pill compute a transparent `backgroundColor`, so `core.component.docs.code-bg` and `light.surface.pillBg` were dropped in the 2026-11 audit.
 
 ### Do and don't (from README.md)
 

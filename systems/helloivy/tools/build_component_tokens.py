@@ -86,6 +86,36 @@ def lit_theme(light_val, dark_val, ty, light_src, dark_src, path, desc=None):
     emit_at("dark", path, d)
 
 
+HAND = "Reconstruction — entered by hand at capture time, no raw reading behind it"
+C = json.loads((RAW / "components-computed.json").read_text())["components"]
+
+
+def reading(comp, prop, state="default"):
+    """The computed value of prop on comp: the first text node's own reading (textStyle) when
+    the capture recorded one, else the element's. Raises when it is missing, so a recapture that
+    loses the reading fails the build instead of keeping a typed value."""
+    st = C[comp]["states"][state]
+    v = (st.get("textStyle") or {}).get(prop) or (st.get("style") or {}).get(prop)
+    if not v:
+        raise KeyError(f"{comp} {state}: no {prop} reading")
+    return v
+
+
+def measured_lit(comp, prop, ty, path, desc=None, state="default", what=""):
+    v = reading(comp, prop, state)
+    if ty == "fontWeight":
+        v = int(float(v))
+    lit(v, ty, f"computed {prop} of {comp} {state} on {C[comp].get('page')} (raw/components-computed.json){what}",
+        "core", path, desc=desc)
+
+
+def app_theme(var):
+    v = V["appTheme"].get("@" + var)
+    if v is None:
+        raise KeyError(f"{var}: not in raw/css-vars.json appTheme")
+    return v
+
+
 # ------------------------------------------------------------ marketing roles
 # The five Framer design tokens, re-pointed per theme — resolved in the probe
 # carrying the site's own sheets under emulated prefers-color-scheme (the
@@ -105,12 +135,15 @@ MARKETING = [
 for name, path, desc in MARKETING:
     VAR(name, "color", path, desc=desc)
 
-# The rich-text link roles the Framer presets declare — the same declaration
-# in both themes (the skins rules re-point only the five tokens).
-lit("#0099ff", "color", "css-var --framer-link-text-color declared by the rich-text presets (light)", "light", "color.link", desc="in-body link blue (#0099ff) — the same declaration under dark")
-lit("#0099ff", "color", "css-var --framer-link-text-color declared by the rich-text presets (dark)", "dark", "color.link", desc="in-body link blue (#0099ff) — the same declaration under dark")
-lit("#555555", "color", "css-var --framer-link-hover-text-color declared by the rich-text presets (light)", "light", "color.linkHover", desc="link hover grey")
-lit("#555555", "color", "css-var --framer-link-hover-text-color declared by the rich-text presets (dark)", "dark", "color.linkHover", desc="link hover grey")
+# The rich-text link roles the Framer presets declare. raw/css-vars.json holds
+# --framer-link-text-color #0099ff on five preset rules and the ink tokens on two others; which
+# preset paints a body link was never measured, so the sources say so.
+LINK_NOTE = "declared --framer-link-text-color #0099ff on five rich-text preset rules (raw/css-vars.json); two other presets point it at the ink tokens, and which preset paints a body link was not measured"
+lit("#0099ff", "color", LINK_NOTE, "light", "color.link", desc="in-body link blue (#0099ff) on the default rich-text preset")
+lit("#0099ff", "color", LINK_NOTE, "dark", "color.link", desc="in-body link blue (#0099ff) on the default rich-text preset")
+HOVER_NOTE = "declared --framer-link-hover-text-color #555555 on one rich-text preset rule (raw/css-vars.json); another points it at the ink token"
+lit("#555555", "color", HOVER_NOTE, "light", "color.linkHover", desc="link hover grey")
+lit("#555555", "color", HOVER_NOTE, "dark", "color.linkHover", desc="link hover grey")
 
 # ------------------------------------------------------- the app's own layer
 # section.main_section's inline theme on the public share — the semantic
@@ -146,62 +179,47 @@ APP_THEME = [
     ("bookIcon", "#323232", "--book-icon", "--book-icon — icon ink in the book list"),
 ]
 for key, val, var, desc in APP_THEME:
-    lit(val, "color", APP % var, "core", f"app.color.{key}", desc=desc)
-lit("Inter", "fontFamily", APP % "--main-font-family", "core", "app.font.family", desc="the product face — --main-font-family")
+    if app_theme(var) != val:
+        raise ValueError(f"{var}: the table says {val}, raw appTheme paints {app_theme(var)}")
+    lit(app_theme(var), "color", APP % var, "core", f"app.color.{key}", desc=desc)
+lit(app_theme("--main-font-family"), "fontFamily", APP % "--main-font-family", "core", "app.font.family", desc="the product face — --main-font-family")
 for key, val, var, desc in [
     ("sidebarWidth", "242px", "--sidebar-width", "--sidebar-width — the workspace rail"),
     ("headerHeight", "66px", "--header-height", "--header-height — the document header strip"),
     ("mainHeaderHeight", "65px", "--main-header-height", "--main-header-height — the app header strip"),
 ]:
-    lit(val, "dimension", APP % var, "core", f"app.layout.{key}", desc=desc)
+    lit(app_theme(var), "dimension", APP % var, "core", f"app.layout.{key}", desc=desc)
 
 # ------------------------------------------------------------- core scales
 # Type faces — measured on painted elements (the Framer pages declare
 # Unbounded display + Inter body; the hosted docs paint "General Sans"; the
 # app paints Inter).
-lit("Unbounded, \"Unbounded Placeholder\", sans-serif", "fontFamily",
-    "measured hero-heading/section-heading on / (display face)", "core", "font.family.display",
-    desc="Unbounded — the marketing display face; headings only")
-lit("Inter, \"Inter Placeholder\", sans-serif", "fontFamily",
-    "measured nav-link/body text on / (UI face)", "core", "font.family.body",
-    desc="Inter — the marketing UI face; nav, body copy, buttons")
-lit("\"General Sans\", \"General Sans Placeholder\", sans-serif", "fontFamily",
-    "measured docs-nav/docs-link on /docs (the hosted docs platform's face)", "core", "font.family.docs",
-    desc="General Sans — the docs surface's face (a different platform than the marketing site)")
+measured_lit("hero-heading", "fontFamily", "fontFamily", "font.family.display",
+             desc="Unbounded — the marketing display face; headings only")
+measured_lit("nav-link", "fontFamily", "fontFamily", "font.family.body",
+             desc="Inter — the marketing UI face; nav, body copy, buttons")
+measured_lit("docs-link", "fontFamily", "fontFamily", "font.family.docs",
+             desc="General Sans — the docs surface's face (a different platform than the marketing site)")
 
-for key, val, src in [
-    ("regular", 400, "measured hero-copy/theme-control on /, login fields on app"),
-    ("medium", 500, "measured faq-question/post-card text on /pricing, login-continue on app"),
-    ("semibold", 600, "measured nav-link/footer-link/CTA text on /, docs-nav on /docs"),
-    ("bold", 700, "measured plan-card title on /pricing"),
+for key, comp in [("regular", "hero-copy"), ("medium", "faq-question"), ("semibold", "nav-link")]:
+    measured_lit(comp, "fontWeight", "fontWeight", f"font.weight.{key}")
+lit(700, "fontWeight", HAND + " (no captured element paints 700; the plan-card title is 500)", "core", "font.weight.bold")
+
+# The measured type ramp (px, at the painted size of the text node).
+lit("12px", "dimension", HAND + " (the footer and docs wrappers compute 12px, but no text node paints it)", "core", "font.size.xs")
+for key, comp in [
+    ("sm", "login-forgot"), ("smMd", "docs-link"), ("md", "login-input-email"), ("base", "nav-link"),
+    ("lg", "login-continue"), ("xl", "plan-card"), ("title2", "login-card"), ("lead", "hero-copy"),
+    ("displaySm", "m-hero-heading"), ("displayMd", "feature-card"), ("displayLg", "section-heading"),
+    ("displayXl", "hero-heading"),
 ]:
-    lit(val, "fontWeight", src, "core", f"font.weight.{key}")
+    measured_lit(comp, "fontSize", "dimension", f"font.size.{key}")
 
-# The measured type ramp (px, at the painted size).
-for key, val, src in [
-    ("xs", "12px", "measured footer text on /"),
-    ("sm", "13px", "measured login-forgot link on app/login"),
-    ("smMd", "14px", "measured docs-link/theme-control; login-signup on app"),
-    ("md", "15px", "measured login fields/share chrome on app"),
-    ("base", "16px", "measured nav/body/button text on /, share-doc on app"),
-    ("lg", "17px", "measured login-continue on app"),
-    ("xl", "18px", "measured plan-card title on /pricing"),
-    ("title2", "23px", "measured login-card heading on app"),
-    ("lead", "27px", "measured hero-copy on /"),
-    ("displaySm", "32px", "measured m-hero-heading on / at 390px"),
-    ("displayMd", "34px", "measured feature-card title on /features"),
-    ("displayLg", "62px", "measured section-heading on /"),
-    ("displayXl", "82px", "measured hero-heading on /"),
-]:
-    lit(val, "dimension", src, "core", f"font.size.{key}")
-
-lit("10px", "dimension", "measured login-input/login-continue/login-google radius on app", "core", "radius.field", desc="the product's control corner — inputs and buttons")
-lit("9999px", "dimension", "measured nav-cta/hero-cta/plan-cta borderTopLeftRadius on / — a pill", "core", "radius.pill", desc="the marketing pill — every marketing button")
+lit(reading("login-input-email", "borderTopLeftRadius"), "dimension", "computed borderTopLeftRadius of login-input-email default on app/login (raw/components-computed.json); login-continue and login-google match", "core", "radius.field", desc="the product's control corner — inputs and buttons")
+lit(reading("nav-cta", "borderTopLeftRadius"), "dimension", "computed borderTopLeftRadius of nav-cta default on / (raw/components-computed.json); hero-cta matches — a pill", "core", "radius.pill", desc="the marketing pill — every marketing button")
 
 # ------------------------------------------------- measured component tokens
-C_PATH = RAW / "components-computed.json"
-if C_PATH.exists():
-    C = json.loads(C_PATH.read_text()).get("components", {})
+if True:  # components-computed.json is required (read above)
 
     def geom(comp, state, field, path, label):
         st = C.get(comp, {}).get("states", {}).get(state, {})
@@ -259,7 +277,7 @@ if C_PATH.exists():
         # textStyle.color — not color.ink, which would fade on #faf6f0).
         lit_theme("{color.inverseSurface}", "{color.inverseSurface}", "color",
                   "measured nav-cta default text color rgb(255, 255, 255) on / (the inverse surface role)",
-                  f"measured nav-cta dark text color {dk.get('textStyle', {}).get('color') if dk.get('textStyle') else 'rgb(0, 0, 0)'} on / (the inverse surface role — the label stays black)",
+                  f"measured nav-cta dark text color {reading('nav-cta', 'color', 'dark')} on / (the inverse surface role — the label stays black)",
                   "component.button.cta.fg", desc="the marketing pill label colour")
     # No border token: the captured pill paints borderTopWidth 0px /
     # borderTopStyle none — its computed borderTopColor (the unvisited-link
@@ -324,5 +342,6 @@ if C_PATH.exists():
     typ("docs-link", "typography.docsNav", "a docs nav link — General Sans 14/20 600")
     typ("share-doc", "typography.docBody", "the share document body — Inter 16/26")
 
-(RAW / "component-tokens.json").write_text(json.dumps(TREE, indent=1, ensure_ascii=False) + "\n")
-print({k: sum(1 for _ in json.dumps(v).split('"type"')) - 1 for k, v in TREE.items()})
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(json.dumps(TREE, indent=1, ensure_ascii=False) + "\n")
+    print({k: sum(1 for _ in json.dumps(v).split('"type"')) - 1 for k, v in TREE.items()})

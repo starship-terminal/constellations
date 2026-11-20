@@ -100,6 +100,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One theme only.** A `dark` probe resolves to the same `:root` values — nothing paints dark. `.color-inverse` and `.color-accent-*` are section schemes that reuse the same black/white pair, not a dark mode. `tokens.json` ships no dark set.
 - **The palette is channel triplets.** `--color-base-text` and friends declare `"0, 0, 0"`-style rgb() channels composed as `rgb(var(--x))` / `rgba(var(--x), α)`. `tokens.json` records the composed colour with the var named as its source.
 - **Roles are verified, not declared.** Every `light` role pairs a var (or a measured colour) with the component that was measured wearing it; the theme declares only scheme colours, no semantic roles. The palette carries exactly two hues: the `#faf6b5` predictive-search highlight (`--PredictiveSearchHover`, `badge.promo`) and the `#f4ff7a` action yellow a press paints on the buy button's `::after` and the home CTA's underline (`core.measured.action-pressed`).

@@ -78,7 +78,7 @@ typography:
     fontSize: "14px"
     fontWeight: 500
     lineHeight: 1.3
-    letterSpacing: "0.05em"
+    letterSpacing: "0.7px"
   label:
     fontFamily: "ABC Oracle"
     fontSize: "16px"

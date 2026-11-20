@@ -119,11 +119,11 @@ tokens = {
         },
         "font": {
             "family": {
-                "display": {"$value": ORBITRON, "$extensions": {"source": LOGIN + " --s-font-display. Home h1 computed Orbitron."}},
-                "body": {"$value": INTER, "$extensions": {"source": LOGIN + " --s-font-body. Home body copy computed Inter."}},
-                "mono": {"$value": PRAGMATA, "$extensions": {"source": HOME + " GET STARTED computed PragmataPro VF, falling back to ui-monospace."}},
-                "code": {"$value": JETBRAINS, "$extensions": {"source": LOGIN + " --s-font-mono. SHOW computed JetBrains Mono."}},
-                "docs": {"$value": TOMORROW, "$extensions": {"source": DOCS + " h1 computed Tomorrow Placeholder. The loaded face was a placeholder, so the family is recorded as Tomorrow."}},
+                "display": {"$type": "fontFamily", "$value": ORBITRON, "$extensions": {"source": LOGIN + " --s-font-display. Home h1 computed Orbitron."}},
+                "body": {"$type": "fontFamily", "$value": INTER, "$extensions": {"source": LOGIN + " --s-font-body. Home body copy computed Inter."}},
+                "mono": {"$type": "fontFamily", "$value": PRAGMATA, "$extensions": {"source": HOME + " GET STARTED computed PragmataPro VF, falling back to ui-monospace."}},
+                "code": {"$type": "fontFamily", "$value": JETBRAINS, "$extensions": {"source": LOGIN + " --s-font-mono. SHOW computed JetBrains Mono."}},
+                "docs": {"$type": "fontFamily", "$value": TOMORROW, "$extensions": {"source": DOCS + " h1 computed Tomorrow Placeholder. The loaded face was a placeholder, so the family is recorded as Tomorrow."}},
             }
         },
         "typography": {
@@ -132,15 +132,15 @@ tokens = {
             "authTitle": font(ORBITRON, "32px", 800, "38px", "-0.32px", LOGIN + " h1 LOG IN, 32px / 38px, weight 800, letter-spacing -0.32px."),
             "price": font(ORBITRON, "32px", 600, "36.8px", "0.64px", PRICE + " plan price 32px / 36.8px, weight 600, letter-spacing 0.64px."),
             "planName": font(ORBITRON, "20px", 600, "23px", "0.4px", PRICE + " plan name h3 20px / 23px, weight 600, letter-spacing 0.4px."),
-            "docsTitle": font(TOMORROW, "36px", 600, "36px", "0px", DOCS + " h1 36px, weight 600. Line height was not returned as its own number, so this stores the font-size again."),
+            "docsTitle": font(TOMORROW, "36px", 600, "36px", "0px", "Reconstruction for lineHeight only: the line height was not returned as its own number, so the font size stands in for it. " + DOCS + " h1 36px, weight 600."),
             "body": font(INTER, "16px", 400, "24.8px", "0px", HOME + " lede 16px / 24.8px, weight 400."),
             "bodySmall": font(INTER, "15px", 400, "23.25px", "0px", HOME + " feature copy 15px / 23.25px."),
             "ui": font(INTER, "14px", 400, "20px", "0px", DOCS + " body 14px Inter. Login caption is 14px Inter; footer line-height was 20px."),
             "label": font(INTER, "12px", 500, "15px", "0.96px", HOME + " nav link 12px, weight 500, letter-spacing 0.96px. Computed height of the link text was 15px."),
             "button": font(PRAGMATA, "12px", 500, "15.6px", "1.2px", HOME + " GET STARTED 12px / 15.6px, weight 500, letter-spacing 1.2px."),
             "authButton": font(ORBITRON, "12px", 500, "16px", "0.96px", LOGIN + " LOG IN button 12px / 16px, weight 500, letter-spacing 0.96px."),
-            "field": font(INTER, "16px", 400, "16px", "0px", LOGIN + " #auth-email 16px Inter. Line height computed as normal, so this stores the font-size."),
-            "code": font(JETBRAINS, "11px", 400, "11px", "0.88px", LOGIN + " SHOW 11px JetBrains Mono, letter-spacing 0.88px. Line height computed as normal."),
+            "field": font(INTER, "16px", 400, "16px", "0px", "Reconstruction for lineHeight only: the computed line-height was normal, so the font size stands in for it. Size, weight and tracking are measured. " + LOGIN + " #auth-email 16px Inter."),
+            "code": font(JETBRAINS, "11px", 400, "11px", "0.88px", "Reconstruction for lineHeight only: the computed line-height was normal, so the font size stands in for it. Size, weight and tracking are measured. " + LOGIN + " SHOW 11px JetBrains Mono, letter-spacing 0.88px."),
         },
         "radius": {
             "auth": dim("2px", LOGIN + " --s-radius. Field and LOG IN button border-radius."),
@@ -233,6 +233,7 @@ tokens = {
     ],
 }
 
-out = HERE / "tokens.json"
-out.write_text(json.dumps(tokens, indent=2) + "\n")
-print("wrote", out)
+if __name__ == "__main__":
+    out = HERE / "tokens.json"
+    out.write_text(json.dumps(tokens, indent=2) + "\n")
+    print("wrote", out)

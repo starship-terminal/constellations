@@ -7,6 +7,7 @@ the computed light roles on app.weavy.ai/signin, plus the dark theme rule
 resolved against the same ramps. A role that was not on the page is absent.
 """
 import json
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -218,15 +219,12 @@ def build():
     shadow = {
         "card": {
             "$type": "shadow",
-            "$value": {
-                "color": "#00000026",
-                "offsetX": "0px",
-                "offsetY": "1px",
-                "blur": "3px",
-                "spread": "0px",
-            },
+            "$value": [
+                {"color": "#00000026", "offsetX": "0px", "offsetY": "1px", "blur": "3px", "spread": "0px"},
+                {"color": "#0000004d", "offsetX": "0px", "offsetY": "0px", "blur": "0.5px", "spread": "0px"},
+            ],
             "$extensions": {
-                "source": "Computed sign-in card box-shadow matches declared --elevation-100: 0px 1px 3px 0px #00000026, 0px 0px 0.5px 0px #0000004d. The second layer is under notTokenised."
+                "source": "Computed sign-in card box-shadow rgba(0, 0, 0, 0.15) 0px 1px 3px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0.5px 0px (raw/readings.json); matches declared --elevation-100. Both layers."
             },
         }
     }
@@ -245,10 +243,66 @@ def build():
         ],
         "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
     }
-    out = ROOT / "tokens.json"
-    out.write_text(json.dumps(doc, indent=2) + "\n")
-    print(f"wrote {out}")
+    label_hand_entries(doc)
+    check(doc)
+    return doc
+
+
+# Declared ramp values that raw/readings.json does not hold: the dark app set beyond the roles
+# whose hex the readings contain, and the light status fills. They were typed in from the stylesheet.
+HAND = {
+    "light": ["danger", "success", "warning"],
+    "dark": ["surface", "surface-secondary", "surface-tertiary", "text-brand", "text-danger", "text-success",
+             "text-warning", "border", "danger", "success", "warning"],
+}
+
+
+def label_hand_entries(doc):
+    for theme, keys in HAND.items():
+        for key in keys:
+            token = doc[theme]["color"]["app"][key]
+            token["$extensions"]["source"] = (
+                "Reconstruction: entered by hand at capture time; no raw/ file holds this reading. "
+                + token["$extensions"]["source"]
+            )
+
+
+def walk(node, path=""):
+    for key, value in node.items():
+        if key.startswith("$") or not isinstance(value, dict):
+            continue
+        if "$value" in value:
+            yield f"{path}{key}", value
+        else:
+            yield from walk(value, f"{path}{key}.")
+
+
+def check(doc):
+    """Refuse a token with no source, a colour that is not hex, or an alias that resolves nowhere
+    (own set first, then core)."""
+    problems = []
+    sets = [s for s in ("core", "light", "dark") if s in doc]
+    flat = {s: dict(walk(doc[s])) for s in sets}
+    for s in sets:
+        for path, token in flat[s].items():
+            if not token.get("$extensions", {}).get("source"):
+                problems.append(f"{s}.{path}: no source")
+            values = token["$value"] if isinstance(token["$value"], list) else [token["$value"]]
+            for v in values:
+                parts = v.values() if isinstance(v, dict) else [v]
+                for part in parts:
+                    if isinstance(part, str) and part.startswith("{"):
+                        ref = part[1:-1]
+                        if ref not in flat[s] and ref not in flat["core"]:
+                            problems.append(f"{s}.{path}: alias {part} resolves nowhere")
+            if token["$type"] == "color" and not str(token["$value"]).startswith("{"):
+                if not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", token["$value"]):
+                    problems.append(f"{s}.{path}: colour {token['$value']!r} is not hex")
+    if problems:
+        raise SystemExit("token check failed:\n" + "\n".join(problems))
 
 
 if __name__ == "__main__":
-    build()
+    out = ROOT / "tokens.json"
+    out.write_text(json.dumps(build(), indent=2) + "\n")
+    print(f"wrote {out}")

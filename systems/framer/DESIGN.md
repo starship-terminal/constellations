@@ -27,16 +27,10 @@ colors:
   color-action-heroCtaFill: "#ffffff"
   color-action-heroCtaInk: "#000000"
   color-action-heroGhost: "rgba(255, 255, 255, 0.1)"
-  color-action-googleFill: "#222222"
-  color-action-googleInk: "#ffffff"
   color-action-planCtaFill: "#0099ff"
   color-action-planCtaInk: "#ffffff"
   color-action-galCardBtn: "#1f1f1f"
   color-border-focusRing: "#101010"
-  color-form-fieldBg: "rgba(0, 0, 0, 0.05)"
-  color-form-fieldInk: "#222222"
-  color-form-placeholder: "#999999"
-  color-surface-loginPanel: "#ffffff"
   color-surface-footerBg: "#000000"
   color-surface-menuPanel: "rgba(0, 0, 0, 0)"
   color-background-page: "#000000"
@@ -127,6 +121,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Pressed is forced.** `CSS.forcePseudoState` :active:hover, so any script-applied mousedown look is missing.
 - **Quantised screenshots.** 256-colour PNGs; gradients and the demo videos band a little. Read exact colours from tokens.json or raw/.
 - **Measured-once geometry.** Component dims are one read at one moment; marketing pages animate and personalise.
+- **`auth` is not a light theme.** /login is a separate light app that declares none of the www `--token-<uuid>` layer; its field, Google button and card readings are the `auth` set, as measured literals. Do not read it as a light mode of the marketing site.
 - **The community stack's own declared layer.** /community/gallery and /marketplace are a different app whose sheets were not separately harvested — its values are measured component tokens.
 
 ### Do and don't (from README.md)

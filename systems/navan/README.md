@@ -13,7 +13,7 @@ Navan is a corporate travel and expense product. This package covers the public 
 | [patterns.md](patterns.md) | Shell, hero, pricing, footer, sign-in boundary |
 | [raw/](raw/) | Computed custom properties and component readings |
 | [icons/](icons/) | Index only. No SVGs were exported |
-| [tools/](tools/) | Kit copy plus the token builder |
+| [tools/](tools/) | The token builder and its test. `capture/signed-in/` holds only the kit's page-copy privacy guards; the values were read in a preview browser, not by a capture script |
 
 <!-- brief:start -->
 <!-- brief:end -->
@@ -76,15 +76,17 @@ The main stylesheet is `https://navan.com/_next/static/css/b9bdd45fb4f1a61e.css`
 
 ## What to distrust
 
+The cookie banner was dismissed with Reject All Cookies before the readings; every reading was taken after that click.
+
 Screenshots are missing. The preview browser returned "The browser is not producing screenshot frames", so layout claims rest on computed boxes, not images.
 
 The body background is transparent. Page white is the nav and the cards, not the body itself.
 
 `--global-announcement-bar-height` is 55px. The painted strip was 50px.
 
-Login heading line-height was not read. The token stores 40px, the measured font size, and says so.
+Seven type styles carry a line height raw/ does not hold: `title` (the hero prompt, not read at all), `price`, `feature`, `faq`, `footer`, `login-heading` (40px, the font size repeated) and `login-label`. They are labelled Reconstruction: those line heights were typed in by hand at capture time.
 
-The login label computed to 13.92px. The token rounds that to 14px.
+The login label computed to 13.92px, and the token carries 13.92px. `core.typography.heading` is the h2 reading, 45px / 54px.
 
 Sanomat files are loaded from `/fonts/Sanomat-Regular_2219886656.woff2` and `Sanomat-Semibold_2219886655.woff2` but the computed weight on headings is 600. Inter is declared as a 300–700 range face. Those files are not in this package.
 

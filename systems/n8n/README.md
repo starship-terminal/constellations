@@ -14,7 +14,7 @@ No account was created. Register asks for a company email and was not submitted.
 | [components.md](components.md) | The controls that were on the signed-out pages, with measured values. |
 | [patterns.md](patterns.md) | Homepage, pricing, login and register, as measured. |
 | [raw/](raw/) | [measured.json](raw/measured.json) is the page reading. [login-vars.json](raw/login-vars.json) is the console custom properties present on the signed-out login page. |
-| [tools/](tools/) | The copied kit, plus [test_measured.py](tools/test_measured.py). |
+| [tools/](tools/) | [test_measured.py](tools/test_measured.py). `capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`); no kit capture script took these readings. |
 
 ## Brief
 

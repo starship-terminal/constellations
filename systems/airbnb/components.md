@@ -57,14 +57,14 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Listing card](#listing-card) | 181.7 x 214.61 | 1px solid rgba(255, 255, 255, 0.5) | 20px | #dddddd `deco.default` | rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 6px 0px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px | 0 |
-| [Result card](#result-card) | 307.19 x 377.39 | 1px solid rgba(255, 255, 255, 0.16) | 20px | #dddddd `deco.default` | rgba(0, 0, 0, 0.18) 0px 2px 4px 0px | 0 |
-| [Search bar](#search-bar) | 850 x 66 | - | 32px | #dddddd `deco.default` | none | 0 |
-| [Search panel (open)](#search-panel-open) | 393 x 1532 | - | 12px | #ffffff `always.white` | none | 0 |
+| [Listing card](#listing-card) | 181.7 x 214.61 | - | 20px | transparent | none | 0 |
+| [Result card](#result-card) | 307.19 x 377.39 | - | 20px | transparent | none | 0 |
+| [Search bar](#search-bar) | 850 x 66 | - | 32px | transparent | none | 0 |
+| [Search panel (open)](#search-panel-open) | 393 x 1532 | - | - | transparent | none | 0 |
 | [Help tile](#help-tile) | 344 x 48 | - | - | transparent | none | 0 |
-| [Earnings estimator](#estimator-card) | 640 x 376 | 1px solid #dddddd `deco.default` | 40px | #ffffff `always.white` | none | 0 |
-| [Reservation card](#reserve-card) | 372.33 x 312 | 1px solid #dddddd `deco.default` | 12px | #ffffff `always.white` | rgba(0, 0, 0, 0.12) 0px 6px 16px 0px | 0 |
-| [Mobile listing card](#m-listing-card) | 165 x 198.75 | - | 20px | #dddddd `deco.default` | rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 8px 24px 0px | 0 |
+| [Earnings estimator](#estimator-card) | 640 x 376 | - | - | transparent | none | 0 |
+| [Reservation card](#reserve-card) | 372.33 x 312 | - | - | transparent | none | 0 |
+| [Mobile listing card](#m-listing-card) | 165 x 198.75 | - | 20px | transparent | none | 0 |
 
 ## Components
 
@@ -214,7 +214,7 @@ A home card in a rail: a 12px-radius photo with the Guest favourite badge and wi
 |---|---|
 | default (same: hover) | size 181.7 x 214.61; radius 20px; background transparent; text Airbnb Cereal VF 11/13 600, #222222 `grey.1000`; icon 24 x 24, #222222 `grey.1000` |
 
-Child layers that carry the look: div 181.7x172.6 background #dddddd `deco.default` radius 20px; div 103.6x26 background rgba(255, 255, 255, 0.8) border 1px solid rgba(255, 255, 255, 0.5) radius 14px shadow rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) `shadow.50` `shadow.50` 0px 2px 6px 0px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px.
+Child layers that carry the look: div 181.7x172.6 background #dddddd `deco.default` radius 20px; div 103.6x26 background rgba(255, 255, 255, 0.8) border 1px solid rgba(255, 255, 255, 0.5) radius 14px shadow rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) `shadow.50` 0px 2px 6px 0px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px.
 
 ![Listing card default](components/crops/listing-card-default.png) ![Listing card hover](components/crops/listing-card-hover.png)
 
@@ -253,7 +253,7 @@ The white pill over the card photo (Guest favourite / Superhost). Read as `card-
 
 **Values (default).** size 157.7 x 53.53; background transparent; text Airbnb Cereal VF 11/13 600, #222222 `grey.1000`; icon 24 x 24, #222222 `grey.1000`.
 
-Child layers that carry the look: div 103.6x26 background rgba(255, 255, 255, 0.8) border 1px solid rgba(255, 255, 255, 0.5) radius 14px shadow rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) `shadow.50` `shadow.50` 0px 2px 6px 0px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px.
+Child layers that carry the look: div 103.6x26 background rgba(255, 255, 255, 0.8) border 1px solid rgba(255, 255, 255, 0.5) radius 14px shadow rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) `shadow.50` 0px 2px 6px 0px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px.
 
 ![Guest favourite badge default](components/crops/card-badge-default.png)
 

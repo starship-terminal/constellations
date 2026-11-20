@@ -18,7 +18,7 @@ Crops: [animation-card-default.png](components/crops/animation-card-default.png)
 
 The animation page already has Download selected. Clicking the tab did not open a new panel. Format buttons (MP4, WebM, MOV, SVG, GIF) are visible in the page screenshot. No file was downloaded. Some formats sit behind sign-in.
 
-The measure pass did not isolate a control named Download, so there is no crop. See [animation-light-download-tab.png](../screenshots/animation-light-download-tab.png).
+The measure pass did not isolate a control named Download, so there is no crop. See [animation-light-download-tab.png](screenshots/animation-light-download-tab.png).
 
 ## Edit with AI
 

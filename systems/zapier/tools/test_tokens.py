@@ -18,6 +18,26 @@ def walk(node, path=""):
 
 
 class TokenTest(unittest.TestCase):
+    def test_checker_passes_and_catches_a_self_alias(self):
+        import sys
+        sys.path.insert(0, str(TOKENS.parent / "tools"))
+        import build_tokens
+        data = json.loads(TOKENS.read_text())
+        self.assertEqual(build_tokens.problems(data), [])
+        # The committed file once held light.color.status.danger = {color.status.danger}, which
+        # resolves set-first to itself.
+        data["light"]["color"]["status"]["danger"]["$value"] = "{color.status.danger}"
+        self.assertTrue(any("alias cycle" in p for p in build_tokens.problems(data)))
+
+    def test_checker_follows_aliases_inside_composite_values(self):
+        import sys
+        sys.path.insert(0, str(TOKENS.parent / "tools"))
+        import build_tokens
+        data = json.loads(TOKENS.read_text())
+        data["core"]["typography"]["display"]["$value"]["fontSize"] = "{font.size.missing}"
+        self.assertIn("core.typography.display: alias {font.size.missing} points at nothing",
+                      build_tokens.problems(data))
+
     def test_every_token_has_a_source(self):
         data = json.loads(TOKENS.read_text())
         missing = [path for path, token in walk(data) if "source" not in token.get("$extensions", {})]

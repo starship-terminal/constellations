@@ -1612,21 +1612,22 @@ Page: contact. Selector: `input.wpcf7-submit`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 669 x 46 | = | = | = |
-| Padding | 15px 10px 12px 10px | = | = | = |
-| Border | 1px solid #989da7 | = | = | = |
-| Radius | 2px | = | = | = |
-| Background | #000000 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Basier 14px/17px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | all 0.3s ease | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Placeholder | #ffffff, opacity 1 | = | = | = |
-| Painted layers | input.wpcf7-form-control.wpcf7-submit 669.0x46.0 bg #000000 border T:1px solid #989da7 / R:1px solid #989da7 / B:1px solid #989da7 / L:1px solid #989da7 r 2px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 669 x 46 | = | - | = |
+| Padding | 15px 10px 12px 10px | = | - | = |
+| Border | 1px solid #989da7 | = | - | = |
+| Radius | 2px | = | - | = |
+| Background | #000000 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Basier 14px/17px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | all 0.3s ease | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Placeholder | #ffffff, opacity 1 | = | - | = |
+| Painted layers | input.wpcf7-form-control.wpcf7-submit 669.0x46.0 bg #000000 border T:1px solid #989da7 / R:1px solid #989da7 / B:1px solid #989da7 / L:1px solid #989da7 r 2px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `cf7-send-default.png`, `cf7-send-hover.png`, `cf7-send-focus-visible.png`, `cf7-send-pressed.png`.
 

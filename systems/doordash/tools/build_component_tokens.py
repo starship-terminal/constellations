@@ -394,13 +394,23 @@ def measured(comp, state, prop, token, ty="dimension", transform=None):
     if not have(comp, state, prop):
         return
     v = st(comp, state)[prop]
+    src = "computed %s of %s %s (raw/components-computed.json)" % (prop, comp, state)
+    if prop == "color":
+        # The text colour is the first text node's, as components.md reads it. In the Wayback
+        # replay the wrappers kept the browser's inherited defaults (Times, #000000, link blue
+        # #0000ee on anchors), which are not DoorDash values.
+        t = C[comp]["states"][state].get("textStyle") or {}
+        if t.get("color"):
+            v = t["color"]
+            src = "computed color of %s %s's first text node (%s) (raw/components-computed.json)" % (comp, state, t.get("node") or "text")
+        elif st(comp, state).get("fontFamily", "").startswith("Times"):
+            src += "; no text node was read and the element kept the browser's inherited defaults in the Wayback replay, so this is not confirmed as a DoorDash value"
     if transform:
         v = transform(v)
     if v is None or v == "none" or v == "rgba(0, 0, 0, 0)":
         return
     parts = token.split(".")
-    emit(comp_tree, parts, {"value": v, "type": ty,
-                            "source": "computed %s of %s %s (raw/components-computed.json)" % (prop, comp, state)})
+    emit(comp_tree, parts, {"value": v, "type": ty, "source": src})
 
 
 def pad_lr(s):

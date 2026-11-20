@@ -11,10 +11,13 @@
 // mobile menu. The #thedock-cookie-banner consent modal is hidden, never answered; checkout,
 // my-account past the magic-login form and every external link are never reached.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots stay outside the repo (the kit's default); quantize.py writes screenshots/.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'elektron', 'raw-shots') + '/';
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

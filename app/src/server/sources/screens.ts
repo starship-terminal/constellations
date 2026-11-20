@@ -118,10 +118,7 @@ export function queryScreens(
     .toLowerCase()
     .split(/[\s_-]+/)
     .filter(Boolean);
-  const referenceIds = new Set([
-    ...(query.referenceIds || []),
-    ...(query.referenceId ? [query.referenceId] : []),
-  ]);
+  const referenceIds = new Set(query.referenceIds || []);
   const selectedTerms = [...new Set(query.termIds || [])];
   const available = query.mode === "flows" ? [] : items;
   const corpus = available.filter(
@@ -195,6 +192,7 @@ export function queryScreens(
       ? filtered.slice(0, 1)
       : page.slice(offset, offset + limit),
     total: filtered.length,
+    pageable: page.length,
     termCounts,
     facets: {
       platforms: counts(available, ({ reference }) => [reference.platform]),
@@ -210,7 +208,6 @@ export function queryScreens(
       groups: counts(scoped, ({ media }) => [media.group || ""]),
       kinds: counts(available, ({ media }) => [media.kind || ""]),
     },
-    taxonomy: { pageTypes: [], uiElements: [], uxPatterns: [] },
   };
 }
 
@@ -232,7 +229,7 @@ export async function listScreens(
   }
   if (query.mode === "flows") return queryScreens([], query);
   const captures = await capturedScreens();
-  const [references, assignments] = await Promise.all([
+  const [references, byMedia] = await Promise.all([
     withReferenceCategories(
       [
         ...new Map(
@@ -241,15 +238,8 @@ export async function listScreens(
       ],
       store,
     ),
-    store.listMediaTermAssignments(),
+    store.mediaTermsByMedia(),
   ]);
-  const byMedia = new Map<string, string[]>();
-  for (const assignment of assignments) {
-    const id = `${assignment.referenceId}:${assignment.mediaId}`;
-    const terms = byMedia.get(id) || [];
-    terms.push(assignment.termId);
-    byMedia.set(id, terms);
-  }
   const byId = new Map(
     references.map((reference) => [reference.id, reference]),
   );

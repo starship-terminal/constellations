@@ -67,22 +67,23 @@ Page: home. Selector: `summary.nav-trigger "Product"`. States: default, hover, f
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 105.7 x 38.19 | = | = | = |
-| Padding | 9px 14px 10px 16px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 100px | = | = | = |
-| Background | transparent | #f8f8f8 | = | #f8f8f8 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #121722 @ 0.6 offset 4px | = |
-| Font | DockWebflowNavigation 16px/19.2px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #121722 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 12 x 12, colour #121722 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
-| Painted layers | - | summary.nav-trigger 105.7x38.2 bg #f8f8f8 r 100px | summary.nav-trigger 105.7x38.2 r 100px outline 2px solid #121722 @ 0.6 offset 4px | summary.nav-trigger 105.7x38.2 bg #f8f8f8 r 100px |
+| Size (w x h) | 105.7 x 38.19 | = | - | = |
+| Padding | 9px 14px 10px 16px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 100px | = | - | = |
+| Background | transparent | #f8f8f8 | - | #f8f8f8 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | DockWebflowNavigation 16px/19.2px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #121722 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 12 x 12, colour #121722 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Painted layers | - | summary.nav-trigger 105.7x38.2 bg #f8f8f8 r 100px | = | summary.nav-trigger 105.7x38.2 bg #f8f8f8 r 100px |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
 Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-focus-visible.png`, `nav-trigger-pressed.png`.
 
@@ -94,21 +95,22 @@ Page: home. Selector: `header a "Pricing"`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 81.98 x 38.19 | = | = | = |
-| Padding | 9px 16px 10px 16px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 100px | = | = | = |
-| Background | transparent | #f8f8f8 | = | #f8f8f8 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #121722 @ 0.6 offset 4px | = |
-| Font | DockWebflowNavigation 16px/19.2px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #121722 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
-| Painted layers | - | a.nav-trigger.nav-direct 82.0x38.2 bg #f8f8f8 r 100px | a.nav-trigger.nav-direct 82.0x38.2 r 100px outline 2px solid #121722 @ 0.6 offset 4px | a.nav-trigger.nav-direct 82.0x38.2 bg #f8f8f8 r 100px |
+| Size (w x h) | 81.98 x 38.19 | = | - | = |
+| Padding | 9px 16px 10px 16px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 100px | = | - | = |
+| Background | transparent | #f8f8f8 | - | #f8f8f8 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | DockWebflowNavigation 16px/19.2px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #121722 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Painted layers | - | a.nav-trigger.nav-direct 82.0x38.2 bg #f8f8f8 r 100px | = | a.nav-trigger.nav-direct 82.0x38.2 bg #f8f8f8 r 100px |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
 Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
@@ -120,21 +122,22 @@ Page: home. Selector: `header a "Log in"`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 75.8 x 38.19 | = | = | = |
-| Padding | 9px 16px 10px 16px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 100px | = | = | = |
-| Background | transparent | #f8f8f8 | = | #f8f8f8 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #121722 @ 0.6 offset 4px | = |
-| Font | DockWebflowNavigation 16px/19.2px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #121722 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
-| Painted layers | - | a.nav-trigger.nav-direct 75.8x38.2 bg #f8f8f8 r 100px | a.nav-trigger.nav-direct 75.8x38.2 r 100px outline 2px solid #121722 @ 0.6 offset 4px | a.nav-trigger.nav-direct 75.8x38.2 bg #f8f8f8 r 100px |
+| Size (w x h) | 75.8 x 38.19 | = | - | = |
+| Padding | 9px 16px 10px 16px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 100px | = | - | = |
+| Background | transparent | #f8f8f8 | - | #f8f8f8 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | DockWebflowNavigation 16px/19.2px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #121722 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Painted layers | - | a.nav-trigger.nav-direct 75.8x38.2 bg #f8f8f8 r 100px | = | a.nav-trigger.nav-direct 75.8x38.2 bg #f8f8f8 r 100px |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
 Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-focus-visible.png`, `nav-login-pressed.png`.
 
@@ -146,21 +149,22 @@ Page: home. Selector: `header a "Request demo"`. States: default, hover, focus-v
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 137 x 38.19 | = | = | = |
-| Padding | 9px 16px 10px 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 100px | = | = | = |
-| Background | #ffffff | #f8f8f8 | = | #f2f2f3 |
-| Box shadow | #121722 @ 0.2 0px 0px 0px 0.5px inset | = | = | = |
-| Outline | none | = | 2px solid #121722 @ 0.6 offset 4px | = |
-| Font | DockWebflowNavigation 16px/19.2px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #121722 | = | = | = |
-| Transition | background-color, box-shadow 0.14s, 0.14s ease, ease delay 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a.button 137.0x38.2 bg #ffffff r 100px shadow #121722 @ 0.2 0px 0px 0px 0.5px inset | a.button 137.0x38.2 bg #f8f8f8 r 100px shadow #121722 @ 0.2 0px 0px 0px 0.5px inset | a.button 137.0x38.2 bg #ffffff r 100px shadow #121722 @ 0.2 0px 0px 0px 0.5px inset outline 2px solid #121722 @ 0.6 offset 4px | a.button 137.0x38.2 bg #f2f2f3 r 100px shadow #121722 @ 0.2 0px 0px 0px 0.5px inset |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 137 x 38.19 | = | - | = |
+| Padding | 9px 16px 10px 16px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 100px | = | - | = |
+| Background | #ffffff | #f8f8f8 | - | #f2f2f3 |
+| Box shadow | #121722 @ 0.2 0px 0px 0px 0.5px inset | = | - | = |
+| Outline | none | = | - | = |
+| Font | DockWebflowNavigation 16px/19.2px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #121722 | = | - | = |
+| Transition | background-color, box-shadow 0.14s, 0.14s ease, ease delay 0s, 0s | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a.button 137.0x38.2 bg #ffffff r 100px shadow #121722 @ 0.2 0px 0px 0px 0.5px inset | a.button 137.0x38.2 bg #f8f8f8 r 100px shadow #121722 @ 0.2 0px 0px 0px 0.5px inset | - | a.button 137.0x38.2 bg #f2f2f3 r 100px shadow #121722 @ 0.2 0px 0px 0px 0.5px inset |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
 Crops: `nav-demo-default.png`, `nav-demo-hover.png`, `nav-demo-focus-visible.png`, `nav-demo-pressed.png`.
 
@@ -172,21 +176,22 @@ Page: home. Selector: `header a "Start for free"`. States: default, hover, focus
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 124.25 x 38.19 | = | = | = |
-| Padding | 9px 16px 10px 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 100px | = | = | = |
-| Background | #0068f9 | #0060eb | = | #005fe4 |
-| Box shadow | #0b4493 @ 0.4 0px 0px 0px 0.5px inset | = | = | = |
-| Outline | none | = | 2px solid #121722 @ 0.6 offset 4px | = |
-| Font | DockWebflowNavigation 16px/19.2px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | background-color, box-shadow 0.14s, 0.14s ease, ease delay 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a.button.button--primary 124.3x38.2 bg #0068f9 r 100px shadow #0b4493 @ 0.4 0px 0px 0px 0.5px inset | a.button.button--primary 124.3x38.2 bg #0060eb r 100px shadow #0b4493 @ 0.4 0px 0px 0px 0.5px inset | a.button.button--primary 124.3x38.2 bg #0068f9 r 100px shadow #0b4493 @ 0.4 0px 0px 0px 0.5px inset outline 2px solid #121722 @ 0.6 offset 4px | a.button.button--primary 124.3x38.2 bg #005fe4 r 100px shadow #0b4493 @ 0.4 0px 0px 0px 0.5px inset |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 124.25 x 38.19 | = | - | = |
+| Padding | 9px 16px 10px 16px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 100px | = | - | = |
+| Background | #0068f9 | #0060eb | - | #005fe4 |
+| Box shadow | #0b4493 @ 0.4 0px 0px 0px 0.5px inset | = | - | = |
+| Outline | none | = | - | = |
+| Font | DockWebflowNavigation 16px/19.2px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | background-color, box-shadow 0.14s, 0.14s ease, ease delay 0s, 0s | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a.button.button--primary 124.3x38.2 bg #0068f9 r 100px shadow #0b4493 @ 0.4 0px 0px 0px 0.5px inset | a.button.button--primary 124.3x38.2 bg #0060eb r 100px shadow #0b4493 @ 0.4 0px 0px 0px 0.5px inset | - | a.button.button--primary 124.3x38.2 bg #005fe4 r 100px shadow #0b4493 @ 0.4 0px 0px 0px 0.5px inset |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
 Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
 
@@ -248,23 +253,24 @@ Page: home. Selector: `a.menu-link`. States: default, hover, focus-visible, pres
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 172.06 x 40 | = | = | = |
-| Padding | 8px | = | = | = |
-| Gap | 12px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #121722 @ 0.6 offset 4px | 2px solid #121722 @ 0.6 offset 4px |
-| Font | DockWebflowNavigation 15.5px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #121722 | = | = | = |
-| Text node | span: DockWebflowNavigation 15.5px/20px 500, #121722 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #121722 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.menu-link 172.1x40.0 r 8px outline 2px solid #121722 @ 0.6 offset 4px | a.menu-link 172.1x40.0 r 8px outline 2px solid #121722 @ 0.6 offset 4px |
+| Size (w x h) | 172.06 x 40 | = | - | = |
+| Padding | 8px | = | - | = |
+| Gap | 12px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | 2px solid #121722 @ 0.6 offset 4px |
+| Font | DockWebflowNavigation 15.5px/20px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #121722 | = | - | = |
+| Text node | span: DockWebflowNavigation 15.5px/20px 500, #121722 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 16 x 16, colour #121722 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
+| Painted layers | - | = | = | a.menu-link 172.1x40.0 r 8px outline 2px solid #121722 @ 0.6 offset 4px |
 
 Crops: `menu-link-default.png`, `menu-link-hover.png`, `menu-link-focus-visible.png`, `menu-link-pressed.png`.
 
@@ -1037,22 +1043,23 @@ Page: login. Selector: `button "Continue"`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 322 x 36 | = | = | = |
-| Padding | 0px 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 4px | = | = | = |
-| Background | #4058ff | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Roobert 14px/16.8px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | background-color, border-color, color, fill, stroke, opacity, box-shadow, transform 0.2s ease | = | = | = |
-| Opacity | 0.4 | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Painted layers | button.chakra-button.css-w47b2f 322.0x36.0 bg #4058ff r 4px | = | = | = |
-| Ancestor paint | 2 up div.css-1qltkmx bg #ffffff shadow #121722 @ 0.25 0px 20px 36px -18px, #121722 @ 0.1 0px 0px 0px 0.5px, #121722 @ 0.2 0px 1px 2px 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 322 x 36 | = | - | = |
+| Padding | 0px 16px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 4px | = | - | = |
+| Background | #4058ff | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Roobert 14px/16.8px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | background-color, border-color, color, fill, stroke, opacity, box-shadow, transform 0.2s ease | = | - | = |
+| Opacity | 0.4 | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Painted layers | button.chakra-button.css-w47b2f 322.0x36.0 bg #4058ff r 4px | = | - | = |
+| Ancestor paint | 2 up div.css-1qltkmx bg #ffffff shadow #121722 @ 0.25 0px 20px 36px -18px, #121722 @ 0.1 0px 0px 0px 0.5px, #121722 @ 0.2 0px 1px 2px 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `continue-btn-default.png`, `continue-btn-hover.png`, `continue-btn-focus-visible.png`, `continue-btn-pressed.png`.
 
@@ -1194,20 +1201,20 @@ Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 127.44 x 22.39 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #121722 @ 0.6 offset 4px | = |
-| Font | DockWebflowNavigation 16px/22.4px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #121722 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 127.4x22.4 outline 2px solid #121722 @ 0.6 offset 4px | = |
+| Size (w x h) | 127.44 x 22.39 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | DockWebflowNavigation 16px/22.4px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #121722 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
@@ -1327,23 +1334,24 @@ Page: mobile. Selector: `mobile menu item`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 302 x 56 | = | = | = |
-| Padding | 16px 0px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #121722 @ 0.6 offset 4px | 2px solid #121722 @ 0.6 offset 4px |
-| Font | DockWebflowNavigation 18px/21.6px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #121722 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 12 x 12, colour #121722 | = | = | = |
-| Ancestor paint | 3 up div.navigation-content bg #ffffff shadow #121722 @ 0.2 0px 0px 0px 0.5px, #121722 @ 0.05 0px 1px 3px 0px, #121722 @ 0.05 0px 3px 7px 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | summary.nav-trigger 302.0x56.0 outline 2px solid #121722 @ 0.6 offset 4px | summary.nav-trigger 302.0x56.0 outline 2px solid #121722 @ 0.6 offset 4px |
+| Size (w x h) | 302 x 56 | = | - | = |
+| Padding | 16px 0px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | 2px solid #121722 @ 0.6 offset 4px |
+| Font | DockWebflowNavigation 18px/21.6px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #121722 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 12 x 12, colour #121722 | = | - | = |
+| Ancestor paint | 3 up div.navigation-content bg #ffffff shadow #121722 @ 0.2 0px 0px 0px 0.5px, #121722 @ 0.05 0px 1px 3px 0px, #121722 @ 0.05 0px 3px 7px 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
+| Painted layers | - | = | = | summary.nav-trigger 302.0x56.0 outline 2px solid #121722 @ 0.6 offset 4px |
 
 Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visible.png`, `m-nav-item-pressed.png`.
 

@@ -2,7 +2,7 @@
 """Build components.md for the ChatGPT design reference.
 
 Reads raw/components-computed.json (every component and state, measured in both themes),
-raw/layout.json, tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to
+tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to
 them. Every value is a cell of the measurement file, condensed: colours are hex followed by the token
 in the matching theme's set whose value is the same, the font family is named once per value, and a
 state row shows only what differs from the first state. Dark states come first (the pages were
@@ -27,7 +27,6 @@ os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
 META = J["_meta"]
-LAYOUT = json.load(open("raw/layout.json"))
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens
@@ -221,7 +220,7 @@ def props(v):
     t = v.get("textStyle")
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
-    elif v.get("text"):
+    elif v.get("text") or (v.get("placeholder") or {}).get("text"):   # a field shows its placeholder
         o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], role='text')}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
@@ -382,7 +381,7 @@ W("How to read an entry:")
 W()
 W("- A colour is its value followed by the token in [tokens.json](tokens.json) whose value in that theme is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `System 14/20 400, #ffffff`, and is read from the first text node inside the component. System is the `-apple-system-body` stack.")
 W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
-W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
+W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x, or halved to 1x when wider than 1600 px or over 1.2 megapixels). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()

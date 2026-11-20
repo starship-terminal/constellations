@@ -47,7 +47,7 @@ Screenshots are named `{page}-dark-state.png`: the painted theme is dark (html.d
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 13 components were given a real keyboard focus. 3 draw an outline ring: `ent-cta` (1px auto #007aff `light.component.focus.outline`, offset 1px), `plug-link` (1px auto #007aff `light.component.focus.outline`, offset 1px), `login-google` (1px auto #101010 `core.color.primary.950`, offset 0px). 8 draw a focus ring as a shadow instead: `sidebar-toggle`, `nav-signin`, `tools-button`, `search-button`, `mkt-login`, `mkt-signup`, `price-cta`, `m-menu`. The other 2 show no measured change: `nav-home`, `nav-pricing`.
+**Focus.** 13 components were given a real keyboard focus. 3 draw an outline ring: `ent-cta` (1px auto #007aff, offset 1px), `plug-link` (1px auto #007aff, offset 1px), `login-google` (1px auto #101010 `core.color.primary.950`, offset 0px). 8 draw a focus ring as a shadow instead: `sidebar-toggle`, `nav-signin`, `tools-button`, `search-button`, `mkt-login`, `mkt-signup`, `price-cta`, `m-menu`. The other 2 show no measured change: `nav-home`, `nav-pricing`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -320,7 +320,7 @@ The sales CTA. Measured, never followed. The booking form is a gated surface. Re
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 119.06 x 40; padding 0px 24px; radius 3.35544e+07px; background #ffffff `core.color.primary.0`; text Suisse Intl 14/20 500, #000000 `core.color.primary.1000`; transition color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), fill 0.2s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| focus-visible | outline 1px auto #007aff `light.component.focus.outline`, offset 1px |
+| focus-visible | outline 1px auto #007aff, offset 1px |
 
 ![Book a call default](components/crops/ent-cta-default.png) ![Book a call hover](components/crops/ent-cta-hover.png) ![Book a call focus-visible](components/crops/ent-cta-focus-visible.png) ![Book a call pressed](components/crops/ent-cta-pressed.png)
 
@@ -364,7 +364,7 @@ A plugin product link. Measured, never followed into an install flow. Read as `p
 |---|---|
 | default | size 72 x 72; radius 22%; background rgba(255, 255, 255, 0.3); shadow rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.35) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; text Suisse Intl 13/19.5 500, #ffffff `core.color.primary.0` |
 | hover | size 111.59 x 111.59 |
-| focus-visible | outline 1px auto #007aff `light.component.focus.outline`, offset 1px |
+| focus-visible | outline 1px auto #007aff, offset 1px |
 
 ![Plugin link default](components/crops/plug-link-default.png) ![Plugin link hover](components/crops/plug-link-hover.png) ![Plugin link focus-visible](components/crops/plug-link-focus-visible.png)
 

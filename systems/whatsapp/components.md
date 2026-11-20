@@ -20,7 +20,7 @@ See [link-learn-default](components/crops/link-learn-default.png).
 
 Features opens a white list: Calling, Messaging, Groups, Channels, Meta AI, Status, Security, Parental controls. Items compute to 16px / 500, `#1c1e21`, padding 10px 0, line-height 19.2px. The painted panel's radius and shadow were not measured: the DOM walk landed on a transparent wrapper.
 
-See [menu-features-open](components/crops/menu-features-open.png) and [home-light-menu](../screenshots/home-light-menu.png).
+See [menu-features-open](components/crops/menu-features-open.png) and [home-light-menu](screenshots/home-light-menu.png).
 
 ## Header
 

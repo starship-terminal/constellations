@@ -43,9 +43,9 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
-  // Headless Chromium sets navigator.webdriver; airbnb.com bot-walls some routes
-  // on it. This masks only that flag, the same signal the site itself reads.
-  await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed. Headless Chromium sets
+  // navigator.webdriver and airbnb.com bot-walls some routes on it; the capture
+  // no longer masks the flag, so a walled route is a boundary, not a reading.
   return { browser, context };
 }
 
@@ -103,6 +103,17 @@ export async function firstRoomHref(page) {
     return a && a.getAttribute('href');
   }).catch(() => null);
   return href ? href.split('?')[0] : null;
+}
+
+// navigator.webdriver is left as Chromium sets it, so a bot wall can answer
+// instead of the product. A wall still loads as a normal document, so check for
+// it before any screenshot or component record: throw, and let the page loop
+// record the route as failed with its earlier evidence left in place.
+const WALL = /captcha|verify (that )?you are (a )?human|are you a robot|unusual traffic|access denied|request (was )?blocked|press (&|and) hold|pardon our interruption|attention required/i;
+export async function assertProductPage(page) {
+  const probe = await page.evaluate(() => ({ title: document.title || '', text: (document.body?.innerText || '').slice(0, 4000) })).catch(() => ({ title: '', text: '' }));
+  if (WALL.test(probe.title) || WALL.test(probe.text)) throw new Error('bot check: ' + (probe.title || probe.text.slice(0, 80)).trim());
+  if (probe.text.trim().length < 200) throw new Error('bot check or empty page: ' + probe.text.trim().length + ' characters of text');
 }
 
 export async function open(page, url, { wait = 6000, sweep = 'sweep' } = {}) {

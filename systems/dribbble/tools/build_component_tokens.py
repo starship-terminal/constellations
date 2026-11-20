@@ -242,14 +242,14 @@ for sname in ["danger", "success", "warning"]:
 
 meas_col = core_col.setdefault("measured", {})
 for key, comp, state, prop, desc in [
-    ("ink", "hero-title", "default", "color", "The #0d0c22 near-black product ink (headings, body)."),
-    ("ink-deep", "login-btn", "default", "bg", "The #060318 deep ink the dark pills fill."),
+    ("ink", "hero-title", "default", "color", "The %v near-black product ink (headings, body)."),
+    ("ink-deep", "login-btn", "default", "bg", "The %v deep ink the dark pills fill."),
     ("ink-on-dark", "login-btn", "default", "color", "White text on the dark pills."),
-    ("muted", "designer-meta", "default", "color", "The #3a3546 muted meta tone."),
-    ("muted-2", "profile-stat", "default", "color", "The #6e6d7a lighter muted stat tone."),
-    ("pink", "search-go", "default", "bg", "The #ea4c89 Dribbble pink: search Go, accents, PRO badges."),
+    ("muted", "designer-meta", "default", "color", "The %v muted meta tone."),
+    ("muted-2", "profile-stat", "default", "color", "The %v lighter muted stat tone."),
+    ("pink", "search-go", "default", "bg", "The %v Dribbble pink: search Go, accents, PRO badges."),
     ("pink-hover", "search-go", "hover", "bg", "The hover tint on the pink action."),
-    ("promo-surface", "promo-banner", "default", "bg", "The #f8f8fc promo-strip fill."),
+    ("promo-surface", "promo-banner", "default", "bg", "The %v promo-strip fill."),
     ("chip-surface", "skill-chip", "default", "bg", "The light skill-chip fill."),
     ("chip-dark", "skill-chip-dark", "default", "bg", "The dark certified-chip fill (Webflow Expert)."),
     ("chip-dark-text", "skill-chip-dark", "default", "color", "Text on the dark certified chip."),
@@ -291,31 +291,12 @@ for key, comp, state, prop, desc in [
 
 # ------------------------------------------------------------ light roles
 
-ALIAS = "role alias over the palette"
-MEASURED = "measured role off the live page (raw/components-computed.json)"
-
-light = SPEC["light"]
-roles = light.setdefault("color", {})
-for key, ref, src, desc in [
-    ("page", "{color.measured.page}", MEASURED, "The white page field."),
-    ("surface", "{color.measured.surface}", MEASURED, "Card and panel white."),
-    ("surface-alt", "{color.measured.promo-surface}", MEASURED, "The promo/chip #f8f8fc tint."),
-    ("text", "{color.measured.ink}", MEASURED, "The #0d0c22 product ink."),
-    ("muted", "{color.measured.muted}", MEASURED, "The #6e6d7a muted text."),
-    ("accent", "{color.measured.pink}", MEASURED, "The #ea4c89 Dribbble pink."),
-    ("accent-hover", "{color.measured.pink-hover}", MEASURED, "The pink hover tint."),
-    ("on-accent", "{color.measured.ink-on-dark}", MEASURED, "White on pink and on the dark pills."),
-    ("border", "{color.measured.border}", MEASURED, "The #e7e7e9 field/card hairline."),
-    ("link", "{color.measured.link}", MEASURED, "The link ink (same near-black, underlined on hover)."),
-]:
-    node = roles
-    roles[key] = {"value": ref, "type": "color", "source": src, "description": desc}
-
-# The page/surface/border reads themselves, so the roles above resolve.
+# The page/surface/border reads, so the roles below resolve. A missed probe leaves the
+# role out (no typed white fallback).
 for key, comp, state, prop, desc in [
     ("page", "promo-banner", "default", "page-bg", "The white page field."),
     ("surface", "designer-card", "default", "paint", "Card white."),
-    ("border", "email-field", "default", "borderTopColor", "The field hairline #e7e7e9."),
+    ("border", "email-field", "default", "borderTopColor", "The field hairline %v."),
 ]:
     try:
         if prop == "page-bg":
@@ -337,13 +318,25 @@ for key, comp, state, prop, desc in [
                              "description": desc}
     except (KeyError, TypeError):
         pass
-# fallbacks in case a probe missed: the page is white on every route captured
-meas_col.setdefault("page", {"value": "#ffffff", "type": "color",
-                             "source": "body background on every captured route (raw/components-computed.json)",
-                             "description": "The white page field."})
-meas_col.setdefault("surface", {"value": "#ffffff", "type": "color",
-                                "source": "card and panel surfaces on the captured routes",
-                                "description": "Card white."})
+ALIAS = "role alias over the palette"
+MEASURED = "measured role off the live page (raw/components-computed.json)"
+
+light = SPEC["light"]
+roles = light.setdefault("color", {})
+for key, ref, src, desc in [
+    ("page", "{color.measured.page}", MEASURED, "The white page field."),
+    ("surface", "{color.measured.surface}", MEASURED, "Card and panel white."),
+    ("surface-alt", "{color.measured.promo-surface}", MEASURED, "The promo/chip %v tint."),
+    ("text", "{color.measured.ink}", MEASURED, "The %v product ink."),
+    ("muted", "{color.measured.muted}", MEASURED, "The %v muted text."),
+    ("accent", "{color.measured.pink}", MEASURED, "The %v Dribbble pink."),
+    ("accent-hover", "{color.measured.pink-hover}", MEASURED, "The pink hover tint."),
+    ("on-accent", "{color.measured.ink-on-dark}", MEASURED, "White on pink and on the dark pills."),
+    ("border", "{color.measured.border}", MEASURED, "The %v field/card hairline."),
+    ("link", "{color.measured.link}", MEASURED, "The link ink (same near-black, underlined on hover)."),
+]:
+    if ref[1:-1].split(".")[-1] in meas_col:  # alias only a reading that exists
+        roles[key] = {"value": ref, "type": "color", "source": src, "description": desc}
 
 # -------------------------------------------------------------- dark set
 # Not a user theme: the ink surfaces the light page paints (the dark Log-in,
@@ -352,20 +345,16 @@ meas_col.setdefault("surface", {"value": "#ffffff", "type": "color",
 dark = SPEC["dark"]
 droles = dark.setdefault("color", {})
 for key, comp, state, prop, ref, desc in [
-    ("surface", "login-btn", "default", "bg", "{color.measured.ink-deep}", "The dark pill fill (#060318)."),
+    ("surface", "login-btn", "default", "bg", "{color.measured.ink-deep}", "The dark pill fill (%v)."),
     ("text", "login-btn", "default", "color", "{color.measured.ink-on-dark}", "Text on the ink pills."),
     ("surface-chip", "skill-chip-dark", "default", "bg", "{color.measured.chip-dark}", "The dark certified-chip fill."),
 ]:
     try:
         v = norm_color(painted(comp, state) if prop == "bg" else st(comp, state)[prop])
-        if v:
+        if v and ref[1:-1].split(".")[-1] in meas_col:
             droles[key] = {"value": ref, "type": "color", "source": ALIAS, "description": desc}
     except (KeyError, TypeError):
         pass
-droles.setdefault("surface", {"value": "{color.measured.ink-deep}", "type": "color", "source": ALIAS,
-                              "description": "The dark pill fill."})
-droles.setdefault("text", {"value": "{color.measured.ink-on-dark}", "type": "color", "source": ALIAS,
-                           "description": "Text on the ink pills."})
 
 # ------------------------------------------------------------- type scale
 
@@ -467,7 +456,7 @@ for key, comp, state, desc in [
     ("card", "shot-card", "default", "The 8px shot-card radius."),
     ("field", "email-field", "default", "The input radius."),
     ("search", "home-search", "default", "The big search field radius (12px)."),
-    ("button-pill", "login-btn", "default", "The pill radius on header/dark buttons (~20px)."),
+    ("button-pill", "login-btn", "default", "The pill radius on header/dark buttons: a 10000000px cap, so the ends are fully round."),
     ("chip", "tag-chip", "default", "The tag-chip radius."),
     ("search-go", "search-go", "default", "The pink Go circle (50%)."),
 ]:
@@ -704,6 +693,21 @@ for key, comp, state, desc in [
                          "description": desc + f" ({s.get('transitionProperty')})"}
     except (KeyError, TypeError):
         pass
+
+# A description that names its own value says "%v" and is filled from the leaf (through
+# its alias), so a recapture cannot leave the prose naming an old colour.
+def fill_values(node):
+    if isinstance(node, dict):
+        d = node.get("description")
+        if isinstance(d, str) and "%v" in d:
+            v = node["value"]
+            m = re.fullmatch(r"\{color\.measured\.([\w-]+)\}", str(v))
+            node["description"] = d.replace("%v", str(meas_col[m.group(1)]["value"] if m else v))
+        for x in node.values():
+            fill_values(x)
+
+
+fill_values(SPEC)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 

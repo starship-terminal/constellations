@@ -5,10 +5,13 @@
 // Desktop 1440x900 at 1x, phone 390x844 at 2x. Consent overlays are hidden,
 // never clicked. Nothing is signed into, purchased, or submitted.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { chromium, UA, UA_MOBILE, BASE, hideConsent } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../../../.design-systems/masterclass/raw-full/', import.meta.url).pathname;
+// Full-colour shots go outside the repo (the kit's default), never into systems/ or the repo root.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'masterclass', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
@@ -48,7 +51,8 @@ class Shooter {
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    const MAXH = 8 * chunk;
+    // Bounded: at most 8 viewport tiles (AGENTS.md "Bound every full-page capture").
+    const MAXH = Math.min(8 * chunk, 8 * this.p.viewportSize().height);
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
     // Always clip to the configured viewport width. fullPage uses document width,
@@ -92,14 +96,8 @@ const desktop = {
   } },
   checkout: { path: '/checkout', wait: 5000, run: async (p, S) => {
     await S.view('default');
-    await step('plan', async () => {
-      const plus = p.getByRole('button', { name: /^Select$/ }).nth(1);
-      if (await plus.count()) {
-        await plus.click({ timeout: 5000 });
-        await wait(p, 700);
-        await S.view('plus-selected');
-      }
-    });
+    // Plan Select on /checkout is not clicked: it changes checkout state on the live site.
+    // The plans are shot at rest; a selected plan is a boundary, not captured.
     await step('faq', async () => {
       const q = p.locator('button').filter({ hasText: /What is MasterClass/i }).first();
       if (await q.count()) {
@@ -154,7 +152,7 @@ for (const { k, mob } of runs) {
     viewport: { width: vw, height: vh }, deviceScaleFactor: dpr,
     userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US',
   });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // Automation is not hidden (no webdriver mask): a bot check is recorded as a boundary, not bypassed.
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-dark`, vw, vh, dpr);

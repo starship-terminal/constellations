@@ -6195,7 +6195,7 @@
       "popover": {
         "value": "{radius.l}",
         "type": "dimension",
-        "source": "computed borderTopLeftRadius of menu-popover default (raw/components-computed.json); matches declared --tempo-radii-l",
+        "source": "computed borderTopLeftRadius of menu-popover default (raw/components-computed.json); matches declared --tempo-radii-l; menu-popover was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
         "description": "The 24px overflow-popover radius."
       }
     },
@@ -6269,7 +6269,7 @@
       "popover": {
         "value": "rgba(0, 0, 0, 0.4) 0px 0px 25px 10px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px",
         "type": "other",
-        "source": "computed boxShadow of menu-popover default (raw/components-computed.json)",
+        "source": "computed boxShadow of menu-popover default (raw/components-computed.json); menu-popover was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
         "description": "The layered black shadow the overflow popover carries."
       }
     },
@@ -8311,19 +8311,19 @@
       "page": {
         "value": "{color.tempo.gray.50}",
         "type": "color",
-        "source": "the home hero paints a white field behind the display copy (screenshots/home-light-*.png); matches declared color.tempo.gray.50",
+        "source": "sampled, not measured: the white field behind the home hero read off screenshots/home-light-*.png; no computed reading of the page field; matches declared color.tempo.gray.50",
         "description": "The white field the home hero paints."
       },
       "card": {
         "value": "{color.bg.main}",
         "type": "color",
-        "source": "painted card fill inside plan-card default (raw/components-computed.json); matches declared color.bg.main",
+        "source": "painted div.unlogged-card fill inside plan-card default (raw/components-computed.json); matches declared color.bg.main",
         "description": "The #fdfcfe plan-card field on the offers band."
       },
       "chip": {
         "value": "{color.bg.tertiary.default}",
         "type": "color",
-        "source": "painted chip fill inside plan-card default (raw/components-computed.json); matches declared color.bg.tertiary.default",
+        "source": "painted span.unlogged-card-tag chip fill inside plan-card default (raw/components-computed.json); matches declared color.bg.tertiary.default",
         "description": "The #ebe7ee chip inside the plan cards."
       }
     },
@@ -10179,7 +10179,7 @@
       "canvas": {
         "value": "{color.bg.main}",
         "type": "color",
-        "source": "painted canvas inside m-drawer default (raw/components-computed.json); matches declared color.bg.main",
+        "source": "painted ul.burger-menu-content canvas inside m-drawer default (raw/components-computed.json); matches declared color.bg.main",
         "description": "The #0f0d13 app canvas."
       },
       "surface": {
@@ -10203,7 +10203,7 @@
       "banner": {
         "value": "#ead1ff",
         "type": "color",
-        "source": "painted banner fill inside signup-banner default (raw/components-computed.json)",
+        "source": "painted banner fill (the first div.css-18x5i1s layer) inside signup-banner default (raw/components-computed.json)",
         "description": "The #ead1ff 'Live the music with Deezer' signup banner."
       },
       "toggle": {
@@ -10358,13 +10358,13 @@
     "artist-image": {
       "value": "278px",
       "type": "dimension",
-      "source": "measured w of artist-avatar default (raw/components-computed.json)",
+      "source": "measured w of artist-avatar default (raw/components-computed.json); artist-avatar was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
       "description": "The 278px round artist image."
     },
     "popover-width": {
       "value": "308.36px",
       "type": "dimension",
-      "source": "measured w of menu-popover default (raw/components-computed.json)",
+      "source": "measured w of menu-popover default (raw/components-computed.json); menu-popover was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
       "description": "The 308px track-overflow popover."
     },
     "plan-card-width": {

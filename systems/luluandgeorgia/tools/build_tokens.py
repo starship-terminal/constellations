@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Build tokens.json from measured public styles on luluandgeorgia.com.
 
-Every colour and length below was read from a computed style on 2026-11-18
-(raw/components-computed.json and the color probe written beside the
-scratch captures). The site publishes no design-token custom properties for
+Every colour and length below is read from raw/components-computed.json, the
+computed styles of 2026-11-18. Three colours came from a colour probe written
+beside the scratch captures, which is not committed; they are typed in and
+labelled Reconstruction. The site publishes no design-token custom properties for
 these roles. Tailwind --tw-* and vendor --marqo-* / --jdgm-* / --dg-* names
 are recorded in raw/css-vars.json when harvested, and are not tokenised here.
 
@@ -42,102 +43,120 @@ def leaf(ty, value, source, description=None):
     return token
 
 
-# Sources name the element and the reading file. Values are the computed
-# colours from the 2026-11-18 capture, not recalled brand colours.
-INK = "rgb(26, 23, 19)"          # body, nav, add-to-cart fill
-PAGE = "rgb(255, 255, 255)"      # header background
-SEARCH = "rgb(235, 235, 235)"    # search field fill
-MUTED = "rgb(116, 116, 116)"     # search placeholder
-SALE = "rgb(177, 21, 21)"        # SALE nav link
-PROMO = "rgb(43, 48, 15)"        # announcement bar parent
-HAIRLINE = "rgb(229, 229, 229)"  # computed border-top-color on body
-ON_ACCENT = "rgb(255, 255, 255)" # add-to-cart label, promo text
-CREAM = "rgb(243, 238, 232)"     # footer newsletter label
+# Every measured value is read from raw/components-computed.json: `components` holds the per-element
+# readings, `foundations` the page-level ones. A missing reading fails the build. The colours the
+# capture took from a separate colour probe that is not committed (the announcement bar parent, the
+# footer newsletter button, the Judge.me star colour) are typed in below and labelled Reconstruction.
+J = json.loads((RAW / "components-computed.json").read_text())
+COMP, FOUND = J["components"], J["foundations"]
+FILE = "raw/components-computed.json"
+
+
+def reading(key, prop, state="default"):
+    """A computed property of one measured component, or a foundations reading (key 'f:<name>')."""
+    if key.startswith("f:"):
+        v = (FOUND.get(key[2:]) or {}).get(prop)
+    else:
+        v = ((COMP.get(key) or {}).get("states", {}).get(state) or {}).get(prop)
+    if v in (None, ""):
+        raise SystemExit(f"{key} {state} {prop} missing from {FILE}")
+    return v
+
+
+def px(v):
+    return f"{v:g}px" if isinstance(v, (int, float)) else v
+
+
+def tracking(v):
+    return "0px" if v == "normal" else v
+
+
+def pad(key, i):
+    """One side of a computed padding shorthand: 0 block, 1 inline."""
+    parts = reading(key, "padding").split()
+    return parts[min(i, len(parts) - 1)]
+
+
+def first_family(key):
+    return reading(key, "fontFamily").split(",")[0].strip().strip('"')
+
+
+def by_hand(what):
+    return f"Reconstruction: entered by hand at capture time from {what}. No committed reading in raw/ holds it."
+
+
+INK = reading("f:body", "color")
+PAGE = reading("f:header", "backgroundColor")
+SEARCH = reading("search", "backgroundColor")
+MUTED = reading("search", "color")
+SALE = reading("f:sale", "color")
+HAIRLINE = reading("f:body", "borderTop").split(" ", 2)[2]
+ON_ACCENT = reading("atc", "color")
+PROMO = "rgb(43, 48, 15)"       # colour probe, not committed
+CREAM = "rgb(243, 238, 232)"    # colour probe, not committed
+if reading("atc", "backgroundColor") != INK or reading("atc", "backgroundColor", "hover") != INK:
+    raise SystemExit("add to cart no longer paints the body ink; revisit action and action-hover")
 
 SRC = {
-    "ink": "Measured. Computed color on body and on button.js-add-to-cart, 2026-11-18, raw/components-computed.json.",
-    "page": "Measured. Computed backgroundColor on header, 2026-11-18.",
-    "search": "Measured. Computed backgroundColor on input.marqo-header-search__input, 2026-11-18.",
-    "muted": "Measured. Computed color on the search placeholder, 2026-11-18.",
-    "sale": "Measured. Computed color on the SALE nav link, 2026-11-18.",
-    "promo": "Measured. Computed backgroundColor on the announcement bar parent, 2026-11-18.",
-    "hairline": "Measured. Computed borderTopColor on body, 2026-11-18.",
-    "on": "Measured. Computed color on button.js-add-to-cart, 2026-11-18.",
-    "cream": "Measured. Computed color on .cf-ft-news-btn, 2026-11-18.",
+    "ink": f"Measured. Computed color on body ({FILE} foundations.body) and backgroundColor of the add-to-cart button (atc), 2026-11-18.",
+    "page": f"Measured. Computed backgroundColor on header ({FILE} foundations.header), 2026-11-18.",
+    "search": f"Measured. Computed backgroundColor on the header search field ({FILE} search), 2026-11-18.",
+    "muted": f"Measured. Computed color on the header search field placeholder ({FILE} search), 2026-11-18.",
+    "sale": f"Measured. Computed color on the SALE nav link ({FILE} foundations.sale), 2026-11-18.",
+    "promo": by_hand("a colour probe of the announcement bar's parent (the bar itself computes a transparent fill)"),
+    "hairline": f"Measured. Computed borderTopColor on body ({FILE} foundations.body), 2026-11-18.",
+    "on": f"Measured. Computed color on the add-to-cart button ({FILE} atc), 2026-11-18.",
+    "cream": by_hand("a colour probe of the footer newsletter button .cf-ft-news-btn"),
 }
+
+
+def type_style(key, family, source):
+    return leaf("typography", {
+        "fontFamily": family,
+        "fontSize": reading(key, "fontSize"),
+        "fontWeight": int(reading(key, "fontWeight")),
+        "lineHeight": reading(key, "lineHeight"),
+        "letterSpacing": tracking(reading(key, "letterSpacing")),
+    }, source)
+
 
 core = {
     "font": {
         "family": {
-            "sans": leaf("fontFamily", '"Soehne Leicht", Söhne, "Helvetica Neue", Arial, sans-serif',
-                         "Measured. Computed fontFamily on body controls and the search field is Soehne Leicht. The stack names the fallbacks the footer button declares.",
+            "sans": leaf("fontFamily", f'"{first_family("search")}", Söhne, "Helvetica Neue", Arial, sans-serif',
+                         f"Measured: {first_family('search')} is the computed fontFamily on the search field and the body controls ({FILE}). "
+                         "The fallbacks after it were entered by hand at capture time from a footer button reading that is not in raw/.",
                          "Proprietary. Not shipped in this package."),
-            "display": leaf("fontFamily", "Iskry, \"Iowan Old Style\", Palatino, Georgia, serif",
-                            "Measured. Computed fontFamily on the collection h1 is Iskry Bold. The serif fallbacks are the guide's stand-ins, not a site declaration.",
+            "display": leaf("fontFamily", f'{first_family("f:h1").split()[0]}, "Iowan Old Style", Palatino, Georgia, serif',
+                            f"Measured. Computed fontFamily on the collection h1 is {first_family('f:h1')} ({FILE} foundations.h1). The serif fallbacks are the guide's stand-ins, not a site declaration.",
                             "Iskry is proprietary. The serif names after it are stand-ins."),
         }
     },
     "typography": {
-        "heading": leaf("typography", {
-            "fontFamily": "{font.family.display}",
-            "fontSize": "26px",
-            "fontWeight": 400,
-            "lineHeight": "40px",
-            "letterSpacing": "1.2px",
-        }, "Measured. Collection h1 FURNITURE, Iskry Bold, 26px / 40px / 1.2px, raw/components-computed.json foundations.h1."),
-        "product": leaf("typography", {
-            "fontFamily": "{font.family.sans}",
-            "fontSize": "20px",
-            "fontWeight": 400,
-            "lineHeight": "28px",
-            "letterSpacing": "0px",
-        }, "Measured. Product h1, Soehne Leicht, 20px, raw/components-computed.json product-title."),
-        "body": leaf("typography", {
-            "fontFamily": "{font.family.sans}",
-            "fontSize": "16px",
-            "fontWeight": 400,
-            "lineHeight": "24px",
-            "letterSpacing": "0px",
-        }, "Measured. Search field and announcement text, 16px / 24px."),
-        "nav": leaf("typography", {
-            "fontFamily": "{font.family.sans}",
-            "fontSize": "11px",
-            "fontWeight": 400,
-            "lineHeight": "24px",
-            "letterSpacing": "1.2px",
-        }, "Measured. Category link FURNITURE, Soehne Buch, 11px / 24px / 1.2px, uppercase."),
-        "button": leaf("typography", {
-            "fontFamily": "{font.family.sans}",
-            "fontSize": "13px",
-            "fontWeight": 800,
-            "lineHeight": "16px",
-            "letterSpacing": "0px",
-        }, "Measured. Add to cart, Soehne Leicht, 13px, font-weight 800. Computed letter-spacing was normal, so 0px. The uppercase comes from the label, not from a letter-spacing token."),
-        "caption": leaf("typography", {
-            "fontFamily": "{font.family.sans}",
-            "fontSize": "12px",
-            "fontWeight": 400,
-            "lineHeight": "16px",
-            "letterSpacing": "0px",
-        }, "Measured. Account icon button computed font-size 12px."),
+        "heading": type_style("f:h1", "{font.family.display}", f"Measured. Collection h1 FURNITURE, {first_family('f:h1')}, {FILE} foundations.h1."),
+        "product": type_style("product-title", "{font.family.sans}", f"Measured. Product h1, {first_family('product-title')}, {FILE} product-title."),
+        "body": type_style("search", "{font.family.sans}", f"Measured. Header search field, {first_family('search')}, {FILE} search."),
+        "nav": type_style("nav-link", "{font.family.sans}", f"Measured. Category link FURNITURE, {first_family('nav-link')}, uppercase, {FILE} nav-link."),
+        "button": type_style("atc", "{font.family.sans}", f"Measured. Add to cart, {first_family('atc')}, uppercase label, {FILE} atc."),
+        "caption": type_style("icon-account", "{font.family.sans}", f"Measured. Account icon button, {FILE} icon-account."),
     },
     "spacing": {
-        "8": leaf("dimension", "8px", "Measured. Search field padding-block 8px."),
-        "12": leaf("dimension", "12px", "Measured. Search field padding-inline 12px."),
-        "16": leaf("dimension", "16px", "Measured. Add to cart padding-inline 16px."),
-        "40": leaf("dimension", "40px", "Measured. Announcement bar height 40px, also the collection heading line-height."),
+        "8": leaf("dimension", pad("search", 0), f"Measured. Search field padding-block, {FILE} search."),
+        "12": leaf("dimension", pad("search", 1), f"Measured. Search field padding-inline, {FILE} search."),
+        "16": leaf("dimension", pad("atc", 1), f"Measured. Add to cart padding-inline, {FILE} atc."),
+        "40": leaf("dimension", px(reading("promo-bar", "rect")["h"]), f"Measured. Announcement bar height, {FILE} promo-bar; also the collection heading line-height."),
     },
     "radius": {
-        "none": leaf("dimension", "0px", "Measured. Search, add to cart, nav, and cards all compute border-radius 0px."),
+        "none": leaf("dimension", reading("search", "borderRadius"), f"Measured. Search, add to cart, nav and cards all compute border-radius 0px ({FILE})."),
     },
     "border": {
-        "hairline": leaf("dimension", "1px", "Measured. Wishlist button border-top-width 1px. Body border color is the hairline grey."),
+        "hairline": leaf("dimension", reading("filter-btn", "borderTopWidth"), f"Measured. Filter button border-top-width, {FILE} filter-btn."),
     },
     "size": {
-        "control-md": leaf("dimension", "40px", "Measured. Add to cart height 40px. Announcement bar height 40px."),
-        "control-lg": leaf("dimension", "44px", "Measured. Search field height 44px."),
-        "icon": leaf("dimension", "22px", "Measured. Account icon button 22px."),
-        "promo": leaf("dimension", "40px", "Measured. Announcement bar height 40px."),
+        "control-md": leaf("dimension", px(reading("atc", "rect")["h"]), f"Measured. Add to cart height, {FILE} atc."),
+        "control-lg": leaf("dimension", px(reading("search", "rect")["h"]), f"Measured. Search field height, {FILE} search."),
+        "icon": leaf("dimension", px(reading("icon-account", "rect")["h"]), f"Measured. Account icon button height, {FILE} icon-account."),
+        "promo": leaf("dimension", px(reading("promo-bar", "rect")["h"]), f"Measured. Announcement bar height, {FILE} promo-bar."),
     },
 }
 
@@ -154,14 +173,14 @@ light = {
         },
         "border": {
             "default": leaf("color", HAIRLINE, SRC["hairline"]),
-            "strong": leaf("color", INK, SRC["ink"] + " Wishlist and filter controls use the ink as a 1px border."),
+            "strong": leaf("color", INK, by_hand("the wishlist and filter controls' 1px ink border; the wishlist button was not found by the measure pass and the filter button's reading is #ebebeb")),
         },
         "action": leaf("color", INK, SRC["ink"] + " Add to cart fill."),
-        "action-hover": leaf("color", INK, "Measured hover on add to cart did not change the fill from rgb(26, 23, 19). Same value as action."),
+        "action-hover": leaf("color", INK, f"Measured. Add to cart hover computes the same backgroundColor ({FILE} atc hover). Same value as action."),
         "promo": leaf("color", PROMO, SRC["promo"]),
         "sale": leaf("color", SALE, SRC["sale"]),
         "cream": leaf("color", CREAM, SRC["cream"]),
-        "info": leaf("color", "#108474", "Measured. Judge.me custom property --jdgm-primary-color, declared on the product page. It paints review stars, not a storefront status role."),
+        "info": leaf("color", "#108474", by_hand("the Judge.me custom property --jdgm-primary-color declared on the product page; it paints review stars, not a storefront status role")),
     }
 }
 

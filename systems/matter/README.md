@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #6d7eec `dark.accent` | #6d7eec `light.accent` |
 | border | #2f3034 `dark.border` | #dfdfdf `light.border` |
 
-Fonts: `core.font.family.camphor` is MR-Camphor, then 7 fallbacks; `core.font.family.system` is -apple-system, then 9 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 3 radius steps (`core.radius`), 6 spacing steps (`core.spacing`).
+Fonts: `core.font.family.camphor` is MR-Camphor, then 10 fallbacks; `core.font.family.system` is -apple-system, then 9 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 3 radius steps (`core.radius`), 6 spacing steps (`core.spacing`).
 
 ### Using components
 

@@ -42,6 +42,16 @@ RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
 RL = V.get("resolved", {}).get("light", {})
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
+
+
+def current(comp):
+    """The component's entry, refused when the last run did not read it: missing
+    (no states) or recaptureMissed (earlier states kept under their own
+    provenance) is not a current reading, so it cannot source a role."""
+    c = C[comp]
+    if c.get("missing") or c.get("recaptureMissed"):
+        raise KeyError(f"{comp}: not a current reading (missing or recaptureMissed)")
+    return c
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
 # The inline --theme-color* set a creator page paints (read off live elements).
 INLINE = {}
@@ -210,7 +220,10 @@ for key, comp, state, desc in [
         neutral[key] = {"value": v, "type": "color",
                         "source": f"painted layer under {comp} {state} (raw/components-computed.json)",
                         "description": desc}
-neutral["paper"] = {"value": "#ffffff", "type": "color",
+_paper = {norm_color(current(c)["states"]["default"]["style"].get("backgroundColor", "")) for c in ("c-widget", "c-header", "r-tweet")}
+if len(_paper) != 1:
+    raise ValueError(f"paper: readings differ: {sorted(_paper)}")
+neutral["paper"] = {"value": _paper.pop(), "type": "color",
                     "source": "computed backgroundColor of c-widget / c-header / r-tweet on /cara.app (raw/components-computed.json)",
                     "description": "The white creator-page field, cards and dropdowns."}
 

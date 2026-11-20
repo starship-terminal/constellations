@@ -2,8 +2,6 @@
 """The Rivian token build is deterministic and keeps a source on every token."""
 import json
 import pathlib
-import subprocess
-import sys
 import unittest
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -12,11 +10,11 @@ PKG = HERE.parent
 
 class BuildTokens(unittest.TestCase):
     def test_build_is_stable_and_sourced(self):
+        # main() builds in memory; only write() touches tokens.json, so a mismatch leaves it alone.
+        import build_tokens
         before = (PKG / "tokens.json").read_text()
-        subprocess.check_call([sys.executable, str(HERE / "build_tokens.py")], cwd=PKG)
-        after = (PKG / "tokens.json").read_text()
-        self.assertEqual(before, after)
-        tokens = json.loads(after)
+        self.assertEqual(before, json.dumps(build_tokens.main(), indent=2) + "\n")
+        tokens = json.loads(before)
         self.assertIn("light", tokens)
         self.assertNotIn("dark", tokens)
 

@@ -14,7 +14,7 @@ colors:
   background-page: "#ffffff"
   background-sunken: "#f4f4f4"
   background-surface: "#ffffff"
-  background-scrim: "rgba(0, 0, 0, 0.4)"
+  background-scrim: "#00000066"
   background-promo: "#5b0819"
   background-inverse: "#212121"
   text-primary: "#212121"

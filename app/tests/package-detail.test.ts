@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { getReference } from "../src/server/sources";
@@ -99,7 +99,30 @@ async function fixture() {
   );
   return dir;
 }
+afterEach(() => vi.restoreAllMocks());
 describe("measured package parity", () => {
+  it("reads the README once and never reads an export just to link it", async () => {
+    const dir = await fixture();
+    await fs.writeFile(
+      path.join(dir, "systems/demo/README.md"),
+      "# Demo\n\n- Keep the density\n",
+    );
+    await fs.writeFile(path.join(dir, "systems/demo/DESIGN.md"), "# Demo");
+    const reads = vi.spyOn(fs, "readFile");
+    const detail = await getReference("systems:demo");
+    expect(detail?.guidelines).toEqual(["Keep the density"]);
+    expect(Object.keys(detail?.exports || {}).sort()).toEqual([
+      "DESIGN.md",
+      "tokens.json",
+    ]);
+    const read = (name: string) =>
+      reads.mock.calls.filter(([file]) =>
+        String(file).endsWith(`systems/demo/${name}`),
+      ).length;
+    expect(read("README.md")).toBe(1);
+    expect(read("DESIGN.md")).toBe(0);
+    expect(read("tokens.json")).toBe(1);
+  });
   it("preserves all media kinds, stable original identity and structured previews", async () => {
     await fixture();
     const detail = await getReference("systems:demo");
@@ -299,6 +322,9 @@ describe("interpreted source contract", () => {
         video_poster_url: "https://example.com/poster.jpg",
         video_detail_url: "https://example.com/detail.mp4",
         video_detail_poster_url: "https://example.com/detail-poster.jpg",
+        // The favicon Refero recorded; with none there is no favicon entry
+        // (no favicon service fallback).
+        favicon_url: "https://example.com/favicon.png",
       }),
     );
     const design = {

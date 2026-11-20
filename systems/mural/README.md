@@ -138,7 +138,7 @@ python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
 ```
 
-The capture scripts live in [tools/capture/](tools/capture/). They need Playwright. They do not submit forms. Raw full-colour shots from the harvest stay in `~/.design-systems/mural/raw-shots/` and are not part of the package.
+The capture scripts live in [tools/capture/](tools/capture/). They need Playwright. They do not submit forms. Each raw file has one writer. Run `harvest.mjs` first (shots, icons, `css-vars.json`, `layout.json`, `pages.json` and its own `components-harvest.json`), then `measure-only.mjs`, the one writer of `components-computed.json` and `dom-map.json`, then `measure-more.mjs` (`components-extra.json`) and `motion-probe.mjs`. Raw full-colour shots from the harvest stay in `~/.design-systems/mural/raw-shots/` and are not part of the package.
 
 ## Coverage notes
 

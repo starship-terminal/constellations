@@ -245,20 +245,20 @@
    "family": {
     "headline": {
      "type": "fontFamily",
-     "value": "\"Pie Headline\", Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif",
-     "source": "@font-face in httpie.io's sheets (raw/css-vars.json fonts): 'Pie Headline' is FK Screamer, a licensed face — the name is evidence, the font file is not shipped",
-     "description": "the display face — hero and section headlines"
+     "value": "\"Pie Headline\", Impact",
+     "source": "computed fontFamily of hero-headline default on / (raw/components-computed.json); Pie Headline is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)",
+     "description": "the display face — hero and section headlines (FK Screamer)"
     },
     "body": {
      "type": "fontFamily",
-     "value": "\"Pie Body\", ui-sans-serif, system-ui, sans-serif",
-     "source": "@font-face in httpie.io's sheets (raw/css-vars.json fonts): 'Pie Body' is PolyPie, licensed — the name is evidence, the font file is not shipped",
-     "description": "the body/UI face"
+     "value": "\"Pie Body\", sans-serif",
+     "source": "computed fontFamily of prose-p default on /blog/changelog-0027 (raw/components-computed.json); Pie Body is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)",
+     "description": "the body/UI face (PolyPie)"
     },
     "mono": {
      "type": "fontFamily",
-     "value": "\"Pie Monospace\", ui-monospace, SFMono-Regular, Menlo, monospace",
-     "source": "@font-face in httpie.io's sheets (raw/css-vars.json fonts): 'Pie Monospace', licensed — the name is evidence, the font file is not shipped",
+     "value": "\"Pie Monospace\", monospace",
+     "source": "computed fontFamily of cli-code-block default on /cli (raw/components-computed.json); Pie Monospace is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)",
      "description": "the code face — terminal blocks, the URL field, JSON"
     },
     "symbols": {
@@ -471,30 +471,6 @@
       "description": "primary button fill"
      }
     }
-   },
-   "sendButton": {
-    "bg": {
-     "type": "color",
-     "value": "{accent.default}",
-     "source": "measured app-send-button default on /app (Send fill) — the element's class paints the accent.default role, so each theme resolves its own",
-     "description": "Send fill"
-    }
-   },
-   "nav": {
-    "bg": {
-     "type": "color",
-     "value": "rgba(0, 0, 0, 0)",
-     "source": "measured site-nav light on / (nav bar fill) — transparent — the page's bg.z0 shows through",
-     "description": "nav bar fill"
-    }
-   },
-   "appSidebar": {
-    "bg": {
-     "type": "color",
-     "value": "rgba(0, 0, 0, 0)",
-     "source": "measured app-sidebar light on /app (app rail fill) — transparent — the page's bg.z0 shows through",
-     "description": "app rail fill"
-    }
    }
   }
  },
@@ -704,24 +680,8 @@
     "bg": {
      "type": "color",
      "value": "{accent.default}",
-     "source": "measured app-send-button default on /app (Send fill) — the element's class paints the accent.default role, so each theme resolves its own",
+     "source": "measured app-send-button default on /app (Send fill) — the element's class paints the accent.default role",
      "description": "Send fill"
-    }
-   },
-   "nav": {
-    "bg": {
-     "type": "color",
-     "value": "rgba(0, 0, 0, 0)",
-     "source": "measured site-nav default on / (nav bar fill) — transparent — the page's bg.z0 shows through",
-     "description": "nav bar fill"
-    }
-   },
-   "appSidebar": {
-    "bg": {
-     "type": "color",
-     "value": "rgba(0, 0, 0, 0)",
-     "source": "measured app-sidebar default on /app (app rail fill) — transparent — the page's bg.z0 shows through",
-     "description": "app rail fill"
     }
    }
   }

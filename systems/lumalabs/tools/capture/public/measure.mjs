@@ -22,9 +22,7 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => { fs.mkdirSync(RAW, { recursive: true }); fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n'); };
 const URLS = {
   home: '/', pricing: '/pricing', about: '/about', api: '/api', ray: '/ray',
-  news: '/news', enterprise: '/enterprise', mcp: '/mcp', careers: '/careers',
-  docs: 'https://docs.lumalabs.ai/docs/welcome',
-  notfound: '/no-such-page-capture',
+  news: '/news', enterprise: '/enterprise',
 };
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
@@ -62,8 +60,9 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   // fresh context before recording the route as blocked this run.
   let ok = false;
   for (let tries = 0; tries < 2 && !ok; tries++) {
-    await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo });
-    ok = !(await blocked());
+    const opened = await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo })
+      .catch((e) => { log('  open failed', key, String(e.message || e).slice(0, 120)); return false; });
+    ok = opened && !(await blocked());
     if (!ok && tries === 0) { log('  challenge, one reload', key); }
   }
   if (!ok) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); liveCtx = null; return false; }
@@ -321,7 +320,7 @@ async function home() {
   await S('nav-signin', q('a[href*="app.lumalabs.ai"]').filter({ hasText: /Sign In/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Sign In', desc: 'The header Sign In pill. It links to app.lumalabs.ai, which redirects to the sign-up host. Measured, never followed.', sel: 'a Sign In' }, { noScroll: true });
   await S('hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: G.home, title: 'Hero heading', desc: 'The home hero heading.', sel: 'h1' }, { noScroll: true });
   await S('hero-cta', q('a').filter({ hasText: /Try for free/ }).filter({ visible: true }).first(), B4, { group: G.home, title: 'Try for free', desc: 'The hero pill. Links to the app host. Measured, never followed. Following it is a sign-in.', sel: 'Try for free' });
-  await S('prompt', q('textarea, [contenteditable="true"]').filter({ visible: true }).first(), FIELD, { group: G.home, title: 'Prompt field', desc: 'The home prompt. Sample text is typed and deleted. Submit is never pressed.', sel: 'textarea', fillText: 'a ceramic cup on a table' });
+  await S('prompt', q('textarea, [contenteditable="true"]').filter({ visible: true }).first(), FIELD, { group: G.home, title: 'Prompt field', desc: 'The home prompt. Sample text is typed and deleted. Submit is never pressed.', sel: 'textarea' }, { fillText: 'a ceramic cup on a table' });
   await S('prompt-submit', q('button[aria-label="Submit prompt"]').first(), ['default', 'hover'], { group: G.home, title: 'Submit prompt', desc: 'The prompt submit control. Measured at rest and hover only. Never clicked, so no generation is started.', sel: 'button[aria-label=Submit prompt]' });
   await S('idea-chip', q('button').filter({ hasText: /Product Hero Shots/ }).filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: G.home, title: 'Idea chip', desc: 'A suggested-prompt chip. A local control. It was not used to submit a prompt.', sel: 'Product Hero Shots' });
   await S('footer-link', q('footer a').filter({ hasText: /Pricing/ }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Footer link', desc: 'A footer text link.', sel: 'footer a Pricing' });
@@ -351,7 +350,9 @@ async function pricing() {
       if (!el) return { missing: true };
       const file = await crop(page, el, 'price-card-default', 8);
       const box = await el.boundingBox();
-      return { crop: file, box };
+      // The S() target is body, so the state's own style is the page's. The card's computed style
+      // goes in extra.card, which build_components_md.py reads in place of the body reading.
+      return { crop: file, box, card: await styleOf(el) };
     },
   });
   await S('faq', q('button, [role="button"]').filter({ hasText: /What is Luma/ }).filter({ visible: true }).first(), ['default', 'hover', 'opened'], { group: g, title: 'FAQ row', desc: 'A pricing FAQ button. A local toggle. Nothing is submitted.', sel: 'FAQ' });

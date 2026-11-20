@@ -61,7 +61,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | docs-light | 17.57:1 pass | 17.57:1 pass | 7.71:1 pass | 7.71:1 pass |
 | sign-in | 16.29:1 pass | 15.32:1 pass | 5.79:1 pass | 5.44:1 pass |
 
-13 of 16 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `marketing.focus.ring` #e59700.
+13 of 16 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `marketing.focus.ring` #e59700 (Observed, not measured).
 
 <!-- brief:end -->
 

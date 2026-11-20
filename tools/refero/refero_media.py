@@ -10,9 +10,12 @@ extension change lands on every side at once. mirror_media.py --check walks
 the styles rows and verifies each expected file exists.
 
 Slugs are already URL-safe (fetch.slugify), so neither side URL-encodes them.
+media_dest() refuses any other slug: it comes from the db, which merges from
+the committed text dump, so a path-like one must never become a file path.
 """
 
 import os
+import re
 import urllib.parse
 from pathlib import Path
 
@@ -29,10 +32,10 @@ def load_env(keys=ENV_KEYS, env_file=None):
     """Copy the named keys from the repo's gitignored .env into os.environ; variables already set
     win. Returns the keys it set. An entry point that needs a secret calls this with just the keys
     it reads (server/chat.py: load_env(("ANTHROPIC_API_KEY", "DS_CHAT_MODEL"))). Nothing loads
-    .env on import."""
+    .env on import, and a call whose keys are all set already never opens it."""
     env = Path(env_file) if env_file else Path(__file__).resolve().parents[2] / ".env"
-    wanted, done = set(keys), []
-    if not env.is_file():
+    wanted, done = {k for k in keys if k not in os.environ}, []
+    if not wanted or not env.is_file():
         return done
     for line in env.read_text().splitlines():
         line = line.strip()
@@ -61,8 +64,9 @@ KINDS = {
     "favicons": (".png", "image/"),
 }
 
-# The favicon "remote" is Google's faviconV2 endpoint for the source host;
-# the mirrored file is what that URL returned.
+# Google's faviconV2 endpoint for the source host: where mirror_media.py and
+# fetch_icon.py download a favicon, host-side. Never emitted to a browser
+# (catalog.py's favicon pair has no remote), so browsing tells Google nothing.
 FAVICON_API = ("https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON"
                "&fallback_opts=TYPE,SIZE,URL&size=128&url=")
 
@@ -85,8 +89,23 @@ def local_path(kind, slug):
     return f"/refero-media/{kind}/{slug}{KINDS[kind][0]}"
 
 
+# What fetch.slugify produces: lowercase letters and digits joined by single
+# hyphens. catalog.py's REFERO_SLUG is the same rule on the emit side.
+SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+
+
+def safe_slug(slug):
+    """True when slug is one fetch.slugify could have produced."""
+    return isinstance(slug, str) and SLUG.fullmatch(slug) is not None
+
+
 def media_dest(media_root, kind, slug):
-    """The file local_path() resolves to under a media root."""
+    """The file local_path() resolves to under a media root.
+
+    Raises ValueError for a slug that is not lowercase letters, digits and
+    hyphens, so `../x` or `a/b` can never name a file outside the root."""
+    if not safe_slug(slug):
+        raise ValueError(f"unsafe refero slug {slug!r}")
     return Path(media_root) / kind / (slug + KINDS[kind][0])
 
 

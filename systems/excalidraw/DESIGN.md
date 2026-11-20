@@ -235,3 +235,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 6. **Do draw focus as a shadow ring.** Focused controls gain a brand-coloured glow, not an outline; only the occasional button draws a 1px auto outline. See [tool-rect](components/crops/tool-rect-focus-visible.png).
 7. **Don't style Excalidraw+ or collaboration from this package.** The account surfaces were never reached — the signup prompts visible in [the menu](screenshots/editor-light-menu.png) are where the evidence stops.
 8. **Don't fabricate the canvas.** Nothing was drawn: element rendering, selection chrome, context menus and text editing are uncaptured — the package covers the empty-canvas shell in [editor](screenshots/editor-light-editor.png).
+
+### Known gaps (from README.md)
+
+- `lib-empty` (Library empty state): the 2026-11-13 reading is the "Browse libraries" block, not the empty-state text; its selector's `.sidebar div` matching /libraries/ caught the wrong element. Needs a recapture. `measure.mjs` now selects the empty-state text only; it was edited, not run.
+- `undo-btn`, `redo-btn`, `theme-choice` and `export-switch`: keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md leaves them out and `raw/measurements.md` shows them as Skipped. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
+- `core.font.family.mono` (`"Cascadia", ui-monospace, monospace`) was entered by hand at capture time: no measured element computes it and `raw/css-vars.json` has no `@font-face` for Cascadia. Its source says so.

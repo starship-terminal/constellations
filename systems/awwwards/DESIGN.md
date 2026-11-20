@@ -109,6 +109,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One theme only.** A `dark` probe resolves to the same `:root` values — nothing paints dark. `tokens.json` ships no dark set.
 - **Roles are verified, not declared.** Every `light` role pairs a var (or a measured colour) with the component that was measured wearing it; the site declares palette, category accents and control vars, no semantic roles.
 - **The award gold is measured, not declared.** The Vote button's #e3c352 fill (`core.measured.action-award`) exists in no var; likewise the #383838 the outlined Submit Website fills on hover/pressed, and the #005fcc browser focus ring on nav/footer links.

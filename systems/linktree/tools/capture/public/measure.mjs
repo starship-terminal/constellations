@@ -56,8 +56,8 @@ async function newPage(key, { mobile = false, wait = 5000 } = {}) {
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
   const url = URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key];
-  await open(page, url, { wait });
-  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
+  const ok = await open(page, url, { wait }).then(() => true, (e) => { log('  !', key, String(e.message || e).split('\n')[0]); return false; });
+  if (!ok || await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
   opened.add(key + '|' + view);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
@@ -189,10 +189,11 @@ async function S(key, target, list, meta = {}, opts = {}) {
 }
 
 const NEVER = /^(send|submit|sign in|log ?in|login|sign up|sign up free|continue|continue with google|continue with apple|claim|claim your linktree|get started for free|select free|select starter|select pro|select premium|select growth|select scale|select enterprise|buy|purchase|pay|checkout|subscribe|share|share profile)$/i;
-async function toggle(loc) {
+async function toggle(loc, { allowLink = false } = {}) {
   const l = loc.filter({ visible: true }).first();
   const t = await l.evaluate((el) => ({ tag: el.tagName, type: el.getAttribute('type'), text: (el.innerText || el.getAttribute('aria-label') || '').trim() }));
-  if (t.type === 'submit' || NEVER.test(t.text)) throw new Error(`toggle refused: ${t.tag} "${t.text}"`);
+  // The base's guards: a link navigates, so it is refused unless the caller allows it.
+  if (t.type === 'submit' || NEVER.test(t.text) || (t.tag === 'A' && !allowLink)) throw new Error(`toggle refused: ${t.tag} "${t.text}"`);
   await l.click({ timeout: 4000 }).catch(() => l.evaluate((el) => el.click()));
 }
 
@@ -323,6 +324,12 @@ try {
       const cview = c.view || (key.startsWith('m-') ? 'mobile' : 'desktop');
       if (opened.has((c.page || '') + '|' + cview)) delete out.components[key];
     }
+  }
+  // The same for states (the kit's stale-state prune): a state an earlier run
+  // recorded that this run's spec no longer lists goes.
+  for (const [key, c] of Object.entries(out.components)) {
+    if (pages.length || !touched.has(key) || !listed.has(key)) continue;
+    for (const st of Object.keys(c.states || {})) if (!listed.get(key).has(st)) { delete c.states[st]; log('dropped stale state', key, st); }
   }
   save();
   await browser.close().catch(() => {});

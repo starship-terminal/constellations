@@ -123,21 +123,22 @@ Page: home. Selector: `Header__LogoLink svg`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 95.19 x 28 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/23.2px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #0000ee | = | = | = |
-| Transition | none | = | = | = |
-| Transform | matrix(1, 0, 0, 1, -47.5938, 0) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 95.19 x 28, colour #0000ee, fill #000000 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 95.19 x 28 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/23.2px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #0000ee | = | - | = |
+| Transition | none | = | - | = |
+| Transform | matrix(1, 0, 0, 1, -47.5938, 0) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 95.19 x 28, colour #0000ee, fill #000000 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `logo-default.png`, `logo-hover.png`, `logo-focus-visible.png`, `logo-pressed.png`.
 
@@ -633,21 +634,22 @@ Page: about. Selector: `about__Box`. States: default, hover, focus-visible, pres
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 286.66 x 330.05 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/23.2px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #19191b | = | = | = |
-| Text node | h4.Headline__Wrapper-sc-1nuat49-0.eeXSSv: Inter 18px/24.3px 600, #19191b | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 16 x 16, colour #0000ee | = | = | = |
-| Painted layers | a.about__Social-sc-xipocs-7.kgPcWG 40.0x40.0 bg #e0e3e7 r 14px shadow #000000 @ 0.02 0px 2px 4px 0px, #000000 @ 0.03 0px -1px 2px 0px inset; a.about__Social-sc-xipocs-7.kgPcWG 40.0x40.0 bg #e0e3e7 r 14px shadow #000000 @ 0.02 0px 2px 4px 0px, #000000 @ 0.03 0px -1px 2px 0px inset | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 286.66 x 330.05 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/23.2px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #19191b | = | - | = |
+| Text node | h4.Headline__Wrapper-sc-1nuat49-0.eeXSSv: Inter 18px/24.3px 600, #19191b | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 16 x 16, colour #0000ee | = | - | = |
+| Painted layers | a.about__Social-sc-xipocs-7.kgPcWG 40.0x40.0 bg #e0e3e7 r 14px shadow #000000 @ 0.02 0px 2px 4px 0px, #000000 @ 0.03 0px -1px 2px 0px inset; a.about__Social-sc-xipocs-7.kgPcWG 40.0x40.0 bg #e0e3e7 r 14px shadow #000000 @ 0.02 0px 2px 4px 0px, #000000 @ 0.03 0px -1px 2px 0px inset | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `team-card-default.png`, `team-card-hover.png`, `team-card-focus-visible.png`, `team-card-pressed.png`.
 

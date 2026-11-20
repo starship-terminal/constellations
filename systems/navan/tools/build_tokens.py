@@ -4,6 +4,9 @@
 Every colour and length below was read from computed style or a custom
 property on https://navan.com/ (and the public pricing, expense and sign-in
 boundary pages) on 2026-11-19. Nothing here is sampled from a screenshot.
+A type style whose line height raw/components.json does not hold is labelled
+Reconstruction: that line height was typed in by hand at capture time.
+build() returns the document; running the file writes it.
 """
 import json
 import pathlib
@@ -53,6 +56,14 @@ def text_style(family, size, weight, line_height, source):
     }
 
 
+def by_hand(token, what):
+    """Relabel a token one of whose values no file in raw/ holds."""
+    token["$extensions"]["source"] = ("Reconstruction: " + what + " was entered by hand at capture time; "
+                                      "raw/components.json holds no reading of it. "
+                                      + token["$extensions"]["source"].removeprefix("Measured "))
+    return token
+
+
 def ramp(name, steps, source):
     return {
         step: color(value, f"{source} --{name}-{step}")
@@ -65,7 +76,20 @@ HOME = "Measured computed style, https://navan.com/, 1440x900, dpr 2, 2026-11-19
 PRICE = "Measured computed style, https://navan.com/pricing, 1440x900, 2026-11-19"
 LOGIN = "Measured computed style, https://login.navan.com/ identifier page, 1440x900, 2026-11-19. Email field was not filled."
 
-core = {
+def build():
+    """The token document, built in memory from raw/; main() writes it."""
+    return {
+        "$description": "Navan public marketing site, measured 2026-11-19. Light only: the signed-out marketing pages ship no dark theme switch.",
+        "core": core(),
+        "light": light(),
+        "$themes": [
+            {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}
+        ],
+    }
+
+
+def core():
+    return {
     "color": {
         "blurple": ramp("blurple", VARS["color"]["blurple"], SRC),
         "gray": ramp("gray", VARS["color"]["gray"], SRC),
@@ -88,17 +112,17 @@ core = {
     "typography": {
         "display": text_style("Sanomat, ui-serif", "45px", "600", "54px", HOME + " h1"),
         "display-phone": text_style("Sanomat, ui-serif", "25px", "600", "30px", "Measured computed style, expense page at innerWidth 390, 2026-11-19"),
-        "heading": text_style("Sanomat, ui-serif", "42px", "600", "47px", HOME + " first h2"),
-        "title": text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "21px", "300", "30px", HOME + " hero prompt"),
+        "heading": text_style(COMP["h2"]["fontFamily"], COMP["h2"]["fontSize"], COMP["h2"]["fontWeight"], COMP["h2"]["lineHeight"], HOME + " h2 (raw/components.json h2)"),
+        "title": by_hand(text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "21px", "300", "30px", HOME + " hero prompt"), "the hero prompt style"),
         "body": text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "16px", "300", "24px", HOME + " body. letter-spacing computed -2%, not tokenised"),
         "nav": text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "14px", "400", "19px", HOME + " nav item"),
         "button": text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "14px", "400", "20px", HOME + " primary link"),
-        "price": text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "30px", "700", "36px", PRICE + " Free"),
-        "feature": text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "15px", "300", "26px", PRICE + " feature row"),
-        "faq": text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "19px", "300", "25px", PRICE + " FAQ button"),
-        "footer": text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "13px", "300", "19px", PRICE + " footer Privacy link"),
-        "login-heading": text_style("nvn-heading, serif", "40px", "600", "40px", LOGIN + " h1. line-height was not read; size is stored as the line height so the token stays a measured length"),
-        "login-label": text_style("nvn-regular, Helvetica", "14px", "400", "20px", LOGIN + " Email address label. Computed size was 13.92px; 14px is the rounded px"),
+        "price": by_hand(text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "30px", "700", "36px", PRICE + " Free"), "the 36px line height"),
+        "feature": by_hand(text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "15px", "300", "26px", PRICE + " feature row"), "the 26px line height"),
+        "faq": by_hand(text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "19px", "300", "25px", PRICE + " FAQ button"), "the 25px line height"),
+        "footer": by_hand(text_style("Inter, Inter Fallback, ui-sans-serif, system-ui", "13px", "300", "19px", PRICE + " footer Privacy link"), "the 19px line height"),
+        "login-heading": by_hand(text_style("nvn-heading, serif", "40px", "600", "40px", LOGIN + " h1. line-height was not read; the 40px size is repeated as the line height"), "the 40px line height"),
+        "login-label": by_hand(text_style(COMP["login"]["label"]["fontFamily"], COMP["login"]["label"]["fontSize"], COMP["login"]["label"]["fontWeight"], "20px", LOGIN + " Email address label, computed 13.92px"), "the 20px line height"),
     },
     "radius": {
         "none": dim("0px", HOME + " body"),
@@ -138,16 +162,18 @@ core = {
     },
     "motion": {
         "duration": {
-            "fast": {"$value": "150ms", "$extensions": {"source": HOME + " button transition-duration 0.15s"}},
-            "tile": {"$value": "200ms", "$extensions": {"source": HOME + " choice tile transition 0.2s"}},
+            "fast": {"$type": "duration", "$value": "150ms", "$extensions": {"source": HOME + " button transition-duration 0.15s"}},
+            "tile": {"$type": "duration", "$value": "200ms", "$extensions": {"source": HOME + " choice tile transition 0.2s"}},
         },
         "easing": {
-            "standard": {"$value": "cubic-bezier(0.4, 0, 0.2, 1)", "$extensions": {"source": HOME + " button and tile transition-timing-function"}},
+            "standard": {"$type": "cubicBezier", "$value": [0.4, 0, 0.2, 1], "$extensions": {"source": HOME + " button and tile transition-timing-function cubic-bezier(0.4, 0, 0.2, 1)"}},
         },
     },
-}
+    }
 
-light = {
+
+def light():
+    return {
     "background": {
         "page": color("#ffffff", HOME + " nav and plan cards paint white; body itself is transparent"),
         "surface": color("#ffffff", HOME + " flip-card and plan card"),
@@ -192,16 +218,13 @@ light = {
         "card-radius": dim("14px", HOME),
         "plan-radius": dim("20px", PRICE),
     },
-}
+    }
 
-doc = {
-    "$description": "Navan public marketing site, measured 2026-11-19. Light only: the signed-out marketing pages ship no dark theme switch.",
-    "core": core,
-    "light": light,
-    "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}
-    ],
-}
 
-OUT.write_text(json.dumps(doc, indent=2) + "\n")
-print(f"wrote {OUT}")
+def main():
+    OUT.write_text(json.dumps(build(), indent=2) + "\n")
+    print(f"wrote {OUT}")
+
+
+if __name__ == "__main__":
+    main()

@@ -5,34 +5,34 @@ version: "alpha"
 name: "SSENSE"
 description: "Signed-out luxury retail: a 55px fixed header with a centred wordmark and 11px uppercase chrome, square black Add to bag, 2:3 product cards, grey struck-through sale prices, and a separate editorial scale in Favorit and JHA Times Now"
 colors:
-  primary: "rgb(0, 0, 0)"
-  neutral: "rgb(255, 255, 255)"
-  surface: "rgb(255, 255, 255)"
-  on-surface: "rgb(0, 0, 0)"
-  on-surface-variant: "rgb(136, 136, 136)"
-  outline: "rgb(182, 182, 182)"
-  background-page: "rgb(255, 255, 255)"
-  background-surface: "rgb(255, 255, 255)"
-  background-action: "rgb(0, 0, 0)"
-  background-muted: "rgb(251, 251, 251)"
-  background-disabled: "rgb(182, 182, 182)"
-  text-primary: "rgb(0, 0, 0)"
-  text-secondary: "rgb(51, 51, 51)"
-  text-muted: "rgb(136, 136, 136)"
-  text-on-action: "rgb(255, 255, 255)"
-  text-placeholder: "rgb(182, 182, 182)"
-  border-stroke: "rgb(182, 182, 182)"
-  border-strong: "rgb(0, 0, 0)"
-  border-field: "rgb(119, 119, 119)"
-  border-editorial: "rgb(151, 151, 151)"
-  focus-outline: "rgb(229, 151, 0)"
-  component-header-bg: "rgb(255, 255, 255)"
-  component-button-bg: "rgb(0, 0, 0)"
-  component-button-text: "rgb(255, 255, 255)"
-  component-field-bg: "rgba(0, 0, 0, 0)"
-  component-field-text: "rgb(0, 0, 0)"
-  component-cta-bg: "rgba(0, 0, 0, 0)"
-  component-cta-text: "rgb(51, 51, 51)"
+  primary: "#000000"
+  neutral: "#ffffff"
+  surface: "#ffffff"
+  on-surface: "#000000"
+  on-surface-variant: "#888888"
+  outline: "#b6b6b6"
+  background-page: "#ffffff"
+  background-surface: "#ffffff"
+  background-action: "#000000"
+  background-muted: "#fbfbfb"
+  background-disabled: "#b6b6b6"
+  text-primary: "#000000"
+  text-secondary: "#333333"
+  text-muted: "#888888"
+  text-on-action: "#ffffff"
+  text-placeholder: "#b6b6b6"
+  border-stroke: "#b6b6b6"
+  border-strong: "#000000"
+  border-field: "#777777"
+  border-editorial: "#979797"
+  focus-outline: "#e59700"
+  component-header-bg: "#ffffff"
+  component-button-bg: "#000000"
+  component-button-text: "#ffffff"
+  component-field-bg: "#00000000"
+  component-field-text: "#000000"
+  component-cta-bg: "#00000000"
+  component-cta-text: "#333333"
 typography:
   chrome:
     fontFamily: "Favorit SSENSE Inter"
@@ -160,12 +160,12 @@ Public signed-out surfaces of [ssense.com](https://www.ssense.com/), captured on
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (rgb(0, 0, 0)):** `light.background.action`
-- **neutral (rgb(255, 255, 255)):** `light.background.page`
-- **surface (rgb(255, 255, 255)):** `light.background.surface`
-- **on-surface (rgb(0, 0, 0)):** `light.text.primary`
-- **on-surface-variant (rgb(136, 136, 136)):** `light.text.muted`
-- **outline (rgb(182, 182, 182)):** `light.border.stroke`
+- **primary (#000000):** `light.background.action`
+- **neutral (#ffffff):** `light.background.page`
+- **surface (#ffffff):** `light.background.surface`
+- **on-surface (#000000):** `light.text.primary`
+- **on-surface-variant (#888888):** `light.text.muted`
+- **outline (#b6b6b6):** `light.border.stroke`
 
 ## Typography
 

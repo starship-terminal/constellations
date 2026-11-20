@@ -6,7 +6,7 @@ import { execFile } from "node:child_process";
 import { promises as fs } from "node:fs";
 import { existsSync } from "node:fs";
 import path from "node:path";
-import "./env";
+import "./env.ts";
 
 export const ROOT = (() => {
   // `next dev`/`next start` run with cwd = web/. Allow an explicit override.

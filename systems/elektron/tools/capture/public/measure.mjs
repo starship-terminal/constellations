@@ -199,7 +199,17 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          // Close it again after the reading: a menu left open holds focus, so every later
+          // focus-visible on the page records 'focus failed'. Escape closes a menu; an
+          // accordion still reporting aria-expanded=true is toggled back.
+          undo = async () => {
+            await page.keyboard.press('Escape'); await page.waitForTimeout(300);
+            const l = loc.filter({ visible: true }).first();
+            if ((await l.getAttribute('aria-expanded').catch(() => null)) === 'true') { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(600); }
+          };
+        }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -336,7 +346,8 @@ async function home() {
     await S('account-modal', q('[data-m-mark="accountmodal"]').filter({ visible: true }).first(), ['opened'], { group: G.overlay, title: 'Account drawer', desc: 'The header Account modal (modal-layout-drawer-right): the magic-login panel — a Log in step (Email field, Send me a code) and Create New Account. Measured, never used.', sel: 'opened Account modal' }, { noScroll: true, noReset: true, noToggle: true });
     // The drawer's Log in row expands the magic-login form (local UI toggle);
     // it is a heading row, not an anchor.
-    const step = q('[data-m-mark="accountmodal"] h2, [data-m-mark="accountmodal"] a, [data-m-mark="accountmodal"] button').filter({ hasText: /^\s*Log in/ }).filter({ visible: true }).first();
+    // Only the h2 heading row: an anchor or button named "Log in" would be a real sign-in, which toggle()'s NEVER list refuses.
+    const step = q('[data-m-mark="accountmodal"] h2').filter({ hasText: /^\s*Log in/ }).filter({ visible: true }).first();
     if (await step.count()) { await step.click().catch(() => {}); await page.waitForTimeout(1200); }
     await S('magic-email', q('[data-m-mark="accountmodal"] input[type="email"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: G.overlay, title: 'Magic-login email field', desc: 'The Email input of the magic-login drawer: a 42px block-input field. Sample text was typed and deleted; no code was ever requested.', sel: 'account drawer email input' }, { noScroll: true, noReset: true });
     await S('magic-send', q('[data-m-mark="accountmodal"] button').filter({ hasText: /Send me a code/ }).filter({ visible: true }).first(), B4, { group: G.overlay, title: 'Send me a code button', desc: 'The magic-login submit: a full-width secondary-variant block-button (grey fill, dark label, digi one v2). Measured, never pressed.', sel: 'account drawer Send me a code' }, { noScroll: true, noReset: true });
@@ -499,7 +510,12 @@ out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
 const pages = process.argv.slice(2);
-const plan = { home, shop, product, explore, support, about, contact, cart, 'my-account': myAccount, 'store-locator': storeLocator };
+// Keys are the page names the header lists (product() reads both product pages).
+const plan = { home, shop, 'product-digitakt': product, explore, support, about, contact, cart, 'my-account': myAccount, 'store-locator': storeLocator };
+const known = new Set([...Object.keys(plan), 'product-accessory', 'mobile']);
+const unknown = pages.filter((p) => !known.has(p));
+if (unknown.length) throw new Error(`unknown page ${unknown.join(', ')}; pages: ${[...known].join(' ')}`);
+if (pages.includes('product-accessory') && !pages.includes('product-digitakt')) pages.push('product-digitakt');
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 try {
   for (const k of order) await plan[k]();

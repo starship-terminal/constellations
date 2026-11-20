@@ -18,7 +18,7 @@ Nike paints the storefront with PDS (`--pds-*`) and Podium CDS (`--podium-cds-*`
 | [icons/](icons) | The swoosh SVG from the header, named in [icons/INDEX.tsv](icons/INDEX.tsv) |
 | [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900. `home-light-mobile` at 390 CSS pixels, 2x |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
-| [tools/](tools) | Builders and the copied capture kit |
+| [tools/](tools) | Builders and their test. `capture/signed-in/` holds only the kit's page-copy privacy guards; no kit capture script took these readings |
 
 ## Do and don't
 

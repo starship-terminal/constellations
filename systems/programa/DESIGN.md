@@ -243,6 +243,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+raw/ keeps the root custom properties and the capture notes, not every computed style read in the preview browser. 32 tokens carry a value no raw file holds: the CTA and app text colours, several rings and borders, six computed box-shadows, the Inter faces, a few type sizes and control sizes, and the switch duration. They are labelled Reconstruction, entered by hand at capture time, and each source names the missing value. A recapture should save those readings.
+
 The hero h1 computed line-height is 64px on an 80px font-size. That is the value `getComputedStyle` returned. The screenshots show the headline wrapping onto two lines, so the used line box is taller than that number.
 
 Start free computed rgb(252, 253, 161). Start 7 day trial computed rgb(253, 255, 162). Both sit next to the declared `--color-yellow-light` `#fdffa2`. They are recorded as separate tokens.

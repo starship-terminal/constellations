@@ -164,13 +164,13 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function type() {
   let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+  for (const [n, t] of flat(TOK.core.fontSize || {}, 'fontSize.')) {
     const px = parseFloat(t.v);
     h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
   }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} Welcome to your professional community</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
+  for (const [n, t] of flat(TOK.core.lineHeight || {}, 'lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.fontWeight || {}, 'fontWeight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} Welcome to your professional community</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h || '<p class="note">No type scale in tokens.json.</p>';
   let f = '';
   for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#fam-out').innerHTML = f;

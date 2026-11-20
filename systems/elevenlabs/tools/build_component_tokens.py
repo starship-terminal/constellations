@@ -227,13 +227,14 @@ for key, want, contains, desc in [
                          source=f"css-var {vn} resolved light (raw/css-vars.json)",
                          description=desc)
     else:
-        # look for the literal value in the harvested palette classes
-        hit = next((v for k, v in (V.get("palette") or {}).items()
-                    if v.get("background-color") == "rgb(43, 127, 255)" or v.get("color") == "rgb(43, 127, 255)"), None)
-        if hit is not None or True:
-            brand[key] = {"value": want, "type": "color",
-                          "source": "declared rgb(43 127 255) in the Tailwind utility layer (raw/css-vars.json palette); the blue of the gradients and links",
-                          "description": desc}
+        # look for the value in the harvested palette classes, on any colour property
+        hit = next(((k, p) for k, v in sorted((V.get("palette") or {}).items()) for p, pv in v.items()
+                    if p != "file" and norm_color(str(pv)) == want), None)
+        if hit is None:
+            raise SystemExit(f"{key}: {want} is neither a declared var nor in the palette classes")
+        brand[key] = {"value": want, "type": "color",
+                      "source": f"declared {hit[1]} {want} on the Tailwind utility class .{hit[0]} (raw/css-vars.json palette); the blue of the gradients and links",
+                      "description": desc}
 
 def hsl3(v):
     """A shadcn 'H S% L%' channel triplet -> #rrggbb."""
@@ -267,7 +268,9 @@ for key, comp, state, prop, desc in [
      "The near-black ink on nav text, headings and button labels."),
     ("muted", "menu-link", "default", "color",
      "The warm grey on flyout links, the product pill, the billing select and secondary text."),
-    ("white", "signup-submit", "default", "ancestor-white",
+    # signup-submit has no painted ancestor in the reading (the old "ancestor-white"
+    # branch fell back to a typed #ffffff); the auth card paints the white itself.
+    ("white", "signin-card", "default", "backgroundColor",
      "The #ffffff surface: cards, the flyout panel, the auth card."),
     ("wash-hover", "nav-link", "hover", "paint-bg",
      "The 5% warm-ink wash a nav item's inner chip takes on hover."),
@@ -275,10 +278,7 @@ for key, comp, state, prop, desc in [
      "The deeper wash a ghost/OAuth button takes on pressed (nav items keep the hover wash)."),
 ]:
     try:
-        if prop == "ancestor-white":
-            hit = next((a.get("bg") for a in C[comp]["states"][state].get("ancestors", []) if a.get("bg")), None)
-            v = norm_color(hit) if hit else "#ffffff"
-        elif prop == "paint-bg":
+        if prop == "paint-bg":
             v = norm_color(paint(comp, state, "bg") or "")
         else:
             v = norm_color(st(comp, state).get(prop, ""))
@@ -509,6 +509,26 @@ for key, cname, state, prop, desc in [
         node[parts[-1]] = {"type": "dimension", "value": st(cname, state)[prop],
                            "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
                            "description": desc}
+
+# Readings the selector took from another element (the README's What to distrust
+# lists them, each needing a recapture): every leaf that cites one says so.
+WRONG = {
+    "menu-link": "its default and pressed states caught a same-href link far down the page, not the flyout's",
+}
+
+
+def note_wrong(node):
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            for k, what in WRONG.items():
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and f"{k}: read from the wrong element" not in src:
+                    node["source"] = src = src + f"; {k}: read from the wrong element ({what}); recapture needed"
+        for v in node.values():
+            note_wrong(v)
+
+
+note_wrong(SPEC)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 

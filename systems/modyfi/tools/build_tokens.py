@@ -64,25 +64,27 @@ RESOLVED = VARS.get("resolved") or {}
 BODY = VARS.get("body") or {}
 
 
-def var_color(name, fallback_hex, source):
+def var_color(name, source):
+    """A colour read from the custom property on the archived :root. A missing reading fails the
+    build: it used to fall back to a typed hex still labelled Measured."""
     raw = RESOLVED.get(name, "")
-    value = norm_color(raw) if raw else fallback_hex
-    evidence = "Measured" if raw else "Measured"
-    return {"$type": "color", "$value": value, "$extensions": {"source": source, "evidence": evidence, "declared": raw or value}}
+    if not raw:
+        raise SystemExit(f"{name} is not in raw/css-vars.json")
+    return {"$type": "color", "$value": norm_color(raw), "$extensions": {"source": source, "evidence": "Measured", "declared": raw}}
 
 
 core = {
     "color": {
-        "background": var_color("--background-a", "#000000", SNAP + " --background-a"),
-        "heading": var_color("--heading", "#ffffff", SNAP + " --heading"),
-        "paragraph": var_color("--paragraphs", "#c9c9c9", SNAP + " --paragraphs"),
-        "accent": var_color("--accent-a1", "#ff0357", SNAP + " --accent-a1"),
-        "accent-blue": var_color("--accent-a2", "#0b82d8", SNAP + " --accent-a2"),
-        "link": var_color("--link", "#d8dfe9cc", SNAP + " --link"),
-        "border": var_color("--border", "#182233", SNAP + " --border"),
-        "surface": var_color("--background-b1", "#1d2838", SNAP + " --background-b1"),
-        "stroke": var_color("--semi-stroke", "#ffffff1f", SNAP + " --semi-stroke"),
-        "magenta-transparent": var_color("--magenta-transaprent", "#ff035778", SNAP + " --magenta-transaprent (product spelling)"),
+        "background": var_color("--background-a", SNAP + " --background-a"),
+        "heading": var_color("--heading", SNAP + " --heading"),
+        "paragraph": var_color("--paragraphs", SNAP + " --paragraphs"),
+        "accent": var_color("--accent-a1", SNAP + " --accent-a1"),
+        "accent-blue": var_color("--accent-a2", SNAP + " --accent-a2"),
+        "link": var_color("--link", SNAP + " --link"),
+        "border": var_color("--border", SNAP + " --border"),
+        "surface": var_color("--background-b1", SNAP + " --background-b1"),
+        "stroke": var_color("--semi-stroke", SNAP + " --semi-stroke"),
+        "magenta-transparent": var_color("--magenta-transaprent", SNAP + " --magenta-transaprent (product spelling)"),
     },
     "font": {
         "display": font("Jokker, Arial, sans-serif", "computed font-family on h1.rl-heading-style-h1-3, archived homepage"),
@@ -207,6 +209,9 @@ if "hero-title" in home_comps and "default" in home_comps["hero-title"].get("sta
         core["typography"]["display"]["$value"]["lineHeight"] = row["lineHeight"]
         core["typography"]["display"]["$value"]["letterSpacing"] = row["letterSpacing"]
 
-out = HERE / "tokens.json"
-out.write_text(json.dumps(tokens, indent=2) + "\n")
-print("wrote", out, "core colors", len(core["color"]))
+TEXT = json.dumps(tokens, indent=2) + "\n"
+
+if __name__ == "__main__":
+    out = HERE / "tokens.json"
+    out.write_text(TEXT)
+    print("wrote", out, "core colors", len(core["color"]))

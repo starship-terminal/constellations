@@ -118,6 +118,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Icons | layout gap — no standalone SVG set lifted; the FRE glyphs (`/_assets/design-tokens/fre/static/icons/`) are the product's artwork, visible in crops/screenshots |
 | Fonts | declared and measured; Lausanne, PlayFair, Lora, Charter and Inter are proprietary and not redistributed — the style guide falls back to system faces |
 
+## Known gaps
+
+- `plan-price` (Plan price): the reading is the struck-through list price "$75" (a `line-through` span), not the price the plan charges; the selector took the first short "$" leaf on the card. Needs a recapture; `measure.mjs` now skips struck-through elements (edited, not run). No token cites it.
+- Two committed screenshot sidecars record `https://www.esquire.com/search/?q=suits`, the search the capture ran; no credential or personal data. `public.mjs` now records page URLs without their query (edited, not run); the sidecars are left as captured.
+
 ## Rebuild
 
 ```sh

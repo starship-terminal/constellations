@@ -3,20 +3,14 @@
 //
 //   PLAYWRIGHT=... node measure.mjs
 //
-// Hover is a real pointer. Focus-visible is Tab. Pressed is a forced
-// :active pseudo-class, so no control fires. No form is submitted.
+// Hover is a real pointer. Focus is a real focus() call. Pressed is a forced
+// :active:hover pseudo-class, so no control fires. No form is submitted.
 import fs from 'node:fs';
 import path from 'node:path';
 import { launch, open, REF, BASE, MAIL } from './lib.mjs';
 
 const OUT = path.join(REF, 'raw', 'components-computed.json');
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
-
-const FIELDS = [
-  'backgroundColor', 'color', 'fontFamily', 'fontSize', 'fontWeight', 'lineHeight',
-  'letterSpacing', 'borderRadius', 'borderTopWidth', 'borderTopStyle', 'borderTopColor',
-  'padding', 'boxShadow', 'outline', 'height', 'opacity', 'textDecorationLine',
-];
 
 function readStyle(spec) {
   const fields = [
@@ -37,90 +31,44 @@ function readStyle(spec) {
   };
 }
 
-async function states(page, spec) {
-  const read = () => page.evaluate(readStyle, spec);
-  const out = { selector: spec.selector, page: spec.page };
-  out.default = await read();
-  if (!out.default) return out;
-  if (spec.hover !== false) {
-    await page.locator(spec.selector).first().hover({ timeout: 5000 }).catch(() => {});
-    await page.waitForTimeout(180);
-    out.hover = await read();
-    await page.mouse.move(2, 2);
-    await page.waitForTimeout(80);
-  }
-  if (spec.focus) {
-    await page.locator(spec.selector).first().focus().catch(() => {});
-    await page.waitForTimeout(120);
-    out.focus = await read();
-  }
-  if (spec.press) {
-    await page.locator(spec.selector).first().evaluate((el) => el.classList.add('__pressed')).catch(() => {});
-    // Force :active through the DevTools protocol when available.
-    const cdp = await page.context().newCDPSession(page).catch(() => null);
-    if (cdp) {
-      const node = await page.locator(spec.selector).first().elementHandle();
-      if (node) {
-        const { nodeId } = await cdp.send('DOM.describeNode', { objectId: (await node.evaluateHandle((el) => el))._objectId }).catch(() => ({}));
-      }
-    }
-    out.pressed = null;
-  }
-  return out;
-}
-
-async function forceActive(page, selector) {
-  const loc = page.locator(selector).first();
-  const handle = await loc.elementHandle();
-  if (!handle) return null;
-  const cdp = await page.context().newCDPSession(page);
-  const remote = await handle.evaluateHandle((el) => el);
-  const objectId = remote._remoteObject?.objectId || remote._objectId;
-  // Playwright's elementHandle has a private object id via CDP.
-  const { object } = await cdp.send('Runtime.evaluate', {
-    expression: 'document',
-    returnByValue: false,
-  }).catch(() => ({}));
-  void object;
+// Forces :active:hover on the element itself through one CDP session per page (the kit's order:
+// DOM before CSS, or Chromium refuses CSS.enable). The element is marked with a data attribute so
+// DOM.querySelector finds the same node the locator found. Returns null when it cannot force.
+async function forceActive(cdp, page, selector) {
+  const marked = await page.locator(selector).first()
+    .evaluate((el) => { el.setAttribute('data-m-force', ''); return true; })
+    .catch(() => false);
+  if (!marked) return null;
   try {
-    await cdp.send('CSS.enable');
     await cdp.send('DOM.enable');
-    const doc = await cdp.send('DOM.getDocument');
-    const queried = await cdp.send('DOM.querySelector', { nodeId: doc.root.nodeId, selector });
-    if (queried.nodeId) {
-      await cdp.send('CSS.forcePseudoState', { nodeId: queried.nodeId, forcedPseudoClasses: ['active', 'focus'] });
-      await page.waitForTimeout(80);
-      const style = await page.evaluate(readStyle, { selector });
-      await cdp.send('CSS.forcePseudoState', { nodeId: queried.nodeId, forcedPseudoClasses: [] }).catch(() => {});
-      return style;
-    }
+    await cdp.send('CSS.enable');
+    const doc = await cdp.send('DOM.getDocument', { depth: 0 });
+    const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: doc.root.nodeId, selector: '[data-m-force]' });
+    if (!nodeId) return null;
+    await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
+    await page.waitForTimeout(80);
+    const style = await page.evaluate(readStyle, { selector: '[data-m-force]' });
+    await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {});
+    return style;
   } catch {
     return null;
+  } finally {
+    await page.evaluate(() => document.querySelectorAll('[data-m-force]').forEach((el) => el.removeAttribute('data-m-force'))).catch(() => {});
   }
-  return null;
 }
 
-const marketing = [
-  { key: 'nav-try', page: 'home', selector: 'a.button-base.w-button:not(.s-ghost)', hover: true, press: true },
-  { key: 'nav-login', page: 'home', selector: 'a.button-base.s-ghost.w-button', hover: true },
-  { key: 'hero-title', page: 'home', selector: 'h1.heading-6xl', hover: false },
-  { key: 'hero-body', page: 'home', selector: 'p.text-2xl', hover: false },
-  { key: 'watch-demo', page: 'home', selector: 'a.button-base.s-outline, a.button-base.s-secondary, a.s-outline', hover: true },
-];
-
-const mail = [
-  { key: 'login-title', page: 'login', selector: 'h1, h2', hover: false },
-  { key: 'login-google', page: 'login', selector: 'button', hover: true, press: true },
-  { key: 'login-email', page: 'login', selector: 'input[type="email"]', hover: true, focus: true },
-  { key: 'login-password', page: 'login', selector: 'input[type="password"]', hover: false, focus: true },
-  { key: 'login-submit', page: 'login', selector: 'button[type="submit"]', hover: true, press: true },
-  { key: 'login-forgot', page: 'login', selector: 'a[href*="forgot"], a', hover: true },
-];
+// Leaves no pointer or focus on the last control, so the next default reading is at rest.
+async function rest(page) {
+  await page.mouse.move(2, 2).catch(() => {});
+  await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
+  await page.waitForTimeout(80);
+}
 
 async function main() {
   const components = {};
   const { browser, context } = await launch({ width: 1440, height: 900 });
   const page = await context.newPage();
+  const cdp = await page.context().newCDPSession(page);
   await open(page, BASE + '/');
   // Resolve the secondary hero button by text, then pin a data attribute.
   await page.evaluate(() => {
@@ -132,6 +80,10 @@ async function main() {
     if (demo) demo.setAttribute('data-m', 'nav-demo');
     const trial = [...document.querySelectorAll('a')].find((el) => (el.innerText || '').trim() === 'Try for free' && el.getBoundingClientRect().y < 80);
     if (trial) trial.setAttribute('data-m', 'nav-try');
+    // The hero's own Try for free sits below the nav bar. The old selector,
+    // a.button-base.w-button, matched the first nav link (Pricing) instead.
+    const heroTry = [...document.querySelectorAll('a')].find((el) => (el.innerText || '').trim() === 'Try for free' && el.getBoundingClientRect().y >= 80);
+    if (heroTry) heroTry.setAttribute('data-m', 'hero-try');
   });
   const homeSpecs = [
     { key: 'nav-try', selector: '[data-m="nav-try"]' },
@@ -140,7 +92,7 @@ async function main() {
     { key: 'hero-title', selector: 'h1' },
     { key: 'hero-body', selector: 'h1 + p, p.text-2xl, p.text-color-b' },
     { key: 'watch-demo', selector: '[data-m="watch-demo"]' },
-    { key: 'hero-try', selector: 'a.button-base.w-button' },
+    { key: 'hero-try', selector: '[data-m="hero-try"]' },
   ];
   for (const spec of homeSpecs) {
     const def = await page.evaluate(readStyle, spec);
@@ -149,8 +101,8 @@ async function main() {
       await page.locator(spec.selector).first().hover({ timeout: 4000 }).catch(() => {});
       await page.waitForTimeout(200);
       entry.states.hover = await page.evaluate(readStyle, spec);
-      entry.states.pressed = await forceActive(page, spec.selector);
-      await page.keyboard.press('Tab').catch(() => {});
+      entry.states.pressed = await forceActive(cdp, page, spec.selector);
+      await rest(page);
     }
     components[spec.key] = entry;
     console.log(spec.key, def ? def.style.backgroundColor + ' ' + def.style.color + ' ' + def.style.fontSize : 'MISSING');
@@ -179,7 +131,8 @@ async function main() {
       await page.locator(spec.selector).first().hover({ timeout: 4000 }).catch(() => {});
       await page.waitForTimeout(180);
       entry.states.hover = await page.evaluate(readStyle, spec);
-      entry.states.pressed = await forceActive(page, spec.selector);
+      entry.states.pressed = await forceActive(cdp, page, spec.selector);
+      await rest(page);
     }
     if (spec.key === 'login-email') {
       await page.locator(spec.selector).focus();
@@ -211,9 +164,10 @@ async function main() {
     console.log(spec.key, def ? def.text.slice(0, 40) + ' | ' + def.style.backgroundColor + ' r=' + def.style.borderRadius : 'MISSING');
   }
 
+  await cdp.detach().catch(() => {});
   await browser.close();
   const doc = {
-    source: 'Computed styles on missiveapp.com and mail.missiveapp.com, signed out, 2026-11-19, light, 1440. Hover is a real pointer. Pressed is CSS.forcePseudoState :active. No form submitted.',
+    source: 'Computed styles on missiveapp.com and mail.missiveapp.com, signed out, 2026-11-19, light, 1440. Hover is a real pointer. Pressed is CSS.forcePseudoState :active:hover on the element itself. No form submitted.',
     capturedAt: new Date().toISOString(),
     viewport: { width: 1440, height: 900 },
     components,

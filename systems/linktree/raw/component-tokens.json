@@ -246,10 +246,10 @@
       "description": "Footer link ink"
     },
     "focus": {
-      "value": "#005fcc",
+      "value": "#1e2330",
       "type": "color",
-      "source": "computed outlineColor of nav-link focus-visible",
-      "description": "Keyboard focus outline on the Pricing nav link"
+      "source": "computed focus ring (box-shadow 4px spread, outermost layer) of nav-login focus-visible",
+      "description": "Keyboard focus ring on the Log in link (the Sign up pill, hero and claim buttons draw the same ring)"
     },
     "button": {
       "value": "#1e2330",

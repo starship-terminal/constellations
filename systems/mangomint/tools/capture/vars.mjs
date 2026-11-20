@@ -89,7 +89,7 @@ const result = await probe.evaluate((sheets) => {
 const ranked = Object.entries(result.colours).sort((a, b) => b[1] - a[1]).slice(0, 60);
 const out = {
   product: 'Mangomint',
-  captured: '2026-11-18',
+  captured: new Date().toLocaleDateString('en-CA'),
   pages,
   fontsLoaded,
   rules: result.rules,

@@ -101,6 +101,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The app is absent.** Sign up / Log in lead to the product behind an account; no editor, agent or dashboard screen is in this package — only the marketing site that links to it.
 - **The brand blue is not the site's main action colour.** On the marketing surface every primary CTA is black `ink`; `--primary-*` shows on the demo pages (url-to-demo button, signup pair) and in links. Do not paint primary actions blue.
 - **Hover values are mild.** Nav ghosts lift to a 6%-black wash and black CTAs to `#404040`; pressed states shrink ~3% (a Webflow transform). Nothing changes colour.
@@ -149,8 +150,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ```sh
 cd systems/arcade
-PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> raw/full/
-python3 tools/capture/quantize.py raw/full                                         # 256-colour PNGs -> screenshots/
+PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> ~/.design-systems/arcade/raw-shots/ (outside the repo)
+python3 tools/capture/quantize.py ~/.design-systems/arcade/raw-shots                                         # 256-colour PNGs -> screenshots/
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs     # raw/components-computed.json + components/crops/
 node tools/capture/public/build-measurements.mjs                                   # raw/measurements.md
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs               # raw/css-vars.json

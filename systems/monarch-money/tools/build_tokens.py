@@ -114,32 +114,25 @@ core["font"]["weight"]["regular"] = num(400, f"{D}: the sign-in field computed f
 core["font"]["weight"]["medium"] = num(500, f"{M}: --type-eyebrow-weight is 500. Pricing trial links and FAQ summaries computed 500.", "fontWeight")
 
 # Desktop type roles (min-width 768px). The capture viewport is 1440, so these are the painted sizes.
-TYPE = {
-    "display": ("48px", "1.2", "-3.2px", "350"),
-    "heading-1": ("48px", "1.2", "-3.2px", "350"),
-    "heading-2": ("40px", "1.2", "-2.4px", "350"),
-    "heading-3": ("32px", "1.2", "-1.6px", "350"),
-    "heading-4": ("24px", "1.2", "-0.24px", "350"),
-    "heading-5": ("20px", "1.4", "-0.2px", "350"),
-    "heading-6": ("20px", "1.4", "-0.2px", "350"),
-    "body": ("18px", "1.4", "-0.18px", "350"),
-    "small": ("16px", "1.3", "-0.16px", "350"),
-    "extra-small": ("14px", "1.3", "-0.14px", "350"),
-    "eyebrow": ("14px", "1.3", "0.05em", "500"),
-}
-# Prefer the resolved custom property when the browser computed one.
-for role, (size, leading, tracking, weight) in TYPE.items():
+TYPE = ["display", "heading-1", "heading-2", "heading-3", "heading-4", "heading-5", "heading-6", "body", "small", "extra-small", "eyebrow"]
+# Every role reads its four custom properties from raw/css-vars.json; a missing one fails the build
+# (the TYPE literals used to stand in under the measured source). rem is converted at the 16px
+# root, and an em tracking at the role's own size, since a DTCG dimension is px or rem.
+def rem_px(v):
+    return "%gpx" % (float(v[:-3]) * 16) if v.endswith("rem") else v
+
+
+for role in TYPE:
     size_name = f"--type-{role}-size"
-    resolved_size = RES.get(size_name) or size
-    if resolved_size.endswith("rem"):
-        resolved_size = size
-    core["font"]["size"][role] = dim(resolved_size, f"{M}: {size_name} at min-width 768px (the 1440 capture). Phone (under 768px) declares a smaller step in the same stylesheet.")
-    core["font"]["lineHeight"][role] = num(float(RES.get(f"--type-{role}-leading", leading)), f"{M}: --type-{role}-leading", "number")
-    track = RES.get(f"--type-{role}-tracking", tracking)
-    if track.endswith("em"):
-        core["font"]["tracking"][role] = dim(track, f"{M}: --type-{role}-tracking (em, left as declared)")
+    size = rem_px(need(size_name))
+    core["font"]["size"][role] = dim(size, f"{M}: {size_name} at min-width 768px (the 1440 capture). Phone (under 768px) declares a smaller step in the same stylesheet.")
+    core["font"]["lineHeight"][role] = num(float(need(f"--type-{role}-leading")), f"{M}: --type-{role}-leading", "number")
+    track = need(f"--type-{role}-tracking")
+    if track.endswith("em") and not track.endswith("rem"):
+        px = float(track[:-2]) * float(size[:-2])
+        core["font"]["tracking"][role] = dim("%gpx" % round(px, 3), f"{M}: --type-{role}-tracking {track}, at the {size} size")
     else:
-        core["font"]["tracking"][role] = dim(track if track.endswith("px") else tracking, f"{M}: --type-{role}-tracking")
+        core["font"]["tracking"][role] = dim(rem_px(track), f"{M}: --type-{role}-tracking")
 
 core["typography"] = {}
 for role, fam in (
@@ -193,7 +186,10 @@ core["layout"] = {
 
 if (RAW / "motion.json").exists():
     import motion as motion_mod
-    core["motion"], _extra = motion_mod.build(json.loads((RAW / "motion.json").read_text()))
+    core["motion"], motion_not = motion_mod.build(json.loads((RAW / "motion.json").read_text()))
+    # The values DTCG cannot carry are listed, as the kit does, not dropped.
+    if motion_not:
+        core.setdefault("$extensions", {}).setdefault("notTokenised", []).extend(motion_not)
 
 light = {
     "page": color("{color.gray.2}", f"{M}: --background is var(--gray-2). Computed #f6f5f3."),
@@ -240,5 +236,8 @@ doc = {
     },
 }
 
-(HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
-print("wrote", HERE / "tokens.json")
+TEXT = json.dumps(doc, indent=2) + "\n"
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(TEXT)
+    print("wrote", HERE / "tokens.json")

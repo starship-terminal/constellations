@@ -255,7 +255,9 @@ for name in sorted(RES["light"]):
     if name.startswith("--cds-role-") and RES["light"][name]["kind"] == "color":
         leaf = name[len("--cds-role-"):]
         role, _, step = leaf.partition("-")
-        assert RES["dark"][name]["value"] == RES["light"][name]["value"], name
+        if RES["dark"][name]["value"] != RES["light"][name]["value"]:   # not assert: python3 -O strips it
+            raise SystemExit(f"{name}: the role colour differs between the themes "
+                             f"({RES['light'][name]['value']} light, {RES['dark'][name]['value']} dark), so it cannot sit in core")
         val = alias_or_literal(name, "light", color(RES["light"][name]["value"]), [core_index])
         put(core, ["color", "role", role, step or "base"], tok(val, "color", src(name, "light")))
         core_index[name] = "color.role.%s.%s" % (role, step or "base")

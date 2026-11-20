@@ -88,15 +88,26 @@ The public, signed-in render and Electron routes use
 configured viewport, actual `innerWidth` / `innerHeight`, visual viewport
 (including scale and offsets), actual device pixel ratio, safe root theme
 classes/attributes, document size and PNG dimensions. The helper does not read
-the page URL; a caller may explicitly supply `sanitizedSourceUrl` after removing
-credentials, signed query parameters and banned personal data.
+the page URL; a caller may supply `sanitizedSourceUrl`, which the helper records
+in `safeUrl` form (origin and route words, no query, fragment or ids) whatever
+it is given.
 
 The existing commands and arguments stay the same. Copy the shared helpers
 as shown above: [`render.mjs`](capture/signed-in/render.mjs),
 [`public.mjs`](capture/public/public.mjs) and
 [`shot.mjs`](capture/electron/shot.mjs) now import the shared helper one directory
 above their own folder. When updating an older package's individual script,
-copy that helper into its corresponding capture folder too.
+copy every shared helper it imports into the corresponding capture folder too,
+and the helpers those import in turn: read the script's `import ... from '../…'`
+or `'./…'` lines, then the same lines in each helper. `screenshot.mjs` imports
+`safe-url.mjs`, so the single-file upgrade copies both; an older package without
+`safe-url.mjs` otherwise stops with `ERR_MODULE_NOT_FOUND` before capture starts.
+The other shared imports today: `layout.mjs` and the two `measure.mjs` import
+`safe-url.mjs`; `layout.mjs` and the public `measure.mjs` import `readings.mjs`;
+the public `lib.mjs` and the signed-in `measure.mjs` import `crop.mjs`;
+`vars.mjs` and `electron/shot.mjs` import `no-query.mjs`; `motion-probe.mjs`
+imports `motion.mjs` and `safe-url.mjs`; and both `build-measurements.mjs` import
+`css-colour.mjs`. Within the public route, `measure.mjs` imports `pin.mjs`.
 
 The helper checks the PNG header dimensions against the capture region and
 scale, allowing one physical pixel for rounding. Viewport, full-page and clipped

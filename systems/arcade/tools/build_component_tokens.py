@@ -106,39 +106,36 @@ for name in sorted(n for n in R if n.startswith("--")):
 # ------------------------------------------------------------- light roles
 
 LIGHT = [
-    ("page", {"value": "#ffffff", "type": "color",
-              "source": "computed backgroundColor of body (raw/components-computed.json); --white",
-              "description": "The page field: pure white."}),
-    ("surface", {"value": "#f4f4f4", "type": "color",
+    # no body component was measured: the page field is the declared --white
+    ("page", var("--white", description="The page field: pure white.")),
+    ("surface", {"read": [('plan-card-pro', 'default'), ('field-text', 'default')], "prop": "backgroundColor", "type": "color",
                  "source": "computed backgroundColor of plan-card-pro/field-text (raw/components-computed.json)",
                  "description": "The card and input fill (plan cards, .ds-input fields, ask-ai chips)."}),
     ("text", var("--black", description="The primary ink: pure black headings, black CTA fills.")),
-    ("muted", {"value": "rgba(0, 0, 0, 0.7)", "type": "color",
+    ("muted", {"read": [('nav-link', 'default')], "prop": "color", "type": "color",
                "source": "computed color of nav-link (raw/components-computed.json)",
                "description": "The secondary ink: nav links at 70% black; deeper mute is --500 #6b7280, footer links #717171."}),
     ("accent", var("--primary-600", description="The brand blue: url-to-demo button, links inside the demo pages; main CTAs are black.")),
     ("border", var("--neutral-200", description="The hairline: plan-card edges, spotlight arrows, radios.")),
     ("ink", var("--black", description="Primary button fill (Sign up, Get started, submits).")),
     ("on-ink", var("--white", description="Text on the black CTAs.")),
-    ("surface-hover", {"value": "rgba(0, 0, 0, 0.06)", "type": "color",
+    ("surface-hover", {"read": [('nav-link', 'hover'), ('nav-login', 'hover')], "prop": "backgroundColor", "type": "color",
                        "source": "computed backgroundColor of nav-link/nav-login on hover (raw/components-computed.json)",
                        "description": "Ghost hover wash on nav actions and links."}),
-    ("ink-hover", {"value": "#404040", "type": "color",
+    ("ink-hover", {"read": [('nav-signup', 'hover'), ('plan-cta-pro', 'hover')], "prop": "backgroundColor", "type": "color",
                    "source": "computed backgroundColor of nav-signup/plan-cta-pro on hover (raw/components-computed.json)",
                    "description": "The black buttons lift to #404040 on hover — never a colour change."}),
-    ("focus-ring", {"value": "#005fcc", "type": "color",
+    ("focus-ring", {"read": [('nav-link', 'focus-visible'), ('nav-signup', 'focus-visible'), ('cta-large', 'focus-visible')], "prop": "outlineColor", "type": "color",
                     "source": "computed outlineColor of nav-link/nav-signup/cta-large on focus-visible (raw/components-computed.json)",
                     "description": "Webflow's 1px #005fcc focus ring (offset 1px); the prompt send uses 2px black offset 2px."}),
-    ("chip-text", {"value": "rgba(0, 0, 0, 0.6)", "type": "color",
+    ("chip-text", {"read": [('suggestion-chip', 'default')], "prop": "color", "type": "color",
                    "source": "computed color of suggestion-chip (raw/components-computed.json)",
                    "description": "Suggestion-chip and secondary-label ink."}),
-    ("footer-muted", {"value": "#717171", "type": "color",
+    ("footer-muted", {"read": [('footer-link', 'default')], "prop": "color", "type": "color",
                       "source": "computed color of footer-link (raw/components-computed.json)",
                       "description": "Footer link ink."}),
 ]
-for key, leaf in LIGHT:
-    node = SPEC["light"]
-    node[key] = leaf
+# (assigned below, once the readers are defined)
 
 # -------------------------------------------------- measured extras (no var)
 
@@ -168,6 +165,19 @@ def norm_color(v):
         return f"rgba({int(float(r))}, {int(float(g))}, {int(float(b))}, {'%g' % float(a)})"
     return v
 
+
+def reading(leaf):
+    """A role read from the components its source names: every one must give the same value."""
+    if "read" not in leaf:
+        return leaf
+    vals = {norm_color(st(comp, state)[leaf["prop"]]) for comp, state in leaf["read"]}
+    if len(vals) != 1:
+        raise ValueError(f"{leaf['source']}: readings differ: {sorted(vals)}")
+    return {"value": vals.pop(), "type": leaf["type"], "source": leaf["source"], "description": leaf["description"]}
+
+
+for key, leaf in LIGHT:
+    SPEC["light"][key] = reading(leaf)
 
 for comp, state, key, prop, desc in [
     ("cta-secondary", "default", "chip-border", "borderTopColor", "The outlined CTA / suggestion-chip hairline (#e7e7e7 vs rgba(0,0,0,0.2))."),
@@ -217,7 +227,8 @@ def tstyle(key, comp, state, desc):
         "fontSize": s["fontSize"],
         "lineHeight": s["lineHeight"],
         "fontWeight": int(s["fontWeight"]),
-        "letterSpacing": "0em" if s.get("letterSpacing") in (None, "normal") else s["letterSpacing"],
+        # computed "normal" is no tracking; DTCG wants a px or rem dimension, so 0px, not 0em
+        "letterSpacing": "0px" if s.get("letterSpacing") in (None, "normal") else s["letterSpacing"],
     }, f"computed type of {comp} {state} (raw/components-computed.json); {desc}"
 
 

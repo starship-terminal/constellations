@@ -200,7 +200,17 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          // Close it again after the reading: a menu left open holds focus, so every later
+          // focus-visible on the page records 'focus failed'. Escape closes a menu; an
+          // accordion still reporting aria-expanded=true is toggled back.
+          undo = async () => {
+            await page.keyboard.press('Escape'); await page.waitForTimeout(300);
+            const l = loc.filter({ visible: true }).first();
+            if ((await l.getAttribute('aria-expanded').catch(() => null)) === 'true') { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(600); }
+          };
+        }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {

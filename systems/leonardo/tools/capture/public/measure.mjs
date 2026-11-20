@@ -56,8 +56,8 @@ async function newPage(key, { mobile = false, wait = 7000, url = null } = {}) {
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || URLS[key], { wait });
-  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
+  const opened = await open(page, url || URLS[key], { wait }).then(() => true, (e) => { log('  !', key, String(e.message || e).split('\n')[0]); return false; });
+  if (!opened || await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   return true;
 }
@@ -178,8 +178,16 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await loc.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); };
         via = 'typed sample text, then deleted; nothing sent';
       } else if (st === 'opened') {
-        const t = await loc.evaluate((el) => (el.innerText || el.getAttribute('aria-label') || '').trim());
-        if (/sign in|log in|subscribe|start now|generate|continue with/i.test(t)) throw new Error('toggle refused');
+        // The kit's guards: never a link, never a submit button, never a
+        // control whose label names an action. "Create" is allowed only as a
+        // disclosure (aria-expanded or aria-haspopup), which opens a local menu.
+        const t = await loc.evaluate((el) => ({
+          tag: el.tagName, type: (el.getAttribute('type') || '').toLowerCase(),
+          text: (el.innerText || el.getAttribute('aria-label') || '').trim(),
+          disclosure: el.hasAttribute('aria-expanded') || el.hasAttribute('aria-haspopup'),
+        }));
+        const NEVER = /^(send|submit|sign in|sign up|log in|create|generate|upload|share|subscribe|start now|upgrade|buy|checkout|delete|open)$|continue with/i;
+        if (t.tag === 'A' || t.type === 'submit' || (NEVER.test(t.text) && !(/^create$/i.test(t.text) && t.disclosure))) throw new Error(`toggle refused: ${t.tag} "${t.text}"`);
         await loc.click({ timeout: 4000 }).catch(() => loc.evaluate((el) => el.click()));
         await page.waitForTimeout(700);
         via = 'own toggle, local only';
@@ -273,7 +281,7 @@ async function appPage() {
   await S('app-signup', q('a').filter({ hasText: /sign up|create free account/i }).first(), B4, { group: g, title: 'Sign up button', desc: 'The signed-out Sign up control. Measured, never followed.', sel: 'Sign up' }, { noScroll: true });
   await S('app-signin', q('a').filter({ hasText: /^sign in$/i }).first(), B4, { group: g, title: 'Sign in button', desc: 'The signed-out Sign in control. Measured, never followed.', sel: 'Sign in' }, { noScroll: true });
   await S('app-h1', q('h1').first(), ['default'], { group: g, title: 'App display heading', desc: 'The signed-out generate shell heading.', sel: 'h1' }, { noScroll: true });
-  await S('app-prompt', q('textarea').first(), FIELD, { group: g, title: 'Prompt field', desc: 'The public prompt field. Sample text was typed and cleared. Generate was never pressed.', sel: 'textarea', fillText: 'a quiet studio portrait' });
+  await S('app-prompt', q('textarea').first(), FIELD, { group: g, title: 'Prompt field', desc: 'The public prompt field. Sample text was typed and cleared. Generate was never pressed.', sel: 'textarea' }, { fillText: 'a quiet studio portrait' });
   await S('app-generate', q('button').filter({ hasText: /^generate$/i }).first(), B4, { group: g, title: 'Generate button', desc: 'The Generate control. States forced through CDP. Never clicked, so no generation ran.', sel: 'Generate' }, { noScroll: true });
   await S('app-ratio', q('button').filter({ hasText: /^1:1$/ }).first(), B4, { group: g, title: 'Aspect chip', desc: 'An aspect-ratio chip on the signed-out composer. Measured at rest. Not selected, so no generation settings were submitted.', sel: '1:1' }, { noScroll: true });
   await S('app-card', q('a, article, button').filter({ hasText: /GPT Image|Seedance|Featured/i }).first(), ['default', 'hover'], { group: g, title: 'Featured model card', desc: 'A published model card on the signed-out home. Hover measured. Not opened.', sel: 'featured card' });
@@ -283,7 +291,7 @@ async function appPage() {
 async function blueprints() {
   if (!(await newPage('blueprints', { wait: 6000 }))) return;
   await S('bp-h1', q('h1').first(), ['default'], { group: G.app, title: 'Blueprints heading', desc: 'The public blueprint catalog heading.', sel: 'h1' }, { noScroll: true });
-  await S('bp-search', q('input[type="search"], input[placeholder*="earch" i]').first(), FIELD, { group: G.app, title: 'Blueprint search', desc: 'The catalog search field. Typed and cleared. Not submitted.', sel: 'search', fillText: 'portrait' }, { noScroll: true });
+  await S('bp-search', q('input[type="search"], input[placeholder*="earch" i]').first(), FIELD, { group: G.app, title: 'Blueprint search', desc: 'The catalog search field. Typed and cleared. Not submitted.', sel: 'search' }, { noScroll: true, fillText: 'portrait' });
   await S('bp-chip', q('button, a').filter({ hasText: /^all$/i }).first(), B4, { group: G.app, title: 'Category chip', desc: 'A blueprint category chip. Measured at rest.', sel: 'All chip' }, { noScroll: true });
   save();
 }
@@ -324,7 +332,7 @@ async function mobileApp() {
   save();
 }
 
-run = '2026-11-18';
+run = new Date().toLocaleDateString('en-CA'); // the local date of the capture
 out._meta.read = run;
 out._meta.viewport = '1440 x 900, phone group 390 x 844. Leonardo.Ai public surfaces: marketing, signed-out app shell, docs, login card. One dark theme on each. Account, generation, checkout and OAuth were not entered.';
 out._meta.tool = 'tools/capture/public/measure.mjs';

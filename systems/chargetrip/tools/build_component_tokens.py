@@ -248,7 +248,7 @@ for path, comp, state, prop, desc in [
     ("surface.card", "plan-card", "default", "paint.0.bg", "The plan-card and footer-panel fill, a near-white on the cream page."),
     ("surface.dark", "plan-card-dark", "default", "paint.0.bg", "The dark island: the hero band and the 'Popular' plan card."),
     ("text.primary", "section-title", "default", "color", "Body and heading ink on the light pages."),
-    ("text.muted", "status-pill", "default", "textStyle.color", "Secondary text on the light pages (the status line, footer meta, form hints)."),
+    ("text.muted", "footer", "default", "textStyle.color", "Secondary text on the light pages: the footer's column headings (Products, Resources)."),
     ("text.onDark", "hero-title", "default", "color", "Text painted on the dark hero band and dark plan card."),
     ("text.onDarkMuted", "hero-sub", "default", "color", "Muted text on the dark hero band."),
     ("accent", "cta-accent", "default", "paint.0.bg", "The orange CTA fill (painted by a layer inside the control)."),
@@ -258,7 +258,7 @@ for path, comp, state, prop, desc in [
     ("navHover", "nav-item", "hover", "paint.0.bg", "The translucent orange wash behind a nav item on hover."),
     ("border.subtle", "plan-card", "default", "paint.1.border", "The dashed cream hairline inside the light plan card."),
     ("border.onDark", "plan-card-dark", "default", "paint.1.border", "The dashed ink hairline inside the dark plan card."),
-    ("status.online", "status-pill", "default", "paint.0.bg", "The 'All systems operational' dot."),
+    ("status.online", "status-pill", "default", "paint.0.bg", "The 'All systems operational' dot: the only painted child (8 x 8, radius 100%) of the footer column the status-pill selector caught."),
     ("focus", "cta-accent", "focus-visible", "outlineColor", "The keyboard-focus ring the header/footer controls draw (1px auto); plan, slider and form controls still draw the #005fcc ring — recorded per entry."),
 ]:
     try:
