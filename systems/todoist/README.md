@@ -36,12 +36,12 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 
 | Role | light |
 |---|---|
-| page | oklch(99.45% .0017 67.8) `light.background.page` |
-| surface | oklch(100% 0 0) `light.background.surface` |
-| text | oklch(25.38% .0086 75.21) `light.text.primary` |
-| muted | oklch(25.38% .0086 75.21/.66) `light.text.secondary` |
-| accent | oklch(61.47% .1986 30.12) `light.background.action` |
-| border | oklch(25.38% .0086 75.21/.18) `light.border.card` |
+| page | #fefdfc `light.background.page` |
+| surface | #ffffff `light.background.surface` |
+| text | #25221e `light.text.primary` |
+| muted | #25221ea8 `light.text.secondary` |
+| accent | #e34432 `light.background.action` |
+| border | #25221e2e `light.border.card` |
 
 Fonts: `core.font.family.sans` is Graphik, then 4 fallbacks; `core.font.family.body` is Inter, then 4 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 8 type styles (`core.typography`), 5 radius steps (`core.radius`), 7 spacing steps (`core.spacing`).
 
@@ -53,9 +53,9 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| light | no colour | no colour | no colour | no colour |
+| light | 15.58:1 pass | 15.83:1 pass | 5.09:1 pass | 5.12:1 pass |
 
-0 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.border.focus` #b8b8b8; `light.shadow.focus-ring` 0 0 0 4px oklch(94.51% .0168 215.46), 0 0 0 1px oklch(67.72% .1122 245.18).
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.border.focus` #b8b8b8; `light.shadow.focus-ring` 0 0 0 4px #e1f0f4, 0 0 0 1px #579ed8.
 
 <!-- brief:end -->
 
@@ -77,9 +77,9 @@ Custom properties were resolved on `:root` with `getComputedStyle` in the T3 pre
 
 There are no screenshots. Do not invent a layout from the style guide. The style guide draws two buttons from tokens. It is not a capture of the page.
 
-oklch values are stored as declared. A browser may paint a nearby sRGB hex. The home body colour computed as rgb(37, 34, 30), which is the same ink as `--greyopaque-900`.
+The marketing roles are declared in oklch(). tokens.json stores each as its sRGB hex, a conversion labelled Derived, and its source keeps the declared oklch(). The conversion matches what the browser painted where a computed rgb() was read: the home body colour computed as rgb(37, 34, 30), #25221e, the converted `--greyopaque-900`.
 
-Login and marketing do not share one red. Home CTA fill is oklch(61.47% .1986 30.12). Login submit fill is rgb(211, 51, 34). Both are in `light`. Use the one that matches the surface.
+Login and marketing do not share one red. Home CTA fill is #e34432 (declared oklch(61.47% .1986 30.12)). Login submit fill is rgb(211, 51, 34). Both are in `light`. Use the one that matches the surface.
 
 `--color-td-cta-hover` and the app hover fills were declared, not painted on a hovered element.
 
@@ -105,7 +105,7 @@ Graphik is the marketing display face. Inter is the marketing body and button fa
 
 ## Do and don't
 
-- **Do use the marketing red only on marketing.** The home CTA is the oklch action fill. The login button is rgb(211, 51, 34).
+- **Do use the marketing red only on marketing.** The home CTA is the converted oklch action fill, #e34432. The login button is rgb(211, 51, 34).
 - **Do keep marketing type on Graphik for headings and Inter for buttons.** Login stays on the system font.
 - **Do treat the quiet button as a tint, not a second brand.** Nav and "Get started" use 7% ink on a transparent fill.
 - **Don't infer the signed-in app.** The task list, sidebar and project colours in `--product-ui-*` are declared on the marketing page and were not seen in the app.

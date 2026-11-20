@@ -3,11 +3,13 @@
 
 Every value below was read on 2026-11-19 from the live Todoist pages named in
 raw/readings.json (custom properties resolved on :root, or getComputedStyle).
-oklch() roles are stored as the declared string. The sRGB hex next to a few
-roles is a conversion of that same oklch, marked Derived, so a reader can
-compare it with the rgb() the browser painted. Nothing here is recalled.
+oklch() roles are stored as their sRGB hex, a conversion labelled Derived whose
+source keeps the declared oklch(), so hex-only readers (contrast checks, DESIGN.md)
+can parse them and a reader can compare them with the rgb() the browser painted. Nothing here is recalled.
 """
 import json
+import math
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent
@@ -20,7 +22,40 @@ def tok(value, type_, source):
     return {"$value": value, "$type": type_, "$extensions": {"source": source}}
 
 
+def oklch_hex(value):
+    """A declared oklch(L C H [/ A]) as lower-case sRGB #rrggbb, or #rrggbbaa below full alpha
+    (Oklab to linear sRGB, then the sRGB transfer curve). Raises on an out-of-gamut colour rather
+    than clipping it, and on anything that is not oklch()."""
+    m = re.fullmatch(r"oklch\(\s*([\d.]+)(%?)\s+([\d.]+)\s+([\d.]+)\s*(?:/\s*([\d.]+)(%?))?\s*\)", value.strip())
+    if not m:
+        raise ValueError(f"not an oklch() colour: {value!r}")
+    L = float(m.group(1)) / (100 if m.group(2) else 1)
+    C, H = float(m.group(3)), math.radians(float(m.group(4)))
+    a, b = C * math.cos(H), C * math.sin(H)
+    l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    mm = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3
+    linear = (4.0767416621 * l - 3.3077115913 * mm + 0.2309699292 * s,
+              -1.2684380046 * l + 2.6097574011 * mm - 0.3413193965 * s,
+              -0.0041960863 * l - 0.7034186147 * mm + 1.7076147010 * s)
+    if any(x < -0.002 or x > 1.002 for x in linear):
+        raise ValueError(f"{value} is outside sRGB")
+    def encode(x):
+        x = min(1.0, max(0.0, x))
+        return 12.92 * x if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055
+    out = "#%02x%02x%02x" % tuple(round(encode(x) * 255) for x in linear)
+    if m.group(5) is not None:
+        alpha = float(m.group(5)) / (100 if m.group(6) else 1)
+        if alpha < 1:
+            out += "%02x" % int(alpha * 255 + 0.5)
+    return out
+
+
 def color(value, source):
+    """A declared oklch() is stored as its sRGB hex, labelled Derived, with the declaration kept in
+    the source; every other colour is stored as read."""
+    if value.strip().startswith("oklch("):
+        return tok(oklch_hex(value), "color", f"Derived: sRGB conversion of the declared {value.strip()}. " + source)
     return tok(value, "color", source)
 
 
@@ -208,9 +243,11 @@ def light():
         },
         "shadow": {
             "focus-ring": tok(
-                M["--shadow-focusvisible-default"],
+                re.sub(r"oklch\([^)]*\)", lambda m: oklch_hex(m.group(0)), M["--shadow-focusvisible-default"]),
                 "shadow",
-                SRC_HOME + "; --shadow-focusvisible-default. Home hero CTA boxShadow after element.focus() matched this shadow.",
+                "Derived: the colours are sRGB conversions of the declared "
+                + M["--shadow-focusvisible-default"] + ". " + SRC_HOME
+                + "; --shadow-focusvisible-default. Home hero CTA boxShadow after element.focus() matched this shadow.",
             ),
         },
         "status": {
