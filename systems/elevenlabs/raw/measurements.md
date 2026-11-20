@@ -439,20 +439,21 @@ Page: home. Selector: `button[aria-label*=preview]`. States: default, hover, foc
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 108.94 x 108.94 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | 2px solid #000000 @ 0 offset 2px | = | = | = |
-| Font | Inter 18px/28.8px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | default | = | = | = |
-| Painted layers | button.tw-absolute.tw-inset-0 108.9x108.9 r 9999px outline 2px solid #000000 @ 0 offset 2px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 108.94 x 108.94 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | 2px solid #000000 @ 0 offset 2px | = | - | = |
+| Font | Inter 18px/28.8px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | default | = | - | = |
+| Painted layers | button.tw-absolute.tw-inset-0 108.9x108.9 r 9999px outline 2px solid #000000 @ 0 offset 2px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `voice-play-default.png`, `voice-play-hover.png`, `voice-play-focus-visible.png`, `voice-play-pressed.png`.
 
@@ -606,20 +607,21 @@ Page: home. Selector: `Play button`. States: default, hover, focus-visible, pres
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 57.86 x 36 | = | = | = |
-| Padding | 0px 14px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | #000000 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | 2px solid #000000 @ 0 offset 2px | = | = | = |
-| Font | Inter 15px/15px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Painted layers | button.tw-flex-none.tw-ml-auto 57.9x36.0 bg #000000 r 9999px outline 2px solid #000000 @ 0 offset 2px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 57.86 x 36 | = | - | = |
+| Padding | 0px 14px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | #000000 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | 2px solid #000000 @ 0 offset 2px | = | - | = |
+| Font | Inter 15px/15px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Painted layers | button.tw-flex-none.tw-ml-auto 57.9x36.0 bg #000000 r 9999px outline 2px solid #000000 @ 0 offset 2px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `tts-play-default.png`, `tts-play-hover.png`, `tts-play-focus-visible.png`, `tts-play-pressed.png`.
 
