@@ -66,5 +66,14 @@ class RenderedGuide(unittest.TestCase):
         self.assertGreater(got["layout"], 0)
 
 
+@unittest.skipUnless(shutil.which("node"), "node is not installed")
+class CaptureDates(unittest.TestCase):
+    def test_measure_merge_dates(self):
+        """capture/public/test_dates.mjs: a partial rerun dates only what it read."""
+        test = PKG / "tools" / "capture" / "public" / "test_dates.mjs"
+        out = subprocess.run(["node", "--test", str(test)], capture_output=True, text=True)
+        self.assertEqual(out.returncode, 0, out.stdout[-2000:] + out.stderr[-2000:])
+
+
 if __name__ == "__main__":
     unittest.main()

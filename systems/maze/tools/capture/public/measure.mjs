@@ -8,6 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, AUTH, REPORT, launch, open, styleOf, crop, centre, RAW, hideConsent } from './lib.mjs';
+import { startRun, touch, readOk, readFailed } from './dates.mjs';
 
 fs.mkdirSync(RAW, { recursive: true });
 fs.mkdirSync(path.join(RAW, '..', 'components', 'crops'), { recursive: true });
@@ -15,19 +16,21 @@ const OUT = path.join(RAW, 'components-computed.json');
 // Start from the committed readings and merge into them, so a run that dies on one page leaves every
 // other component as it was (the kit's approach) instead of a file missing every later component.
 const previous = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
-const out = {
-  _meta: {
-    product: 'Maze',
-    captured: new Date().toLocaleDateString('en-CA'),  // the local run date
-    route: 'public-web',
-    theme: 'light',
-    note: 'Signed out. CookieYes and OneTrust hidden, never clicked. Login fields focused and filled with a sample string, then cleared. Nothing submitted. No study started.',
-  },
-  components: { ...(previous.components || {}) },
-};
+// Dates follow dates.mjs: _meta.read and each component's `read` move only when a state is
+// actually read, kept readings take the earlier date, and _meta.lastAttempt records this run.
+// _meta.captured stays the first capture's date (it used to become today on every run).
+const today = new Date().toLocaleDateString('en-CA');
+const out = startRun(previous, today);
+Object.assign(out._meta, {
+  product: 'Maze',
+  route: 'public-web',
+  theme: 'light',
+  note: 'Signed out. CookieYes and OneTrust hidden, never clicked. Login fields focused and filled with a sample string, then cleared. Nothing submitted. No study started.',
+});
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const freshThisRun = new Set();
+const earlier = new Map();   // key -> the states the committed file held, for a failed reread
 
 let page, context, browser, cdp, current;
 
@@ -87,10 +90,10 @@ async function record(key, state, loc, meta, via) {
     let file;
     try { file = await crop(page, loc, `${key}-${state}`); }
     catch (e) { s.cropError = String(e.message).slice(0, 160); }
-    c.states[state] = { ...s, crop: file, via };
+    readOk(out, c, state, { ...s, crop: file, via }, today);
     log(' ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h), s.cropError || '');
   } catch (e) {
-    c.states[state] = { error: String(e.message).slice(0, 180), via };
+    readFailed(c, earlier.get(key), state, { error: String(e.message).slice(0, 180), via }, today);
     log(' !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -99,13 +102,16 @@ async function states(key, loc, list, meta) {
   const target = loc.first();
   if (!(await target.count())) {
     log(' ! missing', key);
-    out.components[key] = { missing: true, ...meta, url: current, states: {} };
+    // The absence was seen on this run, so the entry is dated today; no state was read, so
+    // _meta.read stays where it was.
+    out.components[key] = { missing: true, ...meta, url: current, read: today, states: {} };
     return;
   }
   // Found: start this component afresh on its first call in this run, so neither an old missing flag
   // nor states this run no longer reads survive from the committed file. A later call for the same
   // component (the platform menu reads default, then hover) adds to it.
-  if (!freshThisRun.has(key)) { out.components[key] = { states: {}, ...meta, url: current }; freshThisRun.add(key); }
+  // touch() keeps the component's earlier read date and states aside until a state is read again.
+  if (!freshThisRun.has(key)) { touch(out, earlier, key, { ...meta, url: current }); freshThisRun.add(key); }
   for (const st of list) {
     await reset();
     let undo;
