@@ -105,6 +105,17 @@ export async function firstRoomHref(page) {
   return href ? href.split('?')[0] : null;
 }
 
+// navigator.webdriver is left as Chromium sets it, so a bot wall can answer
+// instead of the product. A wall still loads as a normal document, so check for
+// it before any screenshot or component record: throw, and let the page loop
+// record the route as failed with its earlier evidence left in place.
+const WALL = /captcha|verify (that )?you are (a )?human|are you a robot|unusual traffic|access denied|request (was )?blocked|press (&|and) hold|pardon our interruption|attention required/i;
+export async function assertProductPage(page) {
+  const probe = await page.evaluate(() => ({ title: document.title || '', text: (document.body?.innerText || '').slice(0, 4000) })).catch(() => ({ title: '', text: '' }));
+  if (WALL.test(probe.title) || WALL.test(probe.text)) throw new Error('bot check: ' + (probe.title || probe.text.slice(0, 80)).trim());
+  if (probe.text.trim().length < 200) throw new Error('bot check or empty page: ' + probe.text.trim().length + ' characters of text');
+}
+
 export async function open(page, url, { wait = 6000, sweep = 'sweep' } = {}) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await page.waitForTimeout(wait);

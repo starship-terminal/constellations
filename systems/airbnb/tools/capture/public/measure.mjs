@@ -18,7 +18,7 @@
 //   anything else  a resting state reached by the page itself
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, UA, UA_MOBILE, launch, open, sweepOverlays, firstRoomHref, styleOf, crop, centre, markFixed, RAW, REF } from './lib.mjs';
+import { BASE, UA, UA_MOBILE, launch, open, sweepOverlays, firstRoomHref, styleOf, crop, centre, markFixed, RAW, REF, assertProductPage } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -52,6 +52,7 @@ async function newPage(key, { mobile = false, sweep = 'sweep', wait = 9000 } = {
   await cdp.send('CSS.enable');
   log('open', key, mobile ? '(mobile)' : '', urlFor(key));
   await open(page, urlFor(key), { wait, sweep });
+  await assertProductPage(page);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await markFixed(page);
 }
