@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hims UK style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #f4f1ee;
+    --ink: rgba(0, 0, 0, 0.89);
+    --brand: #cc835c;
+    --quiet: rgba(0, 0, 0, 0.06);
+    --white: #ffffff;
+    --black: #000000;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.4 Helvetica, Arial, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-weight: 500; font-size: 32px; }
+  h2 { margin-top: 40px; font-size: 18px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 120px; }
+  .swatch i { display: block; height: 48px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); }
+  .swatch span { display: block; font-size: 12px; margin-top: 4px; }
+  .pill { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: 48px; border: 0; font: 12px/1 Helvetica, Arial, sans-serif; }
+  .quiet { background: var(--quiet); color: var(--ink); }
+  .primary { background: var(--black); color: var(--white); font-size: 16px; }
+  .card { background: var(--surface); border-radius: 16px; padding: 16px; width: 180px; }
+  .brand { color: var(--brand); }
+  p.note { font-size: 13px; max-width: 68ch; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hims UK</h1>
+  <p class="note">Rendered from the measured tokens in tokens.json. Care Sans is proprietary and is not loaded. The fallback is Helvetica.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="swatch"><i style="background:#f4f1ee"></i><span>surface #f4f1ee</span></div>
+    <div class="swatch"><i style="background:#cc835c"></i><span>brand #cc835c</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>action #000000</span></div>
+    <div class="swatch"><i style="background:rgba(0,0,0,0.89)"></i><span>text rgba(0,0,0,0.89)</span></div>
+    <div class="swatch"><i style="background:#96644a"></i><span>hims primary 500</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-size:44px;margin:0">Personalised healthcare <span class="brand">for you</span></p>
+  <p class="note">The hero size in the screenshot is larger than the measured nav. Display slopes were not the painted hero size, so this line is a specimen, not a measured display token.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="pill quiet">LOGIN</span>
+    <span class="pill primary">Explore treatments</span>
+    <div class="card">Lose <span class="brand">weight</span></div>
+  </div>
+</main>
+</body>
+</html>
