@@ -275,6 +275,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The results page is someone else's public query** (Toronto, 221 properties) — prices, photos and hotel names are page content, not Expedia chrome values.
 - **Sort-open and any applied state are screenshot-only**; the results page was measured statically because hydration refetches fail.
 - **The currency control's focus ring is unmeasured** — it could not be reached by keyboard in the static capture. The field triggers show no focus ring in measurement, which is how the SSR markup behaves; hydrated triggers may differ.
+- **No measured focus colour is published.** The Search button's keyboard focus draws the browser's own `5px auto` ring in Chrome's default #101010, not the declared `--egds-outline-focus` (#1668e3 in light-1), so `core.measured.focus.outlineColor` is left out and listed under `_gaps` in `raw/component-tokens.json`; the declared `egds.outlineFocus` roles stay. `core.measured.focus.outlineWidth` is the measured width of that browser ring.
 - **Scrim/gradient roles are raw strings** (`egds.*Scrim` as `other`), and 27 values the resolver cannot read (`[object Object]` composites, `url()` fonts) are listed in `core.$extensions.notTokenised`.
 
 ### Do and don't (from README.md)
