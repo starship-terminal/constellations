@@ -31,7 +31,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 3. Do set the root to 10px.
 4. Do round the controls.
 5. Do pair the three voices.
-6. Don't style the bot builder from this package.
+6. Don't style the bot builder from the marketing tokens.
 7. Don't invent a dark theme.
 8. Don't follow a sign-up or checkout link from a reconstruction.
 
