@@ -20,6 +20,13 @@ OUTPUTS = ["raw/component-tokens.json", "tokens.json", "style-guide.html", "comp
 NODE = shutil.which("node")
 
 
+def run(cmd, cwd):
+    """Run a builder; on failure, fail with its stdout and stderr instead of only the exit code."""
+    done = subprocess.run(cmd, capture_output=True, text=True, cwd=cwd)
+    if done.returncode:
+        raise AssertionError(f"{' '.join(map(str, cmd))} exited {done.returncode}\n{done.stdout}\n{done.stderr}")
+
+
 class RebuildTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -29,10 +36,9 @@ class RebuildTest(unittest.TestCase):
         for out in OUTPUTS + ["raw/measurements.md"]:
             (cls.copy / out).unlink()
         if NODE:
-            subprocess.run([NODE, str(cls.copy / "tools" / "capture" / "public" / "build-measurements.mjs")],
-                           check=True, capture_output=True, cwd=cls.copy)
+            run([NODE, str(cls.copy / "tools" / "capture" / "public" / "build-measurements.mjs")], cls.copy)
         for b in BUILDERS:
-            subprocess.run([sys.executable, str(cls.copy / "tools" / b)], check=True, capture_output=True, cwd=cls.copy)
+            run([sys.executable, str(cls.copy / "tools" / b)], cls.copy)
 
     @classmethod
     def tearDownClass(cls):
