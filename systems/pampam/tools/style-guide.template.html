@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>PamPam style guide</title>
+<style>
+  :root { /*LIGHT*/ }
+  body { margin: 0; background: var(--background-page); color: var(--text-primary); font-family: var(--font-sans); }
+  main { max-width: 976px; margin: 0 auto; padding: 40px 32px 80px; }
+  h1 { font-family: var(--font-display); font-weight: 400; font-size: 48px; line-height: 1.08; margin: 0 0 12px; }
+  h2 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.08; margin: 40px 0 12px; }
+  p { color: var(--text-muted); font-size: 16px; line-height: 24px; font-weight: 550; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 12px; border: 1px solid var(--border-default); }
+  .label { font-size: 12px; line-height: 16px; color: var(--text-muted); margin-top: 6px; }
+  .btn { display: inline-flex; height: 64px; padding: 20px 32px; align-items: center; justify-content: center; border-radius: 12px; font-size: 19px; font-weight: 550; line-height: 28px; }
+  .btn-primary { background: var(--accent-default); color: var(--text-onAccent); border: 1px solid var(--border-accent); box-shadow: var(--shadow-button); }
+  .btn-quiet { background: var(--background-quiet); color: var(--text-disabled); border: 1px solid var(--border-default); box-shadow: var(--shadow-quiet); }
+  .btn-ink { background: var(--background-inverse); color: var(--text-onAccent); border: 0; border-radius: 12px; height: 40px; padding: 8px 16px; font-size: 16px; }
+  .card { background: var(--background-surface); border-radius: 16px; padding: 24px; width: 220px; }
+  .card strong { display: block; font-size: 19px; font-weight: 550; margin-bottom: 8px; }
+  .menu { background: var(--background-page); border-radius: 6px; box-shadow: var(--shadow-menu); padding: 8px 0; width: 160px; }
+  .menu a { display: block; padding: 8px 12px; color: var(--text-menu); text-decoration: none; font-size: 16px; font-weight: 550; }
+  .field { height: 36px; border-radius: 18px; background: #f3f3f3; display: flex; align-items: center; padding: 0 14px; width: 280px; color: var(--text-primary); }
+</style>
+</head>
+<body>
+<main>
+  <h1>PamPam</h1>
+  <p>Public marketing system, one light theme. Values come from tokens.json. Nineties is proprietary, so this page falls back when that face is not installed.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <h1 style="font-size:80px">Put your world on the map.</h1>
+  <p>Nav and body sit in Inter at weight 550. The lede is lavender, not grey.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="btn btn-primary">Get Explorer</span>
+    <span class="btn btn-quiet">Try it for free</span>
+    <span class="btn btn-ink">Make map</span>
+  </div>
+  <h2>Card and menu</h2>
+  <div class="row">
+    <div class="card"><strong>Explorer</strong><p style="margin:0">$5 /per month</p></div>
+    <div class="menu"><a>Travelers</a><a>Tourism</a><a>Startup Maps</a></div>
+    <div class="field">Search map</div>
+  </div>
+</main>
+<script>
+const tokens = /*TOKENS*/null;
+const roles = [
+  ['page', '--background-page'],
+  ['surface', '--background-surface'],
+  ['parchment', '--background-parchment'],
+  ['text', '--text-primary'],
+  ['muted', '--text-muted'],
+  ['accent', '--accent-default'],
+  ['border', '--border-accent'],
+];
+const host = document.getElementById('swatches');
+for (const [name, v] of roles) {
+  const d = document.createElement('div');
+  d.className = 'swatch';
+  d.innerHTML = '<div class="chip" style="background:var(' + v + ')"></div><div class="label">' + name + '</div>';
+  host.appendChild(d);
+}
+</script>
+</body>
+</html>

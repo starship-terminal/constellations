@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>PamPam style guide</title>
+<style>
+  :root {   --color-ink: #1b1917;
+  --color-lavender: #9894a8;
+  --color-ash: #8a8a8a;
+  --color-menu: #666666;
+  --color-parchment: #faf2ec;
+  --color-card: #fbfcfd;
+  --color-quiet: #fefefe;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-blue: #4b72f3;
+  --color-blueDeep: #2b3ea7;
+  --color-blueLip: #6387f4;
+  --color-planBorder: #dde1f1;
+  --color-hairline: rgba(0, 0, 0, 0.1);
+  --color-focus: #005fcc;
+  --font-sans: inter, "inter Fallback", sans-serif;
+  --font-display: nineties, "nineties Fallback";
+  --typography-display: 400 80px /1.08 var(--font-display);
+  --typography-displayMobile: 400 48px /1.08 var(--font-display);
+  --typography-heading: 400 48px /1.08 var(--font-display);
+  --typography-headingSm: 400 28px /1.08 var(--font-display);
+  --typography-nav: 550 16px /24px var(--font-sans);
+  --typography-button: 550 19px /28px var(--font-sans);
+  --typography-body: 550 16px /24px var(--font-sans);
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --radius-full: 9999px;
+  --radius-control-menu: 6px;
+  --radius-control-button: 12px;
+  --radius-control-card: 16px;
+  --radius-control-prompt: 18px;
+  --space-0: 0rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-9: 2.25rem;
+  --space-10: 2.5rem;
+  --space-11: 2.75rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-28: 7rem;
+  --space-32: 8rem;
+  --space-36: 9rem;
+  --space-40: 10rem;
+  --space-44: 11rem;
+  --space-48: 12rem;
+  --space-52: 13rem;
+  --space-56: 14rem;
+  --space-60: 15rem;
+  --space-64: 16rem;
+  --space-72: 18rem;
+  --space-80: 20rem;
+  --space-96: 24rem;
+  --size-navItem: 40px;
+  --size-menuItem: 40px;
+  --size-button: 64px;
+  --size-search: 36px;
+  --size-makeMap: 40px;
+  --size-content: 976px;
+  --size-dialog: 375px;
+  --shadow-menu: 0px 6px 20px -10px rgba(14, 18, 22, 0.2);
+  --shadow-button: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), inset 0px 2px 0px 0px #6387f4;
+  --shadow-quiet: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  --motion-fastest: 50ms;
+  --motion-faster: 100ms;
+  --motion-fast: 150ms;
+  --motion-normal: 200ms;
+  --motion-slow: 300ms;
+  --motion-slower: 400ms;
+  --motion-slowest: 500ms;
+  --motion-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-observed-fast: 150ms;
+  --motion-observed-normal: 200ms;
+  --motion-observed-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --layout-breakpointSm: 640px;
+  --layout-breakpointMd: 768px;
+  --layout-breakpointLg: 1024px;
+  --layout-breakpointXl: 1280px;
+  --background-page: var(--color-white);
+  --background-surface: var(--color-card);
+  --background-parchment: var(--color-parchment);
+  --background-quiet: var(--color-quiet);
+  --background-inverse: var(--color-black);
+  --text-primary: var(--color-ink);
+  --text-muted: var(--color-lavender);
+  --text-menu: var(--color-menu);
+  --text-disabled: var(--color-ash);
+  --text-onAccent: var(--color-white);
+  --text-link: var(--color-lavender);
+  --border-default: var(--color-hairline);
+  --border-strong: var(--color-planBorder);
+  --border-accent: var(--color-blueDeep);
+  --accent-default: var(--color-blue);
+  --accent-pressed: var(--color-blueDeep);
+  --accent-lip: var(--color-blueLip);
+  --focus-ring: var(--color-focus);
+  --font-sans: inter, "inter Fallback", sans-serif;
+  --font-display: nineties, "nineties Fallback";
+  --shadow-button: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), inset 0px 2px 0px 0px #6387f4;
+  --shadow-quiet: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  --shadow-menu: 0px 6px 20px -10px rgba(14, 18, 22, 0.2); }
+  body { margin: 0; background: var(--background-page); color: var(--text-primary); font-family: var(--font-sans); }
+  main { max-width: 976px; margin: 0 auto; padding: 40px 32px 80px; }
+  h1 { font-family: var(--font-display); font-weight: 400; font-size: 48px; line-height: 1.08; margin: 0 0 12px; }
+  h2 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.08; margin: 40px 0 12px; }
+  p { color: var(--text-muted); font-size: 16px; line-height: 24px; font-weight: 550; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 12px; border: 1px solid var(--border-default); }
+  .label { font-size: 12px; line-height: 16px; color: var(--text-muted); margin-top: 6px; }
+  .btn { display: inline-flex; height: 64px; padding: 20px 32px; align-items: center; justify-content: center; border-radius: 12px; font-size: 19px; font-weight: 550; line-height: 28px; }
+  .btn-primary { background: var(--accent-default); color: var(--text-onAccent); border: 1px solid var(--border-accent); box-shadow: var(--shadow-button); }
+  .btn-quiet { background: var(--background-quiet); color: var(--text-disabled); border: 1px solid var(--border-default); box-shadow: var(--shadow-quiet); }
+  .btn-ink { background: var(--background-inverse); color: var(--text-onAccent); border: 0; border-radius: 12px; height: 40px; padding: 8px 16px; font-size: 16px; }
+  .card { background: var(--background-surface); border-radius: 16px; padding: 24px; width: 220px; }
+  .card strong { display: block; font-size: 19px; font-weight: 550; margin-bottom: 8px; }
+  .menu { background: var(--background-page); border-radius: 6px; box-shadow: var(--shadow-menu); padding: 8px 0; width: 160px; }
+  .menu a { display: block; padding: 8px 12px; color: var(--text-menu); text-decoration: none; font-size: 16px; font-weight: 550; }
+  .field { height: 36px; border-radius: 18px; background: #f3f3f3; display: flex; align-items: center; padding: 0 14px; width: 280px; color: var(--text-primary); }
+</style>
+</head>
+<body>
+<main>
+  <h1>PamPam</h1>
+  <p>Public marketing system, one light theme. Values come from tokens.json. Nineties is proprietary, so this page falls back when that face is not installed.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <h1 style="font-size:80px">Put your world on the map.</h1>
+  <p>Nav and body sit in Inter at weight 550. The lede is lavender, not grey.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="btn btn-primary">Get Explorer</span>
+    <span class="btn btn-quiet">Try it for free</span>
+    <span class="btn btn-ink">Make map</span>
+  </div>
+  <h2>Card and menu</h2>
+  <div class="row">
+    <div class="card"><strong>Explorer</strong><p style="margin:0">$5 /per month</p></div>
+    <div class="menu"><a>Travelers</a><a>Tourism</a><a>Startup Maps</a></div>
+    <div class="field">Search map</div>
+  </div>
+</main>
+<script>
+const tokens = {"light": true};
+const roles = [
+  ['page', '--background-page'],
+  ['surface', '--background-surface'],
+  ['parchment', '--background-parchment'],
+  ['text', '--text-primary'],
+  ['muted', '--text-muted'],
+  ['accent', '--accent-default'],
+  ['border', '--border-accent'],
+];
+const host = document.getElementById('swatches');
+for (const [name, v] of roles) {
+  const d = document.createElement('div');
+  d.className = 'swatch';
+  d.innerHTML = '<div class="chip" style="background:var(' + v + ')"></div><div class="label">' + name + '</div>';
+  host.appendChild(d);
+}
+</script>
+</body>
+</html>
