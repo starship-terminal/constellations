@@ -195,7 +195,6 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **This is the public shell, not the product.** The voice playground, console, voice cloning and management, agents, API keys, usage and billing live behind sign-in on play.cartesia.ai and are uncaptured. Treat the app's own design system as unknown.
 - **`.dark` is a declared scope, not a toggle.** The marketing sheets declare dark re-bindings, but the captured pages only paint them inside `.dark` islands — `tokens.json`'s `dark` set is that re-binding, not a user-selectable mode.
 - **Docs is a different system.** docs.cartesia.ai is a Mintlify app in Inter with its own tokens; it was measured for reference (raw/css-vars-docs.json, the `docs-*` components, `core.font.family.docs`, `component.docs.*`) but never merged into the Cartesia token layer.
@@ -203,6 +202,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **`plan-tab` is recorded missing** — the pricing plan tabs rendered zero-size/lazy-mounted at capture; an honest miss, not a measured absence.
 - **rounded-full clamps.** `rounded-full` computes to a giant px radius (~33.5 million px); the token records the clamp at 9999px.
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 
 ### Do and don't (from README.md)
 
