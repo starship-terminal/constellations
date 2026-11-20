@@ -116,9 +116,16 @@ def _db(create: bool):
     try:
         if create:
             config_dir().mkdir(parents=True, exist_ok=True, mode=0o700)
-            fd = os.open(path, os.O_CREAT | os.O_RDWR, 0o600)
-            os.close(fd)
-            os.chmod(path, 0o600)
+            # Create the file 0600 only when it is new. Opening and closing an
+            # existing database outside SQLite would drop the POSIX locks
+            # another connection in this process holds on it.
+            try:
+                fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+            except FileExistsError:
+                pass
+            else:
+                os.close(fd)
+                os.chmod(path, 0o600)
         else:
             os.stat(path)
     except FileNotFoundError:
@@ -151,7 +158,7 @@ def _db(create: bool):
 def _discard_files() -> None:
     """Delete the database and its side files: the way out of a damaged one."""
     path = provider_file()
-    for f in (path, path.with_name(path.name + "-wal"), path.with_name(path.name + "-shm")):
+    for f in (path, *(path.with_name(path.name + x) for x in ("-journal", "-wal", "-shm"))):
         f.unlink(missing_ok=True)
 
 
