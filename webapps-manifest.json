@@ -3661,9 +3661,9 @@
       "description": "Inbox collaboration for teams that run on email",
       "status": "pending",
       "package": null,
-      "notes": "https://mail.missiveapp.com/#login asks for work email and password, or Google, Apple, or SSO. Password not submitted.",
+      "notes": "https://mail.missiveapp.com/#login asks for work email and password, or Google, Apple, or SSO. Password not submitted. Public walk 2026-11-21: the desktop Product menu opened on hover and listed Collaborate, Coordinate, Connect, All features, Integrations, AI assistant, Changelog, and four industries. Resources opened Help, Download, and Blog. Watch demo opened a lightbox on the home page. The phone hamburger opened the same groups plus Sign up. The footer added use cases, two more solutions, compare pages, legal, and the French locale. Log in and Try for free stop at https://mail.missiveapp.com/#login and #signup. Both were not entered. Google, Apple, and SSO were not opened. Docs search was not submitted. Public package in PR 1541 at 60ea9eb3fa97. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 11
     },
     {
@@ -3763,9 +3763,9 @@
       "description": "Less admin. More creative flow.",
       "status": "pending",
       "package": null,
-      "notes": "https://www.monodesk.com/signin is 404. https://app.monodesk.com/login asks for email and password, or Google. Password not submitted.",
+      "notes": "https://www.monodesk.com/signin is 404. https://app.monodesk.com/login asks for email and password, or Google. Password not submitted. Public walk 2026-11-21: desktop Creative Pros, Features, and More are hover and click menus. The phone hamburger opened nav.mobile-nav, and More expanded Help, Blog, and Playground inside that sheet. Watch how it works opened a video dialog. Pricing See full feature set expanded the comparison table. Log in stops at https://app.monodesk.com/login. Get started on pricing stops at https://app.monodesk.com/create. Both were not entered. Google and Apple were not opened. No form was submitted. Public package in PR 1540 at 6fe6423624f7. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 11
     },
     {
