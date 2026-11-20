@@ -32,7 +32,7 @@ export const M = (name) => `[class*="${name}"]`;
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // Automation is not hidden: no navigator.webdriver mask (bot check: recorded as a boundary, not bypassed).
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }
