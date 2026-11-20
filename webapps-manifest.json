@@ -2408,7 +2408,7 @@
       "description": "Grow your small business or career",
       "status": "pending",
       "package": null,
-      "notes": "https://grow.google/ redirects to a Singapore skills site with no account sign-in. https://grow.google/intl/en/ is 404. No email form.",
+      "notes": "https://grow.google/ redirects to a Singapore skills site with no account sign-in. https://grow.google/intl/en/ is 404. No email form. Public walk 2026-11-21: no signed-in surface on the pages reached. Public package in PR 1487 at 39e48d4ae. catalog.json not in that PR. Certificate siblings and captcha forms were not filled. Skipped any account shell this pass.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 8
