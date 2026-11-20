@@ -29,7 +29,7 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // automation flag: left as the browser sets it (navigator.webdriver is not masked).
   });
   return { browser, context };
 }

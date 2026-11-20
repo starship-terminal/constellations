@@ -110,6 +110,7 @@ Nothing was signed into, joined, searched, booked or paid for: the login and get
 
 ## What to distrust
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **This is the public shell, not the member product.** The dashboard, inbox and messaging, bookings, payments, job applications and full caregiver profiles sit behind auth and are uncaptured. Treat the member design system as unknown.
 - **Two layers, two systems.** The marketing/listing surface is MUI (`mui-*`, Oceanic Grotesk/NaN Druid); `/vis/auth/login` is a legacy Proxima Nova form. Tokens name the layer each value came from.
 - **The gate is frequency-capped.** The `Join Care.com` modal mounts over the listing on scroll but not on every load; a run where it stayed absent records `gate-dialog` missing.

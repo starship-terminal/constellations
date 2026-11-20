@@ -102,6 +102,7 @@ Nothing was signed into, bought or submitted: the login card was captured as a s
 
 ## What to distrust
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **This is the public site, not the product.** The Cake workspace — cap table, grants, scenario models, documents, stakeholders, reports — sits behind app.cakeequity.com and is uncaptured. Treat the app's own design system as unknown.
 - **Two dark regions, not a theme toggle.** The marketing pages are light-only; the `#18161a` footer and `#0e0d12` Cake-MCP band are dark regions painted on the light page. `tokens.json` keeps their roles in the `dark` set — read them as surfaces, not a user-selectable mode.
 - **The login is a different toolchain.** authentication.cakeequity.com is a hosted Kinde page: `#5a38fd` primary (not `#4823ff`), 8px controls, a 2px `#0054f0` focus ring, its own system stack. Do not blend its values into the marketing system.

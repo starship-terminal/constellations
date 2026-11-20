@@ -118,6 +118,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **The signed-in product is uncaptured.** Booking, member-only search results, plan checkout, credits and account pages all sit behind sign-in or payment; /login and /walkthrough were captured as boundaries and nothing authenticated was inferred.
 - **No declared token layer.** Every token is a measured computed-style value, not a resolved `--token-*` variable — the palette is reconstructed evidence, not the site's own names. `raw/css-vars.json` records the thin harvest that proves it.
 - **The page ground is painted by `html`, not `body`.** `document.body` computes `rgba(0,0,0,0)`; the white ground lives on `document.documentElement`. `page-ground` is measured there and the entry says so — don't reuse a `body` fill value from elsewhere.

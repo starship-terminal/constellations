@@ -116,6 +116,7 @@ Nothing was signed into, created, submitted or paid for: the auth card was measu
 - **Focus really activates tabs.** The plan-audience tabs use ARIA automatic activation — `plan-tab`'s focus-visible state was measured on the view switching to Education. Truthful, and it swaps the page.
 - **Unstyled containers read fallback fonts.** StyleX leaves some wrappers at Times/Arial; the text nodes inside carry Canva Sans. Type tokens cite the text-node readings (`textStyle`), not the wrapper's.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 
 ## Fonts
 
