@@ -53,7 +53,7 @@ Fonts: `core.font.family.home` is DockWebflowHome, then 2 fallbacks; `core.font.
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 118 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 109 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
