@@ -21,7 +21,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, open, closePromo, domFind, styleOf, crop, centre, RAW } from './lib.mjs';
-import { prefer } from './pin.mjs';
+import { prefer } from './prefer.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -189,7 +189,7 @@ const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 // Locator.or() is a union resolved in DOM order: `preferred.or(fallback)` picks whichever node comes
 // first in the document, so a fallback earlier in the DOM wins over a preferred match. prefer()
-// (pin.mjs) takes the first candidate with a visible match, in the order given.
+// (prefer.mjs) takes the first candidate with a visible match, in the order given.
 
 // Transitions and animations declared in every readable sheet, by selector.
 async function sheetsFor(key) {

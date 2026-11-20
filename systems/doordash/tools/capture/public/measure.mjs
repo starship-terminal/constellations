@@ -24,7 +24,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
-import { prefer } from './pin.mjs';
+import { prefer } from './prefer.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -322,7 +322,7 @@ async function markPainted(sel, tag, { maxUp = 8, minW = 100, minH = 60, descend
 
 // markPainted() and domFind() return a locator that matches nothing on a miss (never null), and so
 // does NONE() when either throws. Locator.or() is a union resolved in DOM order, so neither
-// `x || fallback` nor `.or()` prefers x: prefer() (pin.mjs) takes the first candidate with a visible
+// `x || fallback` nor `.or()` prefers x: prefer() (prefer.mjs) takes the first candidate with a visible
 // match, in the order given.
 const NONE = () => q('[data-m-mark="__none__"]');
 
