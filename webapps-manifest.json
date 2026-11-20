@@ -4902,9 +4902,9 @@
       "description": "Email for developers",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://resend.com/login shows email, or Google or GitHub. Password not submitted.",
+      "notes": "Email probe: https://resend.com/login shows email, or Google or GitHub. Password not submitted. Public walk 2026-11-21: the home header opens Features, Company, Enterprise, Help, Docs, and AI. Those menus link to product, company, docs, and AI pages. The phone control is Open main menu. Pricing has a monthly/yearly toggle. Docs have search, a sidebar, and a theme switch. Home has a demo listbox and a command-palette dialog. Footer links reach blog, changelog, customers, handbook, humans, and legal pages. Status is an external site. Login and signup were recorded and not entered. Google and GitHub were not clicked. Nothing was typed. No form was submitted. Signed-in dashboard, settings, and sending stop at /login and /signup. Public package in PR 1562 at c5b549046d90. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
