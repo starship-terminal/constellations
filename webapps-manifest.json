@@ -5786,9 +5786,9 @@
       "description": "The Leading Social Platform for Investors and Traders",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://stocktwits.com/signin shows email or username and password. Password not submitted.",
+      "notes": "Email probe: https://stocktwits.com/signin shows email or username and password. Password not submitted. Public walk 2026-11-21: home opens Trending, News, Earnings, a symbol page, a search list, an experience dialog, and a phone menu. Reply, like, watchlist, and profile stop at /signin or /signup. Those walls were recorded and not filled. No email was typed. No form was submitted. Signed-in feed was not captured. Public package refresh in PR 1585 at 80a9416dfef6. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 17
     },
     {
