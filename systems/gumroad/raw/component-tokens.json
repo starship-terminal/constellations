@@ -1,0 +1,90 @@
+{
+  "core": {
+    "color": {
+      "pink": { "type": "color", "var": "--color-pink", "source": "declared on gumroad.com, resolved light" },
+      "black": { "type": "color", "var": "--color-black" },
+      "white": { "type": "color", "var": "--color-white" },
+      "paper": { "type": "color", "var": "--color-gray", "source": "light page fill #f4f4f0" },
+      "ink": { "type": "color", "value": "#242423", "source": "measured dark page fill, css-var --color-dark-gray" },
+      "danger": { "type": "color", "var": "--color-danger" },
+      "success": { "type": "color", "var": "--color-success" },
+      "warning": { "type": "color", "var": "--color-warning" },
+      "info": { "type": "color", "var": "--color-info" }
+    },
+    "font": {
+      "family": {
+        "sans": { "type": "fontFamily", "value": "ABC Favorit, Avenir, Montserrat, Corbel, URW Gothic, source-sans-pro, sans-serif", "source": "css-var --font-family on gumroad.com" }
+      }
+    },
+    "typography": {
+      "display": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "96px", "fontWeight": 400, "lineHeight": "96px", "letterSpacing": "-0.4px" }, "source": "measured h1 Go from 0 to $1 on https://gumroad.com/ light 1440" },
+      "body": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "18px", "fontWeight": 400, "lineHeight": "28px", "letterSpacing": "-0.4px" }, "source": "measured nav link Pricing on https://gumroad.com/" },
+      "label": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "16px", "fontWeight": 400, "lineHeight": "24px", "letterSpacing": "0px" }, "source": "measured search products field on /discover" },
+      "caption": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "14px", "fontWeight": 400, "lineHeight": "20px", "letterSpacing": "0px" }, "source": "Not captured as a distinct role; 14px is the smallest measured step on the public shell" }
+    },
+    "radius": {
+      "1": { "type": "dimension", "var": "--border-radius-1" },
+      "2": { "type": "dimension", "var": "--border-radius-2" },
+      "pill": { "type": "dimension", "var": "--border-radius-3" }
+    },
+    "spacing": {
+      "1": { "type": "dimension", "var": "--spacer-1" },
+      "2": { "type": "dimension", "var": "--spacer-2" },
+      "3": { "type": "dimension", "var": "--spacer-3" },
+      "4": { "type": "dimension", "var": "--spacer-4" },
+      "5": { "type": "dimension", "var": "--spacer-5" },
+      "6": { "type": "dimension", "var": "--spacer-6" }
+    },
+    "border": {
+      "width": { "type": "dimension", "var": "--border-width" }
+    },
+    "motion": {
+      "hover-offset": { "type": "dimension", "var": "--button-hover-offset" }
+    }
+  },
+  "light": {
+    "page": { "type": "color", "value": "#f4f4f0", "source": "measured body background, css-var --body-bg light" },
+    "surface": { "type": "color", "value": "#ffffff", "source": "css-var --color-background light" },
+    "text": { "type": "color", "value": "#000000", "source": "css-var --color-foreground light" },
+    "muted": { "type": "color", "value": "rgba(0, 0, 0, 0.5)", "source": "css-var --color-muted light" },
+    "accent": { "type": "color", "value": "{color.pink}", "source": "css-var --color-accent, hover fill of Start selling" },
+    "border": { "type": "color", "value": "#000000", "source": "css-var --color-border light" },
+    "on-accent": { "type": "color", "value": "#000000", "source": "css-var --color-accent-foreground" },
+    "scrim": { "type": "color", "value": "rgba(0, 0, 0, 0.8)", "source": "css-var --color-backdrop" },
+    "danger": { "type": "color", "value": "{color.danger}" },
+    "success": { "type": "color", "value": "{color.success}" },
+    "warning": { "type": "color", "value": "{color.warning}" },
+    "info": { "type": "color", "value": "{color.info}" },
+    "focus": { "type": "color", "value": "#0057bc", "source": "measured outline on Start selling focus-visible, light" }
+  },
+  "dark": {
+    "page": { "type": "color", "value": "#242423", "source": "measured body background under prefers-color-scheme dark, css-var --body-bg" },
+    "surface": { "type": "color", "value": "#000000", "source": "css-var --color-background dark" },
+    "text": { "type": "color", "value": "#dddddd", "source": "css-var --color-foreground dark" },
+    "muted": { "type": "color", "value": "rgba(221, 221, 221, 0.5)", "source": "css-var --color-muted dark" },
+    "accent": { "type": "color", "value": "{color.pink}", "source": "Start selling default fill in dark" },
+    "border": { "type": "color", "value": "rgba(221, 221, 221, 0.35)", "source": "css-var --color-border dark" },
+    "on-accent": { "type": "color", "value": "#000000", "source": "css-var --color-accent-foreground" },
+    "scrim": { "type": "color", "value": "rgba(0, 0, 0, 0.8)", "source": "css-var --color-backdrop" },
+    "danger": { "type": "color", "value": "{color.danger}" },
+    "success": { "type": "color", "value": "{color.success}" },
+    "warning": { "type": "color", "value": "{color.warning}" },
+    "info": { "type": "color", "value": "{color.info}" },
+    "focus": { "type": "color", "value": "#93c0f5", "source": "measured outline on Start selling focus-visible, dark" }
+  },
+  "component": {
+    "button": {
+      "height": { "type": "dimension", "value": "79px", "source": "measured Start selling in the marketing header, light 1440" },
+      "font-size": { "type": "dimension", "value": "18px", "source": "measured Start selling" },
+      "radius": { "type": "dimension", "value": "0px", "source": "measured Start selling border-radius" },
+      "fill": { "type": "color", "value": "#000000", "source": "measured Start selling background, light" },
+      "fill-hover": { "type": "color", "value": "#ff90e8", "source": "measured Start selling hover, light" },
+      "text": { "type": "color", "value": "#ffffff", "source": "measured Start selling color, light" }
+    },
+    "field": {
+      "height": { "type": "dimension", "value": "64px", "source": "measured Search marketplace input on /" },
+      "radius": { "type": "dimension", "value": "4px", "source": "measured Search marketplace border-radius" },
+      "font-size": { "type": "dimension", "value": "20px", "source": "measured Search marketplace" }
+    }
+  }
+}

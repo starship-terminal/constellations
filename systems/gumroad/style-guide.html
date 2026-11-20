@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gumroad style guide</title>
+<style>
+:root {
+  --color-pink: #ff90e8;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-paper: #f4f4f0;
+  --color-ink: #242423;
+  --color-danger: #dc341e;
+  --color-success: #23a094;
+  --color-warning: #ffc900;
+  --color-info: #90a8ed;
+  --font-family-sans: ABC Favorit, Avenir, Montserrat, Corbel, URW Gothic, source-sans-pro, sans-serif;
+  --typography-display: 400 96px/96px var(--font-family-sans);
+  --typography-body: 400 18px/28px var(--font-family-sans);
+  --typography-label: 400 16px/24px var(--font-family-sans);
+  --typography-caption: 400 14px/20px var(--font-family-sans);
+  --radius-1: 4px;
+  --radius-2: 8px;
+  --radius-pill: 160px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --border-width: 1px;
+  --motion-hover-offset: 4px;
+  --page: #f4f4f0;
+  --surface: #ffffff;
+  --text: #000000;
+  --muted: rgba(0, 0, 0, 0.5);
+  --accent: var(--color-pink);
+  --border: #000000;
+  --on-accent: #000000;
+  --scrim: rgba(0, 0, 0, 0.8);
+  --danger: var(--color-danger);
+  --success: var(--color-success);
+  --warning: var(--color-warning);
+  --info: var(--color-info);
+  --focus: #0057bc;
+  --component-button-height: 79px;
+  --component-button-font-size: 18px;
+  --component-button-radius: 0px;
+  --component-button-fill: #000000;
+  --component-button-fill-hover: #ff90e8;
+  --component-button-text: #ffffff;
+  --component-field-height: 64px;
+  --component-field-radius: 4px;
+  --component-field-font-size: 20px;
+  color-scheme: light;
+  --sg-sans: ABC Favorit, Avenir, Montserrat, Corbel, "URW Gothic", sans-serif;
+}
+[data-mode="dark"] {
+  --page: #242423;
+  --surface: #000000;
+  --text: #dddddd;
+  --muted: rgba(221, 221, 221, 0.5);
+  --accent: var(--color-pink);
+  --border: rgba(221, 221, 221, 0.35);
+  --on-accent: #000000;
+  --scrim: rgba(0, 0, 0, 0.8);
+  --danger: var(--color-danger);
+  --success: var(--color-success);
+  --warning: var(--color-warning);
+  --info: var(--color-info);
+  --focus: #93c0f5;
+  --component-button-height: 79px;
+  --component-button-font-size: 18px;
+  --component-button-radius: 0px;
+  --component-button-fill: #000000;
+  --component-button-fill-hover: #ff90e8;
+  --component-button-text: #ffffff;
+  --component-field-height: 64px;
+  --component-field-radius: 4px;
+  --component-field-font-size: 20px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); background: var(--page); color: var(--text); }
+main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font-size: 48px; font-weight: 400; letter-spacing: -0.4px; margin: 0 0 8px; }
+h2 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin: 40px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border: 1px solid var(--border); }
+.sw span { display: block; font-size: 12px; margin-top: 4px; }
+button.toggle { background: var(--accent); color: var(--on-accent); border: 1px solid var(--border); padding: 8px 16px; font: inherit; cursor: pointer; }
+.btn { display: inline-flex; align-items: center; height: var(--component-button-height); padding: 0 24px; background: var(--component-button-fill); color: var(--component-button-text); font-size: var(--component-button-font-size); }
+.field { height: var(--component-field-height); width: 280px; border: 1px solid var(--border); border-radius: var(--component-field-radius); background: var(--page); padding: 0 16px; font: 20px/1 var(--sg-sans); color: var(--text); }
+.note { max-width: 62ch; }
+</style>
+</head>
+<body>
+<main>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle theme</button>
+  <h1>Gumroad</h1>
+  <p class="note">Generated from tokens.json. Pink accent is #ff90e8. Page is #f4f4f0 in light and #242423 in dark.</p>
+  <h2>Roles</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><span>page</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><span>surface</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><span>text</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><span>accent</span></div>
+    <div class="sw"><i style="background:var(--danger)"></i><span>danger</span></div>
+    <div class="sw"><i style="background:var(--success)"></i><span>success</span></div>
+    <div class="sw"><i style="background:var(--warning)"></i><span>warning</span></div>
+    <div class="sw"><i style="background:var(--info)"></i><span>info</span></div>
+  </div>
+  <h2>Controls</h2>
+  <p><span class="btn">Start selling</span></p>
+  <p><input class="field" placeholder="Search marketplace" readonly></p>
+</main>
+</body>
+</html>

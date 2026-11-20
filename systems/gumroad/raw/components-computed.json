@@ -1,0 +1,1186 @@
+{
+  "readAt": "2026-11-21",
+  "source": "gumroad.com computed styles, headless Chromium, signed out",
+  "themes": {
+    "light": {
+      "page": "https://gumroad.com/",
+      "components": {
+        "nav-cta": {
+          "text": "Start selling",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "paddingTop": "8px",
+              "paddingRight": "24px",
+              "paddingBottom": "8px",
+              "paddingLeft": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 0px",
+              "height": "79px",
+              "width": "142.359px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 1297.640625,
+                "y": 0,
+                "w": 142.359375,
+                "h": 79
+              },
+              "text": "Start selling"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 144, 232)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "paddingTop": "8px",
+              "paddingRight": "24px",
+              "paddingBottom": "8px",
+              "paddingLeft": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "79px",
+              "width": "142.359px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(0, 87, 188) auto 1px",
+              "boxShadow": "none",
+              "backgroundColor": "rgb(255, 144, 232)",
+              "color": "rgb(0, 0, 0)"
+            }
+          },
+          "crop": "nav-cta-light-default.png"
+        },
+        "nav-link": {
+          "text": "Pricing",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgba(0, 0, 0, 0)",
+              "borderRadius": "3.35544e+07px",
+              "paddingTop": "8px",
+              "paddingRight": "16px",
+              "paddingBottom": "8px",
+              "paddingLeft": "16px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "46px",
+              "width": "88.9844px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 781.234375,
+                "y": 16.5,
+                "w": 88.984375,
+                "h": 46
+              },
+              "text": "Pricing"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "3.35544e+07px",
+              "paddingTop": "8px",
+              "paddingRight": "16px",
+              "paddingBottom": "8px",
+              "paddingLeft": "16px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "46px",
+              "width": "88.9844px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(0, 87, 188) auto 1px",
+              "boxShadow": "none",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)"
+            }
+          },
+          "crop": "nav-link-light-default.png"
+        },
+        "hero-title": {
+          "text": "Go from 0 to $1",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "96px",
+              "fontWeight": "400",
+              "lineHeight": "96px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "96px",
+              "width": "674.094px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 382.953125,
+                "y": 304,
+                "w": 674.09375,
+                "h": 96
+              },
+              "text": "Go from 0 to $1"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "96px",
+              "fontWeight": "400",
+              "lineHeight": "96px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "96px",
+              "width": "674.094px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(0, 0, 0) none 0px",
+              "boxShadow": "none",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)"
+            }
+          },
+          "crop": "hero-title-light-default.png"
+        },
+        "search-field": {
+          "text": "",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "20px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "normal",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(244, 244, 240)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgb(36, 36, 35)",
+              "borderRadius": "4px",
+              "paddingTop": "0px",
+              "paddingRight": "80px",
+              "paddingBottom": "0px",
+              "paddingLeft": "32px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "64px",
+              "width": "361px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 640.65625,
+                "y": 520,
+                "w": 361,
+                "h": 64
+              },
+              "text": ""
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "20px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "normal",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(244, 244, 240)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgb(36, 36, 35)",
+              "borderRadius": "4px",
+              "paddingTop": "0px",
+              "paddingRight": "80px",
+              "paddingBottom": "0px",
+              "paddingLeft": "32px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "64px",
+              "width": "361px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(0, 95, 204) none 0px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 144, 232) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+              "backgroundColor": "rgb(244, 244, 240)",
+              "color": "rgb(0, 0, 0)"
+            }
+          },
+          "crop": "search-field-light-default.png"
+        },
+        "logo": null
+      },
+      "discover": {
+        "discover-cta": null,
+        "search-products": {
+          "text": "",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "4px",
+              "paddingTop": "12px",
+              "paddingRight": "16px",
+              "paddingBottom": "12px",
+              "paddingLeft": "16px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "46px",
+              "width": "788px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 354,
+                "y": 33,
+                "w": 788,
+                "h": 46
+              },
+              "text": ""
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "4px",
+              "paddingTop": "12px",
+              "paddingRight": "16px",
+              "paddingBottom": "12px",
+              "paddingLeft": "16px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "46px",
+              "width": "788px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(255, 144, 232) none 0px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)"
+            }
+          },
+          "crop": "search-products-light-default.png"
+        },
+        "sort-tab": {
+          "text": "Trending",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "3.35544e+07px",
+              "paddingTop": "8px",
+              "paddingRight": "12px",
+              "paddingBottom": "8px",
+              "paddingLeft": "12px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "40px",
+              "width": "90.4844px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 1046.140625,
+                "y": 771,
+                "w": 90.484375,
+                "h": 40
+              },
+              "text": "Trending"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "3.35544e+07px",
+              "paddingTop": "8px",
+              "paddingRight": "12px",
+              "paddingBottom": "8px",
+              "paddingLeft": "12px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "40px",
+              "width": "90.4844px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(0, 0, 0) none 0px",
+              "boxShadow": "none",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(0, 0, 0)"
+            }
+          },
+          "crop": "sort-tab-light-default.png"
+        },
+        "product-card": {
+          "text": "SaaS Kit V2",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "26px",
+              "width": "276px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 467,
+                "y": 340,
+                "w": 276,
+                "h": 26
+              },
+              "text": "SaaS Kit V2"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "paddingTop": "8px",
+              "paddingRight": "16px",
+              "paddingBottom": "8px",
+              "paddingLeft": "16px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "64px",
+              "width": "816px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(0, 0, 0) none 0px",
+              "boxShadow": "none",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)"
+            }
+          },
+          "crop": "product-card-light-default.png"
+        }
+      },
+      "pricingH1": {
+        "text": "Simple, transparent pricing",
+        "states": {
+          "default": {
+            "fontFamily": "\"ABC Favorit\"",
+            "fontSize": "96px",
+            "fontWeight": "500",
+            "lineHeight": "86.4px",
+            "letterSpacing": "-0.4px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 0px",
+            "height": "259.172px",
+            "width": "768px",
+            "textDecorationLine": "none",
+            "rect": {
+              "x": 336,
+              "y": 264,
+              "w": 768,
+              "h": 259.171875
+            },
+            "text": "Simple, transparent pricing"
+          },
+          "hover": {
+            "fontFamily": "\"ABC Favorit\"",
+            "fontSize": "96px",
+            "fontWeight": "500",
+            "lineHeight": "86.4px",
+            "letterSpacing": "-0.4px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 0px",
+            "height": "259.172px",
+            "width": "768px",
+            "textDecorationLine": "none"
+          },
+          "focus-visible": {
+            "outline": "rgb(0, 0, 0) none 0px",
+            "boxShadow": "none",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)"
+          }
+        },
+        "crop": "pricing-h1-light-default.png"
+      }
+    },
+    "dark": {
+      "page": "https://gumroad.com/",
+      "components": {
+        "nav-cta": {
+          "text": "Start selling",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 144, 232)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "paddingTop": "8px",
+              "paddingRight": "24px",
+              "paddingBottom": "8px",
+              "paddingLeft": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "79px",
+              "width": "142.359px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 1297.640625,
+                "y": 0,
+                "w": 142.359375,
+                "h": 79
+              },
+              "text": "Start selling"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "paddingTop": "8px",
+              "paddingRight": "24px",
+              "paddingBottom": "8px",
+              "paddingLeft": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 0px",
+              "height": "79px",
+              "width": "142.359px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(147, 192, 245) auto 1px",
+              "boxShadow": "none",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(0, 0, 0)"
+            }
+          },
+          "crop": "nav-cta-dark-default.png"
+        },
+        "nav-link": {
+          "text": "Pricing",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgba(0, 0, 0, 0)",
+              "borderRadius": "3.35544e+07px",
+              "paddingTop": "8px",
+              "paddingRight": "16px",
+              "paddingBottom": "8px",
+              "paddingLeft": "16px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 0px",
+              "height": "46px",
+              "width": "88.9844px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 781.234375,
+                "y": 16.5,
+                "w": 88.984375,
+                "h": 46
+              },
+              "text": "Pricing"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+              "borderRadius": "3.35544e+07px",
+              "paddingTop": "8px",
+              "paddingRight": "16px",
+              "paddingBottom": "8px",
+              "paddingLeft": "16px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 0px",
+              "height": "46px",
+              "width": "88.9844px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(157, 202, 255) auto 1px",
+              "boxShadow": "none",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(255, 255, 255)"
+            }
+          },
+          "crop": "nav-link-dark-default.png"
+        },
+        "hero-title": {
+          "text": "Go from 0 to $1",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "96px",
+              "fontWeight": "400",
+              "lineHeight": "96px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 0px",
+              "height": "96px",
+              "width": "674.094px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 382.953125,
+                "y": 304,
+                "w": 674.09375,
+                "h": 96
+              },
+              "text": "Go from 0 to $1"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "96px",
+              "fontWeight": "400",
+              "lineHeight": "96px",
+              "letterSpacing": "-0.4px",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 0px",
+              "height": "96px",
+              "width": "674.094px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(255, 255, 255) none 0px",
+              "boxShadow": "none",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(255, 255, 255)"
+            }
+          },
+          "crop": "hero-title-dark-default.png"
+        },
+        "search-field": {
+          "text": "",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "20px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "normal",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(36, 36, 35)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgb(36, 36, 35)",
+              "borderRadius": "4px",
+              "paddingTop": "0px",
+              "paddingRight": "80px",
+              "paddingBottom": "0px",
+              "paddingLeft": "32px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 0px",
+              "height": "64px",
+              "width": "361px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 640.65625,
+                "y": 520,
+                "w": 361,
+                "h": 64
+              },
+              "text": ""
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\"",
+              "fontSize": "20px",
+              "fontWeight": "400",
+              "lineHeight": "28px",
+              "letterSpacing": "normal",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(36, 36, 35)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgb(36, 36, 35)",
+              "borderRadius": "4px",
+              "paddingTop": "0px",
+              "paddingRight": "80px",
+              "paddingBottom": "0px",
+              "paddingLeft": "32px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 0px",
+              "height": "64px",
+              "width": "361px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(153, 200, 255) none 0px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 144, 232) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+              "backgroundColor": "rgb(36, 36, 35)",
+              "color": "rgb(255, 255, 255)"
+            }
+          },
+          "crop": "search-field-dark-default.png"
+        },
+        "logo": null
+      },
+      "discover": {
+        "discover-cta": null,
+        "search-products": {
+          "text": "",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(221, 221, 221)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgba(221, 221, 221, 0.35)",
+              "borderRadius": "4px",
+              "paddingTop": "12px",
+              "paddingRight": "16px",
+              "paddingBottom": "12px",
+              "paddingLeft": "16px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+              "outline": "rgb(221, 221, 221) none 0px",
+              "height": "46px",
+              "width": "788px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 354,
+                "y": 33,
+                "w": 788,
+                "h": 46
+              },
+              "text": ""
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(221, 221, 221)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgba(221, 221, 221, 0.35)",
+              "borderRadius": "4px",
+              "paddingTop": "12px",
+              "paddingRight": "16px",
+              "paddingBottom": "12px",
+              "paddingLeft": "16px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+              "outline": "rgb(221, 221, 221) none 0px",
+              "height": "46px",
+              "width": "788px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(255, 144, 232) none 0px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(221, 221, 221)"
+            }
+          },
+          "crop": "search-products-dark-default.png"
+        },
+        "sort-tab": {
+          "text": "Trending",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(221, 221, 221)",
+              "backgroundColor": "rgb(0, 0, 0)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgba(221, 221, 221, 0.35)",
+              "borderRadius": "3.35544e+07px",
+              "paddingTop": "8px",
+              "paddingRight": "12px",
+              "paddingBottom": "8px",
+              "paddingLeft": "12px",
+              "boxShadow": "none",
+              "outline": "rgb(221, 221, 221) none 0px",
+              "height": "40px",
+              "width": "90.4844px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 1046.140625,
+                "y": 771,
+                "w": 90.484375,
+                "h": 40
+              },
+              "text": "Trending"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(221, 221, 221)",
+              "backgroundColor": "rgb(0, 0, 0)",
+              "borderTopWidth": "1px",
+              "borderTopColor": "rgba(221, 221, 221, 0.35)",
+              "borderRadius": "3.35544e+07px",
+              "paddingTop": "8px",
+              "paddingRight": "12px",
+              "paddingBottom": "8px",
+              "paddingLeft": "12px",
+              "boxShadow": "none",
+              "outline": "rgb(221, 221, 221) none 0px",
+              "height": "40px",
+              "width": "90.4844px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(221, 221, 221) none 0px",
+              "boxShadow": "none",
+              "backgroundColor": "rgb(0, 0, 0)",
+              "color": "rgb(221, 221, 221)"
+            }
+          },
+          "crop": "sort-tab-dark-default.png"
+        },
+        "product-card": {
+          "text": "Ichigo Translator Subscription",
+          "states": {
+            "default": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(221, 221, 221)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(221, 221, 221)",
+              "borderRadius": "0px",
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "boxShadow": "none",
+              "outline": "rgb(221, 221, 221) none 0px",
+              "height": "26px",
+              "width": "276px",
+              "textDecorationLine": "none",
+              "rect": {
+                "x": 467,
+                "y": 340,
+                "w": 276,
+                "h": 26
+              },
+              "text": "Ichigo Translator Subscription"
+            },
+            "hover": {
+              "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "22px",
+              "letterSpacing": "normal",
+              "color": "rgb(221, 221, 221)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderTopWidth": "0px",
+              "borderTopColor": "rgb(221, 221, 221)",
+              "borderRadius": "0px",
+              "paddingTop": "8px",
+              "paddingRight": "16px",
+              "paddingBottom": "8px",
+              "paddingLeft": "16px",
+              "boxShadow": "none",
+              "outline": "rgb(221, 221, 221) none 0px",
+              "height": "64px",
+              "width": "816px",
+              "textDecorationLine": "none"
+            },
+            "focus-visible": {
+              "outline": "rgb(221, 221, 221) none 0px",
+              "boxShadow": "none",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(221, 221, 221)"
+            }
+          },
+          "crop": "product-card-dark-default.png"
+        }
+      },
+      "pricingH1": {
+        "text": "Simple, transparent pricing",
+        "states": {
+          "default": {
+            "fontFamily": "\"ABC Favorit\"",
+            "fontSize": "96px",
+            "fontWeight": "500",
+            "lineHeight": "86.4px",
+            "letterSpacing": "-0.4px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 0px",
+            "height": "259.172px",
+            "width": "768px",
+            "textDecorationLine": "none",
+            "rect": {
+              "x": 336,
+              "y": 264,
+              "w": 768,
+              "h": 259.171875
+            },
+            "text": "Simple, transparent pricing"
+          },
+          "hover": {
+            "fontFamily": "\"ABC Favorit\"",
+            "fontSize": "96px",
+            "fontWeight": "500",
+            "lineHeight": "86.4px",
+            "letterSpacing": "-0.4px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopWidth": "0px",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 0px",
+            "height": "259.172px",
+            "width": "768px",
+            "textDecorationLine": "none"
+          },
+          "focus-visible": {
+            "outline": "rgb(0, 0, 0) none 0px",
+            "boxShadow": "none",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)"
+          }
+        },
+        "crop": "pricing-h1-dark-default.png"
+      }
+    }
+  },
+  "login": {
+    "email": {
+      "text": "",
+      "states": {
+        "default": {
+          "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "22px",
+          "letterSpacing": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "1px",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRadius": "4px",
+          "paddingTop": "12px",
+          "paddingRight": "16px",
+          "paddingBottom": "12px",
+          "paddingLeft": "16px",
+          "boxShadow": "none",
+          "outline": "rgb(0, 0, 0) none 0px",
+          "height": "48px",
+          "width": "736px",
+          "textDecorationLine": "none",
+          "rect": {
+            "x": 64,
+            "y": 613,
+            "w": 736,
+            "h": 48
+          },
+          "text": ""
+        },
+        "hover": {
+          "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "22px",
+          "letterSpacing": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "1px",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRadius": "4px",
+          "paddingTop": "12px",
+          "paddingRight": "16px",
+          "paddingBottom": "12px",
+          "paddingLeft": "16px",
+          "boxShadow": "none",
+          "outline": "rgb(0, 0, 0) none 0px",
+          "height": "48px",
+          "width": "736px",
+          "textDecorationLine": "none"
+        },
+        "focus-visible": {
+          "outline": "rgb(255, 144, 232) solid 2px",
+          "boxShadow": "none",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(0, 0, 0)"
+        }
+      },
+      "crop": "login-email-light-default.png"
+    },
+    "password": {
+      "text": "",
+      "states": {
+        "default": {
+          "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "22px",
+          "letterSpacing": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRadius": "4px",
+          "paddingTop": "12px",
+          "paddingRight": "16px",
+          "paddingBottom": "12px",
+          "paddingLeft": "16px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+          "outline": "rgb(0, 0, 0) none 0px",
+          "height": "46px",
+          "width": "702px",
+          "textDecorationLine": "none",
+          "rect": {
+            "x": 65,
+            "y": 724,
+            "w": 702,
+            "h": 46
+          },
+          "text": ""
+        },
+        "hover": {
+          "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "22px",
+          "letterSpacing": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRadius": "4px",
+          "paddingTop": "12px",
+          "paddingRight": "16px",
+          "paddingBottom": "12px",
+          "paddingLeft": "16px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+          "outline": "rgb(0, 0, 0) none 0px",
+          "height": "46px",
+          "width": "702px",
+          "textDecorationLine": "none"
+        },
+        "focus-visible": {
+          "outline": "rgb(255, 144, 232) none 0px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)"
+        }
+      },
+      "crop": "login-password-light-default.png"
+    },
+    "submit": {
+      "text": "Login",
+      "states": {
+        "default": {
+          "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "22px",
+          "letterSpacing": "normal",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "1px",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRadius": "4px",
+          "paddingTop": "12px",
+          "paddingRight": "16px",
+          "paddingBottom": "12px",
+          "paddingLeft": "16px",
+          "boxShadow": "none",
+          "outline": "rgb(255, 255, 255) none 0px",
+          "height": "48px",
+          "width": "736px",
+          "textDecorationLine": "none",
+          "rect": {
+            "x": 64,
+            "y": 803,
+            "w": 736,
+            "h": 48
+          },
+          "text": "Login"
+        },
+        "hover": {
+          "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "22px",
+          "letterSpacing": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 144, 232)",
+          "borderTopWidth": "1px",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRadius": "4px",
+          "paddingTop": "12px",
+          "paddingRight": "16px",
+          "paddingBottom": "12px",
+          "paddingLeft": "16px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(0, 0, 0) 4px 4px 0px 0px",
+          "outline": "rgb(0, 0, 0) none 0px",
+          "height": "48px",
+          "width": "736px",
+          "textDecorationLine": "none"
+        },
+        "focus-visible": {
+          "outline": "rgb(0, 95, 204) auto 1px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(0, 0, 0) 4px 4px 0px 0px",
+          "backgroundColor": "rgb(255, 144, 232)",
+          "color": "rgb(0, 0, 0)"
+        }
+      },
+      "crop": "login-submit-light-default.png"
+    },
+    "pageBg": "rgb(244, 244, 240)"
+  }
+}
