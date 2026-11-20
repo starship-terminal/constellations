@@ -9,13 +9,15 @@ fs.mkdirSync(RAW, { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
 // Merge into the committed file: a run that stops early keeps the readings it
 // did not reach. Each page block saves when it closes.
-// _meta.captured is the latest run's date; each component carries its own `read`
-// date, so a reading kept from an earlier run keeps the date it was taken.
+// _meta.captured keeps the earlier date until this run reads a state, so a rerun
+// that fails throughout never redates old readings; _meta.lastAttempt is this
+// run's date. Each component and state carries its own `read` date, so a reading
+// kept from an earlier run keeps the date it was taken.
 const TODAY = new Date().toLocaleDateString('en-CA');
 const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
 const prevDate = prev._meta && prev._meta.captured;
 for (const c of Object.values(prev.components || {})) if (c && !c.read && prevDate) c.read = prevDate;
-const out = { _meta: { product: 'Limitless', captured: TODAY, route: 'public-web', theme: 'light' }, components: prev.components || {} };
+const out = { _meta: { product: 'Limitless', captured: prevDate || TODAY, lastAttempt: TODAY, route: 'public-web', theme: 'light' }, components: prev.components || {} };
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -64,25 +66,36 @@ async function forcePseudo(loc, classes) {
 async function record(key, state, loc, meta, via) {
   const c = (out.components[key] ??= { states: {}, ...meta, url: current });
   c.states ??= {};
-  // Found and measured now: no longer missing, and dated today.
-  delete c.missing;
-  c.read = TODAY;
   try {
     await centre(loc);
     const s = await styleOf(loc);
     let file;
     try { file = await crop(page, loc, `${key}-${state}`); } catch (e) { s.cropError = String(e.message).slice(0, 140); }
-    c.states[state] = { ...s, crop: file, via };
+    c.states[state] = { ...s, crop: file, via, read: TODAY };
+    // Found and measured now: no longer missing, and dated today.
+    delete c.missing;
+    c.read = TODAY;
+    out._meta.captured = TODAY;
     log(' ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h));
   } catch (e) {
-    c.states[state] = { error: String(e.message).slice(0, 180), via };
+    // A failed re-read keeps an earlier good reading (and its date) and notes the failure.
+    const msg = String(e.message).slice(0, 180);
+    const old = c.states[state];
+    c.states[state] = old && !old.error ? { ...old, recaptureError: msg, recaptureRun: TODAY } : { error: msg, via, read: TODAY };
     log(' !', key, state, String(e.message).slice(0, 100));
   }
 }
 
 async function states(key, loc, list, meta) {
   const target = loc.filter({ visible: true }).first();
-  if (!(await target.count())) { log(' ! missing', key); out.components[key] = { missing: true, read: TODAY, ...meta, url: current, states: {} }; return; }
+  if (!(await target.count())) {
+    log(' ! missing', key);
+    // An earlier reading is kept and flagged; only a component never read is marked missing.
+    const old = out.components[key];
+    if (old && old.states && Object.keys(old.states).length && !old.missing) old.recaptureMissed = TODAY;
+    else out.components[key] = { missing: true, read: TODAY, ...meta, url: current, states: {} };
+    return;
+  }
   for (const st of list) {
     await reset();
     let undo, via = 'at rest';
@@ -94,7 +107,10 @@ async function states(key, loc, list, meta) {
     await record(key, st, target, meta, via);
     } catch (e) {
       // One state that throws (a click that times out) is recorded and the rest still run.
-      (out.components[key] ??= { states: {}, ...meta, url: current }).states[st] = { error: String(e.message).slice(0, 180), via };
+      const c = (out.components[key] ??= { states: {}, ...meta, url: current });
+      const msg = String(e.message).slice(0, 180);
+      const old = c.states[st];
+      c.states[st] = old && !old.error ? { ...old, recaptureError: msg, recaptureRun: TODAY } : { error: msg, via, read: TODAY };
       log(' !', key, st, String(e.message).slice(0, 100));
     }
     if (undo) await undo().catch(() => {});

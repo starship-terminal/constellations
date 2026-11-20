@@ -50,5 +50,19 @@ replaceSet({json.dumps(str(icons))}, new Map([['new.svg', '<svg id="n"/>']]), 'n
             self.assertEqual((icons / "INDEX.tsv").read_text(), "new.svg\n")
 
 
+
+class CaptureDatesTest(unittest.TestCase):
+    """measure.mjs merges into the committed file: the run date moves only when a state is read,
+    and a failed re-read keeps the earlier reading and its date."""
+
+    def test_capture_date_moves_only_on_a_reading(self):
+        src = (CAPTURE / "public" / "measure.mjs").read_text()
+        self.assertIn("captured: prevDate || TODAY, lastAttempt: TODAY", src)
+        ok = src.index("c.states[state] = { ...s, crop: file, via, read: TODAY };")
+        self.assertLess(ok, src.index("out._meta.captured = TODAY;"))
+        self.assertLess(ok, src.index("c.read = TODAY;"))
+        self.assertEqual(src.count("recaptureError: msg, recaptureRun: TODAY"), 2)
+
+
 if __name__ == "__main__":
     unittest.main()
