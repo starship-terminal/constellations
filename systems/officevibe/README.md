@@ -49,7 +49,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 18.27:1 pass | 17.22:1 pass | 5.72:1 pass | 5.39:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.border.focus` #2545ff; `core.motion.easing.focus` cubic-bezier(0.46, 0.03, 0.52, 0.96); `light.border.login-focus` #3b57ff.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.border.focus` #2545ff (Reconstruction, not measured); `core.motion.easing.focus` cubic-bezier(0.46, 0.03, 0.52, 0.96); `light.border.login-focus` #3b57ff.
 
 <!-- brief:end -->
 
