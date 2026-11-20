@@ -637,6 +637,7 @@ def semcolor(raw, src, desc):
 
 
 sem = SPEC["light"].setdefault("measured", {})
+DARK_PAINTED = {"tokenization"}  # tokenization.glassnode.com paints dark by default (raw _meta.viewport)
 for key, comp, state, prop, group, desc in [
     ("heroInk", "hero-h1", "default", "color", "text", "The hero headline ink — 'Pioneering digital asset market intelligence'."),
     ("navInk", "nav-link", "default", "color", "text", "The header link ink."),
@@ -670,7 +671,11 @@ for key, comp, state, prop, group, desc in [
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         if raw in (None, ""):
             raise KeyError(prop)
-        sem.setdefault(group, {})[key] = semcolor(raw, src, desc)
+        if group in DARK_PAINTED:
+            # read on a surface that paints dark (the registry's default): the dark set, never an alias into light roles
+            SPEC["dark"].setdefault("measured", {}).setdefault(group, {})[key] = lit(norm_color(raw), "color", src, desc)
+        else:
+            sem.setdefault(group, {})[key] = semcolor(raw, src, desc)
     except KeyError:
         pass
 
