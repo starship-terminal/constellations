@@ -11,6 +11,7 @@ Deterministic: same inputs, same bytes.
 """
 import json
 import pathlib
+import re
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -19,6 +20,42 @@ RAW = ROOT / "raw"
 sys.path.insert(0, str(HERE))
 
 F = json.loads((RAW / "foundations.json").read_text())
+C = json.loads((RAW / "components-computed.json").read_text())["components"]
+
+
+def need(v, what):
+    if v in (None, ""):
+        raise SystemExit("build_tokens: no reading for " + what)
+    return v
+
+
+def fnd(*path):
+    """A value from raw/foundations.json, by key path."""
+    v = F
+    for k in path:
+        v = v.get(k) if isinstance(v, dict) else None
+    return need(v, "foundations.json " + ".".join(path))
+
+
+def comp(key, prop, state="default"):
+    """A computed style from raw/components-computed.json."""
+    s = ((C.get(key) or {}).get("states") or {}).get(state) or {}
+    return need((s.get("style") or {}).get(prop), "%s of %s %s" % (prop, key, state))
+
+
+def hexa(v):
+    """rgb()/rgba() as #rrggbb when opaque, rgba(r, g, b, a) otherwise."""
+    m = re.fullmatch(r"rgba?\(\s*([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\s*\)", str(v).strip())
+    if not m:
+        raise SystemExit("build_tokens: cannot read colour %r" % v)
+    r, g, b, a = m.groups()
+    if a is None or float(a) == 1:
+        return "#%02x%02x%02x" % (int(float(r)), int(float(g)), int(float(b)))
+    return "rgba(%d, %d, %d, %g)" % (int(float(r)), int(float(g)), int(float(b)), float(a))
+
+
+def ls(v):
+    return "0px" if v == "normal" else v
 
 
 def color(value, source, description=""):
@@ -57,78 +94,95 @@ def typography(family, size, weight, line, tracking, source):
     }
 
 
-def shadow(source):
-    return {
-        "$value": [{
-            "color": "rgba(0, 0, 0, 0.06)",
-            "offsetX": "0px",
-            "offsetY": "1px",
-            "blur": "2px",
-            "spread": "0px",
-        }, {
-            "color": "rgba(106, 115, 133, 0.16)",
-            "offsetX": "0px",
-            "offsetY": "0px",
-            "blur": "0px",
-            "spread": "1px",
-        }],
-        "$type": "shadow",
-        "$extensions": {"source": source},
-    }
+def shadow(value, source):
+    """A computed box-shadow list as DTCG layers; Tailwind's all-zero transparent ring slots are dropped."""
+    layers = []
+    for part in re.split(r",\s*(?![^()]*\))", value):
+        m = re.fullmatch(r"(rgba?\([^)]*\))\s+(-?[\d.]+px)\s+(-?[\d.]+px)\s+(-?[\d.]+px)\s+(-?[\d.]+px)", part.strip())
+        if not m:
+            raise SystemExit("build_tokens: cannot read box-shadow layer %r" % part)
+        if hexa(m.group(1)).endswith(", 0)") and m.group(2, 3, 4, 5) == ("0px",) * 4:
+            continue
+        layers.append({"color": hexa(m.group(1)), "offsetX": m.group(2), "offsetY": m.group(3), "blur": m.group(4), "spread": m.group(5)})
+    return {"$value": layers, "$type": "shadow", "$extensions": {"source": source}}
 
 
-SRC = "computed on https://copperx.io/ 2026-11-18 (raw/foundations.json)"
+DATE = F["captured"]
+SRC = "computed on https://copperx.io/ %s (raw/foundations.json)" % DATE
+CC = "computed on https://copperx.io/ %s (raw/components-computed.json" % DATE
+
+
+def cc(key, prop, state="default"):
+    return "%s, %s of %s %s)" % (CC, prop, key, state)
+
+
+# Typed in by hand at capture time; no raw file holds the value (docs/EVIDENCE.md: Reconstruction).
+HAND = "Reconstruction: entered by hand at capture time on copperx.io %s; no raw reading holds it" % DATE
+
+def ftype(role, what):
+    f = fnd("type", role)
+    return typography(f["fontFamily"], f["fontSize"], int(f["fontWeight"]), f["lineHeight"], ls(f.get("letterSpacing", "normal")),
+                      "%s type.%s (%s)" % (SRC, role, what))
+
+
+def ctype(key, what):
+    return typography(comp(key, "fontFamily").split(",")[0].strip().strip('"'), comp(key, "fontSize"), int(comp(key, "fontWeight")),
+                      comp(key, "lineHeight"), ls(comp(key, "letterSpacing")), "%s (%s)" % (cc(key, "font"), what))
+
+
+BTN = fnd("buttons", "login")
+PAD_Y, PAD_X = BTN["pad"].split()
 
 core = {
     "color": {
-        "ink": color("#13171f", SRC, "Button label on the light control. rgb(19, 23, 31)."),
-        "ink-strong": color("#1e232e", SRC, "Hero headline and the dark button's hover. rgb(30, 35, 46)."),
-        "body": color("#6a7385", SRC, "Secondary copy. rgb(106, 115, 133)."),
-        "muted": color("#8d9097", SRC, "Menu description copy. rgb(141, 144, 151)."),
-        "indigo": color("#4c63ed", SRC, "The word Stablecoin in the hero, Tailwind text-indigo-500. rgb(76, 99, 237)."),
-        "indigo-link": color("#5f76f9", SRC, "Menu link colour, Tailwind text-indigo-400. rgb(95, 118, 249)."),
-        "indigo-deep": color("#3e50b7", SRC, "Painted indigo block. rgb(62, 80, 183)."),
-        "teal": color("#2e9fb2", SRC, "Painted teal block. rgb(46, 159, 178)."),
-        "paper": color("#f7f9fc", SRC, "Light button hover and the cool page wash. rgb(247, 249, 252)."),
-        "line": color("#bcc3d1", SRC, "Default border colour the buttons inherit. rgb(188, 195, 209)."),
-        "white": color("#ffffff", SRC, "Page and header."),
-        "black": color("#000000", SRC, "Primary button fill."),
-        "focus": color("#005fcc", SRC, "Browser focus outline on the header buttons. rgb(0, 95, 204)."),
+        "ink": color(hexa(fnd("buttons", "login", "color")), SRC + " buttons.login.color", "Button label on the light control. rgb(19, 23, 31)."),
+        "ink-strong": color(hexa(fnd("type", "display", "color")), SRC + " type.display.color", "Hero headline and the dark button's hover. rgb(30, 35, 46)."),
+        "body": color("#6a7385", HAND, "Secondary copy. rgb(106, 115, 133): the hue of the measured button ring, rgba(106, 115, 133, 0.16), but no text was read in it."),
+        "muted": color(hexa(fnd("type", "body", "color")), SRC + " type.body.color", "Menu description copy. rgb(141, 144, 151)."),
+        "indigo": color(hexa(fnd("heroAccent", "color")), SRC + " heroAccent.color", "The word Stablecoin in the hero, Tailwind text-indigo-500. rgb(76, 99, 237)."),
+        "indigo-link": color(hexa(fnd("link", "color")), SRC + " link.color", "Menu link colour, Tailwind text-indigo-400. rgb(95, 118, 249)."),
+        "indigo-deep": color(hexa(fnd("painted")[1]), SRC + " painted[1]", "Painted indigo block. rgb(62, 80, 183)."),
+        "teal": color(hexa(fnd("painted")[0]), SRC + " painted[0]", "Painted teal block. rgb(46, 159, 178)."),
+        "paper": color(hexa(fnd("buttons", "login", "hover")), SRC + " buttons.login.hover", "Light button hover and the cool page wash. rgb(247, 249, 252)."),
+        "line": color(hexa(comp("login-button", "borderTopColor")), cc("login-button", "borderTopColor"), "Default border colour the buttons inherit. rgb(188, 195, 209)."),
+        "white": color(hexa(fnd("header", "background")), SRC + " header.background", "Page and header."),
+        "black": color(hexa(fnd("buttons", "primary", "bg")), SRC + " buttons.primary.bg", "Primary button fill."),
+        "focus": color(hexa(fnd("buttons", "focusOutline")), SRC + " buttons.focusOutline", "Browser focus outline on the header buttons. rgb(0, 95, 204)."),
     },
     "font": {
         "family": {
             "sans": {
-                "$value": "Euclid Circular A",
+                "$value": fnd("type", "display", "fontFamily"),
                 "$type": "fontFamily",
-                "$extensions": {"source": SRC},
+                "$extensions": {"source": SRC + " type.*.fontFamily"},
                 "$description": "The marketing site sets Euclid Circular A on headings, body and buttons. The files are proprietary and are not shipped. Fall back to ui-sans-serif.",
             }
         }
     },
     "typography": {
-        "display": typography("Euclid Circular A", "96px", 500, "96px", "-3.84px", SRC + " h1"),
-        "title": typography("Euclid Circular A", "48px", 500, "52px", "-1.2px", SRC + " product h1"),
-        "heading": typography("Euclid Circular A", "16px", 500, "24px", "0px", SRC + " menu heading"),
-        "body": typography("Euclid Circular A", "16px", 400, "24px", "0px", SRC + " nav"),
-        "ui": typography("Euclid Circular A", "14px", 500, "20px", "0px", SRC + " button"),
-        "caption": typography("Euclid Circular A", "14px", 400, "19.6px", "0px", SRC + " menu description"),
+        "display": ftype("display", "h1"),
+        "title": typography("Euclid Circular A", "48px", 500, "52px", "-1.2px", HAND + " (product h1)"),
+        "heading": ftype("heading", "menu heading"),
+        "body": ftype("nav", "nav"),
+        "ui": ctype("login-button", "button"),
+        "caption": ftype("body", "menu description"),
     },
     "radius": {
-        "control": dim("8px", SRC + " .btn"),
-        "panel": dim("16px", SRC + " rounded-2xl menu panel"),
+        "control": dim(BTN["radius"], SRC + " buttons.login.radius (.btn)"),
+        "panel": dim("16px", HAND + " (rounded-2xl menu panel)"),
     },
     "spacing": {
-        "2": dim("8px", SRC + " button padding-block"),
-        "3": dim("12px", SRC + " button padding-inline"),
-        "4": dim("16px", SRC + " derived 4px step"),
-        "6": dim("24px", SRC + " derived 4px step"),
+        "2": dim(PAD_Y, SRC + " buttons.login.pad (padding-block)"),
+        "3": dim(PAD_X, SRC + " buttons.login.pad (padding-inline)"),
+        "4": dim("16px", "Derived: the 4px step extended past the measured 8px and 12px paddings; not read"),
+        "6": dim("24px", "Derived: the 4px step extended past the measured 8px and 12px paddings; not read"),
     },
     "size": {
-        "button": dim("36px", SRC + " .btn height"),
-        "header": dim("85px", SRC + " header height"),
+        "button": dim("%dpx" % BTN["height"], SRC + " buttons.login.height (.btn)"),
+        "header": dim("%dpx" % fnd("header", "height"), SRC + " header.height"),
     },
     "elevation": {
-        "control": shadow(SRC + " .btn box-shadow"),
+        "control": shadow(comp("login-button", "boxShadow"), cc("login-button", "boxShadow")),
     },
 }
 
@@ -151,8 +205,8 @@ light = {
         "teal": color("{color.teal}", SRC),
     },
     "border": {
-        "default": color("rgba(0, 0, 0, 0.12)", SRC + " header border-bottom"),
-        "control": color("rgba(106, 115, 133, 0.16)", SRC + " button ring"),
+        "default": color(hexa(comp("header", "borderTopColor")), cc("header", "borderTopColor") + "; the header's border-bottom, " + fnd("header", "borderBottom")),
+        "control": color(shadow(comp("login-button", "boxShadow"), "")["$value"][-1]["color"], cc("login-button", "boxShadow") + ", the 1px ring layer"),
         "focus": color("{color.focus}", SRC),
     },
     "action": {
@@ -165,13 +219,13 @@ light = {
         "button": {
             "bg": color("{color.black}", SRC),
             "text": color("{color.white}", SRC),
-            "radius": dim("8px", SRC),
-            "height": dim("36px", SRC),
+            "radius": dim("{radius.control}", "alias to the measured .btn radius"),
+            "height": dim("{size.button}", "alias to the measured .btn height"),
         },
         "button-secondary": {
             "bg": color("{color.white}", SRC),
             "text": color("{color.ink}", SRC),
-            "radius": dim("8px", SRC),
+            "radius": dim("{radius.control}", "alias to the measured .btn radius"),
         },
     },
 }
@@ -192,12 +246,16 @@ tokens = {
 motion_path = RAW / "motion.json"
 if motion_path.exists():
     import motion
-    group = motion.build(json.loads(motion_path.read_text()))
-    # motion.build returns [description, group, notTokenised].
-    if isinstance(group, (list, tuple)) and len(group) >= 2 and isinstance(group[1], dict):
-        tokens["core"]["motion"] = group[1]
-    elif isinstance(group, dict):
-        tokens["core"]["motion"] = group
+    # motion.build returns (group, notTokenised), as the kit's build_tokens.py unpacks it.
+    group, not_tokenised = motion.build(json.loads(motion_path.read_text()))
+    tokens["core"]["motion"] = group
+    if not_tokenised:
+        tokens["$extensions"] = {"notTokenised": not_tokenised}
 
-(ROOT / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("wrote", ROOT / "tokens.json")
+def build():
+    return tokens
+
+
+if __name__ == "__main__":
+    (ROOT / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+    print("wrote", ROOT / "tokens.json")

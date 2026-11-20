@@ -40,10 +40,7 @@ Indigo menu links, Tailwind text-indigo-400.
 | State | Size | Fill | Text | Crop |
 |---|---|---|---|---|
 | default | 312 x 20 | rgba(0, 0, 0, 0) | rgb(95, 118, 249) | [crop](components/crops/nav-link-default.png) |
-| hover |  |  |  | locator.hover: Timeout 4000ms exceeded.
-Call log:
-[2m  - waiting for locator('a.text-indigo-400, a[class*="text-indigo"]').first().first()[22m
-[2m    - locator resolved to <a hr |
+| hover |  |  |  | not measured: locator.hover: Timeout 4000ms exceeded. |
 
 ## Display title
 
@@ -90,3 +87,4 @@ The corporate-card page headline.
 Text area, select, checkbox, radio, switch, tabs, tooltip, toast, avatar and badge were not on the signed-out marketing pages.
 The contact form is a Google Form iframe. It was not filled, so validation, disabled and error states were not measured.
 dashboard.copperx.io and payout.copperx.io are the account hosts named by the Log in dialog. They were not opened.
+The focus-visible and pressed rows of the Secondary and Primary buttons are not clean readings: the capture never reset between states, so focus-visible was read with the pointer still on the button (its fill is neither the rest nor the hover fill) and pressed with the focus ring still drawn (`outline: auto 1px`). They need a recapture; the default and hover rows are sound.
