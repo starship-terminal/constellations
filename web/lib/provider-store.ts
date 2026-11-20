@@ -10,6 +10,7 @@
 // folder is created 0700 and the file is written 0600, through a temporary
 // file and a rename, so a reader never sees half a key and a rotation swaps
 // the old key for the new one in one step.
+import { randomUUID } from "node:crypto";
 import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -93,39 +94,122 @@ export async function writeSaved(cfg: SavedProvider): Promise<void> {
 }
 
 export const LOCK_NAME = "provider.lock";
+const OWNER = "owner";
 const LOCK_WAIT_MS = 5000;
 const LOCK_STALE_MS = 30000;
+const CLAIM_KEEP_MS = 24 * 3600 * 1000;
+
+interface LockOwner {
+  token: string;
+  pid: number;
+  host: string;
+}
+
+/** Who holds the lock folder: its owner file, or, before the holder has
+    written one, an identity made from the folder's mtime. Null when the
+    folder is gone. */
+async function lockIdentity(lock: string): Promise<{ id: string; owner: LockOwner | null; ageMs: number } | null> {
+  let st;
+  try {
+    st = await fs.stat(lock);
+  } catch {
+    return null;
+  }
+  let owner: LockOwner | null = null;
+  try {
+    const o = JSON.parse(await fs.readFile(path.join(lock, OWNER), "utf8"));
+    if (o && typeof o.token === "string") owner = o;
+  } catch {}
+  // Whole milliseconds, as server/provider_store.py names a missing owner, so
+  // both servers race for the same claim folder.
+  return { id: owner ? owner.token : `none-${Math.floor(st.mtimeMs)}`, owner, ageMs: Date.now() - st.mtimeMs };
+}
+
+const alive = (pid: number): boolean => {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch (e) {
+    return (e as NodeJS.ErrnoException).code === "EPERM";
+  }
+};
+
+/** A lock is a crashed holder's when its holder ran on this host and that
+    process is gone, or (another host or container, where the pid means
+    nothing here) when it is older than 30 s. */
+const stale = (l: { owner: LockOwner | null; ageMs: number }): boolean =>
+  l.owner && l.owner.host === os.hostname() && Number.isInteger(l.owner.pid)
+    ? !alive(l.owner.pid)
+    : l.ageMs > LOCK_STALE_MS;
 
 /** Run `fn` holding the store's lock: a folder beside provider.json that
     mkdir creates atomically, the same one server/provider_store.py takes, so
     a save, a replacement and a removal from either server never interleave
     (a model-only save cannot write back a key another request just removed).
-    A lock older than 30 s is a crashed holder's and is broken. */
+
+    The holder writes its token, pid and host into the folder and removes
+    the folder only while its own token is in it. A crashed holder's lock is
+    broken by exactly one waiter: each must first create a claim folder named
+    after that holder's token, which mkdir lets only one of them do, and the
+    winner removes the lock only if it still holds that token. A waiter that
+    saw the same stale lock later finds the claim taken, so it can never
+    remove the next holder's lock. Claim folders are swept after a day. */
 export async function withLock<T>(fn: () => Promise<T>): Promise<T> {
   const dir = configDir();
   await fs.mkdir(dir, { recursive: true, mode: 0o700 });
   const lock = path.join(dir, LOCK_NAME);
+  const token = randomUUID();
   const start = Date.now();
   for (;;) {
     try {
       await fs.mkdir(lock, { mode: 0o700 });
+      const me: LockOwner = { token, pid: process.pid, host: os.hostname() };
+      try {
+        await fs.writeFile(path.join(lock, OWNER), JSON.stringify(me));
+      } catch {
+        await fs.rm(lock, { recursive: true, force: true });
+        throw new StoreError("The provider store cannot be locked.");
+      }
       break;
     } catch (e) {
+      if (e instanceof StoreError) throw e;
       if ((e as NodeJS.ErrnoException).code !== "EEXIST") throw new StoreError("The provider store cannot be locked.");
-      const age = await fs.stat(lock).then((st) => Date.now() - st.mtimeMs, () => 0);
-      if (age > LOCK_STALE_MS) {
-        await fs.rm(lock, { recursive: true, force: true });
+    }
+    const held = await lockIdentity(lock);
+    if (held && stale(held)) {
+      const claim = `${lock}.claim-${held.id.replace(/[^A-Za-z0-9.-]/g, "_")}`;
+      let won = false;
+      try {
+        await fs.mkdir(claim, { mode: 0o700 });
+        won = true;
+      } catch {}
+      if (won) {
+        const again = await lockIdentity(lock);
+        if (again && again.id === held.id) await fs.rm(lock, { recursive: true, force: true });
         continue;
       }
-      if (Date.now() - start > LOCK_WAIT_MS) throw new StoreError("The provider store is busy; try again.");
-      await new Promise((r) => setTimeout(r, 50));
     }
+    if (Date.now() - start > LOCK_WAIT_MS) throw new StoreError("The provider store is busy; try again.");
+    await new Promise((r) => setTimeout(r, 50));
   }
   try {
     return await fn();
   } finally {
-    await fs.rm(lock, { recursive: true, force: true });
+    const mine = await lockIdentity(lock);
+    if (mine && mine.id === token) await fs.rm(lock, { recursive: true, force: true });
+    await sweepClaims(dir);
   }
+}
+
+async function sweepClaims(dir: string): Promise<void> {
+  try {
+    for (const name of await fs.readdir(dir)) {
+      if (!name.startsWith(`${LOCK_NAME}.claim-`)) continue;
+      const p = path.join(dir, name);
+      const st = await fs.stat(p).catch(() => null);
+      if (st && Date.now() - st.mtimeMs > CLAIM_KEEP_MS) await fs.rm(p, { recursive: true, force: true });
+    }
+  } catch {}
 }
 
 /** Delete the saved provider. True when there was one. */

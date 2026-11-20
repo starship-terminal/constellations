@@ -227,6 +227,32 @@ describe("review fixes", () => {
     await assert.rejects(fs.stat(path.join(dir, "config", LOCK_NAME)));
   });
 
+  it("breaks a crashed holder's lock exactly once, and never a live one", async () => {
+    const lock = path.join(dir, "config", LOCK_NAME);
+    await fs.mkdir(lock, { recursive: true });
+    // A holder on this host whose process is gone.
+    await fs.writeFile(path.join(lock, "owner"), JSON.stringify({ token: "dead-holder", pid: 999999, host: os.hostname() }));
+    let inside = 0;
+    let most = 0;
+    const work = () =>
+      withLock(async () => {
+        inside++;
+        most = Math.max(most, inside);
+        await new Promise((r) => setTimeout(r, 40));
+        inside--;
+      });
+    await Promise.all([work(), work(), work()]);
+    assert.equal(most, 1, "no two holders at once");
+    await assert.rejects(fs.stat(lock));
+    // A lock whose holder is alive (this process) is waited on, not broken.
+    await fs.mkdir(lock);
+    await fs.writeFile(path.join(lock, "owner"), JSON.stringify({ token: "live-holder", pid: process.pid, host: os.hostname() }));
+    const t0 = Date.now();
+    await assert.rejects(withLock(async () => {}), /busy/);
+    assert.ok(Date.now() - t0 >= 4900);
+    assert.equal(JSON.parse(await fs.readFile(path.join(lock, "owner"), "utf8")).token, "live-holder");
+  });
+
   it("leaves no temporary copy of the key when a write fails", async () => {
     await fs.mkdir(path.join(dir, "config"), { recursive: true });
     // provider.json as a folder: the rename onto it fails after the temp file is written.
