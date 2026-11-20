@@ -12,11 +12,17 @@
   --font-family-sans: "Soehne Leicht", Söhne, "Helvetica Neue", Arial, sans-serif;
   --font-family-display: Iskry, "Iowan Old Style", Palatino, Georgia, serif;
   --typography-heading: 400 26px/40px var(--font-family-display);
+  --typography-heading-tracking: 1.2px;
   --typography-product: 400 20px/28px var(--font-family-sans);
+  --typography-product-tracking: 0px;
   --typography-body: 400 16px/24px var(--font-family-sans);
+  --typography-body-tracking: 0px;
   --typography-nav: 400 11px/24px var(--font-family-sans);
+  --typography-nav-tracking: 1.2px;
   --typography-button: 800 13px/24px var(--font-family-sans);
+  --typography-button-tracking: 2px;
   --typography-caption: 400 12px/16px var(--font-family-sans);
+  --typography-caption-tracking: 0px;
   --spacing-8: 8px;
   --spacing-12: 12px;
   --spacing-16: 16px;
@@ -65,7 +71,7 @@ p.lead { color: var(--color-text-secondary); max-width: 68ch; margin: 0 0 16px; 
 .sw b { display: block; font: 500 12px/1.3 var(--sg-mono); }
 .sw span { font-size: 12px; color: var(--color-text-secondary); }
 .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; margin: 16px 0; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--size-control-md); padding: 8px 16px; background: var(--color-action); color: var(--color-on-accent); border: 0; font: 800 13px/16px var(--sg-sans); letter-spacing: 0.08em; text-transform: uppercase; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--size-control-md); padding: 8px 16px; background: var(--color-action); color: var(--color-on-accent); border: 0; font: var(--typography-button); letter-spacing: var(--typography-button-tracking); text-transform: uppercase; }
 .btn.quiet { background: var(--color-page); color: var(--color-text-primary); border: 1px solid var(--color-border-default); font-weight: 400; letter-spacing: 0.06em; }
 .field { height: var(--size-control-lg); width: 280px; border: 0; background: var(--color-surface); color: var(--color-text-secondary); padding: 8px 12px; font: 400 16px/24px var(--sg-sans); }
 .chip { display: inline-flex; align-items: center; height: 36px; padding: 0 12px; border: 1px solid var(--color-border-default); background: var(--color-page); font-size: 13px; }

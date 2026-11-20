@@ -30,8 +30,13 @@ def run(builder, raw=None, extra=("screenshots", "components", "tokens.json")):
     return proc, root
 
 
+SCRATCH = []
+
+
 def scratch_raw(edit):
-    d = pathlib.Path(tempfile.mkdtemp()) / "raw"
+    top = tempfile.mkdtemp()
+    SCRATCH.append(top)
+    d = pathlib.Path(top) / "raw"
     shutil.copytree(PKG / "raw", d)
     v = json.loads((d / "components-computed.json").read_text())
     edit(v)
@@ -41,8 +46,9 @@ def scratch_raw(edit):
 
 class Builders(unittest.TestCase):
     def tearDown(self):
-        for root in getattr(self, "roots", []):
+        for root in getattr(self, "roots", []) + SCRATCH:
             shutil.rmtree(root, ignore_errors=True)
+        SCRATCH.clear()
 
     def build(self, builder, **kw):
         proc, root = run(builder, **kw)
@@ -81,11 +87,30 @@ class Builders(unittest.TestCase):
         self.assertNotEqual(proc.returncode, 0)
         self.assertIn("atc default", proc.stderr)
 
-    def test_style_guide_script_reads_the_slim_tree(self):
-        script = (PKG / "style-guide.html").read_text().split("<script>", 1)[1]
-        self.assertNotIn("$value", script)
-        self.assertIn("v.v", script)
+    def test_style_guide_renders_the_palette(self):
+        # Runs the page's script under a small DOM stand-in and counts the swatches it appends.
+        if not shutil.which("node"):
+            self.skipTest("node is not installed")
+        proc = subprocess.run(["node", "-e", RENDER, str(PKG / "style-guide.html")], capture_output=True, text=True)
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        colours = sum(1 for v in json.loads((PKG / "tokens.json").read_text())["light"]["color"].values() for _ in ([v] if "$value" in v else v.values()))
+        self.assertEqual(int(proc.stdout), colours)
 
+    def test_button_preview_uses_the_token(self):
+        html = (PKG / "style-guide.html").read_text()
+        self.assertIn("font: var(--typography-button); letter-spacing: var(--typography-button-tracking)", html)
+        self.assertIn("--typography-button-tracking: 2px;", html)
+
+
+RENDER = r"""
+const fs = require('fs');
+const html = fs.readFileSync(process.argv[1], 'utf8');
+const script = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]).join('\n');
+const made = [];
+global.document = { getElementById: () => ({ appendChild: (e) => made.push(e) }), createElement: () => ({}) };
+new Function(script)();
+console.log(made.filter((e) => /<i style="background:[^"]+">/.test(e.innerHTML)).length);
+"""
 
 if __name__ == "__main__":
     unittest.main()
