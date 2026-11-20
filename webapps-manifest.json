@@ -3916,9 +3916,9 @@
       "description": "Shoes, Sneakers, & Athletic Wear",
       "status": "pending",
       "package": null,
-      "notes": "https://www.newbalance.co.uk/login showed an error page before a form. Do not retry.",
+      "notes": "https://www.newbalance.co.uk/login create account accepted the capture inbox, then returned Something went wrong. Account not created.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "closed",
       "batch": 12
     },
     {
@@ -4324,9 +4324,9 @@
       "description": "Pay, Send and Save Money with PayPal",
       "status": "pending",
       "package": null,
-      "notes": "https://www.paypal.com/signin stopped before a usable form. Do not retry.",
+      "notes": "The user signed in. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 13
     },
     {
@@ -4341,7 +4341,7 @@
       "description": "Official online shop",
       "status": "pending",
       "package": null,
-      "notes": "https://peakperformance.com/login asked to press and hold to confirm a human. Do not retry.",
+      "notes": "https://www.peakperformance.com/se/en/customer/account/create asked to press and hold before a form. Not retried.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 13
@@ -4630,9 +4630,9 @@
       "description": "Learn with the best online language tutors on app & web",
       "status": "pending",
       "package": null,
-      "notes": "https://preply.com/en/login stopped before a usable form. Do not retry.",
+      "notes": "The user signed in. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 14
     },
     {
@@ -4664,9 +4664,9 @@
       "description": "The best new products in tech",
       "status": "pending",
       "package": null,
-      "notes": "https://producthunt.com/login stopped on a Cloudflare security check. Do not retry.",
+      "notes": "The user signed in. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 14
     },
     {
