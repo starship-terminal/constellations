@@ -181,8 +181,8 @@ core = {
         "focus": dim("2px", f"{M}: focus-visible outline"),
     },
     "motion": {
-        "fast": dim("150ms", f"{M}: button and link transition-duration 0.15s"),
-        "slow": dim("300ms", f"{M}: opacity transition 0.3s on one header control"),
+        "fast": num("150ms", f"{M}: button and link transition-duration 0.15s", "duration"),
+        "slow": num("300ms", f"{M}: opacity transition 0.3s on one header control", "duration"),
         "ease": {
             "$type": "cubicBezier",
             "$value": [0.4, 0, 0.2, 1],
@@ -271,13 +271,9 @@ def roles(table, source):
     return out
 
 
-light = roles(DECLARED, C)
-light["textOnAccent"] = color("{color.offwhite}", f"{M}: Try Pro label rgb(250, 250, 250)")
-light["link"] = color("{color.ink}", f"{M}: Log in and license links use the ink, not a blue")
-light["scrim"] = color("rgba(0, 0, 0, 0.8)", f"{M}: search dialog overlay class bg-black/80")
-light["accentPressed"] = color("{color.zinc700}", f"{M}: Try Pro and Continue pressed/hover fill")
+class CheckError(SystemExit):
+    """A token that fails the alias, source or type check."""
 
-dark = roles(DECLARED_DARK, K)
 
 def walk(node, prefix=""):
     for k, v in node.items():
@@ -288,11 +284,6 @@ def walk(node, prefix=""):
             yield path, v
         elif isinstance(v, dict):
             yield from walk(v, path)
-
-
-names = {n for n, _ in walk(core)}
-names |= {n for n, _ in walk(light)}
-names |= {n for n, _ in walk(dark)}
 
 
 def strings(v):
@@ -306,36 +297,58 @@ def strings(v):
             yield from strings(x)
 
 
-for path, tok in list(walk({"core": core, "light": light, "dark": dark})):
-    for blob in strings(tok["$value"]):
-        for alias in re.findall(r"\{([^{}]+)\}", blob):
-            if alias not in names and not alias.startswith("color."):
-                raise SystemExit(f"{path} alias {{{alias}}} missing")
-            if alias.startswith("color.") and alias not in names:
-                raise SystemExit(f"{path} alias {{{alias}}} missing")
-    src = tok.get("$extensions", {}).get("source", "")
-    if not src:
-        raise SystemExit(f"{path} has no source")
+def check(doc):
+    """Every alias resolves inside its theme's sets, every token has a source, and a
+    duration is a duration. Returns the flat {path: token} of every set."""
+    names = {n for n, _ in walk(doc["core"])}
+    names |= {n for n, _ in walk(doc["light"])}
+    names |= {n for n, _ in walk(doc["dark"])}
+    flat = {}
+    for path, tok in walk({"core": doc["core"], "light": doc["light"], "dark": doc["dark"]}):
+        flat[path] = tok
+        for blob in strings(tok["$value"]):
+            for alias in re.findall(r"\{([^{}]+)\}", blob):
+                if alias not in names:
+                    raise CheckError(f"{path} alias {{{alias}}} missing")
+        src = tok.get("$extensions", {}).get("source", "")
+        if not src:
+            raise CheckError(f"{path} has no source")
+        if isinstance(tok["$value"], str) and re.fullmatch(r"[\d.]+m?s", tok["$value"]) and tok.get("$type") != "duration":
+            raise CheckError(f"{path} is a time typed {tok.get('$type')}, not duration")
+    return flat
 
-tokens = {
-    "core": core,
-    "light": light,
-    "dark": dark,
-    "$themes": [
-        {
-            "id": "light",
-            "name": "Light",
-            "selectedTokenSets": {"core": "source", "light": "enabled"},
-            "$description": "The painted theme on every captured lummi.ai page, 2026-11-18.",
-        },
-        {
-            "id": "dark",
-            "name": "Dark",
-            "selectedTokenSets": {"core": "source", "dark": "enabled"},
-            "$description": "Declared --*-dark custom properties. Not painted on the captured pages.",
-        },
-    ],
-    "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
-}
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("tokens", len(names), "light.page", light["page"]["$value"], "dark.page", dark["page"]["$value"])
+
+def build():
+    light = roles(DECLARED, C)
+    light["textOnAccent"] = color("{color.offwhite}", f"{M}: Try Pro label rgb(250, 250, 250)")
+    light["link"] = color("{color.ink}", f"{M}: Log in and license links use the ink, not a blue")
+    light["scrim"] = color("rgba(0, 0, 0, 0.8)", f"{M}: search dialog overlay class bg-black/80")
+    light["accentPressed"] = color("{color.zinc700}", f"{M}: Try Pro and Continue pressed/hover fill")
+    dark = roles(DECLARED_DARK, K)
+    return {
+        "core": json.loads(json.dumps(core)),
+        "light": light,
+        "dark": dark,
+        "$themes": [
+            {
+                "id": "light",
+                "name": "Light",
+                "selectedTokenSets": {"core": "source", "light": "enabled"},
+                "$description": "The painted theme on every captured lummi.ai page, 2026-11-18.",
+            },
+            {
+                "id": "dark",
+                "name": "Dark",
+                "selectedTokenSets": {"core": "source", "dark": "enabled"},
+                "$description": "Declared --*-dark custom properties. Not painted on the captured pages.",
+            },
+        ],
+        "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
+    }
+
+
+if __name__ == "__main__":
+    tokens = build()
+    names = check(tokens)
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+    print("tokens", len(names), "light.page", tokens["light"]["page"]["$value"], "dark.page", tokens["dark"]["page"]["$value"])

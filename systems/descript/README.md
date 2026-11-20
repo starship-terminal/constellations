@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #f73b3b `light.action.red` |
 | border | #101010 `light.border.focus` |
 
-Fonts: `core.font.family.display` is gamuthDisplay, then 3 fallbacks; `core.font.family.sans` is booton, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 4 radius steps (`core.radius`), no spacing steps under `core.spacing`.
+Fonts: `core.font.family.display` is gamuthDisplay, then 3 fallbacks; `core.font.family.sans` is booton, then 5 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 4 radius steps (`core.radius`), no spacing steps under `core.spacing`.
 
 ### Using components
 

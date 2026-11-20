@@ -587,20 +587,21 @@ Page: comedy. Selector: `filter`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 632 x 500 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 14px/21px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.dds-text-sm.dds-font-semibold: ui-sans-serif 12px/20px 600, #131316 | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.dds-flex.dds-flex-col 132.0x52.0 bg #f1f1f2; div::after.dds-flex.dds-flex-col 132pxx52px image linear-gradient(to right, #d5ccff -70%, #000000 @ 0); div.dds-bg-surface-secondary.dds-flex 500.0x500.0 bg #f1f1f2 r 0px 20px 20px 0px; input 0.0x0.0 bg #ffffff border T:1px solid #000000 @ 0.24 / R:1px solid #000000 @ 0.24 / B:1px solid #000000 @ 0.24 / L:1px solid #000000 @ 0.24 r 100%; label::before 20pxx20px border T:2px solid #2c2c2e / R:2px solid #2c2c2e / B:2px solid #2c2c2e / L:2px solid #2c2c2e r 50%; label::after 10pxx10px bg #ffffff r 50% | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 632 x 500 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 14px/21px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.dds-text-sm.dds-font-semibold: ui-sans-serif 12px/20px 600, #131316 | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.dds-flex.dds-flex-col 132.0x52.0 bg #f1f1f2; div::after.dds-flex.dds-flex-col 132pxx52px image linear-gradient(to right, #d5ccff -70%, #000000 @ 0); div.dds-bg-surface-secondary.dds-flex 500.0x500.0 bg #f1f1f2 r 0px 20px 20px 0px; input 0.0x0.0 bg #ffffff border T:1px solid #000000 @ 0.24 / R:1px solid #000000 @ 0.24 / B:1px solid #000000 @ 0.24 / L:1px solid #000000 @ 0.24 r 100%; label::before 20pxx20px border T:2px solid #2c2c2e / R:2px solid #2c2c2e / B:2px solid #2c2c2e / L:2px solid #2c2c2e r 50%; label::after 10pxx10px bg #ffffff r 50% | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `cm-filter-default.png`, `cm-filter-hover.png`, `cm-filter-focus-visible.png`, `cm-filter-pressed.png`.
 
@@ -712,18 +713,19 @@ Page: tickets. Selector: `date pill`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 162.13 x 20 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 16px/20px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #6d49fd | = | = | = |
-| Transition | none | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 162.13 x 20 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 16px/20px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #6d49fd | = | - | = |
+| Transition | none | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `tk-date-default.png`, `tk-date-hover.png`, `tk-date-focus-visible.png`, `tk-date-pressed.png`.
 
