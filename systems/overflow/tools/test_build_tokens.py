@@ -25,6 +25,11 @@ class BuildTokens(unittest.TestCase):
             self.assertEqual(token["$extensions"]["evidence"], "Observed")
             self.assertIn("default focus ring", token["$extensions"]["source"])
 
+    def test_the_style_guide_says_the_ring_is_the_browsers(self):
+        guide = (PKG / "style-guide.html").read_text()
+        self.assertIn("Chromium's default focus ring", guide)
+        self.assertIn("focus (Chromium's default ring, not Overflow's)", guide)
+
     def test_durations_are_typed_duration(self):
         for key, token in json.loads(TOKENS.read_text())["core"]["motion"].items():
             if str(token["$value"]).endswith("ms"):
