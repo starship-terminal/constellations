@@ -2,6 +2,7 @@
 // plus motion, footer, and the sign-in field. Nothing is submitted.
 import fs from 'node:fs';
 import path from 'node:path';
+import { mergeReadings } from './merge-readings.mjs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');  // PLAYWRIGHT=/path/to/playwright/index.mjs
 const { chromium } = pw.default ?? pw;
 
@@ -198,14 +199,13 @@ try {
 } catch (e) {
   out.notes.push('pass stopped early: ' + String(e.message || e).split('\n')[0]);
 } finally {
-  // Merge into the earlier file: a component this run did not read keeps its earlier reading, so a
-  // retry that fails early never replaces good measurements with an empty or partial set.
+  // Merge into the earlier file state by state (merge-readings.mjs): a state is replaced only by a
+  // reading this run took, so a retry whose hover read fails keeps the earlier hover, and every
+  // reading keeps the date of the run that took it.
   const file = path.join(RAW, 'readings-pass2.json');
   let earlier = {};
   try { earlier = JSON.parse(fs.readFileSync(file, 'utf8')); } catch { /* first run */ }
-  const merged = { ...earlier, ...out, components: { ...(earlier.components || {}), ...out.components },
-    motion: { ...(earlier.motion || {}), ...out.motion }, notes: out.notes };
-  fs.writeFileSync(file, JSON.stringify(merged, null, 2));
+  fs.writeFileSync(file, JSON.stringify(mergeReadings(earlier, out, new Date().toISOString().slice(0, 10)), null, 2));
   await browser.close().catch(() => {});
 }
 console.log('components', Object.keys(out.components));
