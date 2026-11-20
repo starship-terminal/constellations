@@ -9,6 +9,16 @@ TOKENS = pathlib.Path(__file__).resolve().parent.parent / "tokens.json"
 
 
 class BuildTokensTest(unittest.TestCase):
+    def test_committed_tokens_match_build(self):
+        tokens = build_tokens.build()
+        build_tokens.relabel_unread(tokens)
+        self.assertEqual(json.loads(TOKENS.read_text()), json.loads(json.dumps(tokens)))
+
+    def test_app_ramps_say_they_were_typed_in(self):
+        # The --rc-* ramps were read as hex in the capture session but raw/readings.json does not store them.
+        step = json.loads(TOKENS.read_text())["core"]["color"]["app"]["pink"]["10"]["$extensions"]["source"]
+        self.assertEqual(step["evidence"], "Reconstruction")
+
     def test_committed_tokens_pass(self):
         build_tokens.check(json.loads(TOKENS.read_text()))
 

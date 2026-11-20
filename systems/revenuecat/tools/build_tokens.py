@@ -14,6 +14,7 @@ sheet was read from the stylesheet, not from a live light page.
 """
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = json.loads((HERE / "raw" / "readings.json").read_text())
@@ -428,8 +429,53 @@ def check(tokens):
         raise SystemExit("tokens failed:\n  " + "\n  ".join(problems))
 
 
+# raw/readings.json is the only raw file. A token labelled Measured or Derived whose value it does not
+# hold (hex, rgb(), px, ms as s) was typed in from the capture session: the app ramps, for one, were read
+# as raw hex in the same session but never stored. Such a token is relabelled Reconstruction.
+RAW_TEXT = re.sub(r"\s+", "", (HERE / "raw" / "readings.json").read_text().lower())
+HAND_NOTE = "Entered by hand at capture time; raw/readings.json holds no reading of this value."
+
+
+def in_raw(value):
+    v = str(value).strip().lower()
+    forms = {v.replace(" ", "")}
+    m = re.fullmatch(r"#([0-9a-f]{6})([0-9a-f]{2})?", v)
+    if m:
+        r, g, b = (int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4))
+        forms |= {f"rgb({r},{g},{b})", f"rgba({r},{g},{b},"}
+    m = re.fullmatch(r"(\d*\.?\d+)ms", v)
+    if m:
+        forms.add(f"{float(m.group(1)) / 1000:g}s")
+    if "," in v and not v.startswith(("#", "rgb")):
+        forms.add(v.split(",")[0].strip().strip("'\""))  # a font stack: its first family
+    if v == "9999px":
+        forms |= {"16777215px", "1.67772e+07px"}  # the full pill a computed rounded-full radius reports
+    return any(f.replace(" ", "") in RAW_TEXT for f in forms)
+
+
+def relabel_unread(tokens):
+    def walk(node):
+        for k, v in node.items():
+            if k.startswith("$") or not isinstance(v, dict):
+                continue
+            if "$value" in v:
+                yield v
+            else:
+                yield from walk(v)
+    for tok in walk(tokens):
+        value, src = tok["$value"], tok["$extensions"]["source"]
+        if not isinstance(value, (str, int, float)) or (isinstance(value, str) and value.startswith("{")):
+            continue  # aliases and composites carry the evidence of what they name
+        if isinstance(src, dict) and src.get("evidence") in ("Measured", "Derived") and not in_raw(value):
+            src["evidence"] = "Reconstruction"
+            if "note" in src:
+                src["captureNote"] = src.pop("note")
+            src["note"] = HAND_NOTE
+
+
 def main():
     tokens = build()
+    relabel_unread(tokens)
     check(tokens)
     path = HERE / "tokens.json"
     path.write_text(json.dumps(tokens, indent=2) + "\n")
