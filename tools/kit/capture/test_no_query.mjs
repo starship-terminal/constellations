@@ -37,6 +37,10 @@ const CUT = {
   '"see /media/a.png?sig=1 for more"': '"see /media/a.png"',
   "'avatar: //cdn.example.test/a(1).png#access_token=x'": "'avatar: //cdn.example.test/a(1).png'",
   '"Ready? then /next?t=1"': '"Ready? then /next"',
+  // a space inside the URL itself: only the closing quote ends it
+  '"https://cdn.example.test/avatar 1?token=secret"': '"https://cdn.example.test/avatar 1"',
+  '"/media/my photo.png?sig=1"': '"/media/my photo.png"',
+  '"/a.png /b.png?sig=1"': '"/a.png /b.png"',
   // a srcset in one quoted value: the quotes delimit one URL, so what follows its query goes with it
   '"/a.png?s=1 1x, /b.png?s=2 2x"': '"/a.png"',
   // a relative fragment that carries a parameter
@@ -50,7 +54,7 @@ const KEEP = [
   'url(data:image/svg+xml;utf8,%3Csvg%3E?x=(1)%3C/svg%3E)',
   '"data:image/png;base64,iVBOR?w0#AAA="',
   'icons.svg#close', 'url(#clip)', 'a[href="#top"]', '#5e6ad2', 'calc(100% - 2px)', '0 1px 2px rgba(0, 0, 0, 0.1)',
-  '1.5rem', 'url(…)', 'a // b', '', 'var(--x, 4px)', 'what? why?', '"Ready?"', '"Is it ready? Yes."', '"a data:image/png;base64,AA?x=1"', 'rotate(45deg)',
+  '1.5rem', 'url(…)', 'a // b', '', 'var(--x, 4px)', 'what? why?', '"Ready?"', '"Is it ready? Yes."', '"Yes. What?"', '"a data:image/png;base64,AA?x=1"', 'rotate(45deg)',
 ];
 
 test('every hostile input loses its query and its token-bearing fragment', () => {

@@ -4,8 +4,8 @@
 //
 // Where a URL ends is decided by its context, never by guessing which characters a query may hold:
 //   - inside quotes, it ends at its own closing quote: the first URL in the quoted text, wherever it
-//     starts (after a space or words), runs to that quote, so a space after it does not end it (a
-//     srcset-style list loses what follows its first query, never keeps a query);
+//     starts (after a space or words), runs to that quote, spaces inside it included (a srcset-style
+//     list loses what follows its first query, never keeps a query);
 //   - inside an unquoted url( ), it ends at the ) that closes the url( (CSS allows no ) in it);
 //   - bare, it ends at the next space or quote, and a closing ) or ] at the very end is given back
 //     only when the part of the token that is kept opened it.
@@ -32,14 +32,17 @@ function cutAt(u) {
 // One whitespace-free piece whose end is fixed by its wrapper (url( )): cut, nothing given back.
 const cutWhole = (u) => { const at = cutAt(u); return at < 0 ? u : u.slice(0, at); };
 
-// Quoted text: the first word that is a URL with a query (or a parameter fragment) is cut there, and
-// the rest of the quoted text goes with it, since only the closing quote ends that URL. A word is one
-// after the start, a space, a bracket, a comma or =; a data: URL keeps the rest of the text whole.
+// Quoted text: the URL starts at the first word that begins like one (a scheme, //, or a path with a /
+// or a .ext), wherever it sits (after the start, a space, a bracket, a comma or =), and runs to the
+// closing quote, spaces included ("/media/my photo.png?sig=1"). From there everything from the first ?
+// (or a # as cutAt decides) to the quote is cut; a data: URL keeps the text whole.
+const URL_START = /^(?:[a-z][a-z0-9+.-]*:\/\/|\/\/|[\w.~%@+()[\]=,-]*(?:\/|\.\w))/i;
 function cutQuoted(inner) {
   for (const m of inner.matchAll(/(?:^|(?<=[\s([,=]))\S+/g)) {
     if (/^data:/i.test(m[0])) return inner;
-    const at = cutAt(m[0]);
-    if (at >= 0) return inner.slice(0, m.index + at);
+    if (!URL_START.test(m[0].split(/[?#]/)[0])) continue;
+    const at = cutAt(inner.slice(m.index));
+    return at < 0 ? inner : inner.slice(0, m.index + at);
   }
   return inner;
 }
