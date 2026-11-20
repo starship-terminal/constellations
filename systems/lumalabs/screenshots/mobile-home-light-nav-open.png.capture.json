@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-20T21:05:59.819Z",
+  "screenshot": "mobile-home-light-nav-open.png",
+  "sanitizedSourceUrl": "https://lumalabs.ai/",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2
+  },
+  "note": "recapture"
+}

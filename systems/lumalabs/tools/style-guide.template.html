@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luma AI style guide</title>
+<style>
+:root { /*LIGHT*/ }
+[data-mode="dark"] { /*DARK*/ }
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 Graphik, ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.4px; color: var(--text); background: var(--page); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 500 40px/1.2 Graphik, sans-serif; letter-spacing: -1.6px; margin: 0 0 8px; }
+h2 { font: 500 13px/1 sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 48px 0 12px; }
+.lead { max-width: 62ch; color: var(--muted); }
+button.theme { float: right; height: 32px; padding: 0 12px; border-radius: 9999px; border: 1px solid var(--border); background: var(--onAccent); color: var(--text); font: 500 14px/1 inherit; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: 8px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 ui-monospace, Menlo, monospace; }
+.sw span { color: var(--muted); font-weight: 400; }
+.hero { background: #000; color: #fff; border-radius: 16px; padding: 64px 32px; text-align: center; margin-top: 16px; }
+.hero h3 { font: 500 40px/1.2 Graphik, sans-serif; letter-spacing: -1.6px; margin: 0; }
+.hero p { color: #a6a6a6; }
+.btn { display: inline-flex; align-items: center; height: 48px; padding: 0 32px; border-radius: 9999px; background: #fff; color: #000; font: 500 18px/1 inherit; text-decoration: none; }
+.nav { display: flex; gap: 16px; align-items: center; height: 64px; padding: 0 16px; background: #000; color: #fff; border-radius: 12px; margin-top: 16px; font-size: 14px; letter-spacing: 0.04em; }
+.nav .sp { flex: 1; }
+.nav .in { height: 32px; padding: 0 12px; border-radius: 9999px; background: #fff; color: #000; display: inline-flex; align-items: center; font-weight: 500; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+input, textarea { width: 100%; border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; font: inherit; background: var(--page); color: var(--text); }
+</style>
+</head>
+<body>
+<main>
+<button class="theme" type="button" onclick="document.documentElement.toggleAttribute('data-mode') || document.documentElement.setAttribute('data-mode', document.documentElement.getAttribute('data-mode')==='dark'?'light':'dark'); this.textContent = document.documentElement.getAttribute('data-mode')==='dark' ? 'Light' : 'Dark'">Dark</button>
+<h1>Luma AI</h1>
+<p class="lead">Public marketing tokens from lumalabs.ai, 2026-11-21. The dark set is the stylesheet's <code>.dark</code> block. The captured pages paint light, with black hero bands on top.</p>
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+<h2>Shell</h2>
+<div class="nav"><b>Luma</b><span class="sp"></span><span>PRODUCT</span><span>PRICING</span><span>API</span><span class="in">Sign In</span></div>
+<div class="hero">
+  <h3>Luma is your creative partner</h3>
+  <p>You have the idea. Luma helps make it real.</p>
+  <a class="btn" href="#cta">Try for free</a>
+</div>
+<h2>Field</h2>
+<textarea rows="3" placeholder="What's due this week?"></textarea>
+<script>
+const roles = ["page","surface","raised","text","muted","faint","disabled","onAccent","border","accent","danger","focus"];
+const root = document.getElementById("swatches");
+for (const role of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:var(--${role})"></i><b>${role}</b><span></span>`;
+  root.appendChild(el);
+}
+function paint() {
+  for (const sw of root.children) {
+    const name = sw.querySelector("b").textContent;
+    sw.querySelector("span").textContent = getComputedStyle(document.documentElement).getPropertyValue("--"+name).trim();
+  }
+}
+paint();
+document.querySelector(".theme").addEventListener("click", () => setTimeout(paint, 0));
+</script>
+</main>
+</body>
+</html>

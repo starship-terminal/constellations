@@ -1,0 +1,37 @@
+{
+  "source": "Computed styles on https://lumalabs.ai/ at 1440x900, 2026-11-21, headless Chromium. Hover and focus-visible forced with CSS.forcePseudoState. Pressed showed no computed change.",
+  "button": {
+    "signin": {
+      "height": "32px",
+      "padding": "0px 12px",
+      "radius": "9999px",
+      "size": "14px",
+      "weight": 500,
+      "fill": "#ffffff",
+      "text": "#000000",
+      "hoverFill": "#d9d9d9",
+      "focusOutline": "rgb(0, 95, 204) auto 1px",
+      "focusOffset": "4px"
+    },
+    "hero": {
+      "height": "48px",
+      "padding": "0px 32px",
+      "radius": "9999px",
+      "size": "18px",
+      "weight": 500,
+      "fill": "#ffffff",
+      "text": "#000000"
+    }
+  },
+  "type": {
+    "display": { "size": "52px", "weight": 500, "lineHeight": "62.4px", "letterSpacing": "-2.08px" },
+    "body": { "size": "16px", "weight": 400, "lineHeight": "24px", "letterSpacing": "-0.4px" },
+    "nav": { "size": "14px", "weight": 500, "letterSpacing": "-0.4px" }
+  },
+  "layout": {
+    "navHeight": "4rem",
+    "navHeightMobile": "3.5rem",
+    "desktop": "1440px",
+    "phone": "390px"
+  }
+}
