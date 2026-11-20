@@ -376,9 +376,9 @@ The "Compare features →" link under the cards. Read as `compare-cta` on the pr
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 851 x 60; background transparent; text Poppins 57/60 700, #000000 `black`; transition box-shadow 0.2s ease-in-out |
+| default (same: hover, pressed) | size 851 x 60; background transparent; text Poppins 57/60 700, #000000 `black`; transition box-shadow 0.2s ease-in-out |
 
-![Compare features link default](components/crops/compare-cta-default.png) ![Compare features link hover](components/crops/compare-cta-hover.png) ![Compare features link focus-visible](components/crops/compare-cta-focus-visible.png) ![Compare features link pressed](components/crops/compare-cta-pressed.png)
+![Compare features link default](components/crops/compare-cta-default.png) ![Compare features link hover](components/crops/compare-cta-hover.png) ![Compare features link pressed](components/crops/compare-cta-pressed.png)
 
 #### Feature table
 The feature-comparison table card: rows of features with checkmarks, "+" and "soon" pills. Read as `feature-table` on the pricing page.
