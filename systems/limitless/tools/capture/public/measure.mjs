@@ -9,8 +9,13 @@ fs.mkdirSync(RAW, { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
 // Merge into the committed file: a run that stops early keeps the readings it
 // did not reach. Each page block saves when it closes.
+// _meta.captured is the latest run's date; each component carries its own `read`
+// date, so a reading kept from an earlier run keeps the date it was taken.
+const TODAY = new Date().toLocaleDateString('en-CA');
 const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
-const out = { _meta: { product: 'Limitless', captured: new Date().toLocaleDateString('en-CA'), route: 'public-web', theme: 'light' }, components: prev.components || {} };
+const prevDate = prev._meta && prev._meta.captured;
+for (const c of Object.values(prev.components || {})) if (c && !c.read && prevDate) c.read = prevDate;
+const out = { _meta: { product: 'Limitless', captured: TODAY, route: 'public-web', theme: 'light' }, components: prev.components || {} };
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -59,6 +64,9 @@ async function forcePseudo(loc, classes) {
 async function record(key, state, loc, meta, via) {
   const c = (out.components[key] ??= { states: {}, ...meta, url: current });
   c.states ??= {};
+  // Found and measured now: no longer missing, and dated today.
+  delete c.missing;
+  c.read = TODAY;
   try {
     await centre(loc);
     const s = await styleOf(loc);
@@ -74,7 +82,7 @@ async function record(key, state, loc, meta, via) {
 
 async function states(key, loc, list, meta) {
   const target = loc.filter({ visible: true }).first();
-  if (!(await target.count())) { log(' ! missing', key); out.components[key] = { missing: true, ...meta, url: current, states: {} }; return; }
+  if (!(await target.count())) { log(' ! missing', key); out.components[key] = { missing: true, read: TODAY, ...meta, url: current, states: {} }; return; }
   for (const st of list) {
     await reset();
     let undo, via = 'at rest';
