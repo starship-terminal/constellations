@@ -1,0 +1,77 @@
+{
+  "capturedAt": "2026-11-21",
+  "signedIn": true,
+  "url": "https://threads.exactly.ai/onboarding",
+  "offered": {
+    "nav": {
+      "items": [
+        "Progress (aria-valuenow 14)",
+        "Log out",
+        "Help center link",
+        "Support chat bubble"
+      ],
+      "reached": [
+        "Progress (aria-valuenow 14)",
+        "Log out",
+        "Help center link",
+        "Support chat bubble"
+      ],
+      "note": "No product navigation is rendered. The help link and chat bubble are desktop-only and were not followed or opened."
+    },
+    "settings": {
+      "items": [
+        "No settings control is rendered on the onboarding shell"
+      ],
+      "reached": [
+        "No settings control is rendered on the onboarding shell"
+      ],
+      "note": "Account, profile, theme and billing controls are behind the unanswered onboarding step."
+    },
+    "create": {
+      "items": [
+        "The company I work for",
+        "My client's company",
+        "My own business",
+        "My personal project"
+      ],
+      "reached": [
+        "The company I work for",
+        "My client's company",
+        "My own business",
+        "My personal project"
+      ],
+      "note": "These are the only create-or-continue choices on screen. None was selected."
+    }
+  },
+  "screens": [
+    {
+      "name": "Onboarding audience step, desktop",
+      "file": "screenshots/onboarding-light-default.png",
+      "url": "https://threads.exactly.ai/onboarding",
+      "viewport": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2}
+    },
+    {
+      "name": "Onboarding audience step, phone",
+      "file": "screenshots/onboarding-mobile-light-default.png",
+      "url": "https://threads.exactly.ai/onboarding",
+      "viewport": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2}
+    }
+  ],
+  "gaps": [
+    "Studio, generator, models, credits and billing stay behind the unanswered onboarding step.",
+    "No settings page is offered from this shell.",
+    "Help center and the support chat bubble were not opened.",
+    "Dark theme was not switched. The page paints light (color-scheme normal) while the OS preference was dark.",
+    "Hover, focus-visible and pressed were not captured on this pass. Computed default styles were read.",
+    "catalog.json was left unchanged, so login-extracted stays not-started there."
+  ],
+  "not_submitted": [
+    "The company I work for",
+    "My client's company",
+    "My own business",
+    "My personal project",
+    "Log out",
+    "Support chat",
+    "Any generate, buy, publish, invite or delete action"
+  ]
+}
