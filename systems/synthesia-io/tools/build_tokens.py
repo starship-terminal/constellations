@@ -116,13 +116,17 @@ for role in sorted(role_names):
     if not size or not lh:
         continue
     key = role.replace("-", ".")
+    if ls and ls.startswith(("-.", ".")):
+        ls = ls.replace(".", "0.", 1)  # -.275rem -> -0.275rem
     type_roles[key] = tok({
         "fontFamily": "{font.family.brand}",
         "fontWeight": "500" if role.startswith("heading") else "400",
         "fontSize": size,
         "lineHeight": lh,
         "letterSpacing": ls or "0rem",
-    }, "typography", f"{SRC}; --_typography---{role}-*")
+    }, "typography", f"Measured size, line height and tracking: {SRC}; --_typography---{role}-*. "
+       "fontWeight is Derived by rule (500 for heading roles, 400 for the rest), not read: "
+       "the fluid sheet declares no weight.")
 
 # Measured hero and buttons override the fluid sheet for the roles we saw.
 type_roles["hero"] = tok({
@@ -156,7 +160,10 @@ component = {
             "background": tok("{color.ink}", "color", "raw/states.json buttonPrimaryDefault"),
             "color": tok("#ffffff", "color", "raw/states.json buttonPrimaryDefault"),
             "radius": tok("8px", "dimension", "raw/states.json nav .button.is-small"),
-            "padding": tok("8px 16px", "dimension", "raw/states.json buttonPrimaryDefault pad"),
+            "padding": {  # the computed shorthand 8px 16px, one px length per axis
+                "block": tok("8px", "dimension", "raw/states.json buttonPrimaryDefault pad 8px 16px"),
+                "inline": tok("16px", "dimension", "raw/states.json buttonPrimaryDefault pad 8px 16px"),
+            },
             "fontSize": tok("14px", "dimension", "raw/states.json buttonPrimaryDefault"),
             "hoverBackground": tok("{color.inkHover}", "color", "raw/states.json buttonPrimaryHover"),
             "shadow": tok("0px 2px 10px 0px #10182814", "shadow", "measured rgba(16, 24, 40, 0.08) 0px 2px 10px 0px; --shadow is #10182814"),
@@ -209,6 +216,14 @@ for path, token in semantic.items():
     cur[bits[-1]] = token
 tokens["light"] = {"color": nested}
 
-out = HERE / "tokens.json"
-out.write_text(json.dumps(tokens, indent=2) + "\n")
-print(f"wrote {out} ramps={len(core_color)} semantic={len(semantic)} type={len(type_roles)}")
+
+
+def render():
+    """tokens.json's exact text; importing this module writes nothing."""
+    return json.dumps(tokens, indent=2) + "\n"
+
+
+if __name__ == "__main__":
+    out = HERE / "tokens.json"
+    out.write_text(render())
+    print(f"wrote {out} ramps={len(core_color)} semantic={len(semantic)} type={len(type_roles)}")
