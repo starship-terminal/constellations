@@ -4035,9 +4035,9 @@
       "description": "The companion app for every book",
       "status": "pending",
       "package": null,
-      "notes": "https://oku.club/login is missing. https://oku.club/signin asks for email and password. Password not submitted.",
+      "notes": "https://oku.club/login is missing. https://oku.club/signin asks for email and password. Password not submitted. Public walk 2026-11-21: header opens Explore, Blog, Pricing, a Twitter link, a mailto Contact, Sign in, and a Join dialog. Phone replaces those links with one menu. The homepage feed opens public books, profiles, and reviews. Blog posts, privacy, and terms are public. /login is a 404. /signin and /join ask for email and password and were not entered. No form was submitted. Public package in PR 1546 at 97b8a1148231. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 12
     },
     {
@@ -4171,9 +4171,9 @@
       "description": "User flows done right",
       "status": "pending",
       "package": null,
-      "notes": "https://overflow.io/login/ is a product page. https://overflow.io/n/signin asks for email and password, or Google or SSO. Password not submitted.",
+      "notes": "https://overflow.io/login/ is a product page. https://overflow.io/n/signin asks for email and password, or Google or SSO. Password not submitted. Public walk 2026-11-21: logo goes home. Product opens a mega menu. Examples, Blog, and Pricing are pages. Download for free goes to /download/. Sign In stops at /n/signin. Watch product demo opens a YouTube dialog. Canvas, Prototype, and Story open later frames of that dialog. Pricing FAQ expands in place. /login/ is a 404. /n/signup?buy is a signup wall and was not opened. One public player stands in for the example family. Cookie buttons were not clicked. No form was submitted. Public package in PR 1545 at 2cf38127cdc0. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 13
     },
     {
