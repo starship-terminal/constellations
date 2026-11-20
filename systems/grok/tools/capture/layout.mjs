@@ -54,24 +54,24 @@ function measure() {
 }
 
 const b = await chromium.launch();
-// Incremental by default: keys already measured in raw/layout.json are kept,
-// so a flaky-network rerun only re-shoots what it missed. FULL=1 re-measures
-// every key for a clean pass.
 const OUT_JSON = path.join(RAW, 'layout.json');
-const res = (!process.env.FULL && fs.existsSync(OUT_JSON)) ? JSON.parse(fs.readFileSync(OUT_JSON, 'utf8')) : {};
+// A run measures every page fresh. RESUME=1 keeps entries already on file (each carries the date it
+// was read), so a resumed run never presents an older reading as this run's.
+const runDate = new Date().toISOString().slice(0, 10);
+const res = (process.env.RESUME && fs.existsSync(OUT_JSON)) ? JSON.parse(fs.readFileSync(OUT_JSON, 'utf8')) : {};
 for (const [vw, vh, mob] of [[1440, 900, false], [1920, 1080, false], [1024, 768, false], [390, 844, true]]) {
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
   await patch(ctx);
   const p = await ctx.newPage();
   for (const [k, pth] of Object.entries(paths)) {
     if (vw !== 1440 && !/home|pricing|quickstart|grok$|grok-bot/.test(k)) continue;
-    if (res[`${k}@${vw}`]) { console.log('keep', k, vw); continue; }
+    if (res[`${k}@${vw}`]) { console.log('keep', k, vw, res[`${k}@${vw}`].readAt || 'undated'); continue; }
     let ok = false;
     for (let attempt = 0; attempt < 3 && !ok; attempt++) {
       try {
         await p.goto(BASE + pth, { waitUntil: 'domcontentloaded', timeout: 90000 }); await p.waitForTimeout(6500);
         await closePromo(p);
-        res[`${k}@${vw}`] = await p.evaluate(measure);
+        res[`${k}@${vw}`] = { ...(await p.evaluate(measure)), readAt: runDate };
         console.log(k, vw);
         ok = true;
       } catch (e) { console.log('failed', k, vw, `try${attempt + 1}`, e.message.split('\n')[0]); }
