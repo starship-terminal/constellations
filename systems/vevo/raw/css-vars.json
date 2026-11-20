@@ -1,0 +1,11 @@
+{
+  "note": "hq.vevo.com is a Wix site. The CSSOM exposed 2243 custom properties on 2026-11-21. They are Wix layout internals (--one-unit, --section-max-width, --browser-zoom, --scrollbar-width), not a colour or type system. None of them became a token. Values in tokens.json come from computed styles in components-computed.json and from painted-element readings recorded in component-tokens.json sources.",
+  "probed": "https://www.hq.vevo.com/",
+  "themeColor": null,
+  "varCount": 2243,
+  "sample": [
+    {"name": "--one-unit", "value": "1vw", "selector": ":root"},
+    {"name": "--section-max-width", "value": "9999px", "selector": ":root"},
+    {"name": "--browser-zoom", "value": "1", "selector": ":root"}
+  ]
+}

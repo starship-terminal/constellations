@@ -1,0 +1,69 @@
+[
+  {
+    "label": "stats-band",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "h": 81.59375,
+    "cls": "HFEOE3 NaeT1r comp-lkluieyr-container co"
+  },
+  {
+    "label": "about-us-pill",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "radius": "24px",
+    "h": 46,
+    "font": "wfont_08392a_c1f9747dda3c4c4889c5132122c1d70a, wf_c1f9747dda3c4c4889c513212, ori",
+    "size": "16px",
+    "weight": "400"
+  },
+  {
+    "label": "footer",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "tag": "FOOTER"
+  },
+  {
+    "label": "page-bg",
+    "bg": "rgba(0, 0, 0, 0)",
+    "body": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "label": "form-page",
+    "sections": [
+      {
+        "bg": "rgba(255, 255, 255, 0)",
+        "h": 782,
+        "t": "Contact Us\n\nWant to learn more"
+      },
+      {
+        "bg": "rgba(255, 255, 255, 0)",
+        "h": 91,
+        "t": ""
+      },
+      {
+        "bg": "rgba(0, 0, 0, 0)",
+        "h": 338,
+        "t": "© 2024 Vevo LLC, All Rights Re"
+      }
+    ],
+    "fieldColor": "rgb(0, 0, 0)",
+    "fieldBg": "rgba(174, 192, 248, 0)",
+    "fieldBorder": "rgb(255, 255, 255)",
+    "fieldSize": "15px",
+    "labelColor": "rgb(255, 255, 255)",
+    "labelSize": "15px",
+    "pageBg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "label": "about-heading",
+    "color": "rgb(0, 0, 0)",
+    "size": "167.8px",
+    "weight": "400",
+    "lh": "159.41px",
+    "font": "wfont_08392a_c1f9747dda3c4c4889c5132122c1d70a, wf_c1f9747dda3c4c4889c513212, orig_plain_me",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "label": "crimson-any"
+  }
+]

@@ -1,0 +1,7 @@
+{
+ "replace": [
+  ["Account Holder", "gi", "Learner"],
+  ["account-holder-marker", "gi", "learner"]
+ ],
+ "badges": []
+}
