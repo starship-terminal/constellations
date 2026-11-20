@@ -16,12 +16,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 KIT = ROOT / "tools" / "kit" / "capture"
 # Every copy of the kit's snapshot inside a package: label (the folder's path under systems/,
-# which starts with the slug) -> the folder holding snapshot.js beside unsnap.py. Found, not
-# listed, whatever the layout (tools/capture/, capture/, a vendored tools/kit/), so a package
-# that copies the kit later is checked from its first commit.
+# which starts with the slug) -> the folder holding snapshot.js. Found on disk, not listed and
+# not counted, whatever the layout (tools/capture/, capture/, a vendored tools/kit/): a package
+# that copies the kit is checked from its first commit, and one that drops an unused copy
+# simply leaves the set. No filter on the siblings: a copy that lost unsnap.py or
+# signed-params.json must fail, not drop out.
 PACKAGES = {p.parent.relative_to(ROOT / "systems").as_posix(): p.parent
-            for p in sorted((ROOT / "systems").glob("*/**/snapshot.js"))
-            if (p.parent / "unsnap.py").is_file()}
+            for p in sorted((ROOT / "systems").glob("*/**/snapshot.js"))}
+SIBLINGS = ("unsnap.py", "signed-params.json")
+# Packages whose capture really ran signed in through their copy (the README says so, and
+# raw/ or screenshots/ hold the signed-in pages). Their copies must stay; any other copy may
+# be removed with the package's unused kit files.
+SIGNED_IN = ("claude", "coursera", "manus", "chatgpt", "notebooklm", "duolingo", "linear",
+             "brilliant", "researchrabbit", "sentry")
 SIGNED = [
     "https://bucket.s3.amazonaws.com/a.png?X-Amz-Algorithm=AWS4&X-Amz-Signature=abc",
     "https://storage.googleapis.com/b/o.png?X-Goog-Signature=abc",
@@ -69,15 +76,15 @@ class PackageSnapshots(unittest.TestCase):
     kit = json.loads((KIT / "signed-in" / "signed-params.json").read_text())
 
     def test_every_package_copy_is_found(self):
-        # The list is discovered: the ten packages it once named, and every later copy.
-        self.assertGreaterEqual(len(PACKAGES), 200)
+        # Discovery matches the disk: every snapshot.js under systems/ is in PACKAGES.
+        on_disk = {p.parent for p in (ROOT / "systems").rglob("snapshot.js")}
+        self.assertEqual(on_disk, set(PACKAGES.values()))
         slugs = {slug_of(label) for label in PACKAGES}
-        for slug in ("claude", "coursera", "manus", "chatgpt", "notebooklm", "duolingo", "linear",
-                     "brilliant", "researchrabbit", "sentry", "navia", "unsplash", "clay", "onefinestay"):
-            self.assertIn(slug, slugs)
-        for slug in PACKAGES:
-            for name in ("snapshot.js", "unsnap.py", "signed-params.json"):
-                self.assertTrue((folder(slug) / name).is_file(), (slug, name))
+        self.assertEqual([s for s in SIGNED_IN if s not in slugs], [],
+                         "a signed-in capture lost its snapshot copy")
+        missing = [f"{label}/{name}" for label in PACKAGES for name in SIBLINGS
+                   if not (folder(label) / name).is_file()]
+        self.assertEqual(missing, [], "a snapshot.js copy without the kit files beside it")
 
     def test_each_copy_carries_the_kit_list(self):
         want = {"prefixes": self.kit["prefixes"], "params": self.kit["params"]}
