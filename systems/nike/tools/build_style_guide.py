@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Deterministic. Light theme only."""
+import html
 import json
 import pathlib
 
@@ -17,6 +18,11 @@ def val(path):
     return v
 
 
+def attr(value):
+    """A token value inside a double-quoted attribute: a quote in a font name must not end the attribute."""
+    return html.escape(str(value), quote=True)
+
+
 def color_rows():
     rows = []
     for name, token in T["light"].items():
@@ -25,8 +31,8 @@ def color_rows():
         if token.get("$type") != "color":
             continue
         rows.append(
-            f'<div class="sw"><i style="background:{token["$value"]}"></i>'
-            f"<div><code>light.{name}</code><span>{token['$value']}</span></div></div>"
+            f'<div class="sw"><i style="background:{attr(token["$value"])}"></i>'
+            f"<div><code>light.{attr(name)}</code><span>{attr(token['$value'])}</span></div></div>"
         )
     return "\n".join(rows)
 
@@ -38,9 +44,9 @@ def type_rows():
         family = val(v["fontFamily"][1:-1]) if isinstance(v["fontFamily"], str) and v["fontFamily"].startswith("{") else v["fontFamily"]
         stack = ", ".join(family)
         rows.append(
-            f'<div class="ty" style="font-family:{stack};font-size:{v["fontSize"]};'
-            f'font-weight:{v["fontWeight"]};line-height:{v["lineHeight"]}">'
-            f"<code>core.typography.{name}</code> Just Do It. {v['fontSize']} / {v['lineHeight']}</div>"
+            f'<div class="ty" style="font-family:{attr(stack)};font-size:{attr(v["fontSize"])};'
+            f'font-weight:{attr(v["fontWeight"])};line-height:{attr(v["lineHeight"])}">'
+            f"<code>core.typography.{attr(name)}</code> Just Do It. {attr(v['fontSize'])} / {attr(v['lineHeight'])}</div>"
         )
     return "\n".join(rows)
 

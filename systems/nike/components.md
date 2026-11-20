@@ -56,7 +56,7 @@ Not present.
 
 Hovering Men opens a white panel, height 417px, shadow `none`, with Featured, Shoes, and the rest of the department list.
 
-![Men menu](../screenshots/home-light-menu.png)
+![Men menu](screenshots/home-light-menu.png)
 
 ## Tooltip
 
