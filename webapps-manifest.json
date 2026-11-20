@@ -6823,9 +6823,9 @@
       "description": "Modern Furniture, Home Decor, Lighting & More",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.westelm.com/account/login.html asks for an email. Continue with email returned an error and did not send a code. No Google button.",
+      "notes": "Email probe: https://www.westelm.com/account/login.html asks for an email. Continue with email returned an error and did not send a code. No Google button. Public walk 2026-11-21: homepage, stores, customer service, track order, privacy, registry, and login loaded in headed Chrome. Headless Chromium got HTTP 403. Shop, product, cart, and favorites also 403'd from in-page clicks. Login asks for an email and was not typed. No form was submitted. Public package in PR 1509 at 679353cb8. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 20
     },
     {
