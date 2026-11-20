@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { launch, open, closePromo, styleOf, crop, centre, RAW, BASE } from './lib.mjs';
+import { datePrior } from '../merge-dates.mjs';
 
 const OUT = path.join(RAW, 'components-computed.json');
 fs.mkdirSync(RAW, { recursive: true });
@@ -18,8 +19,11 @@ await cdp.send('CSS.enable');
 
 // Start from the committed readings: a run that fails part-way, or is blocked
 // before it reads anything, keeps every component and state it did not reach.
+// _meta.captured is this run's date; every state carries its own `read` date, so
+// a reading kept after a timed-out visit keeps the date it was taken (merge-dates.mjs).
 const prior = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : null;
-const components = (prior && prior.components) || {};
+const RUN = new Date().toLocaleDateString('en-CA');
+const components = datePrior((prior && prior.components) || {}, prior && prior._meta && prior._meta.captured);
 const failedPages = [];
 
 // Written after every page, so a later failure keeps what was already read.
@@ -28,7 +32,8 @@ function save() {
     _meta: {
       product: 'LEGO',
       source: 'https://www.lego.com/en-us',
-      captured: new Date().toLocaleDateString('en-CA'), // the local date of the run
+      captured: RUN, // the local date of the latest run; per-state dates are under <component>.<state>.read
+      failedPages: failedPages.length ? failedPages : undefined,
       route: 'public-web',
       viewport: { width: 1440, height: 900, dpr: 1 },
       note: 'Signed out. Consent hidden, never clicked. Add to Bag measured, never pressed. Search text typed and cleared; Enter never pressed.',
@@ -50,9 +55,9 @@ async function record(name, state, locator) {
   components[name] ??= {};
   const old = components[name][state];
   if (style && style.error && old && old.style && !old.style.error) {
-    components[name][state] = { ...old, recaptureError: style.error }; // keep the prior reading
+    components[name][state] = { ...old, recaptureError: style.error, recaptureRun: RUN }; // keep the prior reading and its date
   } else {
-    components[name][state] = { style, crop: cropPath, page: page.url().split('?')[0] };
+    components[name][state] = { style, crop: cropPath, page: page.url().split('?')[0], read: RUN };
   }
   log('  ok', name, state, style && style.style && style.style.backgroundColor);
 }
