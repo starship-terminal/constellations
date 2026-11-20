@@ -496,9 +496,9 @@ def note_flagged(node):
         src = node.get("source")
         if isinstance(src, str):
             for k, run in FLAGGED.items():
-                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and "recaptureMissed" not in src:
-                    node["source"] = src = (src + f"; {k} was not found by the {run} re-run (recaptureMissed),"
-                                            " so this is the reading kept from the earlier run")
+                note = f"; {k} was not found by the {run} re-run (recaptureMissed), so this is the reading kept from the earlier run"
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and note not in src:
+                    node["source"] = src = src + note
         for v in node.values():
             note_flagged(v)
 

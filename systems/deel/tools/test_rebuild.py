@@ -29,6 +29,7 @@ class RebuildTest(unittest.TestCase):
         root = pathlib.Path(cls.tmp.name)
         shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("capture", "__pycache__"))
         shutil.copytree(PKG / "raw", root / "raw")
+        (root / "raw" / "component-tokens.json").unlink()  # the rebuild must write it, not inherit it
         for b in ("build_component_tokens.py", "build_tokens.py"):
             subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
         cls.built = json.loads((root / "tokens.json").read_text())
@@ -47,6 +48,23 @@ class RebuildTest(unittest.TestCase):
         fam = self.built["core"]["font"]["family"]
         for key, comp in (("sans", "footer-link"), ("brand", "nav-link"), ("display", "hero-h1")):
             self.assertEqual(fam[key]["$value"], self.C[comp]["states"]["default"]["style"]["fontFamily"])
+
+    def test_every_missed_component_is_named(self):
+        # two components missed by a re-run: a source citing both must name both
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("capture", "__pycache__"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            cc = root / "raw" / "components-computed.json"
+            doc = json.loads(cc.read_text())
+            for k in ("promo-banner", "footer-link"):
+                doc["components"][k]["recaptureMissed"] = "2026-11-14"
+            cc.write_text(json.dumps(doc))
+            subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, check=True,
+                           capture_output=True)
+            src = json.loads((root / "raw" / "component-tokens.json").read_text())["core"]["font"]["family"]["sans"]["source"]
+        self.assertIn("promo-banner was not found by the 2026-11-14 re-run", src)
+        self.assertIn("footer-link was not found by the 2026-11-14 re-run", src)
 
     def test_no_css_color4_value_left_unconverted(self):
         for path, leaf in flat(self.built):
