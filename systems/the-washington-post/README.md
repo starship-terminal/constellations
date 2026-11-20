@@ -134,4 +134,4 @@ python3 tools/catalog.py design-md the-washington-post
 python3 tools/package_tests.py the-washington-post
 ```
 
-The package has no `tools/test_*.py`. `package_tests.py` reports no tests for this slug until one is added. That is the kit's own message, and it exits 2.
+`tools/test_build_tokens.py` holds three tests: the committed tokens.json matches a fresh build, the light accent is the light sign-in reading, and colours are hex while an unknown colour string is refused. `package_tests.py` runs them and exits 0 when they pass.
