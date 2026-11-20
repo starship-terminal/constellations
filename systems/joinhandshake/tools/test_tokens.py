@@ -72,12 +72,20 @@ class TokensTest(unittest.TestCase):
         C = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
         comp = T["core"]["component"]
         checked = 0
+        src = (HERE / "tools" / "build_component_tokens.py").read_text()
+        GEOM = {path: field for _c, _s, field, path in re.findall(r'geom\("([^"]+)", "([^"]+)", "(\w+)", "([^"]+)"', src)}
+        self.assertGreater(len(GEOM), 5)
         for n, t in token_checks.tokens_of(comp):
             m = re.match(r"measured (\S+) (\S+) on ", t["$extensions"]["source"])
             self.assertIsNotNone(m, n)
             st = C[m.group(1)]["states"][m.group(2)]
             v = t["$value"]
-            if n.endswith(".height") or n.endswith(".width"):
+            if n in GEOM:
+                # the builder's own geom() call names the field it read
+                field = GEOM[n]
+                raw = st["rect"][field] if field in st.get("rect", {}) else st["style"][field]
+                self.assertEqual(v, f"{float(str(raw).replace('px', '')):g}px", n)
+            elif n.endswith(".height") or n.endswith(".width"):
                 raw = st["rect"]["h" if n.endswith(".height") else "w"]
                 self.assertEqual(v, f"{raw:g}px", n)
             elif n.endswith(".radius"):
