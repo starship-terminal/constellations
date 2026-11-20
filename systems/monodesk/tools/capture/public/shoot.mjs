@@ -54,20 +54,19 @@ function rgbToHex(c) {
   return `rgba(${Math.round(m[1])}, ${Math.round(m[2])}, ${Math.round(m[3])}, ${Math.round(a * 1000) / 1000})`;
 }
 
+// Consent is hidden, never answered: no button is clicked (a loose /ok/ label matched "Book a demo"
+// and "Facebook", and clicking accept answers the banner). Returns how many overlays were hidden.
 async function dismissCookie(page) {
-  const labels = [/accept/i, /agree/i, /got it/i, /allow/i, /okay/i, /ok/i];
-  for (const re of labels) {
-    const b = page.getByRole('button', { name: re }).first();
-    if (await b.count() && await b.isVisible().catch(() => false)) {
-      const t = (await b.innerText().catch(() => '')).trim();
-      if (t.length < 24) {
-        await b.click().catch(() => {});
-        await wait(page, 400);
-        return t;
-      }
-    }
-  }
-  return null;
+  return page.evaluate(() => {
+    let n = 0;
+    const sel = '#onetrust-banner-sdk, [id*="onetrust" i], #CybotCookiebotDialog, [id*="cookie" i], [class*="cookie" i], [id*="consent" i], [class*="consent" i], [aria-label*="cookie" i]';
+    document.querySelectorAll(sel).forEach((el) => {
+      if (el === document.body || el === document.documentElement) return;
+      el.style.setProperty('display', 'none', 'important');
+      n++;
+    });
+    return n;
+  }).catch(() => 0);
 }
 
 async function pauseMedia(page) {

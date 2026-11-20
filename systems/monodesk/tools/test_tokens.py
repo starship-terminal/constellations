@@ -2,6 +2,7 @@
 """Checks that MonoDesk tokens.json still matches the 2026-11-19 readings."""
 import json
 import pathlib
+import re
 import unittest
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
@@ -47,15 +48,21 @@ class TokensTest(unittest.TestCase):
         self.assertEqual(core["component.field.radius"]["$value"], "9px")
 
     def test_no_dead_aliases(self):
-        names = set(flat(T["core"]))
-        for path, token in flat(T["core"]).items():
-            value = token["$value"]
-            if not isinstance(value, dict):
-                continue
-            for key, item in value.items():
-                if isinstance(item, str) and item.startswith("{") and item.endswith("}"):
-                    ref = item[1:-1]
-                    self.assertIn(ref, names, f"{path}.{key} -> {ref}")
+        # Every alias in every set, string or composite, resolves against core and its own set.
+        import token_checks
+        self.assertEqual(token_checks.alias_errors(T["core"], T["light"], T["dark"]), [])
+
+    def test_committed_tokens_match_build(self):
+        import build_tokens  # main() builds in memory; only write() touches tokens.json
+        self.assertEqual(T, json.loads(json.dumps(build_tokens.main())))
+
+    def test_unread_values_are_not_labelled_as_readings(self):
+        # raw/css-vars.json holds no custom property, so a token sourced only to one says Reconstruction.
+        for path, token in flat(T).items():
+            src = token["$extensions"]["source"]
+            backed = re.search(r"computed (?!--|custom property)", src)
+            if src.startswith(("declared --", "computed --", "computed custom property --")) and not backed:
+                self.fail(f"{path}: {src[:60]}")
 
 
 if __name__ == "__main__":
