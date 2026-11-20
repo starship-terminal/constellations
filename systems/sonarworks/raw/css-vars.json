@@ -1,0 +1,42 @@
+{
+  "source": "inline <style> on https://www.sonarworks.com/ fetched 2026-11-21",
+  "note": "Tailwind utilities compiled into the page style block. No :root design tokens. --tw-* are Tailwind internals and are not product tokens.",
+  "colors": {
+    "bg-base-00": "#000000",
+    "bg-base-10": "#1e1f20",
+    "bg-base-100": "#ffffff",
+    "bg-base-25": "#3e4042",
+    "bg-base-40": "#636669",
+    "bg-base-60": "#96999c",
+    "bg-base-80": "#cccccc",
+    "bg-base-85": "#d8d9da",
+    "bg-base-95": "#f3f3f3",
+    "bg-highlight-blue": "#68befd",
+    "bg-highlight-green": "#6fe362",
+    "bg-highlight-lime": "#cdf045",
+    "bg-highlight-orange": "#ff904c",
+    "bg-highlight-pink": "#eb48c7",
+    "bg-highlight-purple": "#b25ced",
+    "bg-highlight-red": "#fc5b41",
+    "bg-highlight-sale": "#ffe701",
+    "bg-highlight-yellow": "#f8d143"
+  },
+  "radii": {
+    "rounded": ".25rem",
+    "rounded-3xl": "1.5rem",
+    "rounded-full": "9999px",
+    "rounded-lg": ".5rem",
+    "rounded-md": ".375rem",
+    "rounded-sm": ".125rem",
+    "rounded-xl": ".75rem"
+  },
+  "textUtilities": {
+    "2xl": "font-size:80px;letter-spacing:-4px;line-height:92px",
+    "3xl": "font-size:96px;letter-spacing:-6px;line-height:104px",
+    "lg": "font-size:24px;letter-spacing:-.5px;line-height:32px",
+    "sm": "font-size:11px;letter-spacing:.2px;line-height:16px",
+    "xl": "font-size:44px;letter-spacing:-1.5px;line-height:52px",
+    "base": "--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))"
+  },
+  "font": "Inter, sans-serif (Google Fonts stylesheet linked from the page; weights 400, 500, 600, 700, 900)"
+}
