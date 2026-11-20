@@ -192,7 +192,7 @@
       "auth-card": {
         "value": "40px",
         "type": "dimension",
-        "source": "computed paddingLeft of auth-card default (raw/components-computed.json); measured under one key on /login and /signup; the reading records no page; recapture needed",
+        "source": "computed paddingLeft of auth-card default (raw/components-computed.json); the /signup card (\"Create your account\"): measured under one key on /login and /signup, the /signup reading was kept and the /login one lost; recapture needed",
         "description": "The auth card's padding."
       }
     },
@@ -310,7 +310,7 @@
         "auth-card": {
           "value": "#ffffff",
           "type": "color",
-          "source": "computed paint of div.bg-card.text-card-foreground inside auth-card default (raw/components-computed.json); measured under one key on /login and /signup; the reading records no page; recapture needed",
+          "source": "computed paint of div.bg-card.text-card-foreground inside auth-card default (raw/components-computed.json); the /signup card (\"Create your account\"): measured under one key on /login and /signup, the /signup reading was kept and the /login one lost; recapture needed",
           "description": "The white the universal-login card paints."
         },
         "footer-panel": {

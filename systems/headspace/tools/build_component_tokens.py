@@ -67,7 +67,7 @@ def norm_color(v):
 # Their tokens say which page the value is from.
 OVERWRITTEN = {
     "hero-h1": "the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
-    "auth-card": "measured under one key on /login and /signup; the reading records no page; recapture needed",
+    "auth-card": "the /signup card (\"Create your account\"): measured under one key on /login and /signup, the /signup reading was kept and the /login one lost; recapture needed",
 }
 
 
