@@ -16,7 +16,13 @@ const OUT = path.join(RAW, 'components-computed.json');
 const TODAY = new Date().toLocaleDateString('en-CA');
 const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
 const prevDate = prev._meta && prev._meta.captured;
-for (const c of Object.values(prev.components || {})) if (c && !c.read && prevDate) c.read = prevDate;
+// Backfill the earlier date onto every saved component and state that predates
+// per-reading dates, before this run updates any of them.
+for (const c of Object.values(prev.components || {})) {
+  if (!c || !prevDate) continue;
+  if (!c.read) c.read = prevDate;
+  for (const st of Object.values(c.states || {})) if (st && typeof st === 'object' && !st.read) st.read = prevDate;
+}
 const out = { _meta: { product: 'Limitless', captured: prevDate || TODAY, lastAttempt: TODAY, route: 'public-web', theme: 'light' }, components: prev.components || {} };
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
@@ -72,8 +78,9 @@ async function record(key, state, loc, meta, via) {
     let file;
     try { file = await crop(page, loc, `${key}-${state}`); } catch (e) { s.cropError = String(e.message).slice(0, 140); }
     c.states[state] = { ...s, crop: file, via, read: TODAY };
-    // Found and measured now: no longer missing, and dated today.
+    // Found and measured now: no longer missing (nor missed on a rerun), and dated today.
     delete c.missing;
+    delete c.recaptureMissed;
     c.read = TODAY;
     out._meta.captured = TODAY;
     log(' ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h));
