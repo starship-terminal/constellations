@@ -6313,9 +6313,9 @@
       "description": "Travel Deals and Promotions",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.trip.com/account/signin Continue with Google returned to the public homepage. No account surface.",
+      "notes": "Email probe: https://www.trip.com/account/signin Continue with Google returned to the public homepage. Public walk 2026-11-21: sg.trip.com marketing, Hotels, Flights, Trains, Cars, Attractions, and Flight + Hotel loaded. Sign in/register, Claim all, and Find bookings stop at the sign-in dialog and https://www.trip.com/account/signin and were not entered. No form was submitted. Public package in PR 1502 at 104d31cfb. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 19
     },
     {
