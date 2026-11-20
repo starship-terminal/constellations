@@ -6,7 +6,8 @@
    "@elevenmusic\\.io$",
    "@elevenlabs\\.io$",
    "@elevenlabs\\.com$",
-   "@example\\.(com|org)$"
+   "@example\\.com$",
+   "@example\\.org$"
   ]
  },
  "families": []

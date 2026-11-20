@@ -4,7 +4,9 @@
   "emails": true,
   "email_allow": [
    "@foodnoms\\.com$",
-   "@example\\.(com|org|inc)$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
    "@everyone$",
    "@here$"
   ]
