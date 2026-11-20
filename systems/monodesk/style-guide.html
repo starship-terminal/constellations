@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MonoDesk style guide</title>
+<meta name="description" content="MonoDesk public site tokens, rendered from tokens.json.">
+<style>
+:root {
+  --color-white: #ffffff;
+  --color-orange: #ff5b26;
+  --color-highlighter: #d1ff6e;
+  --color-blue: #1c64f5;
+  --color-grey: #94959a;
+  --color-almost-black: #272727;
+  --color-fun-green: #026232;
+  --color-surface-tint: #eef2f5;
+  --color-surface-white: #343434;
+  --color-token-background: #dadee1;
+  --color-type: #161616;
+  --color-type-light: #e7e7e7;
+  --color-type-60: rgba(22, 22, 22, 0.6);
+  --color-type-40: rgba(223, 223, 223, 0.4);
+  --color-type-light-60: rgba(223, 223, 223, 0.6);
+  --color-type-light-40: rgba(223, 223, 223, 0.4);
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
+  --spacing-2xl: 80px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 30px;
+  --font-family-ui: Geist, system-ui, sans-serif;
+  --font-family-mono: Geist Mono, ui-monospace, monospace;
+  --typography-display: 400 72px/82.8px Geist, system-ui, sans-serif;
+  --typography-body: 400 16px/24px Geist, system-ui, sans-serif;
+  --typography-label: 500 14px/21px Geist, system-ui, sans-serif;
+  --layout-page-max: 1320px;
+  --layout-content-max: 1200px;
+  --page: #212121;
+  --surface: rgba(33, 33, 33, 0.25);
+  --text: #e7e7e7;
+  --muted: rgba(255, 255, 255, 0.85);
+  --accent: #d1ff6e;
+  --accent-text: #026232;
+  --border: rgba(255, 255, 255, 0.08);
+  --link: rgba(255, 255, 255, 0.85);
+  --component-header-height: 66px;
+  --component-header-radius: 16px;
+  --component-header-pad-y: 12px;
+  --component-header-pad-x: 16px;
+  --component-cta-height: 40px;
+  --component-cta-radius: 100px;
+  --component-cta-pad-y: 8px;
+  --component-cta-pad-x: 16px;
+  --component-cta-font-size: 14px;
+  --component-nav-font-size: 14px;
+  --component-hero-font-size: 72px;
+  --component-hero-line-height: 82.8px;
+  --component-search-height: 54px;
+  --component-search-radius: 100px;
+  --component-plan-cta-bg: #d1ff6e;
+  --component-plan-cta-text: #026232;
+  --sg-sans: Geist, system-ui, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #e7e7e7); background: var(--page, #212121); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.15 var(--sg-sans); margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, rgba(255,255,255,.85)); margin: 48px 0 12px; }
+.note { color: var(--muted); max-width: 68ch; font-size: 14px; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border, rgba(255,255,255,.08)); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: var(--muted); }
+.bar { display: flex; align-items: center; gap: 16px; height: 66px; padding: 12px 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); backdrop-filter: blur(20px); }
+.bar .sp { flex: 1; }
+.bar span { font-size: 14px; font-weight: 500; color: var(--muted); }
+.cta { display: inline-flex; align-items: center; height: 40px; padding: 8px 16px; border-radius: 100px; background: var(--accent); color: var(--accent-text); font-size: 14px; font-weight: 500; }
+.hero { font-size: 48px; line-height: 1.15; margin: 28px 0 12px; max-width: 16ch; }
+.search { display: block; width: min(520px, 100%); height: 48px; border-radius: 100px; border: 0; padding: 0 20px; background: #fff; color: #161616; font: 16px var(--sg-sans); }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+.plan { background: #f4f6f7; color: #161616; border-radius: 16px; padding: 16px; }
+.plan.pro { outline: 2px solid var(--accent); }
+.plan .go { display: inline-flex; margin-top: 8px; height: 32px; padding: 0 14px; border-radius: 100px; background: var(--component-plan-cta-bg); color: var(--component-plan-cta-text); font-size: 13px; font-weight: 500; align-items: center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>MonoDesk style guide</h1>
+  <p class="note">Generated from tokens.json. Values are the public site's CSS custom properties and computed styles, read signed out on 2026-11-21. One painted dark page. The app at app.monodesk.com was not entered.</p>
+
+  <h2>Roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>dark.page</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>dark.surface</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>dark.text</span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><b>muted</b><span>dark.muted</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>dark.accent</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>dark.border</span></div>
+  </div>
+
+  <h2>Brand tokens</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--color-orange)"></i><b>orange</b><span>--brand-orange</span></div>
+    <div class="sw"><i style="background:var(--color-highlighter)"></i><b>highlighter</b><span>--brand-highlighter</span></div>
+    <div class="sw"><i style="background:var(--color-blue)"></i><b>blue</b><span>--brand-blue</span></div>
+    <div class="sw"><i style="background:var(--color-fun-green)"></i><b>fun green</b><span>--brand-fun-green</span></div>
+    <div class="sw"><i style="background:var(--color-almost-black)"></i><b>almost black</b><span>--brand-almost-black</span></div>
+    <div class="sw"><i style="background:var(--color-grey)"></i><b>grey</b><span>--brand-grey</span></div>
+  </div>
+
+  <h2>Header</h2>
+  <div class="bar">
+    <b>MonoDesk</b>
+    <span>Creative Pros</span>
+    <span>Features</span>
+    <span>Pricing</span>
+    <span>About</span>
+    <span>More</span>
+    <span class="sp"></span>
+    <span>Log in</span>
+    <span class="cta">Get started free</span>
+  </div>
+  <p class="hero">Stuck on the boring bits of your creative business?</p>
+  <span class="cta">Get started free</span>
+
+  <h2>Help search</h2>
+  <input class="search" placeholder="Search help articles" readonly>
+
+  <h2>Plans</h2>
+  <div class="plans">
+    <div class="plan"><b>Free</b><div>$0</div><span class="go">Get started</span></div>
+    <div class="plan"><b>Core</b><div>$19</div><span class="go">Get started</span></div>
+    <div class="plan pro"><b>Pro</b><div>$29</div><span class="go">Get started</span></div>
+  </div>
+</main>
+</body>
+</html>

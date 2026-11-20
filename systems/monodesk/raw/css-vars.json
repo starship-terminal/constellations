@@ -1,0 +1,220 @@
+{
+  "url": "https://www.monodesk.com/",
+  "title": "MonoDesk: All-in-One Workspace for Freelance Creatives",
+  "capturedAt": "2026-11-20T21:14:39.740Z",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(33, 33, 33)",
+  "bodyColor": "rgb(231, 231, 231)",
+  "bodyFont": "Geist, system-ui, sans-serif",
+  "rules": [
+    {
+      "file": "https://www.monodesk.com/_astro/HeroHeader4.CETh2KVk.css",
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--brand-white": "#ffffff",
+        "--brand-orange": "#ff5b26",
+        "--brand-highlighter": "#d1ff6e",
+        "--brand-blue": "#1c64f5",
+        "--brand-grey": "#94959a",
+        "--brand-almost-black": "#272727",
+        "--brand-fun-green": "#026232",
+        "--surface-tint": "#eef2f5",
+        "--surface-white": "#343434",
+        "--background": "#dadee1",
+        "--type": "#161616",
+        "--type-light": "#e7e7e7",
+        "--type-60": "rgba(22, 22, 22, .6)",
+        "--type-40": "rgba(223, 223, 223, .4)",
+        "--type-light-60": "rgba(223, 223, 223, .6)",
+        "--type-light-40": "rgba(223, 223, 223, .4)",
+        "--spacing-xs": "8px",
+        "--spacing-sm": "16px",
+        "--spacing-md": "24px",
+        "--spacing-lg": "40px",
+        "--spacing-xl": "60px",
+        "--spacing-2xl": "80px",
+        "--radius-sm": "10px",
+        "--radius-md": "14px",
+        "--radius-lg": "16px",
+        "--radius-xl": "20px",
+        "--radius-2xl": "30px",
+        "--folder-video-x": "80px",
+        "--folder-text-x": "60px",
+        "--folder-text-y": "0px"
+      }
+    },
+    {
+      "file": "https://www.monodesk.com/_astro/HeroHeader4.CETh2KVk.css",
+      "selector": ".hero-v4",
+      "context": [],
+      "properties": {
+        "--hv4-w": "min(1100px, 80vw)",
+        "--hv4-frame-h": "calc(var(--hv4-w) * .5625 + 40px)",
+        "--hv4-overhang": "calc(var(--hv4-frame-h) * .42)"
+      }
+    },
+    {
+      "file": "https://www.monodesk.com/_astro/HeroHeader4.CETh2KVk.css",
+      "selector": ".hero-v4",
+      "context": [
+        "@media (max-height: 860px) and (min-width: 1201px)"
+      ],
+      "properties": {
+        "--hv4-w": "min(950px, 72vw)"
+      }
+    },
+    {
+      "file": "https://www.monodesk.com/_astro/geist-mono-latin-wght-normal.BaKzfqRH.css",
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--brand-white": "#ffffff",
+        "--brand-orange": "#ff5b26",
+        "--brand-highlighter": "#d1ff6e",
+        "--brand-blue": "#1c64f5",
+        "--brand-grey": "#94959a",
+        "--brand-almost-black": "#272727",
+        "--brand-fun-green": "#026232",
+        "--surface-tint": "#eef2f5",
+        "--surface-white": "#343434",
+        "--background": "#dadee1",
+        "--type": "#161616",
+        "--type-light": "#e7e7e7",
+        "--type-60": "rgba(22, 22, 22, .6)",
+        "--type-40": "rgba(223, 223, 223, .4)",
+        "--type-light-60": "rgba(223, 223, 223, .6)",
+        "--type-light-40": "rgba(223, 223, 223, .4)",
+        "--spacing-xs": "8px",
+        "--spacing-sm": "16px",
+        "--spacing-md": "24px",
+        "--spacing-lg": "40px",
+        "--spacing-xl": "60px",
+        "--spacing-2xl": "80px",
+        "--spacing-xl-fluid": "clamp(40px, 4vw, 60px)",
+        "--spacing-2xl-fluid": "clamp(60px, 5.5vw, 80px)",
+        "--radius-sm": "10px",
+        "--radius-md": "14px",
+        "--radius-lg": "16px",
+        "--radius-xl": "20px",
+        "--radius-2xl": "30px",
+        "--cutting-mat-bg-size": "1920px auto",
+        "--layout-page-max": "1320px",
+        "--layout-inset-fluid": "max( 60px, calc((100vw - var(--layout-page-max)) / 4 + 60px) )",
+        "--layout-inset-fluid-sm": "24px",
+        "--layout-max-centered": "1200px"
+      }
+    },
+    {
+      "file": "https://www.monodesk.com/_astro/geist-mono-latin-wght-normal.BaKzfqRH.css",
+      "selector": ":root",
+      "context": [
+        "@media (max-width: 1024px)"
+      ],
+      "properties": {
+        "--layout-inset-fluid": "max(40px, calc((100vw - 900px)/4 + 40px) )"
+      }
+    },
+    {
+      "file": "https://www.monodesk.com/_astro/geist-mono-latin-wght-normal.BaKzfqRH.css",
+      "selector": ":root",
+      "context": [
+        "@media (max-width: 768px)"
+      ],
+      "properties": {
+        "--layout-inset-fluid": "var(--layout-inset-fluid-sm)"
+      }
+    }
+  ],
+  "fonts": [
+    {
+      "file": "https://www.monodesk.com/_astro/geist-mono-latin-wght-normal.BaKzfqRH.css",
+      "font-family": "Geist",
+      "font-style": "normal",
+      "font-display": "swap",
+      "font-weight": "100 900",
+      "src": "url(\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\") format(\"woff2-variations\")",
+      "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+    },
+    {
+      "file": "https://www.monodesk.com/_astro/geist-mono-latin-wght-normal.BaKzfqRH.css",
+      "font-family": "Geist",
+      "font-style": "normal",
+      "font-display": "swap",
+      "font-weight": "100 900",
+      "src": "url(\"/_astro/geist-latin-ext-wght-normal.DC-KSUi6.woff2\") format(\"woff2-variations\")",
+      "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+    },
+    {
+      "file": "https://www.monodesk.com/_astro/geist-mono-latin-wght-normal.BaKzfqRH.css",
+      "font-family": "\"Geist Mono\"",
+      "font-style": "normal",
+      "font-display": "swap",
+      "font-weight": "100 900",
+      "src": "url(\"/_astro/geist-mono-latin-wght-normal.XN7g48iV.woff2\") format(\"woff2-variations\")",
+      "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+    },
+    {
+      "file": "https://www.monodesk.com/_astro/geist-mono-latin-wght-normal.BaKzfqRH.css",
+      "font-family": "\"Geist Mono\"",
+      "font-style": "normal",
+      "font-display": "swap",
+      "font-weight": "100 900",
+      "src": "url(\"/_astro/geist-mono-latin-ext-wght-normal.Bwz-egvJ.woff2\") format(\"woff2-variations\")",
+      "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+    }
+  ],
+  "errors": [
+    {
+      "file": "https://accounts.google.com/gsi/style",
+      "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules"
+    }
+  ],
+  "resolved": {
+    "--brand-white": "#ffffff",
+    "--brand-orange": "#ff5b26",
+    "--brand-highlighter": "#d1ff6e",
+    "--brand-blue": "#1c64f5",
+    "--brand-grey": "#94959a",
+    "--brand-almost-black": "#272727",
+    "--brand-fun-green": "#026232",
+    "--surface-tint": "#eef2f5",
+    "--surface-white": "#343434",
+    "--background": "#dadee1",
+    "--type": "#161616",
+    "--type-light": "#e7e7e7",
+    "--type-60": "rgba(22, 22, 22, .6)",
+    "--type-40": "rgba(223, 223, 223, .4)",
+    "--type-light-60": "rgba(223, 223, 223, .6)",
+    "--type-light-40": "rgba(223, 223, 223, .4)",
+    "--spacing-xs": "8px",
+    "--spacing-sm": "16px",
+    "--spacing-md": "24px",
+    "--spacing-lg": "40px",
+    "--spacing-xl": "60px",
+    "--spacing-2xl": "80px",
+    "--radius-sm": "10px",
+    "--radius-md": "14px",
+    "--radius-lg": "16px",
+    "--radius-xl": "20px",
+    "--radius-2xl": "30px",
+    "--folder-video-x": "80px",
+    "--folder-text-x": "60px",
+    "--folder-text-y": "0px",
+    "--hv4-w": "",
+    "--hv4-frame-h": "",
+    "--hv4-overhang": "",
+    "--spacing-xl-fluid": "clamp(40px, 4vw, 60px)",
+    "--spacing-2xl-fluid": "clamp(60px, 5.5vw, 80px)",
+    "--cutting-mat-bg-size": "1920px auto",
+    "--layout-page-max": "1320px",
+    "--layout-inset-fluid": "max( 60px, calc((100vw - 1320px) / 4 + 60px) )",
+    "--layout-inset-fluid-sm": "24px",
+    "--layout-max-centered": "1200px"
+  },
+  "brand": {
+    "themeColor": null,
+    "maskIcon": null,
+    "manifest": null
+  }
+}
