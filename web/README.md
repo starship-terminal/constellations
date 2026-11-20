@@ -23,7 +23,16 @@ lives in the browser:
    0700, file mode 0600. The variable must be an absolute path outside the
    checkout; both servers expand a leading `~/` themselves and refuse a
    relative path or a folder inside the checkout, which the chat then
-   reports, so they can never end up holding two different keys. Every change is one statement, so SQLite's own locking makes it
+   reports, so they can never end up holding two different keys. "Inside
+   the checkout" compares real paths too, so a symlink into it counts, and
+   it ignores letter case where the disk does (tested on the disk, not
+   assumed from the platform); it applies only when the server's root
+   really is a checkout (it holds `catalog.json` or `.git`), so a process
+   started from `/` is not refused everything. A refused or unreadable
+   folder also turns off `ANTHROPIC_API_KEY`: the variable says where a
+   saved key is meant to live, so running on the env key would spend a key
+   the operator may not mean to and hide the mistake. The chat shows the
+   error until the variable is fixed. Every change is one statement, so SQLite's own locking makes it
    atomic across both servers, and a crashed process never leaves a lock
    behind. A model change applies only while the saved key and endpoint are
    the ones the page was editing. The database uses SQLite's rollback

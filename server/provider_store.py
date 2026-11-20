@@ -115,10 +115,66 @@ def config_dir() -> Path:
     else:
         raise StoreError(CONFIG_DIR_HELP)
     d = Path(os.path.normpath(d))
-    for root in {Path(os.path.normpath(REPO_ROOT)), REPO_ROOT.resolve()}:
-        if d == root or root in d.parents:
-            raise StoreError(CONFIG_DIR_HELP)
+    if inside_checkout(d, REPO_ROOT):
+        raise StoreError(CONFIG_DIR_HELP)
     return d
+
+
+def _inside(child: str, parent: str) -> bool:
+    return child == parent or child.startswith(parent.rstrip(os.sep) + os.sep)
+
+
+def _real_of_nearest(p: Path) -> str:
+    """`p` with its nearest existing ancestor replaced by that ancestor's real
+    path (symlinks resolved), and the part that does not exist yet appended."""
+    cur = os.path.normpath(os.path.abspath(p))
+    rest: list[str] = []
+    while True:
+        if os.path.exists(cur):
+            return os.path.join(os.path.realpath(cur), *reversed(rest))
+        up = os.path.dirname(cur)
+        if up == cur:
+            return os.path.normpath(os.path.abspath(p))
+        rest.append(os.path.basename(cur))
+        cur = up
+
+
+def case_insensitive_at(existing: str) -> bool:
+    """Whether the filesystem holding `existing` ignores letter case, found by
+    testing it rather than by platform: the same path with the case of its
+    last lettered part swapped is the same file."""
+    parts = existing.split(os.sep)
+    for i in range(len(parts) - 1, -1, -1):
+        swapped = parts[i].swapcase()
+        if swapped == parts[i]:
+            continue
+        variant = os.sep.join(parts[:i] + [swapped] + parts[i + 1:])
+        try:
+            a, b = os.stat(existing), os.stat(variant)
+        except OSError:
+            return False
+        return (a.st_dev, a.st_ino) == (b.st_dev, b.st_ino)
+    return False
+
+
+def is_checkout(root: Path) -> bool:
+    """Whether `root` really is a checkout (it holds catalog.json or .git)."""
+    return (root / "catalog.json").exists() or (root / ".git").exists()
+
+
+def inside_checkout(d: Path, root: Path) -> bool:
+    """Whether `d` is inside the checkout at `root`: compared as typed, and as
+    real paths (a symlink into the checkout counts), case-folded where the
+    filesystem ignores case. web/lib/provider-store.ts has the same rule."""
+    if not is_checkout(root):
+        return False
+    if _inside(os.path.normpath(os.path.abspath(d)), os.path.normpath(os.path.abspath(root))):
+        return True
+    real_root = _real_of_nearest(root)
+    real_d = _real_of_nearest(d)
+    if case_insensitive_at(real_root):
+        real_d, real_root = real_d.lower(), real_root.lower()
+    return _inside(real_d, real_root)
 
 
 def provider_file() -> Path:
