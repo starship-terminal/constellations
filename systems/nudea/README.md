@@ -14,7 +14,7 @@ Nudea is a Shopify store for underwear and sleepwear (nudea.com). This package r
 | [screenshots/](screenshots) | Nine public pages, desktop and phone |
 | [raw/](raw/readings.json) | The computed styles and custom properties the tokens come from |
 | [icon.png](icon.png) | Site icon |
-| [tools/](tools) | The kit copy and the builder that writes tokens.json |
+| [tools/](tools) | The builder that writes tokens.json, and its test. `capture/signed-in/` holds only the kit's page-copy privacy guards; no kit capture script took these readings |
 
 ## Brief
 
