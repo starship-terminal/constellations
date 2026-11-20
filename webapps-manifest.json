@@ -2731,9 +2731,9 @@
       "description": "The complete AI-first customer service solution",
       "status": "pending",
       "package": null,
-      "notes": "https://app.intercom.com/admins/sign_in asks for work email and password, or Google or SAML SSO. No code was sent.",
+      "notes": "https://app.intercom.com/admins/sign_in asks for work email and password, or Google or SAML SSO. No code was sent. Public walk 2026-11-21: Product, Customers, and Resources each opened a menu. Pricing, Contact sales, View demo, and the product routes loaded publicly. The Fin 4 button opened a dialog. The phone menu button opened a sheet whose sections match the desktop menus. Log in stops at https://app.intercom.com/admins/sign_in. Start free trial stops at /signup. Both were not entered. The contact form was not submitted past step one. Public package in PR 1535 at 8f1cc4096203. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 8
     },
     {
@@ -3472,9 +3472,9 @@
       "description": "User insights at the speed of product development",
       "status": "pending",
       "package": null,
-      "notes": "https://auth.maze.co/login shows email and password under a cookie banner. Banner not accepted. Password not submitted.",
+      "notes": "https://auth.maze.co/login shows email and password under a cookie banner. Banner not accepted. Password not submitted. Public walk 2026-11-21: header opened PLATFORM, SOLUTIONS, RESOURCES, and CUSTOMERS hover menus, plus Pricing, Log in, Try Maze for free, and Get a demo. Phone Open navigation opened the same destinations. Login at https://auth.maze.co/login was photographed empty and not entered. Signup was not entered. The demo form was not submitted. CookieYes was hidden and never accepted. https://maze.co/product-updates/ returned 403. Public package in PR 1536 at e85556d910db. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 10
     },
     {
