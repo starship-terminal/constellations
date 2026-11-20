@@ -31,6 +31,23 @@ class CssColour(unittest.TestCase):
             self.assertIn("from '../css-colour.mjs'", (CAPTURE / rel).read_text(), rel)
 
 
+# Node test files with a runner of their own elsewhere under tools/ (test_capture_screenshot.py, test_kit_motion.py).
+NODE_RUN_ELSEWHERE = {"test_screenshot.mjs", "test_motion.mjs"}
+
+
+@unittest.skipIf(NODE is None, "node is not on PATH")
+class KitNodeTests(unittest.TestCase):
+    def test_every_other_kit_node_test_file_passes(self):
+        # Any tools/kit/**/test_*.mjs, so a new one runs under `make test` without its own runner.
+        files = sorted(p for p in (HERE / "kit").rglob("test_*.mjs") if p.name not in NODE_RUN_ELSEWHERE)
+        self.assertIn(CAPTURE / "test_readings.mjs", files)
+        for f in files:
+            res = subprocess.run([NODE, "--test", str(f)], capture_output=True, text=True, timeout=120)
+            self.assertEqual(res.returncode, 0, f"{f.relative_to(HERE.parent)}\n{res.stdout[-3000:]}{res.stderr[-1000:]}")
+        for name in NODE_RUN_ELSEWHERE:
+            self.assertTrue((CAPTURE / name).is_file(), name)
+
+
 @unittest.skipIf(NODE is None, "node is not on PATH")
 class CheckoutPaths(unittest.TestCase):
     def test_measurement_builders_find_the_package_under_a_path_with_a_space(self):
