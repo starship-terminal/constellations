@@ -21,7 +21,7 @@
 // cleared, never submitted.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, AUTH_BASE, DOCS_BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, hoverNavMenu, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, AUTH_BASE, DOCS_BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, hoverNavMenu, RAW, REF, CROPS, UA, UA_MOBILE } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -222,7 +222,16 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (opts.noToggle) via = 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (st === 'focus-visible' && via === 'focus failed') {
+        // Keyboard focus never reached the element, so a reading now would be the element at rest
+        // saved as its focus. Record the miss instead (the builders list it as "focus could not be
+        // captured"), and drop the crop an earlier run saved for this state.
+        const prevSt = out.components[key].states[st];
+        const old = prevSt?.crop && path.resolve(REF, prevSt.crop);
+        if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
+        out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via, run };
+        log('  -', key, st, 'skipped: focus failed');
+      } else await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
       if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
@@ -279,6 +288,7 @@ async function sheetsFor(key) {
 // Whether the page paints a different transition under prefers-reduced-motion:
 // the same component re-read in a context with reduce on.
 async function reducedMotion(key, sel) {
+  const slot = `${key} ${sel}`; // one entry per element, so a second call cannot overwrite the first
   out._meta.reducedMotion ??= {};
   try {
     const b = context.browser();
@@ -294,9 +304,9 @@ async function reducedMotion(key, sel) {
       const cs = getComputedStyle(el);
       return { transition: cs.transition, animation: cs.animation, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
     }, sel).catch(() => null);
-    out._meta.reducedMotion[key] = { selector: sel, reduce: v };
+    out._meta.reducedMotion[slot] = { page: key, selector: sel, reduce: v };
     await ctx.close();
-  } catch (e) { out._meta.reducedMotion[key] = { selector: sel, error: String(e).slice(0, 120) }; }
+  } catch (e) { out._meta.reducedMotion[slot] = { page: key, selector: sel, error: String(e).slice(0, 120) }; }
 }
 
 const G = {
@@ -320,17 +330,6 @@ async function openProducts() {
 
 // A pricing use-case pill ("Chatbots" etc.) — a local toggle that switches
 // the price calculator's scenario, never a form post.
-async function clickPricingPill() {
-  const b = await page.evaluate(() => {
-    const el = [...document.querySelectorAll('button')].find((x) => (x.innerText || '').trim() === 'Chatbots' && x.getBoundingClientRect().width > 0);
-    if (!el) return false;
-    el.click();
-    return true;
-  });
-  await page.waitForTimeout(900);
-  return b ? 'clicked "Chatbots" to switch the pricing scenario' : 'no use-case pill found';
-}
-
 // The mobile nav: the "Toggle menu" button opens a drawer — a local toggle,
 // its links never followed.
 async function openMobileNav() {
@@ -408,7 +407,9 @@ async function pricing() {
   await S('plan-price', await domFind(page, /^(Free|Pay as you go|Custom)$/, { sel: 'p, h2, h3, div, span', tag: 'planprice', minW: 40, minH: 16 }), ['default'], { group: g, title: 'Plan price', desc: 'A plan card\'s price line ("Free" / "Pay as you go" / "Custom").', sel: 'plan price' });
   await S('plan-cta', await domFind(page, /^(Start building for free|Get an API key|Upgrade now|Talk to sales)$/, { sel: 'button, a', tag: 'plancta' }), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s action ("Start building for free" / "Get an API key" / "Talk to sales"); measured never pressed.', sel: 'plan CTA' });
   await S('plan-includes', await domFind(page, /Everything in Starter|MCP server access/, { sel: 'li, div', tag: 'planinc', minW: 100, minH: 16 }), ['default'], { group: g, title: 'Plan feature row', desc: 'A checkmarked "Includes:" feature row inside a plan card.', sel: 'plan includes row' });
-  await S('pricing-pill', q('button').filter({ hasText: /^\s*(Coding agents|Chatbots|News monitoring|Enrichments|Voice agents|People search|Company search)\s*$/ }), [...B4, 'opened'], { group: g, title: 'Use-case pill', desc: 'A pricing scenario pill (Coding agents / Chatbots / …); its own toggle switches the estimate — a local control, never a form post.', sel: 'pricing use-case pill' }, { open: clickPricingPill, noToggle: true });
+  // One pill, read at rest and then selected by its own click: the 2026-11-13 run clicked
+  // "Chatbots" before the loop and then measured "Coding agents" in every state.
+  await S('pricing-pill', q('button').filter({ hasText: /^\s*Chatbots\s*$/ }), [...B4, 'opened'], { group: g, title: 'Use-case pill', desc: 'A pricing scenario pill ("Chatbots"), at rest and selected by its own click; its toggle switches the estimate — a local control, never a form post.', sel: 'pricing use-case pill (Chatbots)' });
   await S('pricing-h1', q('h1'), ['default'], { group: g, title: 'Pricing headline', desc: '"Start searching for free" — the pricing page heading.', sel: 'pricing h1' }, { noScroll: true });
   save();
 }
@@ -431,7 +432,9 @@ async function signin() {
   await sheetsFor('signin');
   await chrome('signin');
   const g = G.signin;
-  await S('auth-card', q('form, main, [class*="card" i]'), ['default'], { group: g, title: 'Login card', desc: 'The "Start building with Exa" sign-in card on auth.exa.ai: heading, Continue-with-Google and Continue-with-email buttons, the e-mail field, SSO link and a code sample — measured, never submitted.', sel: 'login card' }, { noScroll: true });
+  // The innermost block holding the heading and both buttons: `form, main, [class*=card]`
+  // caught the 360 x 98 e-mail form on 2026-11-13.
+  await S('auth-card', await domFind(page, /Start building with Exa[\s\S]*Continue with email/, { sel: 'div, section, main', tag: 'authcard', minW: 300, minH: 200 }), ['default'], { group: g, title: 'Login card', desc: 'The "Start building with Exa" sign-in card on auth.exa.ai: heading, Continue-with-Google and Continue-with-email buttons, the e-mail field, SSO link and a code sample — measured, never submitted.', sel: 'login card' }, { noScroll: true });
   await S('auth-heading', q('h1'), ['default'], { group: g, title: 'Login heading', desc: '"Start building with Exa".', sel: 'login h1' }, { noScroll: true });
   await S('auth-google', await domFind(page, /Continue with Google/, { sel: 'button, a', tag: 'authg' }), B4, { group: g, title: 'Google button', desc: 'The "Continue with Google" OAuth button; measured never pressed.', sel: 'Continue with Google' }, { noScroll: true });
   await S('auth-email-btn', await domFind(page, /Continue with email/, { sel: 'button, a', tag: 'authe' }), B4, { group: g, title: 'Email button', desc: 'The "Continue with email" button; measured never pressed.', sel: 'Continue with email' }, { noScroll: true });
@@ -482,19 +485,27 @@ const browser = launched.browser;
 context = launched.context;
 run = new Date().toISOString();
 out._meta.read = run.slice(0, 10);
+const finishedPages = new Set();
 try {
   for (const k of Object.keys(PAGES)) {
     if (want.length && !want.includes(k)) continue;
     await PAGES[k]();
+    finishedPages.add(k);
   }
-  await reducedMotion('home', 'div.header');
-  await reducedMotion('home', 'h1');
+  // Controls that declare a transition (the header links transition colour over 0.15s); a
+  // heading with no transition says nothing about reduced motion.
+  await reducedMotion('home', 'div.header a');
+  await reducedMotion('home', 'button[aria-label="Run preview"]');
 } finally {
   for (const k of failedPages) log('blocked:', k);
-  // Prune components from pages that measured nothing this run — except ones
-  // the run was gated from, which keep their earlier evidence.
+  // An untouched entry is pruned only when its page finished this run (a page the run never
+  // reached, or an edge-blocked one, keeps its earlier readings under their own provenance), and
+  // a touched entry keeps only the states this run's spec lists. comp() stamps every touched
+  // entry with this run, so the old `c.run === run` guard could never prune anything.
   for (const [k, c] of Object.entries(out.components)) {
-    if (!touched.has(k) && c.run === run && !failedPages.has(c.page)) delete out.components[k];
+    if (!touched.has(k) && finishedPages.has(c.page) && !failedPages.has(c.page)) { delete out.components[k]; continue; }
+    const wantSt = listed.get(k);
+    if (wantSt) for (const st of Object.keys(c.states || {})) if (!wantSt.has(st)) delete c.states[st];
   }
   save();
   if (liveCtx) await liveCtx.close().catch(() => {});

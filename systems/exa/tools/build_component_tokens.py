@@ -93,11 +93,7 @@ SPEC = {"_about": (
     "the marketing and sign-in roles under light.*; the docs roles under "
     "light.* and dark.*. Measured roles alias the declared values they "
     "match."),
-    "core": {}, "light": {}, "dark": {}, "component": {}}
-
-
-def st(comp, state):
-    return C[comp]["states"][state]["style"]
+    "core": {}, "light": {}, "dark": {}, "component": {}, "_gaps": []}
 
 
 def rc(comp, state, key):
@@ -241,15 +237,72 @@ def css_color(v):
     return norm_color(v)
 
 
-def have(comp, state, prop=None):
-    try:
-        s = st(comp, state)
-        return prop is None or bool((s.get(prop) or "").strip())
-    except KeyError:
-        return False
-
-
 COLOR_FULL = re.compile(r"(#[0-9a-fA-F]{3,8}|rgba?\([^)]*\))")
+
+
+def need(comp, state, prop=None):
+    """The style (or one property) of a reading a row relies on. A renamed or missing
+    component, state or property stops the build: a silent skip would drop the token and
+    still pass."""
+    try:
+        s = C[comp]["states"][state]
+    except KeyError:
+        raise SystemExit(f"{comp} {state}: no such reading in raw/components-computed.json; fix the row or recapture")
+    if "style" not in s or s.get("skipped") or s.get("via") == "focus failed":
+        raise SystemExit(f"{comp} {state}: no usable reading ({s.get('skipped') or s.get('error') or s.get('via')})")
+    if prop is None:
+        return s["style"]
+    v = s["style"].get(prop)
+    if v is None or not str(v).strip():
+        raise SystemExit(f"{comp} {state}: no {prop} in its reading")
+    return v
+
+
+def gap(path, why):
+    """A token the spec deliberately leaves out, with the reason; written to
+    raw/component-tokens.json `_gaps` so the omission is on the record."""
+    SPEC["_gaps"].append({"token": path, "why": why})
+
+
+def transparent(v):
+    return bool(re.fullmatch(r"rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0\s*\)", css_color(v)))
+
+
+def split_list(v):
+    """Top-level comma split of a computed list value (transitions, shadows)."""
+    return [p.strip() for p in re.split(r",\s*(?![^()]*\))", v or "") if p.strip()]
+
+
+def painted_ring(sty):
+    """(colour, how) of the focus ring a state really paints, from its computed style: a drawn
+    outline (a real style, not none or the browser's own `auto` ring, and a width above 0), else
+    the outermost visible box-shadow layer with a spread. Ported from fal's builder."""
+    if sty.get("outlineStyle", "none") not in ("none", "auto") and float(sty.get("outlineWidth", "0px")[:-2] or 0) > 0 \
+            and not transparent(sty.get("outlineColor")):
+        return sty["outlineColor"], f"outline {sty['outlineWidth']} {sty['outlineStyle']}"
+    ring = None
+    for layer in split_list(sty.get("boxShadow", "none")):
+        m = re.match(r"^(rgba?\([^)]*\))\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(\s+inset)?$", layer)
+        if not m or m.group(6) or float(m.group(5)) <= 0 or transparent(m.group(1)):
+            continue
+        ring = (m.group(1), f"box-shadow {m.group(5)}px spread")
+    return ring
+
+
+def fill(comp, state, prop, parent=False):
+    """(raw colour, source) of a surface. A transparent reading is no surface: with parent=True
+    (the row names a container the element sits in) the parent's painted background is used,
+    otherwise (None, why) so the caller records a gap."""
+    raw = need(comp, state, prop)
+    if not transparent(raw):
+        return raw, f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+    if parent:
+        a = next((a for a in C[comp]["states"][state].get("ancestors") or []
+                  if a.get("up") == 1 and a.get("bg") and not transparent(a["bg"])), None)
+        if a:
+            return a["bg"], (f"the background of {comp}'s parent {a['node']} {state} (raw/components-computed.json "
+                             f"ancestors); {comp} itself computes a transparent {prop}")
+    return None, f"{comp} {state} computes a transparent {prop} (rgba(0, 0, 0, 0)) and paints no fill of its own"
 
 
 def lit(value, ty, src, desc):
@@ -258,22 +311,6 @@ def lit(value, ty, src, desc):
 
 colors = SPEC["core"].setdefault("color", {})
 color_alias = {}   # normalized colour -> 'color.<path>' for aliasing measured roles
-
-
-def palette(node, m, names, where, skip=()):
-    """Emit one leaf per declared variable; names are sorted and a re or a
-    callable pulls the token key off the var name."""
-    for name in sorted(n for n in m if (n in names if isinstance(names, (set, list, tuple)) else names(n))):
-        if name in skip:
-            continue
-        key = name
-        if isinstance(names, str) and name.startswith(names):
-            key = name[len(names):]
-        ty = "color" if COLOR_FULL.fullmatch(str(m[name]).strip()) else "other"
-        node[key] = {"var": name, "type": ty, "surface": where,
-                     "description": f"The declared `{name}`."}
-        if ty == "color":
-            color_alias.setdefault(norm_color(m[name]), None)  # path set by caller's node path
 
 
 # ------------------------------------------------------------- marketing palette
@@ -406,7 +443,7 @@ for name in sorted(k for k in RLD if k.startswith("--color-")):
         parts = rest.split("-", 1)
         grp, key = parts[0], (parts[1] if len(parts) > 1 else "default")
     ty = "color" if COLOR_FULL.fullmatch(str(RLD[name]).strip()) else "other"
-    node = mlp.setdefault(grp, {}) if grp not in ("black", "white", "primary", "cream", "cream-dark", "background-primary", "background-secondary", "overlay") and key != "default" or re.fullmatch(r"(?:exa-)?[a-z]+", grp) else mlp
+    node = mlp.setdefault(grp, {})
     node[key] = var(name, ty, "docs-light", description=f"The declared `{name}` — the docs' Mintlify design layer.")
     if ty == "color":
         color_alias.setdefault(norm_color(RLD[name]), f"color.docs.mintlify.{grp}.{key}")
@@ -470,9 +507,9 @@ for key, comp, state, desc in [
     ("mobile-display", "m-hero-h1", "default", "The display size at 390px."),
     ("display", "hero-h1", "default", "The marketing display size ('The world's data for AI agents')."),
 ]:
-    if have(comp, state, "fontSize"):
-        size[key] = lit(ts(comp, state, "fontSize"), "fontSize",
-                        f"computed fontSize of {comp} {state} (raw/components-computed.json)", desc)
+    need(comp, state, "fontSize")
+    size[key] = lit(ts(comp, state, "fontSize"), "dimension",
+                    f"computed fontSize of {comp} {state} (raw/components-computed.json)", desc)
 
 lh = SPEC["core"].setdefault("font", {}).setdefault("lineHeight", {})
 for name, key, desc in [
@@ -490,9 +527,9 @@ for key, comp, desc in [
     ("auth", "auth-google", "The sign-in button's leading."),
 ]:
     state = "default"
-    if have(comp, state, "lineHeight"):
-        lh[key] = lit(ts(comp, state, "lineHeight"), "dimension",
-                      f"computed lineHeight of {comp} {state} (raw/components-computed.json)", desc)
+    need(comp, state, "lineHeight")
+    lh[key] = lit(ts(comp, state, "lineHeight"), "dimension",
+                  f"computed lineHeight of {comp} {state} (raw/components-computed.json)", desc)
 
 tr = SPEC["core"].setdefault("font", {}).setdefault("tracking", {})
 for name, key, desc in [
@@ -508,7 +545,8 @@ for key, comp, desc in [
     ("nav", "mkt-nav-link", "The header link's tracking."),
 ]:
     state = "default"
-    if have(comp, state, "letterSpacing") and ts(comp, state, "letterSpacing") != "normal":
+    need(comp, state, "letterSpacing")
+    if ts(comp, state, "letterSpacing") != "normal":
         tr[key] = lit(ts(comp, state, "letterSpacing"), "dimension",
                       f"computed letterSpacing of {comp} {state} (raw/components-computed.json)", desc)
 
@@ -559,13 +597,15 @@ for key, comp, state, prop, desc in [
     ("search", "docs-search", "default", "borderTopLeftRadius", "The docs search pill radius."),
 ]:
     if prop == "paint:radius":
+        need(comp, state)
         try:
-            radii.setdefault(key + "-measured", lit(painted(comp, state, "radius"), "dimension",
-                f"the painted radius of {comp}'s rounded child {state} (raw/components-computed.json paint list)", desc))
+            v = painted(comp, state, "radius")
         except KeyError:
-            pass
-    elif have(comp, state, prop):
-        radii.setdefault(key + "-measured", lit(st(comp, state)[prop], "dimension",
+            raise SystemExit(f"{comp} {state}: no painted radius in its paint list")
+        radii.setdefault(key + "-measured", lit(v, "dimension",
+            f"the painted radius of {comp}'s rounded child {state} (raw/components-computed.json paint list)", desc))
+    else:
+        radii.setdefault(key + "-measured", lit(need(comp, state, prop), "dimension",
             f"computed {prop} of {comp} {state} (raw/components-computed.json)", desc))
 
 # ------------------------------------------------------------- elevation
@@ -577,11 +617,17 @@ for key, comp, prop, desc in [
     ("cta", "hero-cta", "boxShadow", "The CTA's shadow."),
 ]:
     state = "default"
-    try:
-        shadow = painted(comp, state, "shadow") if prop == "paint:shadow" else st(comp, state)[prop]
-    except KeyError:
-        continue
-    if shadow and shadow != "none":
+    if prop == "paint:shadow":
+        need(comp, state)
+        try:
+            shadow = painted(comp, state, "shadow")
+        except KeyError:
+            raise SystemExit(f"{comp} {state}: no painted shadow in its paint list")
+    else:
+        shadow = need(comp, state, prop)
+    if shadow == "none":
+        gap(f"core.shadow.{key}", f"{comp} {state} computes no box-shadow")
+    else:
         src = (f"the painted shadow of {comp}'s rounded child {state} (raw/components-computed.json paint list)"
                if prop == "paint:shadow" else
                f"computed boxShadow of {comp} {state} (raw/components-computed.json)")
@@ -613,25 +659,36 @@ for name, m, key, ty, desc in [
 ]:
     if name in m:
         mo[key] = var(name, ty, "docs-light" if m is RLD else "marketing", description=desc)
-try:
-    s = st("mkt-nav-link", "default")
-    dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
-    if dur and dur != "0s":
-        mo["control"] = lit(f"{s.get('transitionProperty', 'all')} {dur} {ease or ''}".strip(), "other",
-                            "computed transition of mkt-nav-link default (raw/components-computed.json)",
-                            "The marketing nav control's transition.")
-except KeyError:
-    pass
-try:
-    rm = json.loads((RAW / "components-computed.json").read_text())["_meta"]["reducedMotion"]
-    for pg, info in rm.items():
-        tr_ = (info.get("reduce") or {}).get("transition")
-        if tr_:
-            mo.setdefault("control-reduced", lit(tr_, "other",
-                f"transition still applied under prefers-reduced-motion on {pg} (raw/components-computed.json)",
-                "The control transition that survives reduced motion."))
-except (KeyError, TypeError):
-    pass
+
+
+def transition(s):
+    """The transition shorthand of a computed style, one `<property> <duration> <easing>` item
+    per property: CSS repeats the duration and easing lists to the length of the property list,
+    so they are paired by index, never pasted after the whole property list."""
+    props = split_list(s.get("transitionProperty") or "all")
+    durs = split_list(s.get("transitionDuration") or "0s")
+    eases = split_list(s.get("transitionTimingFunction") or "ease")
+    return ", ".join(f"{p} {durs[i % len(durs)]} {eases[i % len(eases)]}" for i, p in enumerate(props))
+
+
+if need("mkt-nav-link", "default", "transitionDuration") != "0s":
+    mo["control"] = lit(transition(need("mkt-nav-link", "default")), "other",
+                        "computed transition of mkt-nav-link default (raw/components-computed.json)",
+                        "The marketing nav control's transition.")
+else:
+    gap("core.motion.control", "mkt-nav-link default declares no transition")
+# A reduced-motion reading counts only when it names a transition with a non-zero duration:
+# Chrome reports a declared-nothing transition as "all", which is not a transition at all.
+rm = json.loads((RAW / "components-computed.json").read_text())["_meta"].get("reducedMotion") or {}
+for slot, info in rm.items():
+    tr_ = (info.get("reduce") or {}).get("transition") or ""
+    if re.search(r"(?<![\d.])(?!0s\b)(?!0ms\b)\d*\.?\d+m?s\b", tr_):
+        mo.setdefault("control-reduced", lit(tr_, "other",
+            f"transition of {info.get('selector')} still applied under prefers-reduced-motion on {info.get('page', slot)} (raw/components-computed.json)",
+            "The control transition that survives reduced motion."))
+if "control-reduced" not in mo:
+    gap("core.motion.control-reduced", "no reduced-motion reading names a running transition: "
+        + "; ".join(f"{i.get('selector')} on {i.get('page', k)} computes {((i.get('reduce') or {}).get('transition'))!r}" for k, i in rm.items()))
 
 # ------------------------------------------------------------- breakpoints
 #
@@ -692,9 +749,17 @@ for name in sorted(k for k in RDD if re.fullmatch(r"--color-(background|brand|ne
 # --------------------------------------------- measured roles
 
 role_alias = {"light": dict(color_alias), "dark": dict(color_alias)}
-for name in ("--default-border-color", "--primary", "--docs-accent"):
-    role_alias["light"].setdefault(norm_color(RLD.get(name)), f"color.docs.{name.lstrip('--').replace('default-border-color', 'default-border').replace('docs-', '')}")
-    role_alias["dark"].setdefault(norm_color(RDD.get(name)), f"color.docs.{name.lstrip('--').replace('default-border-color', 'default-border').replace('docs-', '')}")
+# The paths core.color.docs emitted above for these names, so an alias can never point at a
+# path that does not exist (the old .replace('docs-', '') made --docs-accent color.docs.accent).
+DOCS_PATH = {"--default-border-color": "color.docs.default-border", "--primary": "color.docs.primary",
+             "--docs-accent": "color.docs.docs-accent"}
+for name, path in DOCS_PATH.items():
+    if name in RLD:
+        assert path.split(".")[-1] in docs_c, path
+        role_alias["light"].setdefault(norm_color(RLD.get(name)), path)
+        # core holds the docs-light value, so a dark reading may alias it only when equal
+        if norm_color(RDD.get(name)) == norm_color(RLD.get(name)):
+            role_alias["dark"].setdefault(norm_color(RDD.get(name)), path)
 
 
 def semcolor(raw, src, desc, theme="light"):
@@ -706,6 +771,46 @@ def semcolor(raw, src, desc, theme="light"):
 
 L = SPEC["light"]
 
+# Components whose reading is of another element (README Known gaps): no colour is taken from them.
+WRONG = {"auth-card": "auth-card measured the 360 x 98 e-mail form inside the card, not the card; recapture needed"}
+
+
+def role(root, where, key, comp, state, prop, desc, theme, parent=False):
+    """One measured colour role. `prop` is a computed property, "paint:bg" (the painted child's
+    background) or "ring" (the focus ring the state really paints). A reading that paints nothing
+    (a transparent fill, no ring) or comes from the wrong element is recorded under _gaps."""
+    path = f"{theme}.{where}.{key}"
+    if comp in WRONG:
+        return gap(path, f"read from the wrong element: {WRONG[comp]}")
+    if prop == "paint:bg":
+        need(comp, state)
+        try:
+            raw = painted(comp, state, "bg")
+        except KeyError:
+            raise SystemExit(f"{comp} {state}: no painted background in its paint list")
+        src = f"the painted background of {comp}'s rounded child {state} (raw/components-computed.json paint list)"
+    elif prop == "ring":
+        sty = need(comp, state)
+        ring = painted_ring(sty)
+        if not ring:
+            return gap(path, f"{comp} {state} paints no focus ring of its own: outline {sty.get('outlineWidth')} "
+                             f"{sty.get('outlineStyle')} (`auto` is the browser's ring, not a product colour), "
+                             f"box-shadow {sty.get('boxShadow')}")
+        raw, how = ring
+        src = (f"the {how} focus ring of {comp} {state} (raw/components-computed.json); "
+               f"its outline is {sty.get('outlineWidth')} {sty.get('outlineStyle')}")
+    elif prop == "backgroundColor":
+        raw, src = fill(comp, state, prop, parent)
+        if raw is None:
+            return gap(path, src)
+    else:
+        raw = need(comp, state, prop)
+        src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+    if str(raw).startswith(("oklab", "oklch")):
+        src += f"; the browser painted {raw}, converted here"
+    root[key] = semcolor(raw, src, desc, theme)
+
+
 # ---- marketing surface (light only) ----
 mkt = L.setdefault("marketing", {})
 for key, comp, state, prop, desc in [
@@ -713,7 +818,7 @@ for key, comp, state, prop, desc in [
     ("header-line", "mkt-header", "default", "borderBottomColor", "The header's hairline."),
     ("text", "mkt-nav-link", "default", "color", "The marketing header ink."),
     ("muted", "demo-output", "default", "color", "The muted text inside the demo output."),
-    ("focus", "mkt-nav-link", "focus-visible", "outlineColor", "The keyboard-focus outline on marketing links."),
+    ("focus", "mkt-nav-link", "focus-visible", "ring", "The keyboard-focus ring on marketing links."),
     ("action", "mkt-signup", "default", "backgroundColor", "The black Sign-up pill fill."),
     ("on-action", "mkt-signup", "default", "color", "White text on the Sign-up pill."),
     ("sales-border", "mkt-sales", "default", "borderTopColor", "The Contact-sales button's border."),
@@ -724,29 +829,19 @@ for key, comp, state, prop, desc in [
     ("run-fill", "demo-run", "default", "backgroundColor", "The blue Run-preview arrow fill."),
     ("announce-surface", "mkt-announce", "default", "backgroundColor", "The announcement strip's field."),
 ]:
+    role(mkt, "marketing", key, comp, state, prop, desc, "light", parent=key == "announce-surface")
+role(mkt, "marketing", "action-hover", "mkt-signup", "hover", "backgroundColor", "The Sign-up pill's hover fill.", "light")
+
+
+def placeholder(comp):
     try:
-        if prop == "paint:bg":
-            raw = painted(comp, state, "bg")
-            src = f"the painted background of {comp}'s rounded child {state} (raw/components-computed.json paint list)"
-        else:
-            raw = st(comp, state)[prop]
-            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-        mkt[key] = semcolor(raw, src, desc, "light")
+        return C[comp]["states"]["default"]["placeholder"]["color"]
     except (KeyError, TypeError):
-        pass
-try:
-    hov = css_color(st("mkt-signup", "hover")["backgroundColor"])
-    mkt.setdefault("action-hover", semcolor(
-        hov, "computed backgroundColor of mkt-signup hover (raw/components-computed.json)",
-        "The Sign-up pill's hover fill.", "light"))
-except (KeyError, TypeError):
-    pass
-try:
-    ph = C["demo-textarea"]["states"]["default"]["placeholder"]["color"]
-    mkt["placeholder"] = semcolor(ph, "computed placeholder colour of demo-textarea default (raw/components-computed.json)",
-                                  "The demo query field's placeholder.", "light")
-except (KeyError, TypeError):
-    pass
+        raise SystemExit(f"{comp} default: no placeholder colour in raw/components-computed.json")
+
+
+mkt["placeholder"] = semcolor(placeholder("demo-textarea"), "computed placeholder colour of demo-textarea default (raw/components-computed.json)",
+                              "The demo query field's placeholder.", "light")
 
 # ---- sign-in surface (light only) ----
 sgn = L.setdefault("signin", {})
@@ -762,18 +857,9 @@ for key, comp, state, prop, desc in [
     ("google-border", "auth-google", "default", "borderTopColor", "The Google button's border."),
     ("code-bg", "auth-code", "default", "backgroundColor", "The code sample's surface."),
 ]:
-    try:
-        raw = st(comp, state)[prop]
-        src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-        sgn[key] = semcolor(raw, src, desc, "light")
-    except (KeyError, TypeError):
-        pass
-try:
-    ph = C["auth-email"]["states"]["default"]["placeholder"]["color"]
-    sgn["placeholder"] = semcolor(ph, "computed placeholder colour of auth-email default (raw/components-computed.json)",
-                                  "The sign-in field's placeholder.", "light")
-except (KeyError, TypeError):
-    pass
+    role(sgn, "signin", key, comp, state, prop, desc, "light", parent=key == "code-bg")
+sgn["placeholder"] = semcolor(placeholder("auth-email"), "computed placeholder colour of auth-email default (raw/components-computed.json)",
+                              "The sign-in field's placeholder.", "light")
 
 # ---- docs measured roles, both themes ----
 for root, theme, rows in [
@@ -785,7 +871,7 @@ for root, theme, rows in [
         ("nav-active", "docs-nav-item", "default", "backgroundColor", "The active nav item's field."),
         ("code-bg", "docs-code", "default", "backgroundColor", "The code block's surface."),
         ("field", "docs-search", "default", "backgroundColor", "The search pill's field."),
-        ("focus", "docs-search", "focus-visible", "outlineColor", "The focus outline on docs controls."),
+        ("focus", "docs-search", "focus-visible", "ring", "The focus ring on docs controls."),
         ("rail-line", "docs-sidebar", "default", "borderRightColor", "The sidebar's hairline."),
         ("cta-surface", "docs-cta", "default", "backgroundColor", "The 'Add Exa to your agent' banner's field."),
     ]),
@@ -797,20 +883,13 @@ for root, theme, rows in [
         ("nav-active", "d-docs-nav-item", "default", "backgroundColor", "The active nav item's field on dark."),
         ("code-bg", "d-docs-code", "default", "backgroundColor", "The code block's surface on dark."),
         ("field", "d-docs-search", "default", "backgroundColor", "The search pill's field on dark."),
-        ("focus", "d-docs-search", "focus-visible", "outlineColor", "The focus outline on dark."),
+        ("focus", "d-docs-search", "focus-visible", "ring", "The focus ring on dark."),
         ("rail-line", "d-docs-sidebar", "default", "borderRightColor", "The sidebar's hairline on dark."),
         ("cta-surface", "d-docs-cta", "default", "backgroundColor", "The CTA banner's field on dark."),
     ]),
 ]:
     for key, comp, state, prop, desc in rows:
-        try:
-            raw = st(comp, state)[prop]
-            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-            if str(raw).startswith(("oklab", "oklch")):
-                src += f"; the browser painted {raw}, converted here"
-            root[key] = semcolor(raw, src, desc, theme)
-        except (KeyError, TypeError):
-            pass
+        role(root, "docs", key, comp, state, prop, desc, theme, parent=key == "cta-surface")
 
 # ------------------------------------------------------------- components
 
@@ -834,12 +913,14 @@ for name, cname, state, prop, ty_, desc in [
     ("docs-search-height", "docs-search", "default", "h", "dimension", "The docs search pill height."),
     ("hamburger", "m-hamburger", "default", "h", "dimension", "The phone hamburger hit area."),
 ]:
-    try:
-        v = rc(cname, state, prop)
-        comp[name] = lit(("%g" % v) + "px" if isinstance(v, (int, float)) else str(v) + "px",
-                         ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
-    except KeyError:
-        pass
+    need(cname, state)
+    v = rc(cname, state, prop)
+    src = f"measured {prop} of {cname} {state} (raw/components-computed.json)"
+    if cname in WRONG:
+        src = f"Reconstruction: read from the wrong element ({WRONG[cname]}); {src}"
+    comp[name] = lit(("%g" % v) + "px" if isinstance(v, (int, float)) else str(v) + "px", ty_, src, desc)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})
+for g in SPEC["_gaps"]:
+    print("  gap:", g["token"], "-", g["why"])
