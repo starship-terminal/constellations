@@ -7078,9 +7078,9 @@
       "description": "Workflow automation software for everyone",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://zapier.com/app/login Continue with Google signed in and opened the app. Product not walked.",
+      "notes": "https://zapier.com/app/home redirected to the login page. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 21
     },
     {
