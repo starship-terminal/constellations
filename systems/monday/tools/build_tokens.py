@@ -95,7 +95,7 @@ STATUS = [
     ("purple", "--color-purple"),
     ("dark-purple", "--color-dark_purple"),
     ("indigo", "--color-indigo"),
-    ("dark-indigo", "--color-dark-indigo"),
+    # ("dark-indigo", "--color-dark-indigo") is not declared on the login page; it never was a token.
     ("bright-blue", "--color-bright-blue"),
     ("aquamarine", "--color-aquamarine"),
     ("chili-blue", "--color-chili-blue"),
@@ -120,14 +120,13 @@ STATUS = [
 
 
 def status_group():
+    """The status palette. A name missing from raw or a value that does not parse fails the build;
+    it used to be skipped silently, so a recapture that renamed a variable lost the colour quietly."""
     group = {}
     for key, name in STATUS:
         if name not in RES or not RES[name]:
-            continue
-        try:
-            group[key] = color_of(name, SRC_LOGIN)
-        except ValueError:
-            continue
+            raise SystemExit(f"status colour {name} is not in raw/css-vars.json")
+        group[key] = color_of(name, SRC_LOGIN)
     return group
 
 
@@ -392,5 +391,7 @@ doc = {
 # sanity: no missing shadows
 assert core["shadow"]["small"]["$type"] == "shadow"
 text = json.dumps(doc, indent=2) + "\n"
-(HERE / "tokens.json").write_text(text)
-print("wrote", HERE / "tokens.json", "bytes", len(text))
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(text)
+    print("wrote", HERE / "tokens.json", "bytes", len(text))
