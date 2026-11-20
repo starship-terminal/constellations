@@ -13,6 +13,7 @@ that is not one px length, and a colour that is not hex.
 from __future__ import annotations
 
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -52,8 +53,12 @@ def raw_strings() -> set:
         else:
             low = str(node).strip().lower()
             acc.add(low)
-            for m in re.finditer(r"rgba?\(\s*([\d.]+)[ ,]+([\d.]+)[ ,]+([\d.]+)", low):
-                acc.add("#" + "".join(f"{round(float(x)):02x}" for x in m.groups()))
+            for m in re.finditer(r"rgba?\(\s*([\d.]+)[ ,]+([\d.]+)[ ,]+([\d.]+)(?:\s*[,/]\s*([\d.]+))?\s*\)", low):
+                r, g, b, a = m.groups()
+                h = "#" + "".join(f"{math.floor(float(x) + 0.5):02x}" for x in (r, g, b))
+                if a is not None and float(a) < 1:
+                    h += f"{math.floor(float(a) * 255 + 0.5):02x}"  # keep the alpha: rgba(255, 255, 255, 0.07) is #ffffff12
+                acc.add(h)
             acc.update(m.group(0) for m in re.finditer(r"#[0-9a-f]{3,8}\b|-?[\d.]+px\b", low))
 
     for path in sorted((HERE / "raw").glob("*.json")):
@@ -61,11 +66,10 @@ def raw_strings() -> set:
     return acc
 
 
-def main() -> int:
-    data = json.loads(TOKENS.read_text())
+def check(data: dict, seen: set) -> tuple[list, int]:
+    """(problems, token count) for a token document against the raw readings in `seen`."""
     problems = []
     count = 0
-    seen = raw_strings()
     for path, token in list(walk(data.get("core", {}))) + list(walk(data.get("dark", {}))):
         count += 1
         source = (token.get("$extensions") or {}).get("source") or ""
@@ -92,6 +96,11 @@ def main() -> int:
                 problems.append(f"{path}: fontSize is not px")
     if "light" in data:
         problems.append("light set is present; the captured marketing pages had no light theme")
+    return problems, count
+
+
+def main() -> int:
+    problems, count = check(json.loads(TOKENS.read_text()), raw_strings())
     if problems:
         print("\n".join(problems), file=sys.stderr)
         return 1
