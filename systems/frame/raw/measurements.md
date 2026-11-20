@@ -950,24 +950,25 @@ Page: contactform. Selector: `contact Submit`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 97.84 x 39.75 | = | = | = |
-| Padding | 0px 24px | = | = | = |
-| Gap | 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 100px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | FrameGothic 14px/13.44px 600 | = | = | = |
-| Letter spacing | 0.14px | = | = | = |
-| Colour | #4f5167 | = | = | = |
-| Text node | span: FrameGothic 14px/13.44px 600, #4f5167, ls 0.14px | = | = | = |
-| Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| ::before | 95.8438px x 37.75px, absolute, bg #bdbdf4 @ 0.1, radius 100px | = | = | = |
-| ::after | auto x auto, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | = | = | = |
-| Painted layers | button::before.Button_white__XYP1F.Button_base__1G9eD 95.8438pxx37.75px bg #bdbdf4 @ 0.1 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; div::after.SubmitButtonAnimation_dot__vO6gD 2.5pxx2.5px bg #fcfcfc r 50% | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 97.84 x 39.75 | = | - | = |
+| Padding | 0px 24px | = | - | = |
+| Gap | 16px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 100px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | FrameGothic 14px/13.44px 600 | = | - | = |
+| Letter spacing | 0.14px | = | - | = |
+| Colour | #4f5167 | = | - | = |
+| Text node | span: FrameGothic 14px/13.44px 600, #4f5167, ls 0.14px | = | - | = |
+| Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| ::before | 95.8438px x 37.75px, absolute, bg #bdbdf4 @ 0.1, radius 100px | = | - | = |
+| ::after | auto x auto, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | = | - | = |
+| Painted layers | button::before.Button_white__XYP1F.Button_base__1G9eD 95.8438pxx37.75px bg #bdbdf4 @ 0.1 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; div::after.SubmitButtonAnimation_dot__vO6gD 2.5pxx2.5px bg #fcfcfc r 50% | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-focus-visible.png`, `form-submit-pressed.png`.
 
@@ -1265,22 +1266,23 @@ Page: mobile. Selector: `mobile drawer Start Free Trial`. States: default, focus
 
 | Property | default | focus-visible | pressed |
 |---|---|---|---|
-| Size (w x h) | 165 x 37.75 | = | = |
-| Padding | 0px 24px | = | = |
-| Gap | 16px | = | = |
-| Border | none | = | = |
-| Radius | 100px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | FrameGothic 14px/13.44px 600 | = | = |
-| Letter spacing | 0.14px | = | = |
-| Colour | #000000 | = | #fcfcfc |
-| Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | = |
-| Cursor | pointer | = | = |
-| ::before | 163px x 35.75px, absolute, bg #f5f5f8, radius 100px | = | 165px x 37.75px, absolute, bg #000000 @ 0, radius 100px |
-| ::after | 165px x 37.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | = | 165px x 37.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
-| How | at rest | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 165 x 37.75 | - | = |
+| Padding | 0px 24px | - | = |
+| Gap | 16px | - | = |
+| Border | none | - | = |
+| Radius | 100px | - | = |
+| Background | transparent | - | = |
+| Box shadow | none | - | = |
+| Outline | none | - | = |
+| Font | FrameGothic 14px/13.44px 600 | - | = |
+| Letter spacing | 0.14px | - | = |
+| Colour | #000000 | - | #fcfcfc |
+| Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | - | = |
+| Cursor | pointer | - | = |
+| ::before | 163px x 35.75px, absolute, bg #f5f5f8, radius 100px | - | 165px x 37.75px, absolute, bg #000000 @ 0, radius 100px |
+| ::after | 165px x 37.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | - | 165px x 37.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
+| How | at rest | - | CDP forcePseudoState :active:hover |
+| Skipped | - | focus failed: keyboard focus did not reach the element | = |
 
 Crops: none.
 

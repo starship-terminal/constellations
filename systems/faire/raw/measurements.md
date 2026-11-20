@@ -220,21 +220,22 @@ Page: home. Selector: `header locale control`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 90.75 x 60 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Graphik 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | p.f_t_base.f_t_color: graphik 14px/20px 200, #333333, ls 0.15px | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 16 x 16, colour #000000 | = | = | = |
-| Painted layers | div.[&&]:border-fs-border-muted.[&&]:absolute 0.0x0.0 bg #ffffff border T:1px solid #dadada / R:1px solid #dadada / B:1px solid #dadada / L:1px solid #dadada shadow #f7f7f7 0px 1px 1px 0px | div.[&&]:border-fs-border-muted.[&&]:absolute 170.0x506.0 bg #ffffff border T:1px solid #dadada / R:1px solid #dadada / B:1px solid #dadada / L:1px solid #dadada shadow #f7f7f7 0px 1px 1px 0px | = | div.[&&]:border-fs-border-muted.[&&]:absolute 170.0x506.0 bg #ffffff border T:1px solid #dadada / R:1px solid #dadada / B:1px solid #dadada / L:1px solid #dadada shadow #f7f7f7 0px 1px 1px 0px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 90.75 x 60 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Graphik 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | p.f_t_base.f_t_color: graphik 14px/20px 200, #333333, ls 0.15px | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 16 x 16, colour #000000 | = | - | = |
+| Painted layers | div.[&&]:border-fs-border-muted.[&&]:absolute 0.0x0.0 bg #ffffff border T:1px solid #dadada / R:1px solid #dadada / B:1px solid #dadada / L:1px solid #dadada shadow #f7f7f7 0px 1px 1px 0px | div.[&&]:border-fs-border-muted.[&&]:absolute 170.0x506.0 bg #ffffff border T:1px solid #dadada / R:1px solid #dadada / B:1px solid #dadada / L:1px solid #dadada shadow #f7f7f7 0px 1px 1px 0px | - | div.[&&]:border-fs-border-muted.[&&]:absolute 170.0x506.0 bg #ffffff border T:1px solid #dadada / R:1px solid #dadada / B:1px solid #dadada / L:1px solid #dadada shadow #f7f7f7 0px 1px 1px 0px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `locale-btn-default.png`, `locale-btn-hover.png`, `locale-btn-focus-visible.png`, `locale-btn-pressed.png`.
 

@@ -67,23 +67,24 @@ Page: home. Selector: `button Sidebar menu`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 0 x 0 | - | = | = | = |
-| Padding | 0px | - | = | = | = |
-| Gap | 8px | - | = | = | = |
-| Border | 1px solid #000000 @ 0 | - | = | = | = |
-| Radius | 8px | - | = | = | = |
-| Background | transparent | - | = | #efeff0 | = |
-| Box shadow | none | - | = | = | = |
-| Outline | none | - | = | = | = |
-| Font | Macan 16px/24px 600 | - | = | = | = |
-| Letter spacing | normal | - | = | = | = |
-| Colour | #222325 | - | = | = | = |
-| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | - | = | = | = |
-| Cursor | pointer | - | = | = | = |
-| Icon | 0 x 0, colour #222325 | - | = | = | = |
-| Painted layers | button._arosdn._1xeo152 0.0x0.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | - | = | button._arosdn._1xeo152 0.0x0.0 bg #efeff0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover | own toggle |
+| Size (w x h) | 0 x 0 | - | - | = | = |
+| Padding | 0px | - | - | = | = |
+| Gap | 8px | - | - | = | = |
+| Border | 1px solid #000000 @ 0 | - | - | = | = |
+| Radius | 8px | - | - | = | = |
+| Background | transparent | - | - | #efeff0 | = |
+| Box shadow | none | - | - | = | = |
+| Outline | none | - | - | = | = |
+| Font | Macan 16px/24px 600 | - | - | = | = |
+| Letter spacing | normal | - | - | = | = |
+| Colour | #222325 | - | - | = | = |
+| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | - | - | = | = |
+| Cursor | pointer | - | - | = | = |
+| Icon | 0 x 0, colour #222325 | - | - | = | = |
+| Painted layers | button._arosdn._1xeo152 0.0x0.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | - | - | button._arosdn._1xeo152 0.0x0.0 bg #efeff0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = |
+| How | at rest | - | - | CDP forcePseudoState :active:hover | own toggle |
 | Error | - | locator.hover: Element is not visible Call log:   - waiting for locator('button[aria-label*="idebar" i], button:has-text("Sidebar menu")').first().first().first()     - locator resolved to <button rol | = | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: none.
 
@@ -95,23 +96,24 @@ Page: home. Selector: `button Connect to your AI`. States: default, hover, focus
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 242.91 x 42 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | = | = | #efeff0 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 16px/24px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222325 | = | = | = |
-| Text node | div._ifhvih._xwb3qf: Macan 16px/24px 600, #222325 | = | = | = |
-| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 20 x 20, colour #222325 | = | = | = |
-| Painted layers | button._arosdn._1xeo152 242.9x42.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | = | button._arosdn._1xeo152 242.9x42.0 bg #efeff0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 242.91 x 42 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | = | - | #efeff0 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 16px/24px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222325 | = | - | = |
+| Text node | div._ifhvih._xwb3qf: Macan 16px/24px 600, #222325 | = | - | = |
+| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 20 x 20, colour #222325 | = | - | = |
+| Painted layers | button._arosdn._1xeo152 242.9x42.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | - | button._arosdn._1xeo152 242.9x42.0 bg #efeff0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `nav-ai-default.png`, `nav-ai-hover.png`, `nav-ai-focus-visible.png`, `nav-ai-pressed.png`.
 
@@ -123,22 +125,23 @@ Page: home. Selector: `button EN`. States: default, hover, focus-visible, presse
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 79.91 x 42 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | = | = | #f5f5f5 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 16px/24px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222325 | = | = | = |
-| Text node | span.label: Macan 16px/24px 600, #222325 | = | = | = |
-| Transition | background 0.1s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #222325 | = | = | = |
-| Painted layers | button.selection-trigger.language-selection-trigger 79.9x42.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | = | button.selection-trigger.language-selection-trigger 79.9x42.0 bg #f5f5f5 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 79.91 x 42 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | = | - | #f5f5f5 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 16px/24px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222325 | = | - | = |
+| Text node | span.label: Macan 16px/24px 600, #222325 | = | - | = |
+| Transition | background 0.1s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 16 x 16, colour #222325 | = | - | = |
+| Painted layers | button.selection-trigger.language-selection-trigger 79.9x42.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | - | button.selection-trigger.language-selection-trigger 79.9x42.0 bg #f5f5f5 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `nav-locale-default.png`, `nav-locale-hover.png`, `nav-locale-focus-visible.png`, `nav-locale-pressed.png`.
 
@@ -150,21 +153,22 @@ Page: home. Selector: `a Become a Seller`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 159 x 42 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | = | = | #efeff0 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 16px/24px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222325 | = | = | = |
-| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a._arosdn._1xeo152 159.0x42.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | = | a._arosdn._1xeo152 159.0x42.0 bg #efeff0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 159 x 42 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | = | - | #efeff0 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 16px/24px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222325 | = | - | = |
+| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a._arosdn._1xeo152 159.0x42.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | - | a._arosdn._1xeo152 159.0x42.0 bg #efeff0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `nav-seller-default.png`, `nav-seller-hover.png`, `nav-seller-focus-visible.png`, `nav-seller-pressed.png`.
 
@@ -176,21 +180,22 @@ Page: home. Selector: `a Sign in`. States: default, hover, focus-visible, presse
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 85.02 x 42 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | = | = | #efeff0 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 16px/24px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222325 | = | = | = |
-| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a._arosdn._1xeo152 85.0x42.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | = | a._arosdn._1xeo152 85.0x42.0 bg #efeff0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 85.02 x 42 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | = | - | #efeff0 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 16px/24px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222325 | = | - | = |
+| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a._arosdn._1xeo152 85.0x42.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | - | a._arosdn._1xeo152 85.0x42.0 bg #efeff0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-focus-visible.png`, `nav-signin-pressed.png`.
 
@@ -202,21 +207,22 @@ Page: home. Selector: `a Join`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 88 x 42 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #222325 | = | = | #62646a |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 16px/24px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a._arosdn._1xeo152 88.0x42.0 bg #222325 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | = | a._arosdn._1xeo152 88.0x42.0 bg #62646a border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 88 x 42 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | #222325 | = | - | #62646a |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 16px/24px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a._arosdn._1xeo152 88.0x42.0 bg #222325 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | - | a._arosdn._1xeo152 88.0x42.0 bg #62646a border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `nav-join-default.png`, `nav-join-hover.png`, `nav-join-focus-visible.png`, `nav-join-pressed.png`.
 
@@ -228,21 +234,22 @@ Page: home. Selector: `a Graphics & Design`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 142.39 x 0 | 142.39 x 40 | = | = |
-| Padding | 8px 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #62646a | #74767e | = | #74767e |
-| Transition | color 0.2s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 142.39 x 0 | 142.39 x 40 | - | = |
+| Padding | 8px 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #62646a | #74767e | - | #74767e |
+| Transition | color 0.2s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | ::after | - | 142.391px x 3px, absolute, bg #1dbf73, radius 0px | = | = |
 | Painted layers | - | a::after 142.391pxx3px bg #1dbf73 | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `cat-nav-default.png`, `cat-nav-hover.png`, `cat-nav-focus-visible.png`, `cat-nav-pressed.png`.
 
@@ -354,21 +361,22 @@ Page: home. Selector: `hero search-form submit`. States: default, hover, focus-v
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 48 x 48 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #222325 | = | = | #404145 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 14px/14px 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 18 x 18, colour #ffffff | = | = | = |
-| Painted layers | button.ec83942.b520005 48.0x48.0 bg #222325 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | = | button.ec83942.b520005 48.0x48.0 bg #404145 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 48 x 48 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | #222325 | = | - | #404145 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 14px/14px 700 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 18 x 18, colour #ffffff | = | - | = |
+| Painted layers | button.ec83942.b520005 48.0x48.0 bg #222325 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | - | button.ec83942.b520005 48.0x48.0 bg #404145 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `hero-search-btn-default.png`, `hero-search-btn-hover.png`, `hero-search-btn-focus-visible.png`, `hero-search-btn-pressed.png`.
 
@@ -380,23 +388,24 @@ Page: home. Selector: `popular service chip`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 232.72 x 42 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #ffffff | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #ffffff @ 0.1 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 16px/24px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | p._1koqg34k._1oslsch1j: Macan 16px/24px 400, #ffffff | = | = | = |
-| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 13.91 x 16, colour #ffffff | = | = | = |
-| Painted layers | a._1koqg34r._12ky2ni5 232.7x42.0 bg #ffffff @ 0.1 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 8px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 232.72 x 42 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | 1px solid #ffffff | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | #ffffff @ 0.1 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 16px/24px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Text node | p._1koqg34k._1oslsch1j: Macan 16px/24px 400, #ffffff | = | - | = |
+| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 13.91 x 16, colour #ffffff | = | - | = |
+| Painted layers | a._1koqg34r._12ky2ni5 232.7x42.0 bg #ffffff @ 0.1 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 8px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `popular-chip-default.png`, `popular-chip-hover.png`, `popular-chip-focus-visible.png`, `popular-chip-pressed.png`.
 
@@ -495,19 +504,20 @@ Page: home. Selector: `footer a Careers`. States: default, hover, focus-visible,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 53.23 x 14 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 14px/22px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222325 | = | = | = |
-| Transition | color 0.2s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 53.23 x 14 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 14px/22px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222325 | = | - | = |
+| Transition | color 0.2s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
@@ -519,22 +529,23 @@ Page: home. Selector: `footer button English`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 97.73 x 36 | = | = | = |
-| Padding | 6px 12px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | = | = | #f5f5f5 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 14px/22px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #74767e | = | = | = |
-| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #74767e | = | = | = |
-| Painted layers | button._arosdn._1xeo152 97.7x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | = | button._arosdn._1xeo152 97.7x36.0 bg #f5f5f5 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 97.73 x 36 | = | - | = |
+| Padding | 6px 12px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | = | - | #f5f5f5 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 14px/22px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #74767e | = | - | = |
+| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 16 x 16, colour #74767e | = | - | = |
+| Painted layers | button._arosdn._1xeo152 97.7x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | - | button._arosdn._1xeo152 97.7x36.0 bg #f5f5f5 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `footer-locale-default.png`, `footer-locale-hover.png`, `footer-locale-focus-visible.png`, `footer-locale-pressed.png`.
 
@@ -546,21 +557,22 @@ Page: home. Selector: `footer currency button`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 76.91 x 36 | = | = | = |
-| Padding | 6px 12px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | = | = | #f5f5f5 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Macan 14px/22px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #74767e | = | = | = |
-| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | button._arosdn._1xeo152 76.9x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | = | button._arosdn._1xeo152 76.9x36.0 bg #f5f5f5 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 76.91 x 36 | = | - | = |
+| Padding | 6px 12px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | = | - | #f5f5f5 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Macan 14px/22px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #74767e | = | - | = |
+| Transition | all 0.07s cubic-bezier(0.75, 0, 0.25, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | button._arosdn._1xeo152 76.9x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px | = | - | button._arosdn._1xeo152 76.9x36.0 bg #f5f5f5 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `footer-currency-default.png`, `footer-currency-hover.png`, `footer-currency-focus-visible.png`, `footer-currency-pressed.png`.
 

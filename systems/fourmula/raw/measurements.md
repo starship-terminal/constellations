@@ -208,24 +208,25 @@ Page: home. Selector: `.header__menu`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 78.48 x 35.23 | = | = | = | = |
-| Padding | 6.65421px 0px 6.65421px 6.65421px | = | = | = | = |
-| Gap | 9.98131px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Arial 14.4px/20px 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #333333 | = | = | = | = |
-| Text node | div.header__menu-txt.u-btn: Sf Pro Display 14.1402px/16.9682px 400, #ffffff, ls -0.282804px | = | = | = | = |
-| Transition | opacity 0.2s ease | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | div.header__menu-line.is-top 22.0x0.8 bg #ffffff; div.header__menu-line.is-bottom 22.0x0.8 bg #ffffff | = | = | = | div.header__menu-line.is-top 16.1x16.1 bg #ffffff; div.header__menu-line.is-bottom 16.1x16.1 bg #ffffff |
-| Ancestor paint | 1 up div.header__main bg #020108 | = | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
+| Size (w x h) | 78.48 x 35.23 | = | - | = | = |
+| Padding | 6.65421px 0px 6.65421px 6.65421px | = | - | = | = |
+| Gap | 9.98131px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Arial 14.4px/20px 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #333333 | = | - | = | = |
+| Text node | div.header__menu-txt.u-btn: Sf Pro Display 14.1402px/16.9682px 400, #ffffff, ls -0.282804px | = | - | = | = |
+| Transition | opacity 0.2s ease | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Painted layers | div.header__menu-line.is-top 22.0x0.8 bg #ffffff; div.header__menu-line.is-bottom 22.0x0.8 bg #ffffff | = | - | = | div.header__menu-line.is-top 16.1x16.1 bg #ffffff; div.header__menu-line.is-bottom 16.1x16.1 bg #ffffff |
+| Ancestor paint | 1 up div.header__main bg #020108 | = | - | = | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
 | Opacity | - | 0.64 | = | 0.64 | 0.64 |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `menu-pill-default.png`, `menu-pill-hover.png`, `menu-pill-focus-visible.png`, `menu-pill-pressed.png`, `menu-pill-opened.png`.
 
@@ -237,22 +238,23 @@ Page: home. Selector: `[data-theme-toggle]`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 26.61 x 26.61 | = | = |
-| Padding | 0px | = | = |
-| Border | 1px solid #ffffff @ 0.2 | 1px solid #ffffff @ 0.65 | = |
-| Radius | 1317.53px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Arial 14.4px/20px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #333333 | = | = |
-| Transition | all 0.2s ease | = | = |
-| Cursor | pointer | = | = |
-| Icon | 13.3 x 13.3, colour #ffffff | = | = |
-| Painted layers | div.header__theme 26.6x26.6 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 1317.53px | div.header__theme 26.6x26.6 border T:1px solid #ffffff @ 0.65 / R:1px solid #ffffff @ 0.65 / B:1px solid #ffffff @ 0.65 / L:1px solid #ffffff @ 0.65 r 1317.53px | = |
-| Ancestor paint | 1 up div.header__main bg #020108 | = | = |
-| How | at rest | mouse hover | focus failed |
+| Size (w x h) | 26.61 x 26.61 | = | - |
+| Padding | 0px | = | - |
+| Border | 1px solid #ffffff @ 0.2 | 1px solid #ffffff @ 0.65 | - |
+| Radius | 1317.53px | = | - |
+| Background | transparent | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Arial 14.4px/20px 400 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #333333 | = | - |
+| Transition | all 0.2s ease | = | - |
+| Cursor | pointer | = | - |
+| Icon | 13.3 x 13.3, colour #ffffff | = | - |
+| Painted layers | div.header__theme 26.6x26.6 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 1317.53px | div.header__theme 26.6x26.6 border T:1px solid #ffffff @ 0.65 / R:1px solid #ffffff @ 0.65 / B:1px solid #ffffff @ 0.65 / L:1px solid #ffffff @ 0.65 r 1317.53px | - |
+| Ancestor paint | 1 up div.header__main bg #020108 | = | - |
+| How | at rest | mouse hover | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
 Crops: `theme-toggle-default.png`, `theme-toggle-hover.png`, `theme-toggle-focus-visible.png`.
 
@@ -1457,20 +1459,21 @@ Page: create-pdp. Selector: `header "Start generation" button`. States: default,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 123 x 32 | = | = | = |
-| Padding | 0px 12px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | #ff6b02 @ 0.15 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | sfProFont 14px/20px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ff6b02 @ 0.15 | = | = | = |
-| Text node | span.hidden.xs:inline: sfProFont 14px/20px 400, #ff6b02 @ 0.15 | = | = | = |
-| Transition | color, background-color, border-color, outline-color, -webkit-text-decoration-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Painted layers | button.transition-colors.duration-200 123.0x32.0 bg #ff6b02 @ 0.15 r 3.35544e+07px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 123 x 32 | = | - | = |
+| Padding | 0px 12px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | #ff6b02 @ 0.15 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | sfProFont 14px/20px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ff6b02 @ 0.15 | = | - | = |
+| Text node | span.hidden.xs:inline: sfProFont 14px/20px 400, #ff6b02 @ 0.15 | = | - | = |
+| Transition | color, background-color, border-color, outline-color, -webkit-text-decoration-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Painted layers | button.transition-colors.duration-200 123.0x32.0 bg #ff6b02 @ 0.15 r 3.35544e+07px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `pdp-start-header-default.png`, `pdp-start-header-hover.png`, `pdp-start-header-focus-visible.png`, `pdp-start-header-pressed.png`.
 
@@ -1794,21 +1797,22 @@ Page: create-pdp. Selector: `footer "Start generation" button (painted copy)`. S
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 591 x 40 | = | = | = |
-| Padding | 0px 12px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 12px | = | = | = |
-| Background | #ff6b02 @ 0.15 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | sfProFont 14px/20px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ff6b02 @ 0.15 | = | = | = |
-| Text node | span.hidden.xs:inline: sfProFont 14px/20px 400, #ff6b02 @ 0.15 | = | = | = |
-| Transition | color, background-color, border-color, outline-color, -webkit-text-decoration-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Painted layers | button.transition-colors.duration-200 591.0x40.0 bg #ff6b02 @ 0.15 r 12px | = | = | = |
-| Ancestor paint | 1 up div.flex.h-auto bg #111111 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 591 x 40 | = | - | = |
+| Padding | 0px 12px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 12px | = | - | = |
+| Background | #ff6b02 @ 0.15 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | sfProFont 14px/20px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ff6b02 @ 0.15 | = | - | = |
+| Text node | span.hidden.xs:inline: sfProFont 14px/20px 400, #ff6b02 @ 0.15 | = | - | = |
+| Transition | color, background-color, border-color, outline-color, -webkit-text-decoration-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Painted layers | button.transition-colors.duration-200 591.0x40.0 bg #ff6b02 @ 0.15 r 12px | = | - | = |
+| Ancestor paint | 1 up div.flex.h-auto bg #111111 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `pdp-start-bottom-default.png`, `pdp-start-bottom-hover.png`, `pdp-start-bottom-focus-visible.png`, `pdp-start-bottom-pressed.png`.
 
@@ -1929,24 +1933,25 @@ Page: mobile. Selector: `mobile .header__menu`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 95.08 x 42.69 | = | = | = | = |
-| Padding | 8.06185px 0px 8.06185px 8.06185px | = | = | = | = |
-| Gap | 12.0928px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Arial 3.9px/20px 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #333333 | = | = | = | = |
-| Text node | div.header__menu-txt.u-btn: Sf Pro Display 17.1314px/20.5577px 400, #ffffff, ls -0.342629px | = | = | = | = |
-| Transition | opacity 0.2s ease | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | div.header__menu-line.is-top 26.6x1.0 bg #ffffff; div.header__menu-line.is-bottom 26.6x1.0 bg #ffffff | = | = | = | div.header__menu-line.is-top 19.5x19.5 bg #ffffff; div.header__menu-line.is-bottom 19.5x19.5 bg #ffffff |
-| Ancestor paint | 1 up div.header__main bg #020108 | = | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
-| Opacity | - | 0.64 | 0.994036 | 0.64 | 0.64 |
+| Size (w x h) | 95.08 x 42.69 | = | - | = | = |
+| Padding | 8.06185px 0px 8.06185px 8.06185px | = | - | = | = |
+| Gap | 12.0928px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Arial 3.9px/20px 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #333333 | = | - | = | = |
+| Text node | div.header__menu-txt.u-btn: Sf Pro Display 17.1314px/20.5577px 400, #ffffff, ls -0.342629px | = | - | = | = |
+| Transition | opacity 0.2s ease | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Painted layers | div.header__menu-line.is-top 26.6x1.0 bg #ffffff; div.header__menu-line.is-bottom 26.6x1.0 bg #ffffff | = | - | = | div.header__menu-line.is-top 19.5x19.5 bg #ffffff; div.header__menu-line.is-bottom 19.5x19.5 bg #ffffff |
+| Ancestor paint | 1 up div.header__main bg #020108 | = | - | = | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
+| Opacity | - | 0.64 | = | 0.64 | 0.64 |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `m-menu-pill-default.png`, `m-menu-pill-hover.png`, `m-menu-pill-focus-visible.png`, `m-menu-pill-pressed.png`, `m-menu-pill-opened.png`.
 

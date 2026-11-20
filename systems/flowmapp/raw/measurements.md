@@ -96,23 +96,24 @@ Page: home. Selector: `nav Features trigger`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 109.05 x 44.47 | = | = | = | = |
-| Padding | 11.04px 14.08px | = | = | = | = |
-| Gap | normal 4px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 8px | = | = | = | = |
-| Background | transparent | #f6f8fa | = | #f6f8fa | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Inter 16px/22.4px 600 | = | = | = | = |
-| Letter spacing | -0.64px | = | = | = | = |
-| Colour | #000000 | = | = | = | = |
-| Text node | div: Inter 16px/22.4px undefined, #000000, ls -0.64px | = | = | = | = |
-| Transition | background-color 0.3s ease | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | div.nav__pop.is-sh-l--is-bg-wh--is-br-12--is-t-sh-0 377.0x490.5 bg #ffffff r 12px shadow #97a9bb @ 0.58 0px 8px 10px 0px | div.nav__link.pop__is-br-8 109.0x44.5 bg #f6f8fa r 8px; div.nav__pop.is-sh-l--is-bg-wh--is-br-12--is-t-sh-0 377.0x490.5 bg #ffffff r 12px shadow #97a9bb @ 0.58 0px 8px 10px 0px | = | div.nav__link.pop__is-br-8 109.0x44.5 bg #f6f8fa r 8px; div.nav__pop.is-sh-l--is-bg-wh--is-br-12--is-t-sh-0 377.0x490.5 bg #ffffff r 12px shadow #97a9bb @ 0.58 0px 8px 10px 0px | = |
-| Ancestor paint | 3 up div.container.nav-cont__is-br-12--is-sh-img bg #ffffff @ 0.8 shadow #787c84 @ 0.19 -9.92904px 11.043px 59.7576px 0px | = | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | the Features flyout was already open |
+| Size (w x h) | 109.05 x 44.47 | = | - | = | = |
+| Padding | 11.04px 14.08px | = | - | = | = |
+| Gap | normal 4px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 8px | = | - | = | = |
+| Background | transparent | #f6f8fa | - | #f6f8fa | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Inter 16px/22.4px 600 | = | - | = | = |
+| Letter spacing | -0.64px | = | - | = | = |
+| Colour | #000000 | = | - | = | = |
+| Text node | div: Inter 16px/22.4px undefined, #000000, ls -0.64px | = | - | = | = |
+| Transition | background-color 0.3s ease | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Painted layers | div.nav__pop.is-sh-l--is-bg-wh--is-br-12--is-t-sh-0 377.0x490.5 bg #ffffff r 12px shadow #97a9bb @ 0.58 0px 8px 10px 0px | div.nav__link.pop__is-br-8 109.0x44.5 bg #f6f8fa r 8px; div.nav__pop.is-sh-l--is-bg-wh--is-br-12--is-t-sh-0 377.0x490.5 bg #ffffff r 12px shadow #97a9bb @ 0.58 0px 8px 10px 0px | - | div.nav__link.pop__is-br-8 109.0x44.5 bg #f6f8fa r 8px; div.nav__pop.is-sh-l--is-bg-wh--is-br-12--is-t-sh-0 377.0x490.5 bg #ffffff r 12px shadow #97a9bb @ 0.58 0px 8px 10px 0px | = |
+| Ancestor paint | 3 up div.container.nav-cont__is-br-12--is-sh-img bg #ffffff @ 0.8 shadow #787c84 @ 0.19 -9.92904px 11.043px 59.7576px 0px | = | - | = | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | the Features flyout was already open |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `nav-features-default.png`, `nav-features-hover.png`, `nav-features-focus-visible.png`, `nav-features-pressed.png`, `nav-features-opened.png`.
 
@@ -618,21 +619,22 @@ Page: pricing. Selector: `.faq__q-wrap`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 730 x 69 | = | = | = | 730 x 159.41 |
-| Padding | 0px | = | = | = | = |
-| Border | T: none; R: none; B: 1px solid #cbd8e5; L: none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Inter 14px/20px 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #000000 | = | = | = | = |
-| Text node | div.text-20-sb.is-t-gr: Inter 20px/28px undefined, #8c9baa, ls -0.8px | = | = | = | = |
-| Transition | none | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | div.faq__item.slide-in 730.0x69.0 border B:1px #cbd8e5 | = | = | = | div.faq__item.slide-in 730.0x159.4 border B:1px #cbd8e5 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | clicked the FAQ row to expand its answer |
+| Size (w x h) | 730 x 69 | = | - | = | 730 x 159.41 |
+| Padding | 0px | = | - | = | = |
+| Border | T: none; R: none; B: 1px solid #cbd8e5; L: none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Inter 14px/20px 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #000000 | = | - | = | = |
+| Text node | div.text-20-sb.is-t-gr: Inter 20px/28px undefined, #8c9baa, ls -0.8px | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Painted layers | div.faq__item.slide-in 730.0x69.0 border B:1px #cbd8e5 | = | - | = | div.faq__item.slide-in 730.0x159.4 border B:1px #cbd8e5 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | clicked the FAQ row to expand its answer |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `faq-q-default.png`, `faq-q-hover.png`, `faq-q-focus-visible.png`, `faq-q-pressed.png`, `faq-q-opened.png`.
 
@@ -979,22 +981,23 @@ Page: login. Selector: `signin submit button`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed | enabled |
 |---|---|---|---|---|---|
-| Size (w x h) | 374 x 56 | = | = | = | = |
-| Padding | 20px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 16px | = | = | = | = |
-| Background | #9fb8f9 | = | = | #102f93 | #0050ff |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Inter 16px/16px 400 | = | = | = | = |
-| Letter spacing | -0.32px | = | = | = | = |
-| Colour | #ffffff | = | = | = | = |
-| Text node | div.content--uLeCT.noMargin--wsr1o: Inter 16px/16px undefined, #ffffff, ls -0.32px | = | = | = | = |
-| Transition | none | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #9fb8f9 r 16px | = | = | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #102f93 r 16px | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #0050ff r 16px |
-| Ancestor paint | 1 up form.form--I3Zcx bg #ffffff | = | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | typed sample text into both fields so the submit enabled — still never clicked |
+| Size (w x h) | 374 x 56 | = | - | = | = |
+| Padding | 20px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 16px | = | - | = | = |
+| Background | #9fb8f9 | = | - | #102f93 | #0050ff |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Inter 16px/16px 400 | = | - | = | = |
+| Letter spacing | -0.32px | = | - | = | = |
+| Colour | #ffffff | = | - | = | = |
+| Text node | div.content--uLeCT.noMargin--wsr1o: Inter 16px/16px undefined, #ffffff, ls -0.32px | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Painted layers | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #9fb8f9 r 16px | = | - | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #102f93 r 16px | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #0050ff r 16px |
+| Ancestor paint | 1 up form.form--I3Zcx bg #ffffff | = | - | = | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | typed sample text into both fields so the submit enabled — still never clicked |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `login-submit-default.png`, `login-submit-hover.png`, `login-submit-focus-visible.png`, `login-submit-pressed.png`, `login-submit-enabled.png`.
 
@@ -1314,22 +1317,23 @@ Page: restore. Selector: `restore submit button`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 374 x 56 | = | = | = |
-| Padding | 20px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 16px | = | = | = |
-| Background | #9fb8f9 | = | = | #102f93 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/16px 400 | = | = | = |
-| Letter spacing | -0.32px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | div.content--uLeCT.noMargin--wsr1o: Inter 16px/16px undefined, #ffffff, ls -0.32px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #9fb8f9 r 16px | = | = | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #102f93 r 16px |
-| Ancestor paint | 1 up form.form--NUHsb bg #ffffff | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 374 x 56 | = | - | = |
+| Padding | 20px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 16px | = | - | = |
+| Background | #9fb8f9 | = | - | #102f93 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/16px 400 | = | - | = |
+| Letter spacing | -0.32px | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Text node | div.content--uLeCT.noMargin--wsr1o: Inter 16px/16px undefined, #ffffff, ls -0.32px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #9fb8f9 r 16px | = | - | button.button--PGwt3.xl--uHTBT 374.0x56.0 bg #102f93 r 16px |
+| Ancestor paint | 1 up form.form--NUHsb bg #ffffff | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `restore-send-default.png`, `restore-send-hover.png`, `restore-send-focus-visible.png`, `restore-send-pressed.png`.
 

@@ -122,19 +122,20 @@ Page: mental-health. Selector: `GlobalNavigationLogin / Log in link`. States: de
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 43.59 x 24 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | CareSans 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #0000ee | = | = | #ff0000 |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 43.59 x 24 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | CareSans 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #0000ee | = | - | #ff0000 |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `login-button-default.png`, `login-button-hover.png`, `login-button-focus-visible.png`, `login-button-pressed.png`.
 
@@ -583,21 +584,22 @@ Page: mental-health. Selector: `accordion heading/title`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 575 x 18.83 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 20px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | CareSans 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | p._text-label-m-max-medium_ncjzh_173._text-label-m-min-medium-max-large_ncjzh_591: CareSans 15.6667px/18.8326px 500, #000000 @ 0.81, ls 0.0407856px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 575 x 18.83 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 20px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | CareSans 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | p._text-label-m-max-medium_ncjzh_173._text-label-m-min-medium-max-large_ncjzh_591: CareSans 15.6667px/18.8326px 500, #000000 @ 0.81, ls 0.0407856px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `accordion-toggle-default.png`, `accordion-toggle-hover.png`, `accordion-toggle-focus-visible.png`, `accordion-toggle-pressed.png`.
 
@@ -658,22 +660,23 @@ Page: home. Selector: `carousel-controls button`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 48 x 48 | = | = | = |
-| Padding | 1px 6px | = | = | = |
-| Border | 2px solid #ffffff @ 0.11 | = | = | = |
-| Radius | 100% | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | CareSans 16px/18.4px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff @ 0.11 | = | = | = |
-| Transition | color, border-color 0.3s ease-in-out | = | = | = |
-| Transform | matrix(1, 0, 0, 1, 0, -24) | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 24 x 24, colour #ffffff @ 0.11, fill #000000 | = | = | = |
-| Painted layers | button.testimonial-card-style__SlideNavigationButton-sc-179bb82b-4.hLBlZn 48.0x48.0 border T:2px solid #ffffff @ 0.11 / R:2px solid #ffffff @ 0.11 / B:2px solid #ffffff @ 0.11 / L:2px solid #ffffff @ 0.11 r 100% | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 48 x 48 | = | - | = |
+| Padding | 1px 6px | = | - | = |
+| Border | 2px solid #ffffff @ 0.11 | = | - | = |
+| Radius | 100% | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | CareSans 16px/18.4px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff @ 0.11 | = | - | = |
+| Transition | color, border-color 0.3s ease-in-out | = | - | = |
+| Transform | matrix(1, 0, 0, 1, 0, -24) | = | - | = |
+| Cursor | default | = | - | = |
+| Icon | 24 x 24, colour #ffffff @ 0.11, fill #000000 | = | - | = |
+| Painted layers | button.testimonial-card-style__SlideNavigationButton-sc-179bb82b-4.hLBlZn 48.0x48.0 border T:2px solid #ffffff @ 0.11 / R:2px solid #ffffff @ 0.11 / B:2px solid #ffffff @ 0.11 / L:2px solid #ffffff @ 0.11 r 100% | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `carousel-arrow-default.png`, `carousel-arrow-hover.png`, `carousel-arrow-focus-visible.png`, `carousel-arrow-pressed.png`.
 
@@ -685,20 +688,21 @@ Page: home. Selector: `SlideIndicatorDot`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 60 x 12 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 4px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | CareSans 16px/22.4px 400 | = | = | = |
-| Letter spacing | -0.176px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | transform 0.3s ease | = | = | = |
-| Painted layers | span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 12.0x12.0 bg #ffffff r 100%; span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 10.0x10.0 bg #ffffff @ 0.1 r 100%; span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 10.0x10.0 bg #ffffff @ 0.1 r 100%; span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 8.0x8.0 bg #ffffff @ 0.1 r 100%; span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 0.0x0.0 bg #ffffff @ 0.1 r 100% | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 60 x 12 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 4px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | CareSans 16px/22.4px 400 | = | - | = |
+| Letter spacing | -0.176px | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | transform 0.3s ease | = | - | = |
+| Painted layers | span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 12.0x12.0 bg #ffffff r 100%; span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 10.0x10.0 bg #ffffff @ 0.1 r 100%; span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 10.0x10.0 bg #ffffff @ 0.1 r 100%; span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 8.0x8.0 bg #ffffff @ 0.1 r 100%; span.testimonial-card-style__SlideIndicatorDot-sc-179bb82b-15.dDiWwq 0.0x0.0 bg #ffffff @ 0.1 r 100% | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `slide-dot-default.png`, `slide-dot-hover.png`, `slide-dot-focus-visible.png`, `slide-dot-pressed.png`.
 

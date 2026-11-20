@@ -366,18 +366,19 @@ Page: home. Selector: `demo "ACME Studios" breadcrumb`. States: default, hover, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 81.87 x 16.61 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 14px/17.5px 400 | = | = | = |
-| Letter spacing | -0.35px | = | = | = |
-| Colour | #a0a0a0 | = | = | = |
-| Transition | none | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 81.87 x 16.61 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 14px/17.5px 400 | = | - | = |
+| Letter spacing | -0.35px | = | - | = |
+| Colour | #a0a0a0 | = | - | = |
+| Transition | none | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `demo-breadcrumb-default.png`, `demo-breadcrumb-hover.png`, `demo-breadcrumb-focus-visible.png`, `demo-breadcrumb-pressed.png`.
 
@@ -389,24 +390,25 @@ Page: home. Selector: `demo "v2 Context" tab`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 103.97 x 30.38 | = | = | 71.31 x 30.38 |
-| Padding | 0px 12px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | #a0a0a0 @ 0.063 | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | = | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #868686 | = | = | #fafafa @ 0.95 |
-| Text node | span.flex.items-baseline: ui-monospace 12px/12px 500, #a0a0a0 | = | = | - |
-| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | = | = |
-| Opacity | 0.5 | = | = | - |
-| Cursor | default | = | = | = |
-| ::before | 109.516px x 32px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | = | 75.1094px x 32px, absolute, bg #000000 @ 0 radial-gradient(212.295px at 50% 50%, #fafafa @ 0.098, #000000 @ 0 100%), radius 9999px |
-| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 104.0x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 109.516pxx32px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px; span.flex.items-center 27.0x19.0 border T:1px solid #333333 / R:1px solid #333333 / B:1px solid #333333 / L:1px solid #333333 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.55 0px 0px 0px 0.5px, #000000 @ 0.55 0px 1px 3px 0px | = | = | button.ds-focus:ring-2.ds-focus:ring-focus-ring 71.3x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 75.1094pxx32px image radial-gradient(212.295px at 50% 50%, #fafafa @ 0.098, #000000 @ 0 100%) r 9999px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 103.97 x 30.38 | = | - | 71.31 x 30.38 |
+| Padding | 0px 12px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | #a0a0a0 @ 0.063 | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | - | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 14px/20px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #868686 | = | - | #fafafa @ 0.95 |
+| Text node | span.flex.items-baseline: ui-monospace 12px/12px 500, #a0a0a0 | = | - | - |
+| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | - | = |
+| Opacity | 0.5 | = | - | - |
+| Cursor | default | = | - | = |
+| ::before | 109.516px x 32px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | - | 75.1094px x 32px, absolute, bg #000000 @ 0 radial-gradient(212.295px at 50% 50%, #fafafa @ 0.098, #000000 @ 0 100%), radius 9999px |
+| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 104.0x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 109.516pxx32px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px; span.flex.items-center 27.0x19.0 border T:1px solid #333333 / R:1px solid #333333 / B:1px solid #333333 / L:1px solid #333333 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.55 0px 0px 0px 0.5px, #000000 @ 0.55 0px 1px 3px 0px | = | - | button.ds-focus:ring-2.ds-focus:ring-focus-ring 71.3x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 75.1094pxx32px image radial-gradient(212.295px at 50% 50%, #fafafa @ 0.098, #000000 @ 0 100%) r 9999px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
 Crops: `demo-tab-context-default.png`, `demo-tab-context-hover.png`, `demo-tab-context-focus-visible.png`, `demo-tab-context-pressed.png`.
@@ -419,23 +421,24 @@ Page: home. Selector: `demo "Feedback 0" tab`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 81.96 x 30.38 | = | = | = |
-| Padding | 0px 12px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | #a0a0a0 @ 0.063 | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | = | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #868686 | = | = | #fafafa @ 0.95 |
-| Text node | span.inline-flex.items-center: ui-sans-serif 14px/20px 500, #868686 | = | = | span.inline-flex.items-center: ui-sans-serif 14px/20px 500, #fafafa @ 0.95 |
-| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | = | = |
-| Cursor | default | = | = | = |
-| ::before | 86.3281px x 32px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | = | 86.3281px x 32px, absolute, bg #000000 @ 0 radial-gradient(219.862px at 50% 50%, #fafafa @ 0.1, #000000 @ 0 100%), radius 9999px |
-| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 82.0x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 86.3281pxx32px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | = | button.ds-focus:ring-2.ds-focus:ring-focus-ring 82.0x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 86.3281pxx32px image radial-gradient(219.862px at 50% 50%, #fafafa @ 0.1, #000000 @ 0 100%) r 9999px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 81.96 x 30.38 | = | - | = |
+| Padding | 0px 12px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | #a0a0a0 @ 0.063 | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | - | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 14px/20px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #868686 | = | - | #fafafa @ 0.95 |
+| Text node | span.inline-flex.items-center: ui-sans-serif 14px/20px 500, #868686 | = | - | span.inline-flex.items-center: ui-sans-serif 14px/20px 500, #fafafa @ 0.95 |
+| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | - | = |
+| Cursor | default | = | - | = |
+| ::before | 86.3281px x 32px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | - | 86.3281px x 32px, absolute, bg #000000 @ 0 radial-gradient(219.862px at 50% 50%, #fafafa @ 0.1, #000000 @ 0 100%), radius 9999px |
+| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 82.0x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 86.3281pxx32px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | - | button.ds-focus:ring-2.ds-focus:ring-focus-ring 82.0x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 86.3281pxx32px image radial-gradient(219.862px at 50% 50%, #fafafa @ 0.1, #000000 @ 0 100%) r 9999px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
 Crops: `demo-tab-feedback-default.png`, `demo-tab-feedback-hover.png`, `demo-tab-feedback-focus-visible.png`, `demo-tab-feedback-pressed.png`.
@@ -472,24 +475,25 @@ Page: home. Selector: `demo "Version 3" chip`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 93.9 x 30.38 | - | = | = |
-| Padding | 0px 6px 0px 12px | - | = | = |
-| Gap | 4px | - | = | = |
-| Border | none | - | = | = |
-| Radius | 9999px | - | = | = |
-| Background | #a0a0a0 @ 0.063 | - | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | - | = | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
-| Outline | none | - | = | = |
-| Font | ui-sans-serif 14px/20px 500 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #fafafa @ 0.7 | - | = | #fafafa @ 0.95 |
-| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | - | = | = |
-| Cursor | default | - | = | = |
-| Icon | 15.19 x 15.19, colour #a0a0a0 | - | = | = |
-| ::before | 98.9062px x 32px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | - | = | 98.9062px x 32px, absolute, bg #000000 @ 0 radial-gradient(220px at 50% 50%, #fafafa @ 0.1, #000000 @ 0 100%), radius 9999px |
-| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 93.9x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 98.9062pxx32px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | - | = | button.ds-focus:ring-2.ds-focus:ring-focus-ring 93.9x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 98.9062pxx32px image radial-gradient(220px at 50% 50%, #fafafa @ 0.1, #000000 @ 0 100%) r 9999px |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 93.9 x 30.38 | - | - | = |
+| Padding | 0px 6px 0px 12px | - | - | = |
+| Gap | 4px | - | - | = |
+| Border | none | - | - | = |
+| Radius | 9999px | - | - | = |
+| Background | #a0a0a0 @ 0.063 | - | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | - | - | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
+| Outline | none | - | - | = |
+| Font | ui-sans-serif 14px/20px 500 | - | - | = |
+| Letter spacing | normal | - | - | = |
+| Colour | #fafafa @ 0.7 | - | - | #fafafa @ 0.95 |
+| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | - | - | = |
+| Cursor | default | - | - | = |
+| Icon | 15.19 x 15.19, colour #a0a0a0 | - | - | = |
+| ::before | 98.9062px x 32px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | - | - | 98.9062px x 32px, absolute, bg #000000 @ 0 radial-gradient(220px at 50% 50%, #fafafa @ 0.1, #000000 @ 0 100%), radius 9999px |
+| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 93.9x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 98.9062pxx32px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | - | - | button.ds-focus:ring-2.ds-focus:ring-focus-ring 93.9x30.4 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 98.9062pxx32px image radial-gradient(220px at 50% 50%, #fafafa @ 0.1, #000000 @ 0 100%) r 9999px |
+| How | at rest | - | - | CDP forcePseudoState :active:hover |
 | Error | - | locator.hover: Element is outside of the viewport Call log:   - waiting for locator('[data-m-mark="dvc"]').first().first()     - locator resolved to <button tabindex="-1" data-size="md" data-m-mark="d | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
 Crops: `demo-version-chip-default.png`, `demo-version-chip-focus-visible.png`, `demo-version-chip-pressed.png`.
@@ -502,23 +506,24 @@ Page: home. Selector: `demo "Copy Link" button`. States: default, hover, focus-v
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 103.97 x 30.38 | = | = | = |
-| Padding | 0px 12px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 20px 4px 4px 20px | = | = | = |
-| Background | #a0a0a0 @ 0.063 | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | = | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #fafafa @ 0.7 | = | = | #fafafa @ 0.95 |
-| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 15.19 x 15.19, colour #fafafa @ 0.7 | = | = | 15.19 x 15.19, colour #fafafa @ 0.95 |
-| ::before | 109.516px x 32px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 20px 4px 4px 20px | = | = | 109.516px x 32px, absolute, bg #000000 @ 0 radial-gradient(212.295px at 50% 50%, #fafafa @ 0.098, #000000 @ 0 100%), radius 20px 4px 4px 20px |
-| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 104.0x30.4 bg #a0a0a0 @ 0.063 r 20px 4px 4px 20px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 109.516pxx32px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 20px 4px 4px 20px | = | = | button.ds-focus:ring-2.ds-focus:ring-focus-ring 104.0x30.4 bg #a0a0a0 @ 0.063 r 20px 4px 4px 20px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 109.516pxx32px image radial-gradient(212.295px at 50% 50%, #fafafa @ 0.098, #000000 @ 0 100%) r 20px 4px 4px 20px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 103.97 x 30.38 | = | - | = |
+| Padding | 0px 12px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 20px 4px 4px 20px | = | - | = |
+| Background | #a0a0a0 @ 0.063 | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | - | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 14px/20px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #fafafa @ 0.7 | = | - | #fafafa @ 0.95 |
+| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 15.19 x 15.19, colour #fafafa @ 0.7 | = | - | 15.19 x 15.19, colour #fafafa @ 0.95 |
+| ::before | 109.516px x 32px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 20px 4px 4px 20px | = | - | 109.516px x 32px, absolute, bg #000000 @ 0 radial-gradient(212.295px at 50% 50%, #fafafa @ 0.098, #000000 @ 0 100%), radius 20px 4px 4px 20px |
+| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 104.0x30.4 bg #a0a0a0 @ 0.063 r 20px 4px 4px 20px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 109.516pxx32px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 20px 4px 4px 20px | = | - | button.ds-focus:ring-2.ds-focus:ring-focus-ring 104.0x30.4 bg #a0a0a0 @ 0.063 r 20px 4px 4px 20px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 109.516pxx32px image radial-gradient(212.295px at 50% 50%, #fafafa @ 0.098, #000000 @ 0 100%) r 20px 4px 4px 20px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
 Crops: `demo-copy-link-default.png`, `demo-copy-link-hover.png`, `demo-copy-link-focus-visible.png`, `demo-copy-link-pressed.png`.
@@ -559,24 +564,25 @@ Page: home. Selector: `demo share "ACME Studios" button`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 166.99 x 33.65 | = | = | = |
-| Padding | 0px 10px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | #a0a0a0 @ 0.063 | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | = | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 13px/19.5px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #fafafa @ 0.7 | = | = | #fafafa @ 0.95 |
-| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 8.41 x 8.41, colour #a0a0a0, fill #000000 | = | = | = |
-| ::before | 138.969px x 28px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | = | 138.969px x 28px, absolute, bg #000000 @ 0 radial-gradient(182.096px at 50% 50%, #fafafa @ 0.13, #000000 @ 0 100%), radius 9999px |
-| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 167.0x33.6 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 138.969pxx28px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | = | button.ds-focus:ring-2.ds-focus:ring-focus-ring 167.0x33.6 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 138.969pxx28px image radial-gradient(182.096px at 50% 50%, #fafafa @ 0.13, #000000 @ 0 100%) r 9999px |
-| Ancestor paint | 2 up div.rounded-2xl.element-border bg #1f1f1f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 2px 8px -2px, #000000 @ 0.5 0px 16px 40px -8px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 166.99 x 33.65 | = | - | = |
+| Padding | 0px 10px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | #a0a0a0 @ 0.063 | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | - | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 13px/19.5px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #fafafa @ 0.7 | = | - | #fafafa @ 0.95 |
+| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 8.41 x 8.41, colour #a0a0a0, fill #000000 | = | - | = |
+| ::before | 138.969px x 28px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | - | 138.969px x 28px, absolute, bg #000000 @ 0 radial-gradient(182.096px at 50% 50%, #fafafa @ 0.13, #000000 @ 0 100%), radius 9999px |
+| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 167.0x33.6 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 138.969pxx28px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | - | button.ds-focus:ring-2.ds-focus:ring-focus-ring 167.0x33.6 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 138.969pxx28px image radial-gradient(182.096px at 50% 50%, #fafafa @ 0.13, #000000 @ 0 100%) r 9999px |
+| Ancestor paint | 2 up div.rounded-2xl.element-border bg #1f1f1f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 2px 8px -2px, #000000 @ 0.5 0px 16px 40px -8px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
 Crops: `demo-acme-btn-default.png`, `demo-acme-btn-hover.png`, `demo-acme-btn-focus-visible.png`, `demo-acme-btn-pressed.png`.
@@ -589,24 +595,25 @@ Page: home. Selector: `demo "Anyone with Link" control`. States: default, hover,
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 191.55 x 33.65 | = | = |
-| Padding | 0px 10px | = | = |
-| Gap | 6px | = | = |
-| Border | none | = | = |
-| Radius | 9999px | = | = |
-| Background | #a0a0a0 @ 0.063 | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | = |
-| Outline | none | = | = |
-| Font | ui-sans-serif 13px/19.5px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #fafafa @ 0.7 | = | = |
-| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | = |
-| Cursor | pointer | = | = |
-| Icon | 19.23 x 19.23, colour #a0a0a0 | = | = |
-| ::before | 159.406px x 28px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | = |
-| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 191.5x33.6 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 159.406pxx28px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | = |
-| Ancestor paint | 2 up div.rounded-2xl.element-border bg #1f1f1f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 2px 8px -2px, #000000 @ 0.5 0px 16px 40px -8px | = | = |
-| How | at rest | mouse hover | focus failed |
+| Size (w x h) | 191.55 x 33.65 | = | - |
+| Padding | 0px 10px | = | - |
+| Gap | 6px | = | - |
+| Border | none | = | - |
+| Radius | 9999px | = | - |
+| Background | #a0a0a0 @ 0.063 | = | - |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | - |
+| Outline | none | = | - |
+| Font | ui-sans-serif 13px/19.5px 400 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #fafafa @ 0.7 | = | - |
+| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | - |
+| Cursor | pointer | = | - |
+| Icon | 19.23 x 19.23, colour #a0a0a0 | = | - |
+| ::before | 159.406px x 28px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | - |
+| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 191.5x33.6 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 159.406pxx28px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | - |
+| Ancestor paint | 2 up div.rounded-2xl.element-border bg #1f1f1f shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 2px 8px -2px, #000000 @ 0.5 0px 16px 40px -8px | = | - |
+| How | at rest | mouse hover | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
 Crops: `demo-share-scope-default.png`, `demo-share-scope-hover.png`, `demo-share-scope-focus-visible.png`.
 
@@ -646,24 +653,25 @@ Page: home. Selector: `demo "Close" button`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 62.09 x 22.71 | = | = | = |
-| Padding | 0px 10px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | #121212 | = | = | = |
-| Background image | linear-gradient(#a0a0a0 @ 0.063, #a0a0a0 @ 0.063), none | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | = | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 14px/20px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #fafafa @ 0.7 | = | = | #fafafa @ 0.95 |
-| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 12.17 x 12.17, colour #fafafa @ 0.7 | = | = | 12.17 x 12.17, colour #fafafa @ 0.95 |
-| ::before | 76.5469px x 28px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | = | 76.5469px x 28px, absolute, bg #000000 @ 0 radial-gradient(182.088px at 50% 50%, #fafafa @ 0.13, #000000 @ 0 100%), radius 9999px |
-| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 62.1x22.7 bg #121212 image linear-gradient(#a0a0a0 @ 0.063, #a0a0a0 @ 0.063), none r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 76.5469pxx28px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | = | button.ds-focus:ring-2.ds-focus:ring-focus-ring 62.1x22.7 bg #121212 image linear-gradient(#a0a0a0 @ 0.063, #a0a0a0 @ 0.063), none r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 76.5469pxx28px image radial-gradient(182.088px at 50% 50%, #fafafa @ 0.13, #000000 @ 0 100%) r 9999px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 62.09 x 22.71 | = | - | = |
+| Padding | 0px 10px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | #121212 | = | - | = |
+| Background image | linear-gradient(#a0a0a0 @ 0.063, #a0a0a0 @ 0.063), none | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | - | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 14px/20px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #fafafa @ 0.7 | = | - | #fafafa @ 0.95 |
+| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 12.17 x 12.17, colour #fafafa @ 0.7 | = | - | 12.17 x 12.17, colour #fafafa @ 0.95 |
+| ::before | 76.5469px x 28px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | - | 76.5469px x 28px, absolute, bg #000000 @ 0 radial-gradient(182.088px at 50% 50%, #fafafa @ 0.13, #000000 @ 0 100%), radius 9999px |
+| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 62.1x22.7 bg #121212 image linear-gradient(#a0a0a0 @ 0.063, #a0a0a0 @ 0.063), none r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 76.5469pxx28px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | - | button.ds-focus:ring-2.ds-focus:ring-focus-ring 62.1x22.7 bg #121212 image linear-gradient(#a0a0a0 @ 0.063, #a0a0a0 @ 0.063), none r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.16 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 1px 0px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 76.5469pxx28px image radial-gradient(182.088px at 50% 50%, #fafafa @ 0.13, #000000 @ 0 100%) r 9999px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
 Crops: `demo-close-default.png`, `demo-close-hover.png`, `demo-close-focus-visible.png`, `demo-close-pressed.png`.
@@ -1036,24 +1044,25 @@ Page: login. Selector: `login "Continue with Email"`. States: default, hover, fo
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 288 x 44 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | #a0a0a0 @ 0.063 | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | = | = |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #fafafa @ 0.7 | = | = | = |
-| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | = | = |
-| Opacity | 0.5 | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 16 x 16, colour #fafafa @ 0.7 | = | = | = |
-| ::before | 288px x 44px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | = | = |
-| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 288.0x44.0 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 288pxx44px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 288 x 44 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | #a0a0a0 @ 0.063 | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px | = | - | = |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 14px/20px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #fafafa @ 0.7 | = | - | = |
+| Transition | color, transform, opacity, box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1) | = | - | = |
+| Opacity | 0.5 | = | - | = |
+| Cursor | default | = | - | = |
+| Icon | 16 x 16, colour #fafafa @ 0.7 | = | - | = |
+| ::before | 288px x 44px, absolute, bg #000000 @ 0 radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%), radius 9999px | = | - | = |
+| Painted layers | button.ds-focus:ring-2.ds-focus:ring-focus-ring 288.0x44.0 bg #a0a0a0 @ 0.063 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #adadad @ 0.07 0px 0.5px 0px 0px inset, #6f6f6f @ 0.255 0px 0px 0px 0.5px inset, #000000 @ 0.18 0px 1px 2px 0px, #000000 @ 0.18 0px 2px 6px -2px; button::before.ds-focus:ring-2.ds-focus:ring-focus-ring 288pxx44px image radial-gradient(90px at 50% 50%, #fafafa @ 0.06, #000000 @ 0 100%) r 9999px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `login-email-btn-default.png`, `login-email-btn-hover.png`, `login-email-btn-focus-visible.png`, `login-email-btn-pressed.png`.
 
