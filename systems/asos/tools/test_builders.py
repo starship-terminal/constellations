@@ -18,6 +18,10 @@ class BuildersTest(unittest.TestCase):
         cls.tmp = tempfile.TemporaryDirectory()
         cls.copy = pathlib.Path(cls.tmp.name) / "pkg"
         shutil.copytree(PKG, cls.copy, ignore=shutil.ignore_patterns("__pycache__"))
+        # Remove the committed outputs from the copy first, so a builder that
+        # writes nothing cannot pass by leaving the committed file in place.
+        for out in ("raw/component-tokens.json", "tokens.json"):
+            (cls.copy / out).unlink()
         for b in ("build_component_tokens.py", "build_tokens.py"):
             subprocess.run([sys.executable, str(cls.copy / "tools" / b)], check=True, capture_output=True)
 
@@ -28,6 +32,7 @@ class BuildersTest(unittest.TestCase):
     def test_outputs_match_committed(self):
         for out in ("raw/component-tokens.json", "tokens.json"):
             with self.subTest(out=out):
+                self.assertTrue((self.copy / out).exists(), f"{out} was not rebuilt")
                 self.assertEqual((self.copy / out).read_text(), (PKG / out).read_text())
 
     def test_font_families_are_the_computed_stacks(self):

@@ -56,13 +56,16 @@ class TokenTypesTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             copy = pathlib.Path(tmp) / "pkg"
             shutil.copytree(PKG, copy, ignore=shutil.ignore_patterns("__pycache__", "screenshots", "components"))
+            # Remove the committed output from the copy first, so a builder that
+            # writes nothing cannot pass by leaving the committed file in place.
+            (copy / "tokens.json").unlink()
             if mutate:
                 spec_path = copy / "raw" / "component-tokens.json"
                 spec = json.loads(spec_path.read_text())
                 mutate(spec)
                 spec_path.write_text(json.dumps(spec))
             run = subprocess.run([sys.executable, str(copy / "tools" / "build_tokens.py")], capture_output=True, text=True)
-            built = (copy / "tokens.json").read_text() if run.returncode == 0 else None
+            built = (copy / "tokens.json").read_text() if run.returncode == 0 and (copy / "tokens.json").exists() else None
             return run, built
 
     def test_tokens_match_committed(self):
