@@ -6891,9 +6891,9 @@
       "description": "170+ countries, 50 currencies, one account",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://wise.com/login Login with Google opened a create-account screen asking for account type and residence. Fields not filled. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 21
     },
     {
@@ -6908,9 +6908,9 @@
       "description": "Make hiring a Wittl more human",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://wittl.co/login did not resolve. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 21
     },
     {
@@ -6925,9 +6925,9 @@
       "description": "Website building platform",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://users.wix.com/signin Continue with Google did not open an account chooser. Email was not associated with an account and the next screen asked for a password to sign up. Password not created.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 21
     },
     {
@@ -6942,9 +6942,9 @@
       "description": "The Most Accurate B2B Contact Database",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://wiza.co/auth/login Continue with Google stopped on a bot check before the app opened. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 21
     },
     {
@@ -6959,9 +6959,9 @@
       "description": "Free 3D design software",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://beta.womp.com/auth Continue with Google did not open an account chooser. Email Continue asked for a password to create an account. Password not created.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 21
     },
     {
@@ -6976,9 +6976,9 @@
       "description": "Design feedback and revisions, all in one place",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.workflow.design/users/sign-in never loaded a form. Marketing login URL is a 404.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 21
     },
     {
@@ -6993,9 +6993,9 @@
       "description": "Versatile & Robust Project Management Software",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://login.wrike.com/login/ asked for a password after the capture inbox. Password not submitted. Continue with Google did not open an account chooser.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 21
     },
     {
@@ -7010,9 +7010,9 @@
       "description": "Wynde is an unmoderated research platform for modern product teams to find relevant respondents and swiftly validate UX solutions",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.wynde.io/login Continue with the capture inbox showed a confirmation-code step. Code not entered. Sign in with Google errored and did not open an account chooser.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 21
     },
     {
@@ -7027,9 +7027,9 @@
       "description": "It's what's happening ",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://x.com/i/flow/login Continue with Google signed in and opened the home timeline. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 21
     },
     {
@@ -7044,9 +7044,9 @@
       "description": "Xbox Official Site: Consoles, Games, and Community",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.xbox.com/en-US/auth/msa?action=logIn asked for a Microsoft account. The capture inbox is not a Microsoft account. Create account not opened. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 21
     },
     {
@@ -7061,9 +7061,9 @@
       "description": "Food, Delivery & Reviews",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.yelp.com/login never loaded a form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 21
     },
     {
@@ -7078,9 +7078,9 @@
       "description": "Workflow automation software for everyone",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://zapier.com/app/login Continue with Google signed in and opened the app. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 21
     },
     {
@@ -7095,9 +7095,9 @@
       "description": "Discover the new ZARA collection online",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.zara.com/us/en/logon Continue with Google stopped on an access-denied page before the app opened. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 21
     },
     {
@@ -7112,9 +7112,9 @@
       "description": "Home Decor",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.zarahome.com/us/ Continue with Google stopped on an access-denied page before the app opened. Not retried. The /logon URL is gone.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 21
     },
     {
@@ -7129,9 +7129,9 @@
       "description": "Printed shoes on every foot",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.zellerfeld.com/ Continue with Google returned to a password sign-in. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 21
     },
     {
@@ -7146,9 +7146,9 @@
       "description": "Customer Service Software & Sales CRM",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.zendesk.com/login/ asks for a Zendesk subdomain before sign-in. Subdomain not entered. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 21
     },
     {
@@ -7163,9 +7163,9 @@
       "description": "The commission-free freelance network",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://contra.com/log-in Continue with Google did not open an account chooser. The capture inbox was not an account and the next screen was sign-up. Sign-up not completed.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 21
     },
     {
@@ -7180,9 +7180,9 @@
       "description": "Record. Share. Done.",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://supercut.ai/login stopped on a bot check before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 21
     }
   ]
