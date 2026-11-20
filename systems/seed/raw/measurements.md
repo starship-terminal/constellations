@@ -107,3 +107,19 @@ Keyframes seen: swiper-preloader-spin, slide-up, opacity, onetrust-fade-in, otFl
 - Seed Sans Mono 400, /fonts/SeedSansMono-Regular-subset.woff2
 
 Hero heading stack: "Seed Sans", system-ui, "Helvetic Neue", Helvetica, Arial, sans-serif. Body stack: "Seed Sans", Helvetica, sans-serif.
+
+## Playwright pass, 2026-11-21
+
+Headless Chromium, signed out. Desktop 1440x900 at 1x. Phone 390x844 at 2x. Custom properties: [css-vars.json](css-vars.json). Element styles: [components-computed.json](components-computed.json). Screenshots are under `screenshots/`. These readings confirm the token colours. They do not replace the 2026-11-19 table above.
+
+| Element | Size | Notes |
+|---|---|---|
+| Hero quiz pill | 145.9 x 51 | Snow fill, seed-green text, 16px / 350, radius 1000px. Token height is 52px |
+| Start Now | 432 x 48 | Seed-green fill, snow text, 16px / 350, radius 1000px |
+| Sign-in email | 327 x 48 | Transparent fill, white text, 14px / 350, radius 8px, border 1px rgba(252, 252, 247, 0.2). Empty |
+| Login email | 550 x 35 | White fill, seed-green text, 16px / 400, radius 0. Empty |
+| Cart dialog | 500 x 884 | Snow fill, seed-green text, radius 16px, title 24px. Menu token radius is 32px |
+| Quiz option | 552 x 72 | role=radio, snow fill, seed-green text, 18px / 350, radius 16px, border 1px #d2d8d0. Not selected |
+| Review search | 350 x 40 | White fill, radius 0, border 1px #eaeaea, Neue Haas Unica Pro. Third-party widget |
+
+Product-card and quiz-option selectors missed their crops. Header-link focus was not remeasured. Homepage locale screenshot was discarded because a promo overlay covered the listbox.
