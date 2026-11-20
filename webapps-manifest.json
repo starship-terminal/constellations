@@ -5395,9 +5395,9 @@
       "description": "Design, collaborate, prototype and handoff",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.sketch.com/signin/ shows email and password, or Apple, Google, or SSO. Password not submitted.",
+      "notes": "Email probe: https://www.sketch.com/signin/ shows email and password, or Apple, Google, or SSO. Password not submitted. Public walk 2026-11-21: Product, Explore, and Support open disclosure menus. Pricing, Sign In, and Get started are direct links. Phone Menu opens the mobile nav. 28 public pages were reached from the header and footer. Sign in stops at https://www.sketch.com/signin/. Apple, Google, and SSO were not clicked. No email was typed. No form was submitted. Signed-in workspace was not captured. Public package in PR 1574 at 2be89b49ea59. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 16
     },
     {
