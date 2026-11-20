@@ -54,9 +54,6 @@ colors:
   code-red: "#c7382e"
   code-yellow: "#999400"
   component-button-cta-bg: "#73dc8c"
-  component-sendButton-bg: "#52ab66"
-  component-nav-bg: "rgba(0, 0, 0, 0)"
-  component-appSidebar-bg: "rgba(0, 0, 0, 0)"
 typography:
   hero:
     fontFamily: "Pie Headline"
@@ -118,12 +115,6 @@ typography:
 components:
   button-cta:
     backgroundColor: "{colors.component-button-cta-bg}"
-  sendButton:
-    backgroundColor: "{colors.component-sendButton-bg}"
-  nav:
-    backgroundColor: "{colors.component-nav-bg}"
-  appSidebar:
-    backgroundColor: "{colors.component-appSidebar-bg}"
 ---
 
 # HTTPie
@@ -159,9 +150,9 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ### Fonts (from README.md)
 
-- **Pie Headline** — FK Screamer, the display face (hero and section headlines): licensed, not shipped; the token keeps the family name plus an Impact/Arial-Narrow fallback chain.
-- **Pie Body** — PolyPie, the text/UI face: licensed, not shipped; the token keeps `ui-sans-serif, system-ui` fallbacks.
-- **Pie Monospace** — code, the URL field, JSON: licensed, not shipped; `ui-monospace, SFMono-Regular, Menlo` fallbacks.
+- **Pie Headline** — FK Screamer, the display face (hero and section headlines): licensed, not shipped; the token is the stack the hero computes, `"Pie Headline", Impact`.
+- **Pie Body** — PolyPie, the text/UI face: licensed, not shipped; the token is the computed `"Pie Body", sans-serif`.
+- **Pie Monospace** — code, the URL field, JSON: licensed, not shipped; the token is the computed `"Pie Monospace", monospace`. Add your own fallbacks when you use these.
 - **Pie Symbols** — the icon face: licensed, not shipped.
 
 ## Layout
@@ -178,7 +169,7 @@ No radius scale in tokens.json.
 
 ## Components
 
-4 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+1 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -203,6 +194,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Pressed states** are DevTools-forced; a script-applied mousedown style would not show.
 - **Reduced motion is ignored by the product** — `raw/motion.json` records the probe's verdict; nothing honours `prefers-reduced-motion`.
 - **The mobile app read is limited** — /app is a desktop-first shell; at 390 the side panel becomes a sheet and the builder compresses.
+- **The Send button fill exists only in `dark`.** `component.sendButton.bg` aliases the accent role, and the button was measured on the dark site only, so the light set has no Send fill. The nav bar and /app rail paint transparent in both themes (the page's `bg.z0` shows through), so neither has a fill token.
 
 ### Do and don't (from README.md)
 

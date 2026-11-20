@@ -226,7 +226,10 @@ const resolveVal = (v, depth) => {
   for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — HTTPie</span><span class="tv">${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
+  // the package declares no font.size/lineHeight/weight scales today; drop the
+  // empty block rather than show nothing under the heading
+  const to = $('#type-out');
+  if (h) to.innerHTML = h; else to.remove();
   let f = '';
   for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#fam-out').innerHTML = f;
