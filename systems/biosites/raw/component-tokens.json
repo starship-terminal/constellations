@@ -43,7 +43,7 @@
     "250": {
      "type": "color",
      "value": "#fafafa",
-     "source": "computed backgroundColor of body on /editor (the claim screen)"
+     "source": "entered by hand at capture time, not a committed reading: the body backgroundColor on /editor (the claim screen) as read off the page; raw/components-computed.json holds no body or /editor ground"
     }
    },
    "white": {

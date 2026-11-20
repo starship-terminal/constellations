@@ -210,7 +210,10 @@ for key, comp, state, desc in [
         neutral[key] = {"value": v, "type": "color",
                         "source": f"painted layer under {comp} {state} (raw/components-computed.json)",
                         "description": desc}
-neutral["paper"] = {"value": "#ffffff", "type": "color",
+_paper = {norm_color(st(c, "default").get("backgroundColor", "")) for c in ("c-widget", "c-header", "r-tweet")}
+if len(_paper) != 1:
+    raise ValueError(f"paper: readings differ: {sorted(_paper)}")
+neutral["paper"] = {"value": _paper.pop(), "type": "color",
                     "source": "computed backgroundColor of c-widget / c-header / r-tweet on /cara.app (raw/components-computed.json)",
                     "description": "The white creator-page field, cards and dropdowns."}
 

@@ -266,7 +266,10 @@ for name, target, desc in [
     ("--icon-muted", "color.neutral.icon-muted", "Muted glyph colour (+ icons, badge outline)."),
 ]:
     if target is None:
-        emit(light, name, {"value": "#ffffff", "type": "color",
+        _on_dark = {norm_color(st(c, "default").get("color", "")) for c in ("footer-link", "hero-title")}
+        if len(_on_dark) != 1:
+            raise ValueError(f"{name}: readings differ: {sorted(_on_dark)}")
+        emit(light, name, {"value": _on_dark.pop(), "type": "color",
                            "source": "computed color of footer-link/hero-title (raw/components-computed.json)",
                            "description": desc})
     else:

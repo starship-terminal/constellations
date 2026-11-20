@@ -489,9 +489,8 @@
  },
  "light": {
   "page": {
-   "value": "#ffffff",
+   "var": "--white",
    "type": "color",
-   "source": "computed backgroundColor of body (raw/components-computed.json); --white",
    "description": "The page field: pure white."
   },
   "surface": {

@@ -115,10 +115,11 @@ for path, (comp, state, prop) in PALETTE.items():
                   "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)"}
 
 # The claim page ground is not any component's own fill: body paints #fafafa
-# on /editor (read off the page during capture).
+# on /editor (read off the page during capture). No reading in raw/ holds it,
+# so it is labelled as entered by hand.
 SPEC["core"]["color"]["grey"]["250"] = {
     "type": "color", "value": "#fafafa",
-    "source": "computed backgroundColor of body on /editor (the claim screen)"}
+    "source": "entered by hand at capture time, not a committed reading: the body backgroundColor on /editor (the claim screen) as read off the page; raw/components-computed.json holds no body or /editor ground"}
 
 # An index of palette values so roles below can alias instead of repeating a hex.
 BY_VALUE = {}
