@@ -765,20 +765,21 @@ Page: genre. Selector: `faq heading`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 289 x 24 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Inter 16px/24px 600 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #ffffff | = | = | = | = |
-| Transition | none | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Ancestor paint | 1 up summary.no-default-focus.focus-visible bg #cfd6e5 @ 0.08 | 1 up summary.no-default-focus.focus-visible bg #cfd6e5 @ 0.16 | = | = | 1 up summary.no-default-focus.focus-visible bg #cfd6e5 @ 0.16 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
+| Size (w x h) | 289 x 24 | = | - | = | = |
+| Padding | 0px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Inter 16px/24px 600 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #ffffff | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Ancestor paint | 1 up summary.no-default-focus.focus-visible bg #cfd6e5 @ 0.08 | 1 up summary.no-default-focus.focus-visible bg #cfd6e5 @ 0.16 | - | = | 1 up summary.no-default-focus.focus-visible bg #cfd6e5 @ 0.16 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `faq-row-default.png`, `faq-row-hover.png`, `faq-row-focus-visible.png`, `faq-row-pressed.png`, `faq-row-opened.png`.
 

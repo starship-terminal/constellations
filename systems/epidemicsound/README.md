@@ -100,7 +100,9 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 ## What to distrust
 
 - **The base radius scale is zeroed by design.** `:root` declares `--es-radius-small/medium/large` (2/4/8px) but `body` zeroes them; the shipped pages carry `radii-override`, under which only `button` (10000px), `surface` (16px), `element` (8px), `detail` (4px) and `tiny` (2px) paint. The resolved values in tokens.json are the `radii-override` ones — read `core.radius.small`/`medium`/`large` as 0, not as the declared 2/4/8.
-- **The cover play button's hover is a real 0x0.** Row hover swaps the album-cover button out of the layout; its hover-state computed styles exist but the box collapses — not a missed selector.
+- **The cover play button's hover is not a reading.** Row hover swaps the album-cover button out of the layout, so `track-play` and `sfx-play` hover hold a 0x0 box: components.md leaves those states out and says so, and the hover look is on the row (`track-row`, `sfx-row`).
+- **Two entries read the wrong element.** `plan-price` is an empty 688 x 384 div at y 6525, not a price line, and `su-submit` is the "Continue with Google" link, not the registration submit. No token cites them; recapture needed.
+- **Some roles have no reading.** `dark.border.divider` and `dark.action.liked` were entered by hand (no measured border or liked icon paints them) and say so in their source; `light.text.muted`, `dark.text.muted` and `core.motion.control` have no reading at all and are listed under `_gaps` in raw/component-tokens.json.
 - **Quantised screenshots band gradients.** Screenshots are 256-colour PNGs; read exact colours from tokens.json or the raw JSON, and pixel-perfect gradients from [raw/full/](raw/full).
 - **Hidden twins exist.** The header ships a hidden duplicate "Log in" link and pricing a hidden "Compare plans" heading before the painted ones; the package measures the painted copy (the last match) only.
 - **SFX pages have no large category card.** The nearest real subcategory surface is a small periwinkle in-row text link (`sfx-category-card`, 39 x 20); do not look for tile-style category cards that were never there.
@@ -148,4 +150,4 @@ python3 tools/build_style_guide.py        # style-guide.html
 python3 tools/token_checks.py             # structural token checks
 ```
 
-Screenshots: `RAW=$PWD/raw/full node tools/capture/public/public.mjs` then `python3 tools/capture/quantize.py raw/full` (writes `screenshots/` with `.capture.json` sidecars). Measurements and crops: `node tools/capture/public/measure.mjs`. All capture scripts take `PLAYWRIGHT=<path to playwright/index.mjs>` and run signed out only.
+Screenshots: `node tools/capture/public/public.mjs` (full-colour shots go to `~/.design-systems/epidemicsound/raw-shots` unless `RAW` is set) then `python3 tools/capture/quantize.py ~/.design-systems/epidemicsound/raw-shots` (writes `screenshots/` with `.capture.json` sidecars). Measurements and crops: `node tools/capture/public/measure.mjs`. All capture scripts take `PLAYWRIGHT=<path to playwright/index.mjs>` and run signed out only.
