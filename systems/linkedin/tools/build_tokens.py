@@ -4,9 +4,11 @@
 Sources, read signed out from linkedin.com:
   raw/css-vars.json   --color-* and the artdeco font/link resets, resolved
                       the way the browser resolves them (tools/capture/vars.mjs).
-  raw/components-computed.json  measured geometry for the pill radius, the
-                      display size and the control height, when the measure
-                      pass has run.
+  raw/components-computed.json  every font size, weight, radius, spacing step
+                      and control size, read from a named component; the
+                      build stops when a reading is missing. The four steps
+                      no element measured (fontSize.lg, radius.md,
+                      radius.full, spacing.1) carry the Reconstruction label.
 
 The guest site paints one light theme. The dark set stays empty. Every
 token carries $extensions.source. A name that did not resolve is omitted,
@@ -135,10 +137,50 @@ action = {
     "accent-hover": color("light.action.accent-hover", "--color-button-container-primary-hover"),
 }
 
-# Geometry measured on the guest home, recorded in the capture notes.
-# These are the values the live DOM returned on 2026-11-18: Join now is a
-# 48px pill with a 24px radius, the hero heading is 48px, the nav is 80px.
-measured = "measured computed style on www.linkedin.com guest home, 1440x900, 2026-11-18"
+# Geometry read from raw/components-computed.json. Every dimension below names
+# the component and property it was read from; a missing reading stops the build.
+COMPS = json.loads((RAW / "components-computed.json").read_text())["components"]
+HAND = "Reconstruction: entered by hand at capture time; no raw reading holds this value"
+
+
+def page_of(key):
+    """The page a component was read on, without its search query."""
+    return COMPS[key]["url"].split("?")[0]
+
+
+def reading(key, prop, state="default"):
+    st = (COMPS.get(key) or {}).get("states", {}).get(state) or {}
+    value = (st.get("style") or {}).get(prop)
+    if st.get("error") or value in (None, ""):
+        raise SystemExit(f"no reading of {prop} on {key}/{state}")
+    return value, f"measured {prop} on {key}/{state} ({page_of(key)}), 1440x900, 2026-11-18"
+
+
+def mdim(path, key, prop, note=""):
+    value, source = reading(key, prop)
+    return dim(path, value, source + (note and "; " + note))
+
+
+def mweight(key):
+    value, source = reading(key, "fontWeight")
+    return {"$value": int(value), "$type": "fontWeight", "$extensions": {"source": source}}
+
+
+def mratio(key):
+    """line-height as a multiple of font-size, worked out from one measured element."""
+    lh, _ = reading(key, "lineHeight")
+    fs, _ = reading(key, "fontSize")
+    ratio = round(float(lh[:-2]) / float(fs[:-2]), 3)
+    return {"$value": ratio, "$type": "number", "$extensions": {"source": f"Derived: computed lineHeight {lh} / fontSize {fs} on {key}/default ({page_of(key)})"}}
+
+
+def icon_width(key):
+    icon = COMPS[key]["states"]["default"].get("icon") or {}
+    if not isinstance(icon.get("w"), (int, float)):
+        raise SystemExit(f"no icon reading on {key}")
+    return dim("core.size.icon-nav", f"{icon['w']:g}px", f"measured icon box on {key}/default ({page_of(key)}): {icon['w']:g} x {icon['h']:g} painted")
+
+
 core = {
     "font": {
         "family": {
@@ -149,60 +191,43 @@ core = {
         },
     },
     "fontSize": {
-        "xs": dim("core.fontSize.xs", "12px", measured + "; .text-xs"),
-        "sm": dim("core.fontSize.sm", "14px", measured + "; .text-sm"),
-        "md": dim("core.fontSize.md", "16px", measured + "; .text-md"),
-        "lg": dim("core.fontSize.lg", "20px", measured + "; .text-lg"),
-        "xl": dim("core.fontSize.xl", "24px", measured + "; .text-xl"),
-        "display-sm": dim("core.fontSize.display-sm", "24px", measured + "; .text-display-sm"),
-        "display-md": dim("core.fontSize.display-md", "32px", measured + "; .text-display-md"),
-        "display-lg": dim("core.fontSize.display-lg", "48px", measured + "; .text-display-lg on the guest h1"),
-        "display-xl": dim("core.fontSize.display-xl", "64px", measured + "; .text-display-xl and .t-64 on the legal banner"),
+        "xs": mdim("core.fontSize.xs", "footer-link", "fontSize"),
+        "sm": mdim("core.fontSize.sm", "filter-chip", "fontSize"),
+        "md": mdim("core.fontSize.md", "apply-cta", "fontSize"),
+        "lg": dim("core.fontSize.lg", "20px", HAND + "; the .text-lg step below the papabear breakpoint, which no capture measured"),
+        "xl": mdim("core.fontSize.xl", "company-h1", "fontSize", "text-lg papabear:text-xl at 1440"),
+        "display-sm": mdim("core.fontSize.display-sm", "profile-h1", "fontSize"),
+        "display-md": mdim("core.fontSize.display-md", "section-heading", "fontSize"),
+        "display-lg": mdim("core.fontSize.display-lg", "hero-h1", "fontSize"),
+        "display-xl": mdim("core.fontSize.display-xl", "legal-h1", "fontSize", "banner__headline t-64"),
     },
     "fontWeight": {
-        "regular": {"$value": 400, "$type": "fontWeight", "$extensions": {"source": "css .font-regular { font-weight: 400 } on the guest sheet"}},
-        "bold": {"$value": 600, "$type": "fontWeight", "$extensions": {"source": "css .font-bold { font-weight: 600 } on the guest sheet; LinkedIn's bold is 600"}},
+        "regular": mweight("hero-h1"),
+        "bold": mweight("company-h1"),
     },
     "lineHeight": {
-        "regular": {"$value": 1.25, "$type": "number", "$extensions": {"source": "css .leading-regular { line-height: 1.25 } on the guest sheet"}},
-        "open": {"$value": 1.5, "$type": "number", "$extensions": {"source": "css .leading-open { line-height: 1.5 } on the guest sheet"}},
+        "regular": mratio("hero-h1"),
+        "open": mratio("company-h1"),
     },
     "radius": {
-        "sm": dim("core.radius.sm", "4px", "css .rounded-sm { border-radius: 4px } on the guest sheet"),
-        "md": dim("core.radius.md", "8px", "css .rounded-md { border-radius: 8px } on the guest sheet"),
-        "pill": dim("core.radius.pill", "24px", measured + "; .btn-md { border-radius: 24px } and the Join now control"),
-        "full": dim("core.radius.full", "9999px", "css .rounded-full { border-radius: 9999px } on the guest sheet"),
+        "sm": mdim("core.radius.sm", "signin-email", "borderTopLeftRadius"),
+        "md": dim("core.radius.md", "8px", HAND + "; .rounded-md, which no measured element paints"),
+        "pill": mdim("core.radius.pill", "nav-join", "borderTopLeftRadius"),
+        "full": dim("core.radius.full", "9999px", HAND + "; .rounded-full, which no measured element paints"),
     },
     "spacing": {
-        "1": dim("core.spacing.1", "4px", "guest utility scale, 4px unit"),
-        "2": dim("core.spacing.2", "8px", "guest utility scale, 4px unit"),
-        "3": dim("core.spacing.3", "12px", "guest utility scale; .btn-md vertical padding"),
-        "4": dim("core.spacing.4", "16px", "guest utility scale; body font size"),
-        "6": dim("core.spacing.6", "24px", "guest utility scale; .btn-md horizontal padding"),
+        "1": dim("core.spacing.1", "4px", HAND + "; the 4px unit of the guest utility scale"),
+        "2": mdim("core.spacing.2", "hero-email", "paddingTop"),
+        "3": mdim("core.spacing.3", "apply-cta", "paddingTop", ".btn-md vertical padding"),
+        "4": mdim("core.spacing.4", "m-nav", "paddingLeft"),
+        "6": mdim("core.spacing.6", "apply-cta", "paddingLeft", ".btn-md horizontal padding"),
     },
     "size": {
-        "control-md": dim("core.size.control-md", "48px", measured + "; .btn-md { min-height: 48px }"),
-        "nav": dim("core.size.nav", "80px", measured + "; guest header height on the jobs and company pages"),
-        "icon-nav": dim("core.size.icon-nav", "24px", measured + "; .top-nav-link__icon is h-3 w-3 at the 16px root, 24px painted"),
+        "control-md": mdim("core.size.control-md", "nav-join", "height"),
+        "nav": mdim("core.size.nav", "header-nav", "height"),
+        "icon-nav": icon_width("nav-link"),
     },
 }
-
-# Overlay the measured component values when the measure pass wrote them.
-comp_path = RAW / "components-computed.json"
-if comp_path.exists():
-    comps = json.loads(comp_path.read_text()).get("components", {})
-    join = comps.get("nav-join", {}).get("states", {}).get("default", {})
-    rect = join.get("rect") or {}
-    height = rect.get("h")
-    if isinstance(height, (int, float)) and 32 <= height <= 64:
-        core["size"]["control-md"] = dim(
-            "core.size.control-md",
-            f"{round(height)}px",
-            "measured nav-join height on the guest home",
-        )
-    radius = join.get("radius") or join.get("borderRadius")
-    if isinstance(radius, str) and re.fullmatch(r"\d+(\.\d+)?px", radius):
-        core["radius"]["pill"] = dim("core.radius.pill", f"{round(float(radius[:-2]))}px", "measured nav-join border-radius")
 
 light = {
     "color": light_color,
@@ -213,8 +238,8 @@ light = {
     "component": {
         "button-primary-background": color("light.component.button-primary-background", "--color-button-container-primary"),
         "button-primary-text": color("light.component.button-primary-text", "--color-button-label-primary"),
-        "button-primary-radius": dim("light.component.button-primary-radius", "24px", measured + "; .btn-md border-radius"),
-        "button-primary-height": dim("light.component.button-primary-height", "48px", measured + "; .btn-md min-height"),
+        "button-primary-radius": mdim("light.component.button-primary-radius", "nav-join", "borderTopLeftRadius"),
+        "button-primary-height": mdim("light.component.button-primary-height", "nav-join", "height"),
     },
 }
 
