@@ -18,7 +18,7 @@ The viewport that was measured was 1169 by 731 CSS pixels at device pixel ratio 
 | [raw/](raw/) | Capture notes: pages, viewport, what was not entered |
 | [screenshots/README.md](screenshots/README.md) | Why this folder has no PNGs |
 | [screenshots/PLACEHOLDER.txt](screenshots/PLACEHOLDER.txt) | Keeps the screenshots folder in git |
-| [tools/](tools/) | The capture kit, copied and left as the record of the route |
+| [tools/](tools/) | The capture kit, copied and left as the record of the route. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 <!-- brief:start -->
 <!-- brief:end -->

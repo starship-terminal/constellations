@@ -16,7 +16,7 @@ Surfaces: home, pricing dialog, FAQ, blog, Max, founders, and reviews, plus the 
 | [components/](components/) | Nine crops |
 | [screenshots/](screenshots/) | Eleven page screenshots |
 | [raw/](raw/) | Computed-style dumps |
-| [tools/](tools/) | Checker, tests, and the unused kit copy |
+| [tools/](tools/) | Checker, tests, and the unused kit copy. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 

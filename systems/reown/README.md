@@ -17,7 +17,7 @@ Computed styles were read in a T3 preview tab at 1169 by 731, devicePixelRatio 2
 | [icons/](icons/) | Index for the site icon and wordmark crop |
 | [screenshots/](screenshots/) | Eight public-page screenshots |
 | [raw/](raw/) | Computed-style readings |
-| [tools/](tools/) | Token builder, its test, and the copied capture kit |
+| [tools/](tools/) | Token builder, its test, and the copied capture kit. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 

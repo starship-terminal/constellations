@@ -12,7 +12,7 @@ The measured viewport was 1169 by 731 CSS pixels, `devicePixelRatio` 2, visual v
 | [tokens.json](tokens.json) | `--rui-*` colours, type, radii, space, size, shadow, and motion, light and dark |
 | [style-guide.html](style-guide.html) | Swatches, the header pills, the type scale, and the radii |
 | [raw/](raw/) | The colour dumps the builder reads |
-| [tools/](tools/) | The kit copy, `build/build_tokens.py`, `build/build_style_guide.py`, and `test_tokens.py` |
+| [tools/](tools/) | The kit copy, `build/build_tokens.py`, `build/build_style_guide.py`, and `test_tokens.py`. The unadapted kit builder copies beside those two, the `native/` builders and `capture/signed-in/build-measurements.mjs` were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 

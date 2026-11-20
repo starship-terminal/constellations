@@ -16,9 +16,8 @@ Unsplash is a public photo and illustration library at [unsplash.com](https://un
 | [screenshots/](screenshots/) | Empty: the preview browser produced no frames |
 | [raw/](raw/) | Computed custom properties, component readings, layout |
 | [tools/](tools/) | Capture kit plus the token check and style-guide render |
-| [build/](build/) | Kit builders copied with the package. The live render uses tools/build_style_guide.py |
-| [capture/](capture/) | Kit capture scripts. This capture measured the live page instead of running them |
-| [native/](native/) | Kit native-app scripts. Unused. Unsplash is a web capture |
+| [capture/](capture/) | Kit capture scripts. This capture measured the live page instead of running them. The unadapted `build-measurements.mjs` copies were removed in the 2026-11 audit |
+| [native/](native/) | Kit native-app scripts. Unused. Unsplash is a web capture. The unadapted native builders and the kit `build/` folder were removed in the 2026-11 audit |
 
 <!-- brief:start -->
 ## Brief

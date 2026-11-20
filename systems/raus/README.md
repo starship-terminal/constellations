@@ -15,7 +15,7 @@ Surfaces: home, about, search, journal, help, and staying with us. Theme: light 
 | [patterns.md](patterns.md) | How the public pages are put together |
 | [icons/](icons/) | Wordmark, promo arrow, and close glyph, with [icons/INDEX.tsv](icons/INDEX.tsv) |
 | [raw/](raw/) | Viewport notes and the reading log |
-| [tools/](tools/) | The capture kit and a token checker |
+| [tools/](tools/) | The capture kit and a token checker. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 <!-- brief:start -->
 ## Brief
