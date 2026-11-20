@@ -65,7 +65,10 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || BASE + URLS[key], { wait, promo });
+  // open() throws on a failed navigation or a challenge that never clears; treat it like BLOCKED.
+  const opened = await open(page, url || BASE + URLS[key], { wait, promo })
+    .then(() => true, (e) => { log('  OPEN FAILED', key, String(e.message).slice(0, 100)); return false; });
+  if (!opened) { failedPages.add(key); await page.close(); await ctx.close(); return false; }
   if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
@@ -332,13 +335,6 @@ const G = {
   mobile: 'Mobile (390 wide)',
 };
 
-const ABS = {
-  words: 'https://words.getmatter.com/',
-  article: 'https://words.getmatter.com/p/anu-coolhunt-before-sunrise-why-i',
-  docs: 'https://docs.getmatter.com/',
-  signin: 'https://web.getmatter.com/',
-};
-
 async function home() {
   if (!(await newPage('home', { wait: 5000 }))) return;
   await sheetsFor('home');
@@ -377,7 +373,7 @@ async function legal() {
 }
 
 async function words() {
-  if (!(await newPage('words', { wait: 5000, url: ABS.words }))) return;
+  if (!(await newPage('words', { wait: 5000, url: URLS.words }))) return;
   const g = G.words;
   // The publication home is a subscribe gate. Measure the gate. Never press Subscribe.
   await S('words-h1', q('h1').filter({ hasText: /Words That Matter/ }).first(), ['default'], { group: g, title: 'Publication title', desc: 'The Words That Matter title on the public Substack subscribe gate. Subscribe was never pressed.', sel: 'h1 on words.getmatter.com' }, { noScroll: true });
@@ -387,7 +383,7 @@ async function words() {
 }
 
 async function article() {
-  if (!(await newPage('article', { wait: 5000, url: ABS.article }))) return;
+  if (!(await newPage('article', { wait: 5000, url: URLS.article }))) return;
   const g = G.article;
   await S('article-h1', q('h1').filter({ visible: true }).nth(1), ['default'], { group: g, title: 'Article title', desc: 'The published article headline, loaded signed out.', sel: 'article h1' });
   await S('article-byline', q('a').filter({ hasText: /BEN SPRINGWATER|Ben Springwater/i }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Byline link', desc: 'The author byline link. Measured, never followed.', sel: 'byline a' });
@@ -396,7 +392,7 @@ async function article() {
 }
 
 async function docs() {
-  if (!(await newPage('docs', { wait: 5000, url: ABS.docs }))) return;
+  if (!(await newPage('docs', { wait: 5000, url: URLS.docs }))) return;
   const g = G.docs;
   await S('docs-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Docs heading', desc: 'The Matter Documentation heading on docs.getmatter.com.', sel: 'h1 on docs' }, { noScroll: true });
   await S('docs-tab', q('a').filter({ hasText: /^\s*API\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Docs tab', desc: 'A top tab (API). Measured, never followed in this reading.', sel: 'a "API"' }, { noScroll: true });
@@ -406,7 +402,7 @@ async function docs() {
 }
 
 async function signin() {
-  if (!(await newPage('signin', { wait: 5000, url: ABS.signin }))) return;
+  if (!(await newPage('signin', { wait: 5000, url: URLS.signin }))) return;
   const g = G.auth;
   await S('signin-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-in heading', desc: 'The Welcome to Matter heading on the web reader sign-in card. Nothing was submitted.', sel: 'h1 on web.getmatter.com' }, { noScroll: true });
   await S('google-button', q('[class*="g_id_signin"], iframe[title*="Google" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Google button', desc: 'Continue with Google (a Google identity widget). Measured, never pressed.', sel: '.g_id_signin' }, { noScroll: true });
