@@ -707,7 +707,7 @@ Crops: `m-hero-default.png`.
 
 ## Transitions declared in the readable stylesheets
 
-busuu.com serves its Squarespace sheets cross-origin, so this list holds what the CSSOM could read on each page (cross-origin sheets stay unreadable there); the per-state Transition rows above are computed values and cover every rule the page paints.
+This list holds only what the CSSOM could read on each page: inline styles and same-origin sheets, since a cross-origin sheet stays unreadable there. The per-state Transition rows in the tables above are computed values and cover every rule the page paints.
 
 - home: `height 0.2s linear`, `width 0.3s linear`, `background-color 0.218s, border-color 0.218s`, `background-color 0.218s`, `0.1s`, `300ms ease-in`, `0.2s ease-in`, `0.4s`, `150ms ease-in`, `0.2s`, `0.25s ease-out`, `0.1s ease-in`
 
