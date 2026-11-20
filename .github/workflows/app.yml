@@ -8,12 +8,14 @@ on:
       # taxonomy seed is built from them. The float-parity fixture check
       # imports server/library.py and tools/catalog.py, which loads
       # tools/refero/refero_media.py. app/src/server/knowledge/ reads
-      # scorecard/ and docs/.
+      # scorecard/ and docs/. The host-rule test reads
+      # server/front-door-cases.json.
       - 'systems/**'
       - 'catalog.json'
       - 'refero/catalog.json'
       - 'tools/catalog.py'
       - 'server/library.py'
+      - 'server/front-door-cases.json'
       - 'tools/refero/refero_media.py'
       - 'scorecard/**'
       - 'docs/**'
@@ -27,6 +29,7 @@ on:
       - 'refero/catalog.json'
       - 'tools/catalog.py'
       - 'server/library.py'
+      - 'server/front-door-cases.json'
       - 'tools/refero/refero_media.py'
       - 'scorecard/**'
       - 'docs/**'
