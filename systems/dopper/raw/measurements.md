@@ -87,7 +87,7 @@ Page: home. Selector: `dopper-navigation button Bottle`. States: default, hover,
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
-Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-focus-visible.png`.
+Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`.
 
 #### nav-link
 
@@ -115,7 +115,7 @@ Page: home. Selector: `dopper-navigation a Impact report`. States: default, hove
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
-Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`.
+Crops: `nav-link-default.png`, `nav-link-hover.png`.
 
 #### bag-button
 
@@ -1279,7 +1279,7 @@ Page: mobile. Selector: `burger`. States: default, hover, focus-visible, pressed
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
-Crops: `m-burger-default.png`, `m-burger-hover.png`, `m-burger-focus-visible.png`.
+Crops: `m-burger-default.png`, `m-burger-hover.png`.
 
 #### m-hero
 
@@ -1358,7 +1358,7 @@ Page: mobile. Selector: `mobile menu row`. States: default, hover, focus-visible
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
-Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visible.png`.
+Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`.
 
 #### m-menu-pill
 
@@ -1387,7 +1387,7 @@ Page: mobile. Selector: `menu outline pill`. States: default, hover, focus-visib
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
-Crops: `m-menu-pill-default.png`, `m-menu-pill-hover.png`, `m-menu-pill-focus-visible.png`.
+Crops: `m-menu-pill-default.png`, `m-menu-pill-hover.png`.
 
 #### m-filter-sheet
 

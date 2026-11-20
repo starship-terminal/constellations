@@ -613,25 +613,26 @@ Page: platform-api. Selector: `the first CTA`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 238.03 x 20 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 8px 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | anthropicSans 15px/22.5px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #5e5d59 | = | = | = |
-| Text node | span.linkLabel.text-caption: anthropicSans 12px/19.2px 400, #5e5d59, ls 0.12px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 20 x 20, colour #5e5d59 | = | = | = |
-| Ancestor paint | 1 up a.card.gridCard bg #ffffff | 1 up a.card.gridCard bg #ffffff shadow #000000 @ 0 0px 0.0367769px 0.183884px 0px | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 238.03 x 20 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 8px 16px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | anthropicSans 15px/22.5px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #5e5d59 | = | - | = |
+| Text node | span.linkLabel.text-caption: anthropicSans 12px/19.2px 400, #5e5d59, ls 0.12px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 20 x 20, colour #5e5d59 | = | - | = |
+| Ancestor paint | 1 up a.card.gridCard bg #ffffff | 1 up a.card.gridCard bg #ffffff shadow #000000 @ 0 0px 0.0367769px 0.183884px 0px | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Error | - | = | keyboard focus could not reach the element | = |
 
-Crops: `api-cta-default.png`, `api-cta-hover.png`, `api-cta-focus-visible.png`, `api-cta-pressed.png`.
+Crops: `api-cta-default.png`, `api-cta-hover.png`, `api-cta-pressed.png`.
 
 ### Pricing
 
@@ -849,23 +850,25 @@ Crops: `batch-banner-default.png`.
 
 Batch toggle. The switch that shows batch-processing prices; a local toggle.
 
-Page: pricing. Selector: `the batch switch`. States: default, hover, focus-visible, pressed.
+Page: pricing. Selector: `the painted track of the batch switch (input[role=switch])`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 122.02 x 24 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
+| Size (w x h) | 56 x 34 | = | = | = |
+| Padding | 4px | = | = | = |
+| Border | 1px solid #c2c0b6 | = | = | = |
+| Radius | 30px | = | = | = |
+| Background | #dedcd1 | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | anthropicSans 15px/24px 400 | = | = | = |
+| Outline | none | = | 2px solid #c46849 offset 2px | = |
+| Font | anthropicSans 15px/22.5px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #3d3d3a | = | = | = |
-| Transition | none | = | = | = |
+| Colour | #141413 | = | = | = |
+| Transition | background-color, border-color 0.4s, 0.4s cubic-bezier(0.35, 1.5, 0.6, 1), cubic-bezier(0.35, 1.5, 0.6, 1) delay 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| ::after | 23px x 23px, static, bg #ffffff, radius 50%, shadow #000000 @ 0.05 0px 4px 24px 0px | = | = | = |
+| Painted layers | span.switch 56.0x34.0 bg #dedcd1 border T:1px solid #c2c0b6 / R:1px solid #c2c0b6 / B:1px solid #c2c0b6 / L:1px solid #c2c0b6 r 30px; span::after.switch 23pxx23px bg #ffffff border T:1px solid #9c9a92 / R:1px solid #9c9a92 / B:1px solid #9c9a92 / L:1px solid #9c9a92 r 50% shadow #000000 @ 0.05 0px 4px 24px 0px | = | span.switch 56.0x34.0 bg #dedcd1 border T:1px solid #c2c0b6 / R:1px solid #c2c0b6 / B:1px solid #c2c0b6 / L:1px solid #c2c0b6 r 30px outline 2px solid #c46849 offset 2px; span::after.switch 23pxx23px bg #ffffff border T:1px solid #9c9a92 / R:1px solid #9c9a92 / B:1px solid #9c9a92 / L:1px solid #9c9a92 r 50% shadow #000000 @ 0.05 0px 4px 24px 0px | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `batch-toggle-default.png`, `batch-toggle-hover.png`, `batch-toggle-focus-visible.png`, `batch-toggle-pressed.png`.
 
@@ -1161,22 +1164,23 @@ Page: docs-api. Selector: `"Messages" tab`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 66.47 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | anthropicSans 14px/20px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #0b0b0b | = | = | = |
-| Text node | a.flex.h-control: anthropicSans 14px/20px 400, #898781 | = | = | = |
-| Transition | none | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 66.47 x 32 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | anthropicSans 14px/20px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #0b0b0b | = | - | = |
+| Text node | a.flex.h-control: anthropicSans 14px/20px 400, #898781 | = | - | = |
+| Transition | none | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Painted layers | - | a.flex.h-control 66.5x32.0 bg #0b0b0b @ 0.05 r 3.35544e+07px | = | = |
+| Error | - | = | keyboard focus could not reach the element | = |
 
-Crops: `docs-tab-default.png`, `docs-tab-hover.png`, `docs-tab-focus-visible.png`, `docs-tab-pressed.png`.
+Crops: `docs-tab-default.png`, `docs-tab-hover.png`, `docs-tab-pressed.png`.
 
 #### docs-lang
 
@@ -1403,9 +1407,29 @@ Crops: `docs-start-inline-code-default.png`.
 
 Copy page button. The "Copy page" utility button above the docs body.
 
-Page: docs-api. Selector: `the Copy page button`. States: default, hover.
+Page: docs-start. Selector: `the Copy page button`. States: default, hover.
 
-Not found on the page at capture time.
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 111.86 x 28 | = |
+| Padding | 0px 10px | = |
+| Gap | 6px | = |
+| Border | none | = |
+| Radius | 7px 0px 0px 7px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | anthropicSans 14px/20px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #0b0b0b | = |
+| Text node | span.-ms-1: Anthropicons-Variable 20px/20px 433.25, #0b0b0b | = |
+| Transition | box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Cursor | pointer | = |
+| Painted layers | span.absolute.inset-0 111.9x28.0 bg #ffffff @ 0.1 r 7px 0px 0px 7px | span.absolute.inset-0 111.9x28.0 bg #0b0b0b @ 0.05 r 7px 0px 0px 7px |
+| Ancestor paint | 3 up div.relative.inline-flex shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px | = |
+| How | at rest | mouse hover |
+
+Crops: `docs-copy-page-default.png`, `docs-copy-page-hover.png`.
 
 #### docs-api-title
 

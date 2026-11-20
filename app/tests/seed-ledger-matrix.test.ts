@@ -19,15 +19,17 @@ const seed = vi.hoisted(() => ({
     mediaId: string;
     terms: { termId: string; rule: string; reason: string }[];
   }[],
-  baseCategories: 0,
-  baseMedia: 0,
+  // The real seed, restored after every test, so a test can also remove
+  // what a later release would.
+  baseCategories: [] as unknown[],
+  baseMedia: [] as unknown[],
 }));
 vi.mock("@/data/system-categories.json", async (importOriginal) => {
   const actual = (await importOriginal()) as {
     default: typeof seed.categories;
   };
   seed.categories.push(...actual.default);
-  seed.baseCategories = seed.categories.length;
+  seed.baseCategories = [...actual.default];
   return { default: seed.categories };
 });
 vi.mock("@/data/media-taxonomy.json", async (importOriginal) => {
@@ -35,7 +37,7 @@ vi.mock("@/data/media-taxonomy.json", async (importOriginal) => {
     default: { assignments: typeof seed.media };
   };
   seed.media.push(...actual.default.assignments);
-  seed.baseMedia = seed.media.length;
+  seed.baseMedia = [...actual.default.assignments];
   return { default: { ...actual.default, assignments: seed.media } };
 });
 
@@ -58,8 +60,16 @@ function close(store: Store) {
   stores.splice(stores.indexOf(store), 1);
 }
 afterEach(async () => {
-  seed.categories.splice(seed.baseCategories);
-  seed.media.splice(seed.baseMedia);
+  seed.categories.splice(
+    0,
+    seed.categories.length,
+    ...(seed.baseCategories as typeof seed.categories),
+  );
+  seed.media.splice(
+    0,
+    seed.media.length,
+    ...(seed.baseMedia as typeof seed.media),
+  );
   for (const store of stores.splice(0)) store.close();
   for (const dir of directories.splice(0))
     await rm(dir, { recursive: true, force: true });
@@ -231,3 +241,195 @@ test.each(cells)(
   },
   120_000,
 );
+
+// A package leaves the library (its folder is deleted, and the regenerated
+// seed files drop it): the rows the seed gave it go, the user's own state
+// stays. Both packages under test are removed at once.
+const REMOVED = [MIGRATED, UNLISTED];
+type Kept = "untouched" | "cleared" | "manual";
+const kepts: Kept[] = ["untouched", "cleared", "manual"];
+
+function removeFromSeed(referenceIds: readonly string[]) {
+  const gone = new Set(referenceIds);
+  const categories = seed.categories.filter(
+    (row) => !gone.has(row.referenceId),
+  );
+  const media = seed.media.filter((row) => !gone.has(row.referenceId));
+  seed.categories.splice(0, seed.categories.length, ...categories);
+  seed.media.splice(0, seed.media.length, ...media);
+}
+
+/** Every seed-related row and ledger key a store holds for these references. */
+async function seedState(store: Store, referenceIds: readonly string[]) {
+  const read = async (sql: string) => {
+    const result = await store.client.execute({
+      sql,
+      args: [JSON.stringify(referenceIds)],
+    });
+    return result.rows.map((row) =>
+      Object.fromEntries(result.columns.map((column) => [column, row[column]])),
+    );
+  };
+  const only = "reference_id IN (SELECT value FROM json_each(?))";
+  return {
+    categories: await read(
+      `SELECT reference_id,term_id,origin FROM reference_categories WHERE ${only} ORDER BY 1,2`,
+    ),
+    media: await read(
+      `SELECT reference_id,media_id,term_id,origin FROM media_term_assignments WHERE ${only} ORDER BY 1,2,3`,
+    ),
+    categoryLedger: await read(
+      `SELECT reference_id,group_id FROM category_seed_ledger WHERE ${only} ORDER BY 1,2`,
+    ),
+    mediaLedger: await read(
+      `SELECT reference_id,media_id FROM media_seed_ledger WHERE ${only} ORDER BY 1,2`,
+    ),
+  };
+}
+
+const removalCells = starts.flatMap((start) =>
+  kepts.map((kept) => ({ start, kept })),
+);
+test.each(removalCells)(
+  "start $start, user left the package $kept, seed removes it",
+  async ({ start, kept }) => {
+    const { dir, store } = await open();
+    const absent =
+      start === "v43-first-build"
+        ? [
+            ...renumbered,
+            ...new Set(
+              seed.media
+                .map((row) => row.referenceId)
+                .filter((id) => !offeredByMigrations.has(id)),
+            ),
+          ]
+        : [];
+    for (const table of ["reference_categories", "media_term_assignments"])
+      await store.client.execute({
+        sql: `DELETE FROM ${table} WHERE reference_id IN (SELECT value FROM json_each(?))`,
+        args: [JSON.stringify(absent)],
+      });
+    const offered = (id: string) => !absent.includes(id);
+    for (const referenceId of REMOVED.filter(offered)) {
+      if (kept === "cleared") {
+        await store.assignReferenceCategories(
+          referenceId,
+          "web-categories",
+          [],
+        );
+        await store.client.execute({
+          sql: "DELETE FROM media_term_assignments WHERE reference_id=?",
+          args: [referenceId],
+        });
+      }
+      if (kept === "manual")
+        await store.assignReferenceCategories(
+          referenceId,
+          "web-categories",
+          ["Productivity"],
+          "My own call",
+        );
+    }
+    // User state that points at the removed packages.
+    const pair = seed.media.find((row) => row.referenceId === MIGRATED)!;
+    const board = await store.createCollection("Removed later");
+    await store.putItem(board.id, MIGRATED, "Kept note");
+    await store.putCollectionMedia(board.id, pair.referenceId, pair.mediaId);
+    await store.saveMedia(pair.referenceId, pair.mediaId);
+    const chat = await store.createConversation("Study", "Compare these");
+    await store.updateConversation(chat.id, { pinnedIds: REMOVED });
+    if (start !== "fresh") {
+      await store.client.execute("DROP TABLE category_seed_ledger");
+      await store.client.execute("DROP TABLE media_seed_ledger");
+      await store.client.execute(
+        `PRAGMA user_version=${start === "v40" ? 40 : 43}`,
+      );
+    }
+    close(store);
+    removeFromSeed(REMOVED);
+    const { store: upgraded } = await open(dir);
+    const state = await seedState(upgraded, REMOVED);
+    // No row the seed gave a removed package is left.
+    expect(state.categories.filter((row) => row.origin === "curated")).toEqual(
+      [],
+    );
+    expect(state.media).toEqual([]);
+    // The user's own category choice stays, and so does its ledger key.
+    const manual = REMOVED.filter(
+      (id) => kept === "manual" && offered(id),
+    ).sort();
+    expect(state.categories.map((row) => row.reference_id)).toEqual(manual);
+    expect(state.categories.every((row) => row.origin === "manual")).toBe(true);
+    // A key that held only seed rows leaves the ledger, so the package is
+    // seeded afresh if it comes back. A key that holds a user choice stays.
+    // A cleared choice is known only to a store that had a ledger: a store
+    // without one has no rows to show it, as for any cleared package.
+    const cleared = REMOVED.filter(
+      (id) => kept === "cleared" && offered(id) && start === "fresh",
+    );
+    expect(state.categoryLedger.map((row) => row.reference_id)).toEqual(
+      [...manual, ...cleared].sort(),
+    );
+    expect(
+      state.categoryLedger.every((row) => row.group_id === "web-categories"),
+    ).toBe(true);
+    expect(new Set(state.mediaLedger.map((row) => row.reference_id))).toEqual(
+      new Set(cleared),
+    );
+    // User state survives and still points at the removed package.
+    const saved = await upgraded.getCollection(board.id);
+    expect(saved?.items.map((item) => [item.referenceId, item.note])).toEqual([
+      [MIGRATED, "Kept note"],
+    ]);
+    expect(saved?.mediaItems.map((item) => item.mediaId)).toEqual([
+      pair.mediaId,
+    ]);
+    expect((await upgraded.listSavedMedia()).map((row) => row.mediaId)).toEqual(
+      [pair.mediaId],
+    );
+    expect((await upgraded.getConversation(chat.id))?.pinnedIds).toEqual(
+      REMOVED,
+    );
+    // Other packages keep their seed rows.
+    expect((await upgraded.listMediaTermAssignments()).length).toBeGreaterThan(
+      0,
+    );
+    // Opening again changes nothing.
+    close(upgraded);
+    const { store: again } = await open(dir);
+    expect(await seedState(again, REMOVED)).toEqual(state);
+  },
+  120_000,
+);
+
+test("a removed package that comes back is seeded again, and a choice the user made before stays", async () => {
+  const { dir, store } = await open();
+  const before = await seedState(store, REMOVED);
+  await store.assignReferenceCategories(UNLISTED, "web-categories", []);
+  close(store);
+  removeFromSeed(REMOVED);
+  const { store: removed } = await open(dir);
+  expect((await seedState(removed, REMOVED)).media).toEqual([]);
+  close(removed);
+  seed.categories.splice(
+    0,
+    seed.categories.length,
+    ...(seed.baseCategories as typeof seed.categories),
+  );
+  seed.media.splice(
+    0,
+    seed.media.length,
+    ...(seed.baseMedia as typeof seed.media),
+  );
+  const { store: restored } = await open(dir);
+  const after = await seedState(restored, REMOVED);
+  expect(after.media).toEqual(before.media);
+  expect(after.mediaLedger).toEqual(before.mediaLedger);
+  expect(after.categoryLedger).toEqual(before.categoryLedger);
+  // Intercom was untouched, so its seed rows return; Figma's cleared
+  // category stays cleared.
+  expect(after.categories).toEqual(
+    before.categories.filter((row) => row.reference_id !== UNLISTED),
+  );
+}, 120_000);

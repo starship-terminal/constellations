@@ -42,6 +42,7 @@ systems/*/raw/*.partial.json
 # Full-colour page captures a capture run writes before quantizing. AGENTS.md keeps
 # raw page copies outside the repo; the package wave deleted the committed ones.
 systems/*/raw/full/
+systems/*/raw/signed-in/*.png
 
 # Refero fetch working files (result JSONs are also stored in refero.db).
 /refero/.work/

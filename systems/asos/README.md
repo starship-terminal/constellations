@@ -181,6 +181,9 @@ PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
   node tools/capture/vars.mjs                     # raw/css-vars.json
 PLAYWRIGHT=... PYTHON=<python with Pillow> node tools/capture/public/measure.mjs   # raw/components-computed.json + crops
 python3 tools/capture/quantize.py ~/.design-systems/asos/raw-shots   # -> screenshots/
+python3 ../../tools/redact_images.py apply ../asos --rules ../../tools/redact-rules/asos.json   # repaint the masks over the new screenshots
+# The rules' boxes are pixel positions on the committed screenshots, size-gated, so a fresh capture of another
+# size or layout is silently skipped: re-place the boxes for every new shot and open each image before committing.
 node tools/capture/public/build-measurements.mjs  # raw/measurements.md
 python3 tools/build_component_tokens.py           # raw/component-tokens.json
 python3 tools/build_tokens.py                     # tokens.json

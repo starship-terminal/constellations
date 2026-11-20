@@ -16,7 +16,7 @@ Rarible declares a shadcn-style token layer. `:root` is light. `.dark` is the li
 | [screenshots/](screenshots) | 4 reconstructions. `preview_snapshot` produced no frames |
 | [icons/](icons) | The wordmark SVG and [INDEX.tsv](icons/INDEX.tsv) |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), the stylesheet harvest and computed boxes |
-| [tools/](tools) | The capture kit and [test_tokens.py](tools/test_tokens.py) |
+| [tools/](tools) | The capture kit and [test_tokens.py](tools/test_tokens.py). `tokens.json` and `style-guide.html` have no builder: they were written from the live readings each token's source names and [raw/css-vars.json](raw/css-vars.json). The kit's `build_tokens.py`, `build_style_guide.py`, its template and `motion.py`, copied in unadapted and never run (they expect Claude's readings, such as `raw/component-tokens.json`), were removed in the 2026-11 audit |
 
 ## Brief
 

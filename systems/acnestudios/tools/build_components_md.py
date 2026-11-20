@@ -186,10 +186,23 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and listed as "focus could not be captured" (the kit's rule,
+    tools/kit/build/build_components_md.py)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def state_rows(c):
     """The first state lists every value; later rows list only what changed."""
     rows = []
-    states = [s for s, v in c["states"].items() if "style" in v]
+    states = [s for s, v in c["states"].items() if measured(v)]
     if not states:
         return rows
     base = props(c["states"][states[0]])
@@ -218,7 +231,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -343,9 +356,12 @@ trans = collections.Counter()
 hovers = collections.Counter()
 focus = collections.Counter()
 focus_n = 0
+unfocused = []
 for cid, c in C.items():
     for sname, s in c["states"].items():
-        if "style" not in s:
+        if sname.endswith("focus-visible") and focus_not_captured(s):
+            unfocused.append(f"`{cid}`")
+        if not measured(s):
             continue
         st = s["style"]
         r = st["borderTopLeftRadius"]
@@ -355,9 +371,6 @@ for cid, c in C.items():
             tf = re.findall(r"cubic-bezier\([^)]*\)|steps\([^)]*\)|[a-z-]+", st["transitionTimingFunction"])
             trans[f"{st['transitionDuration'].split(',')[0].strip()} {tf[0] if tf else st['transitionTimingFunction']}"] += 1
         if sname == "focus-visible":
-            if "failed" in str(s.get("via", "")):
-                focus["focus could not be driven"] += 1
-                continue
             focus_n += 1
             if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0:
                 focus[f"{st['outlineWidth']} {st['outlineStyle']} {colour(st['outlineColor'], role='border')} offset {st['outlineOffset']}"] += 1
@@ -385,7 +398,7 @@ W(f"**Radius.** {top(radii, 5) if radii else 'none — every corner on the site 
 W()
 W(f"**Hover.** Acne hovers with colour, never fills or shadows: {top(hovers, 8)}. Black fills (LOAD MORE, CONTINUE, SHOW N ITEMS) flip to Acne blue; blue fills (ADD TO BAG) deepen to {colour('rgb(5, 21, 116)')}; blue links deepen the same way; black labels (nav, FILTER, Menu) grey to {colour('rgb(107, 107, 107)', role='text')}.")
 W()
-W(f"**Focus.** Of {focus_n} elements given a real keyboard focus: {top(focus, 6)}. The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.")
+W(f"**Focus.** Of {focus_n} elements given a real keyboard focus: {top(focus, 6)}.{f' Focus could not be captured on {len(unfocused)} states (not focusable, or focused without matching :focus-visible), left out of the tally: {', '.join(unfocused)}.' if unfocused else ''} The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.")
 W()
 W(f"**Motion.** {top(trans, 6) if trans else 'Instant: every measured control reports transition-duration 0s — hover, focus and pressed changes have no easing'}. The only transitions the stylesheet carries are the drawers' 150ms padding-bottom safe-area slide, the accordions' 200ms max-height reveal and a 500ms fade on campaign layers, none on the controls themselves.")
 W()
@@ -422,7 +435,7 @@ for g, ids in groups.items():
         order = ("default", "hover", "focus-visible", "pressed", "focused", "filled", "selected", "open")
         for sname in [n for n in order if n in c["states"]] + sorted(n for n in c["states"] if n not in order):
             s = c["states"].get(sname)
-            if s and s.get("crop") and Path(s["crop"]).exists():
+            if s and measured(s) and s.get("crop") and Path(s["crop"]).exists():
                 crops.append(f'<img src="{s["crop"]}" alt="{c["title"]}, {sname}" height="{min(120, max(24, round(s["rect"]["h"])))}"> ')
         if crops:
             W("".join(crops))

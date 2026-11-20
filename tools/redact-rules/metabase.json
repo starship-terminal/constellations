@@ -3,7 +3,21 @@
     {"name":"Profile contact line","files":["screenshots/profile-*-light-desktop.png","screenshots/shortcuts-*-light-desktop.png"],"rects":[[786,251,980,274]]},
     {"name":"Dark profile contact line","files":["screenshots/profile-settings-dark-desktop.png"],"rects":[[622,251,818,274]]},
     {"name":"Recent-item collection contact labels","files":["screenshots/global-search-recents-light-desktop.png"],"rects":[[798,226,1009,247],[798,561,1009,584]]},
-    {"name":"Search-result collection contact labels","files":["screenshots/global-search-results-light-desktop.png"],"rects":[[783,400,1009,422],[783,504,1009,526]]}
+    {"name":"Search-result collection contact labels","files":["screenshots/global-search-results-light-desktop.png"],"rects":[[783,400,1009,422],[783,504,1009,526]]},
+    {"name":"Demo editor name, Last edited by column (3 rows)","files":["screenshots/collection-filter-light-desktop.png","screenshots/collection-filter-dark-desktop.png","screenshots/reports-dark-desktop.png","screenshots/reports-sidebar-light-desktop.png"],"rects":[[1000,584,1080,601,"solid"],[1000,849,1080,866,"solid"],[1000,955,1080,972,"solid"]]},
+    {"name":"Demo editor name, Last edited by column behind the new-dashboard dialog","files":["screenshots/new-dashboard-dialog-dark-desktop.png"],"rects":[[1031,584,1080,601,"solid"],[1000,849,1080,866,"solid"],[1000,955,1080,972,"solid"]]},
+    {"name":"Demo editor name, Last edited by column (2 rows)","files":["screenshots/reports-light-desktop.png"],"rects":[[1000,648,1080,665,"solid"],[1000,913,1080,930,"solid"]]},
+    {"name":"Demo editor name, Last edited by column, page two","files":["screenshots/reports-page-two-light-desktop.png"],"rects":[[1000,554,1080,571,"solid"],[1000,660,1080,677,"solid"],[1000,819,1080,836,"solid"]]},
+    {"name":"Demo editor name, mobile dashboard header","files":["screenshots/dashboard-filter-light-mobile.png","screenshots/dashboard-light-mobile.png"],"size":[[390,844]],"rects":[[154,145,226,161,"solid"]]},
+    {"name":"Demo editor names, dashboard History tab","files":["screenshots/dashboard-history-light-desktop.png"],"size":[[1600,1111]],"rects":[[852,192,943,210,"solid"],[852,423,984,440,"solid"],[852,512,984,529,"solid"],[852,601,984,618,"solid"],[852,690,984,707,"solid"],[852,779,984,796,"solid"],[852,868,984,885,"solid"],[852,981,984,1000,"solid"]]},
+    {"name":"Demo editor name, dashboard Info panel","files":["screenshots/dashboard-info-light-desktop.png"],"size":[[1600,1111]],"rects":[[949,345,1036,363,"solid"]]},
+    {"name":"Demo editor name, report header","files":["screenshots/report-31-submission-breakdown-light-desktop.png"],"rects":[[424,94,495,111,"solid"]]},
+    {"name":"Demo editor name, report header (narrow title)","files":["screenshots/report-7-number-of-students-light-desktop.png"],"rects":[[304,94,375,111,"solid"]]},
+    {"name":"Demo creator and editor names, Info panel","files":["screenshots/report-info-light-desktop.png"],"rects":[[1021,310,1138,327,"solid"],[998,334,1077,351,"solid"]]},
+    {"name":"Demo creator name, model Info panel","files":["screenshots/model-info-light-desktop.png","screenshots/model-assignments-info-light-desktop.png","screenshots/model-student-courses-info-light-desktop.png","screenshots/model-students-info-light-desktop.png","screenshots/model-submissions-info-light-desktop.png"],"rects":[[1021,310,1138,327,"solid"]]},
+    {"name":"Demo creator name, data reference questions list","files":["screenshots/reference-assignment-questions-light-desktop.png"],"rects":[[686,204,804,223,"solid"],[686,319,804,338,"solid"],[686,435,804,454,"solid"],[686,548,804,567,"solid"],[686,663,804,682,"solid"],[686,779,804,798,"solid"],[686,893,804,912,"solid"]]},
+    {"name":"Visitor-typed name in trashed item titles","files":["screenshots/trash-list-light-desktop.png"],"rects":[[564,344,607,362,"solid"],[531,768,571,786,"solid"]]},
+    {"name":"Visitor-typed name in a trashed item title behind the search dialog","files":["screenshots/global-search-recents-light-desktop.png","screenshots/global-search-results-light-desktop.png"],"rects":[[531,767,571,787,"solid"]]}
   ],
   "ocr":{"emails":true,"boost":["screenshots/*.png"]}
 }

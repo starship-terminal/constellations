@@ -343,6 +343,17 @@ def diff(p, base):
     return d
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and listed as "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+NOT_CAPTURED = "not focusable, or focused without matching :focus-visible"
+
+
 def groups_of_states(c):
     """[(base_label, base_value, [(variant_label, value)])] from the states in file order.
 
@@ -726,7 +737,7 @@ for k, c in C.items():
         for kind, v in vs:
             if kind != "focus-visible":
                 continue
-            if not (v.get("focus") or {}).get("matches"):
+            if focus_not_captured(v):
                 nofocus.append(k)
                 continue
             s_ = v["style"]
@@ -744,7 +755,7 @@ if changed_f:
 if same_f:
     focus_txt += f"{len(set(same_f))} show no change in computed style, so a keyboard user sees nothing: {', '.join('`' + k + '`' for k in sorted(set(same_f))[:12])}. "
 if nofocus:
-    focus_txt += f"{len(set(nofocus))} could not take focus (a div, or disabled): {', '.join('`' + k + '`' for k in sorted(set(nofocus)))}."
+    focus_txt += f"Focus could not be captured on {len(set(nofocus))} more ({NOT_CAPTURED}), left out of the tally: {', '.join('`' + k + '`' for k in sorted(set(nofocus)))}."
 W(focus_txt.strip())
 W()
 
@@ -835,8 +846,8 @@ for g in group_order:
             same = []
             vrows = []
             for kind, v in vs:
-                if kind == "focus-visible" and not (v.get("focus") or {}).get("matches"):
-                    notes.append(f"{bl if bl != 'default' else 'the component'} cannot take keyboard focus")
+                if kind == "focus-visible" and focus_not_captured(v):
+                    notes.append(f"focus could not be captured on {bl if bl != 'default' else 'the component'} ({NOT_CAPTURED})")
                     continue
                 if kind == "hover" and v.get("hovered") is False:
                     notes.append(f"the pointer did not reach {bl if bl != 'default' else 'the component'} in the snapshot")
@@ -906,11 +917,11 @@ for g in group_order:
         if rules:
             W("Authored state rules (from the page's CSS): " + "; ".join(f"`{colour(r, tokens=False)[:150]}`" for r in rules[:3]) + ".")
             W()
-        # crops
+        # crops: a state whose focus could not be captured shows the element at rest, so it is not linked
         seen = []
         for lab, v in c["states"].items():
             cp = v.get("crop")
-            if cp and cp not in seen and Path(cp).exists():
+            if cp and cp not in seen and not focus_not_captured(v) and Path(cp).exists():
                 seen.append(cp)
         W(" ".join(f"![{c['name']} {Path(cp).stem[len(k) + 1:]}]({cp})" for cp in seen) if seen else "No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
         if errs:

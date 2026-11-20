@@ -1,0 +1,65 @@
+{
+  "_note": "Pixel rectangles for systems/spotify (812x1780 iPhone Mirroring captures, dark only). They hide other people: the friends offered as share targets, a friend's listening activity and the sender of a message. Artists, playlists and podcasts are catalog content and stay; so does the owner's profile.",
+  "families": [
+    {
+      "name": "share sheet: friends' avatars and names in the share-target row",
+      "files": [
+        "screenshots/dark/14-share-sheet.png",
+        "screenshots/dark/15-share-sheet-playlist-auto.png"
+      ],
+      "rects": [
+        [
+          360,
+          1196,
+          779,
+          1384,
+          "solid"
+        ]
+      ]
+    },
+    {
+      "name": "song share sheet: friends' avatars and names in the share-target row",
+      "files": [
+        "screenshots/dark/18-share-song-segmented.png"
+      ],
+      "rects": [
+        [
+          360,
+          1190,
+          794,
+          1384,
+          "solid"
+        ]
+      ]
+    },
+    {
+      "name": "profile drawer: a friend's activity avatar and name, a message sender's avatar and name",
+      "files": [
+        "screenshots/dark/19-profile-drawer.png"
+      ],
+      "rects": [
+        [
+          200,
+          940,
+          350,
+          1164,
+          "solid"
+        ],
+        [
+          36,
+          1440,
+          156,
+          1556,
+          "solid"
+        ],
+        [
+          164,
+          1446,
+          242,
+          1482,
+          "solid"
+        ]
+      ]
+    }
+  ]
+}

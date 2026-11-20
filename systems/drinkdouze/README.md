@@ -12,7 +12,7 @@ Douze is "Pétillants sans alcool" — mixology-crafted non-alcoholic cocktails 
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (64, 136 states — two mismeasured entries are withdrawn and marked) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the boxed chrome, the hero, the shop grid, the buy box, the moving banner, the footer, mobile |
-| [components/crops/](components/crops) | 137 element screenshots, `{component}-{state}.png` at 2x |
+| [components/crops/](components/crops) | 134 element screenshots, `{component}-{state}.png` at 2x |
 | [screenshots/](screenshots) | 38 `{page}-{theme}-{state}.png` captures, each beside its `.capture.json` record (measured viewport, dpr and dimensions; stitched `-full` pages merge their tiles' records). Desktop 1440 x 900 at 1x, `-full` whole pages at 1x, `mobile-*` phone shots at 2x; `home-light-cart-drawer` the opened mini-cart, `mobile-home-light-menu` the navigation drawer, `product-light-variant` the 12-canette swatch selected (which also reveals the purchase-option radios) |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — the inline `:root` triplet block, the per-section re-bindings and `douze-custom.css`, resolved on the light probe; Klaviyo/Appstle/Shopify-widget vars binned vendor), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.display` is Boogy, then 1 fallback; `core.font.family.d
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 137 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 134 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

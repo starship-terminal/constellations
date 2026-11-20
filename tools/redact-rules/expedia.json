@@ -1,0 +1,10 @@
+{
+ "_note": "Rules for systems/expedia. No boxes: the signed-in account shots show only the owner's own profile, with no traveller, phone or address values. member@example.com is the example address the signed-in account panel shows in place of the account email.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "^member@example\\.com$"
+  ]
+ },
+ "families": []
+}

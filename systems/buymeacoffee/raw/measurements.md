@@ -96,24 +96,25 @@ Page: home. Selector: `#bmc-header div.btn-hover-bg Apps`. States: default, hove
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 92.31 x 40 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Circular Medium 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 20 x 20, colour #000000 | = | = | = |
-| ::before | 92.3125px x 40px, absolute, bg #000000 @ 0.05, radius 40px | = | = | = |
-| Painted layers | div::before.btn-hover-bg.cursor-pointer 92.3125pxx40px bg #000000 @ 0.05 r 40px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 92.31 x 40 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Circular Medium 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 20 x 20, colour #000000 | = | - | = |
+| ::before | 92.3125px x 40px, absolute, bg #000000 @ 0.05, radius 40px | = | - | = |
+| Painted layers | div::before.btn-hover-bg.cursor-pointer 92.3125pxx40px bg #000000 @ 0.05 r 40px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-focus-visible.png`, `nav-trigger-pressed.png`.
+Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-pressed.png`.
 
 #### nav-dropdown
 
@@ -177,22 +178,23 @@ Page: home. Selector: `#bmc-header Search creators`. States: default, hover, foc
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 113.09 x 24 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Circular Book 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 @ 0.7 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | text | = | = | = |
-| Ancestor paint | 1 up div.cursor-text.px-16 bg #000000 @ 0.03 | 1 up div.cursor-text.px-16 bg #000000 @ 0.05 | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 113.09 x 24 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Circular Book 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222222 @ 0.7 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | text | = | - | = |
+| Ancestor paint | 1 up div.cursor-text.px-16 bg #000000 @ 0.03 | 1 up div.cursor-text.px-16 bg #000000 @ 0.05 | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-search-default.png`, `nav-search-hover.png`, `nav-search-focus-visible.png`, `nav-search-pressed.png`.
+Crops: `nav-search-default.png`, `nav-search-hover.png`, `nav-search-pressed.png`.
 
 #### nav-login
 
@@ -332,24 +334,25 @@ Page: home. Selector: `div.btn.header-anim`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 255.55 x 74 | = | = | = |
-| Padding | 0px 50px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Circular Bold 24px/36px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | h2: Circular Bold 24px/36px 400, #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Transform | matrix(1, 0, 0, 1, 0, -28) | matrix(1, 0, 0, 1, 0, -23.6) | matrix(1, 0, 0, 1, 0, 0) | matrix(1, 0, 0, 1, 0, -29.2) |
-| Cursor | pointer | = | = | = |
-| Painted layers | div.btn-bg.absolute 255.5x74.0 bg #ffdd00 r 9999px | div.btn-bg.absolute 260.9x77.0 bg #ffdd00 r 9999px | = | div.btn-bg.absolute 260.9x77.0 bg #ffdd00 r 9999px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 255.55 x 74 | = | - | = |
+| Padding | 0px 50px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Circular Bold 24px/36px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Text node | h2: Circular Bold 24px/36px 400, #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Transform | matrix(1, 0, 0, 1, 0, -28) | matrix(1, 0, 0, 1, 0, -23.6) | - | matrix(1, 0, 0, 1, 0, -29.2) |
+| Cursor | pointer | = | - | = |
+| Painted layers | div.btn-bg.absolute 255.5x74.0 bg #ffdd00 r 9999px | div.btn-bg.absolute 260.9x77.0 bg #ffdd00 r 9999px | - | div.btn-bg.absolute 260.9x77.0 bg #ffdd00 r 9999px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
+Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-pressed.png`.
 
 #### creator-card
 
@@ -1460,22 +1463,23 @@ Page: home. Selector: `footer Legal trigger`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 57.83 x 24 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Circular Medium 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | #777777 | = | #777777 |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 12 x 9, colour #222222 | 12 x 9, colour #777777 | = | 12 x 9, colour #777777 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 57.83 x 24 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Circular Medium 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222222 | #777777 | - | #777777 |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 12 x 9, colour #222222 | 12 x 9, colour #777777 | - | 12 x 9, colour #777777 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `footer-trigger-default.png`, `footer-trigger-hover.png`, `footer-trigger-focus-visible.png`, `footer-trigger-pressed.png`.
+Crops: `footer-trigger-default.png`, `footer-trigger-hover.png`, `footer-trigger-pressed.png`.
 
 #### footer-menu
 

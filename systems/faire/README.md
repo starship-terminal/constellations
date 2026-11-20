@@ -12,7 +12,7 @@ Faire is worth a capture because the public surface exposes the real "Slate" des
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (95, ~245 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the header stack, the hero recipe, category/supplier listings, the brand storefront, the application form, the auth dialogs, the mobile drawer |
-| [components/crops/](components/crops) | 256 element screenshots, `{component}-{state}.png` at 2x |
+| [components/crops/](components/crops) | 255 element screenshots, `{component}-{state}.png` at 2x |
 | [screenshots/](screenshots) | 47 `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` at 390 (780 px files, DPR 2) |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the cross-origin stylesheet harvest from network bodies), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.sans` is Graphik_fix, then 1 fallback; `core.font.famil
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 256 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 255 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

@@ -35,5 +35,23 @@ class BuildComponentsMdTest(unittest.TestCase):
         self.assertEqual((int(m.group(1)), int(m.group(2))), (len(raw), states))
 
 
+    def test_uncaptured_focus_is_not_shown_as_captured(self):
+        # A focus-visible reading taken where focus never landed ("focus failed") or did not match
+        # :focus-visible is the element at rest: no crop, no table column, listed as not captured.
+        raw = json.loads((PKG / "raw" / "components-computed.json").read_text())["components"]
+        failed = [(cid, s, v) for cid, c in raw.items() for s, v in c.get("states", {}).items()
+                  if v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False]
+        self.assertTrue(failed, "the raw readings hold no uncaptured focus state to check")
+        md = (PKG / "components.md").read_text()
+        listed = re.search(r"Focus could not be captured on (\d+) states \(not focusable, or focused without "
+                           r"matching :focus-visible\), left out of the tally: ([^.]*)\.", md)
+        self.assertIsNotNone(listed, "components.md does not list the uncaptured focus states")
+        self.assertEqual(int(listed.group(1)), len(failed))
+        for cid, s, v in failed:
+            self.assertIn(f"`{cid}`", listed.group(2))
+            if v.get("crop"):
+                self.assertNotIn(v["crop"], md, f"{cid} {s} crop is shown although focus was not captured")
+
+
 if __name__ == "__main__":
     unittest.main()

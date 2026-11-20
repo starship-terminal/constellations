@@ -50,7 +50,7 @@ Fonts: `core.font.family.measured.display` is GT Walsheim Medium, then 2 fallbac
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 99 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 97 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -118,7 +118,7 @@ The marketing pages measure **GT Walsheim Medium** on the display heading (self-
 ## Coverage
 
 - 21 desktop routes + 4 mobile routes: every marketing page linked in the public nav and footer (home, the Platform product pages ai/agents/design/mcp, pricing, enterprise, solutions/designers, the Resources pages updates/academy/developers/blog/stories/compare, the Company pages about/careers/contact, downloads), the community gallery and marketplace indexes, and /login.
-- 37 measured components × up to 5 states; 54 screenshots; 99 element crops; motion probed on 4 pages (the homepage partially honours prefers-reduced-motion; pricing, gallery and login ignore it).
+- 37 measured components × up to 5 states; 54 screenshots; 97 element crops; motion probed on 4 pages (the homepage partially honours prefers-reduced-motion; pricing, gallery and login ignore it).
 - Not captured: the signed-in product (dashboard, editor, CMS, publishing), gallery item pages, template detail pages, blog articles, submitted-form states, monthly billing (the "Yearly billing" switch was never flipped), alternate credit tiers, disabled/error/loading states, the community stack's declared token layer, a standalone icon set.
 
 ## Do and don't

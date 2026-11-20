@@ -560,7 +560,7 @@ Page: plans. Selector: `billing radio label`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `billing-radio-default.png`, `billing-radio-hover.png`, `billing-radio-focus-visible.png`, `billing-radio-pressed.png`.
+Crops: `billing-radio-default.png`, `billing-radio-hover.png`, `billing-radio-pressed.png`.
 
 #### plan-card
 
@@ -896,7 +896,7 @@ Page: features. Selector: `dwg-card/dwg-nav-card tile`. States: default, hover, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `feat-card-default.png`, `feat-card-hover.png`, `feat-card-focus-visible.png`, `feat-card-pressed.png`.
+Crops: `feat-card-default.png`, `feat-card-hover.png`, `feat-card-pressed.png`.
 
 #### sign-title
 

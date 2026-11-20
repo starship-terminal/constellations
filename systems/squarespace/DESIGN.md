@@ -235,6 +235,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+**Most values are hand entries.** [raw/readings.json](raw/readings.json) records the viewports, the pages and seven notes, and the notes hold four colour readings: the Get Started hover (`#dddddd`), the login error text (`#c32d38`), and the settled plan CTA and its text (`#000000`, `#ffffff`). Those four tokens keep their Measured label. The other 80 tokens were labelled Measured at capture with no reading kept, and on 2026-11-21 they were relabelled Reconstruction ("entered by hand at capture time; no raw/ file holds this reading"), with the original wording kept after it. No value changed. A recapture that writes computed-style readings into raw/ is needed to measure them, and `tools/test_tokens.py` fails if any other token claims a reading.
+
 Screenshots are 256-colour. Read colours from tokens.json and raw/, not from the PNGs. The home hero photograph will band.
 
 `core.typography.hero-mobile` rounds 42.4066px, 44.1028px, and -2.54439px to 42.41px, 44.10px, and -2.54px.

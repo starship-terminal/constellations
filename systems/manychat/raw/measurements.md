@@ -94,25 +94,26 @@ Page: home. Selector: `div (text PRODUCT, nav band)`. States: default, hover, fo
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 51.25 x 18 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | CoFo Sans Mono 12px/18px 400 | = | = | = | = |
-| Letter spacing | 0.12px | = | = | = | = |
-| Colour | #ffffff | #000000 | #000000 | #000000 | #000000 |
-| Text node | span._4Y2iAa_underline_item: CoFo Sans Mono 12px/18px 400, #ffffff, ls 0.12px | span._4Y2iAa_underline_item: CoFo Sans Mono 12px/18px 400, #000000, ls 0.12px | span._4Y2iAa_underline_item: CoFo Sans Mono 12px/18px 400, #000000, ls 0.12px | span._4Y2iAa_underline_item: CoFo Sans Mono 12px/18px 400, #000000, ls 0.12px | span._4Y2iAa_underline_item: CoFo Sans Mono 12px/18px 400, #000000, ls 0.12px |
-| Transition | transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1) | = | = | = | = |
-| Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | span._4Y2iAa_underline_item 51.3x14.0 image linear-gradient(#ffffff, #ffffff) | span._4Y2iAa_underline_item 51.3x14.0 image linear-gradient(#000000, #000000) | span._4Y2iAa_underline_item 51.3x14.0 image linear-gradient(#000000, #000000) | span._4Y2iAa_underline_item 51.3x14.0 image linear-gradient(#000000, #000000) | span._4Y2iAa_underline_item 51.3x14.0 image linear-gradient(#000000, #000000) |
-| Ancestor paint | 1 up div._4Y2iAa_nav_item._4Y2iAa_underline shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | = | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
+| Size (w x h) | 51.25 x 18 | = | - | = | = |
+| Padding | 0px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | CoFo Sans Mono 12px/18px 400 | = | - | = | = |
+| Letter spacing | 0.12px | = | - | = | = |
+| Colour | #ffffff | #000000 | - | #000000 | #000000 |
+| Text node | span._4Y2iAa_underline_item: CoFo Sans Mono 12px/18px 400, #ffffff, ls 0.12px | span._4Y2iAa_underline_item: CoFo Sans Mono 12px/18px 400, #000000, ls 0.12px | - | span._4Y2iAa_underline_item: CoFo Sans Mono 12px/18px 400, #000000, ls 0.12px | span._4Y2iAa_underline_item: CoFo Sans Mono 12px/18px 400, #000000, ls 0.12px |
+| Transition | transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1) | = | - | = | = |
+| Transform | matrix(1, 0, 0, 1, 0, 0) | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Painted layers | span._4Y2iAa_underline_item 51.3x14.0 image linear-gradient(#ffffff, #ffffff) | span._4Y2iAa_underline_item 51.3x14.0 image linear-gradient(#000000, #000000) | - | span._4Y2iAa_underline_item 51.3x14.0 image linear-gradient(#000000, #000000) | span._4Y2iAa_underline_item 51.3x14.0 image linear-gradient(#000000, #000000) |
+| Ancestor paint | 1 up div._4Y2iAa_nav_item._4Y2iAa_underline shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | = | - | = | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`, `nav-link-opened.png`.
+Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-pressed.png`, `nav-link-opened.png`.
 
 #### nav-plain-link
 
@@ -150,24 +151,25 @@ Page: home. Selector: `div (text EN, nav band)`. States: default, hover, focus-v
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 14.64 x 16.31 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Background image | linear-gradient(#000000, #000000) | = | = | = |
-| Box shadow | #000000 0px -1px 1px -1px inset, #000000 0px -1px 1px -1px inset | = | = | = |
-| Outline | none | = | = | = |
-| Font | CoFo Sans Mono 12px/16.32px 400 | = | = | = |
-| Letter spacing | 0.12px | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.uppercase.opacity-0: CoFo Sans Mono 12px/16.32px 400, #000000, ls 0.12px | = | = | = |
-| Transition | background-size 0.3s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | div.underline_link.!absolute 14.6x16.3 image linear-gradient(#000000, #000000) shadow #000000 0px -1px 1px -1px inset, #000000 0px -1px 1px -1px inset | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 14.64 x 16.31 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Background image | linear-gradient(#000000, #000000) | = | - | = |
+| Box shadow | #000000 0px -1px 1px -1px inset, #000000 0px -1px 1px -1px inset | = | - | = |
+| Outline | none | = | - | = |
+| Font | CoFo Sans Mono 12px/16.32px 400 | = | - | = |
+| Letter spacing | 0.12px | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.uppercase.opacity-0: CoFo Sans Mono 12px/16.32px 400, #000000, ls 0.12px | = | - | = |
+| Transition | background-size 0.3s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | div.underline_link.!absolute 14.6x16.3 image linear-gradient(#000000, #000000) shadow #000000 0px -1px 1px -1px inset, #000000 0px -1px 1px -1px inset | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-locale-default.png`, `nav-locale-hover.png`, `nav-locale-focus-visible.png`, `nav-locale-pressed.png`.
+Crops: `nav-locale-default.png`, `nav-locale-hover.png`, `nav-locale-pressed.png`.
 
 #### nav-login
 
@@ -436,21 +438,22 @@ Page: pricing. Selector: `label (text ANNUAL)`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 51.25 x 19.59 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | CoFo Sans Mono 14px/19.6px 400 | = | = | = |
-| Letter spacing | 0.14px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 51.25 x 19.59 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | CoFo Sans Mono 14px/19.6px 400 | = | - | = |
+| Letter spacing | 0.14px | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-focus-visible.png`, `billing-toggle-pressed.png`.
+Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-pressed.png`.
 
 #### price-card
 

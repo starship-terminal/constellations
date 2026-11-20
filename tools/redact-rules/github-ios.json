@@ -1,0 +1,75 @@
+{
+  "_note": "Rules for systems/github-ios. Other GitHub users' handles and avatars are masked: the followed user on the Explore activity card, the repository owner who is a person (not an organisation) in the search results, the issue and pull request authors, and the reviewer avatars in the pull request list. The owner's own profile, repositories and agent sessions stay, and so do organisations, repository names, issue and PR titles and bodies. Coordinates are capture pixels (812 x 1780); crops are rebuilt from the masked screenshots by tools/crops.py.",
+  "families": [
+    {
+      "name": "Explore activity card: followed user's avatar and handle",
+      "files": [
+        "screenshots/dark/05-explore-activity-card-merged-badge-code.png",
+        "screenshots/light/05-explore-activity-card-merged-badge-code.png"
+      ],
+      "size": [[812, 1780]],
+      "rects": [
+        [46, 852, 113, 918, "pixelate:16"],
+        [134, 849, 254, 889, "solid"]
+      ]
+    },
+    {
+      "name": "Repository results: a person's avatar and handle as repository owner",
+      "files": [
+        "screenshots/dark/09-repo-results-loading-spinner.png",
+        "screenshots/dark/10-repo-results-list.png"
+      ],
+      "size": [[812, 1780]],
+      "rects": [
+        [46, 596, 99, 649, "pixelate:16"],
+        [110, 604, 290, 640, "solid"],
+        [46, 1588, 99, 1641, "pixelate:16"]
+      ]
+    },
+    {
+      "name": "Issue list: edge of an author avatar under the tab bar",
+      "files": [
+        "screenshots/dark/13-issues-list-filter-chips-labels.png",
+        "screenshots/dark/14-state-filter-popup-menu.png"
+      ],
+      "size": [[812, 1780]],
+      "rects": [
+        [130, 1751, 170, 1766, "solid"]
+      ]
+    },
+    {
+      "name": "Issue page: author avatar and handle",
+      "files": [
+        "screenshots/dark/15-issue-page-open-locked-badges-comment.png"
+      ],
+      "size": [[812, 1780]],
+      "rects": [
+        [46, 702, 138, 795, "pixelate:24"],
+        [158, 706, 342, 750, "solid"]
+      ]
+    },
+    {
+      "name": "Pull request list: reviewer avatars",
+      "files": [
+        "screenshots/dark/16-pull-requests-list-draft-icons.png"
+      ],
+      "size": [[812, 1780]],
+      "rects": [
+        [303, 476, 346, 518, "pixelate:16"],
+        [303, 1062, 373, 1105, "pixelate:16"]
+      ]
+    },
+    {
+      "name": "Pull request page: author avatar and handle",
+      "files": [
+        "screenshots/dark/17-pr-page-draft-branch-pills-diffstat.png",
+        "screenshots/light/17-pr-page-draft-branch-pills-diffstat.png"
+      ],
+      "size": [[812, 1780]],
+      "rects": [
+        [46, 625, 138, 718, "pixelate:24"],
+        [156, 630, 313, 672, "solid"]
+      ]
+    }
+  ]
+}

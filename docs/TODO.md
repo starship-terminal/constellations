@@ -56,7 +56,7 @@ What is not finished in this library. Newest first.
 
 - [x] **No GitHub remote.** Pushed to `c-wenlong/designs` (renamed from `design-systems`) on 2026-10-10.
   It now lives at `starship-terminal/constellations`, which is public as of 2026-11-20; the
-  rights position in [RIGHTS.md](RIGHTS.md) is pending the owner's decision.
+  rights position (notice and takedown, 2026-11-21) is in [RIGHTS.md](RIGHTS.md).
 - [ ] **The owner's work design system was not copied.** It is that employer's own product
   system, not a capture of another product, so it was left out on purpose. Add it if wanted.
 - [ ] **`ai-engineering/README.md` does not list `design/design-systems`.** That repo had

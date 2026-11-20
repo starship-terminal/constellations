@@ -115,7 +115,7 @@ Page: home. Selector: `a:has-text("Solutions")`. States: default, hover, focus-v
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-solutions-default.png`, `nav-solutions-hover.png`, `nav-solutions-focus-visible.png`, `nav-solutions-pressed.png`.
+Crops: `nav-solutions-default.png`, `nav-solutions-hover.png`, `nav-solutions-pressed.png`.
 
 #### nav-solutions-open
 

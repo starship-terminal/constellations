@@ -2488,7 +2488,7 @@
    ],
    "capture": "screenshots/dark/02-chat-list-folders-tabbar.png",
    "evidence": "Sampled (text)",
-   "note": "Chat row title ('Hannah')",
+   "note": "Chat row title (a contact's name)",
    "op": "text",
    "value": "#FFFFFF"
   },
@@ -2501,7 +2501,7 @@
    ],
    "capture": "screenshots/light/02-chat-list-stories-archive-folders-tabbar.png",
    "evidence": "Sampled (text)",
-   "note": "Chat row title ('Hannah')",
+   "note": "Chat row title (a contact's name)",
    "op": "text",
    "value": "#000000"
   }

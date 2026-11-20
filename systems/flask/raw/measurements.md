@@ -380,7 +380,7 @@ Page: home. Selector: `demo "ACME Studios" breadcrumb`. States: default, hover, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `demo-breadcrumb-default.png`, `demo-breadcrumb-hover.png`, `demo-breadcrumb-focus-visible.png`, `demo-breadcrumb-pressed.png`.
+Crops: `demo-breadcrumb-default.png`, `demo-breadcrumb-hover.png`, `demo-breadcrumb-pressed.png`.
 
 #### demo-tab-context
 
@@ -411,7 +411,7 @@ Page: home. Selector: `demo "v2 Context" tab`. States: default, hover, focus-vis
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
-Crops: `demo-tab-context-default.png`, `demo-tab-context-hover.png`, `demo-tab-context-focus-visible.png`, `demo-tab-context-pressed.png`.
+Crops: `demo-tab-context-default.png`, `demo-tab-context-hover.png`, `demo-tab-context-pressed.png`.
 
 #### demo-tab-feedback
 
@@ -441,7 +441,7 @@ Page: home. Selector: `demo "Feedback 0" tab`. States: default, hover, focus-vis
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
-Crops: `demo-tab-feedback-default.png`, `demo-tab-feedback-hover.png`, `demo-tab-feedback-focus-visible.png`, `demo-tab-feedback-pressed.png`.
+Crops: `demo-tab-feedback-default.png`, `demo-tab-feedback-hover.png`, `demo-tab-feedback-pressed.png`.
 
 #### demo-feedback-field
 
@@ -496,7 +496,7 @@ Page: home. Selector: `demo "Version 3" chip`. States: default, hover, focus-vis
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
-Crops: `demo-version-chip-default.png`, `demo-version-chip-focus-visible.png`, `demo-version-chip-pressed.png`.
+Crops: `demo-version-chip-default.png`, `demo-version-chip-pressed.png`.
 
 #### demo-copy-link
 
@@ -526,7 +526,7 @@ Page: home. Selector: `demo "Copy Link" button`. States: default, hover, focus-v
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
-Crops: `demo-copy-link-default.png`, `demo-copy-link-hover.png`, `demo-copy-link-focus-visible.png`, `demo-copy-link-pressed.png`.
+Crops: `demo-copy-link-default.png`, `demo-copy-link-hover.png`, `demo-copy-link-pressed.png`.
 
 #### demo-th
 
@@ -585,7 +585,7 @@ Page: home. Selector: `demo share "ACME Studios" button`. States: default, hover
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
-Crops: `demo-acme-btn-default.png`, `demo-acme-btn-hover.png`, `demo-acme-btn-focus-visible.png`, `demo-acme-btn-pressed.png`.
+Crops: `demo-acme-btn-default.png`, `demo-acme-btn-hover.png`, `demo-acme-btn-pressed.png`.
 
 #### demo-share-scope
 
@@ -615,7 +615,7 @@ Page: home. Selector: `demo "Anyone with Link" control`. States: default, hover,
 | How | at rest | mouse hover | - |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
-Crops: `demo-share-scope-default.png`, `demo-share-scope-hover.png`, `demo-share-scope-focus-visible.png`.
+Crops: `demo-share-scope-default.png`, `demo-share-scope-hover.png`.
 
 #### demo-share-popover
 
@@ -674,7 +674,7 @@ Page: home. Selector: `demo "Close" button`. States: default, hover, focus-visib
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1, 0, 0, 1, 0, 1) |
 
-Crops: `demo-close-default.png`, `demo-close-hover.png`, `demo-close-focus-visible.png`, `demo-close-pressed.png`.
+Crops: `demo-close-default.png`, `demo-close-hover.png`, `demo-close-pressed.png`.
 
 ### Pricing
 
@@ -1064,7 +1064,7 @@ Page: login. Selector: `login "Continue with Email"`. States: default, hover, fo
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `login-email-btn-default.png`, `login-email-btn-hover.png`, `login-email-btn-focus-visible.png`, `login-email-btn-pressed.png`.
+Crops: `login-email-btn-default.png`, `login-email-btn-hover.png`, `login-email-btn-pressed.png`.
 
 #### login-email
 

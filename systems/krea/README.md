@@ -18,7 +18,7 @@ Krea paints one public theme, `html.dark`. The Tailwind v4 `@theme` layer on `:r
 | [screenshots/](screenshots) | `{page}-dark-{state}.png` captures. Desktop 1440 x 900 at 1x. Phone 390 x 844 at 1x, because the page forces devicePixelRatio to 1 |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json), [signed-in-2026-11-20.json](raw/signed-in-2026-11-20.json) |
 | [login-review.json](login-review.json) | The 2026-11-20 signed-in walk: nav and settings that were offered, the two screens, the gaps, and what was not submitted |
-| [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read). The kit's unadapted `motion.py`, which no builder imports and which had no `raw/motion.json` to read, was removed in the 2026-11 audit |
 
 ## Brief
 

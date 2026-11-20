@@ -88,21 +88,27 @@ export const THEME_OPTIONS = [
   { value: "light", label: "Light" },
 ];
 // Runs before hydration inside the layout <body>, ahead of any content, so a
-// light-theme user never sees a dark first paint. AppearanceBootstrap keeps it
+// user never sees the wrong theme on first paint. With no stored choice it
+// follows the system setting. AppearanceBootstrap keeps it
 // current afterwards; both resolve the stored choice the same way.
-export const themeInitScript = `(function(){try{
-var t=localStorage.getItem('${THEME_KEY}');
-if(t!=='dark'&&t!=='light'&&t!=='system')t='dark';
-if(t==='system')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+export const themeInitScript = `(function(){var t=null,dark=true;
+try{t=localStorage.getItem('${THEME_KEY}')}catch(e){}
+try{dark=matchMedia('(prefers-color-scheme: dark)').matches}catch(e){}
+if(t!=='dark'&&t!=='light')t=dark?'dark':'light';
 document.documentElement.dataset.theme=t;
-}catch(e){document.documentElement.dataset.theme='dark'}})();`;
+})();`;
+
 /** A storage event that may have changed the theme: its key, or a cleared store. */
 export function themeStorageChanged(key: string | null): boolean {
   return key === THEME_KEY || key === null;
 }
-function storedTheme(): Theme {
-  const value = localStorage.getItem(THEME_KEY);
-  return value === "light" || value === "system" ? value : "dark";
+/** No stored choice, or an unreadable store, means System. */
+export function storedTheme(): Theme {
+  let value: string | null = null;
+  try {
+    value = localStorage.getItem(THEME_KEY);
+  } catch {}
+  return value === "light" || value === "dark" ? value : "system";
 }
 function apply(theme: Theme) {
   document.documentElement.dataset.theme =
@@ -133,7 +139,7 @@ export function AppearanceBootstrap() {
   return null;
 }
 export function AppearanceSettings() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("system");
   const [icon, setIcon] = useState<IconChoice>("flat");
   useEffect(() => {
     setTheme(storedTheme());

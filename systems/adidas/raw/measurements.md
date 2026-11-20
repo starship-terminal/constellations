@@ -57,7 +57,7 @@ Page: home. Selector: `.catalog-item-first-page`. States: default, hover, focus-
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-focus-visible.png`, `nav-item-pressed.png`.
+Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-pressed.png`.
 
 #### utility-link
 
@@ -83,7 +83,7 @@ Page: home. Selector: `.online`. States: default, hover, focus-visible, pressed.
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `utility-link-default.png`, `utility-link-hover.png`, `utility-link-focus-visible.png`, `utility-link-pressed.png`.
+Crops: `utility-link-default.png`, `utility-link-hover.png`, `utility-link-pressed.png`.
 
 #### promo-tag
 
@@ -110,7 +110,7 @@ Page: home. Selector: `promo tag`. States: default, hover, focus-visible, presse
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `promo-tag-default.png`, `promo-tag-hover.png`, `promo-tag-focus-visible.png`, `promo-tag-pressed.png`.
+Crops: `promo-tag-default.png`, `promo-tag-hover.png`, `promo-tag-pressed.png`.
 
 #### logo
 
@@ -275,7 +275,7 @@ Page: plp. Selector: `filter row`. States: default, hover, focus-visible, presse
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `filter-row-default.png`, `filter-row-hover.png`, `filter-row-focus-visible.png`, `filter-row-pressed.png`.
+Crops: `filter-row-default.png`, `filter-row-hover.png`, `filter-row-pressed.png`.
 
 #### product-card
 

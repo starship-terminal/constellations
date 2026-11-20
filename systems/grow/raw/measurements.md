@@ -170,21 +170,22 @@ Page: home. Selector: `promo banner`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 575.83 x 25 | = | = | = |
-| Padding | 1px 0px 0px 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Google Sans Flex 16px/24px 400 | = | = | = |
-| Letter spacing | 0.1px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span.anchorText: Google Sans Flex 16px/24px 500, #ffffff, ls 0.1px | = | = | = |
-| Transition | none | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 575.83 x 25 | = | - | = |
+| Padding | 1px 0px 0px 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Google Sans Flex 16px/24px 400 | = | - | = |
+| Letter spacing | 0.1px | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Text node | span.anchorText: Google Sans Flex 16px/24px 500, #ffffff, ls 0.1px | = | - | = |
+| Transition | none | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `promo-banner-default.png`, `promo-banner-hover.png`, `promo-banner-focus-visible.png`, `promo-banner-pressed.png`.
+Crops: `promo-banner-default.png`, `promo-banner-hover.png`, `promo-banner-pressed.png`.
 
 #### promo-link
 

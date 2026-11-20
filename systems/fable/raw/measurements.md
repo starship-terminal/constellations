@@ -708,7 +708,7 @@ Page: clubs. Selector: `button.IconButton-module Previous`. States: default, hov
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `icon-btn-default.png`, `icon-btn-hover.png`, `icon-btn-focus-visible.png`, `icon-btn-pressed.png`.
+Crops: `icon-btn-default.png`, `icon-btn-hover.png`, `icon-btn-pressed.png`.
 
 #### club-card-cat
 
@@ -1186,7 +1186,7 @@ Page: book. Selector: `button.IconButton-module`. States: default, hover, focus-
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `icon-btn-book-default.png`, `icon-btn-book-hover.png`, `icon-btn-book-focus-visible.png`, `icon-btn-book-pressed.png`.
+Crops: `icon-btn-book-default.png`, `icon-btn-book-hover.png`, `icon-btn-book-pressed.png`.
 
 ### Club detail
 

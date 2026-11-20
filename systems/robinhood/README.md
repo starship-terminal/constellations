@@ -18,7 +18,7 @@ Marketing paints a black nav, a lime banner (`#CCFF00`), white and black section
 | [icons/](icons) | Wordmark and feather, with [INDEX.tsv](icons/INDEX.tsv) |
 | [screenshots/](screenshots) | Home, login, and signup at desktop 1440 and phone 390 |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), the resolved `--rh__*` set and the boundary notes |
-| [tools/](tools) | The capture kit, plus the style-guide builder |
+| [tools/](tools) | The capture kit, plus the style-guide builder. The unadapted kit builder copies beside the style-guide builder, the `native/` builders and `capture/signed-in/build-measurements.mjs` were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 
