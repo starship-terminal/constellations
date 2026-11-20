@@ -2561,9 +2561,9 @@
       "description": "Telehealth for a healthy, handsome you",
       "status": "pending",
       "package": null,
-      "notes": "https://www.forhims.co.uk/customer/login asks for email and password. No code was sent.",
+      "notes": "https://www.forhims.co.uk/customer/login asks for email and password. No code was sent. Public walk 2026-11-21: Weight and Hair are links. Sex and Learn opened menus. LOGIN stops at https://app.forhims.co.uk/login. Treatments, Messaging, and Profile redirect to /customer/login. Get started stops at app.forhims.co.uk/flow/. Those walls were not entered. /c is a public chooser. No form was submitted. Public package in PR 1531 at aa46dd156. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 8
     },
     {
@@ -3404,9 +3404,9 @@
       "description": "Maps, Navigation, Search, and Data",
       "status": "pending",
       "package": null,
-      "notes": "https://account.mapbox.com/auth/signin/ asks for email and password, or Google. Password not submitted.",
+      "notes": "https://account.mapbox.com/auth/signin/ asks for email and password, or Google. Password not submitted. Public walk 2026-11-21: Products, Solutions, Developers, Company, and Resources opened mega menus. Pricing, Contact, and footer links opened pages. EN opened English and Japanese. Log in and Sign up stop at https://account.mapbox.com/auth/signin/ and https://account.mapbox.com/auth/signup/. Both were not entered. No form was submitted. Public package in PR 1530 at 728325c58. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 10
     },
     {
