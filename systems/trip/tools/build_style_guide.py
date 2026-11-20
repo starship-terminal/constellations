@@ -137,7 +137,7 @@ HTML = f"""<!doctype html>
   <div id="space"></div>
 </div>
 <script>
-const TOK = {json.dumps({"core": T["core"], "light": T["light"]}, separators=(",", ":"))};
+const TOK = {json.dumps({"core": T["core"], "light": T["light"]}, separators=(",", ":")).replace("<", "\\u003c")};
 function val(path) {{
   const parts = path.replace(/\\{{|\\}}/g, "").split(".");
   let n = TOK;
