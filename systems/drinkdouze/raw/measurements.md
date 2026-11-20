@@ -475,7 +475,7 @@ Page: shop. Selector: `product-item`. States: default, hover, focus-visible, pre
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `product-card-default.png`, `product-card-hover.png`, `product-card-focus-visible.png`, `product-card-pressed.png`.
+Crops: `product-card-default.png`, `product-card-hover.png`, `product-card-pressed.png`.
 
 #### product-card-title
 
@@ -714,7 +714,7 @@ Page: product. Selector: `label.block-swatch__item "6 CANETTES"`. States: defaul
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `variant-swatch-default.png`, `variant-swatch-hover.png`, `variant-swatch-focus-visible.png`, `variant-swatch-pressed.png`.
+Crops: `variant-swatch-default.png`, `variant-swatch-hover.png`, `variant-swatch-pressed.png`.
 
 #### variant-swatch-2
 
@@ -740,7 +740,7 @@ Page: product. Selector: `label.block-swatch__item "12 CANETTES"`. States: defau
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `variant-swatch-2-default.png`, `variant-swatch-2-hover.png`, `variant-swatch-2-focus-visible.png`, `variant-swatch-2-pressed.png`.
+Crops: `variant-swatch-2-default.png`, `variant-swatch-2-hover.png`, `variant-swatch-2-pressed.png`.
 
 #### swatch-selected
 

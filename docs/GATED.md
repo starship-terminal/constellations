@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_273 of 460 packages name gated surfaces in their gaps; 166 more mark a gate in their access text; 21 report none._
+_273 of 459 packages name gated surfaces in their gaps; 165 more mark a gate in their access text; 21 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -1996,9 +1996,6 @@ signed out (public marketing and the email login form; no account created)
 
 ### [Todoist](../systems/todoist) — `todoist`
 signed out (public marketing and the login form; signup was not submitted)
-
-### [Tome](../systems/tome) — `tome`
-signed out. https://tome.app/ and /login both return the host 404. No email form, so no signup. No payment.
 
 ### [TravelPerk](../systems/travelperk) — `travelperk`
 signed out. Public marketing pages only. travelperk.com redirected to perk.com. The login page was measured and left. No email, signup, SSO, booking or card.

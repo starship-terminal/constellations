@@ -15,7 +15,7 @@ ROVR is a live radio product (Radio Reinvented, v1.0.1). This package covers the
 | [icons/](icons/) | [INDEX.tsv](icons/INDEX.tsv) only. Glyphs were not extracted |
 | [screenshots/](screenshots/) | No PNGs. See [screenshots/README.md](screenshots/README.md) |
 | [raw/](raw/) | [computed.json](raw/computed.json), the live readings |
-| [tools/](tools/) | Builders and the copied capture kit |
+| [tools/](tools/) | Builders and the copied capture kit. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 

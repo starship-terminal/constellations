@@ -203,7 +203,7 @@ python3 -m unittest discover -s tools
 git status --short .
 ```
 
-`tools/capture/quantize.py <raw-shots>` and `tools/crops.py` (both need Pillow) rewrite `screenshots/` and `components/crops/`. Quantise from the masked `.png` captures only, never the `.raw.png` originals, then run `python3 tools/redact_images.py apply systems/telegram --rules tools/redact-rules/telegram.json` from the repository root before `tools/crops.py`, so the names stay masked. `apply` saves each image it edits as an RGB 256-colour PNG without the transparent screen corners `quantize.py` keeps, so put every edited image back on the palette and transparency of its quantised capture (only the masked boxes may differ) before cutting the crops. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
+`tools/capture/quantize.py <raw-shots>` and `tools/crops.py` (both need Pillow) rewrite `screenshots/` and `components/crops/`. Quantise from the masked `.png` captures only, never the `.raw.png` originals, then run `python3 tools/redact_images.py apply systems/telegram --rules tools/redact-rules/telegram.json` from the repository root before `tools/crops.py`, so the names stay masked. `apply` keeps each image's palette, its transparent screen corners and every pixel outside the boxes. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
 ## Use in SwiftUI and Figma
 

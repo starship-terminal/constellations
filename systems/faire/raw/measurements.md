@@ -237,7 +237,7 @@ Page: home. Selector: `header locale control`. States: default, hover, focus-vis
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `locale-btn-default.png`, `locale-btn-hover.png`, `locale-btn-focus-visible.png`, `locale-btn-pressed.png`.
+Crops: `locale-btn-default.png`, `locale-btn-hover.png`, `locale-btn-pressed.png`.
 
 #### nav-signin
 

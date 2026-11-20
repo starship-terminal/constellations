@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "IKEA"
-description: "Furniture storefront design: Skapa colour roles on a white page, brand blue #0058a3 and yellow #ffdb00 wordmark, a 64px blue Add to cart pill, square product photos, Noto IKEA at 14px, and a public category, PDP, search and store locator"
+description: "Furniture storefront design: Skapa colour roles on a white page, brand blue #0058a3 and yellow #ffdb00 wordmark, a blue Add to cart pill 56px high with a 64px radius, square product photos, Noto IKEA at 14px, and a public category, PDP, search and store locator"
 colors:
   primary: "#0058a3"
   neutral: "#ffffff"
@@ -212,7 +212,7 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Furniture storefront design: Skapa colour roles on a white page, brand blue #0058a3 and yellow #ffdb00 wordmark, a 64px blue Add to cart pill, square product photos, Noto IKEA at 14px, and a public category, PDP, search and store locator.
+Good for: Furniture storefront design: Skapa colour roles on a white page, brand blue #0058a3 and yellow #ffdb00 wordmark, a blue Add to cart pill 56px high with a 64px radius, square product photos, Noto IKEA at 14px, and a public category, PDP, search and store locator.
 
 Captured 2026-11-19, signed out (every captured surface is public on www.ikea.com/sg/en; the global country picker at www.ikea.com was captured as the page ikea.com actually serves; login, signup, the bag, checkout and payment were not entered; Add to cart, Log in and the OneTrust banner were measured or hidden, never activated). Themes: light.
 
@@ -222,7 +222,7 @@ ikea.com redirects to www.ikea.com, which is a country picker titled "Hej! Welco
 
 Surfaces: the global picker, the Singapore home and its search field, Sofas and armchairs, the BILLY bookcase product page, search for "lamp", the store locator, the signed-out login card, and Offers. Desktop and phone.
 
-IKEA paints the storefront with Skapa. Colour roles are `--colour-*` rgb triplets (brand blue `#0058a3`, brand yellow `#ffdb00`, neutrals from `#ffffff` to `#111111`). The emphasised buy button is a 64px pill in brand blue. Type is Noto IKEA at a 14px body. Product photos are square. One light theme.
+IKEA paints the storefront with Skapa. Colour roles are `--colour-*` rgb triplets (brand blue `#0058a3`, brand yellow `#ffdb00`, neutrals from `#ffffff` to `#111111`). The emphasised buy button is a brand blue pill, 56px high with a 64px radius (`core.radius.cap`). Type is Noto IKEA at a 14px body. Product photos are square. One light theme.
 
 ## Colors
 

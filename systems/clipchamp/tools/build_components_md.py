@@ -18,6 +18,14 @@ ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
+
+# Three entries were read from the wrong element (README, What is not here). The raw readings stay as
+# measured; while a reading still shows the wrong element, its entry says what was read (wrong_element.py),
+# and a recapture that measures the right element keeps its own description.
+import sys
+sys.path.insert(0, str(ROOT / "tools"))
+from wrong_element import corrected
+C = corrected(C)
 LAYOUT = {}
 T = json.load(open("tokens.json"))
 

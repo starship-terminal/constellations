@@ -616,7 +616,7 @@ Page: home. Selector: `"Docusign Assistant"`. States: default, hover, focus-visi
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
-Crops: `assistant-default.png`, `assistant-hover.png`, `assistant-focus-visible.png`.
+Crops: `assistant-default.png`, `assistant-hover.png`.
 
 ### eSignature page
 
@@ -1089,7 +1089,7 @@ Page: signgen. Selector: `button "Clear"`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `sg-clear-default.png`, `sg-clear-hover.png`, `sg-clear-focus-visible.png`, `sg-clear-pressed.png`.
+Crops: `sg-clear-default.png`, `sg-clear-hover.png`, `sg-clear-pressed.png`.
 
 #### sg-download
 
@@ -1117,7 +1117,7 @@ Page: signgen. Selector: `button "Download as PNG"`. States: default, hover, foc
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `sg-download-default.png`, `sg-download-hover.png`, `sg-download-focus-visible.png`, `sg-download-pressed.png`.
+Crops: `sg-download-default.png`, `sg-download-hover.png`, `sg-download-pressed.png`.
 
 #### sg-field
 

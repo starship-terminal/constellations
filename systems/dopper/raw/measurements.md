@@ -87,7 +87,7 @@ Page: home. Selector: `dopper-navigation button Bottle`. States: default, hover,
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
-Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-focus-visible.png`.
+Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`.
 
 #### nav-link
 
@@ -1358,7 +1358,7 @@ Page: mobile. Selector: `mobile menu row`. States: default, hover, focus-visible
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
-Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visible.png`.
+Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`.
 
 #### m-menu-pill
 

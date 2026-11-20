@@ -441,7 +441,7 @@ Page: home. Selector: `h2:has-text("BIO.SITE/YOURNAME")`. States: default, hover
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `footer-cta-default.png`, `footer-cta-hover.png`, `footer-cta-focus-visible.png`, `footer-cta-pressed.png`.
+Crops: `footer-cta-default.png`, `footer-cta-hover.png`, `footer-cta-pressed.png`.
 
 #### footer-link
 
@@ -616,7 +616,7 @@ Page: claim. Selector: `button.UsernameSearch__submit`. States: default, hover, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `claim-submit-default.png`, `claim-submit-hover.png`, `claim-submit-focus-visible.png`, `claim-submit-pressed.png`.
+Crops: `claim-submit-default.png`, `claim-submit-hover.png`, `claim-submit-pressed.png`.
 
 #### claim-login
 

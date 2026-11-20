@@ -169,6 +169,9 @@ python3 tools/build_style_guide.py             # -> style-guide.html
 python3 tools/build_components_md.py           # -> components.md
 node tools/capture/public/build-measurements.mjs  # -> raw/measurements.md
 python3 tools/capture/quantize.py <raw-dir>    # full-colour PNGs -> screenshots/
+python3 ../../tools/redact_images.py apply ../doordash --rules ../../tools/redact-rules/doordash.json   # repaint the masks over the new screenshots
+# The rules' boxes are pixel positions on the committed screenshots, size-gated, so a fresh capture of another
+# size or layout is silently skipped: re-place the boxes for every new shot and open each image before committing.
 ```
 
 The capture side needs Playwright (`PLAYWRIGHT=<playwright index.mjs>`) and Pillow for crop quantization (`PYTHON=<python with Pillow>`):

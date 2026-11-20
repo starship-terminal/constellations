@@ -372,7 +372,7 @@ Page: pricing. Selector: `ancestor of the plan TRY FOR FREE text that holds the 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
+Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-pressed.png`.
 
 #### plan-card
 

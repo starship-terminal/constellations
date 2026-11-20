@@ -356,23 +356,24 @@ Page: home. Selector: `button[aria-label^="Choose"]`. States: default, hover, fo
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 58.75 x 58.75 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ABC Diatype-75f05108b2d5df75 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1e1c1a | = | = | = |
-| Transition | none | = | = | = |
-| Transform | matrix(0.24, 0, 0, 0.24, -526.32, 0) | = | = | = |
-| Opacity | 0 | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 58.75 x 58.75 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ABC Diatype-75f05108b2d5df75 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1e1c1a | = | - | = |
+| Transition | none | = | - | = |
+| Transform | matrix(0.24, 0, 0, 0.24, -526.32, 0) | = | - | = |
+| Opacity | 0 | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `voice-choose-default.png`, `voice-choose-hover.png`, `voice-choose-focus-visible.png`, `voice-choose-pressed.png`.
+Crops: `voice-choose-default.png`, `voice-choose-hover.png`, `voice-choose-pressed.png`.
 
 #### voice-nav
 

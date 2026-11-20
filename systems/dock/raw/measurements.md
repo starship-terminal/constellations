@@ -1061,7 +1061,7 @@ Page: login. Selector: `button "Continue"`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `continue-btn-default.png`, `continue-btn-hover.png`, `continue-btn-focus-visible.png`, `continue-btn-pressed.png`.
+Crops: `continue-btn-default.png`, `continue-btn-hover.png`, `continue-btn-pressed.png`.
 
 #### signup-card
 
