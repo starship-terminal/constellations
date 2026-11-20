@@ -480,7 +480,7 @@ export function SettingsTabList({
   // A vertical list beside the panel on desktop; a scrolling row on a phone.
   const [row, setRow] = useState(false);
   useEffect(() => {
-    const media = matchMedia("(max-width: 800px)");
+    const media = matchMedia("(max-width: 1100px)");
     const update = () => setRow(media.matches);
     update();
     media.addEventListener("change", update);
