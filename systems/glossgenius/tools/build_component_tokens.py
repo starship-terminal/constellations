@@ -282,19 +282,30 @@ except KeyError:
     pass
 
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
-for key, comp, state, desc in [
-    ("regular", "plan-row", "default", "The 400 body weight on plan rows, FAQ and fields."),
-    ("medium", "hero-eyebrow", "default", "The 500 weight on the eyebrow and app labels."),
-    ("semibold", "nav-link", "default", "The 600 weight on nav links, buttons and card headings."),
-    ("bold", "hero-h1", "default", "The display-heading weight."),
+# Each weight token is named for the weight it measures (400 regular, 500 medium, ...), never for the
+# weight a component was expected to have: a semibold key holding 400 sends a consumer the wrong face.
+WEIGHT_NAMES = {100: "thin", 200: "extralight", 300: "light", 400: "regular", 500: "medium",
+                600: "semibold", 700: "bold", 800: "extrabold", 900: "black"}
+seen_weights = {}
+for comp, state, role in [
+    ("plan-row", "default", "pricing plan rows"),
+    ("hero-eyebrow", "default", "the hero eyebrow"),
+    ("nav-link", "default", "header nav links"),
+    ("hero-h1", "default", "the hero heading"),
 ]:
     try:
         w = ts(comp, state, "fontWeight") or st(comp, state)["fontWeight"]
-        if w:
-            weights[key] = lit(int(float(w)), "fontWeight",
-                f"computed fontWeight of {comp} {state} (raw/components-computed.json)", desc)
-    except (KeyError, ValueError):
-        pass
+    except KeyError:
+        continue
+    if not w:
+        continue
+    w = int(float(w))
+    seen_weights.setdefault(w, []).append((comp, state, role))
+for w, reads in sorted(seen_weights.items()):
+    key = WEIGHT_NAMES.get(w, "w%d" % w)
+    weights[key] = lit(w, "fontWeight",
+        "computed fontWeight of %s (raw/components-computed.json)" % ", ".join(f"{c} {s}" for c, s, _ in reads),
+        "The %d weight, measured on %s." % (w, "; ".join(r for _, _, r in reads)))
 
 # Measured marketing type ramp — computed px on real components, honestly
 # labelled.
@@ -454,7 +465,10 @@ def semcolor(raw, src, desc, theme="light"):
     normed = norm_fill(raw)
     alias = role_alias[theme].get(normed)
     value = f"{{{alias}}}" if alias else normed
-    return lit(value, "color", src + (f"; matches declared {alias}" if alias else ""), desc)
+    # A painted gradient is not a colour: type it as the declared gradient var it matches is typed (other),
+    # so a colour alias never points at a gradient token.
+    ty = "other" if str(normed).startswith(("linear-gradient", "radial-gradient", "conic-gradient")) else "color"
+    return lit(value, ty, src + (f"; matches declared {alias}" if alias else ""), desc)
 
 
 sem, asem, bsem = SPEC["light"], SPEC["app"], SPEC["booking"]
@@ -537,14 +551,6 @@ for root, theme, key, comp, state, prop, group, desc in [
     except KeyError:
         pass
 
-# The page fields: the marketing body field, the app's field behind the
-# auth card, the booking site's field.
-for root, theme, comp, desc in [
-    (sem, "light", "mkt-header", "The page field behind the marketing pages (the html/body field under every white card)."),
-    (asem, "app", "login-footer", "The page field behind the signed-out auth surfaces."),
-    (bsem, "booking", "bk-nav", "The page field behind the published booking site."),
-]:
-    pass  # filled by measured roles above when the fields themselves paint a colour
 
 # ------------------------------------------------------------------ shape
 #
