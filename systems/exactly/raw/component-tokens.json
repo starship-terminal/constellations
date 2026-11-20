@@ -322,7 +322,7 @@
         "none": {
           "value": "0px",
           "type": "dimension",
-          "source": "measured computed letterSpacing 'normal' resolves to 0",
+          "source": "derived: computed style of nav-cta default (raw/components-computed.json) · letterSpacing is 'normal', which tracks at 0px",
           "description": "UI text tracks normally."
         }
       }
@@ -602,14 +602,14 @@
       "ring": {
         "value": "rgb(16, 16, 16)",
         "type": "color",
-        "source": "measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineColor",
-        "description": "The 1px focus ring on interactive elements (desktop)."
+        "source": "measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineColor; outline-style auto, in Chrome's own default focus-ring colour, so the browser chose it, not the site",
+        "description": "The 1px auto focus ring the browser draws on interactive elements (desktop pass); the site sets no focus colour of its own."
       },
       "ring-mobile": {
         "value": "rgb(229, 151, 0)",
         "type": "color",
-        "source": "measured computed style of m-join focus-visible (raw/components-computed.json) · outlineColor",
-        "description": "The 1px focus ring at 390 wide — the site paints a different colour there."
+        "source": "measured computed style of m-join focus-visible (raw/components-computed.json) · outlineColor; outline-style auto, in the colour Chrome's phone emulation uses for its own focus ring, so the browser chose it, not the site",
+        "description": "The same browser-drawn ring at 390 wide: Chrome's phone emulation draws it in #e59700; the site sets no focus colour of its own."
       },
       "width": {
         "value": "1px",
