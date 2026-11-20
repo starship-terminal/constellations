@@ -113,6 +113,7 @@ Consent overlays were hidden in CSS and never answered. Nothing was signed into,
 - **Pricing plan fills are not the trial blue.** The Free and Creator buttons paint an 8% soft-black wash (`oklab` alpha). Only the Pro plan and the nav trial pill paint `#44b1ff`.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read exact colours from the tokens or `raw/`, not from the pixels.
 - **The machine clock.** The capture runners stamp the local date. That clock read 2026-11-17 during the run. The catalog date and the evidence `read` fields are set to 2026-11-18, the capture date for this batch.
+- **Automation was hidden.** Every committed reading and screenshot was taken by scripts that hid `navigator.webdriver`. The scripts no longer do (2026-11 audit), so a recapture may meet bot checks this one did not.
 
 ## Fonts
 
