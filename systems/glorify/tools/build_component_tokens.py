@@ -471,7 +471,7 @@ for root, theme, key, comp, state, prop, group, desc in [
     (asem, "app", "dialog-fill", "ed-craft", "default", "innerFill", "surface",
      "The Craft dialog's painted surface — the modal box's own box is transparent, the fill is its inner panel."),
     (asem, "app", "craft-cta-fill", "ed-add", "enabled", "backgroundColor", "action",
-     "The 'Add to canvas' fill once a style is picked — the button was never pressed."),
+     "The 'Add to canvas' fill once a style is picked — measured at rest; the screenshot pass pressed it once (an AI generation), measure.mjs never did."),
     (asem, "app", "craft-cta-disabled", "ed-add", "default", "backgroundColor", "action",
      "The 'Add to canvas' fill before a style is picked — measured identical to the enabled fill, the button does not dim."),
     (asem, "app", "style-selected-border", "ed-craft-style", "opened", "borderTopColor", "border",
