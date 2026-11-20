@@ -53,6 +53,15 @@ class Rebuild(unittest.TestCase):
                 self.assertEqual((self.dst / rel).read_text(), (PKG / rel).read_text(),
                                  f"{rel}: the builders no longer reproduce the committed file")
 
+    @unittest.skipUnless(shutil.which("node"), "needs Node.js for tools/capture/public/build-measurements.mjs")
+    def test_measurements_match_committed(self):
+        """raw/measurements.md comes from the JavaScript builder; its focus filter and crop notes are checked here."""
+        res = subprocess.run(["node", str(self.dst / "tools" / "capture" / "public" / "build-measurements.mjs")],
+                             cwd=self.dst, capture_output=True, text=True, timeout=120)
+        self.assertEqual(res.returncode, 0, res.stderr)
+        self.assertEqual((self.dst / "raw" / "measurements.md").read_text(), (PKG / "raw" / "measurements.md").read_text(),
+                         "raw/measurements.md: build-measurements.mjs no longer reproduces the committed file")
+
     def test_hover_is_the_measured_fill(self):
         tokens = json.loads((PKG / "tokens.json").read_text())
         comps = json.loads((PKG / "raw" / "components-computed.json").read_text())["components"]
