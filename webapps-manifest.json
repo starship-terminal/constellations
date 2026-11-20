@@ -5956,7 +5956,7 @@
       "description": "Swedish consumer electronics company",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://teenage.engineering/ is a store. /login is 404. No account sign-in.",
+      "notes": "Email probe: https://teenage.engineering/ is a store. /login is 404. No account sign-in. Public walk 2026-11-21: store, product samples, menus, and the styled 404 loaded. Newsletter and checkout were not submitted. Country select was left unchanged. Public package in PR 1499 at b5a79e05e. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 18
