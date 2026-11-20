@@ -268,6 +268,13 @@ describe("recovery and key bytes", () => {
     assert.equal(moved.body.ok, false);
   });
 
+  it("tightens a loose existing file before saving a key into it", async () => {
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    await fs.chmod(providerFile(), 0o644);
+    await handleSave({ ...GOOD, api_key: KEY2 }, okModels);
+    assert.equal((await fs.stat(providerFile())).mode & 0o777, 0o600);
+  });
+
   it("never deletes a working database because it is busy", async () => {
     await handleSave({ ...GOOD, api_key: KEY }, okModels);
     const { DatabaseSync } = await import("node:sqlite");

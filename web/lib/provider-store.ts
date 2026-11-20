@@ -94,10 +94,12 @@ async function open(create: boolean): Promise<DatabaseSync | null> {
       try {
         const fh = await fs.open(file, "wx", 0o600);
         await fh.close();
-        await fs.chmod(file, 0o600);
       } catch (e) {
         if ((e as NodeJS.ErrnoException).code !== "EEXIST") throw e;
       }
+      // By path, so no descriptor is opened: a restored or copied file with a
+      // looser mode is tightened before a key is written into it.
+      await fs.chmod(file, 0o600);
     } else {
       await fs.access(file);
     }
