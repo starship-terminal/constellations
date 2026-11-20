@@ -27,7 +27,7 @@ Fonts: `core.font.family.display` is Inter Tight, then 1 fallback; `core.font.fa
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 72 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 70 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -81,7 +81,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 |---|---|
 | [tokens.json](tokens.json) | 165 core + 30 light tokens (incl. 19 component), evidence-labelled (`{var: ...}` leaves resolve to the declared layer; measured values name the component reading); no dark set — none is painted |
 | [style-guide.html](style-guide.html) | every token rendered |
-| [components.md](components.md) | the discovery list and 35 measured component entries (72 state crops) |
+| [components.md](components.md) | the discovery list and 35 measured component entries (70 state crops) |
 | [patterns.md](patterns.md) | page layouts |
 | [DESIGN.md](DESIGN.md) | the generated one-theme export |
 | [icon.png](icon.png) | the Cushion mark, 128px (Git LFS) |

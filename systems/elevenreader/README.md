@@ -12,7 +12,7 @@ ElevenReader is worth a capture because its public site is a disciplined near-mo
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (77, 193 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the promo band and header, the hero and book orbit, pricing, the auth cards, the footer, mobile |
-| [components/crops/](components/crops) | 193 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 191 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 30 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages bounded to 8 chunks, `mobile-*` phone shots at 2x, `home-light-menu`/`mobile-home-light-menu` the opened menus, `pricing-light-monthly` the toggled billing segment |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 790 rules, 584 vars resolved light and dark; Cookiebot/GTM vars binned vendor), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -53,7 +53,7 @@ Fonts: `core.font.family.inter` is Inter, then 1 fallback; `core.font.family.wal
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 193 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 191 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
