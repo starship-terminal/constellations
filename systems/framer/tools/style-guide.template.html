@@ -20,6 +20,10 @@
 [data-mode="dark"], .dark {
 /*DARK*/
 }
+/* the /login shell's own readings, scoped to the login mock */
+.auth {
+/*AUTH*/
+}
 * { box-sizing: border-box; }
 /* framer.com paints one theme — the dark body-declared --token-<uuid> palette — so the guide's
    body carries the .dark scope exactly the way the site's :root does. */
@@ -97,7 +101,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--line-2, #282828); padding: 
       <div class="tile"><div class="img">Enterprise</div><b>Custom</b><span class="sub">Security, support, scale</span></div>
     </div>
     <div style="margin-top:18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="chip">Trending</span><span class="chip">Recent</span><span class="chip">Vibe</span><span class="btn small ghost">Open</span><span class="badge">1,000 AI credits / month</span></div>
-    <div style="margin-top:18px"><input class="field" placeholder="Enter your work email&hellip;"></div>
+    <div class="auth" style="margin-top:18px"><input class="field" placeholder="Enter your work email&hellip;"></div>
   </div>
 
   <h2 class="sh">Palette</h2>

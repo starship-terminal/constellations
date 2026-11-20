@@ -206,6 +206,8 @@ def build(node, theme, path=""):
 
 core = build(SPEC["core"], "dark")  # scales are theme-independent
 dark = build(SPEC["dark"], "dark")
+# the light /login shell's measured readings (literals only)
+auth = build(SPEC["auth"], "dark")
 # The component tokens live in their own top-level spec tree but are
 # theme-independent measured geometry (header heights, button heights,
 # field heights), so they hang off core.
@@ -234,6 +236,7 @@ def tokens_of(tree, prefix=""):
 
 NAMES = {n for n, _ in tokens_of(core)}
 NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
+NAMES_A = NAMES | {n for n, _ in tokens_of(auth)}
 
 
 def aliases(v):
@@ -254,15 +257,22 @@ for n, t in list(tokens_of(dark)):
     for a in aliases(t["$value"]):
         if a not in NAMES_D:
             raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
+for n, t in list(tokens_of(auth)):
+    for a in aliases(t["$value"]):
+        if a not in NAMES_A:
+            raise KeyError(f"auth.{n}: alias {{{a}}} points at nothing")
 
 tokens = {
     "core": core,
     "dark": dark,
+    "auth": auth,
     "$themes": [
         {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The surface every www.framer.com public page paints: the dark palette the body-declared --token-<uuid> colour styles resolve to. No light variant or theme toggle exists on the marketing site. /community/gallery is a separate community stack, also dark; /login is the light auth shell, recorded as measured component values."},
+         "$description": "The surface every www.framer.com public page paints: the dark palette the body-declared --token-<uuid> colour styles resolve to. No light variant or theme toggle exists on the marketing site. /community/gallery is a separate community stack, also dark; /login is the light auth shell, whose readings are the auth set."},
+        {"id": "auth", "name": "Auth (light)", "selectedTokenSets": {"core": "source", "auth": "enabled"},
+         "$description": "The /login auth shell: a separate light app that declares none of the www --token-<uuid> layer. Its form, Google button and card readings, measured at rest, as literals. Not a light theme of the marketing site."},
     ],
-    "$metadata": {"tokenSetOrder": ["core", "dark"]},
+    "$metadata": {"tokenSetOrder": ["core", "dark", "auth"]},
 }
 (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
@@ -271,4 +281,4 @@ def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "dark")})
+print({k: count(v) for k, v in tokens.items() if k in ("core", "dark", "auth")})
