@@ -43,6 +43,23 @@ class TokenTests(unittest.TestCase):
         self.assertIn("Phone number", readings["pages"]["login"]["gate"])
         self.assertIn("No phone number was typed.", readings["notEntered"])
 
+    def test_every_token_has_a_source(self):
+        # docs/EVIDENCE.md: every value says where it came from.
+        doc = json.loads((Path(__file__).resolve().parent.parent / "tokens.json").read_text())
+        missing = []
+
+        def walk(node, path):
+            if isinstance(node, dict) and "$value" in node:
+                if not node.get("$extensions", {}).get("source"):
+                    missing.append(path)
+            elif isinstance(node, dict):
+                for key, child in node.items():
+                    if not key.startswith("$"):
+                        walk(child, f"{path}.{key}" if path else key)
+
+        walk(doc, "")
+        self.assertEqual(missing, [])
+
 
 if __name__ == "__main__":
     unittest.main()
