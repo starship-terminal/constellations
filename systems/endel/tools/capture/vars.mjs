@@ -36,15 +36,17 @@ for (const [host, url] of [['site', BASE + '/'], ['app', APP + '/']]) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
   await page.waitForTimeout(6000);
   byHost[host] = await page.evaluate(() => [...document.styleSheets].map((s, i) => {
-    try { return { name: s.href || 'inline-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
-    catch { return { name: s.href || 'sheet-' + i, media: '', css: '', unreadable: true }; }
+    try { return { name: (s.href || '').split(/[?#]/)[0] || 'inline-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
+    catch { return { name: (s.href || '').split(/[?#]/)[0] || 'sheet-' + i, media: '', css: '', unreadable: true }; }
   }));
   await page.close();
 }
 const sheets = Object.entries(byHost).flatMap(([host, ss]) => ss.map((s) => ({ ...s, host })));
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The probe resolves vw/vh/dvh and @media at the 1440 x 900 the notes below claim; a bare
+// browser.newPage() would give Playwright's 1280 x 720 default (finding 19-1).
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
