@@ -619,5 +619,64 @@ class AllowEntries(unittest.TestCase):
                     self.assertIsNone(R.allow_entry_problem(entry))
 
 
+@unittest.skipIf(R is None, "Pillow and numpy are not installed")
+class RulesKeys(unittest.TestCase):
+    """A rules file key at a level that never reads it, or an unknown key, is refused, not ignored."""
+
+    def test_misplaced_and_unknown_keys_are_named(self):
+        rules = {"_note": "a note", "wrap_ignore": ["screenshots/a.png"], "colour": "red",
+                 "ocr": {"_why": "a note", "families": [], "email_allow": []},
+                 "families": [{"name": "rows", "files": ["*.png"], "rect": [0, 0, 1, 1],
+                               "ocr_lines": [{"rect": [0, 0, 1, 1], "keep": [], "files": []}]}]}
+        self.assertEqual(R.rules_key_problems(rules), [
+            "wrap_ignore belongs in ocr",
+            "colour is not a rules-file key",
+            "ocr.families belongs in the top level",
+            "families[0].rect belongs in an ocr_lines entry",
+            "families[0].ocr_lines[0].files belongs in a family",
+        ])
+
+    def test_wrong_shapes_are_named(self):
+        self.assertEqual(R.rules_key_problems({"ocr": [], "families": [7]}),
+                         ["ocr must be a JSON object", "families[0] must be a JSON object"])
+        self.assertEqual(R.rules_key_problems({"families": {}}), ["families must be a list"])
+
+    def test_documented_keys_pass(self):
+        rules = {"families": [{"name": "n", "files": ["*"], "skip": [], "size": [[1, 1]], "rects": [],
+                               "ocr_lines": [{"rect": [0, 0, 1, 1], "keep": ["^x$"]}]}],
+                 "delete_stems": [], "delete": [], "excludeSources": [], "captureLimitations": {},
+                 "ocr": {"net": True, "emails": True, "email_allow": [], "keep": [], "boost": [],
+                         "delete_if_covered": 0.3, "wrap_ignore": []}}
+        self.assertEqual(R.rules_key_problems(rules), [])
+
+    def test_check_and_apply_refuse_a_misplaced_key(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d) / "pkg"
+            pkg.mkdir()
+            Image.new("RGB", (4, 4)).save(pkg / "a.png")
+            pats = Path(d) / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]]}))
+            rules = Path(d) / "r.json"
+            rules.write_text(json.dumps({"ocr": {"emails": True}, "wrap_ignore": ["a.png"]}))
+            for argv in (["check", str(pkg), "--patterns", str(pats), "--rules", str(rules)],
+                         ["apply", str(pkg), "--rules", str(rules), "--patterns", str(pats), "--dry-run"]):
+                err = io.StringIO()
+                with mock.patch.object(R, "ocr_words", return_value=[]), contextlib.redirect_stderr(err), \
+                     contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                    R.main(argv)
+                self.assertEqual(cm.exception.code, 2, argv)
+                self.assertEqual(len(err.getvalue().strip().splitlines()), 1, err.getvalue())
+                self.assertIn("r.json", err.getvalue())
+                self.assertIn("wrap_ignore belongs in ocr", err.getvalue())
+
+    def test_every_committed_rules_file_puts_each_key_where_it_is_read(self):
+        files = sorted(R.RULES_DIR.glob("*.json"))
+        self.assertTrue(files)
+        for f in files:
+            with self.subTest(rules=f.name):
+                self.assertEqual(R.rules_key_problems(json.loads(f.read_text())), [])
+
+
 if __name__ == "__main__":
     unittest.main()
