@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ripple style guide</title>
+<style>
+:root {
+  --page: #ffffff;
+  --surface: #fafafa;
+  --text: #141a1f;
+  --muted: #939a9f;
+  --accent: #006aff;
+  --on-accent: #f1f2f3;
+  --footer: #141a1f;
+  --footer-text: #fafafa;
+  --neutral-50: #f2f2f3;
+  --neutral-100: #e4e5e7;
+  --primary-300: #78beff;
+  --primary-500: #006aff;
+  --primary-600: #004bcc;
+  --blue-55: #0067e5;
+  --blue-60: #005bcc;
+  --blue-50: #008cff;
+  --font: "rippleFont", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 350 16px/24px var(--font); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-weight: 500; font-size: 40px; line-height: 48px; letter-spacing: -0.5px; margin: 0 0 8px; }
+h2 { font-weight: 500; font-size: 24px; margin: 40px 0 12px; }
+p.lead { color: var(--text); max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 120px; }
+.sw i { display: block; height: 48px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
+.sw span { display: block; font-size: 12px; margin-top: 4px; }
+button.primary {
+  appearance: none; border: 0; color: var(--on-accent); height: 40px; padding: 0 16px;
+  border-radius: 40px; font: 500 16px/24px var(--font); cursor: pointer;
+  background-image: radial-gradient(circle, var(--blue-60), var(--blue-50) 80%);
+  box-shadow: rgba(0, 91, 204, 0.9) 0 3px 12px inset, rgba(0, 91, 204, 0.8) 0 -3px 4px inset;
+}
+button.sales {
+  appearance: none; height: 40px; padding: 6px 18px; border-radius: 9999px; border: 2px solid transparent;
+  background-image: linear-gradient(var(--neutral-50), var(--neutral-50)), linear-gradient(103deg, var(--primary-600), var(--primary-300), var(--primary-500));
+  background-origin: border-box; background-clip: padding-box, border-box;
+  font: 400 16px/24px var(--font); color: #000;
+}
+.icon {
+  width: 40px; height: 40px; border-radius: 9999px; border: 0; background: var(--neutral-50);
+}
+input.search {
+  width: min(100%, 420px); height: 40px; border: 0; border-radius: 4px; background: var(--neutral-100);
+  padding: 8px 12px 8px 16px; font: 350 16px/24px var(--font); color: #586074;
+  box-shadow: #fff 0 0 0 1px, var(--accent) 0 0 0 3px;
+}
+footer.sample { margin-top: 24px; background: var(--footer); color: var(--footer-text); padding: 24px; border-radius: 8px; }
+footer.sample a { color: var(--footer-text); }
+.note { font-size: 13px; color: var(--muted); max-width: 72ch; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ripple</h1>
+  <p class="lead">Public marketing surface of ripple.com, measured 2026-11-21. One light theme. The signed-in payments app was not reached.</p>
+  <h2>Roles</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="sw"><i style="background:#fafafa"></i><span>surface #fafafa</span></div>
+    <div class="sw"><i style="background:#141a1f"></i><span>text #141a1f</span></div>
+    <div class="sw"><i style="background:#939a9f"></i><span>muted #939a9f</span></div>
+    <div class="sw"><i style="background:#006aff"></i><span>accent #006aff</span></div>
+    <div class="sw"><i style="background:#141a1f"></i><span>footer #141a1f</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-weight:500;font-size:68px;line-height:80px;letter-spacing:-1px;margin:0">The new standard</p>
+  <p class="note">Display is 68px / 80px, weight 500, letter-spacing -1px, rippleFont. Body is 19px / 28px, weight 350.</p>
+  <h2>Controls</h2>
+  <div class="row" style="align-items:center">
+    <button class="primary">Explore Our Solutions</button>
+    <button class="sales">Contact Sales</button>
+    <button class="icon" aria-label="Search"></button>
+    <input class="search" placeholder="Search ripple.com" readonly>
+  </div>
+  <p class="note">The primary fill is a radial gradient from #005bcc to #008cff, not a flat #006aff. The accent #006aff is the focus ring.</p>
+  <footer class="sample">
+    <a href="#footer">Payments</a>
+  </footer>
+</main>
+</body>
+</html>
