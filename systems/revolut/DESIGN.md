@@ -296,7 +296,7 @@ SSO `Continue with email` was a 40px icon button. Its accessible name was "Conti
 
 `preview.cover` is [icon.png](icon.png) because no page screenshot exists.
 
-- **The foundation scales have no file behind them.** The type, radius, space, size, shadow and motion scales and most painted-chrome values were read in the capture session, but no `raw/foundation.json` was kept. Only the `--rui-color-*` dumps are in [raw/](raw). The builder labels every Measured token whose value raw/ does not hold "Reconstruction" (86 tokens). A coincidental match, such as a 4px step that also appears in a colour dump, keeps the old label.
+- **The foundation scales have no file behind them.** The type, radius, space, size, shadow and motion scales and most painted-chrome values were read in the capture session, but no `raw/foundation.json` was kept. Only the `--rui-color-*` dumps are in [raw/](raw). The builder labels every Measured token whose value raw/ does not hold, with its opacity, "Reconstruction" (87 tokens). A coincidental match, such as a 4px step that also appears in a colour dump, keeps the old label.
 
 ### Do and don't (from README.md)
 

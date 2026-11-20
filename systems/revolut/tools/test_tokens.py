@@ -59,5 +59,29 @@ class Build(unittest.TestCase):
         for name, tok in TOKENS["core"]["motion"]["easing"].items():
             self.assertEqual(len(tok["$value"]), 4, name)
 
+
+class Matcher(unittest.TestCase):
+    """The colour matcher on fixed inputs: opacity has to match as well as the channels."""
+
+    def setUp(self):
+        import sys
+        sys.path.insert(0, str(HERE / "tools" / "build"))
+        import build_tokens
+        self.b = build_tokens
+        self.saved = list(build_tokens.RAW_COLOURS)
+
+    def tearDown(self):
+        self.b.RAW_COLOURS[:] = self.saved
+
+    def test_white_at_seven_percent_is_not_opaque_white(self):
+        self.b.RAW_COLOURS[:] = self.b._colours("rgb(255 255 255) rgba(255,255,255,0.24)")
+        self.assertFalse(self.b.colour_in_raw("#ffffff12"))
+        self.assertTrue(self.b.colour_in_raw("#ffffff"))
+        self.assertTrue(self.b.colour_in_raw("#ffffff3d"))
+
+    def test_alt_background_is_not_labelled_a_reading(self):
+        alt = TOKENS["dark"]["sso"]["alt"]["background"]["$extensions"]
+        self.assertEqual(alt["evidence"], "Reconstruction")
+
 if __name__ == "__main__":
     unittest.main()
