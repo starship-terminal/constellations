@@ -11,8 +11,9 @@ Every token carries $extensions.source: "css-var <name>" or "measured <where>".
 
 Marketing and the signed-out app paint one dark canvas. The docs stylesheets
 declare data-color-mode light and dark; only the names that actually differ
-are split. Product brand names are theme-invariant and copied into both
-semantic sets. Login, generation, checkout and OAuth were not entered.
+are split. Product roles were painted dark only, so they live in the dark
+set; the light set holds only the docs color-mode roles. Login, generation,
+checkout and OAuth were not entered.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """

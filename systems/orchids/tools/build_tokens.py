@@ -6,6 +6,7 @@ Nothing here invents a colour the pages did not return.
 """
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,13 +33,21 @@ def num(value, detail, typ="number"):
     return {"$type": typ, "$value": value, **src("Measured", detail)}
 
 
-def main():
+def hexrgb(value):
+    """rgb(0, 112, 243) as #0070f3, the form the rest of the library uses; a hex passes through."""
+    m = re.fullmatch(r"rgb\((\d+),\s*(\d+),\s*(\d+)\)", value.strip())
+    if m:
+        return "#%02x%02x%02x" % tuple(int(x) for x in m.groups())
+    if re.fullmatch(r"#[0-9a-fA-F]{6}", value):
+        return value.lower()
+    raise SystemExit(f"not an sRGB colour: {value!r}")
+
+
+def build():
+    """The token document, built in memory from raw/; main() writes it."""
     vars_ = json.loads((RAW / "css-vars.json").read_text())
     shared = vars_["lightAndDarkShared"]
     paused = vars_["pausedDeployment"]
-
-    def rgb(name):
-        return "rgb(" + shared[name].replace(" ", ", ") + ")"
 
     core = {
         "color": {
@@ -61,7 +70,7 @@ def main():
             "green600": color(shared["--color-green-600"], "Tailwind --color-green-600, declared, not seen as a control"),
             "blue600": color(shared["--color-blue-600"], "Tailwind --color-blue-600, declared, not seen as a control"),
             "paused": {
-                "link": color(paused["link"]["color"], "Vercel paused page link, www.orchids.app"),
+                "link": color(hexrgb(paused["link"]["color"]), "Vercel paused page link, www.orchids.app, computed rgb(0, 112, 243)"),
                 "guilty": color("#ed367f", "Vercel paused page .error-title-guilty border"),
                 "innocent": color("#59b89c", "Vercel paused page .error-title-innocent border"),
                 "selection": color(paused["selection"], "Vercel paused page ::selection"),
@@ -155,8 +164,8 @@ def main():
         },
         "motion": {
             "duration": {
-                "fast": dim("150ms", "--default-transition-duration .15s"),
-                "overlay": dim("250ms", "search overlay transition 0.25s"),
+                "fast": num("150ms", "--default-transition-duration .15s", "duration"),
+                "overlay": num("250ms", "search overlay transition 0.25s", "duration"),
             },
             "easing": {
                 "standard": {
@@ -208,7 +217,11 @@ def main():
             {"id": "dark", "name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
         ],
     }
-    (ROOT / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+    return tokens
+
+
+def main():
+    (ROOT / "tokens.json").write_text(json.dumps(build(), indent=2) + "\n")
     print("wrote", ROOT / "tokens.json")
 
 

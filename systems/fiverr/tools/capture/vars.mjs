@@ -34,20 +34,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BASE, UA, launch, clearChallenge, patch, seedPx } from './public/lib.mjs';
+import { BASE, UA, launch, clearChallenge, patch } from './public/lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
 
 const { browser } = await launch();
-// A PerimeterX page can greet a fresh client: retry on a fresh context until
-// the real document (with its sheets) arrives, then harvest.
+// A PerimeterX page can greet a fresh client. Bot check: recorded as a
+// boundary, not bypassed: one context, no retry on fresh contexts, no saved
+// clearance cookie; a challenged page stops the harvest.
 const bodies = new Map();
 let page = null, inline = [];
-for (let tries = 0; tries < 6 && !page; tries++) {
+for (let tries = 0; tries < 1 && !page; tries++) {
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
   await patch(context);
-  await seedPx(context);
   const p = await context.newPage();
   p.on('response', async (r) => {
     if (r.request().resourceType() !== 'stylesheet') return;
@@ -60,10 +60,10 @@ for (let tries = 0; tries < 6 && !page; tries++) {
     inline = await p.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));
     break;
   }
-  console.log('challenge page, fresh context (try ' + (tries + 1) + ')');
+  console.log('challenge page: bot check, recorded as a boundary, not bypassed');
   await context.close();
 }
-if (!page) { console.log('blocked by the edge on every try; css-vars.json not written'); await browser.close(); process.exit(2); }
+if (!page) { console.log('blocked by a bot check; css-vars.json not written'); await browser.close(); process.exit(2); }
 // inline sheets read via CSSOM; link sheets via the captured bodies
 const sheets = [...bodies.entries()].concat(inline);
 await page.close();

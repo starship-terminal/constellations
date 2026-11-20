@@ -351,7 +351,7 @@ The checked "6 Canettes" block-swatch radio label. Read as `variant-swatch` on t
 ![Pack-size swatch (checked) default](components/crops/variant-swatch-default.png) ![Pack-size swatch (checked) hover](components/crops/variant-swatch-hover.png) ![Pack-size swatch (checked) pressed](components/crops/variant-swatch-pressed.png)
 
 #### Pack-size swatch
-An unchecked block-swatch option (12 Canettes); one was toggled selected for the state shots, never added to the cart. Read as `variant-swatch-2` on the product page.
+An unchecked block-swatch option (12 Canettes), read at rest, on hover, on keyboard focus and forced pressed; the selected look is the separate swatch-selected entry. Never added to the cart. Read as `variant-swatch-2` on the product page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -454,7 +454,7 @@ The Notre-histoire page heading. Read as `story-h1` on the story page.
 #### Story paragraph
 A body paragraph in the story page, Robin Regular. Read as `story-lede` on the story page.
 
-mismeasured on the first pass and withdrawn: the selector caught the announcement-strip paragraph ("LIVRAISON GRATUITE EN FRANCE METROPOLITAINE A PARTIR DE 50EUR"), not a story body paragraph — no story paragraph was measured. The selector was tightened in tools/capture/public/measure.mjs; a live re-measure is queued.
+Mismeasured on the first pass and withdrawn: the selector caught the announcement-strip paragraph ("LIVRAISON GRATUITE EN FRANCE METROPOLITAINE A PARTIR DE 50EUR"), not a story body paragraph — no story paragraph was measured. The selector was tightened in tools/capture/public/measure.mjs; a live re-measure is queued.
 
 #### Search title
 The search results heading for ?q=douze. Read as `search-title` on the search page.
@@ -530,7 +530,7 @@ The Se-connecter submit; measured, never pressed (a press would submit). Read as
 ![Login button default](components/crops/login-button-default.png) ![Login button hover](components/crops/login-button-hover.png) ![Login button focus-visible](components/crops/login-button-focus-visible.png) ![Login button pressed](components/crops/login-button-pressed.png)
 
 #### Recover toggle
-The "Mot de passe oublié ?" button — it swaps the card to the recover form in place; measured, and the swap itself captured as a state. Read as `recover-link` on the account login page.
+The "Mot de passe oublié ?" button, which swaps the card to the recover form in place; measured at rest, on hover, on keyboard focus and forced pressed, never clicked, so the swap is not captured. Read as `recover-link` on the account login page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -666,7 +666,7 @@ A link inside the opened navigation drawer. Read as `m-nav-item` on the home pag
 #### Mobile hero title
 The Boogy hero heading at 390 (the hidden-tablet-and-up variant). Read as `m-hero-title` on the home page at 390 wide.
 
-mismeasured on the first pass and withdrawn: the selector caught the hero SHOP button container, not the mobile Boogy heading — the 390px hero heading was not measured. The selector was tightened in tools/capture/public/measure.mjs; a live re-measure is queued.
+Mismeasured on the first pass and withdrawn: the selector caught the hero SHOP button container, not the mobile Boogy heading — the 390px hero heading was not measured. The selector was tightened in tools/capture/public/measure.mjs; a live re-measure is queued.
 
 #### Mobile hero CTA
 The SHOP button at 390. Read as `m-hero-cta` on the home page at 390 wide.
