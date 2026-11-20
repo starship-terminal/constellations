@@ -413,10 +413,11 @@ class JavaScriptHalves(unittest.TestCase):
             'https://cdn.example.test/a.png#access_token=abc': 'https://cdn.example.test/a.png',
             '"https://cdn.example.test/a(1).png?token=abc"': '"https://cdn.example.test/a(1).png"',
             '"https://cdn.example.test/a.png?crop=(0,0)&token=abc"': '"https://cdn.example.test/a.png"',
-            'https://cdn.example.test/a.png?crop=(0,0)&token=abc 2x': 'https://cdn.example.test/a.png 2x',
+            'https://cdn.example.test/a.png?crop=(0,0)&token=abc 2x': 'https://cdn.example.test/a.png',   # fails closed: over-cut
+            'avatar?token=secret': 'avatar',
             '//cdn.example.test/avatar.png?token=secret': '//cdn.example.test/avatar.png',
             '"//cdn.example.test/a.png#access_token=abc"': '"//cdn.example.test/a.png"',
-            'image-set("//cdn.example.test/a.png?sig=1" 1x, //cdn.example.test/b.png?sig=2 2x)': 'image-set("//cdn.example.test/a.png" 1x, //cdn.example.test/b.png 2x)',
+            'image-set("//cdn.example.test/a.png?sig=1" 1x, //cdn.example.test/b.png?sig=2 2x)': 'image-set("//cdn.example.test/a.png" 1x, //cdn.example.test/b.png',
             '/media/avatar.png?token=secret': '/media/avatar.png',
             '"avatar.png?sig=abc"': '"avatar.png"',
             '/avatar.png?crop=(0,0)&token=secret': '/avatar.png',
@@ -443,9 +444,12 @@ class JavaScriptHalves(unittest.TestCase):
 
     def test_the_no_query_node_tests_pass(self):
         # tools/kit/capture/test_no_query.mjs: the full case table, and keys that clean alike being merged
-        res = subprocess.run([NODE, "--test", str(HERE / "kit/capture/test_no_query.mjs")], capture_output=True, text=True, timeout=60)
+        # the TAP reporter is named: node picks the spec reporter by itself on CI, whose counts read "ℹ pass 5"
+        res = subprocess.run([NODE, "--test", "--test-reporter=tap", str(HERE / "kit/capture/test_no_query.mjs")],
+                             capture_output=True, text=True, timeout=60)
         self.assertEqual(res.returncode, 0, res.stdout[-3000:] + res.stderr[-1000:])
-        self.assertRegex(res.stdout, r"# pass [1-9]")
+        self.assertRegex(res.stdout, r"(?m)^# pass [1-9]")
+        self.assertRegex(res.stdout, r"(?m)^# fail 0$")
 
     def test_vars_mjs_writes_its_output_through_the_query_scrub(self):
         # vars.mjs records declared and resolved values and selectors; noUrl only sees url(), so a bare,
