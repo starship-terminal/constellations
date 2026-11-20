@@ -49,7 +49,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #000000 `light.shadcn.accent` | #ffffff `dark.shadcn.accent` |
 | border | #e5e5e5 `light.shadcn.border` | rgba(255, 255, 255, 0.1) `dark.shadcn.border` |
 
-Fonts: `core.font.family.graphik` is __graphik_7126cf, then 1 fallback; `core.font.family.sans` is ui-sans-serif, then 6 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 8 radius steps (`core.radius`), 1 spacing step (`core.spacing`).
+Fonts: `core.font.family.graphik` is Graphik, then 1 fallback; `core.font.family.sans` is ui-sans-serif, then 6 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 8 radius steps (`core.radius`), 1 spacing step (`core.spacing`).
 
 ### Using components
 
@@ -104,7 +104,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #000000 `light.shadcn.accent` | #ffffff `dark.shadcn.accent` |
 | border | #e5e5e5 `light.shadcn.border` | rgba(255, 255, 255, 0.1) `dark.shadcn.border` |
 
-Fonts: `core.font.family.graphik` is the Next.js local name for Graphik, plus its fallback. The style guide falls back to system sans. Scales: type sizes xs through 5xl, radius xs through 4xl, a 4px spacing unit.
+Fonts: `core.font.family.graphik` is Graphik, named from the computed Next.js local font; the computed stack is kept in its `$extensions.computed`. The style guide falls back to system sans. Scales: type sizes xs through 5xl, radius xs through 4xl, a 4px spacing unit.
 
 ### Using components
 
@@ -124,8 +124,9 @@ Read [components.md](components.md) for the inventory and [patterns.md](patterns
 
 - **The home hero is dark while inner pages are light.** `home-dark-*` is the painted hero. `pricing-light-*` and `about-light-*` are the painted page. Both token sets are real resolutions of the same sheets.
 - **`--background` on dark is `#0a0a0a`.** The brand page role `--surface-primary` on dark is `#000000`. /ray paints black. Prefer the brand role for the page field.
-- **Graphik's family name is a Next.js hash.** `core.font.family.graphik` is `__graphik_7126cf` plus its fallback. That is the computed family, not a font file.
-- **The plan-card crop can be the whole page.** The first locator matched a page-sized ancestor. The screenshot of the cards is [pricing-light-default](screenshots/pricing-light-default.png).
+- **Graphik's computed family name is a Next.js hash.** The page computes `__graphik_7126cf` plus its fallback. `core.font.family.graphik` names the face `Graphik, sans-serif` (derived from that local name) and keeps the computed stack in `$extensions.computed`. `core.font.family.editorial` is an alias of it: the home h1 computed to Graphik, and PP Editorial was not read from any element.
+- **The plan card has no reading of its own.** `price-card` in [raw/components-computed.json](raw/components-computed.json) holds the page `body`'s computed style: the capture's target was `body`, and only the crop ([price-card-default](components/crops/price-card-default.png)) was taken from the Plus card. [components.md](components.md) leaves those values out. `tools/capture/public/measure.mjs` now records the card's own style in `extra.card`; it was not rerun, so the card needs a recapture (the pk-k recapture tracking issue, 2026-11 audit). The screenshot of the cards is [pricing-light-default](screenshots/pricing-light-default.png).
+- **No layout grid was read.** `tools/capture/layout.mjs` was not run, so there is no `raw/layout.json`.
 - **A missing path is not a Luma 404.** `/no-such-page-capture` rendered a Vercel "Invalid slug" page. It was not kept.
 - **Quantised screenshots band gradients.** Read exact colours from tokens.json or the raw JSON.
 - **Docs is a different product surface.** ReadMe tokens are in `raw/css-vars.json` under `docsLight` and are not in tokens.json.
