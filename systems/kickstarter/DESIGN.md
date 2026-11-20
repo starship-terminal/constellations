@@ -238,3 +238,4 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.
 - Login's Continue button is mid-load in the viewport shot (a spinner over the label) because Turnstile is present. The full-page shot shows the same card. The widget was not solved.
 - A yellow status toast was on the live site. It is not part of the design system.
+- Every committed reading and screenshot was taken by scripts that hid `navigator.webdriver` and launched Chrome with `--disable-blink-features=AutomationControlled`. The scripts no longer hide automation (2026-11 audit), so a recapture may meet bot checks this one did not.
