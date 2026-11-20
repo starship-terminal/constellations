@@ -368,7 +368,7 @@ def check(doc: dict) -> None:
             if not re.fullmatch(r"-?\d+(\.\d+)?(px|rem|em)", value):
                 raise SystemExit(f"bad dimension {path}: {value}")
         if token.get("$type") == "cubicBezier":
-            if not (isinstance(value, list) and len(value) == 4 and all(isinstance(x, (int, float)) for x in value)):
+            if not (isinstance(value, list) and len(value) == 4 and all(isinstance(x, (int, float)) and not isinstance(x, bool) for x in value)):
                 raise SystemExit(f"cubicBezier {path} is not four numbers: {value!r}")
     print("check ok", len(flat), "tokens")
 

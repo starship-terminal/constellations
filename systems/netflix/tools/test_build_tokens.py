@@ -101,6 +101,13 @@ class TokensTest(unittest.TestCase):
         with self.assertRaisesRegex(SystemExit, "four numbers"):
             build_tokens.check(doc)
 
+    def test_a_boolean_cubic_bezier_fails(self):
+        # bool is an int in Python; CSS cannot use cubic-bezier(True, False, True, False)
+        doc = copy.deepcopy(FIXTURE)
+        doc["core"]["easing"]["button"]["$value"] = [True, False, True, False]
+        with self.assertRaisesRegex(SystemExit, "four numbers"):
+            build_tokens.check(doc)
+
     def test_the_check_still_runs_under_python_O(self):
         code = ("import sys, build_tokens; doc = {'core': {'c': {'$type': 'color', '$value': '{nope}', "
                 "'$extensions': {'source': {'evidence': 'Measured'}}}}, 'dark': {}}\n"
