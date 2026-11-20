@@ -17,7 +17,7 @@ Nothing was typed. Apple, Google, SSO, Create account, and Sign in with email we
 | [components/crops/](components/crops) | Element crops from the live pages |
 | [screenshots/](screenshots) | Page shots, each with a `.capture.json` sidecar |
 | [raw/](raw) | The readings: [readings.json](raw/readings.json), [readings-pass2.json](raw/readings-pass2.json), [component-tokens.json](raw/component-tokens.json), [hero-cta-layers.json](raw/hero-cta-layers.json), and the stylesheet dumps |
-| [tools/](tools) | The kit copy, [build_tokens.py](tools/build_tokens.py), [build_style_guide.py](tools/build_style_guide.py), and [test_tokens.py](tools/test_tokens.py) |
+| [tools/](tools) | [build_tokens.py](tools/build_tokens.py), [build_style_guide.py](tools/build_style_guide.py), [test_tokens.py](tools/test_tokens.py), and the capture scripts under [capture/](tools/capture). The nested copy of the whole kit that sat under tools/kit/ was unused and was removed in the 2026-11 audit |
 
 ## Brief
 
