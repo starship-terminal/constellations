@@ -43,6 +43,7 @@ hume.ai is worth a capture because the product line pivoted from EVI/Octave TTS 
 - **Pressed states** are DevTools-forced; a script-applied mousedown style would not show.
 - **Reduced motion is only partly honoured** — `raw/motion.json` records `honours` on the www pages (the authored `*, ::before, ::after { transition-duration: 0.001ms; animation-duration: 0.001ms }` reset stops every moving element), `partial` on the docs (14 of 88 moving elements stopped, 74 keep moving) and `ignores` on the demo and app surfaces (the `spin` loader still loops). The package records the product's behaviour, it does not tidy it.
 - **Three components' focus-visible rings** are the only real keyboard focus captured; where a ring could not be held the entry says so instead of claiming one.
+- **Readings after two toggles were taken in the toggled page.** `player-card` `playing` pressed Play and never stopped the call, so `player-transport`, `scenario-button`, `benchmark-tab`, the newsletter field and button, `section-heading` and `product-hero` on the home page were read while the sample call played. `blog-filter` `selected` left Research selected. `tools/capture/public/measure.mjs` now stops the player and reselects All after those readings (edited in the 2026-11 audit, not run); a recapture is needed.
 
 ## Fonts
 

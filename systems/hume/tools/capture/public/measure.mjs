@@ -32,6 +32,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium, BASE, DOCS, DEMO, APP, M, open, closePromo, setTheme, paintedTheme, styleOf, crop, centre, domFind, patch, UA, UA_MOBILE, RAW } from './lib.mjs';
+import { toggleBefore, toggleOpen, toggleRestore } from './toggle.mjs';
 import { safeUrl } from '../safe-url.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
@@ -169,13 +170,19 @@ const HOME = [
       if (!(await pl.count())) return p.locator('[data-m-mark="__none__"]');
       return await pick(p, 'div,section', (el, r) => r.width > 200 && r.height > 100 && r.height < 800 && /answers|00:|Next|banter|Amusement|Calmness/i.test(el.innerText || '') ? r.height : Infinity, 'pc');
     }, states: ['default',
-      { name: 'playing', via: 'the player\'s own Play press (a scripted sample-call player — a media control, not a submission); Stop ended it', fn: async (loc) => {
-        const pl = page.locator('button[aria-label="Play"]').first();
-        if (!(await pl.count())) return null;
-        await pl.click({ timeout: 4000 }).catch(() => {});
-        await page.waitForTimeout(2500);
-        return loc;
-      } },
+      { name: 'playing', via: 'the player\'s own Play press (a scripted sample-call player — a media control, not a submission); Stop ended it',
+        // playing while the transport offers Stop or Pause
+        stateOf: async () => ((await page.locator('button[aria-label="Stop"], button[aria-label="Pause"]').count()) ? 'playing' : 'stopped'),
+        fn: async (loc) => {
+          const pl = page.locator('button[aria-label="Play"]').first();
+          if (!(await pl.count())) throw new Error('no Play button');
+          await pl.click({ timeout: 4000 });
+          await page.waitForTimeout(2500);
+          return loc;
+        }, restore: async () => {
+          await page.locator('button[aria-label="Stop"], button[aria-label="Pause"]').first().click({ timeout: 4000 });
+          await page.waitForTimeout(600);
+        } },
     ] },
   { key: 'player-transport', group: 'Home', title: 'Player transport button',
     desc: 'The player\'s Play button — pressed for the playing state, stopped after; a media control, not a submission.',
@@ -225,8 +232,13 @@ const BLOG = [
     desc: 'A blog category chip ("Research"). "selected" is its own activation; the All filter restores.',
     sel: 'button, a (text Research)', find: async (p) => await domFind(p, /^research$/i, { sel: 'button, a', tag: 'bf', minW: 40 }), states: ['default', 'hover',
       { name: 'selected', via: 'the filter\'s own activation — a local UI toggle (All restored after)', fn: async (loc) => {
-        await loc.click({ timeout: 4000 }).catch(() => {});
+        // the chip has no state to read: All is restored only once this press landed
+        await loc.click({ timeout: 4000 });
         await page.waitForTimeout(1200);
+      }, restore: async () => {
+        const all = page.locator('button, a').filter({ hasText: /^all$/i }).filter({ visible: true }).first();
+        if (await all.count()) await all.click({ timeout: 4000 }).catch(() => {});
+        await page.waitForTimeout(800);
       } },
     ] },
 ];
@@ -437,6 +449,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
       // pressed/dark are cleared in finally so a failed read can never leak
       // the forced state into the next measurement.
       let pressed = null;
+      let toggle = null;  // a toggled state's press and its state before, for the restore
       let darkOn = false;
       try {
         await reset();
@@ -447,7 +460,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
         else if (st === 'focused') { await readLoc.click({ timeout: 3000 }).catch(() => readLoc.evaluate((el) => el.focus())); await page.waitForTimeout(400); viaText = 'the field clicked into'; }
         else if (st === 'pressed') { pressed = await pressOn(readLoc); viaText = via.pressed; }
         else if (st === 'dark') { if (!(await setTheme(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = via.dark; }
-        else if (st && typeof st === 'object' && st.fn) { const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
+        else if (st && typeof st === 'object' && st.fn) { toggle = await toggleBefore(st, readLoc); const alt = await toggleOpen(st, toggle); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
         else if (typeof st === 'function') { await st(readLoc); viaText = 'reached by the component\'s own UI toggle'; }
         await centre(readLoc).catch(() => {});
         const v = await styleOf(readLoc);
@@ -466,6 +479,14 @@ for (const [key, g] of Object.entries(GROUPS)) {
         log(' ', spec.key, name, 'FAILED', e.message.split('\n')[0]);
       } finally {
         if (pressed != null) await pressOff(pressed).catch(() => {});
+        // a toggled state presses its control back, so later components are
+        // read in the resting layout (the ifttt pattern; 2026-11 audit, not run)
+        // back to the state it had before its press (toggle.mjs): a press
+        // that never landed leaves nothing to undo
+        if (toggle && st.restore) {
+          const refind = async () => { const a = await spec.find(page).catch(() => null); return a && await a.count() ? a.first() : null; };
+          await toggleRestore(st, toggle, refind).catch((e) => log(' ', spec.key, name, 'restore failed', e.message.split('\n')[0]));
+        }
         if (darkOn) {
           let back = await setTheme(page, 'light').catch(() => false);
           if (!back) back = await setTheme(page, 'light').catch(() => false);

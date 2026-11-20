@@ -176,6 +176,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Inter and Geist Mono render in the crops** but their woff2 files are licensed and not shipped; the style guide falls back to system fonts.
 - **Pressed states** are DevTools-forced; a script-applied mousedown style would not show.
 - **Reduced motion**: the site only partly honours `prefers-reduced-motion` — /pricing, /features and the login ignore it and the marquee/ping loops keep running; the per-page verdicts are in `raw/motion.json` and `core.motion.$extensions`.
+- **The /pricing readings after the billing switch were taken with billing off.** `billing-switch` `off` pressed the switch and never pressed it back, though its `via` says it did, so `plan-cta` and the components after it on /pricing were read in the monthly layout. `tools/capture/public/measure.mjs` now restores the switch after the reading (edited in the 2026-11 audit, not run); a recapture is needed.
 
 ### Do and don't (from README.md)
 
