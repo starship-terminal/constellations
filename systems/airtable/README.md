@@ -167,7 +167,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs h
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/remeasure.mjs pricing whatsnew
 ```
 
-`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository); `python3 tools/capture/quantize.py <dir>` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `remeasure.mjs` is the gap-fill pass that re-reads only the entries it is pointed at; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the Riley/One-Tap sweep and `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository); `python3 tools/capture/quantize.py <dir>` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `remeasure.mjs` is the gap-fill pass that re-reads only the entries it is pointed at; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the Riley/One-Tap sweep (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 

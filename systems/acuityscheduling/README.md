@@ -171,7 +171,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs home pricing getstarted login mobile
 ```
 
-`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository, defaults to `raw/full`); `python3 tools/capture/quantize.py raw/full` stitches any `*.partN.png` tiles and stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`, re-cropping `components/crops/`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs` rewrites `raw/css-vars.json` whole. `lib.mjs` holds the shared helpers, including the consent-SDK request aborts and the `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository, defaults to `raw/full`); `python3 tools/capture/quantize.py raw/full` stitches any `*.partN.png` tiles and stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`, re-cropping `components/crops/`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs` rewrites `raw/css-vars.json` whole. `lib.mjs` holds the shared helpers, including the consent-SDK request aborts (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 
