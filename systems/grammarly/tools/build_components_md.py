@@ -420,9 +420,19 @@ for k in ["feature-card", "stat-card", "plan-card", "plan-card-plain", "banner",
     if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
         # borrow the card shape only from a painted layer that covers at least 90% of the
         # root box: a banner strip, CTA, input or menu button is not the card
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius") and covers(x, st)), None)
+        # root box: a banner strip, CTA, input or menu button is not the card. The covering layer
+        # may paint only some of fill, border, radius and shadow; each one it lacks keeps the root's.
+        p0 = next((x for x in st["paint"] if covers(x, st) and any(x.get(k) for k in ("bg", "border", "radius", "shadow"))), None)
     if p0:
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+        p = dict(p)
+        if p0.get("border"):
+            p["border"] = colour(p0["border"].split(" | ")[0][2:])
+        if p0.get("radius"):
+            p["radius"] = p0["radius"]
+        if p0.get("bg"):
+            p["background"] = colour(p0["bg"]) or p.get("background", "-")
+        if p0.get("shadow"):
+            p["shadow"] = colour(p0["shadow"], tokens=False) or "none"
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

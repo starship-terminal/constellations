@@ -88,8 +88,8 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Feature card](#feature-card) | 417.33 x 382.78 | 1px solid #ebebeb `neutral.10` | 8px | #ffffff `white` | none | 0 |
 | [Customer stat card](#customer-stat-card) | 390 x 500 | - | 8px | #ffffff `white` | none | 0 |
-| [Plan card (featured)](#plan-card-featured) | 386.67 x 786 | - | - | transparent | none | 0 |
-| [Plan card (plain)](#plan-card-plain) | 386.67 x 786 | - | - | transparent | none | 0 |
+| [Plan card (featured)](#plan-card-featured) | 386.67 x 786 | 1px #0d8065 | - | #eafaf9 `green.0` | none | 0 |
+| [Plan card (plain)](#plan-card-plain) | 386.67 x 786 | 1px #cdd1dc `gds.blue-gray.10` | 8px 0px 0px 8px | transparent | none | 0 |
 | [Promo banner](#promo-banner) | 1440 x 51.19 | - | - | #00231f `green.100` | none | 0px 14px |
 | [Dark section](#dark-section) | 1440 x 469 | - | - | transparent | none | 96px 80px 0px 80px |
 | [Sign-in card](#sign-in-card) | 396 x 202 | - | - | transparent | none | 0 |
