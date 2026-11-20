@@ -480,8 +480,11 @@ for g in groups:
         if k in WRONG_ELEMENT:
             W(f"**Wrong element.** {WRONG_ELEMENT[k]}")
             W()
-        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
-        off = [s for s in c["states"] if "style" in c["states"][s] and gone(c, s)]
+        failed = [s for s, v in c["states"].items() if v.get("via") == "focus failed"]
+        # Old runs saved the 0x0 style; the fixed capture saves { skipped } with
+        # no style. Both are named here (a failed focus is named above).
+        off = [s for s, v in c["states"].items()
+               if ("style" in v and gone(c, s)) or (v.get("skipped") and v.get("via") != "focus failed")]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")

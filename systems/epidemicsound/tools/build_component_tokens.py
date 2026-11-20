@@ -86,19 +86,26 @@ def body_fill(comp, state):
                 if a.get("node", "").startswith("body") and a.get("bg"))
 
 
+def _list(v):
+    """A computed comma list, split only at commas outside parentheses."""
+    return [x.strip() for x in re.split(r",(?![^()]*\))", v or "") if x.strip()]
+
+
 def transition(s):
     """The computed transition lists as one valid shorthand: CSS repeats the
     duration/easing/delay lists to the length of transition-property, so each
-    property is paired with its own entry by index."""
-    props = [x.strip() for x in (s.get("transitionProperty") or "all").split(",")]
-    durs = [x.strip() for x in (s.get("transitionDuration") or "0s").split(",")]
-    eases = re.findall(r"cubic-bezier\([^)]*\)|steps\([^)]*\)|[a-z-]+", s.get("transitionTimingFunction") or "ease")
-    delays = [x.strip() for x in (s.get("transitionDelay") or "0s").split(",")]
+    property is paired with its own entry by index. A 0s entry is kept (it
+    can override an earlier `all`); only a list that is 0s throughout means
+    no transition."""
+    props = _list(s.get("transitionProperty") or "all")
+    durs = _list(s.get("transitionDuration") or "0s")
+    eases = _list(s.get("transitionTimingFunction") or "ease")
+    delays = _list(s.get("transitionDelay") or "0s")
+    if all(d in ("0s", "0ms") for d in durs):
+        return ""
     parts = []
     for i, p in enumerate(props):
         d, e, dl = durs[i % len(durs)], eases[i % len(eases)], delays[i % len(delays)]
-        if d in ("0s", "0ms"):
-            continue
         parts.append(" ".join([p, d, e] + ([dl] if dl not in ("0s", "0ms") else [])))
     return ", ".join(parts)
 
@@ -484,8 +491,9 @@ for root, theme, key, comp, state, prop, group, desc in [
         elif prop == "_paint-upsell":
             # The banner is the largest painted layer inside the component.
             def area(pl):
-                w, _, h = (pl.get("size") or "0x0").partition("x")
-                return float(w or 0) * float(h or 0)
+                # "1328.0x244.0" for elements, "32pxx16px" for ::before/::after
+                n = [float(x) for x in re.findall(r"[\d.]+", pl.get("size") or "")[:2]]
+                return n[0] * n[1] if len(n) == 2 else 0.0
             raw = max((pl for pl in C[comp]["states"][state].get("paint") or [] if pl.get("bg")), key=area)["bg"]
             src = f"painted banner fill (the largest painted layer) inside {comp} {state} (raw/components-computed.json)"
         else:

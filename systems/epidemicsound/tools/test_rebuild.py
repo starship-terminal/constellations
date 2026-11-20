@@ -107,10 +107,13 @@ class RebuildTest(unittest.TestCase):
         self.assertGreater(checked, 25)
 
     def test_transition_pairs_each_property_with_its_own_timing(self):
-        transition = builder_fn("transition", "\ndef st(")
+        transition = builder_fn("transition", "\ndef st(", first="_list")
         two = transition({"transitionProperty": "color, opacity", "transitionDuration": "0.1s, 0.3s",
                           "transitionTimingFunction": "ease, linear", "transitionDelay": "0s"})
         self.assertEqual(two, "color 0.1s ease, opacity 0.3s linear")
+        self.assertEqual(transition({"transitionProperty": "all, opacity", "transitionDuration": "0.2s, 0s",
+                                     "transitionTimingFunction": "linear(0, 0.8 50%, 1)"}),
+                         "all 0.2s linear(0, 0.8 50%, 1), opacity 0s linear(0, 0.8 50%, 1)")
         self.assertEqual(transition(self.C["c-signup"]["states"]["default"]["style"]), "")
 
     def test_page_fields_are_read_from_the_body(self):
@@ -134,6 +137,32 @@ class RebuildTest(unittest.TestCase):
     def test_font_sizes_use_a_dtcg_type(self):
         for path, leaf in flat(self.built["core"]["font"]["size"]["measured"]):
             self.assertEqual(leaf["$type"], "dimension", path)
+
+    def test_style_free_skipped_state_keeps_its_note(self):
+        """The fixed capture saves a 0x0 state as { skipped } with no style."""
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("capture", "__pycache__"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            shutil.copy(PKG / "tokens.json", root / "tokens.json")
+            for sub in ("screenshots", "components/crops"):
+                (root / sub).mkdir(parents=True)
+            f = root / "raw" / "components-computed.json"
+            j = json.loads(f.read_text())
+            j["components"]["track-play"]["states"]["hover"] = {
+                "skipped": "the element has a 0x0 box in this state (it left the layout)", "via": "mouse hover"}
+            f.write_text(json.dumps(j))
+            subprocess.run([sys.executable, str(root / "tools" / "build_components_md.py")], cwd=root, check=True, capture_output=True)
+            entry = (root / "components.md").read_text().split("Read as `track-play`", 1)[1].split("\n#### ", 1)[0]
+            self.assertIn("**Not a reading.** In `hover`", entry)
+
+    def test_banner_layer_sizes_with_units_parse(self):
+        src = (PKG / "tools" / "build_component_tokens.py").read_text()
+        body = src[src.index("            def area(pl):"):src.index("            raw = max(")]
+        ns = {"re": re}
+        exec("\n".join(l[12:] for l in body.splitlines()), ns)
+        self.assertEqual(ns["area"]({"size": "1328.0x244.0"}), 1328.0 * 244.0)
+        self.assertEqual(ns["area"]({"size": "32pxx16px"}), 512.0)
 
     def test_zero_box_states_are_not_readings(self):
         md = (PKG / "components.md").read_text()
