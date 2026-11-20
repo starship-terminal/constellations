@@ -15,10 +15,11 @@ intercom.com is worth a capture because it declares a complete design layer to t
 | [patterns.md](patterns.md) | How the components combine: the shared header and mega-menu, the home grammar, pricing, the contact-sales form, the help center and changelog surfaces, mobile, motion and focus, and the boundary list. |
 | [components/crops/](components/crops) | Element crops at 2x, named `{component}-{state}.png`. |
 | [icons/](icons) | The inline SVG icons collected from the live pages, with `INDEX.tsv` naming each by role. |
-| [screenshots/](screenshots) | 44 quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900 at 1x (the PNG is 1440 x 900, `devicePixelRatio` 1); `-full` whole pages (the very tall /helpdesk/inbox and mobile pages stitched from `-full.partN.png` tiles); `mobile-*` shots at 390 x 844 at 2x; `home-light-nav-menu` the open mega-menu, `pricing-light-faq` an opened FAQ row, `contact-sales-light-select-open` the select listbox, `mobile-home-light-menu` the open nav sheet. |
+| [screenshots/](screenshots) | Quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars. The 2026-11-17 set is 44 shots. The 2026-11-21 pass added the nav pages the site tree found (tickets, outbound, omnichannel, help-center, reporting, knowledge-hub, early-stage, small-business, live-chat, app-store, learning-center, calculator, privacy, terms, the four solution pages, both partner programs), the Customers and Resources menus, the Fin 4 video dialog, and 390px shots of tickets, early-stage, live-chat, blog and customers. Desktop 1440 x 900 at 1x; `-full` whole pages; `mobile-*` at 390 x 844 at 2x. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — 516 rules, 40 @font-face, 314 resolved root custom properties plus the scoped sets), `layout.json` (33 page/viewport geometry probes), `motion.json` (the animation probe over 6 pages), `pages.md` (layout notes), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
-| [capture.pr](capture.pr) | The pull request that shipped this capture. |
+| [site-tree.md](site-tree.md) | The 2026-11-21 map of which control on the homepage opens which page, menu, dialog, or wall. |
+| [capture.pr](capture.pr) | The pull request that shipped the first capture. |
 
 ## How the values were read
 
@@ -41,6 +42,9 @@ intercom.com is worth a capture because it declares a complete design layer to t
 - **Screenshots are 256-colour PNGs**; read exact colours from the tokens or the raw files. Animated sections (hero canvases, marquee rows) keep moving, so two captures of the same view can differ.
 - **Sidecar theme classes.** The 44 committed `screenshots/*.capture.json` have the kit's flat `actual.theme` with an empty `classes` list: they do not record `body.theme-light`. This package's `tools/capture/screenshot.mjs` later merged `<body>`'s classes into that list; it now writes the kit's shape, `<html>` only in `actual.theme.classes`, with `<body>`'s markers (`theme-light` / `theme-dark` included) in `actual.theme.body`. The committed sidecars stay as they are until a recapture rewrites them (the script was edited, not run).
 - **The footer was read on /blog.** `footer`, `footer-link` and `locale-select` were measured on whatever page the run opened last, which was /blog. The footer is the same on every page, so the values hold; `tools/capture/public/measure.mjs` now opens the home page for the footer group (edited in the 2026-11 audit, not run).
+- **2026-11-21 added pages, not new token readings.** The site-tree pass shot the public routes the first capture skipped. Those screenshots are evidence of layout. Token values were not re-read from them. Unread values stay Not captured.
+- **The tickets demo is a published marketing mock.** The email and the street in that mock were painted out of `tickets-light-default.png`, `tickets-light-full.png`, `mobile-tickets-light-default.png` and `mobile-tickets-light-full.png`. Names in the same mock were left, because the product publishes them.
+- **The Fin 4 dialog** opens and shows a Close control and a Play control. The player stayed on its loading frame in headless Chromium, so the played state is Not captured.
 
 ## Do and don't
 
