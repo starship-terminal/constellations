@@ -42,7 +42,7 @@ async function newPage(key, { mobile = false, wait = 3500 } = {}) {
   log('open', key, mobile ? '(mobile)' : '');
   const cleared = await open(page, URLS[key], { wait }).catch((e) => { log('  open failed', key, String(e.message || e).slice(0, 120)); return false; });
   const blocked = !cleared || await page.evaluate(() => /just a moment|verify you are human/i.test(document.title + (document.body.innerText || '').slice(0, 200))).catch(() => true);
-  if (blocked) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
+  if (blocked) { log('  BLOCKED', key); sectionBlocked = true; await page.close(); await ctx.close(); return false; }
   opened.add(key);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
@@ -90,6 +90,7 @@ async function forcePseudo(loc, classes) {
 }
 
 let currentSection = null;   // the measure section (home, mobile, ...) that owns a component
+let sectionBlocked = false;  // a page of the current section was blocked or failed to open
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
@@ -261,15 +262,18 @@ const arg = (process.argv[2] || 'all').split(',').filter(Boolean);
 const { browser, context: root } = await launch();
 context = root;
 const want = (k) => arg.includes('all') || arg.includes(k);
-// Sections that ran to the end. A component is pruned only when the section that owns it (c.section)
+// Sections that ran to the end with every page opened. A component is pruned only when the section that owns it (c.section)
 // finished this run and did not measure it again: a section that was not selected or failed part-way
 // keeps its earlier readings, and home and mobile, which share the home page, prune only their own
 // (the kit's prune, restored in the 2026-11 audit). A reading saved before c.section existed is kept.
 const finishedSections = new Set();
 async function section(name, fn) {
   currentSection = name;
+  sectionBlocked = false;
   await fn();
-  finishedSections.add(name);
+  // A section whose page never opened returns early without measuring; it is not finished, so its
+  // saved readings stay.
+  if (!sectionBlocked) finishedSections.add(name);
 }
 try {
   if (want('home')) await section('home', home);
