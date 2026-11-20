@@ -5106,9 +5106,9 @@
       "description": "Radio Reinvented",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.rovr.live/sign-in shows email and password. Password not submitted.",
+      "notes": "Email probe: https://www.rovr.live/sign-in shows email and password. Password not submitted. Public walk 2026-11-21: header links open home, moods, schedule, curators, and archive. SHOP leaves the origin. MENU opens a drawer. Drawer sign up and sign in stop at /login. My tracks, saved shows, and curator messages open sign-in dialogs and stop. Search opens /search. Community radio opens an application form that was not filled. Contact is a mailto link and was not opened. Home play and Alexa dialog were captured. One curator and one show were captured. /sign-in and /login are walls. /sign-up was mapped and not screenshotted. Password was not submitted. No form was submitted. Signed-in library was not captured. Public package in PR 1565 at 3f8ecf912fb5. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
@@ -5140,9 +5140,9 @@
       "description": "Revenue Agents for the Global 2000",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://rox.com/login Auth0 business-email step then asked for a password. Password not submitted.",
+      "notes": "Email probe: https://rox.com/login Auth0 business-email step then asked for a password. Password not submitted. Public walk 2026-11-21: homepage is a Framer marketing site. Header links open Platform, Research, Pricing, Customers, Resources, and Company. Hovering Platform, Resources, or Company opens a menu. The phone header opens a drawer. Footer repeats those destinations plus Legal and Docs. Docs search opens a dialog and was not submitted. Contact sales opens a form that was not filled. Start now, Login, and docs Login stop at Auth0 or run.rox.com. Google and Microsoft were not clicked. No email was typed. No form was submitted. Signed-in agent was not captured. Public package in PR 1566 at 7278ba1edf6c. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
