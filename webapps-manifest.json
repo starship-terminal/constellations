@@ -5038,9 +5038,9 @@
       "description": "HD Podcast & Video Software",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://riverside.com/login shows email and password, or SSO. Password not submitted.",
+      "notes": "Email probe: https://riverside.com/login shows email and password, or SSO. Password not submitted. Public walk 2026-11-21: homepage bar opens Platform, Solutions, and Resources menus. For Business and Pricing are pages. Contact Sales is an in-page anchor. Login stops at https://riverside.com/dashboard. Start for Free redirects to register and stops. Phone hamburger lists the same links. Pricing has a Monthly and Yearly toggle. FAQ is a local accordion. English and Deutsch is a language switch. The German homepage loaded and was left. Footer legal, store, and social links were classified and left. SSO, Google, Apple, and Spotify were not clicked. Cookie dialog was not clicked. No form was submitted. Signed-in studio, editor, and account were not captured. Public package in PR 1567 at d5aefcf9c81e. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
