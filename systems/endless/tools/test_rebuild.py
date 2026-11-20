@@ -122,6 +122,29 @@ class RebuildTest(unittest.TestCase):
         spread = self.built["core"]["measured"]["focus-ring-width"]["$value"]
         self.assertIn(f"0px {spread}", self.C["nav-signin"]["states"]["focus-visible"]["style"]["boxShadow"])
 
+    def test_missing_reading_stops_the_build(self):
+        """A recapture that loses a declared variable or a component reading
+        must fail the build, not drop the token, and leave the spec as it was."""
+        for drop in ("var", "component"):
+            with tempfile.TemporaryDirectory() as d:
+                root = pathlib.Path(d)
+                shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("capture", "__pycache__"))
+                shutil.copytree(PKG / "raw", root / "raw")
+                if drop == "var":
+                    f = root / "raw" / "css-vars.json"
+                    v = json.loads(f.read_text())
+                    del v["resolved"]["light"]["--spacing"]
+                else:
+                    f = root / "raw" / "components-computed.json"
+                    v = json.loads(f.read_text())
+                    del v["components"]["m-menu-button"]
+                f.write_text(json.dumps(v))
+                before = (root / "raw" / "component-tokens.json").read_text()
+                r = subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, capture_output=True, text=True)
+                self.assertNotEqual(r.returncode, 0, drop)
+                self.assertIn("missing readings", r.stderr, drop)
+                self.assertEqual((root / "raw" / "component-tokens.json").read_text(), before, drop)
+
     def test_no_named_row_was_dropped(self):
         spec = json.loads((self.root / "raw" / "component-tokens.json").read_text())
         self.assertNotIn("_gaps", spec)

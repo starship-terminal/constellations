@@ -41,6 +41,13 @@ def gap(what):
     GAPS.append(what)
 
 
+def declared(vname):
+    """Gate for one named declared variable: a miss is recorded as a gap."""
+    if vname not in R:
+        gap(f"{vname} not declared")
+    return vname in R
+
+
 def var(name, ty="color", **kw):
     d = {"var": name, "type": ty}
     d.update(kw)
@@ -272,15 +279,13 @@ for name, desc in [
     ("semibold", "600 — CTA buttons and docs headings."),
 ]:
     vname = f"--font-weight-{name}"
-    if vname in R:
+    if declared(vname):
         weight[name] = var(vname, "fontWeight", description=desc)
-    else:
-        gap(f"font.weight.{name}: {vname} not declared")
 
 size = SPEC["core"].setdefault("font", {}).setdefault("size", {})
 for name in ["xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl", "5xl"]:
     vname = f"--text-{name}"
-    if vname in R:
+    if declared(vname):
         size[name] = var(vname, "dimension",
                          description=f"Declared --text-{name} step of the Tailwind ramp ({R[vname]}).")
 for key, comp, state, desc in [
@@ -300,12 +305,12 @@ for key, comp, state, desc in [
 leading = SPEC["core"].setdefault("font", {}).setdefault("lineHeight", {})
 for name in ["xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl", "5xl"]:
     vname = f"--text-{name}--line-height"
-    if vname in R:
+    if declared(vname):
         leading[name] = var(vname, "number",
                             description=f"Declared line-height ratio for --text-{name} ({R[vname]}).")
 for name in ["tight", "snug", "normal", "relaxed"]:
     vname = f"--leading-{name}"
-    if vname in R:
+    if declared(vname):
         leading[name] = var(vname, "number",
                             description=f"Declared --leading-{name} ({R[vname]}).")
 for key, comp, state, desc in [
@@ -323,7 +328,7 @@ for key, comp, state, desc in [
 tracking = SPEC["core"].setdefault("font", {}).setdefault("tracking", {})
 for name in ["tighter", "tight", "normal", "wide", "wider"]:
     vname = f"--tracking-{name}"
-    if vname not in R:
+    if not declared(vname):
         continue
     v = R[vname].strip()
     if v.endswith("em"):
@@ -356,10 +361,8 @@ for key, vname, desc in [
     ("landing-action", "--color-landing-action", "Landing action blue #11a8ff."),
     ("ring", "--ring", "The focus/interactive ring (same value as accent)."),
 ]:
-    if vname in R:
+    if declared(vname):
         brand[key] = var(vname, "color", description=desc)
-    else:
-        gap(f"{key}: {vname} not declared")
 
 hue = SPEC["core"].setdefault("color", {}).setdefault("tailwind", {})
 for key, vname, desc in [
@@ -373,15 +376,13 @@ for key, vname, desc in [
     ("black", "--color-black", "Pure black."),
     ("white", "--color-white", "Pure white."),
 ]:
-    if vname in R:
+    if declared(vname):
         hue[key] = var(vname, "color", description=desc)
-    else:
-        gap(f"{key}: {vname} not declared")
 
 label = SPEC["core"].setdefault("color", {}).setdefault("label", {})
 for key in ["blue", "gray", "green", "orange", "pink", "purple", "red", "yellow"]:
     vname = f"--label-{key}"
-    if vname in R:
+    if declared(vname):
         label[key] = var(vname, "color",
                          description=f"Declared --label-{key} ({R[vname]}): a tag/label hue, identical on both themes.")
 
@@ -394,11 +395,9 @@ for key, vname, desc in [
     ("xl", "--radius-xl", "Declared --radius-xl (16px): plan/blog cards."),
     ("2xl", "--radius-2xl", "Declared --radius-2xl (20px): the composer, model cards, brand tiles."),
 ]:
-    if vname in R:
+    if declared(vname):
         radius[key] = var(vname, "dimension", description=desc)
-    else:
-        gap(f"{key}: {vname} not declared")
-if "--radius-icon" in R:
+if declared("--radius-icon"):
     # The declared value is a percentage ("22.5%"), not a length: type "other"
     # keeps it out of the length-only export — a bare number under core.radius
     # would be read as pixels (0.225px) and a "dimension" would fail the
@@ -422,10 +421,8 @@ for key, vname, desc in [
     ("standard", "--ease-standard", "ease-standard (.22,1,.36,1)."),
     ("default", "--default-transition-timing-function", "The default transition curve (.4,0,.2,1)."),
 ]:
-    if vname in R:
+    if declared(vname):
         easing[key] = var(vname, "cubicBezier", description=desc)
-    else:
-        gap(f"{key}: {vname} not declared")
 
 duration = SPEC["core"].setdefault("duration", {})
 for key, vname, desc in [
@@ -434,15 +431,13 @@ for key, vname, desc in [
     ("enter", "--transition-duration-enter", "Element entrances (200ms)."),
     ("slow", "--transition-duration-slow", "Slow transitions (300ms)."),
 ]:
-    if vname in R:
+    if declared(vname):
         duration[key] = var(vname, "duration", description=desc)
-    else:
-        gap(f"{key}: {vname} not declared")
 
 # ------------------------------------------------------------- space, layout
 
 spacing = SPEC["core"].setdefault("spacing", {})
-if "--spacing" in R:
+if declared("--spacing"):
     spacing["base"] = var("--spacing", "dimension",
                           description="The Tailwind spacing unit (4px); all gutters are multiples of it.")
 
@@ -450,13 +445,13 @@ layout = SPEC["core"].setdefault("layout", {})
 cont = layout.setdefault("container", {})
 for name in ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl"]:
     vname = f"--container-{name}"
-    if vname in R:
+    if declared(vname):
         cont[name] = var(vname, "dimension",
                          description=f"Declared --container-{name} max-width ({R[vname]}).")
 persp = layout.setdefault("perspective", {})
 for name in ["normal", "distant"]:
     vname = f"--perspective-{name}"
-    if vname in R:
+    if declared(vname):
         persp[name] = var(vname, "dimension", description=f"Declared --perspective-{name} ({R[vname]}).")
 
 # ----------------------------------------------------------------- shadows
@@ -476,7 +471,7 @@ for key, vname, desc in [
     ("drop-sm", "--drop-shadow-sm", "Declared drop-shadow filter sm (15% black, 1px 2px)."),
     ("drop-md", "--drop-shadow-md", "Declared drop-shadow filter md (12% black, 3px 3px)."),
 ]:
-    if vname in R:
+    if declared(vname):
         layers = shadow_layers(R[vname])
         if layers:
             shadow[key] = {"value": layers, "type": "shadow",
@@ -484,13 +479,11 @@ for key, vname, desc in [
                            "description": desc}
         else:
             gap(f"shadow.{key}: {vname} has no shadow layer")
-    else:
-        gap(f"shadow.{key}: {vname} not declared")
 
 # ------------------------------------------------------- z-index, backdrop
 
 z = SPEC["core"].setdefault("zIndex", {})
-if "--z-index-dropdown" in R:
+if declared("--z-index-dropdown"):
     z["dropdown"] = {"value": int(float(R["--z-index-dropdown"])), "type": "number",
                      "source": "css-var --z-index-dropdown (light)",
                      "description": "Declared dropdown/menu z-index (40); the sticky header also paints z-40."}
@@ -498,7 +491,7 @@ if "--z-index-dropdown" in R:
 blur = SPEC["core"].setdefault("blur", {})
 for name in ["xs", "sm", "md"]:
     vname = f"--blur-{name}"
-    if vname in R:
+    if declared(vname):
         blur[name] = var(vname, "dimension", description=f"Declared --blur-{name} ({R[vname]}).")
 
 # ---------------------------------------------------------------- measured
@@ -633,11 +626,9 @@ DECLARED = "declared shadcn-style role on the Tailwind v4 theme layer"
 
 def emit_role(root, name, desc):
     vname = f"--{name}"
-    if vname in R:
+    if declared(vname):
         emit(root, vname, {"var": vname, "type": "color",
                            "source": DECLARED, "description": desc})
-    else:
-        gap(f"{name}: {vname} not declared")
 
 
 for name, desc in ROLE_VARS:
@@ -650,11 +641,9 @@ pal_l = SPEC["light"].setdefault("palette", {})
 pal_d = SPEC["dark"].setdefault("palette", {})
 for name, desc in PALETTES:
     vname = f"--{name}"
-    if vname in R:
+    if declared(vname):
         emit(pal_l, vname, {"var": vname, "type": "color", "source": DECLARED, "description": desc})
         emit(pal_d, vname, {"var": vname, "type": "color", "source": DECLARED, "description": desc})
-    else:
-        gap(f"palette.{name}: {vname} not declared")
 
 # The sky gradient the hero paints: lab stops converted to sRGB, one literal
 # per theme (the var re-binds).

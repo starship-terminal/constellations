@@ -509,7 +509,7 @@ async function mobile() {
 // today's date, so stale readings looked fresh.
 const plan = { home, pricing, contact, toolgen, models, radar, brand, blog, docs, mcp, darkp, mobile };
 const pages = process.argv.slice(2);
-const unknown = pages.filter((p) => !(p in plan));
+const unknown = pages.filter((p) => !Object.hasOwn(plan, p));
 if (unknown.length) {
   console.error(`unknown page argument(s): ${unknown.join(', ')} — known pages: ${Object.keys(plan).join(', ')}`);
   process.exit(1);
