@@ -4409,9 +4409,9 @@
       "description": "Free stock photos & videos",
       "status": "pending",
       "package": null,
-      "notes": "https://www.pexels.com/login/ asks for email and password, or Google. Password not submitted.",
+      "notes": "https://www.pexels.com/login/ asks for email and password, or Google. Password not submitted. Public walk 2026-11-21: logo goes home. Explore opens /discover/ and its hover lists wallpapers, leaderboard, challenges, winners wall, photography series, /hero/, and /videos/. License opens /license/. More lists Log in, API, apps, Help Center, report, partnerships, imprint, language, and external social links. Join opens an intent dialog. Search opens suggestions and a Photos/Videos menu. /login/ asks for email and password, or Google, Apple, or Facebook, and shows a Cloudflare checkbox. /join-contributor/ is a wall. Upload redirects to login. Google, Apple, and Facebook were not clicked. No email was typed. No form was submitted. Public package in PR 1551 at 8c68f076417b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 13
     },
     {
