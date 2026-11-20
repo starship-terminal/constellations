@@ -272,9 +272,13 @@ for key, n, desc in [
                          description=desc)
 try:
     fv = st("try-cta", "default")["borderTopLeftRadius"]
-    fv = str(int(float(fv[:-2]))) + "px" if fv.endswith("px") else fv
+    # %g keeps a fractional radius; a computed rounded-full (the CSS maximum) is written 9999px, the kit's pill.
+    n = float(fv[:-2]) if fv.endswith("px") else None
+    read = fv
+    fv = ("9999px" if n > 9999 else "%gpx" % n) if n is not None else fv
     radii["full"] = {"value": fv, "type": "dimension",
-                     "source": "computed borderTopLeftRadius of try-cta default (raw/components-computed.json)",
+                     "source": "computed borderTopLeftRadius of try-cta default (raw/components-computed.json)"
+                               + (f"; the reading {read} is the browser's maximum radius, written as the kit's 9999px pill" if fv != read and fv == "9999px" else ""),
                      "description": "rounded-full computes to the CSS maximum — every pill control (CTAs, the billing toggle, platform buttons)."}
     radii["nav"] = {"value": st("header", "default")["borderTopLeftRadius"], "type": "dimension",
                     "source": "computed borderTopLeftRadius of header default (raw/components-computed.json)",
@@ -284,7 +288,7 @@ except KeyError:
 bw = SPEC["core"].setdefault("border", {})
 if "--border" in R:
     bw.setdefault("hairline", {})["width"] = {"value": "1px", "type": "dimension",
-        "source": "declared --border pairs with a 1px width in the shadcn convention",
+        "source": "Reconstruction: entered by hand at capture time; --border declares only the colour and no raw reading holds this width (the shadcn convention pairs it with 1px)",
         "description": "The 9% ink hairline width."}
 
 # ------------------------------------------------------------- elevation
@@ -297,8 +301,8 @@ try:
     if layers:
         sh["block"] = {"value": [{"color": norm_color(a), "offsetX": x, "offsetY": y, "blur": bl, "spread": sp, "inset": bool(i)} for a, x, y, bl, sp, i in layers],
                        "type": "shadow",
-                       "source": "computed boxShadow of team-card default (raw/components-computed.json)",
-                       "description": "The .shadow-block card elevation on plan cards."}
+                       "source": "computed boxShadow of team-card default (raw/components-computed.json); read on the first element carrying .shadow-block, the 1400 x 1546 pricing section, not the TEAM card",
+                       "description": "The .shadow-block utility's elevation. The capture read it on the pricing section, not on a card, so where cards paint it needs a recapture."}
 except KeyError:
     pass
 for key, n, desc in [
@@ -367,7 +371,7 @@ for name, cname, state, prop, ty_, desc in [
     ("toggle-segment", "billing-toggle", "default", "width", "dimension", "A billing-toggle segment (112px)."),
     ("menu-button", "m-menu-button", "default", "width", "dimension", "The 24px mobile menu glyph."),
     ("faq-row", "faq-row", "default", "height", "dimension", "The FAQ accordion row height."),
-    ("nav-link-size", "nav-link", "default", "fontSize", "fontSize", "Nav link 16px."),
+    ("nav-link-size", "nav-link", "default", "fontSize", "dimension", "Nav link 16px."),
 ]:
     if have(cname, state):
         v = st(cname, state).get(prop)
