@@ -145,7 +145,7 @@ function keepEarlier(c, state, e, earlierRun) {
   const prev = c.states[state];
   if (prev && prev.style) {
     prev.rerunError = err;
-    prev.read = prev.run || earlierRun;
+    prev.read ??= prev.run || earlierRun; // a second failed re-read keeps the first date
     prev.rerunOn = run;
   } else c.states[state] = { error: err };
 }
