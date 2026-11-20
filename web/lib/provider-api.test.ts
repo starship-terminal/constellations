@@ -170,8 +170,10 @@ describe("review fixes", () => {
 
   it("a migration never replaces a saved provider", async () => {
     await handleSave({ ...GOOD, api_key: KEY }, okModels);
-    const r = await handleSave({ ...GOOD, api_key: KEY2, migrate: true }, okModels);
+    calls.length = 0;
+    const r = await handleSave({ ...GOOD, api_key: KEY2, migrate: true }, failModels);
     assert.deepEqual([r.body.ok, r.body.existing], [false, true]);
+    assert.deepEqual(calls, [], "no provider call for a migration that cannot be saved");
     assert.equal((await savedFile()).api_key, KEY);
     assert.ok(!everything(r.body).includes(KEY2));
   });

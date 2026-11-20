@@ -248,6 +248,9 @@ export const handleSave = (body: unknown, listModels: ListModels): Promise<ApiRe
     if (!s.model) return { status: 400, body: { ok: false, error: "Pick a model before saving." } };
     if (s.api_key) {
       const cfg = toCfg(s, s.api_key);
+      // A migration that cannot be saved is not worth a provider call.
+      if (s.migrate && (await loadSaved().catch(() => null)))
+        return { status: 200, body: { ok: false, saved: false, existing: true, error: EXISTING } };
       // The network call stays outside the lock; the write happens under it.
       const r = await test(cfg, listModels);
       if (!r.ok) return { status: 200, body: { ...r, ok: false, saved: false } };

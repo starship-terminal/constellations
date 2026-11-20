@@ -604,8 +604,12 @@ class ProviderKeyTest(TempConfig):
 
     def test_a_migration_never_replaces_a_saved_provider(self):
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.chat.calls.clear()
+        self.chat.fail = True
         h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
         self.assertEqual((h.json()["ok"], h.json()["existing"]), (False, True))
+        self.assertEqual(self.models_calls(), [])
+        self.chat.fail = False
         self.assertEqual(self.saved()["api_key"], KEY)
         self.call("delete", "/api/provider")
         h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
