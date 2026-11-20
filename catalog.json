@@ -2927,7 +2927,7 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 90,
-    "pr": "https://github.com/starship-terminal/constellations/pull/0"
+    "pr": "https://github.com/starship-terminal/constellations/pull/1581"
    },
    "layoutGaps": {
     "icons/": "no standalone SVG set was lifted; glyphs are in the screenshots",
