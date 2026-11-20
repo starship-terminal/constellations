@@ -6,7 +6,7 @@ ikea.com redirects to www.ikea.com, which is a country picker titled "Hej! Welco
 
 Surfaces: the global picker, the Singapore home and its search field, Sofas and armchairs, the BILLY bookcase product page, search for "lamp", the store locator, the signed-out login card, and Offers. Desktop and phone.
 
-IKEA paints the storefront with Skapa. Colour roles are `--colour-*` rgb triplets (brand blue `#0058a3`, brand yellow `#ffdb00`, neutrals from `#ffffff` to `#111111`). The emphasised buy button is a 64px pill in brand blue. Type is Noto IKEA at a 14px body. Product photos are square. One light theme.
+IKEA paints the storefront with Skapa. Colour roles are `--colour-*` rgb triplets (brand blue `#0058a3`, brand yellow `#ffdb00`, neutrals from `#ffffff` to `#111111`). The emphasised buy button is a brand blue pill, 56px high with a 64px radius (`core.radius.cap`). Type is Noto IKEA at a 14px body. Product photos are square. One light theme.
 
 | File | What it is |
 |---|---|
