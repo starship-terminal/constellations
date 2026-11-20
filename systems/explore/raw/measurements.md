@@ -798,20 +798,21 @@ Page: discover. Selector: `a.pill "All"`. States: default, hover, focus-visible,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 47 x 36 | = | = | = |
-| Padding | 5px 12px 6px 12px | = | = | = |
-| Border | 2px solid #262626 | = | = | = |
-| Radius | 20px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | UntitledSans 16px/21px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #262626 | = | = | = |
-| Transition | color 0.2s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a.pill.selected 47.0x36.0 border T:2px solid / R:2px solid / B:2px solid / L:2px solid r 20px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 47 x 36 | = | - | = |
+| Padding | 5px 12px 6px 12px | = | - | = |
+| Border | 2px solid #262626 | = | - | = |
+| Radius | 20px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | UntitledSans 16px/21px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #262626 | = | - | = |
+| Transition | color 0.2s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a.pill.selected 47.0x36.0 border T:2px solid / R:2px solid / B:2px solid / L:2px solid r 20px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `pill-default.png`, `pill-hover.png`, `pill-focus-visible.png`, `pill-pressed.png`.
 
@@ -823,20 +824,21 @@ Page: discover. Selector: `a.pill "Animation"`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 106 x 36 | = | = | = |
-| Padding | 6px 13px 7px 13px | = | = | = |
-| Border | 1px solid #efefef | = | = | = |
-| Radius | 20px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | UntitledSans 16px/21px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #262626 | = | = | = |
-| Transition | color 0.2s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a.pill 106.0x36.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 20px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 106 x 36 | = | - | = |
+| Padding | 6px 13px 7px 13px | = | - | = |
+| Border | 1px solid #efefef | = | - | = |
+| Radius | 20px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | UntitledSans 16px/21px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #262626 | = | - | = |
+| Transition | color 0.2s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a.pill 106.0x36.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 20px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `pill-idle-default.png`, `pill-idle-hover.png`, `pill-idle-focus-visible.png`, `pill-idle-pressed.png`.
 
