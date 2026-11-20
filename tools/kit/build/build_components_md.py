@@ -2,7 +2,7 @@
 """Build components.md for the ChatGPT design reference.
 
 Reads raw/components-computed.json (every component and state, measured in both themes),
-raw/layout.json, tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to
+tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to
 them. Every value is a cell of the measurement file, condensed: colours are hex followed by the token
 in the matching theme's set whose value is the same, the font family is named once per value, and a
 state row shows only what differs from the first state. Dark states come first (the pages were
@@ -20,7 +20,6 @@ os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
 META = J["_meta"]
-LAYOUT = json.load(open("raw/layout.json"))
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens
