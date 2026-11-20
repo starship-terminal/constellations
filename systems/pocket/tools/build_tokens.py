@@ -11,6 +11,7 @@ Nothing here is invented. A role that was not on the page is absent.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,7 +41,23 @@ def font(value: str, evidence: str) -> dict:
 
 
 def cubic(value: str, evidence: str) -> dict:
-    return {"$type": "cubicBezier", "$value": value, "$extensions": {"source": evidence}}
+    """cubic-bezier(.4,0,.2,1) as the DTCG four-number list."""
+    m = re.fullmatch(r"cubic-bezier\(([^)]*)\)", value.strip())
+    if not m:
+        raise SystemExit(f"not a cubic-bezier(): {value!r}")
+    nums = [float(n) for n in m.group(1).split(",")]
+    nums = [int(n) if n.is_integer() else n for n in nums]
+    return {"$type": "cubicBezier", "$value": nums, "$extensions": {"source": f"{evidence} Declared as {value}."}}
+
+
+def duration(value: str, evidence: str) -> dict:
+    """A CSS time (.1s, 50ms) as milliseconds."""
+    m = re.fullmatch(r"(\d*\.?\d+)(ms|s)", value.strip())
+    if not m:
+        raise SystemExit(f"not a CSS time: {value!r}")
+    ms = float(m.group(1)) * (1000 if m.group(2) == "s" else 1)
+    ms = int(ms) if ms.is_integer() else ms
+    return {"$type": "duration", "$value": f"{ms}ms", "$extensions": {"source": f"{evidence} Declared as {value}."}}
 
 
 def shadow(value: str, evidence: str) -> dict:
@@ -82,17 +99,27 @@ def nest(props: dict, prefix: str, evidence: str) -> dict:
     return tree
 
 
+LENGTH = re.compile(r"-?(\d+|\d*\.\d+)(px|rem)")
+NOT_TOKENISED: list = []
+
+
 def scale(props: dict, prefix: str, evidence: str) -> dict:
+    """A --prefixNNN scale as dimensions. A value that is not one px or rem length (the root
+    font-size percentages) is listed under core.$extensions.notTokenised instead."""
     out = {}
     for key, value in sorted(props.items()):
         if not key.startswith(prefix):
             continue
         name = key[len(prefix):]
+        if not LENGTH.fullmatch(value):
+            NOT_TOKENISED.append({"name": key, "value": value, "why": "a percentage of the inherited font size, not one px or rem length"})
+            continue
         out[name] = dim(value, evidence)
     return out
 
 
 def build() -> dict:
+    NOT_TOKENISED.clear()
     raw = json.loads(RAW.read_text())
     g = raw["global"]
     light = raw["light"]
@@ -186,17 +213,17 @@ def build() -> dict:
 
     motion = {
         "duration": {
-            "ui-enter": dim(g["--uiControlsDurationEnterMS"], MEASURED),
-            "ui-exit": dim(g["--uiControlsDurationExitMS"], MEASURED),
-            "dialog-enter": dim(g["--dialogsDurationEnterMS"], MEASURED),
-            "dialog-exit": dim(g["--dialogsDurationExitMS"], MEASURED),
-            "drawer-enter": dim(g["--navDrawerDurationEnterMS"], MEASURED),
-            "drawer-exit": dim(g["--navDrawerDurationExitMS"], MEASURED),
-            "link": dim(
+            "ui-enter": duration(g["--uiControlsDurationEnterMS"], MEASURED),
+            "ui-exit": duration(g["--uiControlsDurationExitMS"], MEASURED),
+            "dialog-enter": duration(g["--dialogsDurationEnterMS"], MEASURED),
+            "dialog-exit": duration(g["--dialogsDurationExitMS"], MEASURED),
+            "drawer-enter": duration(g["--navDrawerDurationEnterMS"], MEASURED),
+            "drawer-exit": duration(g["--navDrawerDurationExitMS"], MEASURED),
+            "link": duration(
                 "0.1s",
                 "Measured. Declared transition on `a` in f421bff56e9ba7e2.css: color .1s ease-out.",
             ),
-            "control": dim(
+            "control": duration(
                 "50ms",
                 "Measured. Declared transition on checkbox, radio and toggle borders.",
             ),
@@ -246,6 +273,8 @@ def build() -> dict:
         "typography": typography,
         "motion": motion,
     }
+    if NOT_TOKENISED:
+        core["$extensions"] = {"notTokenised": list(NOT_TOKENISED)}
 
     def semantic(src: dict, evidence: str) -> dict:
         return {
