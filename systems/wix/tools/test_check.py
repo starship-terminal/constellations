@@ -42,5 +42,26 @@ class CheckTest(unittest.TestCase):
         self.assertEqual(json.loads(TOKENS.read_text()), build_tokens.build())
 
 
+    def test_two_token_alias_loop_is_refused(self):
+        doc = json.loads(TOKENS.read_text())
+        for set_name in [k for k in doc if not k.startswith("$") and isinstance(doc[k], dict)]:
+            colours = [(p, t) for p, t in build_tokens._token_paths(doc[set_name]) if t["$type"] == "color"]
+            if len(colours) >= 2:
+                (pa, a), (pb, b) = colours[:2]
+                a["$value"], b["$value"] = "{%s}" % pb, "{%s}" % pa
+                break
+        with self.assertRaisesRegex(SystemExit, "alias loop"):
+            build_tokens.check(doc)
+
+    def test_text_after_an_alias_is_refused(self):
+        doc = json.loads(TOKENS.read_text())
+        for set_name in [k for k in doc if not k.startswith("$") and isinstance(doc[k], dict)]:
+            colours = [(p, t) for p, t in build_tokens._token_paths(doc[set_name]) if t["$type"] == "color"]
+            if len(colours) >= 2:
+                colours[0][1]["$value"] = "{%s} garbage" % colours[1][0]
+                break
+        with self.assertRaisesRegex(SystemExit, "one whole alias"):
+            build_tokens.check(doc)
+
 if __name__ == "__main__":
     unittest.main()

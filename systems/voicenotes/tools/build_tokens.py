@@ -319,9 +319,25 @@ def _aliases(value):
     return []
 
 
+def _follow(flat, s, ref, seen):
+    """Follow an alias chain: each name resolves in the set it is read from, then core (the
+    Resolver's order). Returns a problem string for a dead alias or a repeated token, else None."""
+    target_set = s if ref in flat[s] else "core" if ref in flat.get("core", {}) else None
+    if target_set is None:
+        return f"alias {{{ref}}} resolves nowhere"
+    if (target_set, ref) in seen:
+        return f"alias loop through {{{ref}}}"
+    for nxt in _aliases(flat[target_set][ref]["$value"]):
+        err = _follow(flat, target_set, nxt, seen | {(target_set, ref)})
+        if err:
+            return err
+    return None
+
+
 def check(doc):
-    """Refuse a token with no source, a colour that is not #rrggbb(aa), or an alias that resolves in
-    neither its own set nor core (the order tools/catalog.py's Resolver uses). Raises SystemExit."""
+    """Refuse a token with no source, a colour that is neither #rrggbb(aa) nor one whole alias, an
+    alias that resolves in neither its own set nor core (the order tools/catalog.py's Resolver
+    uses), and an alias chain that comes back to a token it already passed. Raises SystemExit."""
     sets = [s for s, v in doc.items() if not s.startswith("$") and isinstance(v, dict)]
     flat = {s: dict(_token_paths(doc[s])) for s in sets}
     core = flat.get("core", {})
@@ -333,13 +349,13 @@ def check(doc):
                 problems.append(f"{where}: no source")
             value = token["$value"]
             for ref in _aliases(value):
-                if ref == path:  # resolves to itself first: a cycle
-                    problems.append(f"{where}: alias {{{ref}}} names itself")
-                elif ref not in flat[s] and ref not in core:
-                    problems.append(f"{where}: alias {{{ref}}} resolves nowhere")
-            if token.get("$type") == "color" and not _aliases(value):
-                if not (isinstance(value, str) and re.fullmatch(r"#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?", value)):
-                    problems.append(f"{where}: colour {value!r} is not #rrggbb(aa)")
+                err = _follow(flat, s, ref, {(s, path)})
+                if err:
+                    problems.append(f"{where}: {err}")
+            if token.get("$type") == "color":
+                whole_alias = isinstance(value, str) and re.fullmatch(r"\{[^{}]+\}", value)
+                if not whole_alias and not (isinstance(value, str) and re.fullmatch(r"#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?", value)):
+                    problems.append(f"{where}: colour {value!r} is not #rrggbb(aa) or one whole alias")
     if problems:
         raise SystemExit("token check failed:\n" + "\n".join(problems))
 
