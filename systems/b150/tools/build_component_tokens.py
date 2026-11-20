@@ -160,7 +160,10 @@ ROLES = [
 ]
 for role, var, verif, desc in ROLES:
     emit(SPEC["light"], role, V(var, "color", desc, f"verified: {verif} (raw/components-computed.json)"))
-emit(SPEC["light"], "focus-ring", M(norm_color(style("nav-item", "focus-visible").get("outlineColor", "")) or "#005fcc", "color", "computed outlineColor of nav-item/footer-link focus-visible (raw/components-computed.json)", "The focus ring."))
+_ring = norm_color(style("nav-item", "focus-visible").get("outlineColor", ""))
+if not _ring:
+    raise KeyError("nav-item focus-visible has no outlineColor reading")  # no typed fallback
+emit(SPEC["light"], "focus-ring", M(_ring, "color", "computed outlineColor of nav-item/footer-link focus-visible (raw/components-computed.json)", "The focus ring."))
 
 # ------------------------------------------------------------------ component
 comp_spec = SPEC["component"]

@@ -244,7 +244,10 @@ if ring and ring != "rgba(0, 0, 0, 0)":
 
 # The brand gradient text on the hero: no var holds the stop pair.
 bg = state_style("hero-title", "default").get("backgroundImage", "")
-meas["hero-gradient"] = {"value": bg[:220] if bg and bg != "none" else "linear-gradient(90deg, #fd366e, #fe9567)",
+if not bg or bg == "none":
+    # never publish a typed gradient under a "computed" source
+    raise KeyError("hero-title default has no backgroundImage reading")
+meas["hero-gradient"] = {"value": bg[:220],
                          "type": "other",
                          "source": "computed backgroundImage of hero-title default (raw/components-computed.json)",
                          "description": "The pink-to-orange gradient clipped into the hero headline."}
