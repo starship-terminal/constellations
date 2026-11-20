@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The Uber token builder resolves the public stylesheet and keeps measured chrome."""
+"""The Uber builder output keeps the measured light and dark chrome, and its primary background agrees with the committed tokens.json."""
 import json
 import unittest
 from pathlib import Path
@@ -17,12 +17,12 @@ class BuildTokensTest(unittest.TestCase):
         self.assertEqual(tokens["light"]["accent"]["background"]["primary"]["bold"]["$value"], "#1175dd")
         self.assertEqual(tokens["dark"]["background"]["primary"]["$value"], "#1c1c1c")
 
-    def test_signup_wall_is_not_a_filled_field(self):
+    def test_signup_wall_records_nothing_entered(self):
         wall = json.loads((ROOT / "raw" / "auth-wall.json").read_text())
         self.assertEqual(wall["entered"], "nothing. No phone, email, card, or continue click.")
         self.assertIn("phone-or-email", wall["gap"])
 
-    def test_committed_tokens_match_builder(self):
+    def test_committed_primary_background_matches_builder(self):
         built = build_tokens.build()
         committed = json.loads((ROOT / "tokens.json").read_text())
         self.assertEqual(built["light"]["background"]["primary"], committed["light"]["background"]["primary"])

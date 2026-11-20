@@ -1,4 +1,4 @@
-"""The Tesla token builder refuses a file whose aliases or colours are broken."""
+"""The committed Tesla tokens pass build_tokens.check, and keep the measured primary, page and text colours."""
 import json
 import pathlib
 import unittest

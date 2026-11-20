@@ -1,4 +1,4 @@
-"""The package tokens.json is valid JSON and every token has a source."""
+"""tokens.json loads, every token records Measured evidence with a where, and the page, accent and text colours hold."""
 import json
 import pathlib
 import unittest
@@ -13,7 +13,7 @@ class TokensTest(unittest.TestCase):
         self.assertIn("light", doc)
         self.assertNotIn("dark", doc)
 
-    def test_every_token_has_a_measured_source(self):
+    def test_every_token_has_measured_evidence(self):
         doc = json.loads(TOKENS.read_text())
 
         def walk(node, path):
