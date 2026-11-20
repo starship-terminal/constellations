@@ -4086,9 +4086,9 @@
       "description": "Free Farming App for Precision Agriculture",
       "status": "pending",
       "package": null,
-      "notes": "Marketing /login is 404. https://app.onesoil.ai/login asks for email and password, or Google or Apple. Password not submitted.",
+      "notes": "Marketing /login is 404. https://app.onesoil.ai/login asks for email and password, or Google or Apple. Password not submitted. Public walk 2026-11-21: header panels Products, Solutions, Company, and language list loaded. Try Free and Open Web App stop at https://app.onesoil.ai/auth/login and were not entered. Contact and demo forms were not submitted. Public package in PR 1512 at b025d3dc0. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 12
     },
     {
