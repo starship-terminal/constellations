@@ -16,7 +16,7 @@ The home headline is ManyChatGravity at 72px (7.2rem against the 10px root), 692
 
 ## Guides
 
-`/resources/how-to` is a public guide index, heading ManyChatGravity at 80px. A guide card measured 368 x 372. This is not the in-app template library. That library sits behind sign-in.
+`/resources/how-to` is a public guide index, heading ManyChatGravity at 80px. A guide card measured 368 x 372. This is not the in-app template library. The 2026-11-21 signed-in walk opened My Templates and found an empty state, recorded in [login-review.json](login-review.json). Creating a template was not submitted.
 
 ## The footer
 

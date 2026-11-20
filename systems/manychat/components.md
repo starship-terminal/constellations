@@ -1,6 +1,6 @@
 # ManyChat components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from manychat.com on 2026-11-18, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, submitted or purchased. Product, the billing labels and the FAQ are local toggles. Log in, Get started and Start for free were measured, never followed. The Usercentrics privacy layer was hidden, never answered. app.manychat.com was never entered.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from manychat.com on 2026-11-18, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, submitted or purchased. Product, the billing labels and the FAQ are local toggles. Log in, Get started and Start for free were measured, never followed. The Usercentrics privacy layer was hidden, never answered. app.manychat.com was not entered on 2026-11-18. A 2026-11-21 signed-in walk of the empty profile is in [login-review.json](login-review.json) and is not part of these marketing crops.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (31 components, 63 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -345,14 +345,14 @@ No standalone SVG icon set was lifted on this pass. The wordmark and channel mar
 
 ### Sign-in and checkout
 
-The bot builder and the in-app template library sit behind sign-in at app.manychat.com. Log in, Get started and Start for free were measured, never followed. Checkout was not submitted. /templates and /template-gallery returned 404 signed out. The painted mobile hamburger was not a selectable control in this headless pass, so the drawer was not captured.
+The 2026-11-18 marketing pass did not enter app.manychat.com. Log in, Get started and Start for free were measured, never followed. Checkout was not submitted. /templates and /template-gallery returned 404 signed out. On 2026-11-21 a signed-in profile with no channel was walked. The bot builder was still not reached. See [login-review.json](login-review.json). The painted mobile hamburger was not a selectable control in this headless pass, so the drawer was not captured.
 
 ### Pages
 
 - **Outbound links.** Log in (app.manychat.com/signin), Get started (app.manychat.com/signup) and Start for free were measured, never followed. Checkout was not submitted.
 - **Public pages captured.** Home, /pricing, /product/instagram and /resources/how-to, plus a phone pass on home and pricing. Other product pages share the same chrome.
 - **The Product menu** was opened locally and screenshot as home-light-menu. The Instagram item inside it was measured. Solutions, Agencies and Resources were not individually componentized.
-- **The in-app template library** sits behind sign-in. /templates and /template-gallery returned 404 signed out.
+- **The in-app template library** was an empty state on the 2026-11-21 signed-in walk ([screenshots/templates-light-desktop.png](screenshots/templates-light-desktop.png)). Creating a template was not submitted. /templates and /template-gallery returned 404 signed out on the marketing pass.
 - **The mobile drawer** was not captured. The hamburger is painted, but it was not a selectable control in this headless pass.
 - **The promo strip** is a campaign. What was captured is what this IP was served.
 
