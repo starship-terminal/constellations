@@ -1,0 +1,10 @@
+{
+ "_note": "Rules for systems/exa. No boxes: the signed-in dashboard shots show only the owner's own profile, and API keys, the team ID and the member row were already masked by the product or at capture. name@example.com is the placeholder typed into the public sign-in email field for the filled-state crop.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "^name@example\\.com$"
+  ]
+ },
+ "families": []
+}
