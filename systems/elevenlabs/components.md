@@ -167,6 +167,8 @@ Child layers that carry the look: a 226x12.5; a 226x12.5; a 226x12.5.
 #### Flyout link
 A link inside the opened Products flyout (Text to Speech). Read as `menu-link` on the home page.
 
+**Wrong element.** The default and pressed states caught a same-href link far down the page (y 3144); hover and focus-visible are the flyout's link. The entry needs a recapture.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, focus-visible, pressed) | size 173.45 x 22; background transparent; outline 2px solid transparent, offset 2px; text Inter 15/22 400, #777169 `color.neutral.muted`; icon 12 x 12, #777169 `color.neutral.muted`; layers a.tw-outline-none.tw-inline-flex 173.5x22.0 2px solid rgba(0, 0, 0, 0) offset 2px |
@@ -434,6 +436,8 @@ A badge on a plan card ("Popular" on Creator, "Until Nov 16" on Starter). Read a
 #### Feature row
 An "Everything in X, plus" feature-group row inside a plan card. Read as `feature-row` on the pricing page.
 
+**Wrong element.** The plan-card mark caught the whole 1440 x 5508 page body, not a feature row; the 2026-11-13 re-run did not find it either (recaptureMissed), so these are the first run's readings. The entry needs a recapture.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 1440 x 5508.61; background transparent; text Inter 14/21 400, #ffffff `color.neutral.white`; icon 116 x 15, #000000 `color.brand.ink`; layers div.tw-fixed.tw-top-0 1440.0x64.0 rgb(255, 255, 255); div.tw-absolute.tw-inset-x-0 1440.0x1.0 rgb(235, 232, 228); a.tw-h-9.tw-flex 140.0x36.0 2px solid rgba(0, 0, 0, 0) offset 2px 9999px; a.tw-inline-flex.tw-items-center 78.0x36.0 rgb(0, 0, 0) 2px solid rgba(0, 0, 0, 0) offset 2px 9999px; div.tw-grid.tw-rounded-full 0.0x0.0 rgb(255, 255, 255) 0px 0px 0px 0px inset, rgb(215, 210, 204) 0px 0px 0px 0 |
@@ -494,6 +498,8 @@ The "Convert Text to Speech" action; measured, never followed. Read as `convert-
 
 #### Voice sample card
 A voice-sample card (the photo card with a corner play button and the voice name). Read as `voice-card` on the text-to-speech page.
+
+**Wrong element.** The `.last()` over a broad union caught a 724 x 54 FAQ row, not a voice-sample card. The entry needs a recapture.
 
 **Values (default).** size 724 x 54.5; background transparent; text Inter 17/25 400, #000000 `color.brand.ink`; icon 20 x 20, #a59f97; layers button.tw-group/trigger.tw-text-left 724.0x54.5 2px solid rgba(0, 0, 0, 0) offset 2px 4px; div 724.0x2.0.
 
