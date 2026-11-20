@@ -62,8 +62,8 @@ async function newPage(key, { mobile = false, wait = 8000, dsf } = {}) {
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, BASE + URLS[key], { wait });
-  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); if (context === ctx) context = ctx0; return false; }
+  const loaded = await open(page, BASE + URLS[key], { wait });
+  if (!loaded || await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); if (context === ctx) context = ctx0; return false; }
   opened.add(key + '|' + view);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);

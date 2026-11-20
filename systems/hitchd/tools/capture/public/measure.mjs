@@ -13,7 +13,11 @@
 // card's own tap and read at rest; its Give flow is never entered.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, open, openRegistry, closePromo, styleOf, crop, centre, RAW, domFind, slug, patch } from './lib.mjs';
+import { BASE, M, launch, open as openPage, openRegistry, closePromo, styleOf, crop, centre, RAW, domFind, slug, patch } from './lib.mjs';
+// open() returns false on a blocked load and leaves the tab on about:blank;
+// every reading here runs inside run(), so throwing records it as failed
+// instead of measuring the blank tab as the product (2026-11 audit, 20-4)
+const open = async (page, url, opts) => { if (!(await openPage(page, url, opts))) throw new Error(`BLOCKED ${url}: the page never loaded, nothing measured`); };
 import { safeUrl } from '../safe-url.mjs';
 
 const only = (process.argv[2] || '').split(',').filter(Boolean);

@@ -294,7 +294,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
   await cdp.send('CSS.enable');
   const url = BASE + URLS[g.page];
   log('open', key, g.mobile ? '(mobile)' : '', url);
-  await open(page, url, { wait: 7000, promo: g.promo ?? 'close' });
+  if (!(await open(page, url, { wait: 7000, promo: g.promo ?? 'close' }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
   // A Chromium network-error page must never be measured: it paints its own
   // h1/p ("Your connection was interrupted", "A network change was detected")
   // which would be committed as the site's legal prose. Reload once; if the

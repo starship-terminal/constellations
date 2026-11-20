@@ -161,7 +161,9 @@ async function setDocsTheme(p, theme) {
   await clickEl(btn);
   await wait(p, 900);
   const cur = await p.evaluate(() => document.documentElement.getAttribute('data-theme'));
-  if (cur !== theme.toLowerCase()) log('  ! docs theme reads', JSON.stringify(cur), 'after switching to', theme);
+  // a toggle that did not paint must not write a light page as *-dark-*.png:
+  // throw, and step() logs the state as missing (2026-11 audit, not run)
+  if (cur !== theme.toLowerCase()) throw new Error(`docs theme reads ${JSON.stringify(cur)} after switching to ${theme}`);
   return cur;
 }
 

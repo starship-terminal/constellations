@@ -26,7 +26,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, themeInit, chromium, UA, UA_MOBILE, BASE, START_URL, AUTH_URL, PDP_URL } from './lib.mjs';
+import { closePromo, clearChallenge, patch, themeInit, paintedTheme, chromium, UA, UA_MOBILE, BASE, START_URL, AUTH_URL, PDP_URL } from './lib.mjs';
 
 // Full-colour shots are working files, never committed: by default they go outside the repository,
 // to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
@@ -237,6 +237,13 @@ for (const { k, mob } of runs) {
     await p.goto(spec.url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.url); await ctx.close(); continue; }
     await wait(p, spec.wait || 7000);
+    // the file name says the painted theme, so check the paint before any
+    // shot: a marketing page that did not repaint is skipped, never written
+    // as *-dark-*.png (2026-11 audit, finding 17-5; not run since)
+    if (spec.url.startsWith(BASE)) {
+      const t = await paintedTheme(p);
+      if (t.painted !== spec.theme) { log('  THEME MISMATCH', name, 'painted', t.painted, 'body', t.bodyClass); await ctx.close(); continue; }
+    }
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;

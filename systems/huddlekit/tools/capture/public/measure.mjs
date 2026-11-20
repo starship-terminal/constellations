@@ -60,6 +60,9 @@ let page, cdp, context, current;
 // ---------- state drivers ----------
 
 async function reset() {
+  // open() leaves the tab on about:blank when a reload was blocked; every
+  // state after that fails here, so the saved readings are kept
+  if (page.url() === 'about:blank') throw new Error('the page was lost to a blocked reload; saved readings kept');
   await page.keyboard.press('Escape').catch(() => {});
   await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
   const vw = page.viewportSize()?.width ?? 1440;
@@ -457,7 +460,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
   log('open', key, g.mobile ? '(mobile)' : '', url);
   // The consent group keeps the banner up to measure it; every other group
   // hides it so the fixed panel never overlays another component's crop.
-  await open(page, url, { wait: 7000, promo: g.consent ? 'keep' : 'close' });
+  if (!(await open(page, url, { wait: 7000, promo: g.consent ? 'keep' : 'close' }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   if (g.setup) await g.setup(page).catch((e) => log('  setup failed:', e.message));
   // the readable sheets' transition declarations, for measurements.md

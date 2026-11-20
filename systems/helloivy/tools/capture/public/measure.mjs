@@ -62,6 +62,9 @@ async function reset() {
   // otherwise be the overlay, not the component.
   const overlayOpen = await page.evaluate(() => [...document.querySelectorAll('*')].some((e) => e !== document.documentElement && e !== document.body && /01\s*HOME/i.test(e.innerText || '') && /FEATURES/i.test(e.innerText || '') && (e.innerText || '').length < 4000 && e.getBoundingClientRect().height > 300)).catch(() => false);
   if (overlayOpen && currentUrl) { await open(page, currentUrl, { wait: 8000 }); await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {}); }
+  // open() leaves the tab on about:blank when a reload was blocked; every
+  // state after that fails here, so the saved readings are kept
+  if (page.url() === 'about:blank') throw new Error('the page was lost to a blocked reload; saved readings kept');
   await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
   const vw = page.viewportSize()?.width ?? 1440;
   await page.mouse.move(vw - 2, 2);
@@ -538,7 +541,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
   const url = URLS[g.page];
   currentUrl = url;
   log('open', key, g.mobile ? '(mobile)' : '', url);
-  await open(page, url, { wait: 8000 });
+  if (!(await open(page, url, { wait: 8000 }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   if (g.setup) await g.setup(page).catch((e) => log('  setup failed:', e.message));
   // the readable sheets' transition declarations, for measurements.md

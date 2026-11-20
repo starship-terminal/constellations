@@ -61,8 +61,8 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
-  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
+  const loaded = await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
+  if (!loaded || await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   // Cosmetic only: hide the text caret during field states. app.family.co's
   // CSP refuses the inline style tag — losing it is fine.
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});

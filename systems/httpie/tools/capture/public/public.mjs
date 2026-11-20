@@ -416,7 +416,7 @@ for (const { k, mob, dict } of runs) {
   const S = new Shooter(p, `${name}-dark`, vw, vh, dpr, spec.url);
   const runCtx = { extra: 0 };
   try {
-    if (spec.app) await openApp(p, { wait: spec.wait, keepPromo: true });
+    if (spec.app) { if (!(await openApp(p, { wait: spec.wait, keepPromo: true }))) { log('  BLOCKED', spec.url); await ctx.close(); continue; } }
     else {
       await p.goto(spec.url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
       if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.url); await ctx.close(); continue; }

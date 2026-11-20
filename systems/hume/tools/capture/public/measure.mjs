@@ -64,6 +64,9 @@ let page, cdp, context, current;
 // ---------- state drivers ----------
 
 async function reset() {
+  // open() leaves the tab on about:blank when a reload was blocked; every
+  // state after that fails here, so the saved readings are kept
+  if (page.url() === 'about:blank') throw new Error('the page was lost to a blocked reload; saved readings kept');
   await page.keyboard.press('Escape').catch(() => {});
   await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
   const vw = page.viewportSize()?.width ?? 1440;
@@ -412,7 +415,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
   await cdp.send('CSS.enable');
   const url = urlOf(g.page);
   log('open', key, g.mobile ? '(mobile)' : '', url);
-  await open(page, url, { wait: g.page === 'demo' || g.page === 'login' ? 9000 : 7000 });
+  if (!(await open(page, url, { wait: g.page === 'demo' || g.page === 'login' ? 9000 : 7000 }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   // the readable sheets' transition declarations, for measurements.md
   out._meta.sheets[hostOf(g.page) + pathOf(g.page)] = await page.evaluate(() => {

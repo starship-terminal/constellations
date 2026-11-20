@@ -69,6 +69,9 @@ let page, cdp, context, current;
 // ---------- state drivers ----------
 
 async function reset() {
+  // open() leaves the tab on about:blank when a reload was blocked; every
+  // state after that fails here, so the saved readings are kept
+  if (page.url() === 'about:blank') throw new Error('the page was lost to a blocked reload; saved readings kept');
   await page.keyboard.press('Escape').catch(() => {});
   await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
   const vw = page.viewportSize()?.width ?? 1440;
@@ -418,7 +421,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
   const url = urlOf(g.page);
   log('open', key, g.mobile ? '(mobile)' : '', url);
   if (g.app) {
-    await openApp(page, { wait: 9000 });
+    if (!(await openApp(page, { wait: 9000 }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
     // The request surface mounts asynchronously after the shell: poll for
     // the method button so the first specs don't read a half-built app.
     for (let i = 0; i < 15; i++) {
@@ -427,7 +430,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
     }
     await dismissAppPromo(page);
   }
-  else await open(page, url, { wait: 7000 });
+  else if (!(await open(page, url, { wait: 7000 }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   // the readable sheets' transition declarations, for measurements.md
   out._meta.sheets[pathOf(g.page)] = await page.evaluate(() => {
