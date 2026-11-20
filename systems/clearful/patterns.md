@@ -24,7 +24,7 @@ Same light skin: a 60px/700 Literatatt "Pricing Plans" h1 (`pricing-title`), the
 
 ## The sign-in card (Flutter boundary)
 
-app.clearful.com/#/sign-in is a Flutter canvas app on a `#f7f7f7` ground (`light.app.ground`, pixel-sampled). The card centres a 264 x 176 "Welcome Back" illustration (`signin-image`) over three 400 x 56 buttons (`signin-button`): white "Continue with email" (`light.app.oauth.email` with `#e1e1e1`-ish edge and `#222` label), near-black `#222` "Continue with Apple" (`light.app.oauth.ink`), Google-blue `#1a73e8` "Continue with Google" (`light.app.oauth.google`). All colours are canvas-painted and were sampled off `raw/full/signin-light-default.png`; all rects are real — read through Flutter's `flt-semantics` overlay after mounting the local accessibility switch, at devicePixelRatio 1 (the canvas lays out at half scale under DSF 2). Nothing was signed into or submitted.
+app.clearful.com/#/sign-in is a Flutter canvas app on a `#f7f7f7` ground (`core.sampled.app.ground`, pixel-sampled). The card centres a 264 x 176 "Welcome Back" illustration (`signin-image`) over three 400 x 56 buttons (`signin-button`): white "Continue with email" (`core.sampled.app.oauth.email` with `#e1e1e1`-ish edge and `#222` label), near-black `#222` "Continue with Apple" (`core.sampled.app.oauth.ink`), Google-blue `#1a73e8` "Continue with Google" (`core.sampled.app.oauth.google`). All colours are canvas-painted and were sampled off `raw/full/signin-light-default.png`; all rects are real — read through Flutter's `flt-semantics` overlay after mounting the local accessibility switch, at devicePixelRatio 1 (the canvas lays out at half scale under DSF 2). Nothing was signed into or submitted.
 
 ## Footer and mobile
 

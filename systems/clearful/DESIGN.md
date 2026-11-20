@@ -36,11 +36,6 @@ colors:
   border-brand: "#1953ff"
   border-tab: "#222222"
   focus: "#101010"
-  app-ground: "#f7f7f7"
-  app-oauth-ink: "#222222"
-  app-oauth-google: "#1a73e8"
-  app-oauth-email: "#ffffff"
-  app-text-primary: "#222222"
 rounded:
   small: "4px"
   medium: "8px"

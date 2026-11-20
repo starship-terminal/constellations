@@ -110,12 +110,16 @@ The "How it works" menu trigger (aria-haspopup=menu); its own press opens the li
 #### Nav menu
 The "How it works" dropdown panel (Walkthrough / How ClassPass works / Features links), held open by the trigger toggle. Read as `menu-panel` on the home page.
 
+Kept from an earlier run: the 2026-11-16 recapture did not find this component, so these readings may not match the current page or script.
+
 **Values (default).** size 200 x 121; background #ffffff `color.paper.0`; shadow rgba(0, 0, 0, 0.08) 0px 2px 10px 0px; text norms 14/20 500, #000000 `color.ink.900`.
 
 ![Nav menu default](components/crops/menu-panel-default.png)
 
 #### Menu item
 A link row inside the open nav menu. Read as `menu-card` on the home page.
+
+Kept from an earlier run: the 2026-11-16 recapture did not find this component, so these readings may not match the current page or script.
 
 **Values (default).** size 200 x 60; padding 20px 16px; background transparent; wrapper div.NavDesktopDropdown_Items__MGAQs: shadow rgba(0, 0, 0, 0.08) 0px 2px 10px 0px; text norms 14/20 500, #000000 `color.ink.900`; transition background-color 0.3s ease, color 0.3s ease.
 
@@ -126,21 +130,21 @@ The header "Log in" link; measured never followed. Read as `nav-login` on the ho
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 71 x 64; padding 0px 16px; background transparent; text norms 14/20 500, #000000 `color.ink.900`; transition background-color 0.3s ease, color 0.3s ease |
+| default (same: hover) | size 71 x 64; padding 0px 16px; background transparent; text norms 14/20 500, #000000 `color.ink.900`; transition background-color 0.3s ease, color 0.3s ease |
 | pressed | background #f7f7f7 `color.gray.100`; child paint a: size 71.0x64.0; background #f7f7f7 `color.gray.100` |
 
-![Log-in link default](components/crops/nav-login-default.png) ![Log-in link hover](components/crops/nav-login-hover.png) ![Log-in link focus-visible](components/crops/nav-login-focus-visible.png) ![Log-in link pressed](components/crops/nav-login-pressed.png)
+![Log-in link default](components/crops/nav-login-default.png) ![Log-in link hover](components/crops/nav-login-hover.png) ![Log-in link pressed](components/crops/nav-login-pressed.png)
 
 #### Nav CTA
 The "💥 Get 14 days free 💥" promo button; links to /walkthrough, measured never followed. Read as `nav-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 149 x 53; background transparent; text norms 16/16 500, #ffffff `color.paper.0` |
+| default (same: hover, pressed) | size 149 x 53; background transparent; text norms 16/16 500, #ffffff `color.paper.0` |
 
 Child layers that carry the look: span 149x40 background #0055ff `color.blue.500` border 1px solid #0055ff `color.blue.500` radius 9999px.
 
-![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
+![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
 
 ### Home
 
@@ -275,6 +279,8 @@ The public plan carousel, the price/pill card stack and the FAQ accordion.
 
 #### Section title
 The first section heading on the plans page (norms 24px). Read as `section-title` on the plans page.
+
+Kept from an earlier run: the 2026-11-16 recapture did not find this component, so these readings may not match the current page or script.
 
 **Values (default).** size 654 x 57.59; background transparent; text norms 24/28.8 400, #000000 `color.ink.900`.
 
@@ -487,6 +493,8 @@ A footer social icon link (Facebook). Read as `footer-social` on the home page.
 
 #### App-store badge
 An app-store badge link in the footer; never followed. Read as `app-badge` on the home page.
+
+Kept from an earlier run: the 2026-11-16 recapture did not find this component, so these readings may not match the current page or script.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|

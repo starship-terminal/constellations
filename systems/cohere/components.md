@@ -41,7 +41,7 @@ Screenshots are named `{page}-{theme}-{state}.png`; every public route paints th
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 18 components were given a real keyboard focus (a further 1 could not be driven: `footer-social`). 18 show a visible focus state: `banner-close` (1px auto #101010, offset 0px), `nav-item` (1px auto #101010, offset 1px), `nav-signin` (2px solid #4c6ee6 `color.blue.500`, offset 2px), `nav-cta` (visible change in boxShadow/borderTopColor), `hero-cta` (visible change in boxShadow), `cta-dark` (visible change in boxShadow/borderTopColor), `cta-light` (visible change in boxShadow), `callout-card` (1px auto #101010, offset 1px), `price-tab` (1px auto #101010, offset 0px), `price-tab-off` (1px auto #101010, offset 0px), `faq-item` (1px auto #101010, offset 0px), `north-cta` (visible change in boxShadow), `command-cta` (visible change in boxShadow), `signin-oauth` (1px solid #616161 `color.volcanic.700`, offset 4px), `signin-submit` (2px solid rgba(0, 0, 0, 0) offset 2px on button.mt-10.w-full (child layer)), `footer-link` (1px auto #101010, offset 1px), `footer-cta` (visible change in boxShadow), `m-menu-link` (1px auto #e59700, offset 0px).
+**Focus.** 18 components were given a real keyboard focus (a further 1 could not be driven: `footer-social`). 17 show a visible focus state: `banner-close` (1px auto #101010, offset 0px), `nav-item` (1px auto #101010, offset 1px), `nav-signin` (2px solid #4c6ee6 `color.blue.500`, offset 2px), `nav-cta` (visible change in boxShadow/borderTopColor), `hero-cta` (visible change in boxShadow), `cta-dark` (visible change in boxShadow/borderTopColor), `cta-light` (visible change in boxShadow), `callout-card` (1px auto #101010, offset 1px), `price-tab` (1px auto #101010, offset 0px), `price-tab-off` (1px auto #101010, offset 0px), `faq-item` (1px auto #101010, offset 0px), `north-cta` (visible change in boxShadow), `command-cta` (visible change in boxShadow), `signin-oauth` (1px solid #616161 `color.volcanic.700`, offset 4px), `footer-link` (1px auto #101010, offset 1px), `footer-cta` (visible change in boxShadow), `m-menu-link` (1px auto #e59700, offset 0px). The other 1 show no change a keyboard user can see: `signin-submit`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). On 12 of 18 measured controls pressed reads as the same painted step as hover; the rest differ — `nav-cta`, `hero-cta`, `cta-light`, `north-cta`, `command-cta`, `signin-oauth` (their rows show the diff). Nothing a real press would submit, navigate or write (the CTAs navigate onward, the sign-in OAuth and Log-in controls submit) was ever pressed.
 
@@ -391,9 +391,9 @@ A footer social icon (LinkedIn/X) — the img inside the social anchor. Read as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 24 x 24; background transparent; text Unica77 Cohere Web 16/24 400, #212121 `color.volcanic.900` |
+| default (same: hover, pressed) | size 24 x 24; background transparent; text Unica77 Cohere Web 16/24 400, #212121 `color.volcanic.900` |
 
-![Social link default](components/crops/footer-social-default.png) ![Social link hover](components/crops/footer-social-hover.png) ![Social link focus-visible](components/crops/footer-social-focus-visible.png) ![Social link pressed](components/crops/footer-social-pressed.png)
+![Social link default](components/crops/footer-social-default.png) ![Social link hover](components/crops/footer-social-hover.png) ![Social link pressed](components/crops/footer-social-pressed.png)
 
 #### Footer CTA
 The footer "Request a demo" ease-button-gradient pill; links to the contact form, never followed. Read as `footer-cta` on the home page.
