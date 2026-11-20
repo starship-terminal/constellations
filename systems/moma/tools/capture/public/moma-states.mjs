@@ -1,5 +1,6 @@
 // Second pass: membership marketing URL, menu, search, login button states,
-// element crops. Headed Chrome. Stops on a Cloudflare challenge.
+// element crops. Headed Chrome. Stops on a Cloudflare challenge. Writes raw/login-states.json
+// (raw/states.json is moma-membership.mjs's). Presses nothing that submits.
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -29,7 +30,8 @@ async function guard() {
   const text = await page.evaluate(() => (document.body.innerText || '').slice(0, 300));
   if (/just a moment|attention required|checking your browser/i.test(title)) {
     console.error('STOP Cloudflare', title);
-    process.exit(3);
+    await browser.close();
+    process.exit(3);   // nothing is written before the first guard passes, and the write is last
   }
   return { title, text: text.slice(0, 180) };
 }
@@ -54,10 +56,14 @@ await page.waitForTimeout(2000);
 await guard();
 await hideCookie();
 
+// Open the header's Membership menu only: a <button> that declares a popup or an expanded state.
+// The old lookup clicked the first button or link whose text matched /membership/, which could
+// be a link that navigates away.
 const memberHref = await page.evaluate(() => {
-  const btn = [...document.querySelectorAll('button, a')].find((el) => /membership/i.test((el.innerText || '').trim()) && el.getBoundingClientRect().width > 40);
+  const btn = [...document.querySelectorAll('button[aria-expanded], button[aria-haspopup]')]
+    .find((el) => /membership/i.test((el.innerText || el.getAttribute('aria-label') || '').trim()) && el.getBoundingClientRect().width > 40);
   if (btn) btn.click();
-  return btn ? (btn.getAttribute('href') || 'clicked-button') : null;
+  return btn ? 'menu-button' : null;
 });
 log('membership control', memberHref);
 await page.waitForTimeout(700);
@@ -74,8 +80,8 @@ const membershipPath = (menuLinks.find((l) => /member/i.test(l.href || '') && !/
 log('chosen membership', membershipPath);
 
 // search
+// Close the menu with Escape. A blind click at (10, 700) used to land on whatever sat there.
 await page.keyboard.press('Escape').catch(() => {});
-await page.mouse.click(10, 700);
 await page.waitForTimeout(300);
 const searchBtn = page.locator('button[aria-label*="Search" i], a[aria-label*="Search" i], button:has(svg)').filter({ hasText: '' });
 const opened = await page.evaluate(() => {
@@ -168,16 +174,11 @@ if (await cont.count()) {
   await crop('login-continue-focus-visible', focus.box);
 }
 
-// empty submit to see validation without creating an account
-if (await cont.count()) {
-  await cont.click();
-  await page.waitForTimeout(800);
-  const err = await page.evaluate(() => (document.body.innerText || '').slice(0, 400));
-  log('after empty continue', err.replace(/\s+/g, ' ').slice(0, 200));
-  await shot('login-light-empty-continue', 'https://www.moma.org/auth/login');
-}
+// The empty Continue submit is gone: pressing Continue submits the login form, which the
+// capture rules forbid even when empty. The validation state is not captured.
 
-fs.writeFileSync(path.join(READ, 'states.json'), JSON.stringify({
+// raw/states.json belongs to moma-membership.mjs; this pass writes its own file.
+fs.writeFileSync(path.join(READ, 'login-states.json'), JSON.stringify({
   membershipPath, menuLinks, searchField, loginStyles, capturedAt: new Date().toISOString(),
 }, null, 2));
 
