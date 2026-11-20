@@ -20,7 +20,8 @@ RAW = ROOT / "raw"
 sys.path.insert(0, str(HERE))
 
 F = json.loads((RAW / "foundations.json").read_text())
-C = json.loads((RAW / "components-computed.json").read_text())["components"]
+CJ = json.loads((RAW / "components-computed.json").read_text())
+C = CJ["components"]
 
 
 def need(v, what):
@@ -109,7 +110,7 @@ def shadow(value, source):
 
 DATE = F["captured"]
 SRC = "computed on https://copperx.io/ %s (raw/foundations.json)" % DATE
-CC = "computed on https://copperx.io/ %s (raw/components-computed.json" % DATE
+CC = "computed on https://copperx.io/ %s (raw/components-computed.json" % CJ["_meta"]["captured"]
 
 
 def cc(key, prop, state="default"):

@@ -17,11 +17,13 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 // Merge into the committed file, so a run that throws part-way keeps every earlier reading.
 // Components no spec measured this run are pruned only when the whole run finished.
 const earlier = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
+const today = new Date().toLocaleDateString('en-CA');
 const out = {
   _meta: {
     product: 'Copperx',
     source: 'https://copperx.io',
-    captured: new Date().toLocaleDateString('en-CA'),
+    // The file's date moves only when a run finishes; each component carries the date it was read (run).
+    captured: earlier._meta?.captured || today,
     route: 'public',
     note: 'Signed-out marketing only. Account dialog photographed and closed. No field filled, no consent clicked.',
   },
@@ -44,7 +46,7 @@ async function reset(page, cdp, nodeId) {
 async function states(page, cdp, key, locator, list) {
   const loc = locator.first();
   seen.add(key);
-  const rec = (out.components[key] = { states: {} });
+  const rec = (out.components[key] = { states: {}, run: today });
   if (!(await loc.count())) {
     rec.missing = true;
     log('  ! missing', key);
@@ -130,10 +132,10 @@ try {
   // Header
   if (await page.locator('header').count()) {
     const header = await styleOf(page.locator('header').first());
-    out.components.header = { states: { default: header } };
+    out.components.header = { states: { default: header }, run: today };
     log('  header', header.rect.h, header.style.backgroundColor);
   } else {
-    out.components.header = { missing: true, states: {} };
+    out.components.header = { missing: true, states: {}, run: today };
   }
   seen.add('header');
 
@@ -143,7 +145,10 @@ try {
   await open(page, BASE + '/credit-cards');
   await states(page, cdp, 'cards-title', page.locator('h1').first(), ['default']);
   finished = true;
+  out._meta.captured = today;
 } finally {
+  if (!finished) out._meta.unfinished = today;
+  else delete out._meta.unfinished;
   if (finished) for (const k of Object.keys(out.components)) if (!seen.has(k)) delete out.components[k];
   fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
   await browser.close();

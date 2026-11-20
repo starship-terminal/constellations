@@ -55,6 +55,9 @@ for key, title, desc in ORDER:
     lines.append("| State | Size | Fill | Text | Crop |")
     lines.append("|---|---|---|---|---|")
     for state, rec in states.items():
+        if rec.get("skipped"):
+            lines.append(f"| {state} |  |  |  | not captured: {cell(rec.get('via') or 'skipped')} |")
+            continue
         if rec.get("error"):
             lines.append(f"| {state} |  |  |  | not measured: {cell(rec['error'])} |")
             continue
