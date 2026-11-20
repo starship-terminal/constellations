@@ -13,12 +13,12 @@ The app is Next.js on Inter. Colour is a shadcn set of HSL custom properties on 
 | [tokens.json](tokens.json) | DTCG tokens. `core` holds type, space, radius and the measured literals. `light` holds the painted roles. `dark` holds the declared twins. |
 | [DESIGN.md](DESIGN.md) | Generated from the tokens and this README. |
 | [style-guide.html](style-guide.html) | Renders the tokens. Inter is the system fallback when the site font is not loaded. |
-| [components.md](components.md) | Measured controls. |
+| [components.md](components.md) | Measured controls, written by hand at capture time from [raw/components-computed.json](raw/components-computed.json). No builder writes it. |
 | [patterns.md](patterns.md) | How the public pages are built, and where they stop. |
 | [components/](components) | Reserved for crops. This capture's evidence is the page shots. |
 | [screenshots/](screenshots) | Quantised page shots, desktop and phone. |
 | [raw/](raw) | `components-computed.json`, `css-vars.json`. |
-| [tools/](tools) | Capture scripts and builders. |
+| [tools/](tools) | `build_tokens.py` and `build_style_guide.py` with their test, and the capture scripts that are kept: `capture/vars.mjs` and `capture/public/public.mjs`. |
 
 <!-- brief:start -->
 <!-- brief:end -->
@@ -172,8 +172,15 @@ PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node systems/l
 python3 systems/lummi/tools/capture/quantize.py ~/.design-systems/lummi/raw-shots
 python3 systems/lummi/tools/build_tokens.py
 python3 systems/lummi/tools/build_style_guide.py
+python3 -m unittest discover -s systems/lummi/tools
 ```
+
+`components.md` has no builder: it was written by hand from `raw/components-computed.json`. Refresh it by hand after a new component reading.
 
 ## What to distrust
 
 The dark set is declared, not seen. The yellow Pro word is the declared `--yellow` role, not a sampled glyph. Pressed states were forced with `CSS.forcePseudoState` and no button was clicked. Display size is viewport-relative (`9.6vw`) and will not match 141px at another width. `/pro` is a different page (DM Sans, Webflow) from the app chrome.
+
+- [components.md](components.md) was written by hand from the 2026-11-18 readings. A recapture does not refresh it.
+- The script that wrote [raw/components-computed.json](raw/components-computed.json) is not in this package. The `measure.mjs` that sat in `tools/capture/public/` was another product's script with only its URLs changed, and its output has a different shape from the committed file. It was deleted in the 2026-11 audit, with the builders copied from other products (`build_components_md.py` wrote ChatGPT's components and `build_components_md.public.py` Gauth's) and the unused signed-in, native and Electron routes. A refresh of the component readings needs a new measure script.
+- `core` values in [tools/build_tokens.py](tools/build_tokens.py) were typed in from the readings. [tools/test_build_tokens.py](tools/test_build_tokens.py) fails when a value labelled Measured is not in `raw/`.
