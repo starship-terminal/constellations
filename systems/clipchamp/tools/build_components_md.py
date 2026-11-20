@@ -18,6 +18,22 @@ ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
+
+# Three entries were read from the wrong element (README, What is not here). The raw readings stay as
+# measured; their entries here say what was read, so components.md does not describe an element the
+# capture never measured. A recapture that measures the right element replaces these.
+WRONG_ELEMENT = {
+    "content-block-dark": ("Dark band heading", "A heading's `_DarkBackground` text variant inside a dark band, read instead of the band: "
+                           "the element paints transparent, so the band's fill is only the pixel sample `core.sampled.surfaceDark` "
+                           "(README, What is not here)."),
+    "plan-head": ("Plan header icon", "The 52 x 24 icon (`_HeadIcon`) inside a plan header cell, read instead of the cell with the plan "
+                  "name and price (README, What is not here); the header row's fill is in the plan table's child layers."),
+    "feature-tooltip": ("Tooltip cell", "A plan value cell (`_CellTooltip`) read with its tooltip closed: the Fluent tooltip node inside it "
+                        "measured 0 x 0, so this capture has no open tooltip (README, What is not here)."),
+}
+for _k, (_title, _desc) in WRONG_ELEMENT.items():
+    if _k in C:
+        C[_k] = dict(C[_k], title=_title, desc=_desc)
 LAYOUT = {}
 T = json.load(open("tokens.json"))
 

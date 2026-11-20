@@ -209,12 +209,12 @@ A content slice (ContentBlock) — copy column beside media. Read as `content-bl
 
 ![Content block default](components/crops/content-block-default.png)
 
-#### Dark band
-A dark-background content section — the site's dark band inside the single light theme. Read as `content-block-dark` on the home page.
+#### Dark band heading
+A heading's `_DarkBackground` text variant inside a dark band, read instead of the band: the element paints transparent, so the band's fill is only the pixel sample `core.sampled.surfaceDark` (README, What is not here). Read as `content-block-dark` on the home page.
 
 **Values (default).** size 640 x 79.19; background transparent; text segoeVariableFont 36/39.6 700, #ffffff.
 
-![Dark band default](components/crops/content-block-dark-default.png)
+![Dark band heading default](components/crops/content-block-dark-default.png)
 
 #### Testimonial
 A customer quote block (QuoteWrapper) with the author line. Read as `quote` on the home page.
@@ -266,12 +266,12 @@ Child layers that carry the look: table 1280x625 border 1px solid #eaeafa shadow
 
 ![Plan table default](components/crops/plan-table-default.png)
 
-#### Plan header cell
-A plan header cell (HeaderCell/HeadIcon) carrying the plan name and price. Read as `plan-head` on the pricing page.
+#### Plan header icon
+The 52 x 24 icon (`_HeadIcon`) inside a plan header cell, read instead of the cell with the plan name and price (README, What is not here); the header row's fill is in the plan table's child layers. Read as `plan-head` on the pricing page.
 
 **Values (default).** size 52 x 24; padding 0px 20px 0px 8px; background transparent; text segoeVariableFont 16/20 500, #232330.
 
-![Plan header cell default](components/crops/plan-head-default.png)
+![Plan header icon default](components/crops/plan-head-default.png)
 
 #### Feature row head
 A feature name cell down the left of the comparison table (RowHeadCell). Read as `feature-row-head` on the pricing page.
@@ -288,7 +288,7 @@ A plan value cell in the table (Cell/CellStyle): check, value or dash. Read as `
 ![Feature cell default](components/crops/feature-cell-default.png)
 
 #### Tooltip cell
-A feature cell carrying a tooltip affordance (CellTooltip). Read as `feature-tooltip` on the pricing page.
+A plan value cell (`_CellTooltip`) read with its tooltip closed: the Fluent tooltip node inside it measured 0 x 0, so this capture has no open tooltip (README, What is not here). Read as `feature-tooltip` on the pricing page.
 
 **Values (default).** size 311.41 x 48; padding 8px 12px; border 1px solid #f2f2f8; background transparent; wrapper table.YLPCUG_Table: shadow rgba(60, 60, 72, 0.1) 0px 4px 24px 0px; text segoeVariableFont 16/20 500, #64647c `color.grey.40`; transition background 0.1s ease; icon 18 x 18, #64647c `color.grey.40`.
 
