@@ -7234,7 +7234,7 @@
       "id": "d0350",
       "parent": "dashboard-copy-link-feedback-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/2-course-dashboard",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 122.93403053283691,
         "height": 14.44444465637207,
@@ -7579,7 +7579,7 @@
       "id": "d0365",
       "parent": "dashboard-history-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/2-course-dashboard",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 122.93403053283691,
         "height": 14.44444465637207,
@@ -7947,7 +7947,7 @@
       "id": "d0381",
       "parent": "dashboard-info-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/2-course-dashboard",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 122.93403053283691,
         "height": 14.44444465637207,
@@ -38359,7 +38359,7 @@
       "id": "n0702",
       "parent": "reference-assignment-questions-light-desktop",
       "path": "https://edumation.metabase.com/reference/databases/2/tables/141/questions",
-      "control": "AssignmentsCreated 4 years ago by Conor McDonald",
+      "control": "AssignmentsCreated 4 years ago by [person omitted]",
       "location": {
         "bottom": 246.94812774658203,
         "height": 98.9570541381836,
@@ -38382,7 +38382,7 @@
       "id": "n0703",
       "parent": "reference-assignment-questions-light-desktop",
       "path": "https://edumation.metabase.com/reference/databases/2/tables/141/questions",
-      "control": "Assignment Type BreakdownCreated 4 years ago by Conor McDonald",
+      "control": "Assignment Type BreakdownCreated 4 years ago by [person omitted]",
       "location": {
         "bottom": 361.9034957885742,
         "height": 98.9570541381836,
@@ -38405,7 +38405,7 @@
       "id": "n0704",
       "parent": "reference-assignment-questions-light-desktop",
       "path": "https://edumation.metabase.com/reference/databases/2/tables/141/questions",
-      "control": "Course AssignmentsCreated 4 years ago by Conor McDonald",
+      "control": "Course AssignmentsCreated 4 years ago by [person omitted]",
       "location": {
         "bottom": 591.8142013549805,
         "height": 98.9570541381836,
@@ -38428,7 +38428,7 @@
       "id": "n0705",
       "parent": "reference-assignment-questions-light-desktop",
       "path": "https://edumation.metabase.com/reference/databases/2/tables/141/questions",
-      "control": "Assignment TypesCreated 4 years ago by Conor McDonald",
+      "control": "Assignment TypesCreated 4 years ago by [person omitted]",
       "location": {
         "bottom": 706.7695541381836,
         "height": 98.9570541381836,
@@ -38451,7 +38451,7 @@
       "id": "n0706",
       "parent": "reference-assignment-questions-light-desktop",
       "path": "https://edumation.metabase.com/reference/databases/2/tables/141/questions",
-      "control": "Assignment StatusCreated 4 years ago by Conor McDonald",
+      "control": "Assignment StatusCreated 4 years ago by [person omitted]",
       "location": {
         "bottom": 821.7249374389648,
         "height": 98.9570541381836,
@@ -38474,7 +38474,7 @@
       "id": "n0707",
       "parent": "reference-assignment-questions-light-desktop",
       "path": "https://edumation.metabase.com/reference/databases/2/tables/141/questions",
-      "control": "Assignment NameCreated 4 years ago by Conor McDonald",
+      "control": "Assignment NameCreated 4 years ago by [person omitted]",
       "location": {
         "bottom": 936.6802597045898,
         "height": 98.9570541381836,
@@ -39486,7 +39486,7 @@
       "id": "n0751",
       "parent": "report-37-score-distribution-light-desktop",
       "path": "https://edumation.metabase.com/question/37-student-score-distribution",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -40038,7 +40038,7 @@
       "id": "n0775",
       "parent": "report-filters-expanded-light-desktop",
       "path": "https://edumation.metabase.com/question/37-student-score-distribution",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -44293,7 +44293,7 @@
       "id": "n0960",
       "parent": "report-12-assignment-breakdown-light-desktop",
       "path": "https://edumation.metabase.com/question/12-assignment-type-breakdown",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -44868,7 +44868,7 @@
       "id": "n0985",
       "parent": "report-series-toggle-light-desktop",
       "path": "https://edumation.metabase.com/question/12-assignment-type-breakdown",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -48962,7 +48962,7 @@
       "id": "n1163",
       "parent": "report-10-average-scores-light-desktop",
       "path": "https://edumation.metabase.com/question/10-average-scores",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -49514,7 +49514,7 @@
       "id": "n1187",
       "parent": "report-share-menu-light-desktop",
       "path": "https://edumation.metabase.com/question/10-average-scores",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -50112,7 +50112,7 @@
       "id": "n1213",
       "parent": "report-info-light-desktop",
       "path": "https://edumation.metabase.com/question/10-average-scores",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -50756,7 +50756,7 @@
       "id": "n1241",
       "parent": "report-history-error-light-desktop",
       "path": "https://edumation.metabase.com/question/10-average-scores",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -51400,7 +51400,7 @@
       "id": "n1269",
       "parent": "report-relationships-light-desktop",
       "path": "https://edumation.metabase.com/question/10-average-scores",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -52044,7 +52044,7 @@
       "id": "n1297",
       "parent": "report-21-course-pass-rate-light-desktop",
       "path": "https://edumation.metabase.com/question/21-course-pass-rate",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -54781,7 +54781,7 @@
       "id": "n1416",
       "parent": "report-22-assignment-status-light-desktop",
       "path": "https://edumation.metabase.com/question/22-assignment-status",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -59703,7 +59703,7 @@
       "id": "n1630",
       "parent": "report-7-number-of-students-light-desktop",
       "path": "https://edumation.metabase.com/question/7-number-of-students",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -62578,7 +62578,7 @@
       "id": "n1755",
       "parent": "report-31-submission-breakdown-light-desktop",
       "path": "https://edumation.metabase.com/question/31-submission-breakdown",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -63521,7 +63521,7 @@
       "id": "n1796",
       "parent": "report-13-submitted-assignments-light-desktop",
       "path": "https://edumation.metabase.com/question/13-submitted-assignments",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 109.75215816497804,
         "height": 14.53201961517334,
@@ -63981,7 +63981,7 @@
       "id": "n1816",
       "parent": "assignment-dashboard-recapture-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/3-assignment-dashboard",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 123.89547634124756,
         "height": 14.53201961517334,
@@ -64441,7 +64441,7 @@
       "id": "n1836",
       "parent": "assignment-id-filter-recapture-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/3-assignment-dashboard",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 123.89547634124756,
         "height": 14.53201961517334,
@@ -64947,7 +64947,7 @@
       "id": "n1858",
       "parent": "assignment-id-filter-filled-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/3-assignment-dashboard",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 123.89547634124756,
         "height": 14.53201961517334,
@@ -65453,7 +65453,7 @@
       "id": "n1880",
       "parent": "assignment-dashboard-menu-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/3-assignment-dashboard",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 123.89547634124756,
         "height": 14.53201961517334,
@@ -65982,7 +65982,7 @@
       "id": "n1903",
       "parent": "assignment-auto-refresh-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/3-assignment-dashboard",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 123.89547634124756,
         "height": 14.53201961517334,
@@ -66603,7 +66603,7 @@
       "id": "n1930",
       "parent": "overview-dashboard-recapture-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/1-overview",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 123.89547634124756,
         "height": 14.53201961517334,
@@ -67017,7 +67017,7 @@
       "id": "n1948",
       "parent": "metabot-unavailable-light-desktop",
       "path": "https://edumation.metabase.com/dashboard/1-overview",
-      "control": "Edited 7 months ago by Luis Paolini",
+      "control": "Edited 7 months ago by [person omitted]",
       "location": {
         "bottom": 123.89547634124756,
         "height": 14.53201961517334,
