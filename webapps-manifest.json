@@ -4953,9 +4953,9 @@
       "description": "In-App Subscriptions Made Easy",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://app.revenuecat.com/login asked for email, then showed a password field. Password not submitted.",
+      "notes": "Email probe: https://app.revenuecat.com/login asked for email, then showed a password field. Password not submitted. Public walk 2026-11-21: the header has Why RevenueCat, Solutions, Developers, and Resources menus, plus Pricing, Log in, Contact sales, and Sign up. Menus open feature, docs, blog, and story pages. Log in and Sign up stop at app.revenuecat.com. The phone Menu opens the same destinations. Docs have a search dialog and a light/dark toggle. The cookie banner was hidden, not clicked. No email was typed. No form was submitted. Public package in PR 1560 at 00066ee189d6. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
