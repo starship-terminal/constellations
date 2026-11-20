@@ -253,7 +253,7 @@ def emit(root, name, leaf):
                 path += "." + key
                 break
         else:
-            raise ValueError(f"{'.'.join(tuple(gprefix) + tuple(parts))}: no free key to hold the leaf beside its group")
+            raise ValueError(f"{name}: no free key to hold the leaf beside its group {path}")
     else:
         if last in node:
             raise ValueError(f"duplicate token path {path}")

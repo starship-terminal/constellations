@@ -36,6 +36,15 @@ class ComponentTokensTest(unittest.TestCase):
     def test_field_sits_on_the_declared_input_fill(self):
         self.assertEqual(bct.SPEC["light"]["background"]["field"]["value"], "{color.input.background.default}")
 
+    def test_emit_collision_raises_value_error(self):
+        root = {}
+        bct.emit(root, "--zz-a", {"var": "--zz-a", "type": "color"})
+        bct.emit(root, "--zz-a-b", {"var": "--zz-a-b", "type": "color"})
+        for k in ("base", "self"):
+            root["zz"]["a"][k] = {"value": "#000000", "type": "color"}
+        with self.assertRaises(ValueError):
+            bct.emit(root, "--zz-a", {"var": "--zz-a", "type": "color"})
+
     def test_no_fontsize_type(self):
         self.assertNotIn("fontSize", {leaf["type"] for leaf in leaves(bct.SPEC)})
 
