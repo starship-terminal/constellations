@@ -126,5 +126,6 @@ document.getElementById("theme").addEventListener("click", () => {{
 </body>
 </html>
 """
-(HERE / "style-guide.html").write_text(html)
-print("wrote", HERE / "style-guide.html")
+if __name__ == "__main__":
+    (HERE / "style-guide.html").write_text(html)
+    print("wrote", HERE / "style-guide.html")

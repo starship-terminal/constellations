@@ -335,9 +335,13 @@ W()
 
 # ------------------------------------------------ checklist coverage
 def states_of(*names):
+    """The states captured across these entries. A failed or skipped focus is the element at rest, so
+    it is not a captured state here either (D4, as in the entry tables)."""
     seen = []
     for n in names:
-        for s in C.get(n, {}).get("states", {}):
+        for s, v in C.get(n, {}).get("states", {}).items():
+            if focus_not_captured(v):
+                continue
             if s not in seen:
                 seen.append(s)
     return ", ".join(seen) if seen else "-"

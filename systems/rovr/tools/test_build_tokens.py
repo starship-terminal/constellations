@@ -40,6 +40,13 @@ class TokensTest(unittest.TestCase):
         html = (TOKENS.parent / "style-guide.html").read_text()
         self.assertNotRegex(html, r":\s*-?\d+-\d+px;")
 
+    def test_css_value_keeps_decimals_and_dashes_aliases(self):
+        import build_style_guide
+        for raw in ("28.8px", "0.8px", "-0.19px"):
+            self.assertEqual(build_style_guide.css_value({"$type": "dimension", "$value": raw}), raw)
+        self.assertEqual(build_style_guide.css_value({"$type": "color", "$value": "{color.brand}"}), "var(--color-brand)")
+        self.assertEqual(build_style_guide.css_value({"$type": "dimension", "$value": "{space.1.5}"}), "var(--space-1-5)")
+
 
 if __name__ == "__main__":
     unittest.main()

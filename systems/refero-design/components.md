@@ -47,7 +47,7 @@ The 19 components of the library's checklist ([docs/DESIGN-SYSTEM.md](../../docs
 | Component | Entries | States captured |
 |---|---|---|
 | Button | [Plan CTA button](#plan-cta-button), [Explore MCP button](#explore-mcp-button), [Copy button](#copy-button) | default, hover, focus-visible, pressed |
-| Icon button | [Promo card Close button](#promo-card-close-button), [Coach close X](#coach-close-x) | default, hover, focus-visible, pressed |
+| Icon button | [Promo card Close button](#promo-card-close-button), [Coach close X](#coach-close-x) | default, hover, pressed |
 | Link | not captured: the rail's nav links and the promo's Explore MCP were measured inside their parents, not as standalone entries | - |
 | Text field | [Research box](#research-box), [Research prompt field](#research-prompt-field), [Search field](#search-field), [Search box (results page)](#search-box-results-page) | default, focus-visible, focused, filled |
 | Text area | [Research box, field active](#research-box-field-active), [Research box (mobile)](#research-box-mobile) | focused, filled, default |
