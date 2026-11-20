@@ -5718,9 +5718,9 @@
       "description": "Coffee Company",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.starbucks.com/account/signin shows email and password. Password not submitted.",
+      "notes": "Email probe: https://www.starbucks.com/account/signin shows email and password. Password not submitted. Public walk 2026-11-21: header opens Menu, Rewards, Gift cards, the shop, Find a cafe, Sign in, and Join now. Menu categories open product grids and a product page with size, Customize, and Add to Order. Gift cards open a balance dialog and an empty eGift form. Sign in and Join now redirect to Auth0 walls and those branches stopped. Phone Open menu opens the same links. Store locator was mapped and not screenshotted. No email was typed. No form was submitted. Signed-in account was not captured. New public package in PR 1583 at 3c6d7a948e8b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 17
     },
     {
