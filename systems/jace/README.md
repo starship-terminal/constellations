@@ -197,3 +197,7 @@ node tools/capture/public/build-measurements.mjs
 ```
 
 From the repo root, `make brief && make design-md && make grade && make check` regenerates the Brief, DESIGN.md and Health. Capture date is 2026-11-18. Playwright lives at `~/.design-systems/pw/node_modules/playwright/index.mjs`. Scratch stays in `~/.design-systems/jace/` and is not committed.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

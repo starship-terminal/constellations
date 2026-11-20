@@ -160,7 +160,7 @@ for (const { k, mob } of runs) {
       hasTouch: mob,
       locale: 'en-US',
     });
-    await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+    // no navigator.webdriver mask: removed in the 2026-11 audit (D7), not run since
     const p = await ctx.newPage();
     log(name);
     const S = new Shooter(p, name, vw, vh, dpr);

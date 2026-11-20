@@ -25,7 +25,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, declineConsent, patch, setAppTheme, chromium, UA, UA_MOBILE, BASE, APP } from './lib.mjs';
+import { closePromo, clearChallenge, hideConsent, patch, setAppTheme, chromium, UA, UA_MOBILE, BASE, APP } from './lib.mjs';
 
 // Full-colour shots are working files, never committed: by default they go outside the repository,
 // to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
@@ -130,7 +130,7 @@ const desktop = {
   home: { url: BASE + '/', wait: 8000, run: async (p, S) => {
     // The consent banner is itself a component: shot before any dismissal.
     await S.raw('consent');
-    await declineConsent(p);
+    await hideConsent(p);
     await S.view('default');
     await step('menu-solutions', () => navMenu(p, S, 'Solutions'));
     await step('menu-resources', () => navMenu(p, S, 'Resources'));
@@ -188,7 +188,7 @@ const desktop = {
   privacy: { url: BASE + '/privacy', wait: 7000, run: BOTH },
   'app-login': { url: APP + '/login', wait: 7000, run: async (p, S, ctx) => {
     await S.raw('consent');
-    await declineConsent(p);
+    await hideConsent(p);
     await S.view('default');
     await step('email-open', async () => {
       // The button's own press reveals the email field — a local state
@@ -225,7 +225,7 @@ async function darkPass(p, name, vw, vh, dpr, url, shots = ['default']) {
 const mobile = {
   home: { url: BASE + '/', wait: 8000, run: async (p, S) => {
     await S.raw('consent');
-    await declineConsent(p);
+    await hideConsent(p);
     await S.view('default');
     await step('drawer', async () => {
       // The "Toggle menu" button opens the phone's nav sheet — a local UI
@@ -244,7 +244,7 @@ const mobile = {
   pricing: { url: BASE + '/pricing', wait: 7000, run: BOTH },
   'tool-contrast': { url: BASE + '/tools/color-contrast-checker', wait: 7000, run: BOTH },
   'app-login': { url: APP + '/login', wait: 7000, run: async (p, S) => {
-    await declineConsent(p);
+    await hideConsent(p);
     await S.view('default');
   } },
 };

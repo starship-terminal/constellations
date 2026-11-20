@@ -154,3 +154,7 @@ python3 tools/build_component_tokens.py && python3 tools/build_tokens.py
 node tools/capture/public/build-measurements.mjs
 python3 tools/build_components_md.py && python3 tools/build_style_guide.py
 ```
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.
