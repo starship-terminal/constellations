@@ -32,6 +32,10 @@ import { BASE, launch, open, closePromo, styleOf, crop, centre, markFixed, RAW }
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const LAYOUT_OUT = path.join(RAW, 'layout.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
+// Older runs saved the camelCase page keys; map them to the URLS keys PAGES now uses, so the
+// stale-entry cleanup (done.has(c.run)) still covers readings an older run wrote.
+const OLD_RUN = { getDemo: 'get-demo', docsOverview: 'docs-overview', docsApi: 'docs-api', docsDark: 'docs-dark' };
+for (const c of Object.values(out.components || {})) if (OLD_RUN[c.run]) c.run = OLD_RUN[c.run];
 const layout = fs.existsSync(LAYOUT_OUT) ? JSON.parse(fs.readFileSync(LAYOUT_OUT, 'utf8')) : {};
 out._meta ??= {};
 out.components ??= {};
@@ -308,6 +312,9 @@ async function shell() {
         return cands.sort((a, b) => a.innerText.length - b.innerText.length)[0] || null;
       });
       if (menu) await S('nav-submenu', q('[data-m="submenu"]'), ['default'], { group: g, title: 'Nav submenu', desc: 'The dropdown that opens under a nav section on hover (Developers: Documentation, Tools, Changelog; Company: Team, Research, Security). Shown in its hover-open state.', sel: 'the open ContentSubMenu' }, { noScroll: true, noReset: true, via: 'hover over the nav item' });
+      // S() resets the pointer when it returns, which closes the hover menu: reopen it
+      await q('[data-m="navdev"]').hover({ timeout: 4000 }).catch(() => {});
+      await page.waitForTimeout(1000);
       if (await tagEl('sublink', 'documentation|changelog|^blog$', '[data-m="submenu"]'))
         await S('nav-sub-link', q('[data-m="sublink"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Submenu link', desc: 'A row inside the open nav dropdown. Measured, never followed.', sel: 'a link inside the submenu' }, { noScroll: true, noReset: true });
       await page.mouse.move(720, 500);
