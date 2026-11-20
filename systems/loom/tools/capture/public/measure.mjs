@@ -4,21 +4,25 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, SHARE, launch, open, styleOf, crop, centre, RAW, hideConsent } from './lib.mjs';
+import { datePrior } from '../merge-dates.mjs';
 
 fs.mkdirSync(RAW, { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
 // Start from the committed readings: a run that fails part-way keeps every
 // component it did not reach, and a state that errors keeps its prior reading.
+// _meta.captured is this run's date; every state carries its own `read` date, so
+// a reading kept from an earlier run keeps the date it was taken (merge-dates.mjs).
 const prior = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : null;
+const RUN = new Date().toLocaleDateString('en-CA');
 const out = {
   _meta: {
     product: 'Loom',
-    captured: new Date().toLocaleDateString('en-CA'), // the local date of the run
+    captured: RUN, // the local date of the latest run; per-state dates are under states.*.read
     route: 'public-web',
     theme: 'light',
     note: 'Signed-out marketing, pricing, login wall, and one public share page. SSO, signup Continue, checkout and recording were not pressed.',
   },
-  components: (prior && prior.components) || {},
+  components: datePrior((prior && prior.components) || {}, prior && prior._meta && prior._meta.captured),
 };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
@@ -71,7 +75,7 @@ async function record(key, state, loc, meta, via) {
     const s = await styleOf(loc);
     let file;
     try { file = await crop(page, loc, `${key}-${state}`); } catch (e) { s.cropError = String(e.message).slice(0, 140); }
-    c.states[state] = { ...s, crop: file, via };
+    c.states[state] = { ...s, crop: file, via, read: RUN };
     // A state read now supersedes an earlier run's "not captured" marker for it.
     if (c.notCaptured && c.notCaptured[state]) {
       delete c.notCaptured[state];
@@ -81,7 +85,8 @@ async function record(key, state, loc, meta, via) {
   } catch (e) {
     const msg = String(e.message).slice(0, 180);
     const old = c.states[state];
-    c.states[state] = old && !old.error ? { ...old, recaptureError: msg } : { error: msg, via };
+    // A kept reading keeps its own read date; the failed attempt is dated apart.
+    c.states[state] = old && !old.error ? { ...old, recaptureError: msg, recaptureRun: RUN } : { error: msg, via, read: RUN };
     log(' !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -90,7 +95,7 @@ async function states(key, loc, list, meta) {
   const target = loc.filter({ visible: true }).first();
   if (!(await target.count())) {
     log(' ! missing', key);
-    if (out.components[key] && !out.components[key].missing) out.components[key].recaptureMissed = new Date().toLocaleDateString('en-CA');
+    if (out.components[key] && !out.components[key].missing) out.components[key].recaptureMissed = RUN;
     else out.components[key] = { missing: true, ...meta, url: current, states: {} };
     return;
   }

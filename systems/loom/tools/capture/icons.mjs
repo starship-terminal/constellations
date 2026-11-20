@@ -2,6 +2,7 @@
 import crypto from 'crypto';
 import fs from 'fs';
 import { chromium, UA, BASE, hideConsent } from './public/lib.mjs';
+import { replaceSet } from './replace-set.mjs';
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -80,7 +81,6 @@ if (failed.length || !seen.size) {
   console.error(`not replacing icons/: ${failed.length ? 'failed pages: ' + failed.join(', ') : 'no icons collected'}`);
   process.exit(1);
 }
-for (const f of fs.readdirSync(OUT)) if (f.endsWith('.svg')) fs.unlinkSync(OUT + f);
-for (const [name, markup] of files) fs.writeFileSync(OUT + name, markup);
-fs.writeFileSync(OUT + 'INDEX.tsv', index.join('\n') + '\n');
+// Written to a scratch folder first; icons/ changes only once every file is written.
+replaceSet(OUT, files, index.join('\n') + '\n');
 console.log('icons', seen.size);
