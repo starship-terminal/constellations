@@ -465,9 +465,9 @@ The Talk to sales submit. Measured, never pressed. Read as `form-submit` on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 414 x 40; padding 0px 12px; radius 12px; background #000000 `brand.900`; text Inter Variable 14/20 500, #ffffff `brand.white`; transition background-color 0.15s ease |
+| default (same: hover, pressed) | size 414 x 40; padding 0px 12px; radius 12px; background #000000 `brand.900`; text Inter Variable 14/20 500, #ffffff `brand.white`; transition background-color 0.15s ease |
 
-![Submit button default](components/crops/form-submit-default.png) ![Submit button hover](components/crops/form-submit-hover.png) ![Submit button focus-visible](components/crops/form-submit-focus-visible.png) ![Submit button pressed](components/crops/form-submit-pressed.png)
+![Submit button default](components/crops/form-submit-default.png) ![Submit button hover](components/crops/form-submit-hover.png) ![Submit button pressed](components/crops/form-submit-pressed.png)
 
 ### Footer
 

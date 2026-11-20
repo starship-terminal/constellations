@@ -171,9 +171,9 @@ A hero action. Measured, never followed. Read as `hero-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 167.81 x 64; padding 16px 32px; border 1px solid transparent; radius 100px; background #ffffff `white`; text TWK Lausanne 20/30 400, #0d0d0d `black.1000`; transition color 0.3s ease, border 0.3s ease |
+| default (same: hover, pressed) | size 167.81 x 64; padding 16px 32px; border 1px solid transparent; radius 100px; background #ffffff `white`; text TWK Lausanne 20/30 400, #0d0d0d `black.1000`; transition color 0.3s ease, border 0.3s ease |
 
-![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
+![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
 #### Caps label
 A small-caps eyebrow label. Read as `caps-label` on the home page.
