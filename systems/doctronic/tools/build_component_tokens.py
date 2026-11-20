@@ -35,10 +35,9 @@ RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
 RES = V["resolved"]
 RULES = V["theme"]
-C = {}
-_cp = RAW / "components-computed.json"
-if _cp.exists():
-    C = json.loads(_cp.read_text()).get("components", {})
+# The component tokens are read from the measurements; a missing file stops the build instead of
+# silently writing a token tree without them.
+C = json.loads((RAW / "components-computed.json").read_text())["components"]
 
 SPEC = {"_about": (
     "The token tree build_tokens.py turns into tokens.json. doctronic.ai's "
@@ -288,14 +287,42 @@ if track:
 
 # -------------------------------------------------------------------- shadows
 
-SH = re.compile(r"(rgba?\([\d.,\s]+\)|#[0-9a-fA-F]{3,8})\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?( inset)?")
+def split_top(s):
+    """Split a computed list on its top-level commas (not the ones inside rgb(...))."""
+    out, depth, cur = [], 0, ""
+    for ch in s:
+        depth += (ch == "(") - (ch == ")")
+        if ch == "," and depth == 0:
+            out.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    return out + [cur.strip()] if cur.strip() else out
+
+
+def shadow_colour(c):
+    """rgb()/rgba() -> #rrggbb or rgba(r, g, b, a), the form the colour tokens use."""
+    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+))?\s*\)", c.strip())
+    if not m:
+        raise ValueError(f"shadow colour {c!r} is not rgb()/rgba()")
+    r, g, b, a = m.groups()
+    return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a is None or float(a) == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, float(a))
 
 
 def parse_shadow(v):
+    """A resolved box-shadow -> DTCG layers. Paren-aware, keeps `inset` wherever it sits, and
+    raises on a layer it cannot read instead of dropping it."""
     layers = []
-    for a, x, y, b, sp, i in SH.findall(str(v)):
-        layers.append({"color": a, "offsetX": x + "px", "offsetY": y + "px",
-                       "blur": b + "px", "spread": (sp or "0") + "px", "inset": bool(i)})
+    for part in split_top(str(v)):
+        inset = bool(re.search(r"(^|\s)inset(\s|$)", part))
+        rest = re.sub(r"(^|\s)inset(\s|$)", " ", part).strip()
+        m = re.search(r"rgba?\([^)]*\)", rest)
+        nums = (rest[:m.start()] + " " + rest[m.end():]).split() if m else []
+        if not m or not 2 <= len(nums) <= 4 or not all(re.fullmatch(r"-?[\d.]+(px)?", n) for n in nums):
+            raise ValueError(f"shadow layer did not parse: {part!r}")
+        nums = [n if n.endswith("px") else n + "px" for n in nums] + ["0px"] * (4 - len(nums))
+        layers.append({"color": shadow_colour(m.group(0)), "offsetX": nums[0], "offsetY": nums[1],
+                       "blur": nums[2], "spread": nums[3], "inset": inset})
     return layers or None
 
 
@@ -417,6 +444,14 @@ def ancestor_node(comp, state, match):
     return None
 
 
+def is_node(comp, state, match):
+    """Whether the component's own element is the node `match` names ("form.inputCard":
+    tag form, a class containing inputCard)."""
+    v = C.get(comp, {}).get("states", {}).get(state, {})
+    tag, _, cls = match.partition(".")
+    return v.get("tag") == tag and any(cls in c for c in (v.get("classes") or "").split())
+
+
 def layer_prop(layer, prop):
     """A component prop read off a paint/ancestor record: width/height come
     from its "WxH" size, a border-radius prop from its radius."""
@@ -445,9 +480,34 @@ for key, cname, state, prop, desc, layer in [
     ("sidebar.width", "chat-sidebar-open", "default", "width", "The expanded chat rail's width.", None),
     ("sidebar-collapsed.width", "chat-sidebar", "default", "width", "The collapsed rail's width.", None),
     ("dialog.radius", "signin-dialog", "default", "borderTopLeftRadius", "The sign-in dialog's radius.", ("ancestor", "div.modal")),
-    ("dialog.width", "signin-dialog", "default", "width", "The sign-in dialog's width.", None),
+    ("dialog.width", "signin-dialog", "default", "width", "The sign-in dialog's width.", "section"),
     ("header.height", "header", "default", "height", "The measured top-bar height (the declared --header-height is 72px).", None),
 ]:
+    if layer == "section":
+        # The committed signin-dialog reading is the dialog's transparent inner section (the
+        # selector's DOM-order .or() fallback), not the painted div.modal; its width says so. A
+        # recapture that reads the modal itself is an ordinary reading.
+        if have(cname, state, prop) and C[cname]["states"][state].get("tag") != "section":
+            comp.setdefault(key.split(".")[0], {})[key.split(".")[1]] = {
+                "type": "dimension", "value": st(cname, state)[prop],
+                "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)", "description": desc}
+        elif have(cname, state, prop):
+            node = comp.setdefault(key.split(".")[0], {})
+            node[key.split(".")[1]] = {"type": "dimension", "value": st(cname, state)[prop],
+                                       "source": f"computed {prop} of {cname} {state} (raw/components-computed.json); read from the dialog's transparent inner section, not the painted div.modal: read from the wrong element, recapture needed",
+                                       "description": desc}
+        continue
+    if layer and is_node(cname, state, layer[1]) and have(cname, state, prop):
+        # The selected element is itself the painted node (a recapture with the corrected
+        # selector): read its own computed style.
+        node = comp
+        parts = key.split(".")
+        for p in parts[:-1]:
+            node = node.setdefault(p, {})
+        node[parts[-1]] = {"type": "dimension", "value": st(cname, state)[prop],
+                           "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
+                           "description": desc}
+        continue
     if layer:
         kind, match = layer
         lay = paint_node(cname, state, match) if kind == "paint" else ancestor_node(cname, state, match)
