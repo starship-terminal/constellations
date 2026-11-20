@@ -504,8 +504,8 @@
     },
     {
       "referenceId": "systems:acnestudios",
-      "media": 176,
-      "assignedMedia": 71
+      "media": 173,
+      "assignedMedia": 70
     },
     {
       "referenceId": "systems:acuityscheduling",
@@ -709,8 +709,8 @@
     },
     {
       "referenceId": "systems:care",
-      "media": 185,
-      "assignedMedia": 64
+      "media": 182,
+      "assignedMedia": 62
     },
     {
       "referenceId": "systems:cartesia",
@@ -10229,17 +10229,6 @@
     {
       "referenceId": "systems:acnestudios",
       "mediaId": "systems/acnestudios/components/crops/sort-option-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:filter-sorting",
-          "rule": "ux-filter-sort",
-          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:acnestudios",
-      "mediaId": "systems/acnestudios/components/crops/sort-option-focus-visible.png",
       "terms": [
         {
           "termId": "web-ux-patterns:filter-sorting",
@@ -57200,17 +57189,6 @@
     },
     {
       "referenceId": "systems:care",
-      "mediaId": "systems/care/components/crops/category-card-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:care",
       "mediaId": "systems/care/components/crops/category-card-hover.png",
       "terms": [
         {
@@ -57714,17 +57692,6 @@
     {
       "referenceId": "systems:care",
       "mediaId": "systems/care/components/crops/service-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:care",
-      "mediaId": "systems/care/components/crops/service-card-focus-visible.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",

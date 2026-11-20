@@ -12,7 +12,7 @@ The reason Acne is worth a capture at all: it is one of the most disciplined e-c
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components (the header rail, the buttons and fields, the size grid, the 360px drawers, the mega-menu, the product tile, the footer) with the real values. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (57, 145 states) written in tokens with crops of the real site, the shared values (hover, focus, motion, layout), and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine on each surface: the shell, the hero, the PLP, the PDP, the drawers, the footer, the sign-in gate and the 390 layout. |
-| [components/crops/](components/crops) | 145 element screenshots, `{component}-{state}.png`, at the capture scale — 2x on mobile, and large crops are halved by quantize. |
+| [components/crops/](components/crops) | 142 element screenshots, `{component}-{state}.png`, at the capture scale — 2x on mobile, and large crops are halved by quantize. |
 | [screenshots/](screenshots) | 31 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x, `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages. |
 | [raw/](raw) | The unprocessed readings: every custom property the pages declare with font faces (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the token tree the builder reads (`component-tokens.json`); the measurement run logs. The full-resolution captures the quantized [screenshots/](screenshots) came from stay outside the repo, at `~/.design-systems/acnestudios/raw-full/` with a `.capture.json` provenance record per shot. |
 | [tools/](tools) | The builders and the capture kit. See Rebuild. |
@@ -50,7 +50,7 @@ Fonts: `core.font.family.sans` is Helvetica Now Text, then 3 fallbacks; `core.fo
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 145 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 142 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

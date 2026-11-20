@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the token in [tokens.json](tokens.json) whose value is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `Helvetica Now Text 12/20 400, #000000`, and is read from the first text node inside the component.
 - The first state of each entry lists every value; later states list only what changed. A state identical to the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component in [components/crops/](components/crops) (145 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component in [components/crops/](components/crops) (142 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -49,7 +49,7 @@ Values that apply across entries, tallied from the measurement file.
 
 **Hover.** Acne hovers with colour, never fills or shadows: text #0018a8 `text.link` to #051574 `text.linkHover` (8), text #000000 `text.primary` to #6b6b6b `text.muted` (6), no change on the element (6), #000000 `action.primary` to #0018a8 `action.accent` (3), text #000000 `text.primary` to #051574 `text.linkHover` (2), text #000000 `text.primary` to #5c5c5c `text.secondary` (1), #0018a8 `action.accent` to #051574 `action.accentHover` (1), border #f2f2f2 `border.hairline` to #000000 `border.default` (1). Black fills (LOAD MORE, CONTINUE, SHOW N ITEMS) flip to Acne blue; blue fills (ADD TO BAG) deepen to #051574 `action.accentHover`; blue links deepen the same way; black labels (nav, FILTER, Menu) grey to #6b6b6b `text.muted`.
 
-**Focus.** Of 24 elements given a real keyboard focus: no ring on the element (18), focus could not be driven (3), 1px solid #ffffff `text.onDark` offset -3px (3), 1px solid #000000 `border.default` offset -3px (1), 1px solid #051574 `text.linkHover` offset -3px (1), 1px solid #0018a8 `text.link` offset -3px (1). The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.
+**Focus.** Of 24 elements given a real keyboard focus: no ring on the element (18), 1px solid #ffffff `text.onDark` offset -3px (3), 1px solid #000000 `border.default` offset -3px (1), 1px solid #051574 `text.linkHover` offset -3px (1), 1px solid #0018a8 `text.link` offset -3px (1). Focus could not be captured on 3 states (not focusable, or focused without matching :focus-visible), left out of the tally: `gift-link`, `geo-selector`, `sort-option`. The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.
 
 **Motion.** 0.15s ease (1). The only transitions the stylesheet carries are the drawers' 150ms padding-bottom safe-area slide, the accordions' 200ms max-height reveal and a 500ms fade on campaign layers, none on the controls themselves.
 
@@ -169,11 +169,11 @@ Child layers: div::after 1440pxx810px shadow #000000 `action.primary` 0px 0px 0p
 
 <a id="gift-link"></a>`gift-link`, on home. A hero-foot link bar (WOMEN’S GIFT GUIDE / MEN’S GIFT GUIDE).
 
-<img src="components/crops/gift-link-default.png" alt="Gift guide bar, default" height="30"> <img src="components/crops/gift-link-hover.png" alt="Gift guide bar, hover" height="30"> <img src="components/crops/gift-link-focus-visible.png" alt="Gift guide bar, focus-visible" height="30"> <img src="components/crops/gift-link-pressed.png" alt="Gift guide bar, pressed" height="30"> 
+<img src="components/crops/gift-link-default.png" alt="Gift guide bar, default" height="30"> <img src="components/crops/gift-link-hover.png" alt="Gift guide bar, hover" height="30"> <img src="components/crops/gift-link-pressed.png" alt="Gift guide bar, pressed" height="30"> 
 
 | State | Values |
 |---|---|
-| default (same: focus-visible, pressed) | size 1440 x 30; padding 4px 9px; border 1px solid transparent; background transparent; text Helvetica Now Text 12/20 400, #ffffff `text.onDark` |
+| default (same: pressed) | size 1440 x 30; padding 4px 9px; border 1px solid transparent; background transparent; text Helvetica Now Text 12/20 400, #ffffff `text.onDark` |
 | hover | opacity 0 |
 
 ### Footer
@@ -247,11 +247,11 @@ The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call
 
 <a id="geo-selector"></a>`geo-selector`, on home. "SHIPPING TO SINGAPORE (ENGLISH)": the geo prompt serving the SG storefront. Hovered and focused only.
 
-<img src="components/crops/geo-selector-default.png" alt="Region selector, default" height="24"> <img src="components/crops/geo-selector-hover.png" alt="Region selector, hover" height="24"> <img src="components/crops/geo-selector-focus-visible.png" alt="Region selector, focus-visible" height="24"> <img src="components/crops/geo-selector-pressed.png" alt="Region selector, pressed" height="24"> 
+<img src="components/crops/geo-selector-default.png" alt="Region selector, default" height="24"> <img src="components/crops/geo-selector-hover.png" alt="Region selector, hover" height="24"> <img src="components/crops/geo-selector-pressed.png" alt="Region selector, pressed" height="24"> 
 
 | State | Values |
 |---|---|
-| default (same: focus-visible, pressed) | size 227.52 x 20; background transparent; text Helvetica Now Text 12/20 400, #0018a8 `text.link` |
+| default (same: pressed) | size 227.52 x 20; background transparent; text Helvetica Now Text 12/20 400, #0018a8 `text.link` |
 | hover | text Helvetica Now Text 12/20 400, #051574 `text.linkHover` |
 
 ### Category page (PLP)
@@ -557,11 +557,11 @@ The right-side drawers, each 360 wide on opaque white with a 45px head and a bla
 
 <a id="sort-option"></a>`sort-option`, on filter. A radio row in the filter rail; the picked sort gains a hairline box.
 
-<img src="components/crops/sort-option-default.png" alt="Sort option, default" height="24"> <img src="components/crops/sort-option-hover.png" alt="Sort option, hover" height="24"> <img src="components/crops/sort-option-focus-visible.png" alt="Sort option, focus-visible" height="24"> <img src="components/crops/sort-option-pressed.png" alt="Sort option, pressed" height="24"> 
+<img src="components/crops/sort-option-default.png" alt="Sort option, default" height="24"> <img src="components/crops/sort-option-hover.png" alt="Sort option, hover" height="24"> <img src="components/crops/sort-option-pressed.png" alt="Sort option, pressed" height="24"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 320 x 20; background transparent; text Helvetica Now Text 12/20 400, #000000 `text.primary` |
+| default (same: hover, pressed) | size 320 x 20; background transparent; text Helvetica Now Text 12/20 400, #000000 `text.primary` |
 
 #### Show items button
 
