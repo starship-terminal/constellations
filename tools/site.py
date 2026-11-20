@@ -302,7 +302,7 @@ SETTINGS_BODY = """<h1>Settings</h1>
           }
           drop();
           notice(d.ok ? 'Moved the API key this browser had saved to the server. This browser no longer stores it.'
-            : d.existing ? 'Deleted the API key this browser had saved. The server already has its own saved key, so it kept that one.'
+            : d.existing ? 'Deleted the API key this browser had saved. The server already has, or had, its own saved key, so it kept its own setting.'
             : 'Deleted the API key this browser had saved. The server did not keep it (' +
               String(d.error || 'it did not say why').split(legacy.api_key).join('[redacted]') + '), so enter it again below.');
         });

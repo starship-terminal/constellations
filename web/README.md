@@ -51,8 +51,9 @@ lives in the browser:
 An older version stored the whole provider, key included, in the browser's
 `localStorage` under `ds-provider`. On the first page load after the update
 the app sends that key to the save route as a migration, which the server
-accepts only when it has no provider saved yet, so an old browser never
-replaces a newer key. The page deletes the browser copy once the server has
+accepts only into a store that has never held a provider (one saved and
+later removed counts), so an old browser never replaces a newer key and
+never brings back one the user removed. The page deletes the browser copy once the server has
 decided: it saved the key, kept its own, refused the body or failed the
 key's test. When the server does not answer, answers 5xx or answers with a
 page that is not JSON (a proxy's 502 while the API restarts), the browser

@@ -101,7 +101,14 @@ const SCHEMA = `CREATE TABLE IF NOT EXISTS provider (
   model TEXT NOT NULL,
   name TEXT NOT NULL DEFAULT '',
   api_key TEXT NOT NULL
-)`;
+);
+-- Set by the first save and kept by Remove: a one-time migration from a
+-- browser only fills a store that has never held a provider, so a browser
+-- that kept its old key after a lost reply cannot bring back a key the user
+-- has since removed.
+CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY);
+CREATE TRIGGER IF NOT EXISTS provider_saved AFTER INSERT ON provider
+BEGIN INSERT OR IGNORE INTO meta (k) VALUES ('saved'); END;`;
 
 const COLUMNS = "api, base_url, key_header, models_url, model, name, api_key";
 
@@ -200,7 +207,8 @@ export async function loadSaved(): Promise<SavedProvider | null> {
 
 /** How a save may treat a provider that is already saved:
     - "replace": always (a key the provider checked);
-    - "create": only when none is saved (a migration from a browser);
+    - "create": only when the store has never held a provider (a migration
+      from a browser; a provider saved and later removed still counts);
     - "same-key": only when none is saved or it holds this same key (a key
       the provider could not check must not replace a different one).
     Returns whether the row was written. One statement, so it is atomic. */
@@ -210,7 +218,7 @@ export async function saveProvider(cfg: SavedProvider, mode: "replace" | "create
     "api = excluded.api, base_url = excluded.base_url, key_header = excluded.key_header, models_url = excluded.models_url, model = excluded.model, name = excluded.name, api_key = excluded.api_key";
   const sql =
     mode === "create"
-      ? `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO NOTHING`
+      ? `INSERT INTO provider (id, ${COLUMNS}) SELECT ${placeholders} WHERE NOT EXISTS (SELECT 1 FROM meta WHERE k = 'saved') ON CONFLICT(id) DO NOTHING`
       : mode === "same-key"
         ? `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO UPDATE SET ${update} WHERE provider.api_key = excluded.api_key`
         : `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO UPDATE SET ${update}`;

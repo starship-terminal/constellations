@@ -115,7 +115,7 @@ async function migrateOnce(save: (body: Record<string, string | boolean>) => Pro
   drop();
   if (reply.ok) return "Moved the API key this browser had saved to the server. This browser no longer stores it.";
   if (reply.existing)
-    return "Deleted the API key this browser had saved. The server already has its own saved key, so it kept that one.";
+    return "Deleted the API key this browser had saved. The server already has, or had, its own saved key, so it kept its own setting.";
   const why = (reply.error || "it did not say why").split(key).join("[redacted]");
   return `Deleted the API key this browser had saved. The server did not keep it (${why}), so enter it again in Settings > Model provider.`;
 }

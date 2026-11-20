@@ -612,11 +612,21 @@ class ProviderKeyTest(TempConfig):
         self.assertEqual(self.models_calls(), [])
         self.chat.fail = False
         self.assertEqual(self.saved()["api_key"], KEY)
-        self.call("delete", "/api/provider")
+        # Into a fresh store a migration saves; it needs a key and a boolean flag.
+        self.config.joinpath("provider.db").unlink()
         h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
         self.assertTrue(h.json()["ok"])
         self.assertEqual(self.call("post", "/api/provider", {**GOOD, "migrate": "yes"}).status, 400)
         self.assert_no_key()
+
+    def test_a_migration_never_brings_back_a_key_the_user_removed(self):
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY, "migrate": True})
+        self.assertTrue(h.json()["ok"])
+        self.call("delete", "/api/provider")
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY, "migrate": True})
+        self.assertEqual((h.json()["ok"], h.json()["existing"]), (False, True))
+        self.assertIsNone(self.store.load())
+        self.assertTrue(self.call("post", "/api/provider", {**GOOD, "api_key": KEY2}).json()["ok"])
 
     def test_an_unchecked_key_never_replaces_a_working_one(self):
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
