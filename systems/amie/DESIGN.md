@@ -101,7 +101,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **`component.*` tokens are measured**, not site variables.
 - **No hamburger at 390px.** The mobile header collapses to the icon row — the `m-menu-*` entries are recorded missing.
 - **`hero-title` missed its selector** on this pass (the headline isn't an `h1`); visible in screenshots.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 
 ### Do and don't (from README.md)
 

@@ -31,7 +31,6 @@ import argparse
 import concurrent.futures
 import html as html_lib
 import json
-import os
 import re
 import sqlite3
 import sys
@@ -218,10 +217,7 @@ def fetch_page(url):
     return parsed
 
 
-def write_atomic(path, text):
-    tmp = path.with_name(path.name + ".tmp")
-    tmp.write_text(text)
-    os.replace(tmp, path)
+write_atomic = refero_dump.write_atomic
 
 
 def main():

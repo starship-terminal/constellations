@@ -24,11 +24,6 @@ const PROPS = [
   'opacity',
 ];
 
-function finder(kind) {
-  // kind is a short key the page script understands.
-  return kind;
-}
-
 async function pick(page, kind) {
   return page.evaluate((kind) => {
     const vis = (el) => {
@@ -152,26 +147,37 @@ async function crop(page, kind, name) {
   await page.screenshot({ path: path.join(CROPS, name + '.png'), clip });
 }
 
+// Forces a pseudo-class through the DevTools protocol: CSS.forcePseudoState exists only there, not
+// in the page (inside page.evaluate it is undefined, so a "pressed" reading was the resting style).
+// Returns a function that clears the forced state.
 async function force(page, kind, pseudo) {
-  await page.evaluate(({ kind, pseudo }) => {
-    const el = document.querySelector(`[data-ig-measure="${kind}"]`);
-    if (!el) return;
-    if (typeof CSS !== 'undefined' && CSS.forcePseudoState) {
-      CSS.forcePseudoState(el, pseudo);
-      if (el.parentElement) CSS.forcePseudoState(el.parentElement, pseudo);
-    }
-  }, { kind, pseudo });
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send('DOM.enable');
+  await cdp.send('CSS.enable');
+  const { root } = await cdp.send('DOM.getDocument', { depth: -1 });
+  const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: `[data-ig-measure="${kind}"]` });
+  if (!nodeId) { await cdp.detach(); return async () => {}; }
+  const states = [pseudo.replace(/^:/, ''), 'hover'];
+  await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: states });
+  return async () => { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {}); await cdp.detach().catch(() => {}); };
+}
+
+// Every state starts from rest: pointer in a corner, nothing focused.
+async function reset(page) {
+  await page.mouse.move(2, 2);
+  await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur());
 }
 
 const browser = await chromium.launch({ headless: true });
 const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
 await patch(ctx);
 const page = await ctx.newPage();
-const out = { product: 'instagram', captured: '2026-11-19', note: 'Signed-out controls. Hover is a real mouse move. Focus is element.focus(). Pressed is CSS.forcePseudoState and never fires the control. No field was filled.', components: {} };
+const out = { product: 'instagram', captured: new Date().toLocaleDateString('en-CA'), note: 'Signed-out controls. Hover is a real mouse move. Focus is element.focus(). Pressed is CSS.forcePseudoState through CDP and never fires the control. No field was filled.', components: {} };
 
 async function record(page, key, kind, { hover = false, focus = false, press = false, cropName } = {}) {
   const found = await pick(page, kind);
   if (!found) { console.log('  missing', key); return; }
+  await reset(page);
   if (hover) {
     const box = await page.evaluate((kind) => {
       const el = document.querySelector(`[data-ig-measure="${kind}"]`);
@@ -183,11 +189,12 @@ async function record(page, key, kind, { hover = false, focus = false, press = f
   if (focus) {
     await page.evaluate((kind) => document.querySelector(`[data-ig-measure="${kind}"]`).focus(), kind);
   }
-  if (press) await force(page, kind, ':active');
+  const unforce = press ? await force(page, kind, ':active') : null;
   await page.waitForTimeout(220);
   const data = await readMarked(page, kind);
   out.components[key] = data;
   if (cropName) await crop(page, kind, cropName);
+  if (unforce) await unforce();
   const p = data && data.paint;
   console.log(' ', key, p && p.backgroundColor, p && p.color, p && p.borderRadius, data && data.box && data.box.h);
 }

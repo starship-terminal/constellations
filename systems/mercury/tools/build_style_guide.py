@@ -120,6 +120,8 @@ tpl = (HERE / "tools" / "style-guide.template.html").read_text()
 html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
         .replace("/*TOKENS*/null", data))
 html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
-(HERE / "style-guide.html").write_text(html)
-print("style-guide.html:", len(html.encode()), "bytes;",
-      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")
+
+if __name__ == "__main__":
+    (HERE / "style-guide.html").write_text(html)
+    print("style-guide.html:", len(html.encode()), "bytes;",
+          " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")

@@ -3,9 +3,11 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@example\\.(com|org)$",
+   "@example\\.com$",
+   "@example\\.org$",
    "@fourmula\\.ai$",
-   "@fourmeta\\.(com|ai)$"
+   "@fourmeta\\.ai$",
+   "@fourmeta\\.com$"
   ]
  },
  "families": []

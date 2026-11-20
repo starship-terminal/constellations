@@ -56,12 +56,13 @@ await dump('atc', page.getByRole('button', { name: /add to cart|add to bag/i }).
 await dump('accordion', page.locator('button[aria-expanded], details, summary, [class*="accordion" i]').filter({ visible: true }));
 await dump('fit guide', page.locator('a, button').filter({ hasText: /fit guide/i }).filter({ visible: true }));
 await dump('perks', page.locator('[class*="shipping" i], [class*="perk" i], [class*="guarantee" i], [class*="benefit" i]').filter({ visible: true }));
-// size chip picked -> atc -> drawer contents
+// size chip picked -> drawer contents through the header cart button. Add to
+// Cart is never pressed (state change: recorded as a boundary).
 const chip = page.locator('button.btn-size:not(.disabled)').filter({ visible: true }).first();
 if (await chip.count()) await chip.click().catch(() => {});
 await closePromo(page);
-const atc = page.getByRole('button', { name: /add to cart|add to bag/i }).filter({ visible: true }).first();
-if (await atc.count()) { await atc.click().catch(() => {}); await page.waitForTimeout(3000); }
+const cartBtn = page.locator('button[aria-label*="cart" i], a[aria-label*="cart" i]').filter({ visible: true }).first();
+if (await cartBtn.count()) { await cartBtn.click().catch(() => {}); await page.waitForTimeout(3000); }
 await dump('cart drawer', page.locator('[class*="cart" i], [role="dialog"]').filter({ visible: true }));
 await dump('qty stepper', page.locator('button').filter({ hasText: /^[+\-−]$/ }).filter({ visible: true }));
 await dump('express buttons', page.locator('[class*="express" i], [class*="wallet" i], [data-shopify] , .shopify-payment-button').filter({ visible: true }));

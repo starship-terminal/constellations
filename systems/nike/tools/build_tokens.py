@@ -80,7 +80,8 @@ def typography(size, weight, line, family, name):
     }
 
 
-def main():
+def build():
+    """The token document, built in memory from raw/css-vars.json; main() writes it."""
     c = PDS["color"]
     core = {
         "font": {
@@ -205,7 +206,11 @@ def main():
             }
         ],
     }
-    (HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
+    return doc
+
+
+def main():
+    (HERE / "tokens.json").write_text(json.dumps(build(), indent=2) + "\n")
     print("wrote", HERE / "tokens.json")
 
 

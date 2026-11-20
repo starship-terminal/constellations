@@ -736,16 +736,18 @@
  "component": {
   "sign-in": {
    "backgroundColor": {
-    "value": "oklch(0.985 0 0)",
+    "var": "--accent-foreground",
     "type": "color",
     "source": "computed backgroundColor of nav-signin/default (raw/components-computed.json)",
-    "description": "The white Sign in button fill."
+    "description": "The white Sign in button fill.",
+    "computed": "oklch(0.985 0 0)"
    },
    "color": {
-    "value": "oklch(0.145 0 0)",
+    "var": "--background",
     "type": "color",
     "source": "computed color of nav-signin/default (raw/components-computed.json)",
-    "description": "Sign in label, black on white."
+    "description": "Sign in label, black on white.",
+    "computed": "oklch(0.145 0 0)"
    },
    "height": {
     "value": "48px",
@@ -762,7 +764,7 @@
   },
   "sign-in-hover": {
    "backgroundColor": {
-    "value": "#e5e5e5",
+    "var": "--color-neutral-200",
     "type": "color",
     "source": "computed backgroundColor of nav-signin/hover (raw/components-computed.json)",
     "description": "Sign in hover fill."
@@ -770,13 +772,13 @@
   },
   "plan-cta": {
    "backgroundColor": {
-    "value": "#ffffff",
+    "var": "--color-primary",
     "type": "color",
     "source": "computed backgroundColor of price-cta/default (raw/components-computed.json)",
     "description": "Get Pro fill, white pill."
    },
    "color": {
-    "value": "#000000",
+    "var": "--color-black",
     "type": "color",
     "source": "computed color of price-cta/default (raw/components-computed.json)",
     "description": "Get Pro label."
@@ -790,21 +792,22 @@
   },
   "email-cta": {
    "backgroundColor": {
-    "value": "oklab(0.579 -0.0558729 -0.243369 / 0.15)",
+    "value": "rgba(0, 110, 255, 0.15)",
     "type": "color",
     "source": "computed backgroundColor of login-email-btn/default (raw/components-computed.json)",
-    "description": "Continue with Email fill, the action blue."
+    "description": "Continue with Email fill, the action blue.",
+    "computed": "oklab(0.579 -0.0558729 -0.243369 / 0.15)"
    }
   },
   "oauth": {
    "backgroundColor": {
-    "value": "#ffffff",
+    "var": "--color-primary",
     "type": "color",
     "source": "computed backgroundColor of login-google/default (raw/components-computed.json)",
     "description": "Continue with Google fill."
    },
    "color": {
-    "value": "#000000",
+    "var": "--color-black",
     "type": "color",
     "source": "computed color of login-google/default (raw/components-computed.json)",
     "description": "OAuth label."
@@ -812,18 +815,20 @@
   },
   "nav-active": {
    "backgroundColor": {
-    "value": "oklch(0.269 0 0)",
+    "var": "--accent",
     "type": "color",
     "source": "computed backgroundColor of nav-home/default (raw/components-computed.json)",
-    "description": "Selected sidebar item fill."
+    "description": "Selected sidebar item fill.",
+    "computed": "oklch(0.269 0 0)"
    }
   },
   "heading": {
    "color": {
-    "value": "oklch(0.985 0 0)",
+    "var": "--accent-foreground",
     "type": "color",
     "source": "computed color of price-h1/default (raw/components-computed.json)",
-    "description": "Pricing heading colour."
+    "description": "Pricing heading colour.",
+    "computed": "oklch(0.985 0 0)"
    }
   },
   "sidebar": {
@@ -835,11 +840,18 @@
    }
   },
   "focus": {
-   "outline": {
-    "value": "#007aff",
+   "ring-width": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "computed focus-visible ring of nav-signin (box-shadow 2px spread; outline none)",
+    "description": "Keyboard focus ring width."
+   },
+   "ring": {
+    "value": "rgba(0, 0, 0, 0.1)",
     "type": "color",
-    "source": "computed outlineColor of nav-signin/focus-visible",
-    "description": "Keyboard focus outline."
+    "source": "computed focus-visible ring of nav-signin (box-shadow 2px spread; outline none)",
+    "description": "Keyboard focus ring.",
+    "computed": "oklab(0 0 0 / 0.1)"
    }
   }
  }

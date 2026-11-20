@@ -60,7 +60,7 @@ components:
     rounded: "8px"
     padding: "64px"
   nav:
-    height: "64px"
+    height: "72px"
 ---
 
 # JetBrains
@@ -128,7 +128,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the images. Home is labelled `light` in filenames because the kit names every shot that way. The dark values are the home campaign's declared roles, not a theme the visitor can switch. The pressed purple on light pages is derived, not measured. Hover on several pills did not change the computed fill. The signed-in account was not reached: Continue after the signup email hit reCAPTCHA.
+Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the images. Home is labelled `light` in filenames because the kit names every shot that way. The dark values are the home campaign's declared roles, not a theme the visitor can switch. The pressed purple on light pages (`#5646cc`) was entered by hand, not measured. So were the 18/24/48px type steps, the 500 and 700 weights, the 1.1 display line height, the 2px to 48px spacing steps, the 999px capsule radius, the 1px hairline and `light.text.primary` `#343434`: their sources say Reconstruction. Every other size is read from [raw/components-computed.json](raw/components-computed.json) or a declared custom property, and the dark set's sources say it resolved on `:root` because no dark pass ran. Hover on several pills did not change the computed fill. The signed-in account was not reached: Continue after the signup email hit reCAPTCHA.
 
 ### Do and don't (from README.md)
 

@@ -217,11 +217,15 @@ for key, comp, state, desc in [
                         "source": f"painted fill inside/under {comp} {state} (raw/components-computed.json)",
                         "description": desc}
 # Hover and on-dark washes.
-if have("nav-seller", "hover", "backgroundColor"):
-    v = norm_color(st("nav-seller", "hover")["backgroundColor"])
-    neutral["hover-wash"] = {"value": v, "type": "color",
-                             "source": "computed backgroundColor of nav-seller hover (raw/components-computed.json)",
-                             "description": "The light-grey nav hover wash."}
+# nav-seller paints no wash on hover (its hover backgroundColor reads
+# rgba(0, 0, 0, 0)); the light-grey wash appears only while it is pressed. A
+# transparent reading is never committed as a fill.
+if have("nav-seller", "pressed", "backgroundColor"):
+    v = norm_color(st("nav-seller", "pressed")["backgroundColor"])
+    if v != "transparent" and not re.search(r",\s*0\)$", v):
+        neutral["press-wash"] = {"value": v, "type": "color",
+                                 "source": "computed backgroundColor of nav-seller pressed (raw/components-computed.json)",
+                                 "description": "The light-grey nav wash, painted while a nav link is pressed (hover paints none)."}
 if have("popular-chip", "default", "backgroundColor"):
     v = norm_color(st("popular-chip", "default")["backgroundColor"])
     if v.startswith("rgba("):

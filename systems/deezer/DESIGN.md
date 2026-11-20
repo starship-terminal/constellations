@@ -589,3 +589,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 6. **Do treat focus as a border.** Fields draw a 2px `#ad47ff` border, not an outline ring. See [a-search](components/crops/a-search-focused.png).
 7. **Don't style the signed-in product from this package.** Everything behind account.deezer.com was never reached; the login/signup forms and the signed-out catalog shell are the evidence.
 8. **Don't fabricate playback.** Play, Mix, queue and volume were measured at rest; what playing does signed out is unverified.
+
+### Known gaps (from README.md)
+
+- `light.background.page` (`#ffffff`) is a screenshot sample: no measured element reports the page field behind the home hero. Its source says so.
+- `menu-popover`, `artist-avatar` and `menu-item` were not found by the 2026-11-13 re-run (`recaptureMissed`); the readings kept from the earlier run feed `core.radius.popover`, `core.shadow.popover`, `core.component.popover-width` and `core.component.artist-image`, and their sources say so.

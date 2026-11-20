@@ -780,15 +780,6 @@ export async function createResearchStore(directory: string) {
         .where(eq(schema.settings.id, "provider"));
       return row ? parseSettings(row.value) : {};
     },
-    async saveSettings(value: Record<string, unknown>) {
-      await db
-        .insert(schema.settings)
-        .values({ id: "provider", value: JSON.stringify(value) })
-        .onConflictDoUpdate({
-          target: schema.settings.id,
-          set: { value: JSON.stringify(value) },
-        });
-    },
     // Read-modify-write inside one write transaction so concurrent updates
     // cannot merge a stale row back over another request's change.
     async updateSettings(

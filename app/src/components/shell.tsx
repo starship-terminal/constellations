@@ -117,6 +117,12 @@ interface Conversation {
   updatedAt?: string;
   archived?: boolean;
 }
+const SIDEBAR_KEY = "studio-sidebar-collapsed";
+/** Runs before paint, like the theme script: a collapsed sidebar is laid out
+ * collapsed from the first frame instead of opening and then closing. */
+export const sidebarInitScript = `(function(){try{
+if(localStorage.getItem('${SIDEBAR_KEY}')==='true')document.documentElement.dataset.sidebar='collapsed';
+}catch(e){}})();`;
 export function AppShell({ children }: { children: ReactNode }) {
   const path = usePathname(),
     router = useRouter();
@@ -136,11 +142,15 @@ export function AppShell({ children }: { children: ReactNode }) {
   }, [path]);
   const [collapsed, setCollapsed] = useState(false);
   useEffect(() => {
-    setCollapsed(localStorage.getItem("studio-sidebar-collapsed") === "true");
+    // sidebarInitScript already collapsed the layout before paint; this only
+    // syncs the toggle's label and icon.
+    setCollapsed(document.documentElement.dataset.sidebar === "collapsed");
   }, []);
   const [showAllHistory, setShowAllHistory] = useState(false),
     [showArchived, setShowArchived] = useState(false);
-  const [history, setHistory] = useState<Conversation[]>([]),
+  // null until the first reply, so "Your research will appear here." never
+  // flashes for someone who has research.
+  const [history, setHistory] = useState<Conversation[] | null>(null),
     [mobile, setMobile] = useState(false),
     [editing, setEditing] = useState<Conversation | null>(null),
     [title, setTitle] = useState(""),
@@ -161,11 +171,13 @@ export function AppShell({ children }: { children: ReactNode }) {
         if (request === historyRequest.current) setHistoryFailed(true);
       });
   }
+  // Pages that change research dispatch "research-history"; moving between
+  // pages changes nothing, so it does not refetch.
   useEffect(() => {
     reload();
     window.addEventListener("research-history", reload);
     return () => window.removeEventListener("research-history", reload);
-  }, [path]);
+  }, []);
   useEffect(() => {
     setMobile(false);
   }, [path]);
@@ -228,7 +240,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
         onClick={() => {
           setCollapsed(!collapsed);
-          localStorage.setItem("studio-sidebar-collapsed", String(!collapsed));
+          if (collapsed) delete document.documentElement.dataset.sidebar;
+          else document.documentElement.dataset.sidebar = "collapsed";
+          localStorage.setItem(SIDEBAR_KEY, String(!collapsed));
         }}
       >
         {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
@@ -267,7 +281,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         </Suspense>
         <div className="history-heading">
           <span>{showArchived ? "Archived research" : "History"}</span>
-          {(showArchived || history.some((c) => c.archived)) && (
+          {(showArchived || history?.some((c) => c.archived)) && (
             <button
               className="text-button"
               onClick={() => setShowArchived(!showArchived)}
@@ -277,7 +291,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           )}
         </div>
         <div className="history-list">
-          {history
+          {(history ?? [])
             .filter((x) => !!x.archived === showArchived)
             .slice(0, showAllHistory ? undefined : 18)
             .map((c) => (
@@ -331,7 +345,8 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </details>
               </div>
             ))}
-          {history.filter((c) => !!c.archived === showArchived).length > 18 && (
+          {(history ?? []).filter((c) => !!c.archived === showArchived).length >
+            18 && (
             <button
               className="text-button history-more"
               onClick={() => setShowAllHistory(!showAllHistory)}
@@ -347,7 +362,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               </button>
             </p>
           ) : (
-            history.filter((c) => !!c.archived === showArchived).length ===
+            history?.filter((c) => !!c.archived === showArchived).length ===
               0 && (
               <p className="history-empty">Your research will appear here.</p>
             )

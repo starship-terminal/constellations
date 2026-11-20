@@ -10,11 +10,14 @@
 // the site points at dashboard.cohere.com or a sales form; none was followed
 // or submitted.
 import fs from 'fs';
+import os from 'node:os';
 import path from 'node:path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots stay outside the repo (docs/PACKAGE.md): quantize.py writes the
+// committed screenshots/ from this scratch folder.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'cohere', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

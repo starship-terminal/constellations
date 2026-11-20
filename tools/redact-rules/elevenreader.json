@@ -5,7 +5,8 @@
   "email_allow": [
    "@elevenreader\\.io$",
    "@elevenlabs\\.io$",
-   "@example\\.(com|org)$"
+   "@example\\.com$",
+   "@example\\.org$"
   ]
  },
  "families": []

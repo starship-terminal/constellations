@@ -130,7 +130,10 @@ for (const [pass, [attr, cls]] of Object.entries(PASSES)) {
   for (const host of HOSTS) {
     if (!sheetsByHost[host].length) continue;
     await probe.setContent(shell(sheetsByHost[host], attr, cls), { waitUntil: 'load' });
-  resolved[pass] = await probe.evaluate((names) => {
+    // Each host's reading goes into its own object. Writing it to
+    // resolved[pass] made the last host (docs) the merge target, so the
+    // product-first merge below kept docs values for shared names.
+    const got = await probe.evaluate((names) => {
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const box = document.createElement('div');
     box.style.cssText = 'position:absolute;left:0;top:0;width:1000px;height:1000px;visibility:hidden';
@@ -195,7 +198,7 @@ for (const [pass, [attr, cls]] of Object.entries(PASSES)) {
     box.remove();
     return out;
   }, want);
-    resolvedByHost[host][pass] = resolved[pass];
+    resolvedByHost[host][pass] = got;
   }
   // Publish one flat pass for readers that still look up a name once.
   // A name only one host declares keeps that reading. A name several

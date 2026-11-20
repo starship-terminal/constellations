@@ -22,12 +22,14 @@
 // navigation menu. Consent overlays are hidden, never answered; the editor
 // behind Start Creating / Log In is never reached.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
 // Full-colour shots are working files, never committed: by default they go
 // outside the repository, to ~/.design-systems/editorx/raw-shots.
-const RAW = process.env.RAW || new URL('file://' + (process.env.HOME || '') + '/.design-systems/editorx/raw-shots/', import.meta.url).pathname;
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'editorx', 'raw-shots') + '/';
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

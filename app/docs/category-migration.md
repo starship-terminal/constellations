@@ -1,6 +1,6 @@
 # Measured-system category migration
 
-The app's category assignments live in SQLite. [system-categories.json](../src/data/system-categories.json) supplies the one-time migration seed. The seed covers all 88 measured systems from the canonical [catalog](../../catalog.json), using the exact category labels captured in [Refero's catalog taxonomy](../src/data/refero-catalog-taxonomy.json). Each assignment records its reference ID, platform category group, labels and the local evidence used to choose them. New packages add a row here as they land.
+The app's category assignments live in SQLite. [system-categories.json](../src/data/system-categories.json) supplies the one-time migration seed. The seed covers 219 of the 460 measured systems in the canonical [catalog](../../catalog.json), using the exact category labels captured in [Refero's catalog taxonomy](../src/data/refero-catalog-taxonomy.json). Each assignment records its reference ID, platform category group, labels and the local evidence used to choose them. New packages may add a row here as they land; the seed is add-only (see Validation).
 
 ## Scope and storage
 
@@ -10,12 +10,12 @@ The source adapter identifies measured packages as `systems:<slug>`. Native mobi
 
 | Package platform | Assigned category group | Packages |
 | --- | --- | ---: |
-| Web | `web-categories` | 60 |
+| Web | `web-categories` | 191 |
 | Desktop | `web-categories` | 13 |
 | Mobile | `ios-categories` | 15 |
-| Total | | 88 |
+| Total | | 219 |
 
-There are 123 label assignments across these packages. Each package has one or two relevant categories. Labels classify the product and captured workflows, rather than visual mood, UI components or every feature a product might provide.
+There are 331 label assignments across these packages. Each package has one to three relevant categories. Labels classify the product and captured workflows, rather than visual mood, UI components or every feature a product might provide.
 
 The separate 1,342-style Refero snapshot keeps its existing style categories. Refero's Web and iOS product categories and its Styles vocabulary describe different datasets, so this migration does not reinterpret the style snapshot.
 
@@ -44,6 +44,8 @@ Notion's mobile and desktop captures explicitly include Notion AI alongside docs
 
 ## Validation
 
-The migration data must have exactly one row per measured package, with no unknown or duplicate reference IDs. Every category label must appear in its declared taxonomy group, every mobile row must use `ios-categories`, and every web or desktop row must use `web-categories`. An empty label list is invalid.
+`categorySeedGaps` in [categories.ts](../src/contracts/categories.ts) checks the seed against the catalog, and `make check` and the Research app tests run it. The seed is add-only: a package may have no row yet, but a row the previous seed had may not disappear, a row whose package is gone fails, and every mobile row must use `ios-categories` while every web or desktop row uses `web-categories`. Every category label must appear in its declared taxonomy group, and an empty label list is invalid.
 
-The initial mapping was checked against the current catalog and captured taxonomy: 88 packages covered, no missing or duplicate IDs, no unknown labels, and no platform-group mismatches. Every row includes its own reason, including the choices above, so future edits can inspect the evidence without reconstructing this migration.
+A package with no seed row keeps its catalog `category` in the app, lists under the gallery's Uncategorised filter, and still matches its old category link (`?category=productivity`).
+
+The initial mapping was checked against the catalog and captured taxonomy of the time: 88 packages covered, no missing or duplicate IDs, no unknown labels, and no platform-group mismatches. Every row includes its own reason, including the choices above, so future edits can inspect the evidence without reconstructing this migration.

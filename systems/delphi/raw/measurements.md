@@ -1146,22 +1146,23 @@ Page: chat. Selector: `Scroll to bottom`. States: default, hover, focus-visible,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 30.4 x 30.4 | = | = | 31.36 x 31.36 |
-| Padding | 0px | = | = | = |
-| Border | 1px solid #8d8d86 @ 0.12 | = | = | 1px solid #8d8d86 |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px | = | = | = |
-| Outline | none | = | = | = |
-| Font | Delphi Inter 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #63635e | = | = | #21201c |
-| Transition | translate, scale, opacity 0.4s cubic-bezier(0.7, 0, 0.84, 0) | = | = | = |
-| Opacity | 0 | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 12.92 x 12.92, colour #63635e, fill #000000 | = | = | 13.33 x 13.33, colour #21201c, fill #000000 |
-| Painted layers | button.group/button.inline-flex 30.4x30.4 bg #ffffff border T:1px solid #8d8d86 @ 0.12 / R:1px solid #8d8d86 @ 0.12 / B:1px solid #8d8d86 @ 0.12 / L:1px solid #8d8d86 @ 0.12 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px | = | = | button.group/button.inline-flex 31.4x31.4 bg #ffffff border T:1px solid #8d8d86 / R:1px solid #8d8d86 / B:1px solid #8d8d86 / L:1px solid #8d8d86 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 30.4 x 30.4 | = | - | 31.36 x 31.36 |
+| Padding | 0px | = | - | = |
+| Border | 1px solid #8d8d86 @ 0.12 | = | - | 1px solid #8d8d86 |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px | = | - | = |
+| Outline | none | = | - | = |
+| Font | Delphi Inter 14px/20px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #63635e | = | - | #21201c |
+| Transition | translate, scale, opacity 0.4s cubic-bezier(0.7, 0, 0.84, 0) | = | - | = |
+| Opacity | 0 | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 12.92 x 12.92, colour #63635e, fill #000000 | = | - | 13.33 x 13.33, colour #21201c, fill #000000 |
+| Painted layers | button.group/button.inline-flex 30.4x30.4 bg #ffffff border T:1px solid #8d8d86 @ 0.12 / R:1px solid #8d8d86 @ 0.12 / B:1px solid #8d8d86 @ 0.12 / L:1px solid #8d8d86 @ 0.12 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px | = | - | button.group/button.inline-flex 31.4x31.4 bg #ffffff border T:1px solid #8d8d86 / R:1px solid #8d8d86 / B:1px solid #8d8d86 / L:1px solid #8d8d86 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `scroll-bottom-default.png`, `scroll-bottom-hover.png`, `scroll-bottom-focus-visible.png`, `scroll-bottom-pressed.png`.
 

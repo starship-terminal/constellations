@@ -106,13 +106,23 @@ def lit(value, ty, src, desc):
 # ------------------------------------------------------------------- fonts
 
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
-fam["sans"] = lit('"Basier", sans-serif', "fontFamily",
+
+
+def family(comps):
+    """The computed fontFamily stack, verbatim; every cited component must paint the same one."""
+    stacks = {st(c, "default")["fontFamily"] for c in comps}
+    if len(stacks) != 1:
+        raise SystemExit(f"fontFamily differs across {comps}: {sorted(stacks)}")
+    return stacks.pop()
+
+
+fam["sans"] = lit(family(["nav-link", "art-para", "nl-send"]), "fontFamily",
     "computed fontFamily of nav-link, art-para, nl-send (raw/components-computed.json); @font-face Basier in idvetmp-child style.css",
     "Basier — every UI string, body copy, buttons, chips, meta.")
-fam["display"] = lit('"RoslindaleCondensed", sans-serif', "fontFamily",
+fam["display"] = lit(family(["hero-h1", "art-h1", "section-heading", "feed-tab"]), "fontFamily",
     "computed fontFamily of hero-h1, art-h1, section-heading, feed-tab (raw/components-computed.json); @font-face RoslindaleCondensed in style.css",
     "RoslindaleCondensed — hero/article 56px, section headings 32px, feed tabs 28px.")
-fam["narrow"] = lit('"RoslindaleNarrow", sans-serif', "fontFamily",
+fam["narrow"] = lit(family(["post-card-title", "cat-nav-item"]), "fontFamily",
     "computed fontFamily of post-card-title, cat-nav-item (raw/components-computed.json); @font-face RoslindaleNarrow in style.css",
     "RoslindaleNarrow — card titles 20px/700, category-menu items 16px/600.")
 
@@ -299,10 +309,13 @@ for name, cname, state, prop, ty_, desc in [
         pass
 
 # the painted checkbox box: the input sits at opacity 0 (13x13) and the
-# visible box is the label's ::after — 16x16, #fff, 1px #989da7, 2px radius,
-# measured with getComputedStyle(label, '::after') on the home newsletter form.
+# visible box is the label's ::after — 16x16, #fff, 1px #989da7, 2px radius.
+# A probe read it with getComputedStyle(label, '::after') on the live home
+# page, but that reading was never saved: no file in raw/ holds it, so the
+# value is labelled as typed.
 comp["nl-checkbox-box"] = lit("16px", "dimension",
-    "computed ::after of the .checkbox-style label (16x16 #fff, 1px solid #989da7, 2px radius — idvetmp-child style.css; probed on the live home page)",
+    "entered by hand at capture time, not measured: a probe of the .checkbox-style label's ::after (16x16 #fff, 1px solid #989da7, 2px radius) "
+    "was never saved to raw/; raw/components-computed.json holds only the 13x13 input (nl-checkbox); recapture needed",
     "The 16px painted checkbox box (white, 1px #989da7 border, 2px radius) — the 13px input is opacity:0.")
 
 # the hero-tag flanking rules (measured pseudo-elements)

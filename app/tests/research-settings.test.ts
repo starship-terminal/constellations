@@ -5,9 +5,6 @@ const state = vi.hoisted(() => ({ saved: {} as Record<string, unknown> }));
 vi.mock("@/server/db", () => ({
   getStore: async () => ({
     getSettings: async () => state.saved,
-    saveSettings: async (value: Record<string, unknown>) => {
-      state.saved = value;
-    },
     updateSettings: async (
       mutate: (saved: Record<string, unknown>) => Record<string, unknown>,
     ) => {
