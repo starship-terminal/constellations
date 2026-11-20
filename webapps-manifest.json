@@ -5650,9 +5650,9 @@
       "description": "Create a Website in Minutes ",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://login.squarespace.com shows email and password, or Google, Apple, or Facebook. Password not submitted.",
+      "notes": "Email probe: https://login.squarespace.com shows email and password, or Google, Apple, or Facebook. Password not submitted. Public walk 2026-11-21: PRODUCTS, SOLUTIONS, and RESOURCES open menus. Phone hamburger opens the same menus in a drawer. LOG IN stops at login.squarespace.com. GET STARTED opens the template picker and NEXT was not pressed. Google, Apple, and Facebook were not clicked. No email was typed. No form was submitted. Signed-in editor was not captured. Public package refresh in PR 1584 at dc7b077b6845. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 17
     },
     {
