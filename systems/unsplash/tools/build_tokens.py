@@ -64,22 +64,34 @@ def check(doc):
                     if lookup(doc, target, set_name) is None and lookup(doc, target) is None:
                         raise CheckError(f"missing alias {target} from {set_name}.{path}")
             if (token["$type"] == "color" and isinstance(value, str) and value.startswith("#")
-                    and str(token["$extensions"]["source"]).startswith("Measured") and value.lower()[:7] not in seen):
+                    and str(token["$extensions"]["source"]).startswith("Measured") and full_hex(value) not in seen):
                 raise CheckError(f"{set_name}.{path}: Measured {value} is in no raw/ reading")
 
 
 def raw_colours():
-    """Every colour raw/ holds: hex as written, rgb()/rgba() as #rrggbb."""
+    """Every colour raw/ holds, alpha included: hex as written, rgb()/rgba() as #rrggbb or #rrggbbaa."""
     import re
     seen = set()
     for f in sorted((HERE / "raw").glob("*.json")):
         text = f.read_text()
         for h in re.findall(r"#([0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3,4})\b", text):
-            h = "".join(c * 2 for c in h) if len(h) in (3, 4) else h
-            seen.add("#" + h[:6].lower())
-        for body in re.findall(r"rgba?\((\d+),\s*(\d+),\s*(\d+)", text):
-            seen.add("#%02x%02x%02x" % tuple(int(c) for c in body))
+            seen.add(full_hex("#" + h))
+        for m in re.finditer(r"rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)", text):
+            h = "#%02x%02x%02x" % tuple(int(c) for c in m.groups()[:3])
+            if m.group(4) is not None and float(m.group(4)) < 1:
+                h += "%02x" % int(float(m.group(4)) * 255 + 0.5)
+            seen.add(h)
     return seen
+
+
+def full_hex(value):
+    """#rgb, #rgba, #rrggbb or #rrggbbaa as lower-case #rrggbb[aa], alpha kept; an opaque ff alpha is dropped."""
+    h = value.lower().lstrip("#")
+    if len(h) in (3, 4):
+        h = "".join(c * 2 for c in h)
+    if len(h) == 8 and h.endswith("ff"):
+        h = h[:6]
+    return "#" + h
 
 
 def main():

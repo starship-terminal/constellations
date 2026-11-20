@@ -30,5 +30,18 @@ class TokenCheck(unittest.TestCase):
             build_tokens.check(doc)
 
 
+    def test_alpha_only_change_fails(self):
+        doc = json.loads(TOKENS.read_text())
+        doc["core"]["color"]["borderOpacity"]["$value"] = "#00000080"  # raw holds #0000001f
+        with self.assertRaisesRegex(build_tokens.CheckError, "in no raw"):
+            build_tokens.check(doc)
+
+    def test_core_alias_to_a_theme_only_name_fails(self):
+        # Core resolves in core, then the root; a name only the themes hold is not reachable from it.
+        doc = json.loads(TOKENS.read_text())
+        doc["core"]["color"]["black"]["$value"] = "{color.text.primary}"
+        with self.assertRaisesRegex(build_tokens.CheckError, "missing alias color.text.primary"):
+            build_tokens.check(doc)
+
 if __name__ == "__main__":
     unittest.main()
