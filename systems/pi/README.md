@@ -15,7 +15,7 @@ The preview browser attached to the live pages and returned computed styles. It 
 | [components/](components/) | Empty of crops. The browser returned no frames |
 | [screenshots/](screenshots/) | Empty. The browser returned no frames |
 | [raw/](raw/) | Declared colour and shadow custom properties |
-| [tools/](tools/) | The capture kit copied with the package. The tokens were written from the live readings, not from the kit's Claude builder |
+| [tools/](tools/) | The capture kit copied with the package. The tokens were written from the live readings, not from the kit's Claude builder. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 | [icon.png](icon.png) | Site icon, from `python3 tools/fetch_icon.py` |
 
 <!-- brief:start -->
@@ -135,7 +135,7 @@ Twemoji Country Flags is prepended to every app font stack for emoji. It is not 
 
 ## Rebuild
 
-The tokens were written from [raw/css-vars.json](raw/css-vars.json) and the computed readings in this README. The kit builder in [tools/](tools/) still targets Claude's token dump, so it is not the rebuild command for this package.
+The tokens were written from [raw/css-vars.json](raw/css-vars.json) and the computed readings in this README. There is no token builder for this package.
 
 ```bash
 python3 tools/catalog.py design-md pi

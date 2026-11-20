@@ -12,7 +12,7 @@ Public marketing pages and the signed-out login chrome of paypal.com, read on 20
 | [raw/](raw/) | Computed readings and measurements.md |
 | [screenshots/](screenshots/) | Empty. The preview browser did not produce frames |
 | [components/](components/) | Empty crops, for the same reason |
-| [tools/](tools/) | Kit copy plus the package token check |
+| [tools/](tools/) | Kit copy plus the package token check. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 | [icon.png](icon.png) | Site icon, from tools/fetch_icon.py |
 
 ## Brief
@@ -134,4 +134,4 @@ python3 tools/package_tests.py paypal
 python3 tools/fetch_icon.py paypal
 ```
 
-`tools/build_tokens.py` in this package is the kit's Claude-shaped builder. It is not the writer of this `tokens.json`. The tokens were written from [raw/computed.json](raw/computed.json). `tools/test_build_tokens.py` checks the committed file.
+`tools/build_tokens.py` in this package is a copy of the kit's native (Grok Bot) builder, kept because `tools/test_build_tokens.py` imports it to check the committed file. It is not the writer of this `tokens.json`. The tokens were written from [raw/computed.json](raw/computed.json). `tools/test_build_tokens.py` checks the committed file.

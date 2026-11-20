@@ -15,7 +15,7 @@ The live page puts `dark` on `html` and paints black. A light `:root` palette is
 | [patterns.md](patterns.md) | Homepage, gallery, sign-in, pricing, Lab, docs and blog. |
 | [screenshots/](screenshots/) | Public pages. The preview browser could not paint frames, so these are headless Playwright shots of pages that loaded without a Cloudflare challenge. |
 | [raw/](raw/) | [measured.json](raw/measured.json). |
-| [tools/](tools/) | The copied kit. The Claude token builder was not run. Tokens were written from the measurements. |
+| [tools/](tools/) | The copied kit. The Claude token builder was not run. Tokens were written from the measurements. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 ## Brief
 
