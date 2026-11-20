@@ -1,0 +1,2818 @@
+{
+ "readAt": "2026-11-21",
+ "source": "the stylesheet bodies fetched during a live home load on reclaim.ai (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
+ "sheets": [
+  "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css (1290 bytes)",
+  "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/css/reclaimai.webflow.shared.72d63c5a9.min.css (622285 bytes)",
+  "https://fonts.googleapis.com/css2 (4912 bytes)",
+  "https://fonts.googleapis.com/css (25806 bytes)",
+  "inline-0 (53828 bytes)",
+  "inline-1 (62 bytes)",
+  "inline-2 (3188 bytes)",
+  "inline-3 (88 bytes)",
+  "inline-4 (86 bytes)",
+  "inline-5 (4634 bytes)",
+  "inline-6 (1586 bytes)",
+  "inline-7 (427 bytes)",
+  "inline-8 (1706 bytes)",
+  "inline-9 (177 bytes)",
+  "inline-10 (250 bytes)",
+  "inline-11 (769 bytes)",
+  "inline-12 (845 bytes)",
+  "inline-13 (744 bytes)",
+  "inline-14 (0 bytes)",
+  "inline-15 (3612 bytes)",
+  "inline-16 (588 bytes)",
+  "inline-17 (2260 bytes)",
+  "inline-18 (2133 bytes)",
+  "inline-19 (232 bytes)",
+  "inline-20 (429 bytes)"
+ ],
+ "counts": {
+  "rules": 33,
+  "fonts": 90,
+  "names": {
+   "theme": 0,
+   "app": 218,
+   "skins": 0,
+   "vendor": 61,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[app] :where(.w-popover, .w-modal)": 1,
+   "[app] :root": 216,
+   "[vendor] .osano-cm-window": 4,
+   "[vendor] .osano-cm-button:hover": 1,
+   "[vendor] .osano-cm-button:focus-visible": 1,
+   "[vendor] .osano-cm-button--type_accept, .osano-cm-button--type_accept-all": 3,
+   "[vendor] .osano-cm-button--type_accept:focus-visible, .osano-cm-button--type_accept:hover, .osano-cm-button--type_accept-all:focus-visible, .osano-cm-button--type_accept-all:hover": 1,
+   "[vendor] .osano-cm-button--type_deny": 3,
+   "[vendor] .osano-cm-button--type_deny:focus-visible, .osano-cm-button--type_deny:hover": 1,
+   "[vendor] .osano-cm-button--type_denyAll": 3,
+   "[vendor] .osano-cm-button--type_denyAll:focus-visible, .osano-cm-button--type_denyAll:hover": 1,
+   "[vendor] .osano-cm-button--type_manage": 3,
+   "[vendor] .osano-cm-button--type_manage:focus-visible, .osano-cm-button--type_manage:hover": 1,
+   "[vendor] .osano-cm-close": 2,
+   "[vendor] .osano-cm-close:focus-visible": 2,
+   "[vendor] .osano-cm-toggle": 3,
+   "[vendor] .osano-cm-toggle__input:checked + .osano-cm-toggle__switch": 2,
+   "[vendor] .osano-cm-toggle__input:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:hover + .osano-cm-toggle__switch": 2,
+   "[vendor] .osano-cm-toggle__input:focus-visible + .osano-cm-toggle__switch::before": 1,
+   "[vendor] .osano-cm-toggle__input:checked:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:checked:hover + .osano-cm-toggle__switch": 2,
+   "[vendor] .osano-cm-toggle__input:checked:focus-visible + .osano-cm-toggle__switch::before": 1,
+   "[vendor] .osano-cm-toggle__input:disabled + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:hover + .osano-cm-toggle__switc": 1,
+   "[vendor] .osano-cm-toggle__input:disabled + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:focus-visible + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:hover + .osano-cm": 1,
+   "[vendor] .osano-cm-toggle__input:disabled + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:focus-visible + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:hover + .osano-": 1,
+   "[vendor] .osano-cm-toggle__input:disabled:checked + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:checked:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:checked:hover +": 1,
+   "[vendor] .osano-cm-toggle__input:disabled:checked + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:checked:focus-visible + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:c": 1,
+   "[vendor] .osano-cm-toggle__input:disabled:checked + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:checked:focus-visible + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled": 1,
+   "[vendor] .osano-cm-dialog": 4,
+   "[vendor] .osano-cm-info-dialog": 52,
+   "[vendor] .osano-cm-consent-id-box__button--copied": 3,
+   "[app] .carousel_cont": 1,
+   "[app] @media (max-width: 479px) .carousel_cont": 1
+  }
+ },
+ "errors": [],
+ "theme": [],
+ "app": [
+  {
+   "file": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/css/reclaimai.webflow.shared.72d63c5a9.min.css",
+   "selector": ":where(.w-popover, .w-modal)",
+   "context": [],
+   "properties": {
+    "--w-backdrop-animation": "initial"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/css/reclaimai.webflow.shared.72d63c5a9.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--_brand-colors-2026---blurple": "#5562eb",
+    "--_brand-colors-2026---light-blurple": "#ebefff",
+    "--goldenrod": "#f6c765",
+    "--royal-blue": "#5562eb",
+    "--_brand-colors-2026---light-grey": "#f3f6ff",
+    "--_brand-colors-2026---dark-green": "#14532d",
+    "--_brand-colors-2026---medium-green": "#7ac17b",
+    "--_brand-colors-2026---dark-blurple": "#151e88",
+    "--_brand-colors-2026---light-green": "#daf0db",
+    "--_brand-colors-2026---medium-blurple": "#c2caf9",
+    "--_apps---colors--background": "#fff",
+    "--_brand-colors-2026---dark-grey": "#b8c1d1",
+    "--case-study-blurple": "#6b7ded",
+    "--_brand-colors-2026---medium-grey": "#dbe0e8",
+    "--_apps---colors--muted-foreground": "#7d797a",
+    "--_apps---typography--heading-font": "Poppins,sans-serif",
+    "--_apps---typography--body-font": "Poppins,sans-serif",
+    "--_apps---typography--button-font": "Poppins,sans-serif",
+    "--case-study-pink": "#ee9ab2",
+    "--_apps---sizes--radius": "10px",
+    "--case-study-corn": "#f6c765",
+    "--_apps---colors--foreground": "#181d25",
+    "--_apps---colors--card": "#fff",
+    "--_apps---colors--card-foreground": "#060606",
+    "--_apps---colors--popover": "#f2f2f2",
+    "--_apps---colors--popover-foreground": "#060606",
+    "--_apps---colors--primary": "var(--royal-blue)",
+    "--_apps---colors--primary-foreground": "#f6f8ff",
+    "--_apps---colors--secondary": "#e6f3ff",
+    "--_apps---colors--secondary-foreground": "#0b0d13",
+    "--_apps---colors--muted": "#f8f8f8",
+    "--_apps---colors--accent": "#e4e4e4",
+    "--_apps---colors--accent-foreground": "#0d0d0d",
+    "--_apps---colors--destructive": "#d74843",
+    "--_apps---colors--border": "#181d25",
+    "--_apps---colors--input": "#1a1f27",
+    "--_apps---colors--ring": "#5b6bcf",
+    "--_apps---charts--chart-1": "var(--royal-blue)",
+    "--_apps---charts--chart-2": "#798beb",
+    "--_apps---charts--chart-3": "#474ce5",
+    "--_apps---charts--chart-4": "#3f49b8",
+    "--_apps---charts--chart-5": "#29259c",
+    "--_apps---sidebar--sidebar": "#f8f8f8",
+    "--_apps---sidebar--sidebar-foreground": "#060606",
+    "--_apps---sidebar--sidebar-primary": "var(--royal-blue)",
+    "--_apps---sidebar--sidebar-primary-foreground": "#f6f8ff",
+    "--_apps---sidebar--sidebar-accent": "#e4e4e4",
+    "--_apps---sidebar--sidebar-accent-foreground": "#0d0d0d",
+    "--_apps---sidebar--sidebar-border": "#181d25",
+    "--_apps---sidebar--sidebar-ring": "#5b6bcf",
+    "--_apps---colors--background-dark": "#030303",
+    "--_apps---colors--foreground-dark": "#f8f8f8",
+    "--_apps---colors--card-dark": "#141414",
+    "--_apps---colors--card-foreground-dark": "#f8f8f8",
+    "--_apps---colors--popover-dark": "#141414",
+    "--_apps---colors--popover-foreground-dark": "#f8f8f8",
+    "--_apps---colors--primary-dark": "#6374fe",
+    "--_apps---colors--primary-foreground-dark": "#0a0d16",
+    "--_apps---colors--secondary-dark": "#0c0a42",
+    "--_apps---colors--secondary-foreground-dark": "#f6f8ff",
+    "--_apps---colors--muted-dark": "#010101",
+    "--_apps---colors--muted-foreground-dark": "#868686",
+    "--_apps---colors--accent-dark": "#292929",
+    "--_apps---colors--accent-foreground-dark": "#f8f8f8",
+    "--_apps---colors--destructive-dark": "#e5554f",
+    "--_apps---colors--border-dark": "#181d251a",
+    "--_apps---colors--input-dark": "#ffffff26",
+    "--_apps---colors--ring-dark": "#7b8ff6",
+    "--_apps---charts--chart-1-dark": "#6374fe",
+    "--_apps---charts--chart-2-dark": "#98acff",
+    "--_apps---charts--chart-3-dark": "#484ee7",
+    "--_apps---charts--chart-4-dark": "#859aff",
+    "--_apps---charts--chart-5-dark": "#3f48bf",
+    "--_apps---sidebar--sidebar-dark": "#070707",
+    "--_apps---sidebar--sidebar-foreground-dark": "#f8f8f8",
+    "--_apps---sidebar--sidebar-primary-dark": "#6374fe",
+    "--_apps---sidebar--sidebar-primary-foreground-dark": "#0a0d16",
+    "--_apps---sidebar--sidebar-accent-dark": "#292929",
+    "--_apps---sidebar--sidebar-accent-foreground-dark": "#f8f8f8",
+    "--_apps---sidebar--sidebar-border-dark": "#ffffff1a",
+    "--_apps---sidebar--sidebar-ring-dark": "#7b8ff6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-0",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--osano-clear-dialog-background": "rgba(255,255,255,0)",
+    "--osano-button-border-color": "#fff",
+    "--osano-dialog-type": "box",
+    "--osano-display-position": "\"bottom-left\"",
+    "--osano-info-dialog-position": "left",
+    "--osano-widget-position": "left",
+    "--osano-opt-out-widget-position": "left",
+    "--osano-button-background-color": "#5562eb",
+    "--osano-button-foreground-color": "#ffffff",
+    "--osano-dialog-background-color": "#ffffff",
+    "--osano-dialog-foreground-color": "#000000",
+    "--osano-info-dialog-overlay-color": "rgba(0,0,0,0.8)",
+    "--osano-link-color": "#5665f0",
+    "--osano-toggle-off-track-color": "#dddddd",
+    "--osano-toggle-off-thumb-color": "#ffffff",
+    "--osano-toggle-on-track-color": "#5562eb",
+    "--osano-toggle-on-thumb-color": "#ffffff",
+    "--osano-widget-color": "#37cd8f",
+    "--osano-widget-outline-color": "#29246a",
+    "--osano-widget-fill-color": "#fff",
+    "--osano-focus-outline-color": "Highlight",
+    "--osano-button-close-color": "var(--osano-dialog-foreground-color)",
+    "--osano-button-accept-background-color": "var(--osano-button-background-color)",
+    "--osano-button-accept-border-color": "var(--osano-button-border-color, var(--osano-button-foreground-color))",
+    "--osano-button-accept-foreground-color": "var(--osano-button-foreground-color)",
+    "--osano-button-deny-background-color": "#d85656",
+    "--osano-button-deny-border-color": "var(--osano-button-border-color, var(--osano-button-foreground-color))",
+    "--osano-button-deny-foreground-color": "#ffffff",
+    "--osano-button-reject-all-background-color": "var(--osano-button-background-color)",
+    "--osano-button-reject-all-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-button-reject-all-border-color": "var(--osano-button-border-color, var(--osano-button-foreground-color))",
+    "--osano-button-reject-all-foreground-color": "var(--osano-button-foreground-color)",
+    "--osano-button-manage-background-color": "var(--osano-button-background-color)",
+    "--osano-button-manage-border-color": "var(--osano-button-border-color, var(--osano-button-foreground-color))",
+    "--osano-button-manage-foreground-color": "var(--osano-button-foreground-color)",
+    "--osano-info-dialog-link-color": "var(--osano-link-color)",
+    "--osano-info-dialog-button-close-color": "var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color))",
+    "--osano-info-dialog-toggle-off-track-color": "var(--osano-toggle-off-track-color)",
+    "--osano-info-dialog-toggle-off-thumb-color": "var(--osano-toggle-off-thumb-color)",
+    "--osano-info-dialog-toggle-on-track-color": "var(--osano-toggle-on-track-color)",
+    "--osano-info-dialog-toggle-on-thumb-color": "var(--osano-toggle-on-thumb-color)",
+    "--osano-info-dialog-button-background-color": "var(--osano-button-background-color)",
+    "--osano-info-dialog-button-border-color": "var(--osano-info-dialog-button-foreground-color, var(--osano-button-foreground-color))",
+    "--osano-info-dialog-button-foreground-color": "var(--osano-button-foreground-color)",
+    "--osano-dialog-gpc-background-color": "var(--osano-dialog-background-color)",
+    "--osano-dialog-gpc-border-color": "var(--osano-dialog-foreground-color)",
+    "--osano-dialog-gpc-foreground-color": "var(--osano-dialog-foreground-color)",
+    "--osano-dialog-gpc-color": "#37cd84",
+    "--osano-info-dialog-gpc-background-color": "var(--osano-info-dialog-background-color, var(--osano-dialog-background-color))",
+    "--osano-info-dialog-gpc-border-color": "var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color))",
+    "--osano-info-dialog-gpc-foreground-color": "var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color))",
+    "--osano-info-dialog-gpc-color": "var(--osano-dialog-gpc-color)",
+    "--osano-gpc-background-color": "#ffffff",
+    "--osano-gpc-border-color": "#058a5e",
+    "--osano-gpc-foreground-color": "#058a5e",
+    "--osano-gpc-color": "#37cd84",
+    "--osano-gpc-background-color-hover": "#ffffff",
+    "--osano-info-dialog-background-color": "#ffffff",
+    "--osano-info-dialog-foreground-color": "#181d25",
+    "--osano-toggle-off-background-color": "#d2cfff",
+    "--osano-toggle-button-off-color": "#ffffff",
+    "--osano-toggle-on-background-color": "#37cd8f",
+    "--osano-toggle-button-on-color": "#f4f4f4",
+    "--osano-button-background-color-contrast": "#6976ff",
+    "--osano-button-foreground-color-contrast": "#ebebeb",
+    "--osano-button-deny-background-color-contrast": "#ec6a6a",
+    "--osano-button-deny-foreground-color-contrast": "#ebebeb",
+    "--osano-dialog-background-color-contrast": "#ebebeb",
+    "--osano-dialog-foreground-color-contrast": "#141414",
+    "--osano-link-color-contrast": "#6a79ff",
+    "--osano-toggle-off-track-color-contrast": "#c9c9c9",
+    "--osano-toggle-off-track-color-disabled": "#9d9d9d",
+    "--osano-toggle-off-thumb-color-contrast": "#ebebeb",
+    "--osano-toggle-off-thumb-color-disabled": "#bfbfbf",
+    "--osano-toggle-on-track-color-contrast": "#6976ff",
+    "--osano-toggle-on-track-color-disabled": "#95a2ff",
+    "--osano-toggle-on-thumb-color-contrast": "#ebebeb",
+    "--osano-toggle-on-thumb-color-disabled": "#bfbfbf",
+    "--osano-gpc-background-color-contrast": "#ebebeb",
+    "--osano-button-background-color-hover": "var(--osano-button-background-color-contrast, #6976ff)",
+    "--osano-button-foreground-color-hover": "var(--osano-button-foreground-color-contrast, #ebebeb)",
+    "--osano-button-background-color-focus": "var(--osano-button-foreground-color-hover, var(--osano-button-foreground-color-contrast))",
+    "--osano-button-foreground-color-focus": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-toggle-off-track-color-hover": "var(--osano-toggle-off-track-color-contrast, #c9c9c9)",
+    "--osano-toggle-off-thumb-color-hover": "var(--osano-toggle-off-thumb-color-contrast, #ebebeb)",
+    "--osano-toggle-off-track-color-focus": "var(--osano-toggle-off-thumb-color-hover, var(--osano-toggle-off-thumb-color-contrast))",
+    "--osano-toggle-off-thumb-color-focus": "var(--osano-toggle-off-track-color-hover, var(--osano-toggle-off-track-color-contrast))",
+    "--osano-toggle-on-track-color-hover": "var(--osano-toggle-on-track-color-contrast, #6976ff)",
+    "--osano-toggle-on-thumb-color-hover": "var(--osano-toggle-on-thumb-color-contrast, #ebebeb)",
+    "--osano-toggle-on-track-color-focus": "var(--osano-toggle-on-thumb-color-hover, var(--osano-toggle-on-thumb-color-contrast))",
+    "--osano-toggle-on-thumb-color-focus": "var(--osano-toggle-on-track-color-hover, var(--osano-toggle-on-track-color-contrast))",
+    "--osano-button-accept-background-color-contrast": "var(--osano-button-background-color-contrast, #6976ff)",
+    "--osano-button-accept-foreground-color-contrast": "var(--osano-button-foreground-color-contrast, #ebebeb)",
+    "--osano-button-accept-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-button-accept-foreground-color-hover": "var(--osano-button-accept-foreground-color-contrast, var(--osano-button-foreground-color-contrast))",
+    "--osano-button-accept-background-color-focus": "var(--osano-button-accept-foreground-color-hover, var(--osano-button-accept-foreground-color-contrast))",
+    "--osano-button-accept-foreground-color-focus": "var(--osano-button-accept-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-button-deny-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-button-deny-foreground-color-hover": "var(--osano-button-deny-foreground-color-contrast, #ebebeb)",
+    "--osano-button-deny-background-color-focus": "var(--osano-button-deny-foreground-color-hover, var(--osano-button-deny-foreground-color-contrast))",
+    "--osano-button-deny-foreground-color-focus": "var(--osano-button-deny-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-button-reject-all-background-color-contrast": "var(--osano-button-background-color-contrast, #6976ff)",
+    "--osano-button-reject-all-foreground-color-contrast": "var(--osano-button-foreground-color-contrast, #ebebeb)",
+    "--osano-button-reject-all-foreground-color-hover": "var(--osano-button-reject-all-foreground-color-contrast, var(--osano-button-foreground-color-contrast))",
+    "--osano-button-reject-all-background-color-focus": "var(--osano-button-reject-all-foreground-color-hover, var(--osano-button-reject-all-foreground-color-contrast))",
+    "--osano-button-reject-all-foreground-color-focus": "var(--osano-button-reject-all-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-button-manage-background-color-contrast": "var(--osano-button-background-color-contrast, #6976ff)",
+    "--osano-button-manage-foreground-color-contrast": "var(--osano-button-foreground-color-contrast, #ebebeb)",
+    "--osano-button-manage-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-button-manage-foreground-color-hover": "var(--osano-button-manage-foreground-color-contrast, var(--osano-button-foreground-color-contrast))",
+    "--osano-button-manage-background-color-focus": "var(--osano-button-manage-foreground-color-hover, var(--osano-button-manage-foreground-color-contrast))",
+    "--osano-button-manage-foreground-color-focus": "var(--osano-button-manage-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-info-dialog-button-background-color-contrast": "var(--osano-button-background-color-contrast, #6976ff)",
+    "--osano-info-dialog-button-foreground-color-contrast": "var(--osano-button-foreground-color-contrast, #ebebeb)",
+    "--osano-info-dialog-button-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-info-dialog-button-foreground-color-hover": "var(--osano-info-dialog-button-foreground-color-contrast, var(--osano-button-foreground-color-contrast))",
+    "--osano-info-dialog-button-background-color-focus": "var(--osano-info-dialog-button-foreground-color-hover, var(--osano-info-dialog-button-foreground-color-contrast))",
+    "--osano-info-dialog-button-foreground-color-focus": "var(--osano-info-dialog-button-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-info-dialog-toggle-off-track-color-contrast": "var(--osano-toggle-off-track-color-contrast, #c9c9c9)",
+    "--osano-info-dialog-toggle-off-thumb-color-contrast": "var(--osano-toggle-off-thumb-color-contrast, #ebebeb)",
+    "--osano-info-dialog-toggle-off-track-color-hover": "var(--osano-info-dialog-toggle-off-track-color-contrast, var(--osano-toggle-off-track-color-contrast))",
+    "--osano-info-dialog-toggle-off-thumb-color-hover": "var(--osano-info-dialog-toggle-off-thumb-color-contrast, var(--osano-toggle-off-thumb-color-contrast))",
+    "--osano-info-dialog-toggle-off-track-color-focus": "var(--osano-info-dialog-toggle-off-thumb-color-hover, var(--osano-info-dialog-toggle-off-thumb-color-contrast))",
+    "--osano-info-dialog-toggle-off-thumb-color-focus": "var(--osano-info-dialog-toggle-off-track-color-hover, var(--osano-info-dialog-toggle-off-track-color-contrast))",
+    "--osano-info-dialog-toggle-off-track-color-disabled": "var(--osano-toggle-off-track-color-disabled, #9d9d9d)",
+    "--osano-info-dialog-toggle-off-thumb-color-disabled": "var(--osano-toggle-off-thumb-color-disabled, #bfbfbf)",
+    "--osano-info-dialog-toggle-on-track-color-contrast": "var(--osano-toggle-on-track-color-contrast, #6976ff)",
+    "--osano-info-dialog-toggle-on-thumb-color-contrast": "var(--osano-toggle-on-thumb-color-contrast, #ebebeb)",
+    "--osano-info-dialog-toggle-on-track-color-hover": "var(--osano-info-dialog-toggle-on-track-color-contrast, var(--osano-toggle-on-track-color-contrast))",
+    "--osano-info-dialog-toggle-on-thumb-color-hover": "var(--osano-info-dialog-toggle-on-thumb-color-contrast, var(--osano-toggle-on-thumb-color-contrast))",
+    "--osano-info-dialog-toggle-on-track-color-focus": "var(--osano-info-dialog-toggle-on-thumb-color-hover, var(--osano-info-dialog-toggle-on-thumb-color-contrast))",
+    "--osano-info-dialog-toggle-on-thumb-color-focus": "var(--osano-info-dialog-toggle-on-track-color-hover, var(--osano-info-dialog-toggle-on-track-color-contrast))",
+    "--osano-info-dialog-toggle-on-track-color-disabled": "var(--osano-toggle-on-track-color-disabled, #95a2ff)",
+    "--osano-info-dialog-toggle-on-thumb-color-disabled": "var(--osano-toggle-on-thumb-color-disabled, #bfbfbf)",
+    "--osano-info-dialog-link-color-contrast": "var(--osano-link-color-contrast, #6a79ff)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-6",
+   "selector": ".carousel_cont",
+   "context": [],
+   "properties": {
+    "--fade-size": "80px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-6",
+   "selector": ".carousel_cont",
+   "context": [
+    "@media (max-width: 479px)"
+   ],
+   "properties": {
+    "--fade-size": "40px"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-window",
+   "context": [],
+   "properties": {
+    "--fade-transition-time": "700ms",
+    "--slide-transition-time": "400ms",
+    "--osano-focus-outline": "3px solid var(--osano-focus-outline-color)",
+    "--osano-focus-outline-offset": "2px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-background-color-hover)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button:focus-visible",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-background-color-hover)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_accept, .osano-cm-button--type_accept-all",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-accept-background-color)",
+    "--osano-button-border-color": "var(--osano-button-accept-border-color)",
+    "--osano-button-foreground-color": "var(--osano-button-accept-foreground-color)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_accept:focus-visible, .osano-cm-button--type_accept:hover, .osano-cm-button--type_accept-all:focus-visible, .osano-cm-button--type_accept-all:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-accept-background-color-hover)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_deny",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-deny-background-color)",
+    "--osano-button-border-color": "var(--osano-button-deny-border-color)",
+    "--osano-button-foreground-color": "var(--osano-button-deny-foreground-color)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_deny:focus-visible, .osano-cm-button--type_deny:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-deny-background-color-hover)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_denyAll",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-reject-all-background-color)",
+    "--osano-button-border-color": "var(--osano-button-reject-all-border-color)",
+    "--osano-button-foreground-color": "var(--osano-button-reject-all-foreground-color)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_denyAll:focus-visible, .osano-cm-button--type_denyAll:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var( --osano-button-reject-all-background-color-hover )"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_manage",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-manage-background-color)",
+    "--osano-button-border-color": "var(--osano-button-manage-border-color)",
+    "--osano-button-foreground-color": "var(--osano-button-manage-foreground-color)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_manage:focus-visible, .osano-cm-button--type_manage:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-manage-background-color-hover)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-close",
+   "context": [],
+   "properties": {
+    "--osano-button-close-background-color": "transparent",
+    "--osano-button-close-stroke-color": "var(--osano-button-close-color)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-close:focus-visible",
+   "context": [],
+   "properties": {
+    "--osano-button-close-background-color": "var(--osano-button-close-color)",
+    "--osano-button-close-stroke-color": "var(--osano-dialog-background-color)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-off-track-color)",
+    "--osano-toggle-thumb-color": "var(--osano-toggle-off-thumb-color)",
+    "--osano-toggle-border-color": "transparent"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:checked + .osano-cm-toggle__switch",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-on-track-color)",
+    "--osano-toggle-thumb-color": "var(--osano-toggle-on-thumb-color)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:hover + .osano-cm-toggle__switch",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-off-track-color-hover)",
+    "--osano-toggle-thumb-color": "var(--osano-toggle-off-thumb-color-hover)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:focus-visible + .osano-cm-toggle__switch::before",
+   "context": [],
+   "properties": {
+    "--osano-toggle-border-color": "var(--osano-toggle-off-track-color-hover)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:checked:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:checked:hover + .osano-cm-toggle__switch",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-on-track-color-hover)",
+    "--osano-toggle-thumb-color": "var(--osano-toggle-on-thumb-color-hover)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:checked:focus-visible + .osano-cm-toggle__switch::before",
+   "context": [],
+   "properties": {
+    "--osano-toggle-border-color": "var(--osano-toggle-on-track-color-hover)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:hover + .osano-cm-toggle__switc",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-off-track-color-disabled)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:focus-visible + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:hover + .osano-cm",
+   "context": [],
+   "properties": {
+    "--osano-toggle-thumb-color": "var(--osano-toggle-off-thumb-color-disabled)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:focus-visible + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:hover + .osano-",
+   "context": [],
+   "properties": {
+    "--osano-toggle-border-color": "transparent"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled:checked + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:checked:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:checked:hover +",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-on-track-color-disabled)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled:checked + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:checked:focus-visible + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:c",
+   "context": [],
+   "properties": {
+    "--osano-toggle-thumb-color": "var(--osano-toggle-on-thumb-color-disabled)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled:checked + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:checked:focus-visible + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled",
+   "context": [],
+   "properties": {
+    "--osano-toggle-border-color": "transparent"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-dialog",
+   "context": [],
+   "properties": {
+    "--osano-gpc-color": "var(--osano-dialog-gpc-color)",
+    "--osano-gpc-border-color": "var(--osano-dialog-gpc-border-color)",
+    "--osano-gpc-background-color": "var(--osano-dialog-gpc-background-color)",
+    "--osano-gpc-foreground-color": "var(--osano-dialog-gpc-foreground-color)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-info-dialog",
+   "context": [],
+   "properties": {
+    "--osano-dialog-background-color": "var(--osano-info-dialog-background-color)",
+    "--osano-dialog-foreground-color": "var(--osano-info-dialog-foreground-color)",
+    "--osano-toggle-off-track-color": "var(--osano-info-dialog-toggle-off-track-color)",
+    "--osano-toggle-off-thumb-color": "var(--osano-info-dialog-toggle-off-thumb-color)",
+    "--osano-toggle-on-track-color": "var(--osano-info-dialog-toggle-on-track-color)",
+    "--osano-toggle-on-thumb-color": "var(--osano-info-dialog-toggle-on-thumb-color)",
+    "--osano-toggle-off-track-color-hover": "var(--osano-info-dialog-toggle-off-track-color-hover)",
+    "--osano-toggle-off-track-color-focus": "var(--osano-info-dialog-toggle-off-track-color-focus)",
+    "--osano-toggle-off-thumb-color-hover": "var(--osano-info-dialog-toggle-off-thumb-color-hover)",
+    "--osano-toggle-off-thumb-color-focus": "var(--osano-info-dialog-toggle-off-thumb-color-focus)",
+    "--osano-toggle-on-track-color-hover": "var(--osano-info-dialog-toggle-on-track-color-hover)",
+    "--osano-toggle-on-track-color-focus": "var(--osano-info-dialog-toggle-on-track-color-focus)",
+    "--osano-toggle-on-thumb-color-hover": "var(--osano-info-dialog-toggle-on-thumb-color-hover)",
+    "--osano-toggle-on-thumb-color-focus": "var(--osano-info-dialog-toggle-on-thumb-color-focus)",
+    "--osano-toggle-off-track-color-contrast": "var( --osano-info-dialog-toggle-off-track-color-contrast )",
+    "--osano-toggle-off-thumb-color-contrast": "var( --osano-info-dialog-toggle-off-thumb-color-contrast )",
+    "--osano-toggle-on-track-color-contrast": "var(--osano-info-dialog-toggle-on-track-color-contrast)",
+    "--osano-toggle-on-thumb-color-contrast": "var(--osano-info-dialog-toggle-on-thumb-color-contrast)",
+    "--osano-toggle-on-track-color-disabled": "var(--osano-info-dialog-toggle-on-track-color-disabled)",
+    "--osano-toggle-on-thumb-color-disabled": "var(--osano-info-dialog-toggle-on-thumb-color-disabled)",
+    "--osano-toggle-off-track-color-disabled": "var( --osano-info-dialog-toggle-off-track-color-disabled )",
+    "--osano-toggle-off-thumb-color-disabled": "var( --osano-info-dialog-toggle-off-thumb-color-disabled )",
+    "--osano-button-background-color": "var(--osano-info-dialog-button-background-color)",
+    "--osano-button-border-color": "var(--osano-info-dialog-button-border-color)",
+    "--osano-button-foreground-color": "var(--osano-info-dialog-button-foreground-color)",
+    "--osano-button-foreground-color-focus": "var(--osano-info-dialog-button-foreground-color-focus)",
+    "--osano-button-background-color-focus": "var(--osano-info-dialog-button-background-color-focus)",
+    "--osano-button-foreground-color-hover": "var(--osano-info-dialog-button-foreground-color-hover)",
+    "--osano-button-background-color-hover": "var(--osano-info-dialog-button-background-color-hover)",
+    "--osano-button-accept-background-color": "var(--osano-info-dialog-button-background-color)",
+    "--osano-button-accept-border-color": "var(--osano-info-dialog-button-border-color)",
+    "--osano-button-accept-foreground-color": "var(--osano-info-dialog-button-foreground-color)",
+    "--osano-button-accept-foreground-color-focus": "var( --osano-info-dialog-button-foreground-color-focus )",
+    "--osano-button-accept-background-color-focus": "var( --osano-info-dialog-button-background-color-focus )",
+    "--osano-button-accept-foreground-color-hover": "var( --osano-info-dialog-button-foreground-color-hover )",
+    "--osano-button-accept-background-color-hover": "var( --osano-info-dialog-button-background-color-hover )",
+    "--osano-button-deny-background-color": "var(--osano-info-dialog-button-background-color)",
+    "--osano-button-deny-border-color": "var(--osano-info-dialog-button-border-color)",
+    "--osano-button-deny-foreground-color": "var(--osano-info-dialog-button-foreground-color)",
+    "--osano-button-deny-foreground-color-focus": "var( --osano-info-dialog-button-foreground-color-focus )",
+    "--osano-button-deny-background-color-focus": "var( --osano-info-dialog-button-background-color-focus )",
+    "--osano-button-deny-foreground-color-hover": "var( --osano-info-dialog-button-foreground-color-hover )",
+    "--osano-button-deny-background-color-hover": "var( --osano-info-dialog-button-background-color-hover )",
+    "--osano-link-color": "var(--osano-info-dialog-link-color)",
+    "--osano-link-color-contrast": "var(--osano-info-dialog-link-color-contrast)",
+    "--osano-link-color-hover": "var(--osano-info-dialog-link-color-hover)",
+    "--osano-link-color-focus": "var(--osano-info-dialog-link-color-focus)",
+    "--osano-button-close-color": "var(--osano-info-dialog-button-close-color)",
+    "--osano-gpc-color": "var(--osano-info-dialog-gpc-color)",
+    "--osano-gpc-border-color": "var(--osano-info-dialog-gpc-border-color)",
+    "--osano-gpc-background-color": "var(--osano-info-dialog-gpc-background-color)",
+    "--osano-gpc-foreground-color": "var(--osano-info-dialog-gpc-foreground-color)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-consent-id-box__button--copied",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-accept-background-color-hover)",
+    "--osano-button-border-color": "var(--osano-button-accept-background-color-hover)",
+    "--osano-button-foreground-color": "var(--osano-button-accept-foreground-color-hover)"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/css/reclaimai.webflow.shared.72d63c5a9.min.css",
+   "font-family": "webflow-icons",
+   "src": "url(\"data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaGVhCXYFgQAABNQAAAAkaG10eCe4A1oAAAT4AAAAMGxvY2EDtALGAAAFKAAAABptYXhwABAAPgAABUQAAAAgbmFtZSoCsMsAAAVkAAABznBvc3QAAwAAAAAHNAAAACAAAwP4AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAQAAAAAwACAACAAQAAQAg5gPpA//9//8AAAAAACDmAOkA//3//wAB/+MaBBcIAAMAAQAAAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEBIAAAAyADgAAFAAAJAQcJARcDIP5AQAGA/oBAAcABwED+gP6AQAABAOAAAALgA4AABQAAEwEXCQEH4AHAQP6AAYBAAcABwED+gP6AQAAAAwDAAOADQALAAA8AHwAvAAABISIGHQEUFjMhMjY9ATQmByEiBh0BFBYzITI2PQE0JgchIgYdARQWMyEyNj0BNCYDIP3ADRMTDQJADRMTDf3ADRMTDQJADRMTDf3ADRMTDQJADRMTAsATDSANExMNIA0TwBMNIA0TEw0gDRPAEw0gDRMTDSANEwAAAAABAJ0AtAOBApUABQAACQIHCQEDJP7r/upcAXEBcgKU/usBFVz+fAGEAAAAAAL//f+9BAMDwwAEAAkAABcBJwEXAwE3AQdpA5ps/GZsbAOabPxmbEMDmmz8ZmwDmvxmbAOabAAAAgAA/8AEAAPAAB0AOwAABSInLgEnJjU0Nz4BNzYzMTIXHgEXFhUUBw4BBwYjNTI3PgE3NjU0Jy4BJyYjMSIHDgEHBhUUFx4BFxYzAgBqXV6LKCgoKIteXWpqXV6LKCgoKIteXWpVSktvICEhIG9LSlVVSktvICEhIG9LSlVAKCiLXl1qal1eiygoKCiLXl1qal1eiygoZiEgb0tKVVVKS28gISEgb0tKVVVKS28gIQABAAABwAIAA8AAEgAAEzQ3PgE3NjMxFSIHDgEHBhUxIwAoKIteXWpVSktvICFmAcBqXV6LKChmISBvS0pVAAAAAgAA/8AFtgPAADIAOgAAARYXHgEXFhUUBw4BBwYHIxUhIicuAScmNTQ3PgE3NjMxOAExNDc+ATc2MzIXHgEXFhcVATMJATMVMzUEjD83NlAXFxYXTjU1PQL8kz01Nk8XFxcXTzY1PSIjd1BQWlJJSXInJw3+mdv+2/7c25MCUQYcHFg5OUA/ODlXHBwIAhcXTzY1PTw1Nk8XF1tQUHcjIhwcYUNDTgL+3QFt/pOTkwABAAAAAQAAmM7nP18PPPUACwQAAAAAANciZKUAAAAA1yJkpf/9/70FtgPDAAAACAACAAAAAAAAAAEAAAPA/8AAAAW3//3//QW2AAEAAAAAAAAAAAAAAAAAAAAMBAAAAAAAAAAAAAAAAgAAAAQAASAEAADgBAAAwAQAAJ0EAP/9BAAAAAQAAAAFtwAAAAAAAAAKABQAHgAyAEYAjACiAL4BFgE2AY4AAAABAAAADAA8AAMAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADQAAAAEAAAAAAAIABwCWAAEAAAAAAAMADQBIAAEAAAAAAAQADQCrAAEAAAAAAAUACwAnAAEAAAAAAAYADQBvAAEAAAAAAAoAGgDSAAMAAQQJAAEAGgANAAMAAQQJAAIADgCdAAMAAQQJAAMAGgBVAAMAAQQJAAQAGgC4AAMAAQQJAAUAFgAyAAMAAQQJAAYAGgB8AAMAAQQJAAoANADsd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\") format(\"truetype\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/css/reclaimai.webflow.shared.72d63c5a9.min.css",
+   "font-family": "\"Sharp Grotesk DB Book 20\"",
+   "src": "url(\"https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/6ad91006bda78e4afe21819e_SharpGroteskDBBook20.woff\") format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/css/reclaimai.webflow.shared.72d63c5a9.min.css",
+   "font-family": "\"Sharp Grotesk DB Book 23\"",
+   "src": "url(\"https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/6ad911478308d51734261e26_SharpGroteskDBBook23.woff\") format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/css/reclaimai.webflow.shared.72d63c5a9.min.css",
+   "font-family": "\"Atlas Grotesk Web\"",
+   "src": "url(\"https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/6ad911dac1832e020605b4c3_AtlasGrotesk-Bold-Web.woff\") format(\"woff\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/css/reclaimai.webflow.shared.72d63c5a9.min.css",
+   "font-family": "\"Atlas Grotesk Web\"",
+   "src": "url(\"https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/6ad911da5880da3c4e36e921_AtlasGrotesk-Regular-Web.woff\") format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/css/reclaimai.webflow.shared.72d63c5a9.min.css",
+   "font-family": "\"Atlas Grotesk Web\"",
+   "src": "url(\"https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/6ad9122cfbe6140b50d96abb_AtlasGrotesk-Light-Web.woff\") format(\"woff\")",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyxq15IDhunJ_o.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyx615IDhunJ_o.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyxq15IDhunJ_o.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyx615IDhunJ_o.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inconsolata",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizYRExUiTo99u79D0e0ysmIAjcQ-woy.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizYRExUiTo99u79D0e0w8mIAjcQ-woy.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizYRExUiTo99u79D0e0ycmIAjcQ-woy.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizYRExUiTo99u79D0e0x8mIAjcQ-w.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizdRExUiTo99u79D0e8fOydIhUd0TA7i2bI.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizdRExUiTo99u79D0e8fOydKxUd0TA7i2bI.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizdRExUiTo99u79D0e8fOydIRUd0TA7i2bI.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizdRExUiTo99u79D0e8fOydLxUd0TA7iw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizaRExUiTo99u79D0-ExcOPIDUg-g.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizaRExUiTo99u79D0aExcOPIDUg-g.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizaRExUiTo99u79D0yExcOPIDUg-g.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizaRExUiTo99u79D0KExcOPIDU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizfRExUiTo99u79B_mh0OOtLR8a8zILig.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizfRExUiTo99u79B_mh0OqtLR8a8zILig.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizfRExUiTo99u79B_mh0OCtLR8a8zILig.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"PT Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/ptsans/v18/jizfRExUiTo99u79B_mh0O6tLR8a8zI.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--case-study-blurple": {
+    "raw": "#6b7ded",
+    "kind": "color",
+    "value": "#6b7ded"
+   },
+   "--case-study-corn": {
+    "raw": "#f6c765",
+    "kind": "color",
+    "value": "#f6c765"
+   },
+   "--case-study-pink": {
+    "raw": "#ee9ab2",
+    "kind": "color",
+    "value": "#ee9ab2"
+   },
+   "--goldenrod": {
+    "raw": "#f6c765",
+    "kind": "color",
+    "value": "#f6c765"
+   },
+   "--osano-button-accept-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-button-accept-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-accept-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-accept-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-accept-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-accept-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-accept-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-accept-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-accept-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-button-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-close-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--osano-button-deny-background-color": {
+    "raw": "#d85656",
+    "kind": "color",
+    "value": "#d85656"
+   },
+   "--osano-button-deny-background-color-contrast": {
+    "raw": "#ec6a6a",
+    "kind": "color",
+    "value": "#ec6a6a"
+   },
+   "--osano-button-deny-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-deny-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-deny-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-deny-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-deny-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-deny-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-deny-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-manage-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-button-manage-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-manage-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-manage-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-manage-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-manage-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-manage-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-manage-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-manage-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-reject-all-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-button-reject-all-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-reject-all-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-reject-all-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-reject-all-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-reject-all-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-reject-all-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-reject-all-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-reject-all-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-clear-dialog-background": {
+    "raw": "rgba(255,255,255,0)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0)"
+   },
+   "--osano-dialog-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-dialog-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-dialog-foreground-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--osano-dialog-foreground-color-contrast": {
+    "raw": "#141414",
+    "kind": "color",
+    "value": "#141414"
+   },
+   "--osano-dialog-gpc-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-dialog-gpc-border-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--osano-dialog-gpc-color": {
+    "raw": "#37cd84",
+    "kind": "color",
+    "value": "#37cd84"
+   },
+   "--osano-dialog-gpc-foreground-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--osano-dialog-type": {
+    "raw": "box",
+    "kind": "fontFamily",
+    "value": "box"
+   },
+   "--osano-display-position": {
+    "raw": "\"bottom-left\"",
+    "kind": "fontFamily",
+    "value": "\"bottom-left\""
+   },
+   "--osano-focus-outline-color": {
+    "raw": "Highlight",
+    "kind": "color",
+    "value": "rgba(128, 188, 254, 0.6)"
+   },
+   "--osano-gpc-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-gpc-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-gpc-background-color-hover": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-gpc-border-color": {
+    "raw": "#058a5e",
+    "kind": "color",
+    "value": "#058a5e"
+   },
+   "--osano-gpc-color": {
+    "raw": "#37cd84",
+    "kind": "color",
+    "value": "#37cd84"
+   },
+   "--osano-gpc-foreground-color": {
+    "raw": "#058a5e",
+    "kind": "color",
+    "value": "#058a5e"
+   },
+   "--osano-info-dialog-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-button-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-info-dialog-button-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-button-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-button-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-button-border-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-button-close-color": {
+    "raw": "#181d25",
+    "kind": "color",
+    "value": "#181d25"
+   },
+   "--osano-info-dialog-button-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-button-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-button-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-button-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-foreground-color": {
+    "raw": "#181d25",
+    "kind": "color",
+    "value": "#181d25"
+   },
+   "--osano-info-dialog-gpc-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-gpc-border-color": {
+    "raw": "#181d25",
+    "kind": "color",
+    "value": "#181d25"
+   },
+   "--osano-info-dialog-gpc-color": {
+    "raw": "#37cd84",
+    "kind": "color",
+    "value": "#37cd84"
+   },
+   "--osano-info-dialog-gpc-foreground-color": {
+    "raw": "#181d25",
+    "kind": "color",
+    "value": "#181d25"
+   },
+   "--osano-info-dialog-link-color": {
+    "raw": "#5665f0",
+    "kind": "color",
+    "value": "#5665f0"
+   },
+   "--osano-info-dialog-link-color-contrast": {
+    "raw": "#6a79ff",
+    "kind": "color",
+    "value": "#6a79ff"
+   },
+   "--osano-info-dialog-overlay-color": {
+    "raw": "rgba(0,0,0,0.8)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.8)"
+   },
+   "--osano-info-dialog-position": {
+    "raw": "left",
+    "kind": "fontFamily",
+    "value": "left"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-focus": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-off-track-color": {
+    "raw": "#dddddd",
+    "kind": "color",
+    "value": "#dddddd"
+   },
+   "--osano-info-dialog-toggle-off-track-color-contrast": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-info-dialog-toggle-off-track-color-disabled": {
+    "raw": "#9d9d9d",
+    "kind": "color",
+    "value": "#9d9d9d"
+   },
+   "--osano-info-dialog-toggle-off-track-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-off-track-color-hover": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-on-track-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-info-dialog-toggle-on-track-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-toggle-on-track-color-disabled": {
+    "raw": "#95a2ff",
+    "kind": "color",
+    "value": "#95a2ff"
+   },
+   "--osano-info-dialog-toggle-on-track-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-on-track-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-link-color": {
+    "raw": "#5665f0",
+    "kind": "color",
+    "value": "#5665f0"
+   },
+   "--osano-link-color-contrast": {
+    "raw": "#6a79ff",
+    "kind": "color",
+    "value": "#6a79ff"
+   },
+   "--osano-opt-out-widget-position": {
+    "raw": "left",
+    "kind": "fontFamily",
+    "value": "left"
+   },
+   "--osano-toggle-button-off-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-toggle-button-on-color": {
+    "raw": "#f4f4f4",
+    "kind": "color",
+    "value": "#f4f4f4"
+   },
+   "--osano-toggle-off-background-color": {
+    "raw": "#d2cfff",
+    "kind": "color",
+    "value": "#d2cfff"
+   },
+   "--osano-toggle-off-thumb-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-toggle-off-thumb-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-off-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-toggle-off-thumb-color-focus": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-toggle-off-thumb-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-off-track-color": {
+    "raw": "#dddddd",
+    "kind": "color",
+    "value": "#dddddd"
+   },
+   "--osano-toggle-off-track-color-contrast": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-toggle-off-track-color-disabled": {
+    "raw": "#9d9d9d",
+    "kind": "color",
+    "value": "#9d9d9d"
+   },
+   "--osano-toggle-off-track-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-off-track-color-hover": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-toggle-on-background-color": {
+    "raw": "#37cd8f",
+    "kind": "color",
+    "value": "#37cd8f"
+   },
+   "--osano-toggle-on-thumb-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-toggle-on-thumb-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-on-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-toggle-on-thumb-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-toggle-on-thumb-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-on-track-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-toggle-on-track-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-toggle-on-track-color-disabled": {
+    "raw": "#95a2ff",
+    "kind": "color",
+    "value": "#95a2ff"
+   },
+   "--osano-toggle-on-track-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-on-track-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-widget-color": {
+    "raw": "#37cd8f",
+    "kind": "color",
+    "value": "#37cd8f"
+   },
+   "--osano-widget-fill-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-widget-outline-color": {
+    "raw": "#29246a",
+    "kind": "color",
+    "value": "#29246a"
+   },
+   "--osano-widget-position": {
+    "raw": "left",
+    "kind": "fontFamily",
+    "value": "left"
+   },
+   "--royal-blue": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   }
+  },
+  "light": {
+   "--case-study-blurple": {
+    "raw": "#6b7ded",
+    "kind": "color",
+    "value": "#6b7ded"
+   },
+   "--case-study-corn": {
+    "raw": "#f6c765",
+    "kind": "color",
+    "value": "#f6c765"
+   },
+   "--case-study-pink": {
+    "raw": "#ee9ab2",
+    "kind": "color",
+    "value": "#ee9ab2"
+   },
+   "--goldenrod": {
+    "raw": "#f6c765",
+    "kind": "color",
+    "value": "#f6c765"
+   },
+   "--osano-button-accept-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-button-accept-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-accept-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-accept-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-accept-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-accept-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-accept-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-accept-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-accept-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-button-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-close-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--osano-button-deny-background-color": {
+    "raw": "#d85656",
+    "kind": "color",
+    "value": "#d85656"
+   },
+   "--osano-button-deny-background-color-contrast": {
+    "raw": "#ec6a6a",
+    "kind": "color",
+    "value": "#ec6a6a"
+   },
+   "--osano-button-deny-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-deny-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-deny-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-deny-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-deny-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-deny-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-deny-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-manage-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-button-manage-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-manage-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-manage-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-manage-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-manage-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-manage-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-manage-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-manage-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-reject-all-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-button-reject-all-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-reject-all-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-reject-all-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-reject-all-border-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-reject-all-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-reject-all-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-reject-all-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-button-reject-all-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-clear-dialog-background": {
+    "raw": "rgba(255,255,255,0)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0)"
+   },
+   "--osano-dialog-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-dialog-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-dialog-foreground-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--osano-dialog-foreground-color-contrast": {
+    "raw": "#141414",
+    "kind": "color",
+    "value": "#141414"
+   },
+   "--osano-dialog-gpc-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-dialog-gpc-border-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--osano-dialog-gpc-color": {
+    "raw": "#37cd84",
+    "kind": "color",
+    "value": "#37cd84"
+   },
+   "--osano-dialog-gpc-foreground-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--osano-dialog-type": {
+    "raw": "box",
+    "kind": "fontFamily",
+    "value": "box"
+   },
+   "--osano-display-position": {
+    "raw": "\"bottom-left\"",
+    "kind": "fontFamily",
+    "value": "\"bottom-left\""
+   },
+   "--osano-focus-outline-color": {
+    "raw": "Highlight",
+    "kind": "color",
+    "value": "rgba(128, 188, 254, 0.6)"
+   },
+   "--osano-gpc-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-gpc-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-gpc-background-color-hover": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-gpc-border-color": {
+    "raw": "#058a5e",
+    "kind": "color",
+    "value": "#058a5e"
+   },
+   "--osano-gpc-color": {
+    "raw": "#37cd84",
+    "kind": "color",
+    "value": "#37cd84"
+   },
+   "--osano-gpc-foreground-color": {
+    "raw": "#058a5e",
+    "kind": "color",
+    "value": "#058a5e"
+   },
+   "--osano-info-dialog-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-button-background-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-info-dialog-button-background-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-button-background-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-button-background-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-button-border-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-button-close-color": {
+    "raw": "#181d25",
+    "kind": "color",
+    "value": "#181d25"
+   },
+   "--osano-info-dialog-button-foreground-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-button-foreground-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-button-foreground-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-button-foreground-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-foreground-color": {
+    "raw": "#181d25",
+    "kind": "color",
+    "value": "#181d25"
+   },
+   "--osano-info-dialog-gpc-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-gpc-border-color": {
+    "raw": "#181d25",
+    "kind": "color",
+    "value": "#181d25"
+   },
+   "--osano-info-dialog-gpc-color": {
+    "raw": "#37cd84",
+    "kind": "color",
+    "value": "#37cd84"
+   },
+   "--osano-info-dialog-gpc-foreground-color": {
+    "raw": "#181d25",
+    "kind": "color",
+    "value": "#181d25"
+   },
+   "--osano-info-dialog-link-color": {
+    "raw": "#5665f0",
+    "kind": "color",
+    "value": "#5665f0"
+   },
+   "--osano-info-dialog-link-color-contrast": {
+    "raw": "#6a79ff",
+    "kind": "color",
+    "value": "#6a79ff"
+   },
+   "--osano-info-dialog-overlay-color": {
+    "raw": "rgba(0,0,0,0.8)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.8)"
+   },
+   "--osano-info-dialog-position": {
+    "raw": "left",
+    "kind": "fontFamily",
+    "value": "left"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-focus": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-off-track-color": {
+    "raw": "#dddddd",
+    "kind": "color",
+    "value": "#dddddd"
+   },
+   "--osano-info-dialog-toggle-off-track-color-contrast": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-info-dialog-toggle-off-track-color-disabled": {
+    "raw": "#9d9d9d",
+    "kind": "color",
+    "value": "#9d9d9d"
+   },
+   "--osano-info-dialog-toggle-off-track-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-off-track-color-hover": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-on-track-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-info-dialog-toggle-on-track-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-info-dialog-toggle-on-track-color-disabled": {
+    "raw": "#95a2ff",
+    "kind": "color",
+    "value": "#95a2ff"
+   },
+   "--osano-info-dialog-toggle-on-track-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-toggle-on-track-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-link-color": {
+    "raw": "#5665f0",
+    "kind": "color",
+    "value": "#5665f0"
+   },
+   "--osano-link-color-contrast": {
+    "raw": "#6a79ff",
+    "kind": "color",
+    "value": "#6a79ff"
+   },
+   "--osano-opt-out-widget-position": {
+    "raw": "left",
+    "kind": "fontFamily",
+    "value": "left"
+   },
+   "--osano-toggle-button-off-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-toggle-button-on-color": {
+    "raw": "#f4f4f4",
+    "kind": "color",
+    "value": "#f4f4f4"
+   },
+   "--osano-toggle-off-background-color": {
+    "raw": "#d2cfff",
+    "kind": "color",
+    "value": "#d2cfff"
+   },
+   "--osano-toggle-off-thumb-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-toggle-off-thumb-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-off-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-toggle-off-thumb-color-focus": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-toggle-off-thumb-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-off-track-color": {
+    "raw": "#dddddd",
+    "kind": "color",
+    "value": "#dddddd"
+   },
+   "--osano-toggle-off-track-color-contrast": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-toggle-off-track-color-disabled": {
+    "raw": "#9d9d9d",
+    "kind": "color",
+    "value": "#9d9d9d"
+   },
+   "--osano-toggle-off-track-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-off-track-color-hover": {
+    "raw": "#c9c9c9",
+    "kind": "color",
+    "value": "#c9c9c9"
+   },
+   "--osano-toggle-on-background-color": {
+    "raw": "#37cd8f",
+    "kind": "color",
+    "value": "#37cd8f"
+   },
+   "--osano-toggle-on-thumb-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-toggle-on-thumb-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-on-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-toggle-on-thumb-color-focus": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-toggle-on-thumb-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-on-track-color": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   },
+   "--osano-toggle-on-track-color-contrast": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-toggle-on-track-color-disabled": {
+    "raw": "#95a2ff",
+    "kind": "color",
+    "value": "#95a2ff"
+   },
+   "--osano-toggle-on-track-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-toggle-on-track-color-hover": {
+    "raw": "#6976ff",
+    "kind": "color",
+    "value": "#6976ff"
+   },
+   "--osano-widget-color": {
+    "raw": "#37cd8f",
+    "kind": "color",
+    "value": "#37cd8f"
+   },
+   "--osano-widget-fill-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-widget-outline-color": {
+    "raw": "#29246a",
+    "kind": "color",
+    "value": "#29246a"
+   },
+   "--osano-widget-position": {
+    "raw": "left",
+    "kind": "fontFamily",
+    "value": "left"
+   },
+   "--royal-blue": {
+    "raw": "#5562eb",
+    "kind": "color",
+    "value": "#5562eb"
+   }
+  }
+ }
+}
