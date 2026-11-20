@@ -232,10 +232,10 @@ Selector: `first field on /contact; focused only, nothing typed or submitted`.
 | Button, link, text field, card, menu | Captured. Nav focus-visible is a 2px orange outline. |
 | Icon button | The phone hamburger measured 0×0. The click did not open a drawer. |
 | Text area, select, checkbox, radio | Not on the captured routes. |
-| Switch | The pricing Monthly/Annual control is in [pricing-light-default](../screenshots/pricing-light-default.png). It was not flipped, so its states are not in the tables. |
-| Tabs | Docs tabs are in [docs-light-default](../screenshots/docs-light-default.png). Not toggled. |
+| Switch | The pricing Monthly/Annual control is in [pricing-light-default](screenshots/pricing-light-default.png). It was not flipped, so its states are not in the tables. |
+| Tabs | Docs tabs are in [docs-light-default](screenshots/docs-light-default.png). Not toggled. |
 | Tooltip, toast | Not opened. |
-| Dialog | The login card is a dialog over the product. [login-light-default](../screenshots/login-light-default.png). |
+| Dialog | The login card is a dialog over the product. [login-light-default](screenshots/login-light-default.png). |
 | Table, avatar, list row | Not on these routes. |
 | Badge | The Ditto New chip is in the product menu shot. Not cropped on its own. |
 | Empty, loading, error, destructive confirmation | Login was not submitted, so no error. Not on the public routes. |
