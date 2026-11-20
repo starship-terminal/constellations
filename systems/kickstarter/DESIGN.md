@@ -19,17 +19,27 @@ colors:
   color-background-accent-gray-bold: "#636363"
   color-background-accent-gray-subtle: "#f2f2f2"
   color-background-accent-green-bold: "#037242"
+  color-background-accent-green-bold-hovered: "#025a34"
+  color-background-accent-green-bold-pressed: "#024629"
   color-background-accent-green-subtle: "#d2feeb"
   color-background-accent-purple-bold: "#8936c9"
   color-background-accent-purple-subtle: "#f8f3fc"
   color-background-accent-red-bold: "#b81f14"
   color-background-accent-red-subtle: "#fef2f1"
   color-background-action: "#171717"
+  color-background-action-disabled: "#b3b3b3"
+  color-background-action-hover: "#000000"
+  color-background-action-pressed: "#2c2c2c"
   color-background-danger-bold: "#b81f14"
+  color-background-danger-bold-hovered: "#931910"
+  color-background-danger-bold-pressed: "#73140d"
   color-background-danger-disabled: "#f7bbb7"
   color-background-danger-subtle: "#fef2f1"
+  color-background-danger-subtle-hovered: "#fbdddb"
   color-background-disabled: "#c9c9c9"
   color-background-inverse: "#ffffff"
+  color-background-inverse-hover: "#f2f2f2"
+  color-background-inverse-pressed: "#e0e0e0"
   color-background-selected: "#2c2c2c"
   color-background-surface-inverse: "#171717"
   color-background-surface-primary: "#ffffff"
@@ -41,21 +51,38 @@ colors:
   color-border-accent-green-subtle: "#06e584"
   color-border-active: "#3c3c3c"
   color-border-bold: "#c9c9c9"
+  color-border-bold-hover: "#3c3c3c"
   color-border-danger-bold: "#73140d"
   color-border-danger-subtle: "#f7bbb7"
   color-border-disabled: "#f2f2f2"
   color-border-focus: "#afaff9"
   color-border-subtle: "#e0e0e0"
+  color-border-subtle-hover: "#b3b3b3"
   color-border-warning-bold: "#4e3a04"
   color-border-warning-subtle: "#f5c43d"
   color-brand: "#05ce78"
   color-icon: "#3c3c3c"
+  color-icon-danger: "#931910"
+  color-icon-disabled: "#b3b3b3"
+  color-icon-green: "#025a34"
+  color-icon-green-inverse: "#d2feeb"
+  color-icon-info: "#1212e2"
+  color-icon-inverse: "#e0e0e0"
+  color-icon-subtle: "#636363"
+  color-icon-warning: "#614805"
   color-text-accent-blue: "#4c4cf0"
+  color-text-accent-blue-bolder: "#0f0fbd"
   color-text-accent-gray: "#171717"
   color-text-accent-green: "#037242"
+  color-text-accent-green-bolder: "#024629"
+  color-text-accent-green-inverse-disabled: "#d2feeb"
   color-text-accent-purple: "#8936c9"
+  color-text-accent-purple-bolder: "#582281"
   color-text-accent-red: "#b81f14"
+  color-text-accent-red-bolder: "#73140d"
+  color-text-accent-red-inverse-disabled: "#fef2f1"
   color-text-accent-yellow: "#836207"
+  color-text-accent-yellow-bolder: "#4e3a04"
   color-text-disabled: "#b3b3b3"
   color-text-inverse-disabled: "#f2f2f2"
   color-text-inverse-primary: "#ffffff"
@@ -66,9 +93,9 @@ colors:
 typography:
   display:
     fontFamily: "Inter"
-    fontSize: "48px"
-    fontWeight: 500
-    lineHeight: "56px"
+    fontSize: "34px"
+    fontWeight: 400
+    lineHeight: "42px"
   heading-lg:
     fontFamily: "Inter"
     fontSize: "28px"
@@ -203,8 +230,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- Spacing steps other than 2, 4, 8, and 16 are a 4px module derived from the radius tokens, not a declared `--kds-spacing-*` scale. The sheet does not publish one.
-- Type roles are derived from computed sizes on the public pages (home h1, banner, body, buttons), not from a declared type-token group. Inter is the computed body family. One `@font-face` names Effra and was not the painted body font.
+- The spacing steps are a 4px module typed in by hand at capture time and labelled Reconstruction. 2, 4, 8 and 16 equal declared elevation and radius values, and 48 is the measured search height. The sheet publishes no `--kds-spacing-*` scale.
+- `core.typography.display` and `core.fontSize.display` are the measured home hero h1 (34/42, weight 400). The other type roles and sizes were typed in by hand at capture time and are labelled Reconstruction: no reading in raw/ holds them, and the sheet declares no type-token group. Inter is the computed body family. One `@font-face` names Effra and was not the painted body font.
+- `core.motion.duration.enter` (300ms) and `core.motion.easing.nav` (cubic-bezier(0, 1, 1, 1)) were typed from the creator-nav submenu rule, which raw/motion.json does not hold; they are Reconstructions. `easing.out` is the CSS `ease-out` keyword, cubic-bezier(0, 0, 0.58, 1).
 - The pledge green (`#028858` / `#015738`) is measured on the button. It is not a `--kds-color-*` name. The nearest declared greens are `light.color.background.accent.green.bold` (`#037242`) and `light.color.brand` (`#05ce78`).
 - `--kds-shadow-0-foo: bar` is in the sheet and was left out of tokens. Elevation 0 is the transparent rest shadow.
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.

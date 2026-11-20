@@ -42,11 +42,20 @@ const routes = [
   ['/projects/shirtaloon/hwfwm', 'project'],
   ['/login', 'login'],
 ];
+const failed = [];
 for (const [route, tag] of routes) {
   const ctx = await newContext(browser, { dpr: 1 });
   const page = await ctx.newPage();
-  await open(page, BASE + route, { wait: 1200 });
-  const list = await page.evaluate(collect);
+  let list;
+  try {
+    if (!(await open(page, BASE + route, { wait: 1200 }))) throw new Error('page did not open (challenge or timeout)');
+    list = await page.evaluate(collect);
+  } catch (e) {
+    console.log(tag, 'FAILED', String(e.message || e).split('\n')[0]);
+    failed.push(tag);
+    await ctx.close();
+    continue;
+  }
   let fresh = 0;
   for (const ic of list) {
     const key = crypto.createHash('md5').update(ic.html.replace(/\s(width|height)="[^"]*"/g, '')).digest('hex').slice(0, 8);
@@ -57,6 +66,16 @@ for (const [route, tag] of routes) {
   console.log(tag, list.length, 'svgs', fresh, 'new');
   await ctx.close();
 }
+
+await browser.close();
+
+// The old set is replaced only after a complete collection (the kit's rule), so a run that dies
+// early or loses a page cannot leave icons/ emptied, stale or out of step with INDEX.tsv.
+if (failed.length || !seen.size) {
+  console.error(`not replacing icons/: ${failed.length ? 'failed pages: ' + failed.join(', ') : 'no icons collected'}`);
+  process.exit(1);
+}
+for (const f of fs.readdirSync(OUT)) if (f.endsWith('.svg')) fs.unlinkSync(path.join(OUT, f));
 
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 32) || 'icon';
 const used = new Set();
@@ -74,4 +93,3 @@ for (const ic of seen.values()) {
 }
 fs.writeFileSync(path.join(OUT, 'INDEX.tsv'), rows.join('\n') + '\n');
 console.log('wrote', i, 'icons');
-await browser.close();
