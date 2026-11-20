@@ -504,9 +504,9 @@
       "description": "Best Web Design Trends",
       "status": "captured",
       "package": "systems/awwwards",
-      "notes": "https://www.awwwards.com/login asks for email or username and a password. No code was sent.",
+      "notes": "https://www.awwwards.com/login asks for email or username and a password. No code was sent. Public walk 2026-11-21: Explore opened an in-page dropdown for Awards, Category, Technology, Collections, and Library. Directory, Academy, Jobs, and Market are header links. The footer opened websites, collections, elements, academy, jobs, market, directory, conferences, blog, FAQs, about, contact, and the three legal pages. The phone hamburger opened the same section menu. Those indexes returned HTTP 200. Login, register, and forgot-password were not entered. Google, Twitter, and Facebook were not opened. Vote, submit, contact, search, and newsletter forms were not submitted. Public package already on main. Refresh in PR 1534 at 7e7695bb5e6d. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 2
     },
     {
