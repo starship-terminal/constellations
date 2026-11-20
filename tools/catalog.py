@@ -95,7 +95,7 @@ def load_catalog() -> dict:
 def _catalog_at(ref: str, root: Path) -> dict | None:
     try:
         raw = subprocess.run(["git", "show", f"{ref}:catalog.json"], cwd=root, check=True,
-                             capture_output=True, text=True).stdout
+                             capture_output=True, text=True, encoding="utf-8").stdout
         found = json.loads(raw)
     except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
         return None
@@ -1088,7 +1088,8 @@ def lint_design_md(paths: list[Path]) -> tuple[list[str], dict]:
     with tempfile.TemporaryDirectory() as tmp:
         for path in paths:
             done = subprocess.run(["npx", "--yes", DESIGN_MD_LINTER, "lint", "--format", "json",
-                                   str(path.resolve())], cwd=tmp, capture_output=True, text=True, env=tool_env())
+                                   str(path.resolve())], cwd=tmp, capture_output=True, text=True,
+                                  encoding="utf-8", env=tool_env())
             rel = path.resolve().relative_to(ROOT).as_posix()
             try:
                 report = json.loads(done.stdout)
