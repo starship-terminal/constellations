@@ -323,6 +323,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **`component.embed-card-shadow` is a placeholder note**, not a shadow token: the real stack is `core.shadow.low`.
 - **`about-card` was read from the wrong element.** It is the 1342 x 116 stats list on /about ("50M+ apps and agents ..."), not a card. Needs a recapture; the script now skips lists and full-width blocks (not run since).
 - **The FAQ readings and the script disagree.** The committed `faq-item` and `faq-item-open` were read on /platform/ai (their `page` and `url`), but the committed script measures those keys on the home page only, so a rerun would replace them with a different FAQ. Rerun, or restore the platform-ai FAQ probe, before trusting a rebuild against them.
+- **Five icons are blank.** `add-on.svg`, `icon-57cfd5d9.svg`, `icon-8c4f578a.svg`, `icon-2e816604.svg` and `icon-8c628be4.svg` hold only a `<use>` pointing at the page's `/icons/icon_definitions.svg` sprite, which the harvest did not copy, so they render nothing on their own. Each `<use>` still names the sprite glyph it stood for (`#Plus`, `#MagnifyingGlass`, `#Buildings`, `#ChevronDown`, `#Check`, in that order); a recapture with a harvester that inlines `<use>` targets is needed.
 
 ### Do and don't (from README.md)
 
