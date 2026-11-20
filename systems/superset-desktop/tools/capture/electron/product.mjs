@@ -436,9 +436,20 @@ const tabs = page => vis(page, '[data-pane-area=center] [data-slot=context-menu-
 // another agent working in the same workspace cannot hold the run open.
 let runTab = null;
 const runningDot = page => (runTab === null ? centre(page) : tabs(page).nth(runTab)).locator('span.rounded-full.bg-amber-500').filter({ visible: true });
+// Types only into the run tab's visible terminal. Superset keeps another .xterm off screen, so an
+// unscoped `.last()` focus could send the prompt and Enter to another tab's shell or session: select
+// the run's own tab, focus the input inside the displayed terminal, and check focus landed there.
 async function sendToTerminal({ page }, text) {
-  await page.locator('[data-pane-area=center] [role=application] .xterm-helper-textarea').last().focus().catch(async () => {
-    await W.terminal(page).click(); });
+  if (runTab !== null) { await tabs(page).nth(runTab).click(); await wait(page, 300); }
+  const term = W.terminal(page);
+  await term.click();
+  const input = term.locator('.xterm-helper-textarea');
+  await input.focus();
+  const inRunTerminal = await input.evaluate((el) => {
+    const box = el.closest('.xterm')?.getBoundingClientRect();
+    return el === document.activeElement && !!box && box.width > 0 && box.left >= 0 && box.top >= 0;
+  });
+  if (!inRunTerminal) throw new Error('keyboard focus is not in the run tab\'s visible terminal; nothing was typed');
   await page.keyboard.type(text, { delay: 12 }); await wait(page, 300);
   await page.keyboard.press('Enter'); await wait(page, 800);
 }
