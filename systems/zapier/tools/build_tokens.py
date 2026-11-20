@@ -41,6 +41,33 @@ def resolve(flat, path, depth=0):
     raise ValueError(f"{path}: alias {{{ref}}} points at nothing")
 
 
+def strings(value):
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, dict):
+        for v in value.values():
+            yield from strings(v)
+    elif isinstance(value, list):
+        for v in value:
+            yield from strings(v)
+
+
+def resolve_nested(flat, path, value):
+    """Follow every alias inside an object or list value (a typography's fontSize, a shadow's
+    colour) from the token's own set, the same way resolve() follows a whole-value alias."""
+    own = path.split(".")[0]
+    for text in strings(value):
+        for ref in re.findall(r"\{([^{}]+)\}", text):
+            for candidate in (f"{own}.{ref}", f"core.{ref}", ref):
+                if candidate in flat:
+                    inner = resolve(flat, candidate)
+                    if isinstance(inner, (dict, list)):
+                        resolve_nested(flat, candidate, inner)
+                    break
+            else:
+                raise ValueError(f"{path}: alias {{{ref}}} points at nothing")
+
+
 def problems(data):
     out = []
     flat = {path: token for path, token in walk(data)}
@@ -49,6 +76,8 @@ def problems(data):
             out.append(f"{path}: no $extensions.source")
         try:
             value = resolve(flat, path)
+            if isinstance(value, (dict, list)):
+                resolve_nested(flat, path, value)
         except ValueError as err:
             out.append(str(err))
             continue
