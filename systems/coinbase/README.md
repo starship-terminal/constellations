@@ -12,7 +12,7 @@ Coinbase is worth a capture because the site is a **styled-components build that
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (38, 85 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the promo row + sticky white nav, the pill CTA language, the dark asset band, the explore price table, the grey footer band and the sign-in card |
-| [components/crops/](components/crops) | 88 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 87 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 36 `{page}-{theme}-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots at 2x; the long mobile fulls exceed one GPU texture and are stitched from `.partN` tiles (bounded at 8 chunks each) |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 957 rules plus the `themes` bin holding the 830/210-var `.coinbase.light`/`.coinbase.dark` theme elements and 11 @font-face records), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads). The full-colour pre-quantization shots are kept outside the repo |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -81,7 +81,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 ## What was captured
 
-Routes: `/en-sg` (with the promo row, sticky white nav, CoinbaseDisplay hero, the .coinbase.dark asset band and footer), `/en-sg/explore` (the crypto market price table with filter chips and the top-movers rail), `/en-sg/one`, `/en-sg/business`, `/en-sg/prime`, `/en-sg/advanced-trade`, `/en-sg/developer-platform`, `/en-sg/usdc`, `/en-sg/learn`, `/en-sg/about`, `/en-sg/careers`, `/en-sg/blog`, `/legal/privacy`, the mobile passes for home/explore/one/business at 390 x 844 with the hamburger menu opened by its own press, and `login.coinbase.com/signin` at rest. 36 screenshots, 38 measured components in 85 states, 88 crops.
+Routes: `/en-sg` (with the promo row, sticky white nav, CoinbaseDisplay hero, the .coinbase.dark asset band and footer), `/en-sg/explore` (the crypto market price table with filter chips and the top-movers rail), `/en-sg/one`, `/en-sg/business`, `/en-sg/prime`, `/en-sg/advanced-trade`, `/en-sg/developer-platform`, `/en-sg/usdc`, `/en-sg/learn`, `/en-sg/about`, `/en-sg/careers`, `/en-sg/blog`, `/legal/privacy`, the mobile passes for home/explore/one/business at 390 x 844 with the hamburger menu opened by its own press, and `login.coinbase.com/signin` at rest. 36 screenshots, 38 measured components in 85 states, 87 crops.
 
 ## Known gaps
 

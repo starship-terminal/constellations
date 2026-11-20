@@ -12,7 +12,7 @@ Cartesia is worth a capture because "the voice model for real-time agents" paint
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (63, 177 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the chrome, the voice orb, the product and voice demos, pricing, the sign-in boundary, the docs app, mobile |
-| [components/crops/](components/crops) | 177 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 176 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 38 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (mobile pages are part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `sonic-light-voice-menu` the voice picker popover |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the marketing stylesheet harvest — 24 sheets, 461 rules, 67 font faces, resolved light and .dark), [css-vars-play.json](raw/css-vars-play.json) and [css-vars-docs.json](raw/css-vars-docs.json) (the play.cartesia.ai and docs.cartesia.ai harvests, kept as evidence for the boundary surfaces), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |

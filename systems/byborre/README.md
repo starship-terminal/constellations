@@ -12,7 +12,7 @@ BYBORRE is worth a capture because the Amsterdam textile studio paints an unusua
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (50, 123 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the marquee+header chrome, the hero, the Textile Room, the textile detail page, the login panel, contact/FAQ, the ink footer, mobile, the hover signature |
-| [components/crops/](components/crops) | 123 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 122 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 43 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (collection is stitched to 31,333px under the shooter's eight-chunk cap), `mobile-*` phone shots, plus the toggled states: home menu + cart, mobile menu, collection filtered, textile render, faq open |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — the inline `:root` block declares the primary ramp as channel triplets), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |

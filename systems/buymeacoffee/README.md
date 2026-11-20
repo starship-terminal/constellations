@@ -31,7 +31,7 @@ Continue-with-email action.
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (62, 151 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the marketing header, the hero and section grammar, the creator page and its widget, the login card, the footer, mobile |
-| [components/crops/](components/crops) | 148 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 144 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 29 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots, `home-light-menu`/`home-light-search` the opened nav states, `creator-light-menu/-monthly/-three` the toggled widget states, `mobile-home-light-menu` the mobile panel |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — the marketing Nuxt CSS plus the creator app's cross-origin CDN stylesheets and the creator page's inline `--theme-color*` vars), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |

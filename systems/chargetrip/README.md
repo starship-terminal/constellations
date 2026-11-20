@@ -12,7 +12,7 @@ Chargetrip ("EV routing, solved") is worth a capture because it is a study in wa
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (46, 99 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the header and Products flyout, the dark hero band, the pricing cards and slider, the sales form, the sign-in card, the footer and the mobile menu |
-| [components/crops/](components/crops) | 96 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 95 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 33 `{page}-light-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages (the two mobile `-full` shots are stitched from `.partN` tiles), `mobile-*` phone shots at 2x, `*-menu` and `*-menu-open` the flyout states |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the Framer bundle's stylesheet harvest — the `--token-*` palette, the `--framer-*` internals, 83 @font-face faces, each name resolved on a probe), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |

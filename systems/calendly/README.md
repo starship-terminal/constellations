@@ -12,7 +12,7 @@ Calendly is worth a capture because it is two products in one domain. The market
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (47, 119 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the marketing header, the hero, pricing, the auth cards, the invitee calendar, the footer, mobile |
-| [components/crops/](components/crops) | 118 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 117 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 24 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (mobile-home is part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `pricing-light-yearly` the toggled billing radio, `booking-event-light-day` the selected day |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — both token layers, resolved light/dark on the marketing probe and bookingLight/bookingDark on the booking probe; Ketch/OneTrust/Intercom vars binned vendor), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |

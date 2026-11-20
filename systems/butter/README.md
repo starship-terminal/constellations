@@ -12,7 +12,7 @@ Butter is worth a capture because its "the first video editor you can build on" 
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (36, 83 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the header island, the hero, pricing, the dark shell galleries, the footer, mobile |
-| [components/crops/](components/crops) | 83 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 82 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 28 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (home and mobile-home are part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `pricing-light-monthly` the toggled billing tab, `mcp-light-claude` the toggled agent tab |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — butter.video declares a real --butter-* token layer; the --leva-*/--perf-* vars are vendor widgets), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |

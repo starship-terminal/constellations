@@ -2,7 +2,7 @@
 
 A token set and component reference for aaply's public marketing site (https://aaply.app), the website of a mobile-app wireframing tool — "design mobile apps" screens, user flows and exports to Figma. Use it to build a web page or marketing surface that borrows its look: a `#f2f2f2` field, a floating white pill nav bar, pure-black text in Poppins 700, one signature `#e6e51e` lime for primary actions and held states, coral icon accents, and a full-width black footer band. It was captured signed out, in headless Chromium at 1440 x 900 (mobile pages at 390 x 844) on 2026-11-08.
 
-It holds 23 screenshots across eight routes — home, /features, /value, /pricing, /reviews, /our-story, /team, /figma_plugin, plus mobile variants and the pricing Yearly/Monthly toggle — and 51 measured components with 90 states and one crop each. The product itself lives on go.aaply.app, which returned the bare body "Not found" on /login, /sign, /signup and /workspace/demo: the app is recorded as an unreachable boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
+It holds 23 screenshots across eight routes — home, /features, /value, /pricing, /reviews, /our-story, /team, /figma_plugin, plus mobile variants and the pricing Yearly/Monthly toggle — and 51 measured components with 90 states and 89 crops. The product itself lives on go.aaply.app, which returned the bare body "Not found" on /login, /sign, /signup and /workspace/demo: the app is recorded as an unreachable boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
 
 This package contains no aaply code, and none of its artwork has been redrawn. The screenshots, the 3D character renders and the visual system they show belong to aaply ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the logo, characters or brand lime.
 
@@ -14,7 +14,7 @@ This package contains no aaply code, and none of its artwork has been redrawn. T
 | [style-guide.html](style-guide.html) | Every token rendered, with site mockups built only from the tokens (nav bar, hero CTAs, chat bubbles, pricing rail and cards, review slide, black footer band). Open it from disk |
 | [components.md](components.md) | 51 components, each with its measured values per state and crops of the real page, then a Gaps section |
 | [patterns.md](patterns.md) | The nav/hero/pricing/reviews/footer patterns the marketing pages compose |
-| [components/crops/](components/crops) | 90 element crops, `{component}-{state}.png`, cut from the live page by `tools/capture/public/measure.mjs` |
+| [components/crops/](components/crops) | 89 element crops, `{component}-{state}.png`, cut from the live page by `tools/capture/public/measure.mjs` |
 | [screenshots/](screenshots) | 23 captures, `{page}-light-{state}.png` at 1440 x 900 (`-full` whole pages) and `mobile-*` at 780 wide, quantised to 256 colours |
 | [raw/](raw) | `components-computed.json` (every measured value per state), `measurements.md` (the same as tables), `css-vars.json` (the Tilda site's custom properties — almost none), `component-tokens.json` (the token spec), `full/` (the unquantised captures) |
 | [tools/](tools) | `capture/` (`public/`: lib, public tour, measure, build-measurements; `vars.mjs`, `screenshot.mjs`, `quantize.py`) and the builders (`build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `style-guide.template.html`) |
