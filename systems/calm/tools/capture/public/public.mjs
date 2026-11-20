@@ -16,10 +16,14 @@
 // triggers, the Log In button (opens a card, never submitted) and the mobile menu. The consent
 // banner is hidden, never answered.
 import fs from 'fs';
+import path from 'node:path';
+import os from 'node:os';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, isChallengeText, patch, chromium, UA_DESKTOP, UA_MOBILE, BASE, HEALTH } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots stay outside the repo (docs/PACKAGE.md): quantize.py writes the
+// committed screenshots/ from this scratch folder.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'calm', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

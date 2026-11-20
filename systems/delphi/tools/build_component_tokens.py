@@ -551,8 +551,11 @@ for key, comp, state, prop, group, prefer, desc in [
 ]:
     try:
         if prop == "_body-bg":
-            raw = "#ffffff"
-            src = "the public surfaces paint a white field (screenshots/*-light-*.png; --background resolves #ffffff)"
+            # No measured element reports the page field; read the declared
+            # --background the pages paint, not a screenshot pixel.
+            raw = R["--background"]
+            src = ("declared --background (raw/css-vars.json resolved.light); no computed reading of the page field "
+                   "(seen in screenshots/*-light-*.png)")
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"

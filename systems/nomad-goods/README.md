@@ -11,12 +11,12 @@ Screenshot frames failed in the preview browser (`The browser is not producing s
 | [README.md](README.md) | This entry |
 | [icon.png](icon.png) | 128px site icon from favicon.ico |
 | [DESIGN.md](DESIGN.md) | Generated from tokens.json |
-| [tokens.json](tokens.json) | Measured colour, type, space, radius, size, motion |
+| [tokens.json](tokens.json) | Colour, type, space, radius, size, motion: computed readings labelled Measured; values typed in from the Shopify stylesheets labelled Reconstruction |
 | [style-guide.html](style-guide.html) | Specimens drawn from the tokens |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Page patterns from the public pages |
 | [raw/readings.json](raw/readings.json) | Computed-style dump and stylesheet URLs |
-| [tools/](tools/) | Kit copy plus `build_tokens.py` |
+| [tools/](tools/) | `build_tokens.py` and its test. `capture/signed-in/` holds only the kit's page-copy privacy guards; the values were read in a preview browser, not by a capture script |
 
 ## Brief
 
@@ -80,6 +80,10 @@ Custom properties on the root were layout names only (`--grid-edge`, `--grid-gut
 A rem in the stylesheets is stored as the pixel size the browser computed at a 16px root. Desktop type sizes are the 768px-and-up rules. The 390px capture confirms the smaller display size (47px, from `2.9375rem`).
 
 ## What to distrust
+
+`raw/readings.json` holds the computed styles and the stylesheet names, not the stylesheets. Every value that came only from `type.css`, `buttons.css`, `fields.css`, `surfaces.css`, `labels.css`, `links.css` or `css-bundle.css` (the error red, the disabled grey, the placeholder grey, `#007aff`, the checkbox, tab-bar, status and textarea radii, the card shadow, every motion value, and four type styles) is labelled Reconstruction in tokens.json: typed in by hand at capture time, with no reading in the repo. No success colour was read, so there is no `light.status.success`; `light.status.warning` is the sale pill colour standing in.
+
+The cookie consent banner was accepted in the preview tab (see How the values were read); every reading was taken after that click.
 
 There are no screenshots. The preview browser returned `The browser is not producing screenshot frames` on both snapshot attempts. Do not treat a missing image as a layout you have seen.
 

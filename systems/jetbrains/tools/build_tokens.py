@@ -35,8 +35,11 @@ MOTION = json.loads((RAW / "motion.json").read_text()) if (RAW / "motion.json").
 # DECL[theme][name] is what the browser paints in that theme. A name declared
 # only on :root resolves the same in both.
 DECL = {t: {n: v.get("value", v["raw"]) for n, v in V.get("resolved", {}).get(t, {}).items()} for t in ("light", "dark")}
-# jetbrains.com paints one theme; nothing needs lifting into dark.
-if not DECL["dark"]:
+# vars.mjs ran no dark pass: jetbrains.com has no theme switch, and the dark campaign roles are
+# the same :root declarations (the --rs-color-*-dark-theme names). The dark set therefore resolves
+# against the :root pass, and its sources say so instead of naming a dark resolution.
+DARK_FROM_ROOT = not DECL["dark"]
+if DARK_FROM_ROOT:
     DECL["dark"] = dict(DECL["light"])
 
 
@@ -113,7 +116,7 @@ def leaf(path, spec, theme):
         if name not in DECL[theme]:
             raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({theme})")
         val = DECL[theme][name]
-        src = f"css-var {name} ({theme})"
+        src = f"css-var {name} (" + ("resolved on :root; no dark pass ran" if theme == "dark" and DARK_FROM_ROOT else theme) + ")"
         if spec.get("source"):
             src += "; " + spec["source"]
     else:

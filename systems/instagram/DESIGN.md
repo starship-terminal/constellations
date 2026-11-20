@@ -119,9 +119,13 @@ typography:
     lineHeight: "40px"
 rounded:
   button: "4px"
+  button-medium: "10px"
+  button-large: "12px"
   card: "4px"
   input: "6px"
+  input-ig: "12px"
   dialog: "8px"
+  dialog-igds: "24px"
   menu: "20px"
   modal: "12px"
   chip: "6px"
@@ -206,7 +210,7 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `button` 4px, `card` 4px, `input` 6px, `dialog` 8px, `menu` 20px, `modal` 12px, `chip` 6px, `toast` 8px, `tooltip` 8px, `list-cell` 8px, `chat-bubble` 18px, `alert` 8px.
+Corner radii from `core.radius`: `button` 4px, `button-medium` 10px, `button-large` 12px, `card` 4px, `input` 6px, `input-ig` 12px, `dialog` 8px, `dialog-igds` 24px, `menu` 20px, `modal` 12px, `chip` 6px, `toast` 8px, `tooltip` 8px, `list-cell` 8px, `chat-bubble` 18px, `alert` 8px.
 
 ## Components
 
@@ -224,14 +228,15 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- The 4px spacing scale in `core.spacing` is derived. Instagram does not publish a space scale as custom properties. The steps match the 4px radius increment and the system type sizes.
+- The 4px spacing scale in `core.spacing` is a Reconstruction, entered by hand. Instagram does not publish a space scale as custom properties. The steps match the 4px radius increment and the system type sizes.
+- `components.md` and `raw/components-computed.json` were not written by the committed tools. `raw/components-computed.json` uses flat `button-login-default` keys while `tools/capture/public/measure.mjs` writes `button.login.default`, and both `tools/build_components_md*.py` are unadapted kit copies that fail on this package. A recapture needs the measure script's output mapped onto the committed shape, and a components builder written for it.
 - `--ig-primary-background` is an RGB triple (`255, 255, 255`), not a colour the token builder can carry. `background.page` is `--surface-background`, which paints the same ground.
 - Forcing `.__ig-dark-mode` on the login wall darkens the promo pane and the footer. The form column stays light. [login-light-promo-dark.png](screenshots/login-light-promo-dark.png) records that split. It is not a dark theme of the form.
 - The login pill's computed background is `rgb(0, 100, 224)`, the Meta blue, while `--primary-button-background` and `--accent` declare `#0095f6`. The token keeps the declared accent. The crop shows the painted pill, which is also disabled (washed) until the fields have a value.
 - `core.motion` durations are the named `--fds-duration-*` steps. The probe's class-hash timings stay in [raw/motion.json](raw/motion.json). The reduce verdict is `partial`: the login wall and the signup form ignore reduced motion, about.instagram.com is partial. Stylesheet lists were cut at 400 entries, so the reading is incomplete.
 - Pressed colour was not fired. The login control is disabled at rest, and a press would submit.
 - Screenshots are 256-colour PNGs. Read colours from `tokens.json`.
-- Instagram Sans and Instagram Sans Condensed are not in the repo. The tokens name the system stack as the fallback. The style guide loads the fallback, not the proprietary faces.
+- Instagram Sans and Instagram Sans Condensed are not in the repo. The tokens name the system stack as the fallback. The style guide loads no web font: it renders in the system stack.
 - The phone signup shot asks for a mobile number. That is the product's phone path, not a filled form.
 
 ### Do and don't (from README.md)

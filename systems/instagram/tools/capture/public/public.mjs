@@ -88,7 +88,8 @@ const desktop = {
   'login-dark': { url: 'https://www.instagram.com/', theme: 'dark', dark: true, run: async (p, S) => {
     await S.view('default');
   } },
-  signup: { url: 'https://www.instagram.com/accounts/emailsignup/', theme: 'dark', run: async (p, S) => {
+  // No theme is requested here, so the file is labelled light like the committed signup-light-* shots.
+  signup: { url: 'https://www.instagram.com/accounts/emailsignup/', theme: 'light', run: async (p, S) => {
     await S.view('default');
     await S.full();
     await step('email-focused', async () => {

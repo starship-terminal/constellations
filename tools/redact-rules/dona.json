@@ -4,8 +4,10 @@
   "emails": true,
   "email_allow": [
    "@dona\\.ai$",
-   "@getdona\\.(com|ai)$",
-   "@example\\.(com|org)$"
+   "@getdona\\.ai$",
+   "@getdona\\.com$",
+   "@example\\.com$",
+   "@example\\.org$"
   ]
  },
  "families": []

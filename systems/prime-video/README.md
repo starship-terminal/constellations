@@ -14,7 +14,7 @@ Signed-out public chrome for Prime Video, captured 2026-11-19 from a live browse
 | [raw/](raw/) | The computed readings the tokens come from. |
 | [screenshots/](screenshots/home-dark-unavailable.png) | One labelled placeholder. The preview browser did not produce frames. This is not a page capture. |
 | [icons/](icons/) | Declared missing. Inline icons were present, and their vectors were not extracted. See layoutGaps. |
-| [tools/](tools/) | The capture kit copied into this package. |
+| [tools/](tools/) | test_tokens.py, which checks tokens.json against the readings, and the generic capture helpers copied from the kit (the unadapted kit builders and route folders were removed in the 2026-11 audit) |
 
 <!-- brief:start -->
 ## Brief

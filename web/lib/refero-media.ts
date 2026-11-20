@@ -9,11 +9,17 @@ export interface MediaPair {
   remote: string | null;
 }
 
-export const host = (u: string | null) =>
-  String(u || "")
-    .replace(/^https?:\/\//, "")
-    .replace(/^www\./, "")
-    .replace(/\/.*$/, "");
+/** The bare host of a source URL, without "www.": parsed, so a query or
+    fragment with no path ("https://acme.example?ref=x") is not kept. */
+export const host = (u: string | null) => {
+  const s = String(u || "").trim();
+  if (!s) return "";
+  try {
+    return new URL(/^[a-z][a-z0-9+.-]*:\/\//i.test(s) ? s : `https://${s}`).hostname.replace(/^www\./, "");
+  } catch {
+    return s.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/[/?#].*$/, "");
+  }
+};
 
 export const localMedia = (base: string, kind: string, slug: string, ext: string) =>
   `${base || "/media"}/refero-media/${kind}/${encodeURIComponent(slug)}.${ext}`;

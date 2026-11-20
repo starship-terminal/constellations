@@ -10,9 +10,10 @@
 // Adapted from the Coursera kit's icons.mjs.
 import crypto from 'crypto';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
 import { M, BASE, chromium, UA, closePromo, openStory } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
 
-const OUT = new URL('../../icons/', import.meta.url).pathname;
+const OUT = fileURLToPath(new URL('../../icons/', import.meta.url));
 fs.mkdirSync(OUT, { recursive: true });
 const wait = (p, ms) => p.waitForTimeout(ms);
 
@@ -29,22 +30,67 @@ function collect() {
   }).map((s) => {
     const r = s.getBoundingClientRect(), col = rgb(getComputedStyle(s).color);
     const c = s.cloneNode(true);
-    const shapes = [...s.querySelectorAll('path,circle,rect,line,polyline,polygon,ellipse')], cshapes = [...c.querySelectorAll('path,circle,rect,line,polyline,polygon,ellipse')];
-    shapes.forEach((e, i) => {
-      const cs = getComputedStyle(e), t = cshapes[i];
-      for (const a of ['fill', 'stroke']) if ((t.getAttribute(a) || '').startsWith('var(')) t.setAttribute(a, rgb(cs[a]) === col ? 'currentColor' : hex(cs[a]));
-      if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
-      else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
-      if (!t.hasAttribute('stroke') && cs.stroke !== 'none') {
-        t.setAttribute('stroke', rgb(cs.stroke) === col ? 'currentColor' : hex(cs.stroke));
-        t.setAttribute('stroke-width', parseFloat(cs.strokeWidth) || 1);
-        if (cs.strokeLinecap !== 'butt') t.setAttribute('stroke-linecap', cs.strokeLinecap);
-        if (cs.strokeLinejoin !== 'miter') t.setAttribute('stroke-linejoin', cs.strokeLinejoin);
-      }
-    });
+    // The paint a shape takes from a class, a style or var() is written onto its copy as attributes, since
+    // the copy keeps neither classes nor styles.
+    const SHAPES = 'path,circle,rect,line,polyline,polygon,ellipse';
+    const paintInto = (src, dst, imported = false) => {
+      const shapes = [...src.querySelectorAll(SHAPES)], cshapes = [...dst.querySelectorAll(SHAPES)];
+      shapes.forEach((e, i) => {
+        // A shape in an imported symbol inherits its paint from the <use> that draws it, unless its own
+        // class or style sets it: only then is anything written, or the copy could no longer recolour.
+        const cs = getComputedStyle(e), t = cshapes[i];
+        // a var() in a paint attribute names a property the standalone file will not have: resolve it first
+        for (const a of ['fill', 'stroke']) if ((t.getAttribute(a) || '').startsWith('var(')) t.setAttribute(a, rgb(cs[a]) === col ? 'currentColor' : hex(cs[a]));
+        if (imported && !e.hasAttribute('class') && !e.hasAttribute('style')) return;
+        if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
+        else if (imported && !t.hasAttribute('fill') && cs.fill === 'none') t.setAttribute('fill', 'none');   // its style goes below
+        else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
+        if (!t.hasAttribute('stroke') && cs.stroke !== 'none') {
+          t.setAttribute('stroke', rgb(cs.stroke) === col ? 'currentColor' : hex(cs.stroke));
+          t.setAttribute('stroke-width', parseFloat(cs.strokeWidth) || 1);
+          if (cs.strokeLinecap !== 'butt') t.setAttribute('stroke-linecap', cs.strokeLinecap);
+          if (cs.strokeLinejoin !== 'miter') t.setAttribute('stroke-linejoin', cs.strokeLinejoin);
+        }
+      });
+      // A gradient's stops can take their colour from a class or a style the copy will not keep (both are
+      // stripped below), which leaves a stop drawing black: the computed stop-color and stop-opacity are
+      // written onto each copied stop, unless its own plain attribute already says it.
+      const stops = [...src.querySelectorAll('stop')], cstops = [...dst.querySelectorAll('stop')];
+      stops.forEach((e, i) => {
+        const t = cstops[i];
+        const own = t && t.getAttribute('stop-color');
+        if (!t || (own && !own.startsWith('var(') && !e.hasAttribute('class') && !e.hasAttribute('style'))) return;
+        const cs = getComputedStyle(e);
+        const parts = (cs.stopColor.match(/rgba?\(([^)]+)\)/) || [, ''])[1].split(/[,/\s]+/).filter(Boolean);
+        const alpha = parts.length > 3 ? parseFloat(parts[3]) : 1;
+        t.setAttribute('stop-color', rgb(cs.stopColor) === col ? 'currentColor' : hex(cs.stopColor));
+        const op = parseFloat(cs.stopOpacity) * alpha;
+        if (op !== 1) t.setAttribute('stop-opacity', +op.toFixed(3));
+        else t.removeAttribute('stop-opacity');
+      });
+    };
+    const shapes = [...s.querySelectorAll(SHAPES)];
+    paintInto(s, c);
     c.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
     for (const a of ['id', 'class', 'focusable', 'aria-hidden', 'aria-labelledby', 'style', 'data-testid']) c.removeAttribute(a);
-    const refs = new Set([...c.outerHTML.matchAll(/url\(#([^)]+)\)/g)].map((m) => m[1].replace(/&quot;|"/g, '')));
+    // Every id something in the icon points at is kept: url(#x) (masks, gradients, clip paths) and a <use>'s href.
+    const refsOf = (html) => new Set([...html.matchAll(/url\((?:&quot;|["'])?#([^)"'&]+)|\b(?:xlink:)?href="#([^"]+)"/g)].map((m) => m[1] || m[2]));
+    // A target defined elsewhere on the page (a sprite sheet's symbol, a shared gradient or mask) would leave
+    // the standalone icon drawing nothing, so it is copied into the icon's <defs>, painted like the icon's own
+    // shapes, and whatever it points at in turn is followed too (the set stops a cycle).
+    const imported = new Set();
+    for (const pending = [...refsOf(c.outerHTML)]; pending.length;) {
+      const id = pending.shift();
+      if (imported.has(id) || c.querySelector(`[id="${CSS.escape(id)}"]`)) continue;
+      imported.add(id);
+      const t = document.getElementById(id);
+      if (!t) continue;
+      const copy = t.cloneNode(true);
+      paintInto(t, copy, true);
+      (c.querySelector('defs') || c.insertBefore(document.createElementNS('http://www.w3.org/2000/svg', 'defs'), c.firstChild)).appendChild(copy);
+      pending.push(...refsOf(copy.outerHTML));
+    }
+    const refs = refsOf(c.outerHTML);
     c.querySelectorAll('[id],[class],[style]').forEach((e) => { if (!refs.has(e.id)) e.removeAttribute('id'); e.removeAttribute('class'); if (e.tagName !== 'mask') e.removeAttribute('style'); });
     c.querySelectorAll('image').forEach((e) => e.remove());
     if (!c.hasAttribute('viewBox')) c.setAttribute('viewBox', `0 0 ${c.getAttribute('width') || Math.round(r.width)} ${c.getAttribute('height') || Math.round(r.height)}`.replace(/px/g, ''));

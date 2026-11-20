@@ -26,7 +26,7 @@ def paths(node, pre=()):
                 yield from paths(v, pre + (k,))
 
 
-KNOWN = set(paths(TOK["core"])) | set(paths(TOK["dark"]))
+KNOWN = set().union(*(paths(TOK[s]) for s in ("core", "light", "dark") if s in TOK))   # a one-theme app has one set
 
 NAME = "Grok Bot"  # PRODUCT (adapt)
 
@@ -148,12 +148,14 @@ def main():
         out.append("")
         cells = []
         for state, stem in states:
+            found = 0
             for suffix, theme in (("", "dark"), ("-light", "light")):
                 f = CROPS / f"{stem}{suffix}.png"
                 if f.exists():
                     cells.append(f"[{state} ({theme})](components/crops/{f.name})")
-                elif not suffix:
-                    raise SystemExit(f"{name}: no crop {f.name}")
+                    found += 1
+            if not found:   # a light-only app has only the -light crop
+                raise SystemExit(f"{name}: no crop {stem}.png or {stem}-light.png")
         out += ["Crops: " + ", ".join(cells) + ".", ""]
         if notes:
             out += [notes, ""]

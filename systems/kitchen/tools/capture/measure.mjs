@@ -12,7 +12,7 @@ fs.mkdirSync(RAW, { recursive: true });
 const out = {
   _meta: {
     product: 'Kitchen.co',
-    read: '2026-11-18',
+    read: new Date().toLocaleDateString('en-CA'),   // the local run date
     url: BASE,
     note: 'Public marketing surface. Login, signup, demo and Stripe checkout were not submitted.',
   },
@@ -21,13 +21,6 @@ const out = {
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 let page, cdp, current;
-
-async function newPage(key, { mobile = false } = {}) {
-  current = key;
-  const vw = mobile ? 390 : 1440, vh = mobile ? 844 : 900;
-  const browser = page ? null : null;
-  return { vw, vh, mobile };
-}
 
 const browser = await chromium.launch();
 
@@ -126,29 +119,37 @@ async function S(key, target, list, meta) {
   await loc.scrollIntoViewIfNeeded().catch(() => {});
   await page.waitForTimeout(150);
   for (const st of list) {
-    await reset();
-    if (st === 'default') await measure(key, st, loc, { via: 'rest' });
-    else if (st === 'hover') {
-      await loc.hover();
-      await page.waitForTimeout(280);
-      await measure(key, st, loc, { via: 'pointer hover' });
-    } else if (st === 'focus-visible') {
-      const how = await kbFocus(loc);
-      await measure(key, st, loc, { via: how });
-    } else if (st === 'pressed') {
-      const undo = await forcePseudo(loc, ['hover', 'active']);
-      await measure(key, st, loc, { via: 'CDP :hover:active' });
-      await undo();
-    } else if (st === 'focused') {
-      await loc.click();
-      await page.waitForTimeout(200);
-      await measure(key, st, loc, { via: 'click into field, nothing submitted' });
-    } else if (st === 'filled') {
-      await loc.click();
-      await loc.fill('studio@example.com');
-      await page.waitForTimeout(150);
-      await measure(key, st, loc, { via: 'sample text typed, then cleared' });
-      await loc.fill('');
+    // One failed state (a hover that times out, a click that misses) is recorded and the
+    // rest of the component and page still run.
+    try {
+      await reset();
+      if (st === 'default') await measure(key, st, loc, { via: 'rest' });
+      else if (st === 'hover') {
+        await loc.hover();
+        await page.waitForTimeout(280);
+        await measure(key, st, loc, { via: 'pointer hover' });
+      } else if (st === 'focus-visible') {
+        const how = await kbFocus(loc);
+        await measure(key, st, loc, { via: how });
+      } else if (st === 'pressed') {
+        const undo = await forcePseudo(loc, ['hover', 'active']);
+        await measure(key, st, loc, { via: 'CDP :hover:active' });
+        await undo();
+      } else if (st === 'focused') {
+        await loc.click();
+        await page.waitForTimeout(200);
+        await measure(key, st, loc, { via: 'click into field, nothing submitted' });
+      } else if (st === 'filled') {
+        await loc.click();
+        await loc.fill('studio@example.com');
+        await page.waitForTimeout(150);
+        await measure(key, st, loc, { via: 'sample text typed, then cleared' });
+        await loc.fill('');
+      }
+    } catch (e) {
+      log('  ! state failed', key, st, String(e.message || e).split('\n')[0]);
+      const c = out.components[key] ??= { states: {} };
+      (c.states ??= {})[st] = { error: String(e.message || e).split('\n')[0].slice(0, 180) };
     }
   }
 }
@@ -266,10 +267,6 @@ await withPage('reviews', async () => {
     title: 'Review avatar', group: 'Media', desc: 'The avatar on a review.', sel: '.review__author-avatar',
   });
 });
-
-await withPage('home', async () => {
-  // mobile drawer is measured in a separate context below
-}, { mobile: false });
 
 await withPage('home', async () => {
   current = 'home';

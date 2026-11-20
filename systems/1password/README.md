@@ -100,7 +100,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **Cross-origin embeds.** The Vimeo player (`video-embed`) and the Marketo sales form (`form-embed`) are measured as element boxes only; their contents are unreachable and nothing inside them is claimed.
 - **The consent card.** The OneTrust "We use cookies" card renders in a closed shadow root; it is suppressed for captures (seeded consent cookie + a geometric sweep), so it has no measurements — it is chrome of the consent vendor, not of the design system.
 - **`--knox-*` variables that resolve to nothing.** Some Knox names (e.g. button hover/pressed fills) are unset on this site; only resolved values made it into tokens.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 
 ## Fonts
 
@@ -128,8 +128,8 @@ From the repo root, Playwright at `PLAYWRIGHT` (index.mjs) and Pillow at `PYTHON
 
 ```sh
 cd systems/1password
-PLAYWRIGHT=$PW node tools/capture/public/public.mjs        # screenshots -> raw/full/
-PYTHON=$PY python3 tools/capture/quantize.py raw/full      # -> screenshots/
+PLAYWRIGHT=$PW node tools/capture/public/public.mjs        # screenshots -> ~/.design-systems/1password/raw-shots/ (outside the repo)
+PYTHON=$PY python3 tools/capture/quantize.py ~/.design-systems/1password/raw-shots      # -> screenshots/
 PLAYWRIGHT=$PW PYTHON=$PY node tools/capture/vars.mjs      # -> raw/css-vars.json
 PLAYWRIGHT=$PW PYTHON=$PY node tools/capture/public/measure.mjs        # -> raw/components-computed.json + crops
 node tools/capture/public/build-measurements.mjs           # -> raw/measurements.md

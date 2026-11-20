@@ -221,7 +221,7 @@ dark = {
         "page": color(page_dark, S_DARK + "; body background", "Dark page"),
         "ink": color(ink_dark, S_DARK + "; h1 color", "Dark primary text"),
         "nav": color(nav_dark, S_DARK + "; Log in color", "Dark nav text"),
-        "muted": color("#a3a3a3", "declared class dark:text-gray-400 on the signup Sign in link; Tailwind gray-400. The light muted #7a7a7a fails on the dark page.", "Tailwind gray-400"),
+        "muted": color("#a3a3a3", "Reconstruction — entered by hand at capture time from the class name dark:text-gray-400 on the signup Sign in link; no dark reading holds it, and #a3a3a3 is Tailwind's neutral-400, not gray-400 (#9ca3af). The light muted #7a7a7a fails on the dark page.", "Hand-entered dark muted text"),
         "prose": color(ink_dark, S_DARK + "; dark prose follows the inverted ink", "Dark prose"),
         "brand": color(brand, S_HERO + "; brand fill does not invert", "Brand fill"),
         "onBrand": color(on_brand, S_HERO + "; text on brand", "Text on brand"),
@@ -238,27 +238,40 @@ dark = {
 }
 
 # Glass shadows from the declared custom properties, as DTCG shadow layers.
+def split_top(v, sep):
+    """Split on sep outside parentheses, so rgba(255, 255, 255, .95) stays whole."""
+    out, depth, cur = [], 0, ""
+    for ch in v:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == sep and depth == 0:
+            out.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    return [x for x in out + [cur.strip()] if x]
+
+
+LENGTH = re.compile(r"-?\d*\.?\d+(px)?")
+
+
 def shadow_layers(raw, source, description):
-    # Keep the declared string in the description; tokenise the first two inset/drop layers we can parse.
+    """Every layer of a declared box-shadow: `inset` anywhere, unitless 0, a negative spread.
+    Raises on a layer or colour it cannot read instead of substituting a default."""
     layers = []
-    for part in raw.split(","):
-        part = part.strip()
-        m = re.search(r"(inset\s+)?(-?\d+(?:\.\d+)?)px\s+(-?\d+(?:\.\d+)?)px\s+(-?\d+(?:\.\d+)?)px(?:\s+(-?\d+(?:\.\d+)?)px)?\s+rgba?\(([^)]+)\)", part)
-        if not m:
-            continue
-        inset, x, y, blur, spread, col = m.groups()
-        layers.append({
-            "inset": bool(inset),
-            "offsetX": x + "px",
-            "offsetY": y + "px",
-            "blur": blur + "px",
-            "spread": (spread or "0") + "px",
-            "color": norm_color("rgb(" + col + ")") if col.count(",") >= 2 and "/" not in col else "rgba(0, 0, 0, 0.04)",
-        })
-        if len(layers) == 3:
-            break
-    if not layers:
-        layers = [{"offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px", "color": "rgba(0, 0, 0, 0.04)"}]
+    for part in split_top(raw, ","):
+        words = split_top(part, " ")
+        inset = "inset" in words
+        words = [w for w in words if w != "inset"]
+        lengths = [w for w in words if LENGTH.fullmatch(w)]
+        colours = [w for w in words if not LENGTH.fullmatch(w)]
+        if len(colours) != 1 or not 2 <= len(lengths) <= 4:
+            raise ValueError(f"{source}: cannot read shadow layer {part!r}")
+        px = [w if w.endswith("px") else w + "px" for w in lengths] + ["0px"] * (4 - len(lengths))
+        layer = {"offsetX": px[0], "offsetY": px[1], "blur": px[2], "spread": px[3], "color": norm_color(colours[0])}
+        if inset:
+            layer["inset"] = True
+        layers.append(layer)
     return {"$value": layers, "$type": "shadow", "$description": description + " Declared: " + raw[:140], "$extensions": {"source": source}}
 
 
@@ -271,6 +284,10 @@ core["shadow"] = {
 
 if (RAW / "motion.json").exists():
     core["motion"], _extra = motion_mod.build(json.loads((RAW / "motion.json").read_text()))
+    if _extra:
+        # what DTCG cannot carry (linear()/steps() easings, transitions past the first 60) stays
+        # visible under core $extensions, as the kit keeps it
+        core["$extensions"] = {"notTokenised": _extra}
 
 
 def walk(node, path=""):
@@ -303,11 +320,10 @@ tokens = {
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
-
-
 def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
+    return sum(count(v) for k, v in d.items() if not k.startswith("$")) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})

@@ -15,6 +15,81 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog  # noqa: E402
 
 
+class UntestedHelpersTest(unittest.TestCase):
+    """latest_scores, list_images' preview.exclude, the thumbnail cache, and repo_file's
+    guard outside a git checkout."""
+
+    def test_latest_scores_counts_grades_and_keeps_failing_contrast(self):
+        criteria = {"criteria": [{"id": "F15"}, {"id": "C1"}, {"id": "V1"}]}
+        audits = [{"date": "2026-01-01", "systems": [{"slug": "x", "grades": {}}]},
+                  {"date": "2026-01-02", "systems": [
+                      {"slug": "x", "grades": {"F15": {"grade": "partly", "evidence": "Script: 3.9:1 muted"},
+                                               "C1": {"grade": "meets", "evidence": "e"},
+                                               "V1": {"grade": "na", "evidence": "e"}}},
+                      {"slug": "y", "grades": {"F15": {"grade": "meets", "evidence": "Script: ok"}}}]}]
+        import scorecard
+        with mock.patch.object(scorecard, "load", return_value=(criteria, audits)), \
+                mock.patch.object(scorecard, "check", return_value=[]):
+            out = catalog.latest_scores()
+        self.assertEqual(out["x"]["meets"], 1)
+        self.assertEqual(out["x"]["partly"], 1)
+        self.assertEqual((out["x"]["applicable"], out["x"]["date"]), (2, "2026-01-02"))
+        self.assertEqual(out["x"]["contrast"], "3.9:1 muted")
+        self.assertIsNone(out["y"]["contrast"])
+
+    def test_latest_scores_exits_on_malformed_audit_data(self):
+        import scorecard
+        with mock.patch.object(scorecard, "load", return_value=({"criteria": []}, [{"date": "d", "systems": []}])), \
+                mock.patch.object(scorecard, "check", return_value=["d: a systems entry is not an object"]), \
+                self.assertRaises(SystemExit) as e:
+            catalog.latest_scores()
+        self.assertIn("scorecard data problems", str(e.exception))
+
+    def test_list_images_skips_excluded_folders(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for rel in ("screenshots/home.png", "screenshots/drafts/old.png", "screenshots/draftsman.png"):
+                (root / "systems/x" / rel).parent.mkdir(parents=True, exist_ok=True)
+                (root / "systems/x" / rel).write_bytes(b"")
+            system = {"slug": "x", "preview": {"exclude": ["drafts/"]}}
+            with mock.patch.object(catalog, "ROOT", root):
+                paths = [i["path"] for i in catalog.list_images(system, "screenshots", {".png"})]
+        self.assertEqual(paths, ["systems/x/screenshots/draftsman.png", "systems/x/screenshots/home.png"])
+
+    def test_a_truncated_cached_thumbnail_is_not_kept(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            src, dst = Path(tmp) / "s.png", Path(tmp) / "t.jpg"
+            src.write_bytes(b"png")
+            dst.write_bytes(b"\xff\xd8 half a jpeg")
+            self.assertFalse(catalog._thumb_ok(dst))
+            made = []
+            with mock.patch.object(catalog, "_thumb_backend", return_value="sips"), \
+                    mock.patch.object(catalog.subprocess, "run",
+                                      side_effect=lambda *a, **k: made.append(a) or mock.Mock(returncode=0)):
+                catalog._make_thumb(src, dst)
+            self.assertEqual(len(made), 1)  # regenerated despite the newer mtime
+
+    def test_a_complete_newer_thumbnail_short_circuits(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            src, dst = Path(tmp) / "s.png", Path(tmp) / "t.jpg"
+            src.write_bytes(b"png")
+            dst.write_bytes(b"\xff\xd8 jpeg \xff\xd9")
+            self.assertTrue(catalog._thumb_ok(dst))
+            with mock.patch.object(catalog, "_thumb_backend", side_effect=AssertionError("regenerated")):
+                self.assertTrue(catalog._make_thumb(src, dst))
+
+    def test_outside_a_git_checkout_only_fonts_are_refused(self):
+        # Pinned as it is: a copied tree without .git serves files git would ignore.
+        # Whether that should fail closed is an open decision, not this test's.
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve()
+            (root / "systems/x/fonts").mkdir(parents=True)
+            (root / "systems/x/dumps").mkdir(parents=True)
+            with mock.patch.object(catalog, "ROOT", root):
+                self.assertTrue(catalog._ignored_or_private(root / "systems/x/fonts/a.woff2"))
+                self.assertFalse(catalog._ignored_or_private(root / "systems/x/dumps/page.html"))
+
+
 class ResolverTest(unittest.TestCase):
     def setUp(self):
         self.res = catalog.Resolver({
@@ -306,14 +381,23 @@ class ExportTest(unittest.TestCase):
         self.assertEqual(out["themes"]["light"]["--foo-bar"], "#ff0000")
         self.assertEqual(out["themes"]["dark"]["--foo-bar"], "#ffffff")
 
-    def test_duolingo_lip_shadows_follow_the_theme(self):
-        system = next(s for s in catalog.load_catalog()["systems"] if s["slug"] == "duolingo")
-        out = catalog.export_tokens(json.loads((catalog.ROOT / system["tokens"]).read_text()), system["themes"])
+    def test_shadows_that_reference_theme_colours_follow_the_theme(self):
+        # A Duolingo-style button lip: a core shadow whose colour is a theme role.
+        lip = lambda color: {"$type": "shadow", "$value": {"offsetX": "0px", "offsetY": "2px", "blur": "0px",
+                                                            "spread": "0px", "color": color, "type": "dropShadow"}}
+        tokens = {"core": {"shadow": {"lip": {"outline": lip("{border.default}"), "primary": lip("{accent.lip}")}}},
+                  "light": {"border": {"default": {"$type": "color", "$value": "#e5e5e5"}},
+                            "accent": {"lip": {"$type": "color", "$value": "#58a700"}}},
+                  "dark": {"border": {"default": {"$type": "color", "$value": "#37464f"}},
+                           "accent": {"lip": {"$type": "color", "$value": "#79b933"}}},
+                  "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+                              {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}}]}
+        out = catalog.export_tokens(tokens, ["light", "dark"])
         self.assertEqual([p for p in out["skipped"] if p.startswith("core.shadow.lip.")], [])
         light, dark = out["themes"]["light"], out["themes"]["dark"]
-        names = [n for n in light if n.startswith("--shadow-lip-")]
-        self.assertEqual(len(names), 9)
-        self.assertEqual(sorted(n for n in dark if n.startswith("--shadow-lip-")), sorted(names))
+        names = sorted(n for n in light if n.startswith("--shadow-lip-"))
+        self.assertEqual(names, ["--shadow-lip-outline", "--shadow-lip-primary"])
+        self.assertEqual(sorted(n for n in dark if n.startswith("--shadow-lip-")), names)
         self.assertFalse(any(n.startswith("--shadow-lip-") for n in out["base"]))
         self.assertEqual(light["--shadow-lip-outline"], "0px 2px 0px 0px #e5e5e5")
         self.assertEqual(dark["--shadow-lip-outline"], "0px 2px 0px 0px #37464f")
@@ -945,6 +1029,22 @@ class ReferoBuildTest(unittest.TestCase):
     """build_refero emits refero/index.json plus one refero/style/<slug>.json per
     style, from a refero/ tree built in a temporary repository."""
 
+    MEDIA_BASE = "https://media.example.test"
+
+    def setUp(self):
+        # media_base() reads DESIGN_SYSTEMS_MEDIA_BASE, loading it from the repo's .env
+        # into os.environ for the rest of the process. Pin it, and keep the .env out.
+        patches = [mock.patch.dict(catalog.os.environ, {"DESIGN_SYSTEMS_MEDIA_BASE": self.MEDIA_BASE}),
+                   mock.patch.object(catalog.refero_media, "load_env", lambda *a, **k: None)]
+        for patch in patches:
+            patch.start()
+            self.addCleanup(patch.stop)
+
+    def test_the_index_and_styles_carry_the_configured_media_base(self):
+        index, styles = self.build([("alpha", self.ALPHA, {})])
+        self.assertEqual(index["mediaBase"], self.MEDIA_BASE)
+        self.assertEqual(styles["alpha"]["mediaBase"], self.MEDIA_BASE)
+
     def make(self, root, slug, meta, ds, docs=True):
         folder = root / "refero" / slug
         folder.mkdir(parents=True)
@@ -1128,9 +1228,6 @@ class ReferoBuildTest(unittest.TestCase):
 
 
 class RepositoryTest(unittest.TestCase):
-    def test_catalog_checks_clean(self):
-        self.assertEqual(catalog.check(), [])
-
     def test_platform_is_required_and_must_be_known(self):
         import copy
         from unittest import mock

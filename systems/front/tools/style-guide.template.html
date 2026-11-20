@@ -193,7 +193,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     ['dark', 'dark — the same shell under [data-theme="dark"]'],
     ['companion', 'companion — the Froyo messenger layer, [data-theme="light"]'],
     ['companionDark', 'companionDark — the Froyo messenger layer, [data-theme="dark"]'],
-    ['help', 'help — help.front.com's :root block'],
+    ['help', 'help — help.front.com\'s :root block'],
   ];
   for (const [setname, label] of THEMESETS) {
     const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));

@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #1c66eb `light.action.primary` | #1c66eb `dark.action.primary` |
 | border | rgba(0, 0, 0, 0.08) `light.border.hairline` | rgba(255, 255, 255, 0.08) `dark.border.hairline` |
 
-Fonts: `core.font.family.ui` is roobert, then 4 fallbacks; `core.font.family.mono` is vt323, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 12 radius steps (`core.radius`), no spacing steps under `core.spacing`.
+Fonts: `core.font.family.ui` is roobert, then 4 fallbacks; `core.font.family.mono` is vt323, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 12 radius steps (`core.radius`), no spacing steps under `core.spacing`.
 
 ### Using components
 
@@ -93,6 +93,10 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 2. **Measure.** `tools/capture/public/measure.mjs` opens each public route signed out at 1440 x 900 (390 x 844 for the mobile pass) and records computed styles plus a crop per state — default, hover, focus-visible, DevTools-forced pressed, plus the opened sort dropdown and focused/filled auth fields — into [raw/components-computed.json](raw/components-computed.json). The dark pass cycles the sidebar theme pill to dark first, so the `d-*` components are measured dark paint.
 3. **Shoot.** `tools/capture/public/public.mjs` captures default viewport and `-full` shots per surface into [screenshots/](screenshots); the phone feed's long page is captured as bounded clip tiles and stitched.
 4. **Build.** `tools/build_component_tokens.py` turns the harvest + measurements into [raw/component-tokens.json](raw/component-tokens.json); `tools/build_tokens.py` writes [tokens.json](tokens.json) with `core`/`light`/`dark` sets; `tools/build_components_md.py`, `tools/build_style_guide.py` and `capture/public/build-measurements.mjs` generate the docs. Re-running the builders is a no-op by design.
+
+## Known gaps
+
+- `feed-compact`, `post-headline`, `post-vote`, `post-comment`, `post-avatars`, `post-sources`: each `focus-visible` reading is `via: focus failed`. The capture opened the Trending sort dropdown (`feed-trending` opened) and never closed it, so the open menu held keyboard focus for every later home component. components.md lists them as focus not capturable; their focus look was never read, and they need a recapture. `tools/capture/public/measure.mjs` now closes an opened toggle before the next state (edited, not run).
 
 ## Health
 

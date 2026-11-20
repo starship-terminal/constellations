@@ -62,8 +62,8 @@ html = f"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Julienne style guide</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<!-- No web font is fetched: opening the guide contacts no third party. EB Garamond and Inter
+     render when installed locally, otherwise the token stacks fall back to system faces. -->
 <style>
 :root {{
 {block("core")}
