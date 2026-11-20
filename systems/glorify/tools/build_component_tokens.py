@@ -295,19 +295,30 @@ for comp, state, key, desc in [
         desc)
 
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
-for key, comp, state, desc in [
-    ("regular", "plan-row", "default", "The body weight on plan rows, prose and app fields."),
-    ("medium", "nav-link", "default", "The mid weight on nav links and card copy."),
-    ("semibold", "nav-cta", "default", "The weight on buttons and plan CTAs."),
-    ("bold", "hero-h1", "default", "The display-heading weight."),
+# Each weight token is named for the weight it measures (400 regular, 500 medium, ...), never for the
+# weight a component was expected to have: a semibold key holding 500 sends a consumer the wrong face.
+WEIGHT_NAMES = {100: "thin", 200: "extralight", 300: "light", 400: "regular", 500: "medium",
+                600: "semibold", 700: "bold", 800: "extrabold", 900: "black"}
+seen_weights = {}
+for comp, state, role in [
+    ("plan-row", "default", "pricing plan rows"),
+    ("nav-link", "default", "header nav links"),
+    ("nav-cta", "default", "the header call to action"),
+    ("hero-h1", "default", "the hero heading"),
 ]:
     try:
         w = ts(comp, state, "fontWeight") or st(comp, state)["fontWeight"]
-        if w:
-            weights[key] = lit(int(float(w)), "fontWeight",
-                f"computed fontWeight of {comp} {state} (raw/components-computed.json)", desc)
-    except (KeyError, ValueError):
-        pass
+    except KeyError:
+        continue
+    if not w:
+        continue
+    w = int(float(w))
+    seen_weights.setdefault(w, []).append((comp, state, role))
+for w, reads in sorted(seen_weights.items()):
+    key = WEIGHT_NAMES.get(w, "w%d" % w)
+    weights[key] = lit(w, "fontWeight",
+        "computed fontWeight of %s (raw/components-computed.json)" % ", ".join(f"{c} {s}" for c, s, _ in reads),
+        "The %d weight, measured on %s." % (w, "; ".join(r for _, _, r in reads)))
 
 # Measured marketing type ramp — the marketing sheets carry no readable size
 # variables (the --framer-* text engine stays vendor), so the ramp is
@@ -460,7 +471,7 @@ for root, theme, key, comp, state, prop, group, desc in [
     (asem, "app", "dialog-fill", "ed-craft", "default", "innerFill", "surface",
      "The Craft dialog's painted surface — the modal box's own box is transparent, the fill is its inner panel."),
     (asem, "app", "craft-cta-fill", "ed-add", "enabled", "backgroundColor", "action",
-     "The 'Add to canvas' fill once a style is picked — the button was never pressed."),
+     "The 'Add to canvas' fill once a style is picked — measured at rest; the screenshot pass pressed it once (an AI generation), measure.mjs never did."),
     (asem, "app", "craft-cta-disabled", "ed-add", "default", "backgroundColor", "action",
      "The 'Add to canvas' fill before a style is picked — measured identical to the enabled fill, the button does not dim."),
     (asem, "app", "style-selected-border", "ed-craft-style", "opened", "borderTopColor", "border",
