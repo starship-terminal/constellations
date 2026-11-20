@@ -306,6 +306,9 @@ for (const [surface, { primary, extras }] of perSurface) {
 }
 const out = {
   readAt: new Date().toLocaleDateString('en-CA'),
+  // the probe page's real viewport, so the builder can tell a fixed capture
+  // from the committed one (whose probe was 1280 x 720 despite its notes)
+  probeViewport: '1440x900',
   source: 'the stylesheets each document applied (document.styleSheets, in cascade order) during live signed-out loads of fal.ai (/ for the Webflow marketing surface, with /pricing harvested for evidence under its own file names; /models/krea/v3/text-to-image for the Next.js app surface; /docs/documentation for the fumadocs docs surface — linked CSS bundles plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in probes carrying each surface\'s primary-document sheets — the app and docs once per theme class on <html> (light/dark), marketing once — at 1440 x 900.',
   sheets: allSheets,
   counts: {

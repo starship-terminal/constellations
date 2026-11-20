@@ -45,6 +45,19 @@ class BuildTokensTest(unittest.TestCase):
                 layers = build_tokens.tokens[theme]["shadow"][step]["$value"]
                 self.assertEqual([bool(l.get("inset")) for l in layers[:2]], [True, True], f"{theme}.shadow.{step}")
 
+    def test_viewport_warning_only_for_the_old_probe(self):
+        import ast, re
+        src = (pathlib.Path(__file__).resolve().parent / "build_component_tokens.py").read_text()
+        node = next(n for n in ast.parse(src).body if isinstance(n, ast.FunctionDef) and n.name == "viewport_note")
+        entry = {"raw": "100vw", "note": "viewport-relative, resolved at 1440 x 900"}
+        for probe, warned in ((None, True), ("1440x900", False)):
+            V = {"resolved": {"light": {"--w": entry}}}
+            if probe:
+                V["probeViewport"] = probe
+            ns = {"V": V, "re": re}
+            exec(compile(ast.Module([node], []), "viewport_note", "exec"), ns)
+            self.assertEqual("recapture needed" in ns["viewport_note"]("--w"), warned, probe)
+
     def test_no_fontsize_type(self):
         self.assertNotIn("fontSize", {t["$type"] for t in leaves(build_tokens.tokens)})
 

@@ -212,8 +212,11 @@ def is_colorish(v):
 
 
 def viewport_note(name):
-    """vars.mjs resolved viewport-relative values on a default 1280 x 720 probe page while its
-    note says 1440 x 900; say so on any token built from one."""
+    """The committed raw/css-vars.json resolved viewport-relative values on a default
+    1280 x 720 probe page while its note says 1440 x 900; say so on any token built from
+    one. A capture from the fixed vars.mjs records probeViewport and gets no warning."""
+    if V.get("probeViewport") == "1440x900":
+        return ""
     for entry in V.get("resolved", {}).values():
         e = entry.get(name)
         if isinstance(e, dict) and "viewport-relative" in str(e.get("note", "")):
