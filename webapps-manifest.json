@@ -2476,7 +2476,7 @@
       "description": "Stream HBO, series, movies, and more",
       "status": "captured",
       "package": "systems/hbomax",
-      "notes": "signed-out marketing site only (/sg/en): auth.hbomax.com, play.hbomax.com and help.hbomax.com were link-observed, never opened https://www.hbomax.com/login returned Access Denied before any form. No email field. Do not retry.",
+      "notes": "https://www.hbomax.com/auth/login requires payment before an account. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 8
@@ -2969,7 +2969,7 @@
       "description": "Generative AI made easy. Generate and enhance images and videos using powerful AI for free",
       "status": "captured",
       "package": "systems/krea",
-      "notes": "https://www.krea.ai/login Continue with Google signed in and opened the app. Product not walked.",
+      "notes": "https://www.krea.ai/app is signed in. Product not walked.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 9
@@ -3122,9 +3122,9 @@
       "description": "Track your reading and discover new books",
       "status": "pending",
       "package": null,
-      "notes": "https://literal.club/login stopped on Cloudflare before a form. Do not retry.",
+      "notes": "https://literal.club/register created an account with the capture inbox. The home page is signed in. Email verification has not arrived. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 10
     },
     {
@@ -3387,9 +3387,9 @@
       "description": "Chat marketing made easy",
       "status": "pending",
       "package": null,
-      "notes": "https://app.manychat.com/signin Google said this profile is not registered. Create account not opened.",
+      "notes": "https://app.manychat.com/profile/dashboard is signed in. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "closed",
+      "login-probe": "signed-in",
       "batch": 10
     },
     {
@@ -3540,9 +3540,9 @@
       "description": "Open source personal knowledge management for everyone",
       "status": "pending",
       "package": null,
-      "notes": "https://memotron.app/login returned Access Denied before a form. Do not retry.",
+      "notes": "https://memotron.app/ has no sign-in page. The user confirmed there is no auth.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "no-form",
       "batch": 11
     },
     {
