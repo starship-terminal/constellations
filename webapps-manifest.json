@@ -5888,9 +5888,9 @@
       "description": "Video Communication Platform",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: headless /login was Access Denied. https://app.synthesia.io/welcome Continue with Google signed in and opened a plan picker. No plan chosen. Product not walked.",
+      "notes": "Email probe: headless /login was Access Denied. https://app.synthesia.io/welcome Continue with Google signed in and opened a plan picker. No plan chosen. Product not walked. Signed-in walk: https://app.synthesia.io/ redirected to https://login.synthesia.io/ (email, Continue with Google). Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 18
     },
     {
@@ -5973,9 +5973,9 @@
       "description": "Discover the best recommendations from the best curators",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://telescope.fyi/login Continue with Google signed in and opened curator onboarding. No curator chosen. Product not walked.",
+      "notes": "Email probe: https://telescope.fyi/login Continue with Google signed in and opened curator onboarding. No curator chosen. Product not walked. Signed-in walk: https://telescope.fyi/login is a sign-in wall (Continue with Google, email). Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 18
     },
     {
@@ -6194,9 +6194,9 @@
       "description": "Simple calendar management and booking solution",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://tidycal.com/login Continue with Google signed in and opened profile onboarding. Profile not filled. Product not walked.",
+      "notes": "Email probe: https://tidycal.com/login Continue with Google signed in and opened profile onboarding. Profile not filled. Product not walked. Signed-in walk: https://tidycal.com/login is a sign-in wall (Google, LinkedIn, passkey, email). Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 18
     },
     {
