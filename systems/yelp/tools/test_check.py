@@ -63,5 +63,19 @@ class CheckTest(unittest.TestCase):
         with self.assertRaisesRegex(SystemExit, "one whole alias"):
             build_tokens.check(doc)
 
+    def test_set_qualified_alias_resolves_from_the_root(self):
+        doc = json.loads(TOKENS.read_text())
+        theme = next(k for k in doc if k not in ("core",) and not k.startswith("$") and isinstance(doc[k], dict))
+        theme_colours = [(p, t) for p, t in build_tokens._token_paths(doc[theme]) if t["$type"] == "color"]
+        core_colours = [p for p, t in build_tokens._token_paths(doc.get("core", {})) if t["$type"] == "color"]
+        # A set-qualified name: a core colour when core has one, else another colour in the theme itself.
+        qualified = "core." + core_colours[0] if core_colours else f"{theme}.{theme_colours[1][0]}"
+        target = theme_colours[0][1]
+        target["$value"] = "{%s}" % qualified
+        build_tokens.check(doc)  # resolves at the root; must not raise
+        target["$value"] = "{core.no-such-token}"
+        with self.assertRaisesRegex(SystemExit, "resolves nowhere"):
+            build_tokens.check(doc)
+
 if __name__ == "__main__":
     unittest.main()

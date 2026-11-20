@@ -393,15 +393,22 @@ def _aliases(value):
 
 
 def _follow(flat, s, ref, seen):
-    """Follow an alias chain: each name resolves in the set it is read from, then core (the
-    Resolver's order). Returns a problem string for a dead alias or a repeated token, else None."""
-    target_set = s if ref in flat[s] else "core" if ref in flat.get("core", {}) else None
-    if target_set is None:
+    """Follow an alias chain: each name resolves in the set it is read from, then core, then the
+    root (the Resolver's order). Returns a problem string for a dead alias or a repeated token,
+    else None."""
+    # Own set, then core, then the root, where a set-qualified name such as core.color.white.solid
+    # names a token in that set. The next hop resolves from the set the target was found in.
+    candidates = [(s, ref), ("core", ref)]
+    if "." in ref:
+        candidates.append(tuple(ref.split(".", 1)))
+    found = next(((fs, fp) for fs, fp in candidates if fp in flat.get(fs, {})), None)
+    if found is None:
         return f"alias {{{ref}}} resolves nowhere"
-    if (target_set, ref) in seen:
+    if found in seen:
         return f"alias loop through {{{ref}}}"
-    for nxt in _aliases(flat[target_set][ref]["$value"]):
-        err = _follow(flat, target_set, nxt, seen | {(target_set, ref)})
+    target_set, target_path = found
+    for nxt in _aliases(flat[target_set][target_path]["$value"]):
+        err = _follow(flat, target_set, nxt, seen | {found})
         if err:
             return err
     return None
