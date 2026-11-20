@@ -71,11 +71,17 @@ def descend(root, parts):
     return node, last
 
 
-def emit(root, name, leaf):
-    node, last = descend(root, name[2:].split("-"))
-    if node.get(last) is not None:  # two variables landing on one path: never drop one silently
-        raise SystemExit(f"{name}: token path already holds a leaf")
+def place(root, parts, leaf):
+    """Put a leaf at a token path. Two sources landing on one path (--color-foo and
+    --color-foo-default, say) stop the build instead of one silently replacing the other."""
+    node, last = descend(root, parts)
+    if node.get(last) is not None:
+        raise SystemExit(f"{'.'.join(parts)}: token path already holds a leaf")
     node[last] = leaf
+
+
+def emit(root, name, leaf):
+    place(root, name[2:].split("-"), leaf)
 
 
 def st(comp, state):
@@ -248,8 +254,7 @@ for name in sorted(n for n in R if n.startswith("--color-")):
             desc = f"Tailwind v4 palette {key} (declared)."
     else:
         ty_src = THEMED
-    node, last = descend(color, key.split("-"))
-    node[last] = var(name, "color", source=ty_src, description=desc)
+    place(color, key.split("-"), var(name, "color", source=ty_src, description=desc))
 
 # Measured paints that have no declared variable.
 meas_col = color.setdefault("painted", {})
@@ -540,8 +545,7 @@ for theme in ("light", "dark"):
     bag = SPEC[theme]
     for path, name, desc in ROLES:
         if name in RES[theme]:
-            node, last = descend(bag, path.split("."))
-            node[last] = var(name, "color", source=DECL, description=desc)
+            place(bag, path.split("."), var(name, "color", source=DECL, description=desc))
 
 # Painted roles without a declared var.
 for key, comp, state, prop, desc in [
@@ -562,8 +566,7 @@ for key, comp, state, prop, desc in [
 ]:
     m = measured_color(key, comp, state, prop, desc)
     if m:
-        node, last = descend(SPEC["light"], key.split("."))
-        node[last] = m
+        place(SPEC["light"], key.split("."), m)
 
 # ------------------------------------------------------------------ component
 

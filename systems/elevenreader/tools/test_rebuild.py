@@ -102,6 +102,21 @@ class RebuildTest(unittest.TestCase):
                 for k in ks:
                     self.assertIn(f"`{k}`", line)
 
+    def test_token_path_collision_stops_the_build(self):
+        # 14-28: --color-mauve-default would land on color.mauve.default, where --color-mauve sits.
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = pathlib.Path(tmp.name) / "pkg"
+        shutil.copytree(self.root, root)
+        raw = root / "raw" / "css-vars.json"
+        V = json.loads(raw.read_text())
+        V["resolved"]["light"]["--color-mauve-default"] = {"raw": "#000000", "value": "#000000"}
+        raw.write_text(json.dumps(V))
+        r = subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")],
+                           cwd=root, capture_output=True, text=True)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("mauve.default: token path already holds a leaf", r.stderr)
+
     def test_no_transparent_fill_published(self):
         # 14-8: an rgba(0, 0, 0, 0) reading is never a surface or action colour.
         for path, v in flat(self.built):
