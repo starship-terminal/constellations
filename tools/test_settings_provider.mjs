@@ -61,7 +61,8 @@ async function run(stored, server) {
     fetch: async (url, opts = {}) => {
       requests.push({ url, method: opts.method || "GET", body: opts.body ? JSON.parse(opts.body) : undefined });
       if (!server) return { ok: false, status: 404, json: async () => { throw new Error("not json"); } };
-      const out = server(url, opts.method || "GET", opts.body ? JSON.parse(opts.body) : undefined);
+      // A server may answer with a promise, to hold a reply back.
+      const out = await server(url, opts.method || "GET", opts.body ? JSON.parse(opts.body) : undefined);
       if (out === "reject") throw new TypeError("Failed to fetch");
       // { status, html: true } stands for a proxy's error page.
       if (out && out.status) return { ok: false, status: out.status, json: async () => { if (out.html) throw new Error("not json"); return out.body; } };
@@ -145,6 +146,30 @@ test("saving posts the typed key to the server and keeps no copy", async () => {
   assert.deepEqual(writes, []);
   assert.equal(els["pf-key"].value, "", "the key field empties once the server has it");
   assert.match(els["pf-status"].textContent, /^Saved on the server/);
+});
+
+test("a save reply that lands after the form changed leaves the newer edits alone", async () => {
+  const NEWER = "sk-typed-after-saving-7654321";
+  let release;
+  const held = new Promise((r) => (release = r));
+  const { els } = await run(undefined, (url, method, body) => {
+    if (url.endsWith("provider/test")) return { ok: true, models: [{ id: "m1" }] };
+    if (method === "POST") return held.then(() => ({ ok: true, source: "saved", provider: { api: body.api, base_url: body.base_url, model: body.model } }));
+    return { ok: true, source: "none", provider: null };
+  });
+  els["pf-key"].value = KEY;
+  els["pf-test"].onclick();
+  for (let i = 0; i < 10; i++) await new Promise((r) => setImmediate(r));
+  els["pf-save"].onclick();
+  for (let i = 0; i < 5; i++) await new Promise((r) => setImmediate(r));
+  // The reader types another key while the save is in flight.
+  els["pf-key"].value = NEWER;
+  release();
+  for (let i = 0; i < 10; i++) await new Promise((r) => setImmediate(r));
+  assert.equal(els["pf-key"].value, NEWER, "the newer key is not erased");
+  assert.equal(els["pf-badge"].textContent, "Saved on the server");
+  assert.match(els["pf-status"].textContent, /The form has changed since/);
+  assert.ok(!els["pf-status"].textContent.includes(NEWER) && !els["pf-status"].textContent.includes(KEY));
 });
 
 test("a server that does not answer keeps the old browser key and never posts it", async () => {

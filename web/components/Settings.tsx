@@ -13,6 +13,7 @@ import { agentSnippets } from "@/lib/agent-snippets";
 import { scrollBehavior } from "@/components/motion";
 import { SnippetCopyButton } from "@/components/CopyButton";
 import { TABS, tabForKey, tabFromHash, type TabId } from "@/components/settings-tabs";
+import { afterSave, EMPTY_FORM, latestOnly, withField, type ProviderForm } from "@/components/provider-form";
 
 export interface SettingsStats {
   /** The checkout's folder name, never its absolute path. */
@@ -22,17 +23,8 @@ export interface SettingsStats {
   audit: string | null;
 }
 
-/** The form. `api_key` is only ever what the user has just typed: the server
-    never sends a key back, so a saved key shows as the source badge instead. */
-interface Cfg {
-  api: string;
-  base_url: string;
-  api_key: string;
-  key_header: string;
-  model: string;
-  name: string;
-  models_url: string;
-}
+/** The form (see provider-form.ts). */
+type Cfg = ProviderForm;
 
 type KeySource = "saved" | "env" | "none";
 
@@ -44,7 +36,7 @@ interface ProviderState {
   error?: string;
 }
 
-const EMPTY: Cfg = { api: "anthropic", base_url: "", api_key: "", key_header: "", model: "", name: "", models_url: "" };
+const EMPTY: Cfg = EMPTY_FORM;
 
 const SOURCE_LABEL: Record<KeySource, string> = {
   saved: "Saved on the server",
@@ -77,34 +69,54 @@ const postJson = async (url: string, method: string, body?: unknown) => {
 };
 
 function ProviderPanel() {
-  const [cfg, setCfg] = useState<Cfg>(EMPTY);
+  const [cfg, setCfgState] = useState<Cfg>(EMPTY);
   const [state, setState] = useState<ProviderState | null>(null);
   const [models, setModels] = useState<ModelHit[]>([]);
   const [status, setStatus] = useState("");
   const [warn, setWarn] = useState(false);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState("");
-  // Set by any edit to the form. A state reply that lands after the reader
-  // has typed (a slow first load, another tab's change) updates the badge
-  // but never overwrites the fields.
+  // Set by any edit to the form, a model chip included. A state reply that
+  // lands after the reader has typed (a slow first load, another tab's
+  // change) updates the badge but never overwrites the fields.
   const edited = useRef(false);
-
-  const load = useCallback(async (fill: boolean) => {
-    try {
-      const d = (await postJson("/api/provider", "GET")) as unknown as ProviderState | null;
-      if (!d || typeof d.source !== "string") throw new Error();
-      setState(d);
-      if (fill && !edited.current) setCfg(fromState(d));
-      if (d.error) {
-        setWarn(true);
-        setStatus(d.error);
-      }
-    } catch {
-      setState(null);
-      setWarn(true);
-      setStatus("No answer from the server.");
-    }
+  // The form as it is now, for replies that land later than the render
+  // that sent them. Every change goes through setCfg.
+  const current = useRef<Cfg>(EMPTY);
+  const setCfg = useCallback((next: Cfg) => {
+    current.current = next;
+    setCfgState(next);
   }, []);
+  const edit = (next: Cfg) => {
+    edited.current = true;
+    setCfg(next);
+  };
+  // State replies: only the newest request's reply is used, and a save or
+  // remove reply outranks any read still in flight.
+  const reads = useRef(latestOnly()).current;
+
+  const load = useCallback(
+    async (fill: boolean) => {
+      const n = reads.begin();
+      try {
+        const d = (await postJson("/api/provider", "GET")) as unknown as ProviderState | null;
+        if (!reads.isLatest(n)) return;
+        if (!d || typeof d.source !== "string") throw new Error();
+        setState(d);
+        if (fill && !edited.current) setCfg(fromState(d));
+        if (d.error) {
+          setWarn(true);
+          setStatus(d.error);
+        }
+      } catch {
+        if (!reads.isLatest(n)) return;
+        setState(null);
+        setWarn(true);
+        setStatus("No answer from the server.");
+      }
+    },
+    [reads, setCfg],
+  );
 
   useEffect(() => {
     load(true);
@@ -124,10 +136,8 @@ function ProviderPanel() {
   }, [load]);
 
   const onField =
-    (k: keyof Cfg) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-      edited.current = true;
-      setCfg((c) => ({ ...c, [k]: e.target.value }));
-    };
+    (k: keyof Cfg) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+      edit(withField(current.current, k, e.target.value));
 
   const body = () => {
     const out: Record<string, string> = { api: cfg.api, base_url: cfg.base_url.trim(), model: cfg.model.trim() };
@@ -178,17 +188,22 @@ function ProviderPanel() {
     setBusy(true);
     setWarn(false);
     setStatus(cfg.api_key.trim() ? "Testing the key, then saving…" : "Saving…");
+    const sent = current.current;
     try {
       const d = await postJson("/api/provider", "POST", body());
       if (d?.ok) {
         if (Array.isArray(d.models) && d.models.length) setModels(d.models as ModelHit[]);
+        reads.begin();
         setState(d as unknown as ProviderState);
-        // The key field empties: the server has it now and never returns it.
-        setCfg((c) => ({ ...c, api_key: "" }));
-        edited.current = false;
+        // The key field empties (the server has it now and never returns
+        // it), unless the reader changed the form while this was in flight.
+        const after = afterSave(current.current, sent);
+        setCfg(after.form);
+        if (after.settled) edited.current = false;
         setStatus(
-          `Saved on the server: ${cfg.name.trim() || cfg.api} · ${cfg.model.trim()}` +
-            (d.verified === false ? ". This endpoint has no model list, so the key itself was not checked." : ""),
+          `Saved on the server: ${sent.name.trim() || sent.api} · ${sent.model.trim()}` +
+            (d.verified === false ? ". This endpoint has no model list, so the key itself was not checked." : "") +
+            (after.settled ? "" : ". The form has changed since; save again to use the changes."),
         );
         announceProviderChange();
       } else {
@@ -207,6 +222,7 @@ function ProviderPanel() {
     try {
       const d = await postJson("/api/provider", "DELETE");
       if (d?.ok) {
+        reads.begin();
         setState(d as unknown as ProviderState);
         setCfg(EMPTY);
         edited.current = false;
@@ -323,7 +339,7 @@ function ProviderPanel() {
               type="button"
               className="pf-chip"
               aria-pressed={cfg.model.trim() === m.id}
-              onClick={() => setCfg((c) => ({ ...c, model: m.id }))}
+              onClick={() => edit(withField(current.current, "model", m.id))}
             >
               {m.label}
             </button>

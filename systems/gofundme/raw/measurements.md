@@ -572,21 +572,22 @@ Page: home. Selector: `.transcend-consent-link`. States: default, hover, focus-v
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 0 x 0 | - | = | = |
-| Padding | 2px 8px | - | = | = |
-| Gap | 8px | - | = | = |
-| Border | none | - | = | = |
-| Radius | 9999px | - | = | = |
-| Background | transparent | - | = | #232323 @ 0.1 |
-| Box shadow | none | - | = | = |
-| Outline | none | - | = | = |
-| Font | GoFundMe Sans 16px/20px 100 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #232323 | - | = | = |
-| Transition | background-color, box-shadow, color, opacity, transform 0.5s cubic-bezier(0.3, 0.01, 0, 1) | - | = | = |
-| Cursor | pointer | - | = | = |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 0 x 0 | - | - | = |
+| Padding | 2px 8px | - | - | = |
+| Gap | 8px | - | - | = |
+| Border | none | - | - | = |
+| Radius | 9999px | - | - | = |
+| Background | transparent | - | - | #232323 @ 0.1 |
+| Box shadow | none | - | - | = |
+| Outline | none | - | - | = |
+| Font | GoFundMe Sans 16px/20px 100 | - | - | = |
+| Letter spacing | normal | - | - | = |
+| Colour | #232323 | - | - | = |
+| Transition | background-color, box-shadow, color, opacity, transform 0.5s cubic-bezier(0.3, 0.01, 0, 1) | - | - | = |
+| Cursor | pointer | - | - | = |
+| How | at rest | - | - | CDP forcePseudoState :active:hover |
 | Error | - | locator.hover: Element is not visible Call log:   - waiting for locator('.transcend-consent-link, footer button, footer a').filter({ hasText: /Manage Cookie Preferences/i }).first().first().first()    | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Painted layers | - | = | = | button.hrt-footer-legal-item.hrt-text-left 0.0x0.0 bg #232323 @ 0.1 r 9999px |
 
 Crops: none.
@@ -1411,25 +1412,26 @@ Page: create. Selector: `Continue`. States: default, hover, focus-visible, press
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 150 x 56 | = | = | = |
-| Padding | 2px 24px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | #274a34 | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 1440px inset | = | = | = |
-| Outline | none | = | = | = |
-| Font | GoFundMe Sans 16px/20px 175 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ccf88e | = | = | = |
-| Text node | span: GoFundMe Sans 16px/20px 175, #ccf88e | = | = | = |
-| Transition | background-color, box-shadow, color, opacity, transform 0.5s cubic-bezier(0.3, 0.01, 0, 1) | = | = | = |
-| Opacity | 0.4 | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Painted layers | button.nav-footer_navFooterPrimaryButton.hrt-button 150.0x56.0 bg #274a34 r 9999px shadow #000000 @ 0 0px 0px 0px 1440px inset | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 150 x 56 | = | - | = |
+| Padding | 2px 24px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | #274a34 | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 1440px inset | = | - | = |
+| Outline | none | = | - | = |
+| Font | GoFundMe Sans 16px/20px 175 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ccf88e | = | - | = |
+| Text node | span: GoFundMe Sans 16px/20px 175, #ccf88e | = | - | = |
+| Transition | background-color, box-shadow, color, opacity, transform 0.5s cubic-bezier(0.3, 0.01, 0, 1) | = | - | = |
+| Opacity | 0.4 | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Painted layers | button.nav-footer_navFooterPrimaryButton.hrt-button 150.0x56.0 bg #274a34 r 9999px shadow #000000 @ 0 0px 0px 0px 1440px inset | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `create-continue-default.png`, `create-continue-hover.png`, `create-continue-focus-visible.png`, `create-continue-pressed.png`.
+Crops: `create-continue-default.png`, `create-continue-hover.png`, `create-continue-pressed.png`.
 
 #### create-signin
 

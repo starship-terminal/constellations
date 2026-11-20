@@ -69,3 +69,24 @@ test("a Copy button shows its result for two seconds, restarts on a click and st
   await feedback.copy("MCP URL", "/api/mcp");
   expect(shown.at(-1)).toEqual({ label: "MCP URL", ok: false });
 });
+
+test("tab keys move along either axis, wrap, and jump to the ends", async () => {
+  const { nextTabIndex } = await import("@/features/settings");
+  expect(nextTabIndex("ArrowDown", 0, 4)).toBe(1);
+  expect(nextTabIndex("ArrowRight", 3, 4)).toBe(0);
+  expect(nextTabIndex("ArrowUp", 0, 4)).toBe(3);
+  expect(nextTabIndex("ArrowLeft", 2, 4)).toBe(1);
+  expect(nextTabIndex("Home", 2, 4)).toBe(0);
+  expect(nextTabIndex("End", 0, 4)).toBe(3);
+  expect(nextTabIndex("a", 0, 4)).toBe(-1);
+});
+
+test("the tab list is a vertical tablist with one tab stop", async () => {
+  const { SettingsTabList } = await import("@/features/settings");
+  const html = renderToStaticMarkup(
+    createElement(SettingsTabList, { tab: "ai", onSelect: () => {} }),
+  );
+  expect(html).toContain('role="tablist"');
+  expect(html).toContain('aria-orientation="vertical"');
+  expect(html.match(/tabindex="0"/g)).toHaveLength(1);
+});

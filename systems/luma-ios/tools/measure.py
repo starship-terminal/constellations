@@ -90,7 +90,7 @@ R = {
     # ---------------------------------------------------------------- text
     "text.primary":       (HOME, "text", (280, 425, 280, 40), "Event row title ('Fri/Sat Gamenight')"),
     "text.secondary":     (HOME, "text", (282, 485, 330, 34), "Event row meta line ('Yesterday, 19:00 GMT-7')"),
-    "text.host":          (HOME, "text", (282, 372, 130, 34), "Event row host line ('Spice King')"),
+    "text.host":          (HOME, "text", (282, 372, 130, 34), "Event row host line (a host's name)"),
     "text.tertiary":      (UPCOMING, "text", (150, 290, 160, 34), "Weekday after a date section ('/ Saturday')"),
     "text.sectionHeader": (SETTINGS, "text", (88, 816, 200, 36), "Grouped section header ('Preferences')"),
     "text.placeholder":   (PROFILE, "text", (88, 790, 450, 36), "Bio text area placeholder"),

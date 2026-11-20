@@ -7,7 +7,7 @@ import { mkdtempSync, promises as fs, rmSync } from "node:fs";
 import { register } from "node:module";
 import os from "node:os";
 import path from "node:path";
-import { after, before, beforeEach, describe, it, mock } from "node:test";
+import { after, afterEach, before, beforeEach, describe, it, mock } from "node:test";
 import { CONFIG_DIR_ENV, providerFile, saveProvider } from "../provider-store.ts";
 
 register("../test/resolve-app.mjs", import.meta.url);
@@ -51,11 +51,16 @@ beforeEach(() => {
   mock.restoreAll();
 });
 
-after(() => {
+// Each test's own folder goes as soon as it ends, not only the last one.
+afterEach(() => {
   mock.restoreAll();
+  if (dir) rmSync(dir, { recursive: true, force: true });
+  dir = "";
+});
+
+after(() => {
   delete process.env[CONFIG_DIR_ENV];
   delete process.env.ANTHROPIC_API_KEY;
-  if (dir) rmSync(dir, { recursive: true, force: true });
 });
 
 describe("POST /api/chat", () => {

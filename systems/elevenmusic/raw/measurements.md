@@ -645,7 +645,7 @@ Page: home. Selector: `[role=tab][data-state=inactive]`. States: default, hover,
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `seg-tab-off-default.png`, `seg-tab-off-hover.png`, `seg-tab-off-focus-visible.png`, `seg-tab-off-pressed.png`.
+Crops: `seg-tab-off-default.png`, `seg-tab-off-hover.png`, `seg-tab-off-pressed.png`.
 
 #### track-row
 
@@ -756,7 +756,7 @@ Page: home. Selector: `button[aria-label="Next"]`. States: default, hover, focus
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `carousel-next-default.png`, `carousel-next-hover.png`, `carousel-next-focus-visible.png`, `carousel-next-pressed.png`.
+Crops: `carousel-next-default.png`, `carousel-next-hover.png`, `carousel-next-pressed.png`.
 
 #### carousel-dot
 
@@ -1240,7 +1240,7 @@ Page: explore. Selector: `button[aria-label="Play track"]`. States: default, hov
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `play-track-default.png`, `play-track-hover.png`, `play-track-focus-visible.png`, `play-track-pressed.png`.
+Crops: `play-track-default.png`, `play-track-hover.png`, `play-track-pressed.png`.
 
 #### version-badge
 
@@ -1617,7 +1617,7 @@ Page: explore. Selector: `transport Remix`. States: default, hover, focus-visibl
 | Error | - | locator.hover: Element is outside of the viewport Call log:   - waiting for locator('button[aria-label="Remix"]').visible().last().visible().first().visible().first()     - locator resolved to <button | = | = |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `player-remix-default.png`, `player-remix-focus-visible.png`, `player-remix-pressed.png`.
+Crops: `player-remix-default.png`, `player-remix-pressed.png`.
 
 ### Charts
 
@@ -2280,7 +2280,7 @@ Page: login. Selector: `button "Continue with Email"`. States: default, hover, f
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `continue-btn-default.png`, `continue-btn-hover.png`, `continue-btn-focus-visible.png`, `continue-btn-pressed.png`.
+Crops: `continue-btn-default.png`, `continue-btn-hover.png`, `continue-btn-pressed.png`.
 
 #### tos-link
 

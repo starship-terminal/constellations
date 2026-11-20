@@ -705,22 +705,23 @@ Page: blog. Selector: `article`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 1240 x 339.75 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1f1f1f | = | = | = |
-| Text node | span.text-xs.text-gray-11: ui-sans-serif 12px/16px 400, #666666 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 1240 x 339.75 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1f1f1f | = | - | = |
+| Text node | span.text-xs.text-gray-11: ui-sans-serif 12px/16px 400, #666666 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `blog-featured-default.png`, `blog-featured-hover.png`, `blog-featured-focus-visible.png`, `blog-featured-pressed.png`.
+Crops: `blog-featured-default.png`, `blog-featured-hover.png`, `blog-featured-pressed.png`.
 
 #### blog-card
 
@@ -730,22 +731,23 @@ Page: blog. Selector: `article.rounded-xl`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 397.33 x 403.5 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 12px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1f1f1f | = | = | = |
-| Text node | span.text-xs.text-gray-11: ui-sans-serif 12px/16px 400, #666666 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 397.33 x 403.5 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 12px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1f1f1f | = | - | = |
+| Text node | span.text-xs.text-gray-11: ui-sans-serif 12px/16px 400, #666666 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `blog-card-default.png`, `blog-card-hover.png`, `blog-card-focus-visible.png`, `blog-card-pressed.png`.
+Crops: `blog-card-default.png`, `blog-card-hover.png`, `blog-card-pressed.png`.
 
 #### blog-card-title
 

@@ -137,7 +137,7 @@ Page: mental-health. Selector: `GlobalNavigationLogin / Log in link`. States: de
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `login-button-default.png`, `login-button-hover.png`, `login-button-focus-visible.png`, `login-button-pressed.png`.
+Crops: `login-button-default.png`, `login-button-hover.png`, `login-button-pressed.png`.
 
 #### menu-toggle
 
@@ -601,7 +601,7 @@ Page: mental-health. Selector: `accordion heading/title`. States: default, hover
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `accordion-toggle-default.png`, `accordion-toggle-hover.png`, `accordion-toggle-focus-visible.png`, `accordion-toggle-pressed.png`.
+Crops: `accordion-toggle-default.png`, `accordion-toggle-hover.png`, `accordion-toggle-pressed.png`.
 
 #### disclaimer
 
@@ -678,7 +678,7 @@ Page: home. Selector: `carousel-controls button`. States: default, hover, focus-
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `carousel-arrow-default.png`, `carousel-arrow-hover.png`, `carousel-arrow-focus-visible.png`, `carousel-arrow-pressed.png`.
+Crops: `carousel-arrow-default.png`, `carousel-arrow-hover.png`, `carousel-arrow-pressed.png`.
 
 #### slide-dot
 
@@ -704,7 +704,7 @@ Page: home. Selector: `SlideIndicatorDot`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `slide-dot-default.png`, `slide-dot-hover.png`, `slide-dot-focus-visible.png`, `slide-dot-pressed.png`.
+Crops: `slide-dot-default.png`, `slide-dot-hover.png`, `slide-dot-pressed.png`.
 
 ### Footer
 

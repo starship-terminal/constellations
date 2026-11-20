@@ -302,22 +302,23 @@ Page: home. Selector: `hero Get a demo`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 99 x 33.59 | = | = | = |
-| Padding | 8px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Basel Grotesk Book 16px/17.6px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #17150e | = | = | = |
-| Transition | opacity 0.75s cubic-bezier(0.165, 0.84, 0.44, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 99 x 33.59 | = | - | = |
+| Padding | 8px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Basel Grotesk Book 16px/17.6px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #17150e | = | - | = |
+| Transition | opacity 0.75s cubic-bezier(0.165, 0.84, 0.44, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `hero-demo-default.png`, `hero-demo-hover.png`, `hero-demo-focus-visible.png`, `hero-demo-pressed.png`.
+Crops: `hero-demo-default.png`, `hero-demo-hover.png`, `hero-demo-pressed.png`.
 
 #### home-h2
 

@@ -5296,7 +5296,7 @@
    "title": "Report title",
    "group": "Type",
    "sel": "first heading on the public sample report",
-   "url": "https://app.maze.co/report/Banking-App-Usability-Test/3pvvlrkzmvlpob/intro"
+   "url": "https://app.maze.co/report/[share-link]"
   },
   "report-signup": {
    "states": {
@@ -5920,7 +5920,7 @@
    "title": "Report sign up",
    "group": "Button",
    "sel": "painted Sign up for free on the public report; never clicked",
-   "url": "https://app.maze.co/report/Banking-App-Usability-Test/3pvvlrkzmvlpob/intro"
+   "url": "https://app.maze.co/report/[share-link]"
   },
   "report-login": {
    "states": {
@@ -6236,7 +6236,7 @@
    "title": "Report login",
    "group": "Button",
    "sel": "Login on the public report; never clicked",
-   "url": "https://app.maze.co/report/Banking-App-Usability-Test/3pvvlrkzmvlpob/intro"
+   "url": "https://app.maze.co/report/[share-link]"
   },
   "demo-title": {
    "states": {

@@ -1164,7 +1164,7 @@ Page: chat. Selector: `Scroll to bottom`. States: default, hover, focus-visible,
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `scroll-bottom-default.png`, `scroll-bottom-hover.png`, `scroll-bottom-focus-visible.png`, `scroll-bottom-pressed.png`.
+Crops: `scroll-bottom-default.png`, `scroll-bottom-hover.png`, `scroll-bottom-pressed.png`.
 
 #### chat-terms
 

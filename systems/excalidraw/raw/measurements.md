@@ -662,7 +662,7 @@ Page: menus. Selector: `.RadioGroup__choice Dark`. States: default, hover, focus
 | How | at rest | mouse hover | - |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
-Crops: `theme-choice-default.png`, `theme-choice-hover.png`, `theme-choice-focus-visible.png`.
+Crops: `theme-choice-default.png`, `theme-choice-hover.png`.
 
 #### canvas-swatches
 
@@ -799,7 +799,7 @@ Page: editor. Selector: `button[aria-label=Undo]`. States: default, focus-visibl
 | How | at rest | - |
 | Skipped | - | focus failed: keyboard focus did not reach the element |
 
-Crops: `undo-btn-default.png`, `undo-btn-focus-visible.png`.
+Crops: `undo-btn-default.png`.
 
 #### redo-btn
 
@@ -826,7 +826,7 @@ Page: editor. Selector: `button[aria-label=Redo]`. States: default, focus-visibl
 | How | at rest | - |
 | Skipped | - | focus failed: keyboard focus did not reach the element |
 
-Crops: `redo-btn-default.png`, `redo-btn-focus-visible.png`.
+Crops: `redo-btn-default.png`.
 
 #### zoom-btn
 
@@ -1436,7 +1436,7 @@ Page: dialogs. Selector: `export Switch`. States: default, hover, focus-visible.
 | How | at rest | mouse hover | - |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
-Crops: `export-switch-default.png`, `export-switch-hover.png`, `export-switch-focus-visible.png`.
+Crops: `export-switch-default.png`, `export-switch-hover.png`.
 
 #### export-scale
 

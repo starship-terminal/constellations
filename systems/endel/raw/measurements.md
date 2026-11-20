@@ -937,7 +937,7 @@ Page: app-player. Selector: `ButtonMode-module button`. States: default, hover, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `button-mode-default.png`, `button-mode-hover.png`, `button-mode-focus-visible.png`, `button-mode-pressed.png`.
+Crops: `button-mode-default.png`, `button-mode-hover.png`, `button-mode-pressed.png`.
 
 #### button-mode-active
 

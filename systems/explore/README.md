@@ -13,7 +13,7 @@ Explore's look is a study in restraint: a signature mid-grey field (`#9d9d9d`) f
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the chrome, hero, feed, pills and auth form, with the real values. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (57, 104 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the grey chrome, the hero, the Discover feed, the split auth screens, SSR profiles, about/legal, mobile, the closure shell, motion and focus. |
-| [components/crops/](components/crops) | 104 element crops at 2x, named `{component}-{state}.png`. |
+| [components/crops/](components/crops) | 102 element crops at 2x, named `{component}-{state}.png`. |
 | [screenshots/](screenshots) | 33 quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars (archive-era, mirror misses, route provenance). Desktop 1440 x 900 at 1x; `-full` whole pages capped at 8 tiles; `mobile-*` shots at 390 x 844 @2x; `ssr-profile-*` are the server-rendered profiles; `announcement-*` the June 2023 closure shell; `profile-shell`/`post-shell` the signed-out SPA shells. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-declarations.json` (the mined compiled stylesheet: 1850 rules, font faces, colour histograms), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the archive-replay capture kit (see Rebuild). |
@@ -53,7 +53,7 @@ Fonts: `core.font.family.sans` is UntitledSans, with no fallback; `core.font.fam
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 104 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 102 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

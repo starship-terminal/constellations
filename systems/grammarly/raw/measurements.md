@@ -121,21 +121,22 @@ Page: home. Selector: `flyout* a`. States: default, hover, focus-visible, presse
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 253 x 38 | = | 0 x 0 | = |
-| Padding | 8px 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 4px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | 1px solid #027e6f offset 0px | = | 1px solid #027e6f offset 0px |
-| Font | Glyph 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #0000ee | = | = | #ff0000 |
+| Size (w x h) | 253 x 38 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 4px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | 1px solid #027e6f offset 0px | - | 1px solid #027e6f offset 0px |
+| Font | Glyph 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #0000ee | = | - | #ff0000 |
 | Text node | span.columnLinkLabel_CLKm5yp3: Glyph 14px/22px 400, #1c1c1c | = | - | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | Product flyout held open for the state | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | Product flyout held open for the state | mouse hover | - | CDP forcePseudoState :active:hover |
 | Painted layers | - | a.headerItemLink_CLKm5yp3.columnLink_CLKm5yp3 253.0x38.0 r 4px outline 1px solid #027e6f | = | a.headerItemLink_CLKm5yp3.columnLink_CLKm5yp3 253.0x38.0 r 4px outline 1px solid #027e6f |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `nav-panel-item-default.png`, `nav-panel-item-hover.png`, `nav-panel-item-pressed.png`.
 
@@ -1051,22 +1052,23 @@ Page: grammar-check. Selector: `:text("Copy text")`. States: default, hover, foc
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 0 x 0 | - | = | = |
-| Padding | 0px 8px | - | = | = |
-| Border | 1px solid #027e6f | - | = | = |
-| Radius | 6px | - | = | = |
-| Background | #ffffff @ 0 | - | = | = |
-| Box shadow | none | - | = | #027e6f 0px 0px 0px 1px |
-| Outline | none | - | = | = |
-| Font | Glyph 14px/32px 400 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #027e6f | - | = | = |
-| Transition | none | - | = | = |
-| Cursor | pointer | - | = | = |
-| Icon | 0 x 0, colour #027e6f | - | = | = |
-| Painted layers | button.base_PbRSndwM.paddingCompact_PbRSndwM 0.0x0.0 bg #ffffff @ 0 border T:1px #027e6f / R:1px #027e6f / B:1px #027e6f / L:1px #027e6f r 6px | - | = | button.base_PbRSndwM.paddingCompact_PbRSndwM 0.0x0.0 bg #ffffff @ 0 border T:1px #027e6f / R:1px #027e6f / B:1px #027e6f / L:1px #027e6f r 6px shadow #027e6f 0px 0px 0px 1px |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 0 x 0 | - | - | = |
+| Padding | 0px 8px | - | - | = |
+| Border | 1px solid #027e6f | - | - | = |
+| Radius | 6px | - | - | = |
+| Background | #ffffff @ 0 | - | - | = |
+| Box shadow | none | - | - | #027e6f 0px 0px 0px 1px |
+| Outline | none | - | - | = |
+| Font | Glyph 14px/32px 400 | - | - | = |
+| Letter spacing | normal | - | - | = |
+| Colour | #027e6f | - | - | = |
+| Transition | none | - | - | = |
+| Cursor | pointer | - | - | = |
+| Icon | 0 x 0, colour #027e6f | - | - | = |
+| Painted layers | button.base_PbRSndwM.paddingCompact_PbRSndwM 0.0x0.0 bg #ffffff @ 0 border T:1px #027e6f / R:1px #027e6f / B:1px #027e6f / L:1px #027e6f r 6px | - | - | button.base_PbRSndwM.paddingCompact_PbRSndwM 0.0x0.0 bg #ffffff @ 0 border T:1px #027e6f / R:1px #027e6f / B:1px #027e6f / L:1px #027e6f r 6px shadow #027e6f 0px 0px 0px 1px |
+| How | at rest | - | - | CDP forcePseudoState :active:hover |
 | Error | - | locator.hover: Element is not visible Call log:   - waiting for locator('button, a').filter({ hasText: /^Copy text$/ }).first().first().first()     - locator resolved to <button type="button" data-sta | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: none.
 
@@ -1210,24 +1212,25 @@ Page: contact-sales. Selector: `button:has-text("Submit")`. States: default, hov
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 93 x 60 | = | = | = |
-| Padding | 16px 24px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 6px | = | = | = |
-| Background | #f0f2fc | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Glyph 14px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #c6cbde | = | = | = |
-| Text node | span.content_PbRSndwM: Glyph 14px/24px 400, #c6cbde | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Painted layers | button.base_PbRSndwM.paddingDefault_PbRSndwM 93.0x60.0 bg #f0f2fc border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 6px | = | = | = |
-| Ancestor paint | 3 up div.card_heroCard__5VWET.form_form__jakRN shadow #1a2134 @ 0.11 0px 12px 48px 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 93 x 60 | = | - | = |
+| Padding | 16px 24px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 6px | = | - | = |
+| Background | #f0f2fc | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Glyph 14px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #c6cbde | = | - | = |
+| Text node | span.content_PbRSndwM: Glyph 14px/24px 400, #c6cbde | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Painted layers | button.base_PbRSndwM.paddingDefault_PbRSndwM 93.0x60.0 bg #f0f2fc border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 6px | = | - | = |
+| Ancestor paint | 3 up div.card_heroCard__5VWET.form_form__jakRN shadow #1a2134 @ 0.11 0px 12px 48px 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-focus-visible.png`, `form-submit-pressed.png`.
+Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-pressed.png`.
 
 ### Dialogs and overlays
 

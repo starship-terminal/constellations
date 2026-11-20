@@ -14,7 +14,7 @@ DoorDash is worth a capture because its consumer web declares a complete, legibl
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (74, 171 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the red hero, value props and CTA bands, the SEO directory, the restaurant cards, the storefront, the careers site, mobile |
-| [components/crops/](components/crops) | 171 element screenshots, `{component}-{state}.png` at 2x, 256 colours |
+| [components/crops/](components/crops) | 165 element screenshots, `{component}-{state}.png` at 2x, 256 colours |
 | [screenshots/](screenshots) | 29 public `{page}-light-{state}.png` captures at 256 colours, plus 9 `signed-in-*.png` from the 2026-11-20 signed-in walk. Public desktop shots are 1440 x 900 at 1x, `-full` whole pages (food-delivery and mobile-food-delivery are part-stitched; the 91,084px mobile food-delivery page was bounded at the kit's 8-chunk cap and the boundary recorded), `mobile-*` shots at 390 x 844 2x. Signed-in desktop PNGs are 2880 x 1800 (1440 x 900 CSS at devicePixelRatio 2). The phone orders PNG is 780 x 1688 (390 x 844 CSS at devicePixelRatio 2). |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (298 rules, 100 font faces, 2,453 theme names resolved on a `body.prism-theme` probe; the deliveroo/plus sibling themes and the careers Tailwind layer binned separately), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [archive-urls.json](raw/archive-urls.json) (snapshot provenance per route) |
 | [login-review.json](login-review.json) | The 2026-11-20 signed-in walk: nav, settings, and the gift-card create page, with the screenshot for each opened screen. The manifest flip is deferred. |
@@ -56,7 +56,7 @@ Fonts: `core.font.family.default` is DD Norms, with no fallback; `core.font.fami
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 171 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 165 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -169,6 +169,9 @@ python3 tools/build_style_guide.py             # -> style-guide.html
 python3 tools/build_components_md.py           # -> components.md
 node tools/capture/public/build-measurements.mjs  # -> raw/measurements.md
 python3 tools/capture/quantize.py <raw-dir>    # full-colour PNGs -> screenshots/
+python3 ../../tools/redact_images.py apply ../doordash --rules ../../tools/redact-rules/doordash.json   # repaint the masks over the new screenshots
+# The rules' boxes are pixel positions on the committed screenshots, size-gated, so a fresh capture of another
+# size or layout is silently skipped: re-place the boxes for every new shot and open each image before committing.
 ```
 
 The capture side needs Playwright (`PLAYWRIGHT=<playwright index.mjs>`) and Pillow for crop quantization (`PYTHON=<python with Pillow>`):

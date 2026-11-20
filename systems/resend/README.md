@@ -17,7 +17,7 @@ The live CSS viewport was 1169 by 731 at devicePixelRatio 2. Marketing pages shi
 | [icons/](icons/) | Index pointing at the site icon |
 | [screenshots/](screenshots/) | Note that no frames were produced |
 | [raw/](raw/) | Computed-style readings |
-| [tools/](tools/) | Builders and the copied capture kit |
+| [tools/](tools/) | Builders and the copied capture kit. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 

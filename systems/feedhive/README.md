@@ -13,7 +13,7 @@ FeedHive is an AI social-media scheduling product, and its public surface is a l
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the chrome, tabs and the Chakra sign-in card, with a light/dark toggle (the dark set is documented as empty). |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (55, 131 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the promo/header chrome, home hero, pricing, feature pages, blog, the tool form, the app sign-in/up boundary, mobile, motion and focus. |
-| [components/crops/](components/crops) | 130 element crops at 2x, named `{component}-{state}.png`. |
+| [components/crops/](components/crops) | 128 element crops at 2x, named `{component}-{state}.png`. |
 | [screenshots/](screenshots) | 36 quantised `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale; `mobile-*` shots at 390 x 844 @2x; `home-light-menu-*` are the nav dropdowns open; `mobile-home-light-drawer` the nav overlay. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — resolved custom properties plus @font-face), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
@@ -54,7 +54,7 @@ Fonts: `core.font.family.sans` is Inter, then 1 fallback; `core.font.family.disp
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 129 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 128 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

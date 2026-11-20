@@ -192,10 +192,10 @@ cookies and signed URLs) and banned personal data (phone numbers, street
 addresses, precise locations, dates of birth, government/payment/bank numbers,
 and other people's email or contact details).
 
-The private library permits the owner's profile, including their email, their
-chat/document/project text and time zone; other people's names, handles and
-profile pictures as the app displays them; and published product content.
-Do not build broader redaction lists for permitted names or titles. Derive
+The repository is public, so since 2026-11-21 other people's names, usernames
+and avatars are masked too. The owner's own profile and the content the
+product or a public creator publishes may stay; AGENTS.md has the full list.
+Do not build broader redaction lists for the owner's own names or titles. Derive
 redaction rules from the current policy, and run the repository image checker
 on signed-in screenshots and crops before committing them.
 

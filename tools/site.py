@@ -249,15 +249,26 @@ SETTINGS_BODY = """<h1>Settings</h1>
         .catch(function () { setStatus('No answer from the server.', true); })
         .finally(function () { el('pf-test').disabled = false; });
     };
+    // The whole form as it would be sent, to tell whether it changed while a
+    // save was in flight.
+    var formSig = function () { return JSON.stringify([current, sig(), model.value]); };
     el('pf-save').onclick = function () {
       if (!verified || verified !== sig()) { setStatus('Test the connection before saving.', true); return; }
       if (!model.value.trim()) { setStatus('Pick a model first.', true); return; }
       setStatus('Saving…');
+      var submitted = formSig(), label = TEMPLATES[current].label + ' · ' + model.value.trim();
       send('POST', 'provider', body()).then(function (d) {
         if (!d.ok) { setStatus('Not saved. ' + (d.error || 'The server refused it.'), true); return; }
-        show(d); key.value = ''; verified = sig(); relock();
-        setStatus('Saved on the server: ' + TEMPLATES[current].label + ' · ' + model.value.trim() +
-          (d.verified === false ? '. This endpoint has no model list, so the key itself was not checked.' : ''));
+        show(d);
+        var note = d.verified === false ? '. This endpoint has no model list, so the key itself was not checked.' : '';
+        // A reply that lands after the reader edited the form must not empty
+        // the key they typed since or reset what they changed.
+        if (formSig() !== submitted) {
+          setStatus('Saved on the server: ' + label + note + '. The form has changed since; save again to use the changes.');
+          return;
+        }
+        key.value = ''; verified = sig(); relock();
+        setStatus('Saved on the server: ' + label + note);
       }).catch(function () { setStatus('No answer from the server.', true); });
     };
     el('pf-clear').onclick = function () {

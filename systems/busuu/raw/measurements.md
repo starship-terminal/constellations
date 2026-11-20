@@ -92,23 +92,24 @@ Page: home. Selector: `.nav-dropdown`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 1400 x 40 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Nista 16px/27.2px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | a.btn.btn--s: Nista 14px/normal 700, #116eee | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 127 x 40, colour #0000ee, fill #000000 | = | = | = |
-| Painted layers | a.btn.btn--s 155.8x33.0 bg #ffffff border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 45.04px; a.btn.btn--s 101.0x33.0 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 45.04px; span::before.responsive-nav__icon.icon 100%x3px bg #116eee; span::after.responsive-nav__icon.icon 65%x3px bg #116eee; div::before.main-nav-dropdown autoxauto border T:9px solid #000000 @ 0 / R:9px solid #000000 @ 0 / B:9px solid #717a8c / L:9px solid #000000 @ 0; div::after.main-nav-dropdown autoxauto border T:9px solid #000000 @ 0 / R:9px solid #000000 @ 0 / B:9px solid #ffffff / L:9px solid #000000 @ 0 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 1400 x 40 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Nista 16px/27.2px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | a.btn.btn--s: Nista 14px/normal 700, #116eee | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 127 x 40, colour #0000ee, fill #000000 | = | - | = |
+| Painted layers | a.btn.btn--s 155.8x33.0 bg #ffffff border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 45.04px; a.btn.btn--s 101.0x33.0 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 45.04px; span::before.responsive-nav__icon.icon 100%x3px bg #116eee; span::after.responsive-nav__icon.icon 65%x3px bg #116eee; div::before.main-nav-dropdown autoxauto border T:9px solid #000000 @ 0 / R:9px solid #000000 @ 0 / B:9px solid #717a8c / L:9px solid #000000 @ 0; div::after.main-nav-dropdown autoxauto border T:9px solid #000000 @ 0 / R:9px solid #000000 @ 0 / B:9px solid #ffffff / L:9px solid #000000 @ 0 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-dropdown-default.png`, `nav-dropdown-hover.png`, `nav-dropdown-focus-visible.png`, `nav-dropdown-pressed.png`.
+Crops: `nav-dropdown-default.png`, `nav-dropdown-hover.png`, `nav-dropdown-pressed.png`.
 
 #### nav-link
 
@@ -267,21 +268,22 @@ Page: premium. Selector: `period option`. States: default, hover, focus-visible,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 78.48 x 22 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Nista 16px/22px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 78.48 x 22 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Nista 16px/22px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `period-toggle-default.png`, `period-toggle-hover.png`, `period-toggle-focus-visible.png`, `period-toggle-pressed.png`.
+Crops: `period-toggle-default.png`, `period-toggle-hover.png`, `period-toggle-pressed.png`.
 
 #### plan-price
 
@@ -474,24 +476,25 @@ Page: register. Selector: `language option`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 182 x 147 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | 1px solid #dae1ea | 1px solid #116eee | = | 1px solid #116eee |
-| Radius | 16px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | NistaFonts 16px/22px 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #116eee | = | = | = |
-| Text node | p.sc-hCPjZK.ePua-dn: NistaFonts 16px/24px 700, #1e2d40 | p.sc-hCPjZK.ePua-dn: NistaFonts 16px/24px 700, #116eee | = | p.sc-hCPjZK.ePua-dn: NistaFonts 16px/24px 700, #116eee |
-| Transition | border-color 0.15s ease-out | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 60 x 60, colour #116eee | = | = | = |
-| Painted layers | a.sc-ehixzo.edjEfB 182.0x147.0 border T:1px solid #dae1ea / R:1px solid #dae1ea / B:1px solid #dae1ea / L:1px solid #dae1ea r 16px; p.sc-hCPjZK.iKMCem 180.0x29.0 bg #f3f8fe | a.sc-ehixzo.edjEfB 182.0x147.0 border T:1px solid #116eee / R:1px solid #116eee / B:1px solid #116eee / L:1px solid #116eee r 16px; p.sc-hCPjZK.iKMCem 180.0x29.0 bg #f3f8fe | = | a.sc-ehixzo.edjEfB 182.0x147.0 border T:1px solid #116eee / R:1px solid #116eee / B:1px solid #116eee / L:1px solid #116eee r 16px; p.sc-hCPjZK.iKMCem 180.0x29.0 bg #f3f8fe |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 182 x 147 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | 1px solid #dae1ea | 1px solid #116eee | - | 1px solid #116eee |
+| Radius | 16px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | NistaFonts 16px/22px 700 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #116eee | = | - | = |
+| Text node | p.sc-hCPjZK.ePua-dn: NistaFonts 16px/24px 700, #1e2d40 | p.sc-hCPjZK.ePua-dn: NistaFonts 16px/24px 700, #116eee | - | p.sc-hCPjZK.ePua-dn: NistaFonts 16px/24px 700, #116eee |
+| Transition | border-color 0.15s ease-out | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 60 x 60, colour #116eee | = | - | = |
+| Painted layers | a.sc-ehixzo.edjEfB 182.0x147.0 border T:1px solid #dae1ea / R:1px solid #dae1ea / B:1px solid #dae1ea / L:1px solid #dae1ea r 16px; p.sc-hCPjZK.iKMCem 180.0x29.0 bg #f3f8fe | a.sc-ehixzo.edjEfB 182.0x147.0 border T:1px solid #116eee / R:1px solid #116eee / B:1px solid #116eee / L:1px solid #116eee r 16px; p.sc-hCPjZK.iKMCem 180.0x29.0 bg #f3f8fe | - | a.sc-ehixzo.edjEfB 182.0x147.0 border T:1px solid #116eee / R:1px solid #116eee / B:1px solid #116eee / L:1px solid #116eee r 16px; p.sc-hCPjZK.iKMCem 180.0x29.0 bg #f3f8fe |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `language-item-default.png`, `language-item-hover.png`, `language-item-focus-visible.png`, `language-item-pressed.png`.
+Crops: `language-item-default.png`, `language-item-hover.png`, `language-item-pressed.png`.
 
 ### Footer
 

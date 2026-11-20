@@ -269,22 +269,23 @@ Page: home. Selector: `flyout image card`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 280 x 160 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Helvetica Neue 13px/19.5px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1b1b1b | = | = | = |
-| Text node | p.mb-4.text-base: Helvetica Neue 16px/24px 400, #e5e5e1 | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | a.relative.group 154.4x32.0 bg #f5f5f0 border T:1px solid #f5f5f0 / R:1px solid #f5f5f0 / B:1px solid #f5f5f0 / L:1px solid #f5f5f0 r 10px; span.iconify.i-mdi:arrow-right 18.0x18.0 bg #1b1b1b | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 280 x 160 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Helvetica Neue 13px/19.5px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1b1b1b | = | - | = |
+| Text node | p.mb-4.text-base: Helvetica Neue 16px/24px 400, #e5e5e1 | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | a.relative.group 154.4x32.0 bg #f5f5f0 border T:1px solid #f5f5f0 / R:1px solid #f5f5f0 / B:1px solid #f5f5f0 / L:1px solid #f5f5f0 r 10px; span.iconify.i-mdi:arrow-right 18.0x18.0 bg #1b1b1b | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `flyout-card-default.png`, `flyout-card-hover.png`, `flyout-card-focus-visible.png`, `flyout-card-pressed.png`.
+Crops: `flyout-card-default.png`, `flyout-card-hover.png`, `flyout-card-pressed.png`.
 
 ### Home
 

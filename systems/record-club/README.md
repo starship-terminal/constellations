@@ -17,7 +17,7 @@ Screenshots were not taken. `preview_snapshot` failed with "The browser is not p
 | [screenshots/](screenshots/) | Empty. Snapshot frames never arrived |
 | [components/](components/) | Empty `crops/`. No element screenshots |
 | [icons/](icons/) | Empty. Inline SVGs were counted, not exported |
-| [tools/](tools/) | The kit copy used for this capture |
+| [tools/](tools/) | The kit copy used for this capture. `tokens.json` has no builder: it was written from the readings in [raw/computed.json](raw/computed.json). The kit's unadapted `build/` builders were removed in the 2026-11 audit; the capture helpers remain |
 
 ## Brief
 
@@ -131,7 +131,7 @@ python3 tools/catalog.py design-md record-club
 python3 tools/package_tests.py record-club
 ```
 
-`style-guide.html` is written from the token values by hand for this capture. The kit's `build_style_guide.py` expects Claude's token names and was not run.
+`style-guide.html` is written from the token values by hand for this capture. The kit's `build/` builders (`build_tokens.py`, `build_style_guide.py`, its template, both components builders and `motion.py`) expect Claude's readings and token names, were never run, and were removed in the 2026-11 audit.
 
 ## Signed-out note
 

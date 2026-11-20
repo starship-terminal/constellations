@@ -85,7 +85,7 @@ Page: home. Selector: `summary.nav-trigger "Product"`. States: default, hover, f
 | Painted layers | - | summary.nav-trigger 105.7x38.2 bg #f8f8f8 r 100px | = | summary.nav-trigger 105.7x38.2 bg #f8f8f8 r 100px |
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
-Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-focus-visible.png`, `nav-trigger-pressed.png`.
+Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-pressed.png`.
 
 #### nav-link
 
@@ -112,7 +112,7 @@ Page: home. Selector: `header a "Pricing"`. States: default, hover, focus-visibl
 | Painted layers | - | a.nav-trigger.nav-direct 82.0x38.2 bg #f8f8f8 r 100px | = | a.nav-trigger.nav-direct 82.0x38.2 bg #f8f8f8 r 100px |
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
-Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
+Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-pressed.png`.
 
 #### nav-login
 
@@ -139,7 +139,7 @@ Page: home. Selector: `header a "Log in"`. States: default, hover, focus-visible
 | Painted layers | - | a.nav-trigger.nav-direct 75.8x38.2 bg #f8f8f8 r 100px | = | a.nav-trigger.nav-direct 75.8x38.2 bg #f8f8f8 r 100px |
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
-Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-focus-visible.png`, `nav-login-pressed.png`.
+Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-pressed.png`.
 
 #### nav-demo
 
@@ -166,7 +166,7 @@ Page: home. Selector: `header a "Request demo"`. States: default, hover, focus-v
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
-Crops: `nav-demo-default.png`, `nav-demo-hover.png`, `nav-demo-focus-visible.png`, `nav-demo-pressed.png`.
+Crops: `nav-demo-default.png`, `nav-demo-hover.png`, `nav-demo-pressed.png`.
 
 #### nav-cta
 
@@ -193,7 +193,7 @@ Page: home. Selector: `header a "Start for free"`. States: default, hover, focus
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
-Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
+Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-pressed.png`.
 
 #### nav-dropdown
 
@@ -272,7 +272,7 @@ Page: home. Selector: `a.menu-link`. States: default, hover, focus-visible, pres
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 | Painted layers | - | = | = | a.menu-link 172.1x40.0 r 8px outline 2px solid #121722 @ 0.6 offset 4px |
 
-Crops: `menu-link-default.png`, `menu-link-hover.png`, `menu-link-focus-visible.png`, `menu-link-pressed.png`.
+Crops: `menu-link-default.png`, `menu-link-hover.png`, `menu-link-pressed.png`.
 
 ### Home
 
@@ -1061,7 +1061,7 @@ Page: login. Selector: `button "Continue"`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `continue-btn-default.png`, `continue-btn-hover.png`, `continue-btn-focus-visible.png`, `continue-btn-pressed.png`.
+Crops: `continue-btn-default.png`, `continue-btn-hover.png`, `continue-btn-pressed.png`.
 
 #### signup-card
 
@@ -1216,7 +1216,7 @@ Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 
-Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
+Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-pressed.png`.
 
 #### trust-badge
 
@@ -1353,7 +1353,7 @@ Page: mobile. Selector: `mobile menu item`. States: default, hover, focus-visibl
 | Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 | Painted layers | - | = | = | summary.nav-trigger 302.0x56.0 outline 2px solid #121722 @ 0.6 offset 4px |
 
-Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visible.png`, `m-nav-item-pressed.png`.
+Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-pressed.png`.
 
 #### m-hero
 

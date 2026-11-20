@@ -33,8 +33,9 @@ docs/scorecard/
 !.env.example
 # The chat's saved provider key (web/lib/provider-store.ts, server/
 # provider_store.py). Both refuse a folder inside the checkout; this is the
-# second line of defence.
+# second line of defence. provider.lock is their (always empty) recovery lock.
 provider.db*
+provider.lock
 *.key
 secrets/
 __pycache__/
@@ -42,6 +43,7 @@ systems/*/raw/*.partial.json
 # Full-colour page captures a capture run writes before quantizing. AGENTS.md keeps
 # raw page copies outside the repo; the package wave deleted the committed ones.
 systems/*/raw/full/
+systems/*/raw/signed-in/*.png
 
 # Refero fetch working files (result JSONs are also stored in refero.db).
 /refero/.work/
