@@ -33,9 +33,9 @@ def color(value):
         raise ValueError("not a colour: " + value)
     red, green, blue, alpha = match.groups()
     alpha = float(alpha) if alpha is not None else 1
-    if alpha >= 1:
-        return "#%02x%02x%02x" % (int(red), int(green), int(blue))
-    return "rgba(%d, %d, %d, %g)" % (int(red), int(green), int(blue), alpha)
+    hexed = "#%02x%02x%02x" % (int(red), int(green), int(blue))
+    # Translucent colours as #rrggbbaa: tools/catalog.py and the contrast check read only hex.
+    return hexed if alpha >= 1 else hexed + "%02x" % round(alpha * 255)
 
 
 def leaf(type_, value, source, description=None):
@@ -62,23 +62,36 @@ def alias(path, source, description=None):
 
 
 def check(doc):
-    def walk(node, path):
+    """Refuse a leaf with no source, a dimension that is not one length, a colour that is not
+    #rrggbb(aa), and an alias that resolves neither in its own set nor in core."""
+    def leaves(node, path=""):
         if not isinstance(node, dict):
             return
         if "$value" in node:
-            if "$extensions" not in node or "source" not in node.get("$extensions", {}):
-                raise ValueError(f"{path} has no source")
-            value = node["$value"]
-            if node.get("$type") == "dimension" and isinstance(value, str) and not value.startswith("{"):
-                if not DIM.fullmatch(value):
-                    raise ValueError(f"{path} dimension {value!r}")
+            yield path, node
             return
         for key, child in node.items():
-            if key.startswith("$"):
-                continue
-            walk(child, f"{path}.{key}" if path else key)
+            if not key.startswith("$"):
+                yield from leaves(child, f"{path}.{key}" if path else key)
 
-    walk(doc, "")
+    sets = [k for k in doc if not k.startswith("$")]
+    core = {p: t for p, t in leaves(doc.get("core", {}))}
+    for name in sets:
+        own = {p: t for p, t in leaves(doc[name])}
+        for path, node in own.items():
+            where = f"{name}.{path}"
+            if "$extensions" not in node or "source" not in node.get("$extensions", {}):
+                raise ValueError(f"{where} has no source")
+            value = node["$value"]
+            if isinstance(value, str) and value.startswith("{"):
+                target = value[1:-1]
+                if target not in own and target not in core:
+                    raise ValueError(f"{where} alias {value} points at nothing")
+                continue
+            if node.get("$type") == "dimension" and isinstance(value, str) and not DIM.fullmatch(value):
+                raise ValueError(f"{where} dimension {value!r}")
+            if node.get("$type") == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", str(value)):
+                raise ValueError(f"{where} colour {value!r}")
 
 
 S = "raw/readings.json"
@@ -312,9 +325,18 @@ def main():
         ],
     }
     check(doc)
-    OUT.write_text(json.dumps(doc, indent=1) + "\n")
+    return doc
+
+
+def render():
+    """tokens.json's exact text; nothing is written."""
+    return json.dumps(main(), indent=1) + "\n"
+
+
+def write():
+    OUT.write_text(render())
     print(f"wrote {OUT}")
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    write()
