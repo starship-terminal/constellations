@@ -169,3 +169,10 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 6. **Don't style the signed-in product from this package.** The dashboard, designer, checkout and order flows are authenticated and were never reached; the auth shell covers only the signed-out choices. ([signup-light-default](screenshots/signup-light-default.png))
 7. **Don't fabricate outcomes.** The provider buttons, "Sign in to design" and every link were measured never pressed; search and quiz states are local interactions only — no validation, cart or checkout state exists here. ([pdp-design-cta default](components/crops/pdp-design-cta-default.png))
 8. **Don't copy the brand.** The Fourthwall wordmark, product photography, creator shop examples, mega-menu artwork and Eli assistant marks are the product's — borrow structure and tokens, never the artwork. ([home-light-mega-menu](screenshots/home-light-mega-menu.png))
+
+### What to distrust (from README.md)
+
+- **Fills the element does not paint.** Ten measured surface roles read a transparent `backgroundColor` (the fill comes from an ancestor): catalog `background.page` (cat-nav), `surface.card` (prod-card), `surface.field-bg` (cat-search), signup `surface.card` (auth-card), docs `surface.sidebar-bg`, docsDark `background.page` and `surface.code-bg`, help `surface.card`, helpDark `background.page` and `surface.card`. They are not tokens; take those surfaces from the set's declared page and background names. The catalogue and docs page fields alias their declared page names instead.
+- **No catalogue field border.** cat-search paints no border (style none, 0px on every side), so there is no `catalog.border.field-border`.
+- **The auth Log-in link** is `signup.text.login-link` (it computes the primary ink); `signup.text.link` holds the declared `--text-link` blues.
+- **The capture scripts were edited after the capture** (2026-11 audit, not run since): every scripted click in `tools/capture/public/measure.mjs` now goes through `toggle()`, so its never-press list applies to the openers too. The committed readings were taken before that edit; nothing was pressed that the list names.

@@ -141,7 +141,7 @@
     },
     "motion": {
       "control": {
-        "value": "background-color 0.32s, 0.32s ease, ease, color 0.32s, 0.32s ease, ease",
+        "value": "background-color 0.32s ease 0.18s, color 0.32s ease 0.18s",
         "type": "other",
         "source": "computed transition of nav-cta default (raw/components-computed.json)",
         "description": "The control transition the marketing site puts on buttons and links."
@@ -2567,20 +2567,6 @@
         "type": "color",
         "source": "the page field the surface paints; the declared --bg-primary",
         "description": "The catalogue page field."
-      }
-    },
-    "surface": {
-      "card": {
-        "value": "{color.black.alpha.100}",
-        "type": "color",
-        "source": "computed backgroundColor of prod-card default (raw/components-computed.json); matches declared color.black.alpha.100",
-        "description": "A catalogue product-card surface."
-      },
-      "field-bg": {
-        "value": "{color.black.alpha.100}",
-        "type": "color",
-        "source": "computed backgroundColor of cat-search default (raw/components-computed.json); matches declared color.black.alpha.100",
-        "description": "The catalogue search field fill."
       }
     }
   },
@@ -5523,10 +5509,14 @@
         }
       },
       "link": {
-        "value": "{text.primary.default}",
-        "type": "color",
-        "source": "computed color of auth-login default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared text.primary.default",
-        "description": "The Log-in link ink on the auth surface."
+        "default": {
+          "var": "--text-link",
+          "type": "color"
+        },
+        "secondary": {
+          "var": "--text-link-secondary",
+          "type": "color"
+        }
       },
       "primary": {
         "default": {
@@ -5575,14 +5565,12 @@
         "type": "color",
         "source": "computed color of auth-google default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared text.primary.default",
         "description": "The provider-button ink on the auth surface."
-      }
-    },
-    "surface": {
-      "card": {
-        "value": "{color.black.alpha.100}",
+      },
+      "login-link": {
+        "value": "{text.primary.default}",
         "type": "color",
-        "source": "computed backgroundColor of auth-card default (raw/components-computed.json); matches declared color.black.alpha.100",
-        "description": "The auth card/page field at /get-started — the catalogue DS painted light."
+        "source": "computed color of auth-login default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared text.primary.default",
+        "description": "The Log-in link ink on the auth surface."
       }
     },
     "action": {
@@ -5881,12 +5869,6 @@
         "type": "color",
         "source": "computed backgroundColor of docs-card default (raw/components-computed.json); matches declared color.white",
         "description": "A docs card surface in light."
-      },
-      "sidebar-bg": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of docs-sidebar default (raw/components-computed.json)",
-        "description": "The docs sidebar field in light."
       }
     }
   },
@@ -6177,26 +6159,12 @@
         "type": "dimension"
       }
     },
-    "background": {
-      "page": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of dd-page default (raw/components-computed.json)",
-        "description": "The docs page field under html.dark — reached through the site's own theme menu."
-      }
-    },
     "surface": {
       "card": {
         "value": "#0a0a0c",
         "type": "color",
         "source": "computed backgroundColor of dd-card default (raw/components-computed.json)",
         "description": "A docs card surface under html.dark."
-      },
-      "code-bg": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of dd-code default (raw/components-computed.json)",
-        "description": "A code block surface under html.dark."
       }
     }
   },
@@ -7707,9 +7675,9 @@
     },
     "text": {
       "ink": {
-        "value": "{docusaurus.progress.bar.color}",
+        "value": "{fw.text.primary}",
         "type": "color",
-        "source": "computed color of help-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared docusaurus.progress.bar.color",
+        "source": "computed color of help-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared fw.text.primary",
         "description": "The help category heading ink in light."
       }
     },
@@ -7719,12 +7687,6 @@
         "type": "color",
         "source": "computed backgroundColor of help-navbar default (raw/components-computed.json); matches declared fw.bg.primary",
         "description": "The Docusaurus navbar field in light."
-      },
-      "card": {
-        "value": "{docusaurus.collapse.button.bg.default}",
-        "type": "color",
-        "source": "computed backgroundColor of help-card default (raw/components-computed.json); matches declared docusaurus.collapse.button.bg.default",
-        "description": "A help category-card surface in light."
       },
       "field-bg": {
         "value": "{docusaurus.highlighted.code.line.bg}",
@@ -9251,19 +9213,11 @@
         }
       }
     },
-    "background": {
-      "page": {
-        "value": "{ifm.table.background}",
-        "type": "color",
-        "source": "computed backgroundColor of hd-page default (raw/components-computed.json); matches declared ifm.table.background",
-        "description": "The help page field under data-theme=dark — reached through the site's own toggle."
-      }
-    },
     "text": {
       "ink": {
-        "value": "{docusaurus.progress.bar.color}",
+        "value": "{fw.text.primary}",
         "type": "color",
-        "source": "computed color of hd-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared docusaurus.progress.bar.color",
+        "source": "computed color of hd-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared fw.text.primary",
         "description": "The help heading ink under data-theme=dark."
       }
     },
@@ -9273,12 +9227,6 @@
         "type": "color",
         "source": "computed backgroundColor of hd-navbar default (raw/components-computed.json); matches declared fw.bg.primary",
         "description": "The navbar field under data-theme=dark."
-      },
-      "card": {
-        "value": "{ifm.table.background}",
-        "type": "color",
-        "source": "computed backgroundColor of hd-card default (raw/components-computed.json); matches declared ifm.table.background",
-        "description": "A help card surface under data-theme=dark."
       }
     }
   },
