@@ -62,8 +62,9 @@ class RebuildTest(unittest.TestCase):
                          [{"offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px", "color": "rgba(0, 0, 0, 0.05)"}])
 
     def test_rank_one_claims_no_screenshot(self):
-        src = self.built["light"]["text"]["rank-one"]["$extensions"]["source"]
-        self.assertNotIn("screenshot", src)
+        for theme in ("light", "dark"):
+            src = self.built[theme]["text"]["rank-one"]["$extensions"]["source"]
+            self.assertNotIn("screenshot", src, theme)
 
     def test_components_md_labels_each_colour_once(self):
         import re

@@ -654,12 +654,12 @@ for key, name, group, prefer, desc in [
 ]:
     put_sem(sem2, group, key, semcolor(
         D[name],
-        f"declared .dark value of {name} (raw/css-vars.json); painted on the signed-out dark captures (screenshots/home-dark-default.png, story-dark-default.png)",
+        f"declared .dark value of {name} (raw/css-vars.json resolved.dark); no d-* component reading of it",
         desc, theme="dark", prefer=prefer))
 
 put_sem(sem2, "border", "vote-border", semcolor(
-    "rgba(28, 102, 235, 0.2)",
-    "the border-primary/20 recipe — --primary resolves the identical #1c66eb in dark (raw/css-vars.json); measured on the light story vote pill, not re-measured in dark",
+    st("st-vote", "default")["borderTopColor"],
+    "computed borderTopColor of st-vote default (raw/components-computed.json): the border-primary/20 recipe — --primary resolves the identical #1c66eb in dark (raw/css-vars.json); measured on the light story vote pill, not re-measured in dark",
     "The primary-blue @20% border on the story digg-it pill, theme-invariant.",
     theme="dark"))
 
