@@ -15,6 +15,37 @@ ROOT = Path(__file__).resolve().parent.parent
 J = json.loads((ROOT / "raw" / "components-computed.json").read_text())
 C = J["components"]
 META = J.get("_meta", {})
+V = json.loads((ROOT / "raw" / "css-vars.json").read_text())
+RES = V["resolved"]
+
+
+def declared(name, where="light"):
+    """A resolved custom property from raw/css-vars.json (light = :root, dark = the .dark-mode scope)."""
+    return RES[where][name]["value"]
+
+
+def kit_var(name, selector=".elementor-kit-35"):
+    """A var declared on the Elementor kit class (not resolved on :root), verbatim from the theme rules."""
+    for rule in V["theme"]:
+        if rule.get("selector") == selector and name in (rule.get("properties") or {}):
+            return rule["properties"][name].lower()
+    raise SystemExit(f"{name} is not declared on {selector} in raw/css-vars.json")
+
+
+def need(v, what):
+    """A reading the token depends on; a missing one stops the build instead of publishing a typed default."""
+    if v in (None, ""):
+        raise SystemExit(f"missing reading: {what}")
+    return v
+
+
+def motion(k, i=0):
+    """The i-th entry of a component's computed transition as "<duration> <easing>"."""
+    s = style(k)
+    dur = [x.strip() for x in s["transitionDuration"].split(",")]
+    ease = [x.strip() for x in s["transitionTimingFunction"].split(",")]
+    prop = [x.strip() for x in s["transitionProperty"].split(",")]
+    return f"{dur[i]} {ease[i]}", prop[i]
 
 
 def st(k, state="default"):
@@ -59,12 +90,12 @@ out = {"$meta": {"built": J["_meta"]["read"], "from": "raw/components-computed.j
 page = META.get("page") or {}
 
 L = out["light"]
-L["page"] = tok("#ffffff", "color", "html/body compute to transparent and the canvas shows Blank-Canvas-White through; verified against the white ground in every screenshot and the #fff painted surfaces (header pill, plan cards, form fields)")
+L["page"] = tok(declared("--Blank-Canvas-White"), "color", "declared --Blank-Canvas-White (resolved on :root, raw/css-vars.json); html/body compute to transparent, so the page shows this white")
 L["surface"] = tok(col(style("contact-card")["backgroundColor"]), "color", "computed backgroundColor on contact-card (the Key-contact-options tile), /contact")
 L["surfaceRaised"] = tok(col(style("header")["backgroundColor"]), "color", "computed backgroundColor on the header pill bar, header.elementor-location-header")
 L["text"] = tok(col(style("contact-h1")["color"]), "color", "computed color on the page headings/buttons (contact-h1, nav-cta, plan-cta) — Kernel-Black")
 L["textStrong"] = tok(col(first_text("faq-answer")["color"] or style("nav-trigger")["color"]), "color", "computed color on FAQ answers, the nav trigger and mobile nav items — Grey-800 #212121")
-L["textMuted"] = tok("#7a7a7a", "color", "declared --e-global-color-text on .elementor-kit-35 (the kit's text global); also the footer's small print")
+L["textMuted"] = tok(kit_var("--e-global-color-text"), "color", "declared --e-global-color-text on .elementor-kit-35 (the kit's text global, raw/css-vars.json theme rules)")
 L["iconMuted"] = tok(col(style("social-icon")["color"]), "color", "computed color on the footer social icons at rest")
 L["border"] = tok(col(style("field-name")["borderTopColor"]), "color", "computed borderTopColor on the form fields — Grey-500 #d1d1d1")
 L["borderStrong"] = tok(col(style("field-name", "focused")["borderTopColor"]), "color", "computed borderTopColor on a focused field and the outline plan-cta — Kernel-Black")
@@ -75,7 +106,7 @@ L["tintHover"] = tok(col(style("nav-trigger", "hover")["backgroundColor"]), "col
 L["focusRing"] = tok(col(style("nav-cta", "focus-visible")["outlineColor"]), "color", "computed outlineColor on keyboard focus — the browser focus ring the site leaves in place")
 L["focusRingWidth"] = tok(style("nav-cta", "focus-visible")["outlineWidth"], "dimension", "computed outlineWidth on keyboard focus")
 L["link"] = tok(col(style("nav-link")["color"]), "color", "computed color on the plain header link — the unvisited-link blue elementor.com leaves unset")
-L["menuPanel"] = tok("#ffffff", "color", "the opened mega-menu panel's painted layer (nav-dropdown paint: #fff, radius 24px, ::before hairline #d1d1d1, shadow rgba(0,0,0,0.05) 0 0 15px 3px — the same shadow as the header pill)")
+L["menuPanel"] = tok(col(need((st("nav-dropdown").get("paint") or [{}])[0].get("bg"), "nav-dropdown paint")), "color", "the opened mega-menu panel's first painted layer (nav-dropdown paint[0] bg; radius 24px, ::before hairline #d1d1d1, the header pill's shadow)")
 L["fieldSurface"] = tok(col(style("field-name")["backgroundColor"]), "color", "computed backgroundColor on the contact form inputs")
 L["overlayScrim"] = tok("rgba(0, 0, 0, 0.4)", "color", "observed on the contact form popup: the page dims behind the open dialog (the modal layer's backdrop; the crop shows the dimmed page)", sampled=True)
 
@@ -85,20 +116,17 @@ D["page"] = tok(col(style("footer")["backgroundColor"]), "color", "computed back
 D["surface"] = tok(col(style("card")["backgroundColor"]), "color", "computed backgroundColor on the dark stat card (the 22M+ tile)")
 D["text"] = tok(col(style("hero-title")["color"]), "color", "computed color on the hero headline and dark-section headings — --Kernel-Black rebound to #fff")
 D["textMuted"] = tok(col(style("hero-lede")["color"]), "color", "computed color on the hero lede — Grey-200")
-D["accent"] = tok("#ffffff", "color", "declared .dark-mode scope: dsm-button-primary reads --Kernel-Black which re-binds to #fff (the white Get-started pill in the hero)")
-D["accentOn"] = tok("#000000", "color", "declared .dark-mode scope: the pill's text reads --Blank-Canvas-White rebound to #000")
-D["border"] = tok("#484848", "color", "Grey-700, the scale step for hairlines on dark ground (declared --Grey-700)")
+D["accent"] = tok(declared("--Kernel-Black", "dark"), "color", "declared --Kernel-Black resolved in the .dark-mode scope (raw/css-vars.json): dsm-button-primary reads it (the white Get-started pill in the hero)")
+D["accentOn"] = tok(declared("--Blank-Canvas-White", "dark"), "color", "declared --Blank-Canvas-White resolved in the .dark-mode scope (raw/css-vars.json): the pill's text")
+D["border"] = tok(declared("--Grey-700", "dark"), "color", "declared --Grey-700 resolved in the .dark-mode scope (raw/css-vars.json), the scale step for hairlines on dark ground")
 
 CMP = out["component"]
 CMP["header"] = {"radius": tok(style("header")["borderTopLeftRadius"], "dimension", "computed borderRadius on the header pill bar"),
                  "height": tok(style("header")["height"], "dimension", "computed height on the header pill bar"),
                  "shadow": tok(style("header")["boxShadow"], "shadow", "computed boxShadow on the header pill bar")}
 CMP["buttonPrimary"] = {"radius": tok(style("nav-cta")["borderTopLeftRadius"], "dimension", "computed borderRadius on the Get-started pill / Submit"),
-                        "height": tok(style("nav-cta")["height"], "dimension", "computed height on the header Get-started pill"),
-                        "font": tok(style("nav-cta")["fontSize"] + " " + style("nav-cta")["fontWeight"], "other", "computed font on the Get-started pill (Roobert 18px/500)")}
-CMP["buttonHero"] = {"radius": tok(style("hero-cta")["borderTopLeftRadius"], "dimension", "computed borderRadius on the hero Get-started pill"),
-                     "height": tok(style("hero-cta")["height"], "dimension", "computed height on the hero Get-started pill"),
-                     "font": tok(style("hero-cta")["fontSize"] + " " + style("hero-cta")["fontWeight"], "other", "computed font on the hero Get-started pill")}
+                        "height": tok(style("nav-cta")["height"], "dimension", "computed height on the header Get-started pill")}
+CMP["buttonHero"] = {"height": tok(style("hero-cta")["height"], "dimension", "computed height on the hero Get-started pill")}
 def border(k, state="default"):
     """width + style + colour: a border token without the style word paints
     nothing where it is dropped into `border:` (the style defaults to none)."""
@@ -117,15 +145,18 @@ CMP["checkbox"] = {"size": tok(style("checkbox")["width"], "dimension", "compute
 CMP["type"] = {
     "display": tok(first_text("hero-title").get("fontSize") or style("hero-title")["fontSize"], "dimension", "computed fontSize on the hero h1 (Roobert 600)", weight=style("hero-title")["fontWeight"], lineHeight=style("hero-title")["lineHeight"]),
     "section": tok(first_text("h2-section").get("fontSize") or style("h2-section")["fontSize"], "dimension", "computed fontSize on the section h2", weight=style("h2-section")["fontWeight"]),
-    "planPrice": tok(first_text("plan-price").get("fontSize") or "40px", "dimension", "computed fontSize on the plan price figure", weight=(first_text("plan-price").get("fontWeight") or "600")),
-    "body": tok(first_text("faq-answer").get("fontSize") or "16px", "dimension", "computed fontSize on body copy (faq-answer)", lineHeight=first_text("faq-answer").get("lineHeight") or ""),
-    "small": tok(first_text("m-nav-item").get("fontSize") or "14px", "dimension", "computed fontSize on small copy (mobile nav items)"),
+    "planPrice": tok(need(first_text("plan-price").get("fontSize"), "plan-price text fontSize"), "dimension", "computed fontSize on the plan price figure", weight=need(first_text("plan-price").get("fontWeight"), "plan-price text fontWeight")),
+    "body": tok(need(first_text("faq-answer").get("fontSize"), "faq-answer text fontSize"), "dimension", "computed fontSize on body copy (faq-answer)", lineHeight=need(first_text("faq-answer").get("lineHeight"), "faq-answer text lineHeight")),
+    "small": tok(need(first_text("m-nav-item").get("fontSize"), "m-nav-item text fontSize"), "dimension", "computed fontSize on small copy (mobile nav items)"),
 }
-CMP["motion"] = {
-    "button": tok("0.2s ease", "other", "computed transition on the dsm primary buttons (background-color)"),
-    "link": tok("0.3s ease-in-out", "other", "computed transition on header links (opacity)"),
-    "panel": tok("0.5s ease", "other", "computed transition on the FAQ answer reveal (grid-template-rows) and 0.3s max-height on the mobile menu"),
-}
+CMP["motion"] = {}
+for key, k, desc in [
+    ("button", "hero-cta", "the dsm primary buttons"),
+    ("link", "nav-login", "the header links"),
+    ("panel", "faq-answer", "the FAQ answer reveal (the mobile menu's max-height runs 0.3s)"),
+]:
+    v, prop = motion(k)
+    CMP["motion"][key] = tok(v, "other", f"computed transition ({prop}) on {k} default: {desc}")
 
 (ROOT / "raw" / "component-tokens.json").write_text(json.dumps(out, indent=1) + "\n")
 print("component-tokens.json:", sum(len(v) for v in out.values() if isinstance(v, dict)), "entries")
