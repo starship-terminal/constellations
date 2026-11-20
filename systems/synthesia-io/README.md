@@ -81,7 +81,7 @@ Custom properties were parsed from the Webflow stylesheets on cdn.prod.website-f
 
 ## What to distrust
 
-The preview browser could not produce screenshots. Headless shots are the evidence for layout. Several semantic names resolve to a different colour than their declared `var()` (grey ramps, some link and caption tokens). Those tokens store the painted value and say so. Typography custom properties are fluid and do not match the measured 56px hero, which is stored separately. Sign-in, signup, and checkout were not entered. Book demo asks for a phone number and was not submitted.
+The preview browser could not produce screenshots. Headless shots are the evidence for layout. Several semantic names resolve to a different colour than their declared `var()` (grey ramps, some link and caption tokens). Those tokens store the painted value and say so. Typography custom properties are fluid and do not match the measured 56px hero, which is stored separately. Sign-in, signup, and checkout were not entered. Book demo asks for a phone number and was not submitted. `tools/capture/harvest.mjs` used to click a cookie banner's Accept all when one showed. The recorded run logged no click on any desktop page (`cookie: null` in [raw/capture-log.json](raw/capture-log.json)); the phone pass did not log it, so `screenshots/home-light-mobile.png` may have been taken after an accept. The script now hides the banner instead and was not rerun. `raw/login-wall.json` matches neither capture script's output and was edited by hand. Type weights in the fluid roles are a rule (500 for headings, 400 otherwise), not a reading.
 
 ## Fonts
 
@@ -110,3 +110,5 @@ Not captured: the signed-in app, signup, any paid plan, card entry, the book-dem
 python3 tools/build_tokens.py
 python3 tools/catalog.py design-md synthesia-io
 ```
+
+Capture order, if rerun: `tools/capture/probe.mjs` writes `raw/css-vars.json`, `raw/login-wall.json`, `raw/pricing.json`, `raw/book-demo-fields.json` and `raw/states.json`; `tools/capture/harvest.mjs` writes `raw/measurements.json`, `raw/capture-log.json`, `raw/harvest-css-vars.json` and `raw/harvest-login-wall.json`. Each raw file has one writer. The kit's `tools/capture/vars.mjs`, an unadapted Claude copy that also wrote `raw/css-vars.json` in a shape `build_tokens.py` cannot read, is removed, so each raw file has one writer.
