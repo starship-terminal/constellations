@@ -4069,9 +4069,9 @@
       "description": "Discover the world's most exclusive luxury home, apartment and villa rentals",
       "status": "pending",
       "package": null,
-      "notes": "https://www.onefinestay.com/login asks for email and password. Password not submitted. Cookie banner not accepted.",
+      "notes": "https://www.onefinestay.com/login asks for email and password. Password not submitted. Cookie banner not accepted. Public walk 2026-11-21: Destinations and Inspiration open mega menus. Account, Log in, Create Login, and Forgot password open walls and those branches stop. Heart opens the public wishlist. Inquire Now opens /enquire and was not submitted. Dates and Guests open pickers. Cookie Settings, Accept, and Continue were not clicked. Phone menu opens Destinations, List Your Home, Inspiration, favorites, and Log in. One destination, one search, and one listing stand in for those templates. /login asks for email and password and was not entered. No form was submitted. Public package in PR 1550 at d66e82bdbbf0. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 12
     },
     {
