@@ -13,7 +13,7 @@ Glassnode is worth a capture because it is really five stacks that share one des
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the chrome, the studio navbar, the plan cards and the registry dark card, light and dark. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (71, 178 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the marketing chrome and Products dropdown, the hero and partner-reports card, the Vector pricing grid, the contact category picker, the studio shell and pricing, the Auth0 card, research and docs with their theme controls, the registry, mobile, motion and focus. |
-| [components/crops/](components/crops) | 170 element crops at 2x, named `{component}-{state}.png`. |
+| [components/crops/](components/crops) | 168 element crops at 2x, named `{component}-{state}.png`. |
 | [screenshots/](screenshots) | 60 quantised `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages bounded at eight chunks; `mobile-*` shots at 390 x 844 @2x; `home-light-menu-products` the nav dropdown open; `*-light-theme-dark` the research/docs painted dark surfaces and `tokenization-dark-theme-light` the registry's light surface — every sidecar records the sanitized source URL. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — 556 rules, nine resolved surface+theme profiles, 170 @font-face rules), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
@@ -53,7 +53,7 @@ Fonts: `core.font.family.marketing` is -apple-system, then 9 fallbacks; `core.fo
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 170 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 168 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
