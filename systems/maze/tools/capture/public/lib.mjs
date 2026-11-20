@@ -97,7 +97,8 @@ export async function clearChallenge(page, { tries = 8, step = 1500 } = {}) {
 
 export async function open(page, url, { wait = 2500 } = {}) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 70000 });
-  await clearChallenge(page);
+  // A bot check that never clears is not the product: fail the page instead of measuring it.
+  if (!(await clearChallenge(page))) throw new Error('challenge did not clear: ' + url);
   // Wait for paint before hiding consent. An init-script style tag blanks
   // maze.co's React tree (minified error 421).
   for (let i = 0; i < 16; i++) {

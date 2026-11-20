@@ -89,15 +89,34 @@ class Shooter {
     if (pin && this.prefix.startsWith('home')) {
       const h1y = await this.p.evaluate(() => Math.round(document.querySelector('h1')?.getBoundingClientRect().y || 0)).catch(() => 0);
       if (h1y > 180) {
+        // The scrolled viewport shot moves, with its sidecar, to -scrolled.png, and the crop takes the
+        // published name with a sidecar that says it is a crop, so the package's links show the
+        // corrected frame and every sidecar matches its image. A page that tiled has no single
+        // -full.png; then there is nothing to crop and the viewport shot stays as shot.
         const full = `${RAW}/${this.prefix}-full.png`;
         if (!fs.existsSync(full)) await this.full();
-        const { execFileSync } = await import('node:child_process');
-        const crop = path.join(path.dirname(fileURLToPath(import.meta.url)), 'crop-top.py');
-        execFileSync('python3', [
-          crop, full, file,
-          String(this.vw * this.dpr), String(900 * this.dpr),
-        ], { stdio: 'inherit' });
-        log('  cropped viewport from full page, h1 was', h1y);
+        if (fs.existsSync(full)) {
+          const { execFileSync } = await import('node:child_process');
+          const crop = path.join(path.dirname(fileURLToPath(import.meta.url)), 'crop-top.py');
+          const vh = this.p.viewportSize().height;
+          const scrolled = file.replace(/\.png$/, '-scrolled.png');
+          fs.renameSync(file, scrolled);
+          if (fs.existsSync(file + '.capture.json')) {
+            // The moved sidecar names its own image, as full() does for renamed captures.
+            const meta = JSON.parse(fs.readFileSync(file + '.capture.json', 'utf8'));
+            meta.screenshot = path.basename(scrolled);
+            fs.writeFileSync(scrolled + '.capture.json', JSON.stringify(meta, null, 1) + '\n');
+            fs.unlinkSync(file + '.capture.json');
+          }
+          const cropped = file;
+          execFileSync('python3', [crop, full, cropped, String(this.vw * this.dpr), String(vh * this.dpr)], { stdio: 'inherit' });
+          fs.writeFileSync(cropped + '.capture.json', JSON.stringify({
+            schemaVersion: 1, screenshot: path.basename(cropped), requested: this.requested,
+            capture: { mode: 'crop-of-full-page', from: path.basename(full), y: 0, height: vh },
+            note: `the viewport shot had scrolled (h1 at y=${h1y}) and is kept as ${path.basename(scrolled)}; this is the top ${vh}px of the full page`,
+          }, null, 1) + '\n');
+          log('  cropped the top of the full page into', path.basename(cropped), 'h1 was', h1y);
+        } else log('  ! no single full-page shot to crop; the viewport shot is kept as shot, h1 was', h1y);
       }
     }
     this.count++;
