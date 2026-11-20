@@ -25,6 +25,11 @@ for key in sorted(C):
     lines.append("| State | Size | Background | Text | Via |")
     lines.append("|---|---|---|---|---|")
     for state, s in (c.get("states") or {}).items():
+        if s.get("via") == "focus failed":
+            # D4: keyboard focus never reached the element, so the reading is the element at rest. It
+            # is listed as not captured rather than shown as the focus state, as the kit does.
+            lines.append(f"| {cell(state)} |  |  |  | not captured: keyboard focus did not reach the element |")
+            continue
         if s.get("error") and "style" not in s:
             lines.append(f"| {cell(state)} |  |  |  | {cell(s['error'][:80])} |")
             continue

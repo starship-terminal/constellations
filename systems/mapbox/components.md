@@ -35,7 +35,7 @@ Hero CTA fill (.button_inner). The anchor was never followed. Pressed is a CDP :
 |---|---|---|---|---|
 | [default](components/crops/cta-primary-default.png) | 206.73 x 51.59 | rgb(0, 122, 252) | rgb(255, 255, 255) | at rest |
 | [hover](components/crops/cta-primary-hover.png) | 206.73 x 51.59 | rgb(49, 149, 255) | rgb(255, 255, 255) | mouse hover |
-| [focus-visible](components/crops/cta-primary-focus-visible.png) | 206.73 x 51.59 | rgb(0, 122, 252) | rgb(255, 255, 255) | focus failed |
+| focus-visible |  |  |  | not captured: keyboard focus did not reach the element |
 | [pressed](components/crops/cta-primary-pressed.png) | 206.73 x 51.59 | rgb(0, 122, 252) | rgb(255, 255, 255) | CDP forcePseudoState :active |
 
 ## Contact us (hero)
@@ -46,7 +46,7 @@ Stroke pill beside the hero CTA. Never followed. Group: Button. Selector: `a.but
 |---|---|---|---|---|
 | [default](components/crops/cta-secondary-default.png) | 135.45 x 51.59 | rgba(0, 0, 0, 0) | rgb(14, 16, 18) | at rest |
 | [hover](components/crops/cta-secondary-hover.png) | 135.45 x 51.59 | rgb(239, 247, 255) | rgb(0, 122, 252) | mouse hover |
-| [focus-visible](components/crops/cta-secondary-focus-visible.png) | 135.45 x 51.59 | rgba(0, 0, 0, 0) | rgb(14, 16, 18) | focus failed |
+| focus-visible |  |  |  | not captured: keyboard focus did not reach the element |
 | [pressed](components/crops/cta-secondary-pressed.png) | 135.45 x 51.59 | rgba(0, 0, 0, 0) | rgb(14, 16, 18) | CDP forcePseudoState :active |
 
 ## Docs GL JS link
