@@ -112,7 +112,7 @@ Nothing was signed into, bought or submitted: the search field was filled with s
 - **One theme only.** The site paints light everywhere; the navy footer is a section style. `tokens.json` ships no dark set. Ten section palettes are declared in raw/css-vars.json for the record.
 - **Squarespace vars are scoped.** The resolved values in css-vars.json are the `:root` (light) readings; section-theme vars (`data-section-theme`) are harvested per selector but resolve in their own scopes — the footer's navy was measured, not resolved.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
-- **Some states were taken without their options.** The capture put `fillText` and `cropLoc` where they were ignored, so `search-field` filled was typed with the default `name@example.com` rather than a search phrase, and the `comments-open` and `m-menu-open` crops show only the toggle, not the opened panel. The script now passes them as options (not run since); the readings stand as labelled by their `via`.
+- **Some states were taken without their options.** The capture put `fillText` and `cropLoc` where they were ignored, so `search-field` filled was typed with the default `name@example.com` rather than a search phrase, and the `m-menu-open` crop shows only the toggle, not the opened panel. `comments-open` was never captured: its entry is marked missing with no states. The script now passes these as options (not run since); the readings stand as labelled by their `via`.
 
 ## Fonts
 
