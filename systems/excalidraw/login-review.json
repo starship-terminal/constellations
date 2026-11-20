@@ -1,0 +1,73 @@
+{
+  "slug": "excalidraw",
+  "signed_in": true,
+  "account": "signed-in Google account",
+  "when": "2026-11-21",
+  "host": "T3 in-app preview, default profile, tab opened with reuseExistingTab false",
+  "product_version": "cde80604b",
+  "theme": "dark, from System (account theme radio stayed on System)",
+  "viewports": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": "innerWidth 1440, innerHeight 900, devicePixelRatio 2, visualViewport 1440x900 scale 1",
+      "png": "2880x1800"
+    },
+    "phone": {
+      "requested": "390",
+      "measured": null,
+      "label": "not captured: preview stopped producing screenshot frames before the phone resize"
+    }
+  },
+  "offered": {
+    "public_editor": {
+      "items": ["Open", "Help", "Live collaboration", "hamburger menu", "Excalidraw+ welcome link", "Sign in"],
+      "reached": ["hamburger menu recorded", "Excalidraw+ welcome link followed to app.excalidraw.com"]
+    },
+    "empty_workspace": {
+      "items": ["Account menu", "Create workspace", "User settings", "Sign out", "excalidraw.com"],
+      "reached": ["Account menu", "User settings"]
+    },
+    "account_menu": {
+      "items": ["New workspace", "My profile", "Preferences", "Personal MCP/API keys", "Connected apps", "Discord", "YouTube", "Support", "Theme", "Language", "Sign out"],
+      "reached": ["My profile", "Preferences", "Personal MCP/API keys", "Connected apps (text only)"]
+    },
+    "settings_nav": {
+      "items": ["My profile", "Preferences", "Personal MCP/API keys", "Connected apps", "Export private collection", "My workspaces", "Sign out"],
+      "reached": ["My profile", "Preferences", "Personal MCP/API keys", "Connected apps (text only)"]
+    }
+  },
+  "screens": [
+    {"name": "No workspace yet, desktop, dark", "url": "https://app.excalidraw.com/no-workspace", "file": "screenshots/signed-in/no-workspace-dark-desktop.png"},
+    {"name": "Account menu, desktop, dark", "url": "https://app.excalidraw.com/no-workspace", "file": "screenshots/signed-in/account-menu-dark-desktop.png"},
+    {"name": "My profile, danger zone scrolled into view, desktop, dark", "url": "https://app.excalidraw.com/account/my-profile", "file": "screenshots/signed-in/profile-danger-dark-desktop.png"},
+    {"name": "Preferences, desktop, dark", "url": "https://app.excalidraw.com/account/preferences", "file": "screenshots/signed-in/preferences-dark-desktop.png"},
+    {"name": "Personal MCP/API keys, desktop, dark", "url": "https://app.excalidraw.com/account/api-keys", "file": "screenshots/signed-in/api-keys-dark-desktop.png"}
+  ],
+  "gaps": [
+    "Connected apps was reached at https://app.excalidraw.com/account/connected-apps and read as text (empty: no apps connected). preview_snapshot then said the browser is not producing screenshot frames. preview_open once and one more snapshot failed the same way. No screenshot.",
+    "Export private collection (/account/export) was in the settings nav and not opened. Frames died on the previous page.",
+    "My workspaces (/account/my-workspaces) was in the settings nav and not opened.",
+    "Create workspace (/workspace/create/name) and New workspace were offered and not opened. Nothing was created.",
+    "Phone 390 was not captured. The preview died before the resize.",
+    "Light theme was offered (theme radio: Light, Dark, System; System was checked and the page painted dark). Not switched, so no light shots.",
+    "My profile top (picture, name, email, linked GitHub) was on screen, then the settings pane was scrolled to the danger zone before the only saved profile shot. The top of the profile page has no filed screenshot.",
+    "Public editor welcome and hamburger were mapped, not re-shot. Those states are already in the signed-out package.",
+    "plus.excalidraw.com marketing, Discord, YouTube, GitHub, and Support were links and were not followed.",
+    "A workspace home, scene list, scene editor, share, billing, and collaboration need a workspace this account does not have.",
+    "catalog.json and webapps-manifest.json were left for the batch merge."
+  ],
+  "not_submitted": [
+    "Create workspace",
+    "Edit profile name",
+    "Change profile picture",
+    "Connect provider",
+    "Turn on two-factor",
+    "Sign out",
+    "Sign out all sessions",
+    "Delete account",
+    "Theme or language change",
+    "Preference toggles",
+    "Create an API key",
+    "Open audio settings"
+  ]
+}
