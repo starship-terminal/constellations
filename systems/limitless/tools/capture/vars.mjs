@@ -111,7 +111,6 @@ const out = {
   app: keep.slice(0, 400),
   palette: Object.fromEntries(palette),
   errors: result.errors.slice(0, 12),
-  resolved: { light: {} },
 };
 fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
 console.log('sheets', sheets.length, 'font-faces', result.fonts.length, 'kept rules', keep.length, 'palette', palette.length, 'errors', result.errors.length);

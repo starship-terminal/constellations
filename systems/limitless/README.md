@@ -114,6 +114,10 @@ Computed styles on the live DOM, 2026-11-18, light, 1440. Hover is a real pointe
 - Greycliff files. The family name is measured. The files are not in this package.
 - Pressed states. They are forced pseudo-classes.
 - Reduced motion. The product ignores it. That is recorded, not corrected.
+- Hand-entered values. `core.color.slate.200` (`#e2e8f0`, so `light.border`), `core.color.zinc.500` (`#71717a`), `light.helpBand` (`#8a54e1`), `core.elevation.popover` and `core.elevation.dialog`, `core.space.1`, `.3`, `.5` and `.16`, and `core.layout.page`, `.phone` and `.navHeight` were entered by hand at capture time. No raw reading holds them: the Solutions panel, the dialog close icon, the help header band and the top bar were not measured, and the measured dialog card computes no box-shadow. They are labelled Reconstruction in tokens.json.
+- Values corrected to the readings (2026-11 audit): `core.font.size.menu` 13px to the measured 12.8px; `core.typography.heading` line-height 41px to 41.4px, with the measured -0.9px tracking; `core.typography.body-lg` line-height 29px to 29.25px; `core.elevation.card` colour slate 900 to the measured slate 800 at 15%; `core.elevation.control` from one invented 0 1px 2px layer to the carousel button's two measured layers; `core.font.family.mono` now carries the whole measured stack.
+- The Sign Up Unavailable readings ([raw/gated-dialog.json](raw/gated-dialog.json), the gated screenshots) were taken after an email was submitted to the live sign-in form, a state change the capture rules now treat as a boundary. No committed script performs that submit.
+- components.md was written at capture time; no builder in tools/ regenerates it.
 - The phone sign-in shot is 1x. That host reports `devicePixelRatio` 1 while Playwright still writes a 2x PNG, so the shot was taken at 1x to match the page.
 
 ## Fonts
@@ -126,10 +130,10 @@ Greycliff (400, 500, 600, 700), loaded by Next as `__greycliff`. Licensed, not s
 |---|---|
 | Colour roles | Captured. [tokens.json](tokens.json) `light.*`, from computed styles. Overlay/scrim from the app dialog. |
 | Type roles | Captured. Display, heading, body, body-lg, label, caption, code. |
-| Spacing | Captured as a 4px scale derived from the measured paddings. |
+| Spacing | Partly. 8, 16, 24, 32, 40 and 48 are measured; 4, 12, 20 and 64 were entered by hand on the 4px scale. |
 | Radii | Captured. 4, 6, 8, 10, 24, pill. |
 | Borders | Captured. 1px focus outline. No strong border role on the public surface. |
-| Elevation | Captured. Card, popover, control. |
+| Elevation | Partly. Card and control are measured; popover and dialog were entered by hand. |
 | Motion | Captured. [raw/motion.json](raw/motion.json). Reduced motion is ignored. |
 | Layout | Captured at 1440 and 390. |
 | Button | Captured. Copy, carousel, nav. [crops](components/crops/copy-button-default.png). |

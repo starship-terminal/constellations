@@ -91,9 +91,6 @@ def slim(node):
 # from ending the script early. JSON.parse and a JS literal read it back unchanged.
 data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
                   ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-if "dark" not in T:
-    T_DARK_EMPTY = True
-
 _uid = [0]
 ICON_SRC = {}
 

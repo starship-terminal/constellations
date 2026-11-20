@@ -2,6 +2,7 @@
 import crypto from 'crypto';
 import fs from 'fs';
 import { chromium, UA, BASE, APP, HELP, hideConsent } from './public/lib.mjs';
+import { replaceSet } from './replace-set.mjs';
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -42,8 +43,10 @@ const browser = await chromium.launch({ headless: true });
 const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
 const page = await ctx.newPage();
 const seen = new Map();
+const failed = [];
 for (const url of pages) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 }).catch(() => {});
+  const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 }).catch((e) => { failed.push(`${url}: ${String(e.message).split('\n')[0]}`); return null; });
+  if (!res || res.status() >= 400) { if (res) failed.push(`${url}: HTTP ${res.status()}`); continue; }
   await page.waitForTimeout(1600);
   await hideConsent(page);
   const icons = await page.evaluate(collect);
@@ -57,14 +60,22 @@ for (const url of pages) {
   console.log(url, icons.length);
 }
 await browser.close();
+// Replace icons/ only after a complete run: a page that failed to load leaves
+// the committed icons and INDEX.tsv as they were.
+if (failed.length) {
+  console.error('not written, pages failed:\n  ' + failed.join('\n  '));
+  process.exit(1);
+}
 const rows = ['file\trole\tpages'];
+const files = new Map();
 let i = 0;
 for (const [hash, rec] of seen) {
   const slug = (rec.label || 'icon').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 32) || 'icon';
   const name = `${slug}-${hash}.svg`;
-  fs.writeFileSync(OUT + name, rec.markup);
+  files.set(name, rec.markup);
   rows.push(`${name}\t${rec.label}\t${rec.pages.length}`);
   i++;
 }
-fs.writeFileSync(OUT + 'INDEX.tsv', rows.join('\n') + '\n');
+// Written to a scratch folder first; icons/ changes only once every file is written.
+replaceSet(OUT, files, rows.join('\n') + '\n');
 console.log('icons', i);

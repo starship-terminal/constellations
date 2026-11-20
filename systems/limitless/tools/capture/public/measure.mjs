@@ -7,7 +7,18 @@ import { BASE, APP, HELP, launch, open, styleOf, crop, centre, RAW, hideConsent 
 
 fs.mkdirSync(RAW, { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
-const out = { _meta: { product: 'Limitless', captured: '2026-11-18', route: 'public-web', theme: 'light' }, components: {} };
+// Merge into the committed file: a run that stops early keeps the readings it
+// did not reach. Each page block saves when it closes.
+// _meta.captured keeps the earlier date until this run reads a state, so a rerun
+// that fails throughout never redates old readings; _meta.lastAttempt is this
+// run's date. Each component and state carries its own `read` date, so a reading
+// kept from an earlier run keeps the date it was taken.
+const TODAY = new Date().toLocaleDateString('en-CA');
+const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
+const prevDate = prev._meta && prev._meta.captured;
+for (const c of Object.values(prev.components || {})) if (c && !c.read && prevDate) c.read = prevDate;
+const out = { _meta: { product: 'Limitless', captured: prevDate || TODAY, lastAttempt: TODAY, route: 'public-web', theme: 'light' }, components: prev.components || {} };
+const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 let page, context, browser, cdp, current;
@@ -41,6 +52,8 @@ async function kbFocus(loc) {
 }
 
 async function forcePseudo(loc, classes) {
+  // Clear markers left by earlier calls: DOM.querySelector returns the first in document order.
+  await page.evaluate(() => document.querySelectorAll('[data-m-force]').forEach((n) => n.removeAttribute('data-m-force')));
   await loc.evaluate((el) => el.setAttribute('data-m-force', '1'));
   const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
   const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-force]' });
@@ -58,26 +71,49 @@ async function record(key, state, loc, meta, via) {
     const s = await styleOf(loc);
     let file;
     try { file = await crop(page, loc, `${key}-${state}`); } catch (e) { s.cropError = String(e.message).slice(0, 140); }
-    c.states[state] = { ...s, crop: file, via };
+    c.states[state] = { ...s, crop: file, via, read: TODAY };
+    // Found and measured now: no longer missing, and dated today.
+    delete c.missing;
+    c.read = TODAY;
+    out._meta.captured = TODAY;
     log(' ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h));
   } catch (e) {
-    c.states[state] = { error: String(e.message).slice(0, 180), via };
+    // A failed re-read keeps an earlier good reading (and its date) and notes the failure.
+    const msg = String(e.message).slice(0, 180);
+    const old = c.states[state];
+    c.states[state] = old && !old.error ? { ...old, recaptureError: msg, recaptureRun: TODAY } : { error: msg, via, read: TODAY };
     log(' !', key, state, String(e.message).slice(0, 100));
   }
 }
 
 async function states(key, loc, list, meta) {
   const target = loc.filter({ visible: true }).first();
-  if (!(await target.count())) { log(' ! missing', key); out.components[key] = { missing: true, ...meta, url: current, states: {} }; return; }
+  if (!(await target.count())) {
+    log(' ! missing', key);
+    // An earlier reading is kept and flagged; only a component never read is marked missing.
+    const old = out.components[key];
+    if (old && old.states && Object.keys(old.states).length && !old.missing) old.recaptureMissed = TODAY;
+    else out.components[key] = { missing: true, read: TODAY, ...meta, url: current, states: {} };
+    return;
+  }
   for (const st of list) {
     await reset();
     let undo, via = 'at rest';
+    try {
     if (st === 'hover') { await target.hover({ timeout: 4000 }).catch(() => {}); via = 'mouse hover'; await page.waitForTimeout(280); }
     else if (st === 'focus-visible') via = await kbFocus(target);
     else if (st === 'pressed') { undo = await forcePseudo(target, ['active', 'hover']); via = 'CDP forcePseudoState :active:hover'; }
     else if (st === 'focused') { await target.click({ timeout: 4000 }); via = 'clicked into the field; nothing submitted'; await page.waitForTimeout(200); }
     await record(key, st, target, meta, via);
-    if (undo) await undo();
+    } catch (e) {
+      // One state that throws (a click that times out) is recorded and the rest still run.
+      const c = (out.components[key] ??= { states: {}, ...meta, url: current });
+      const msg = String(e.message).slice(0, 180);
+      const old = c.states[st];
+      c.states[st] = old && !old.error ? { ...old, recaptureError: msg, recaptureRun: TODAY } : { error: msg, via, read: TODAY };
+      log(' !', key, st, String(e.message).slice(0, 100));
+    }
+    if (undo) await undo().catch(() => {});
   }
   await reset();
 }
@@ -91,7 +127,7 @@ await states('nav-link', page.getByRole('link', { name: 'Privacy', exact: true }
 await states('nav-solutions', page.getByRole('button', { name: 'Solutions' }), B, { title: 'Solutions menu button', group: 'Navigation' });
 await states('wordmark', page.getByRole('link', { name: 'Limitless', exact: true }).first(), ['default', 'hover'], { title: 'Wordmark', group: 'Navigation' });
 // open solutions, measure a menu item, close without navigating
-await page.getByRole('button', { name: 'Solutions' }).click();
+await page.getByRole('button', { name: 'Solutions' }).click().catch((e) => log(' ! solutions menu did not open', String(e.message).slice(0, 80)));
 await page.waitForTimeout(400);
 await states('menu-item', page.getByRole('link', { name: 'Voice Recorder' }), ['default', 'hover'], { title: 'Solutions menu item', group: 'Menu' });
 await page.keyboard.press('Escape');
@@ -102,19 +138,21 @@ await states('hero-title', page.locator('h1').first(), ['default'], { title: 'He
 const prose = page.locator('main p, article p, h1 + p, .prose p').first();
 await states('body-copy', prose, ['default'], { title: 'Body copy', group: 'Type' });
 await page.close();
+save();
 
 await newPage(BASE + '/for/voice-recorder');
 const cta = page.locator('a, button').filter({ hasText: /Get the app|Download|Buy|Shop|Order|App Store|Get started/i }).first();
 await states('cta', cta, B, { title: 'Primary call to action', group: 'Button' });
-const card = page.locator('main a, main article, main [class*="rounded"]').filter({ hasText: /./ }).nth(2);
 await states('feature-card', page.locator('main h2').first(), ['default'], { title: 'Section heading', group: 'Type' });
 await page.close();
+save();
 
 await newPage(BASE + '/developers');
 await states('code-block', page.locator('pre, code').first(), ['default'], { title: 'Code block', group: 'Docs' });
 await states('copy-button', page.getByRole('button', { name: 'Copy' }).first(), B, { title: 'Copy button', group: 'Button' });
 await states('anchor-link', page.getByRole('link', { name: 'Endpoints' }).first(), ['default', 'hover'], { title: 'In-page anchor', group: 'Link' });
 await page.close();
+save();
 
 await newPage(BASE + '/privacy');
 const faq = page.locator('main button, main summary').first();
@@ -125,25 +163,30 @@ if (await faq.count()) {
   await states('faq-open', faq, ['default'], { title: 'FAQ disclosure opened', group: 'Disclosure' });
 }
 await page.close();
+save();
 
 await newPage(BASE + '/support');
 await states('support-textarea', page.locator('textarea').first(), ['default', 'focused'], { title: 'Support message field', group: 'Field' });
 await states('help-link', page.getByRole('link', { name: /Help Center/ }).first(), ['default', 'hover'], { title: 'Help Center link', group: 'Link' });
 await page.close();
+save();
 
 await newPage(BASE + '/careers');
 await states('roles-link', page.getByRole('link', { name: /View open roles/ }).first(), B, { title: 'Open roles link', group: 'Link' });
 await page.close();
+save();
 
 await newPage(APP + '/');
 await states('google-button', page.getByRole('button', { name: /Continue with Google/ }), B, { title: 'Continue with Google', group: 'Auth boundary' });
 await states('email-field', page.locator('#email'), ['default', 'focused'], { title: 'Email field', group: 'Auth boundary' });
 await page.close();
+save();
 
 await newPage(HELP + '/en/');
 await states('search-field', page.locator('#search-input'), ['default', 'focused'], { title: 'Help search field', group: 'Search' });
 await states('collection-card', page.locator('a[href*="/collections/"]').first(), ['default', 'hover'], { title: 'Help collection card', group: 'Card' });
 await page.close();
+save();
 
 await newPage(BASE + '/');
 // footer link
@@ -152,10 +195,11 @@ await page.waitForTimeout(400);
 await hideConsent(page);
 await states('footer-link', page.getByRole('link', { name: 'Terms', exact: true }).last(), ['default', 'hover'], { title: 'Footer link', group: 'Navigation' });
 await page.close();
+save();
 
 await context.close();
 await browser.close();
-fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+save();
 const n = Object.keys(out.components).length;
 const statesN = Object.values(out.components).reduce((a, c) => a + Object.keys(c.states || {}).length, 0);
 console.log('wrote', n, 'components', statesN, 'states');
