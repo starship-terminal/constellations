@@ -596,6 +596,7 @@ Shadows, resolved to CSS:
 | `core.elevation.4` | `0px 4px 16px 0px rgba(25, 25, 25, 0.2)` |
 | `core.elevation.5` | `0px 6px 20px 0px rgba(25, 25, 25, 0.2)` |
 | `core.elevation.6` | `0px 8px 24px 0px rgba(25, 25, 25, 0.2)` |
+| `core.elevation.none` | `0px 0px 0px 0px rgba(25, 25, 25, 0)` |
 
 ## Shapes
 
@@ -623,6 +624,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The signed-in product is unknown.** Past sign-in or the address gate — ordering, cart, checkout, DashPass, merchant/Dasher onboarding — nothing was reached or inferred. Tokens for those components exist in the `--comp-*` layer (declared, tokenised), but their painted behaviour is unevidenced.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour PNGs; photographs band. Read exact colours from tokens or the raw files.
 - **Sibling brand themes in the sheet.** The prism bundle ships deliveroo/plus `[data-dt-theme]` scopes (light and dark). They are real declarations but not what doordash.com paints; only the unscoped doordash light set is tokenised — do not read them as "DoorDash dark mode".
+- **Browser defaults under the replay.** Elements the site styles only through their text children kept the browser's inherited defaults in the replay (Times 16px, #000000, the #0000ee link blue on anchors and the icons inside them); 92 states carry them. The `light.component.*.text` tokens now read the first text node instead of the wrapper (12 of them changed, for example `offerBadge.text` #0000ee to #d91400 and `heroBand.text`/`footer.text` #000000 to #ffffff); `menuItem.text` and `hsaSearch.text`, which have no text node, say they are unconfirmed. components.md marks those values as browser defaults. The capture script now refuses a page on which the prism face did not apply (not re-run).
 - **Fonts are proprietary.** DD Norms and TTNormsProCond are not distributed; the style guide falls back to the system sans, so its type samples approximate.
 
 ### Do and don't (from README.md)

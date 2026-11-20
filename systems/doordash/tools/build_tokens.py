@@ -95,6 +95,46 @@ def check(path, ty, val):
                 raise ValueError(f"{path}: gradient position {stop['position']!r}")
 
 
+def split_top(s):
+    """Split a computed list on its top-level commas (not the ones inside rgb(...))."""
+    out, depth, cur = [], 0, ""
+    for ch in s:
+        depth += (ch == "(") - (ch == ")")
+        if ch == "," and depth == 0:
+            out.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    return out + [cur.strip()] if cur.strip() else out
+
+
+SHADOW_COLOUR = re.compile(r"rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}")
+
+
+def parse_shadow(path, val):
+    """A box-shadow string -> DTCG shadow layers. Paren-aware; keeps `inset` wherever it sits;
+    accepts unitless 0 and negative lengths; raises on a layer it cannot read instead of dropping it.
+    Fully transparent layers are left out, but a declaration made only of them (prism's
+    elevation-none, `0px 0px 0px 0px #19191900`) keeps its transparent layer: DTCG has no "none"."""
+    if val.strip() == "none":
+        raise ValueError(f"{path}: shadow 'none' is not a DTCG shadow; declare the transparent layer instead")
+    layers = []
+    for part in split_top(val):
+        inset = bool(re.search(r"(^|\s)inset(\s|$)", part))
+        rest = re.sub(r"(^|\s)inset(\s|$)", " ", part).strip()
+        m = SHADOW_COLOUR.search(rest)
+        nums = (rest[:m.start()] + " " + rest[m.end():]).split() if m else []
+        if not m or not 2 <= len(nums) <= 4 or not all(re.fullmatch(r"-?[\d.]+(px)?", n) for n in nums):
+            raise ValueError(f"{path}: shadow layer did not parse: {part!r}")
+        nums = [n if n.endswith("px") else n + "px" for n in nums] + ["0px"] * (4 - len(nums))
+        layer = {"color": norm_color(m.group(0)), "offsetX": nums[0], "offsetY": nums[1], "blur": nums[2], "spread": nums[3]}
+        if inset:
+            layer["inset"] = True
+        layers.append(layer)
+    seen = [l for l in layers if not (l["color"].startswith("rgba(") and l["color"].endswith(", 0)"))]
+    return seen or layers[:1]
+
+
 def leaf(path, spec):
     ty = spec["type"]
     if "var" in spec:
@@ -116,22 +156,7 @@ def leaf(path, spec):
             val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
                    "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
     if ty == "shadow" and isinstance(val, str):
-        layers = []
-        for m in re.finditer(
-                r"(rgba?\(\s*[\d.]+,?\s*[\d.]+,?\s*[\d.]+(?:,?\s*[\d.]+)?\)|#[0-9a-fA-F]{3,8})\s+"
-                r"(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?", val):
-            col, x, y, bl, sp = m.groups()
-            if col.startswith("rgba") and col.rstrip(")").endswith(", 0"):
-                continue
-            layers.append({"color": norm_color(col), "offsetX": f"{x}px", "offsetY": f"{y}px",
-                           "blur": f"{bl}px", "spread": f"{sp or 0}px"})
-        if layers:
-            val = layers
-        elif val == "none" or re.search(r"rgba?\([^)]*\)\s+[\d.-]+px\s+[\d.-]+px", val):
-            # every layer parsed was fully transparent: a "no shadow" declaration
-            val = "none"
-        else:
-            raise ValueError(f"{path}: shadow value did not parse: {val!r}")
+        val = parse_shadow(path, val)
     if ty in ("fontWeight", "number") and isinstance(val, str):
         m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
         if m:
