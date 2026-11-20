@@ -85,7 +85,7 @@ A Rails storefront with a Vue island layer, painted under `data-theme="legacy"` 
 |---|---|
 | [tokens.json](tokens.json) | 36 core + 54 light tokens, evidence-labelled (`{var: ...}` leaves resolve to the declared layer; measured values name the component reading) |
 | [style-guide.html](style-guide.html) | every token rendered, with reconstructed mocks of the header and nav |
-| [components.md](components.md) | the discovery list and 49 measured component entries (123 state crops; 3 misses recorded) |
+| [components.md](components.md) | the discovery list and 49 measured component entries (119 state crops; 3 misses recorded) |
 | [patterns.md](patterns.md) | page layouts |
 | [DESIGN.md](DESIGN.md) | the generated one-theme export |
 | [icon.png](icon.png) | the Creative Market app icon, 128px (Git LFS) |

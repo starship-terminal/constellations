@@ -14,7 +14,7 @@ Exa is worth a capture because one product ships three distinct visual surfaces.
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values, light and dark |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (70, 163 states) with crops and values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the marketing chrome and mega-menu, the home search demo, the pricing grid, the docs shell, the auth card, mobile |
-| [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` (157) |
+| [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` (153) |
 | [icons/](icons) | 55 inline SVGs lifted from the public DOM with an [INDEX.tsv](icons/INDEX.tsv) naming each by role |
 | [screenshots/](screenshots) | Public `{page}-{theme}-{state}.png` captures plus 20 `signed-in-*` dashboard shots. Public desktop shots are 1440 x 900 (256-colour PNGs); signed-in desktop PNGs are 2880 x 1800 (1440 x 900 at 2x). `mobile-*` and `signed-in-*-narrow` are 390 x 844 at 2x (780 px wide) |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 1,316 custom-property rules resolved in marketing/auth/docs-light/docs-dark probes, 79 font faces), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [signed-in-dashboard.json](raw/signed-in-dashboard.json) (the 2026-11-20 dashboard reading) |
