@@ -6976,9 +6976,9 @@
       "description": "Design feedback and revisions, all in one place",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://app.workflow.design/users/sign-in never loaded a form. Marketing login URL is a 404.",
+      "notes": "Email probe: https://app.workflow.design/users/sign-in never loaded a form. Marketing login URL is a 404. Public walk 2026-11-21: marketing pages loaded. Log in and Try now stop at https://app.workflow.design/ and were not entered. Careers is a styled 404. Contact form was not submitted. Public package in PR 1501 at e7b17caac. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 21
     },
     {
