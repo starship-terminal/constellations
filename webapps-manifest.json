@@ -793,9 +793,9 @@
       "description": "#1 app for sleep and meditation",
       "status": "captured",
       "package": "systems/calm",
-      "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary). The user signed in. The app opened at the subscription page. Product not walked.",
+      "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary). The user signed in. The app opened at the subscription page. A later walk returned Access to this page has been denied. Not retried. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "captcha",
       "batch": 3
     },
     {
