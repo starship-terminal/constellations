@@ -6211,9 +6211,9 @@
       "description": "Make Your Day",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.tiktok.com/login Continue with Google opened For You with a Profile control. Product not walked.",
+      "notes": "https://www.tiktok.com/ showed Log in. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 19
     },
     {
@@ -6398,9 +6398,9 @@
       "description": "Interactive livestreaming service",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.twitch.tv/login Continue with Google signed in and offered a passkey. Passkey skipped. Product not walked.",
+      "notes": "https://www.twitch.tv/settings/profile said you must be logged in. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 19
     },
     {
