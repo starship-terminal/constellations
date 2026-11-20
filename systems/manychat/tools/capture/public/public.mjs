@@ -190,7 +190,7 @@ const mobile = {
   } },
 };
 
-const b = await chromium.launch({ args: ['--disable-blink-features=AutomationControlled'] });
+const b = await chromium.launch() /* automation is not hidden: a bot check is a boundary, not bypassed */;
 let total = 0;
 const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
 for (const { k, mob } of runs) {

@@ -152,35 +152,35 @@ for step in TYPE_STEPS:
     if size_name not in DECL or DECL[size_name].get("kind") != "dimension":
         continue
     # The live site sets html { font-size: 10px }, so 1rem is 10px. The probe
-    # resolved rem against a 16px root, so keep the authored rem.
-    raw_size = (DECL[size_name].get("raw") or "").strip()
-    size = dim(raw_size if raw_size.endswith("rem") else resolved(size_name))
+    # resolved rem against a 16px root, so convert the authored rem at 10px,
+    # as dim_token does for radius and spacing; a 16px-root consumer would
+    # otherwise render every step 1.6x too large.
+    size = dim_token(size_name, "")["$value"]
+    size_px = float(size[:-2])
     lh_name = f"--text-{step}--line-height"
     ls_name = f"--text-{step}--letter-spacing"
     fw_name = f"--text-{step}--font-weight"
-    lh = other(lh_name)
-    if isinstance(lh, str) and re.fullmatch(r"[\d.]+", lh.strip()):
-        lh = float(lh) if "." in lh else int(lh)
-    elif isinstance(lh, (int, float)):
-        lh = lh
-    else:
-        lh = 1.2
-    ls = other(ls_name) or "0"
-    if isinstance(ls, (int, float)):
-        ls = f"{ls}em" if ls else "0em"
-    ls = str(ls).strip()
-    if re.fullmatch(r"-?[\d.]+", ls):
-        ls = ls + "em"
-    fw_raw = other(fw_name)
-    fw = 400
-    if isinstance(fw_raw, (int, float)):
-        fw = int(fw_raw)
-    elif isinstance(fw_raw, str):
-        fw = {"normal": 400, "bold": 700, "medium": 500}.get(fw_raw.strip(), None)
-        if fw is None and re.fullmatch(r"\d+", fw_raw.strip()):
-            fw = int(fw_raw.strip())
-        if fw is None:
-            fw = 400
+    # Every companion is declared; a missing one fails the build rather than
+    # falling back to a default that would carry the css-var source.
+    for companion in (lh_name, ls_name, fw_name):
+        if companion not in DECL:
+            raise KeyError(companion)
+    lh = str(DECL[lh_name].get("raw")).strip()
+    if not re.fullmatch(r"\d*\.?\d+", lh):
+        raise ValueError(f"{lh_name}: not a unitless line height: {lh}")
+    lh = float(lh) if "." in lh else int(lh)
+    # Tracking is authored in em (or 0). DTCG letterSpacing is a dimension, so
+    # it is converted to px at this step's own size. The probe's resolved value
+    # is not used: it resolved em against the probe's font size, not the step's.
+    ls_raw = str(DECL[ls_name].get("raw")).strip()
+    m_ls = re.fullmatch(r"(-?\d*\.?\d+)(em)?", ls_raw)
+    if not m_ls or (not m_ls.group(2) and float(m_ls.group(1)) != 0):
+        raise ValueError(f"{ls_name}: not an em length: {ls_raw}")
+    ls = f"{round(float(m_ls.group(1)) * size_px, 3):g}px"
+    fw_raw = str(DECL[fw_name].get("raw")).strip()
+    fw = {"normal": 400, "bold": 700}.get(fw_raw) or (int(fw_raw) if fw_raw.isdigit() else None)
+    if fw is None:
+        raise ValueError(f"{fw_name}: not a font weight: {fw_raw}")
     # Pricing h3 computes to Rooftop. Only the display steps (h1, h2, the
     # large ds sizes) were measured in ManyChatGravity.
     family = "{font.family.display}" if step in ("h1", "h1-ai", "h2", "ds-3xl", "ds-2xl") else "{font.family.sans}"
@@ -195,12 +195,16 @@ for step in TYPE_STEPS:
             "letterSpacing": ls,
         },
         "$type": "typography",
-        "$extensions": {"source": f"css-var {size_name} plus --line-height/--letter-spacing/--font-weight companions (light)"},
+        "$extensions": {"source": f"css-var {size_name} plus --line-height/--letter-spacing/--font-weight companions (light); "
+                                  f"size rem resolved at the 10px root; letter-spacing {ls_raw} converted to px at {size}"},
     }
 
-ease_raw = other("--ease") or "cubic-bezier(.43, .195, .02, 1)"
-m = re.fullmatch(r"cubic-bezier\(\s*([-\d.]+)[,\s]+([-\d.]+)[,\s]+([-\d.]+)[,\s]+([-\d.]+)\s*\)", str(ease_raw).strip())
-ease = [float(x) for x in m.groups()] if m else [0.43, 0.195, 0.02, 1]
+# --ease is read, never defaulted: a missing or unparseable value fails the build.
+ease_raw = other("--ease")
+m = re.fullmatch(r"cubic-bezier\(\s*([-\d.]+)[,\s]+([-\d.]+)[,\s]+([-\d.]+)[,\s]+([-\d.]+)\s*\)", str(ease_raw or "").strip())
+if not m:
+    raise ValueError(f"--ease: not a cubic-bezier(): {ease_raw!r}")
+ease = [float(x) for x in m.groups()]
 
 core = {
     "color": {"brand": brand, "raw": raw, "named": named},
@@ -273,7 +277,7 @@ retarget(light)
 tokens = {
     "core": core,
     "light": light,
-    "dark": {},
+    # One painted theme, so no dark set: an empty set outside tokenSetOrder read as a theme with no values.
     "$themes": [{
         "id": "light",
         "name": "Light",
@@ -310,11 +314,10 @@ for n, t in list(tokens_of(core)) + list(tokens_of(light)):
         if a not in NAMES:
             raise SystemExit(f"{n}: alias {{{a}}} points at nothing")
 
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
-
-
 def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})

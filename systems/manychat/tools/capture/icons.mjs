@@ -95,7 +95,7 @@ async function open(p, path, w = 5000) {
 const failed = [];
 async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(label); console.log('  skip', label, String(e.message).split('\n')[0]); } }
 
-const b = await chromium.launch({ args: ['--disable-blink-features=AutomationControlled'] });
+const b = await chromium.launch() /* automation is not hidden: a bot check is a boundary, not bypassed */;
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
 const p = await ctx.newPage();
 

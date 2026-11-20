@@ -29,17 +29,17 @@ export const RAW = path.join(REF, 'raw');
 // few stable fragments the site publishes (mc-html, mc-text-label).
 export const M = (name) => `[class*="${name}"]`;
 
-// The per-context patches every page gets: the webdriver mask, plus a record of
-// the real devicePixelRatio before app code runs.
+// The per-context patch every page gets: a record of the real devicePixelRatio
+// before app code runs. Automation is not hidden (no webdriver mask, no
+// AutomationControlled flag): a bot check is recorded as a boundary, not bypassed.
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }
 
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
-  const browser = await chromium.launch({ args: ['--disable-blink-features=AutomationControlled'] });
+  const browser = await chromium.launch();
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
@@ -85,11 +85,17 @@ export async function closePromo(page) {
   return true;
 }
 
+// Returns whether the real document arrived. A failed navigation or a challenge
+// that never clears returns false, so the caller records the page as blocked
+// instead of measuring the interstitial as the product.
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  let loaded = true;
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 })
+    .catch((e) => { loaded = false; console.log('  goto failed', url, String(e.message).split('\n')[0]); });
+  if (!loaded || !(await clearChallenge(page))) return false;
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return true;
 }
 
 // Computed style properties recorded for every component and state.
