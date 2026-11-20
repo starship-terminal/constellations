@@ -81,7 +81,7 @@ async function chrome(key) {
       if (r.width < 40 || r.height < 10) continue;
       seen.push({ node: el.tagName.toLowerCase() + '.' + String(el.className).split(' ')[0].slice(0, 60), z: cs.zIndex, pos: cs.position, rect: `${r.width | 0}x${r.height | 0}@${r.x | 0},${r.y | 0}`, text: (el.innerText || '').slice(0, 40).replace(/\n/g, '|') });
     }
-    return seen.sort((a, b) => (parseInt(b.z) || 0) - parseInt(a.z) || 0).slice(0, 20);
+    return seen.sort((a, b) => (parseInt(b.z) || 0) - (parseInt(a.z) || 0)).slice(0, 20);
   }).catch(() => []);
   out._meta.chrome ??= {};
   out._meta.chrome[key] = z;

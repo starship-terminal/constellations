@@ -6,7 +6,7 @@
     "sans": {
      "value": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
      "type": "fontFamily",
-     "source": "computed fontFamily of nav-link/footer (raw/components-computed.json)",
+     "source": "computed fontFamily of article-card default (raw/components-computed.json); blog-topic and the other blog/prose components match (nav-link and footer measure CareSans)",
      "description": "The UI sans — nav, footer, blog/prose, forms and the /shop stack."
     },
     "display": {
@@ -560,91 +560,91 @@
     "base": {
      "value": "#000000",
      "type": "color",
-     "source": "stylesheet literal, 62 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 62 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The ink every ramp step derives from."
     },
     "a89": {
      "value": "rgba(0, 0, 0, 0.89)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed color of header default (raw/components-computed.json)",
      "description": "Primary text — nav, body, footer."
     },
     "a74": {
      "value": "rgba(0, 0, 0, 0.74)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed backgroundColor of cta-secondary pressed (raw/components-computed.json)",
      "description": "A mid emphasis step."
     },
     "a65": {
      "value": "rgba(0, 0, 0, 0.65)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed color of nav-link default (raw/components-computed.json)",
      "description": "Secondary text — prose body, privacy notes."
     },
     "a54": {
      "value": "rgba(0, 0, 0, 0.54)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed backgroundColor of form-submit focus-visible (raw/components-computed.json)",
      "description": "The muted step."
     },
     "a50": {
      "value": "rgba(0, 0, 0, 0.5)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed color of page-dek default (raw/components-computed.json)",
      "description": "The page dek's reading."
     },
     "a44": {
      "value": "rgba(0, 0, 0, 0.44)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed color of byline default (raw/components-computed.json)",
      "description": "Subtle text — bylines and meta."
     },
     "a37": {
      "value": "rgba(0, 0, 0, 0.37)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed color of read-more default (raw/components-computed.json)",
      "description": "The faint step — 'Read more'."
     },
     "a33": {
      "value": "rgba(0, 0, 0, 0.33)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "Reconstruction — entered by hand at capture time, no raw reading behind it (no computed style or declaration holds this step)",
      "description": "Placeholder/disabled-adjacent text."
     },
     "a30": {
      "value": "rgba(16, 16, 16, 0.3)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed color of disabled-button default (raw/components-computed.json)",
      "description": "Disabled control text."
     },
     "a12": {
      "value": "rgba(0, 0, 0, 0.12)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "painted fill (a paint layer) of m-bento-card default (raw/components-computed.json)",
      "description": "Hairlines and card borders."
     },
     "a08": {
      "value": "rgba(0, 0, 0, 0.08)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "a layer of computed boxShadow of region-dialog default (raw/components-computed.json)",
      "description": "The soft divider wash."
     },
     "a06": {
      "value": "rgba(0, 0, 0, 0.06)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed backgroundColor of menu-toggle hover (raw/components-computed.json)",
      "description": "Hover wells — Log in hover, chips, social wells, disabled fill."
     },
     "a05": {
      "value": "rgba(0, 0, 0, 0.05)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "declared in an archived inline sheet (raw/css-vars.json)",
      "description": "The lightest wash."
     },
     "a03": {
      "value": "rgba(0, 0, 0, 0.03)",
      "type": "color",
-     "source": "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)",
+     "source": "computed borderTopColor of menu-toggle default (raw/components-computed.json)",
      "description": "The faintest surface tint."
     }
    },
@@ -652,73 +652,73 @@
     "white": {
      "value": "#ffffff",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 custom-property declarations in raw/css-vars.json",
      "description": "The page field."
     },
     "snow": {
      "value": "#f7f7f7",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A soft panel."
     },
     "wash": {
      "value": "#f0f0f0",
      "type": "color",
-     "source": "stylesheet literal, 18 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 18 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The wash surface."
     },
     "wash-2": {
      "value": "#f1f1f1",
      "type": "color",
-     "source": "stylesheet literal, 12 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 12 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A wash variant."
     },
     "grey": {
      "value": "#efefef",
      "type": "color",
-     "source": "stylesheet literal, 18 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 18 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The tertiary button surface and carousel arrow base."
     },
     "grey-2": {
      "value": "#e7e7e7",
      "type": "color",
-     "source": "stylesheet literal, 7 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 7 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A grey step."
     },
     "grey-3": {
      "value": "#e5e5e5",
      "type": "color",
-     "source": "stylesheet literal, 3 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A grey step."
     },
     "footer": {
      "value": "#e8eae8",
      "type": "color",
-     "source": "stylesheet literal, 25 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 25 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The footer slab — measured on the footer."
     },
     "warm-grey": {
      "value": "#e8e8e2",
      "type": "color",
-     "source": "stylesheet literal, 3 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The warm grey surface."
     },
     "silver": {
      "value": "#d2d2d2",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid grey."
     },
     "mid": {
      "value": "#8f8f8f",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid grey."
     },
     "muted": {
      "value": "#757575",
      "type": "color",
-     "source": "stylesheet literal, 28 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 28 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The muted grey — accordion labels."
     }
    },
@@ -726,49 +726,49 @@
     "sage-050": {
      "value": "#f5faf6",
      "type": "color",
-     "source": "stylesheet literal, 5 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 5 custom-property declarations in raw/css-vars.json",
      "description": "The lightest sage surface."
     },
     "sage-100": {
      "value": "#f2f9f4",
      "type": "color",
-     "source": "stylesheet literal, 12 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 12 custom-property declarations in raw/css-vars.json",
      "description": "The sage surface."
     },
     "sage-200": {
      "value": "#eaf3ed",
      "type": "color",
-     "source": "stylesheet literal, 10 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid sage."
     },
     "sage-300": {
      "value": "#e4eee6",
      "type": "color",
-     "source": "stylesheet literal, 12 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 12 custom-property declarations in raw/css-vars.json",
      "description": "The deep sage surface."
     },
     "sage-400": {
      "value": "#f1f4f2",
      "type": "color",
-     "source": "stylesheet literal, 4 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A sage-grey."
     },
     "cream-100": {
      "value": "#faf8f2",
      "type": "color",
-     "source": "stylesheet literal, 10 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 10 custom-property declarations in raw/css-vars.json",
      "description": "The light cream."
     },
     "cream-200": {
      "value": "#f4f1e6",
      "type": "color",
-     "source": "stylesheet literal, 10 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 10 custom-property declarations in raw/css-vars.json",
      "description": "The cream surface."
     },
     "cream-300": {
      "value": "#f2ede5",
      "type": "color",
-     "source": "stylesheet literal, 10 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The deep cream."
     }
    },
@@ -776,97 +776,97 @@
     "950": {
      "value": "#13262e",
      "type": "color",
-     "source": "stylesheet literal, 10 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The deepest teal — dark hero surfaces."
     },
     "900": {
      "value": "#1e3944",
      "type": "color",
-     "source": "stylesheet literal, 4 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A deep teal."
     },
     "850": {
      "value": "#223c47",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A deep teal."
     },
     "800": {
      "value": "#235b5b",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 custom-property declarations in raw/css-vars.json",
      "description": "Deep teal."
     },
     "750": {
      "value": "#2a6868",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 custom-property declarations in raw/css-vars.json",
      "description": "Deep teal."
     },
     "700": {
      "value": "#338585",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
      "description": "The Hers teal — 103 declarations: badges, quality seals, accents."
     },
     "650": {
      "value": "#3f676d",
      "type": "color",
-     "source": "stylesheet literal, 34 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 34 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A dark teal-grey."
     },
     "600": {
      "value": "#6498a0",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 custom-property declarations in raw/css-vars.json",
      "description": "The mid teal."
     },
     "550": {
      "value": "#729693",
      "type": "color",
-     "source": "stylesheet literal, 10 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid teal."
     },
     "500": {
      "value": "#76b2a7",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
      "description": "The soft teal."
     },
     "450": {
      "value": "#78b3a8",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
      "description": "The soft teal variant."
     },
     "400": {
      "value": "#87a299",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A sage-teal."
     },
     "350": {
      "value": "#7b9e92",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A sage-teal."
     },
     "300": {
      "value": "#9cccbc",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
      "description": "The pale teal."
     },
     "250": {
      "value": "#9abdb1",
      "type": "color",
-     "source": "stylesheet literal, 20 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 20 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The pale sage-teal."
     },
     "200": {
      "value": "#b4cdc4",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The lightest teal."
     }
    },
@@ -874,79 +874,79 @@
     "950": {
      "value": "#162511",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The deepest green."
     },
     "900": {
      "value": "#162a13",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A deep green."
     },
     "850": {
      "value": "#194737",
      "type": "color",
-     "source": "stylesheet literal, 8 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 8 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A deep green-teal."
     },
     "800": {
      "value": "#263a1e",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A dark green."
     },
     "750": {
      "value": "#2d4021",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A dark green."
     },
     "700": {
      "value": "#2d3421",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
      "description": "A dark olive."
     },
     "650": {
      "value": "#313631",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A dark neutral green."
     },
     "600": {
      "value": "#343c2b",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
      "description": "A dark olive."
     },
     "550": {
      "value": "#384429",
      "type": "color",
-     "source": "stylesheet literal, 8 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 8 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid olive."
     },
     "500": {
      "value": "#3e4f49",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A green-grey."
     },
     "450": {
      "value": "#334b43",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A deep green-grey."
     },
     "400": {
      "value": "#486635",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid green."
     },
     "350": {
      "value": "#536240",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid olive."
     }
    },
@@ -954,55 +954,55 @@
     "700": {
      "value": "#7d8f66",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A deep sage green."
     },
     "650": {
      "value": "#7b8967",
      "type": "color",
-     "source": "stylesheet literal, 10 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A deep sage green."
     },
     "600": {
      "value": "#90ad72",
      "type": "color",
-     "source": "stylesheet literal, 23 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 23 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid sage green."
     },
     "550": {
      "value": "#9fb089",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid sage green."
     },
     "500": {
      "value": "#9dbd67",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
      "description": "The mid sage green."
     },
     "450": {
      "value": "#a3b58d",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A soft sage green."
     },
     "300": {
      "value": "#b7d7a3",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A pale sage green."
     },
     "200": {
      "value": "#c1d4a3",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A pale sage green."
     },
     "100": {
      "value": "#ccddb7",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The palest sage green."
     }
    },
@@ -1010,55 +1010,55 @@
     "600": {
      "value": "#b0d563",
      "type": "color",
-     "source": "stylesheet literal, 7 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 7 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mid lime."
     },
     "550": {
      "value": "#b6dd64",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The BMI Calculate submit's fill — measured."
     },
     "500": {
      "value": "#c3ec82",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A soft lime."
     },
     "450": {
      "value": "#c5ed82",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
      "description": "The soft lime — 34 declarations."
     },
     "400": {
      "value": "#d5ff5d",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The promo lime — the promo bar's highlight."
     },
     "350": {
      "value": "#e4ff8b",
      "type": "color",
-     "source": "stylesheet literal, 4 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A pale lime."
     },
     "300": {
      "value": "#a6fb89",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A green-leaning lime."
     },
     "200": {
      "value": "#bff8b1",
      "type": "color",
-     "source": "stylesheet literal, 22 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 22 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The pale lime."
     },
     "100": {
      "value": "#fdffa7",
      "type": "color",
-     "source": "stylesheet literal, 15 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 15 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The palest yellow-lime."
     }
    },
@@ -1066,37 +1066,37 @@
     "900": {
      "value": "#451310",
      "type": "color",
-     "source": "stylesheet literal, 4 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The deepest clay."
     },
     "800": {
      "value": "#5d2f24",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A dark clay."
     },
     "700": {
      "value": "#5e1e1a",
      "type": "color",
-     "source": "stylesheet literal, 4 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A dark clay."
     },
     "600": {
      "value": "#8a3a34",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The terracotta."
     },
     "500": {
      "value": "#941f18",
      "type": "color",
-     "source": "stylesheet literal, 4 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The alert red."
     },
     "accent": {
      "value": "#ff7350",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The coral accent."
     }
    },
@@ -1104,55 +1104,55 @@
     "link": {
      "value": "#0077ab",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "The text-link blue — measured on the drug index links."
     },
     "green": {
      "value": "#178052",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A success green."
     },
     "teal": {
      "value": "#1a6966",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A bright teal."
     },
     "deep-teal": {
      "value": "#225c5c",
      "type": "color",
-     "source": "stylesheet literal, 2 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A deep teal accent."
     },
     "mint": {
      "value": "#8fdfc5",
      "type": "color",
-     "source": "stylesheet literal, 3 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A mint accent."
     },
     "violet": {
      "value": "#5d62c8",
      "type": "color",
-     "source": "stylesheet literal, 3 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A violet accent."
     },
     "blue": {
      "value": "#5e91d6",
      "type": "color",
-     "source": "stylesheet literal, 3 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A blue accent."
     },
     "sky": {
      "value": "#6cc2d6",
      "type": "color",
-     "source": "stylesheet literal, 3 declarations in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A sky accent."
     },
     "steel": {
      "value": "#8db0ca",
      "type": "color",
-     "source": "stylesheet literal, 1 declaration in the archived inline sheets (raw/css-vars.json sheet index)",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
      "description": "A steel blue."
     }
    }
@@ -1361,7 +1361,7 @@
    "ring": {
     "value": "#101010",
     "type": "color",
-    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "source": "computed outlineColor of cta-primary focus-visible (raw/components-computed.json); a literal, not an alias (no palette step holds it)",
     "description": "The painted focus indicator — outline: auto 1px rgb(16,16,16)."
    }
   }
