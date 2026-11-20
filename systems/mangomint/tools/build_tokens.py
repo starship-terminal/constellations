@@ -8,6 +8,7 @@ One painted marketing theme (light). The login wall paints navy; that is a
 surface, not a second theme. No dark set.
 """
 import json
+import re
 import pathlib
 import sys
 
@@ -209,7 +210,8 @@ light = {
 doc = {
     "core": core,
     "light": light,
-    "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}}],
+    "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
+    "$metadata": {"tokenSetOrder": ["core", "light"]},
 }
 
 if MOTION:
@@ -217,5 +219,68 @@ if MOTION:
     if extra:
         core["motion"].setdefault("$extensions", {})["notTokenised"] = extra
 
-(HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
-print("wrote", HERE / "tokens.json")
+
+
+def tokens_of(tree, prefix=""):
+    for k, v in tree.items():
+        if k.startswith("$"):
+            continue
+        if isinstance(v, dict) and "$value" in v:
+            yield prefix + k, v
+        elif isinstance(v, dict):
+            yield from tokens_of(v, prefix + k + ".")
+
+
+def aliases(v):
+    if isinstance(v, str):
+        return re.findall(r"\{([^{}]+)\}", v)
+    if isinstance(v, dict):
+        return [a for x in v.values() for a in aliases(x)]
+    if isinstance(v, list):
+        return [a for x in v for a in aliases(x)]
+    return []
+
+
+MEMBER = {"fontFamily": "fontFamily", "fontSize": "dimension", "fontWeight": "fontWeight",
+          "lineHeight": "dimension", "letterSpacing": "dimension", "duration": "duration",
+          "delay": "duration", "timingFunction": "cubicBezier"}
+
+
+def check(sets):
+    """The kit's alias and type pass: every alias resolves in core or its own set and has the type its
+    place needs, and every literal colour, dimension and weight is in a form DTCG reads."""
+    core_names = dict(tokens_of(sets["core"]))
+    for setname, tree in sets.items():
+        names = dict(core_names)
+        names.update(dict(tokens_of(tree)))
+        for n, t in tokens_of(tree):
+            v, ty = t["$value"], t.get("$type")
+            if not ty:
+                raise ValueError(f"{setname}.{n}: no $type")
+            for a in aliases(v):
+                if a not in names:
+                    raise KeyError(f"{setname}.{n}: alias {{{a}}} points at nothing")
+            if isinstance(v, str) and aliases(v) and ty in ("color", "dimension", "fontFamily", "fontWeight", "duration"):
+                if names[aliases(v)[0]].get("$type") != ty:
+                    raise TypeError(f"{setname}.{n}: alias {v} is a {names[aliases(v)[0]].get('$type')}, not a {ty}")
+            if isinstance(v, dict):
+                for k, want in MEMBER.items():
+                    m = v.get(k)
+                    if isinstance(m, str) and aliases(m) and names[aliases(m)[0]].get("$type") != want:
+                        raise TypeError(f"{setname}.{n}: {k} {m} is not a {want}")
+            if isinstance(v, str) and aliases(v):
+                continue
+            if ty == "dimension" and not re.fullmatch(r"-?\d*\.?\d+(px|rem)", str(v)):
+                raise ValueError(f"{setname}.{n}: dimension {v!r} is not one px or rem length")
+            if ty == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?|rgba\(\d+, \d+, \d+, [\d.]+\)", str(v)):
+                raise ValueError(f"{setname}.{n}: colour {v!r}")
+            if ty == "fontWeight" and not isinstance(v, int):
+                raise ValueError(f"{setname}.{n}: fontWeight {v!r} is not a number")
+
+
+check({"core": core, "light": light})
+TEXT = json.dumps(doc, indent=2) + "\n"
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(TEXT)
+    print("wrote", HERE / "tokens.json")

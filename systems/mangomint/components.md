@@ -1,7 +1,7 @@
 # Mangomint components
 
 Measured on the public pages, 2026-11-18, desktop 1440. Nothing was submitted, signed into, or booked.
-Pressed rows are CDP `forcePseudoState` (`:active` and `:hover`). A focus row whose `via` is `focus failed` did not land.
+Pressed rows are CDP `forcePseudoState` (`:active` and `:hover`). A focus row whose `via` is `focus failed` did not land. The pressed rows of Book a demo, Try it now, Businesses and Log In equal their default: the 2026-11-18 run forced the first pressed control on each page again, so they are not pressed readings.
 
 ## Try it now filled button
 
