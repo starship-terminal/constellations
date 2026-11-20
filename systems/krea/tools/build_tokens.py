@@ -11,8 +11,8 @@ Every token carries $extensions.source.
 
 krea.ai paints one public theme, a near-black field (primary-950 / #101010)
 with white controls and a #006eff action blue, Suisse Intl. The semantic
-roles of that dark paint are exported in the light set, because this
-library's catalog reads a light semantic set. The dark set stays empty.
+roles of that dark paint are exported as the dark set; there is no light
+set.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """
@@ -30,10 +30,10 @@ SPEC = json.loads((RAW / "component-tokens.json").read_text())
 # probe document once light (:root) and once dark (html.dark), so
 # DECL[theme][name] is what the browser paints in that theme. A name declared
 # only on :root resolves the same in both.
-# The painted theme is html.dark. Specs that say theme "light" still resolve
-# against appDark, which is what the page paints. appLight is not used.
+# The painted theme is html.dark, resolved as appDark. appLight is a comparison
+# pass, not a shipped theme, and is not used.
 APP = {n: v.get("value", v.get("raw")) for n, v in V.get("resolved", {}).get("appDark", {}).items()}
-DECL = {"light": APP, "dark": {}}
+DECL = {"dark": APP}
 
 
 def norm_color(v):
@@ -171,12 +171,11 @@ def build(node, theme, path=""):
     return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
 
 
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
+core = build(SPEC["core"], "dark")  # scales are theme-independent, read on the painted theme
 dark = build(SPEC["dark"], "dark")
 # The component tokens live in their own top-level spec tree but belong to the
-# exported themes the components were measured on: light.component.*
-light["component"] = build(SPEC["component"], "light")
+# exported theme the components were measured on: dark.component.*
+dark["component"] = build(SPEC["component"], "dark")
 
 
 # every alias must point at a token that exists
@@ -189,7 +188,6 @@ def tokens_of(tree, prefix=""):
 
 
 NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
 NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
 
 
@@ -207,10 +205,6 @@ for n, t in list(tokens_of(core)):
     for a in aliases(t["$value"]):
         if a not in NAMES:
             raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(light)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_L:
-            raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
 for n, t in list(tokens_of(dark)):
     for a in aliases(t["$value"]):
         if a not in NAMES_D:
@@ -218,14 +212,12 @@ for n, t in list(tokens_of(dark)):
 
 tokens = {
     "core": core,
-    "light": light,
     "dark": dark,
-    # The painted theme is dark, exported under the light set name.
     "$themes": [
-        {"id": "light", "name": "Dark (painted)", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The only public theme, html.dark: a #101010 field, white Sign in and plan buttons, #006eff action blue, Suisse Intl. There is no public light switch; the dark token set stays empty and the painted roles live in the light set."},
+        {"id": "dark", "name": "Dark (painted)", "selectedTokenSets": {"core": "source", "dark": "enabled"},
+         "$description": "The only public theme, html.dark: a #101010 field, white Sign in and plan buttons, #006eff action blue, Suisse Intl. There is no public light switch and no light token set."},
     ],
-    "$metadata": {"tokenSetOrder": ["core", "light"]},
+    "$metadata": {"tokenSetOrder": ["core", "dark"]},
 }
 (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 

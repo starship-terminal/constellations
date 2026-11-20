@@ -834,6 +834,24 @@ class DesignMdMappingTest(unittest.TestCase):
             "fontFamily": "Inter", "fontSize": "0.8125rem", "fontWeight": 450, "lineHeight": "1.25rem"}})
 
 
+class DesignMdThemeTest(unittest.TestCase):
+    """design_md_theme(): the theme DESIGN.md exports."""
+
+    def system(self, themes, swatches, **extra):
+        return {"themes": themes, "preview": {"swatches": {t: {} for t in swatches}}, **extra}
+
+    def test_light_is_preferred_without_a_default(self):
+        self.assertEqual(catalog.design_md_theme(self.system(["dark", "light"], ["dark", "light"])), "light")
+
+    def test_default_theme_wins_over_the_light_preference(self):
+        self.assertEqual(catalog.design_md_theme(
+            self.system(["dark", "light"], ["dark", "light"], defaultTheme="dark")), "dark")
+
+    def test_default_theme_without_a_swatch_set_falls_back_to_one(self):
+        self.assertEqual(catalog.design_md_theme(
+            self.system(["dark", "light"], ["light"], defaultTheme="dark")), "light")
+
+
 class DesignMdDocumentTest(unittest.TestCase):
     SECTIONS = ["Overview", "Colors", "Typography", "Layout", "Elevation & Depth", "Shapes",
                 "Components", "Do's and Don'ts"]
