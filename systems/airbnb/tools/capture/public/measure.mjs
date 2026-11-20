@@ -624,7 +624,7 @@ for (const name of process.argv.slice(2).length ? wanted : Object.keys(ALL)) {
   // page for the href.
   const mob = name === 'mobile';
   context = await browser.newContext({ viewport: { width: mob ? 390 : 1440, height: mob ? 844 : 900 }, deviceScaleFactor: mob ? 2 : 2, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US', reducedMotion: 'no-preference' });
-  await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   if (name === 'room' && !roomHref) {
     const p = await context.newPage();
     await open(p, BASE + '/s/Tokyo--Japan/homes', { wait: 8000 });
