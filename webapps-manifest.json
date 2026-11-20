@@ -3489,7 +3489,7 @@
       "description": "Read and write stories",
       "status": "pending",
       "package": null,
-      "notes": "https://medium.com/m/signin Sign in with Google opened the home feed. Product not walked.",
+      "notes": "https://medium.com/m/signin Sign in with Google opened the home feed. Product not walked. Signed-in walk: preview frames were not available, so the home feed was not opened. Session not checked. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 11
