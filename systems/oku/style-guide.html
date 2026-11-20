@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oku style guide</title>
+<style>
+:root {
+  --font-family-body: Inter, -apple-system, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-display: FabricSerifWeb, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-size-display: 48px;
+  --font-size-price: 39px;
+  --font-size-book: 24px;
+  --font-size-body: 16px;
+  --font-size-nav: 16px;
+  --font-size-button: 14px;
+  --font-size-hero-cta: 15px;
+  --font-size-field: 14px;
+  --font-weight-display: 400;
+  --font-weight-body: 400;
+  --font-weight-button: 500;
+  --font-line-height-display: 62.4px;
+  --font-line-height-nav: 24px;
+  --font-letter-spacing-display: -0.288px;
+  --radius-control: 8px;
+  --radius-dialog: 20px;
+  --space-button-x: 24px;
+  --space-field-x: 16px;
+  --space-header-height: 80px;
+  --size-button-height: 40px;
+  --size-hero-cta-height: 54px;
+  --size-field-height: 46px;
+  --size-dialog-width: 480px;
+  --shadow-button: 0px 4px 4px -5px rgba(0, 0, 0, 0.25);
+  --color-page: #ffffff;
+  --color-text: #000000;
+  --color-text-secondary: #131314;
+  --color-on-accent: #ffffff;
+  --color-accent: #000000;
+  --color-border: rgba(19, 19, 20, 0.22);
+  --color-field-border: #d1d1d3;
+  --color-scrim: rgba(0, 0, 0, 0.6);
+  --component-button-background: #000000;
+  --component-button-text: #ffffff;
+  --component-button-radius: 8px;
+  --component-button-height: 40px;
+  --component-sign-in-background: #ffffff;
+  --component-sign-in-text: #131314;
+  --component-dialog-background: #ffffff;
+  --component-dialog-radius: 20px;
+  --component-dialog-width: 480px;
+  --component-field-height: 46px;
+  --component-field-radius: 8px;
+  --page: var(--color-page);
+  --text: var(--color-text);
+  --accent: var(--color-accent);
+  --on: var(--color-on-accent);
+  --surface: var(--color-page);
+  --border: var(--color-border);
+}
+[data-mode="dark"] {
+  --color-page: #131314;
+  --color-text: #e0e1e4;
+  --color-text-secondary: #c1becb;
+  --color-text-muted: #c1becb;
+  --color-on-accent: #131314;
+  --color-accent: #e0e1e4;
+  --color-field-border: #363539;
+  --color-scrim: rgba(0, 0, 0, 0.6);
+  --color-field: #131314;
+  --color-disabled: #242426;
+  --component-button-background: #e0e1e4;
+  --component-button-text: #131314;
+  --component-button-radius: 8px;
+  --component-button-height: 40px;
+  --component-dialog-background: #131314;
+  --component-dialog-radius: 20px;
+  --component-field-background: #131314;
+  --component-field-text: #c1becb;
+  --component-field-radius: 8px;
+  --page: var(--color-page);
+  --text: var(--color-text);
+  --accent: var(--color-accent);
+  --on: var(--color-on-accent);
+  --surface: var(--color-page);
+  --border: var(--color-field-border);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--font-family-body); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 400 48px/1.3 var(--font-family-display); letter-spacing: -0.288px; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--font-family-body); letter-spacing: 0.08em; text-transform: uppercase; margin: 40px 0 12px; }
+button.theme { float: right; height: 40px; padding: 0 24px; border-radius: 8px; border: 0; background: var(--accent); color: var(--on); font: 500 14px/40px var(--font-family-body); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+.sw span { display: block; font: 12px/1.4 ui-monospace, Menlo, monospace; margin-top: 4px; }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 24px; border-radius: 8px; background: var(--accent); color: var(--on); font: 500 14px/40px var(--font-family-body); box-shadow: var(--shadow-button); }
+.ghost { background: var(--page); color: var(--text); box-shadow: inset 0 0 0 1px var(--border); }
+.field { display: block; width: 280px; height: 46px; margin-top: 8px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--color-field-border); background: var(--page); color: var(--text); font: 14px var(--font-family-body); }
+.dialog { width: 320px; padding: 24px; border-radius: 20px; background: var(--page); border: 1px solid var(--border); }
+.note { max-width: 62ch; opacity: 0.75; }
+</style>
+</head>
+<body>
+<main>
+<button class="theme" type="button" id="theme">Dark</button>
+<h1>Oku</h1>
+<p class="note">Public surface, measured 2026-11-21. Values come from tokens.json. The signed-in library was not captured.</p>
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+<h2>Type</h2>
+<p style="font: 400 48px/1.3 var(--font-family-display); letter-spacing: -0.288px; margin: 0;">The companion app for every book</p>
+<p style="font: 400 24px/1.3 var(--font-family-display);">Book title</p>
+<p>Body at 16px Inter. Nav at 16px. Buttons at 14px medium.</p>
+<h2>Controls</h2>
+<p><span class="btn">Join</span> <span class="btn ghost">Sign in</span></p>
+<label>Email address<input class="field" placeholder="" readonly></label>
+<h2>Dialog</h2>
+<div class="dialog">
+  <p style="font: 400 20px/1.3 var(--font-family-display); text-align: center;">Join our book community</p>
+  <label>Email address<input class="field" readonly></label>
+  <p><span class="btn">Create a free account</span></p>
+</div>
+</main>
+<script>
+const tokens = {"light": {"page": {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "computed backgroundColor of html on https://oku.club/ (light)"}}, "text": {"$value": "#000000", "$type": "color", "$extensions": {"source": "computed color of h1 (light)"}}, "text-secondary": {"$value": "#131314", "$type": "color", "$extensions": {"source": "computed color of the Explore nav link (light)"}}, "on-accent": {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "computed color of the header Join label (light)"}}, "accent": {"$value": "#000000", "$type": "color", "$extensions": {"source": "computed backgroundColor of the header Join button (light). Oku has no separate brand hue; the accent is ink."}}, "border": {"$value": "rgba(19, 19, 20, 0.22)", "$type": "color", "$extensions": {"source": "the inset 1px ring colour on the Sign in button, parsed from its boxShadow (components-computed.json, light)"}}, "field-border": {"$value": "#d1d1d3", "$type": "color", "$extensions": {"source": "computed borderTopColor of the signup email field (components-computed.json, light)"}}, "scrim": {"$value": "rgba(0, 0, 0, 0.6)", "$type": "color", "$extensions": {"source": "computed backgroundColor of the Join dialog scrim"}}}, "dark": {"page": {"$value": "#131314", "$type": "color", "$extensions": {"source": "computed backgroundColor of html on https://oku.club/ with prefers-color-scheme: dark"}}, "text": {"$value": "#e0e1e4", "$type": "color", "$extensions": {"source": "computed color of h1 (dark)"}}, "text-secondary": {"$value": "#c1becb", "$type": "color", "$extensions": {"source": "computed color of the Explore nav link (dark)"}}, "text-muted": {"$value": "#c1becb", "$type": "color", "$extensions": {"source": "computed color of the $0 price on /pricing (dark)"}}, "on-accent": {"$value": "#131314", "$type": "color", "$extensions": {"source": "computed color of the header Join label (dark)"}}, "accent": {"$value": "#e0e1e4", "$type": "color", "$extensions": {"source": "computed backgroundColor of the header Join button (dark)"}}, "field-border": {"$value": "#363539", "$type": "color", "$extensions": {"source": "computed borderTopColor of the signup email field (dark)"}}, "scrim": {"$value": "rgba(0, 0, 0, 0.6)", "$type": "color", "$extensions": {"source": "computed backgroundColor of the Join dialog scrim (dark). Same 0.6 black as light."}}, "field": {"$value": "#131314", "$type": "color", "$extensions": {"source": "computed backgroundColor of the signup email field (dark)"}}, "disabled": {"$value": "#242426", "$type": "color", "$extensions": {"source": "computed backgroundColor of Create a free account before the form is filled (dark). The control is painted, not a disabled attribute."}}}};
+const root = document.documentElement;
+const btn = document.getElementById("theme");
+function paint() {
+  const mode = root.getAttribute("data-mode");
+  const box = document.getElementById("swatches");
+  box.innerHTML = "";
+  for (const [name, token] of Object.entries(tokens[mode])) {
+    const el = document.createElement("div");
+    el.className = "sw";
+    el.innerHTML = "<i></i><span></span>";
+    el.querySelector("i").style.background = token.$value;
+    el.querySelector("span").textContent = name + " " + token.$value;
+    box.appendChild(el);
+  }
+  btn.textContent = mode === "dark" ? "Light" : "Dark";
+}
+btn.addEventListener("click", () => {
+  root.setAttribute("data-mode", root.getAttribute("data-mode") === "dark" ? "light" : "dark");
+  paint();
+});
+paint();
+</script>
+</body>
+</html>
