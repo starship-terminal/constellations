@@ -99,7 +99,12 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 Every number in this package was read off the live site in headless Chromium, signed out: computed styles from the running DOM on each route (`tools/capture/public/measure.mjs`), stylesheet custom properties resolved on a probe (`tools/capture/vars.mjs`), and full-page screenshots stitched from inner-scroll tiles where the page scrolls inside a nested container (`tools/capture/public/public.mjs` + `tools/capture/quantize.py`). Interactive states were produced locally — hover, Tab focus, and DevTools-forced `:active`. The app gallery was reached by dismissing the Welcome-back modal with Escape — a local, safe toggle — and every modal and form action was measured, never pressed. Nothing was submitted, signed into or followed to an authenticated surface.
 
-Unlike most captures, designmodo.com ships almost no token declarations: the stylesheet resolves to 13 custom properties, all Font Awesome internals. So this package is measured end to end — every colour, size, radius and dimension carries the computed-style reading and the component it came from rather than a declared-variable source.
+Unlike most captures, designmodo.com ships almost no token declarations: the stylesheet resolves to 13 custom properties, all Font Awesome internals. So this package is measured end to end — every colour, size, radius and dimension carries the computed-style reading and the component it came from rather than a declared-variable source, with the one exception listed under Known gaps.
+
+## Known gaps
+
+- `light.background.paper` (`#f4f4f4`, the app gallery canvas) was entered by hand at capture time: the recon read the app body background as rgb(244,244,244) but never saved that reading, so no file in `raw/` holds it. Its source says so; a recapture of the `app` page should record the body background and let the builder read it.
+- `tpl-card` was not found by the 2026-11-13 re-run (`recaptureMissed`); `core.component.tpl-card-width` and `-height` are the readings kept from the earlier run and say so in their source.
 
 ## Do and don't
 

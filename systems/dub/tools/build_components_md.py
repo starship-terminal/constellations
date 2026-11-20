@@ -59,6 +59,18 @@ def colour(c, tokens=True):
     return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
 
 
+def _alpha(c):
+    """The alpha of a computed colour; 0 for transparent, so a `2px solid transparent` outline is no ring."""
+    c = (c or "").strip().lower()
+    if c in ("transparent", ""):
+        return 0.0
+    m = re.search(r"rgba\([^)]*,\s*([\d.]+)\s*\)|/\s*([\d.]+%?)\s*\)", c)
+    if not m:
+        return 1.0
+    a = m.group(1) or m.group(2)
+    return float(a[:-1]) / 100 if a.endswith("%") else float(a)
+
+
 def sides(t, r, b, l):
     if t == r == b == l:
         return t
@@ -326,6 +338,15 @@ for r in OVER:
     W("| " + " | ".join(r) + " |")
 W()
 
+# Capture descs that claim an interaction the S() call never ran (each lists
+# default, hover, focus-visible and pressed only). Corrected here until a
+# recapture writes the fixed descs from tools/capture/public/measure.mjs.
+DESC_FIX = {
+    "billing-toggle": 'The Monthly/Yearly period toggle ("10% discount + 12x usage upfront"), read on its Yearly option at rest, on hover, on keyboard focus and forced pressed; never clicked or checked out.',
+    "faq-trigger": "A billing-FAQ accordion trigger, read closed: at rest, on hover, on keyboard focus and forced pressed.",
+    "sales-topic": "A selectable topic pill on the contact form (Tools/Legal/…), read unselected: at rest, on hover, on keyboard focus and forced pressed; never submitted.",
+}
+
 # ------------------------------------------------ shared values
 W("## Shared values")
 W()
@@ -338,10 +359,12 @@ for k, c in C.items():
         continue
     s = st["style"]
     base = next((v["style"] for v in c["states"].values() if "style" in v), s)
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    ring = (s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+            and _alpha(s["outlineColor"]) > 0)
     # A ring painted on a child layer instead of the wrapper: offer buttons
     # draw outlines on inner nodes while the wrapper's own outline stays none.
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
+    child_ring = next((n["outline"] for n in st.get("paint", [])
+                       if n.get("outline") and _alpha(n["outline"].split(" offset")[0]) > 0), None)
     shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
@@ -431,7 +454,7 @@ for g in groups:
             continue
         W()
         W(f"#### {c['title']}")
-        desc = (c.get("desc") or "").strip()
+        desc = DESC_FIX.get(k, c.get("desc") or "").strip()
         if desc and not desc.endswith((".", ")", '"')):
             desc += "."
         where = PAGE_NAME.get(c["page"], c["page"])

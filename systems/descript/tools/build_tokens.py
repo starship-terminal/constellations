@@ -37,6 +37,20 @@ if not DECL["dark"]:
     DECL["dark"] = {n: v for n, v in DECL["light"].items() if n.startswith("--dark-")}
 
 
+def _lin(c):
+    return 12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055
+
+
+def oklab_rgb(L, a, b):
+    """oklab -> 8-bit sRGB, the kit's tools/kit/build/build_tokens.py conversion."""
+    l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3
+    rgb = [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+           -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s]
+    return [round(min(1, max(0, _lin(x))) * 255) for x in rgb]
+
+
 def norm_color(v):
     """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla(), "R G B" channels -> #rrggbb or rgba(r, g, b, a)."""
     v = v.strip().lower()
@@ -65,7 +79,12 @@ def norm_color(v):
         lvl = round(float(m.group(1)) * 2.55)
         a = float(m.group(2) or 1)
         return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    # CSS Color 4 / composited values pass through verbatim (lab, oklch, color-mix, ...)
+    m = re.fullmatch(r"oklab\(\s*([-\d.e]+)\s+([-\d.e]+)\s+([-\d.e]+)(?:\s*/\s*([\d.]+))?\s*\)", v)
+    if m:  # converted to sRGB as the kit's build_tokens.py does; the authored form stays in $extensions
+        r, g, b = oklab_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3)))
+        a = round(float(m.group(4) or 1), 3)
+        return "#%02x%02x%02x" % (r, g, b) if a >= 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, a)
+    # other CSS Color 4 / composited values pass through verbatim (lab, oklch, color-mix, ...)
     if re.match(r"(ok)?lab\(|(ok)?lch\(|(ok)?color\(|color-mix\(", v.strip()):
         return v.strip()
     raise ValueError("not a colour: " + v)
@@ -116,7 +135,9 @@ def leaf(path, spec, theme):
     else:
         val = spec["value"]
         src = spec["source"]
+    authored = None
     if ty == "color" and not str(val).startswith("{"):
+        authored = val if str(val).strip().lower().startswith("oklab(") else None
         val = norm_color(val)
     if ty == "cubicBezier" and isinstance(val, str):
         m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
@@ -144,6 +165,8 @@ def leaf(path, spec, theme):
                 val = val + "px"
     check(path, ty, val)
     t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
+    if authored:
+        t["$extensions"]["authored"] = authored
     if spec.get("description"):
         t["$description"] = spec["description"]
     if spec.get("responsive"):
