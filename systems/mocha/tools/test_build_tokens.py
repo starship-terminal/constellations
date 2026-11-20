@@ -25,6 +25,10 @@ class BuildTokens(unittest.TestCase):
         import build_style_guide
         self.assertEqual((PKG / "style-guide.html").read_text(), build_style_guide.html)
 
+    def test_token_table_is_not_capped(self):
+        # A cap hid the light tokens once the motion group came first.
+        self.assertNotIn("slice(0, 80)", (HERE / "style-guide.template.html").read_text())
+
     def test_primary_is_measured(self):
         tokens = json.loads((PKG / "tokens.json").read_text())
         self.assertEqual(tokens["core"]["color"]["primary"]["$value"], "#513a06")

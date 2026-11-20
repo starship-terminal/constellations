@@ -233,8 +233,12 @@ function rows(node, prefix, out) {
 const all = [];
 rows(TOKENS.core, 'core', all);
 rows(TOKENS.light, 'light', all);
+rows(TOKENS.dark, 'dark', all);
+// Every token, uncapped: the motion group alone holds more than 60 entries.
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const show = (v) => typeof v === 'string' ? v : JSON.stringify(v);
 const table = document.getElementById('tokens');
-table.innerHTML = '<tr><th>Token</th><th>Value</th></tr>' + all.slice(0, 80).map(([p,t]) => '<tr><td><code>'+p+'</code></td><td><code>'+String(t.v).replace(/</g,'&lt;')+'</code></td></tr>').join('');
+table.innerHTML = '<tr><th>Token</th><th>Value</th></tr>' + all.map(([p,t]) => '<tr><td><code>'+esc(p)+'</code></td><td><code>'+esc(show(t.v))+'</code></td></tr>').join('');
 </script>
 </body>
 </html>
