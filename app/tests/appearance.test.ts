@@ -1,5 +1,6 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import {
+  storedTheme,
   THEME_OPTIONS,
   themeInitScript,
   themeStorageChanged,
@@ -68,5 +69,33 @@ describe("THEME_OPTIONS", () => {
       "Dark",
       "Light",
     ]);
+  });
+});
+
+// The live path (AppearanceBootstrap and the Settings control) reads the
+// stored choice through storedTheme(); it has to agree with the init script.
+describe("storedTheme", () => {
+  afterEach(() => vi.unstubAllGlobals());
+  const stub = (getItem: () => string | null) =>
+    vi.stubGlobal("localStorage", { getItem });
+  it("is System for a missing or unknown value", () => {
+    stub(() => null);
+    expect(storedTheme()).toBe("system");
+    stub(() => "sepia");
+    expect(storedTheme()).toBe("system");
+  });
+  it("is System when storage is unreadable", () => {
+    stub(() => {
+      throw new Error("blocked");
+    });
+    expect(storedTheme()).toBe("system");
+  });
+  it("keeps a stored choice", () => {
+    stub(() => "dark");
+    expect(storedTheme()).toBe("dark");
+    stub(() => "light");
+    expect(storedTheme()).toBe("light");
+    stub(() => "system");
+    expect(storedTheme()).toBe("system");
   });
 });

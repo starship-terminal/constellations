@@ -103,7 +103,7 @@ export function themeStorageChanged(key: string | null): boolean {
   return key === THEME_KEY || key === null;
 }
 /** No stored choice, or an unreadable store, means System. */
-function storedTheme(): Theme {
+export function storedTheme(): Theme {
   let value: string | null = null;
   try {
     value = localStorage.getItem(THEME_KEY);
