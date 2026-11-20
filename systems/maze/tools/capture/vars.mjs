@@ -9,13 +9,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium, UA, BASE, AUTH, REPORT, hideConsent } from './public/lib.mjs';
+import { chromium, UA, BASE, AUTH, requireReport, hideConsent } from './public/lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
 
-const pages = [BASE + '/', BASE + '/pricing/', AUTH + '/login', REPORT];
+const pages = [BASE + '/', BASE + '/pricing/', AUTH + '/login', requireReport()];
 const browser = await chromium.launch({ headless: true });
 const bodies = new Map();
 const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });

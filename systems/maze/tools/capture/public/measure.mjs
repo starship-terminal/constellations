@@ -7,9 +7,10 @@
 // painted button with data-m-mark so a crop is the control, not the page.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, AUTH, REPORT, launch, open, styleOf, crop, centre, RAW, hideConsent } from './lib.mjs';
+import { BASE, AUTH, requireReport, launch, open, styleOf, crop, centre, RAW, hideConsent } from './lib.mjs';
 import { startRun, touch, readOk, readFailed } from './dates.mjs';
 
+const REPORT = requireReport();   // the sample report's share link, from the environment (lib.mjs)
 fs.mkdirSync(RAW, { recursive: true });
 fs.mkdirSync(path.join(RAW, '..', 'components', 'crops'), { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
