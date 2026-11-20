@@ -270,6 +270,12 @@ for name, (size, line, note) in TYPE.items():
         },
         "$type": "typography",
         "$extensions": {"source": (
+            # 12px at the declared 1.3 or 1.5 would be 15.6px or 18px, so textXsmall's 16px is the
+            # computed line height of the elements it was read from, not a declared step.
+            "Reconstruction: lineHeight 16px entered by hand at capture time from the computed line height "
+            "of .pricing_tag_text and .pricing_card_price_desc; it is not a declared step (1.3 or 1.5 of 12px "
+            "give 15.6px or 18px), and raw/ does not hold the computed value. fontSize: " + note
+            if name == "textXsmall" else
             "Reconstruction: lineHeight entered by hand at capture time (headings at the declared "
             "--_typography---line-height--1, text steps at the declared 1.3 or 1.5); no style's computed "
             "line height or tracking was saved in raw/. fontSize: " + note

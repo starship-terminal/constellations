@@ -308,7 +308,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Login is a different system.** Inter var and 6px radius. It is not the marketing button.
 - **Signup was a Cloudflare challenge.** It was not measured.
 - **Britti Sans and Inter files are not shipped.** The tokens name the families.
-- **Type line heights are hand entries.** raw/ holds the declared font-size clamps and line-height steps, not each style's computed line height or tracking. Each `core.typography` step's line height applies the declared steps by hand (headings at 1, text at 1.3 or 1.5); `display` is 80px/80px. No step carries a letterSpacing. The `-0.03em` tracking token is under `core.$extensions.notTokenised`. `light.color.heroGround`, `core.layout.contentMax` and `core.font.family.auth` were read but not saved, and are labelled Reconstruction.
+- **Type line heights are hand entries.** raw/ holds the declared font-size clamps and line-height steps, not each style's computed line height or tracking. Each `core.typography` step's line height applies the declared steps by hand (headings at 1, text at 1.3 or 1.5); `display` is 80px/80px. `textXsmall` is the exception: its 16px line height is the computed value on the pricing tag and price note, not a declared step, and raw/ does not hold that reading either. No step carries a letterSpacing. The `-0.03em` tracking token is under `core.$extensions.notTokenised`. `light.color.heroGround`, `core.layout.contentMax` and `core.font.family.auth` were read but not saved, and are labelled Reconstruction.
 
 ### Do and don't (from README.md)
 
