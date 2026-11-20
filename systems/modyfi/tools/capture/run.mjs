@@ -219,6 +219,9 @@ async function pass(mobile) {
         await page.waitForTimeout(400);
         const data = await page.evaluate(readStyle, SPECS);
         readings[key] = data;
+        // tools/build_from_readings.py repairs only the old capture's defaults (read with the pointer on
+        // the signup control) from crops-measured.json; this mark says the pass was read at rest.
+        readings[key].readAtRest = true;
         if (key === 'home') {
           // hover and focus-visible where the control exists. They go into readings.json, which
           // tools/build_from_readings.py reads; this script does not write components-computed.json.
