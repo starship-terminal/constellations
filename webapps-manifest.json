@@ -3831,9 +3831,9 @@
       "description": "Extension for your mind",
       "status": "pending",
       "package": null,
-      "notes": "https://mymind.com/login is 404. https://access.mymind.com/signin shows a welcome screen. Sign in did not open an email form.",
+      "notes": "https://mymind.com/login is 404. https://access.mymind.com/signin shows a welcome screen. Sign in did not open an email form. Public walk 2026-11-21: marketing pages loaded. Log in, Sign up, and Try it out open access.mymind.com and were not entered. Headless Chromium got HTTP 403 from CloudFront on that host. Public package in PR 1496 at 01cbe92d2. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 12
     },
     {
