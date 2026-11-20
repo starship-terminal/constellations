@@ -109,13 +109,24 @@ for (const [k, t] of Object.entries(T.core.radius)) {
 }
 const space = document.getElementById('space');
 for (const [k, t] of Object.entries(T.core.space)) {
+  // Built with textContent and style properties, not innerHTML: names and values come from a
+  // third-party stylesheet.
   const d = document.createElement('div');
-  d.innerHTML = '<span>' + k + ' ' + t.v + '</span><i style="width:' + t.v + '"></i>';
+  const label = document.createElement('span');
+  label.textContent = k + ' ' + t.v;
+  const bar = document.createElement('i');
+  bar.style.width = t.v;
+  d.append(label, bar);
   space.appendChild(d);
 }
 const type = document.getElementById('type');
-type.innerHTML = '<tr><th>role</th><th>family</th></tr>' +
-  Object.entries(T.core.font.family).map(([k, t]) => '<tr><td>' + k + '</td><td>' + t.v + '</td></tr>').join('');
+const row = (cells, tag) => {
+  const tr = document.createElement('tr');
+  for (const c of cells) { const td = document.createElement(tag); td.textContent = c; tr.appendChild(td); }
+  return tr;
+};
+type.appendChild(row(['role', 'family'], 'th'));
+for (const [k, t] of Object.entries(T.core.font.family)) type.appendChild(row([k, t.v], 'td'));
 </script>
 </body>
 </html>

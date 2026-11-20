@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write components.md from the Maze measurement file.
+"""Write components.md from the Melius measurement file.
 
 Reads raw/components-computed.json and tokens.json. Every colour is the
 computed value, followed by the core colour token when one matches. A state
@@ -23,6 +23,11 @@ def flat(node, prefix=""):
             yield prefix + k, v
         elif isinstance(v, dict):
             yield from flat(v, prefix + k + ".")
+
+
+def cell(text):
+    """A table cell: a pipe would split it and a newline would end the row."""
+    return " ".join(str(text).split()).replace("|", "\\|")
 
 
 BY = {}
@@ -122,11 +127,33 @@ for group, items in groups.items():
         base = None
         for name, s in states.items():
             if s.get("error"):
-                lines.append(f"| {name} |  | {s['error']} | {s.get('via', '')} | |")
+                lines.append(f"| {cell(name)} |  | {cell(s['error'])} | {cell(s.get('via', ''))} | |")
                 continue
             lines.append(row(name, s, base))
             base = base or paint(s)
         lines.append("")
 
-(ROOT / "components.md").write_text("\n".join(lines) + "\n")
-print("components", len(C))
+# The coverage checklist. It was typed into components.md by hand, so a rebuild deleted it; it is
+# written here now, with links from the package root, where components.md sits.
+GAPS = [
+    ("Button, link, text field, card, menu", "Captured. Nav focus-visible is a 2px orange outline."),
+    ("Icon button", "The phone hamburger measured 0×0. The click did not open a drawer."),
+    ("Text area, select, checkbox, radio", "Not on the captured routes."),
+    ("Switch", "The pricing Monthly/Annual control is in [pricing-light-default](screenshots/pricing-light-default.png). It was not flipped, so its states are not in the tables."),
+    ("Tabs", "Docs tabs are in [docs-light-default](screenshots/docs-light-default.png). Not toggled."),
+    ("Tooltip, toast", "Not opened."),
+    ("Dialog", "The login card is a dialog over the product. [login-light-default](screenshots/login-light-default.png)."),
+    ("Table, avatar, list row", "Not on these routes."),
+    ("Badge", "The Ditto New chip is in the product menu shot. Not cropped on its own."),
+    ("Empty, loading, error, destructive confirmation", "Login was not submitted, so no error. Not on the public routes."),
+    ("Disabled, loading, selected", "Not shown."),
+]
+lines += ["## Gaps", "", "| Checklist item | Status |", "|---|---|"]
+lines += [f"| {item} | {status} |" for item, status in GAPS]
+lines.append("")
+
+TEXT = "\n".join(lines) + "\n"
+
+if __name__ == "__main__":
+    (ROOT / "components.md").write_text(TEXT)
+    print("components", len(C))
