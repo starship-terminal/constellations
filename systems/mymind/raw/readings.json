@@ -1,0 +1,19 @@
+{
+ "readAt": "2026-11-21",
+ "source": "live computed styles on https://mymind.com/ and authored rules in /css/styles.css and /css/pages/home.css",
+ "theme": "light only",
+ "linkColor": "#1573dd",
+ "ember": "#ff5924",
+ "page": "#f9fafc",
+ "notCaptured": [
+  "pressed",
+  "disabled",
+  "loading",
+  "error",
+  "dark theme",
+  "signed-in app",
+  "elevation",
+  "status colours",
+  "focus ring width"
+ ]
+}

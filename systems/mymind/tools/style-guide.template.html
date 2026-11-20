@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mymind style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "Nunito-SemiBold", "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: "Louize-Regular-205TF", Georgia, serif;
+  --sg-display: "Avenir LT W01_45 Book1475508", "Avenir Next", Avenir, sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 15px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 400 48px/1 var(--sg-display); letter-spacing: -1.5px; margin: 0 0 8px; }
+h2 { font: 400 28px/1.2 var(--sg-serif); margin: 40px 0 12px; }
+p { color: var(--text-secondary); max-width: 68ch; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { display: flex; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
+.btn { display: inline-flex; align-items: center; height: var(--component-button-height); padding: 0 22px; border-radius: var(--component-button-radius); background: var(--component-button-bg); color: var(--component-button-text); text-decoration: none; letter-spacing: 0.8px; font-size: 15px; }
+.chip { display: inline-flex; align-items: center; height: var(--size-chip-height); padding: 0 16px; border-radius: var(--radius-chip); background: var(--background-chip); color: var(--text-muted); }
+.card { width: 220px; min-height: 120px; border-radius: var(--radius-card); background: var(--background-surface); padding: 16px; }
+.display { font: 400 72px/0.85 var(--sg-display); letter-spacing: -4px; }
+a.sample { color: var(--text-link); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>mymind</h1>
+  <p>Public marketing tokens, measured 2026-11-21. One light theme. Proprietary faces fall back to system fonts.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Type</h2>
+  <div class="display">Remember everything.</div>
+  <p class="sample">All your notes, bookmarks, inspiration, articles and images in one single, private place.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn" href="#components">TRY IT OUT</a>
+    <span class="chip">iPhone app</span>
+    <a class="sample" href="#components">Log in</a>
+  </div>
+  <h2>Cards</h2>
+  <div class="row">
+    <div class="card" style="background: var(--color-card-sand)">Sand card</div>
+    <div class="card" style="background: var(--color-card-blue)">Blue card</div>
+    <div class="card" style="background: var(--color-card-green)">Green card</div>
+    <div class="card" style="background: var(--color-ember); color: white">Ember band</div>
+  </div>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+const root = document.getElementById("swatches");
+function walk(node, prefix) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (k.startsWith("$")) continue;
+    const path = prefix ? prefix + "." + k : k;
+    if (v && v.t === "color") {
+      const el = document.createElement("div");
+      el.className = "sw";
+      el.innerHTML = `<i style="background:${v.v.startsWith("{") ? "var(--" + v.v.slice(1, -1).replaceAll(".", "-") + ")" : v.v}"></i><div><div>${path}</div><small>${v.v}</small></div>`;
+      root.appendChild(el);
+    } else if (v && typeof v === "object" && !v.t) walk(v, path);
+  }
+}
+walk(TOKENS.core, "core");
+walk(TOKENS.light, "light");
+</script>
+</body>
+</html>

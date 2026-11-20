@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mymind style guide</title>
+<style>
+:root {
+  --color-ink: #000000;
+  --color-ink-soft: #2c3441;
+  --color-muted: #4a5465;
+  --color-muted-2: #748297;
+  --color-faint: #7e90a7;
+  --color-paper: #f9fafc;
+  --color-white: #ffffff;
+  --color-chip: #f5f7f9;
+  --color-tab: #ebebf1;
+  --color-ember: #ff5924;
+  --color-link: #1573dd;
+  --color-card-sand: #f3f0e7;
+  --color-card-blue: #e5eaf2;
+  --color-card-green: #dde9d3;
+  --color-card-blush: #f4ecef;
+  --color-card-peach: #ffece5;
+  --color-section-warm: #f6f4f2;
+  --color-section-reviews: #fff1f1;
+  --font-family-display: Avenir LT W01_45 Book1475508, sans-serif;
+  --font-family-serif: Louize-Regular-205TF, sans-serif;
+  --font-family-ui: Nunito-SemiBold, sans-serif;
+  --font-family-body: Inter-Regular, sans-serif;
+  --font-family-fallback: Open Sans, Arial, sans-serif;
+  --typography-display: 400 140px/119px var(--font-family-display);
+  --typography-heading: 400 134px/122px var(--font-family-serif);
+  --typography-title: 400 50px/45px var(--font-family-serif);
+  --typography-body: 400 20px/44px var(--font-family-body);
+  --typography-ui: 400 15px/25px var(--font-family-ui);
+  --typography-nav: 400 20px/24px var(--font-family-serif);
+  --typography-label: 400 16px/28px var(--font-family-display);
+  --typography-faq: 400 28px/28px var(--font-family-ui);
+  --radius-none: 0px;
+  --radius-card: 22px;
+  --radius-pill: 120px;
+  --radius-chip: 100px;
+  --radius-signup: 25px;
+  --space-0: 0px;
+  --space-10: 10px;
+  --space-22: 22px;
+  --space-60: 60px;
+  --size-cta-height: 45px;
+  --size-chip-height: 50px;
+  --size-signup-height: 50px;
+  --size-nav-link-height: 24px;
+  --size-content: 1300px;
+  --motion-link: 200ms;
+  --motion-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --border-none: 0px;
+  --background-page: var(--color-paper);
+  --background-surface: var(--color-white);
+  --background-chip: var(--color-chip);
+  --background-accent: var(--color-ember);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-muted);
+  --text-muted: var(--color-muted-2);
+  --text-on-accent: #ffffff;
+  --text-link: var(--color-link);
+  --border-default: #000000;
+  --accent-default: var(--color-ember);
+  --component-button-bg: var(--color-ember);
+  --component-button-text: #ffffff;
+  --component-button-radius: var(--radius-pill);
+  --component-button-height: var(--size-cta-height);
+  --component-button-padding: var(--space-10);
+  --component-link-text: var(--color-link);
+  color-scheme: light;
+  --sg-sans: "Nunito-SemiBold", "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: "Louize-Regular-205TF", Georgia, serif;
+  --sg-display: "Avenir LT W01_45 Book1475508", "Avenir Next", Avenir, sans-serif;
+}
+[data-mode="dark"] {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 15px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 400 48px/1 var(--sg-display); letter-spacing: -1.5px; margin: 0 0 8px; }
+h2 { font: 400 28px/1.2 var(--sg-serif); margin: 40px 0 12px; }
+p { color: var(--text-secondary); max-width: 68ch; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { display: flex; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
+.btn { display: inline-flex; align-items: center; height: var(--component-button-height); padding: 0 22px; border-radius: var(--component-button-radius); background: var(--component-button-bg); color: var(--component-button-text); text-decoration: none; letter-spacing: 0.8px; font-size: 15px; }
+.chip { display: inline-flex; align-items: center; height: var(--size-chip-height); padding: 0 16px; border-radius: var(--radius-chip); background: var(--background-chip); color: var(--text-muted); }
+.card { width: 220px; min-height: 120px; border-radius: var(--radius-card); background: var(--background-surface); padding: 16px; }
+.display { font: 400 72px/0.85 var(--sg-display); letter-spacing: -4px; }
+a.sample { color: var(--text-link); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>mymind</h1>
+  <p>Public marketing tokens, measured 2026-11-21. One light theme. Proprietary faces fall back to system fonts.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Type</h2>
+  <div class="display">Remember everything.</div>
+  <p class="sample">All your notes, bookmarks, inspiration, articles and images in one single, private place.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn" href="#components">TRY IT OUT</a>
+    <span class="chip">iPhone app</span>
+    <a class="sample" href="#components">Log in</a>
+  </div>
+  <h2>Cards</h2>
+  <div class="row">
+    <div class="card" style="background: var(--color-card-sand)">Sand card</div>
+    <div class="card" style="background: var(--color-card-blue)">Blue card</div>
+    <div class="card" style="background: var(--color-card-green)">Green card</div>
+    <div class="card" style="background: var(--color-ember); color: white">Ember band</div>
+  </div>
+</div>
+<script>
+const TOKENS = {"core":{"color":{"ink":{"v":"#000000","t":"color","s":"computed style of h1.mm-title on https://mymind.com/ at 1440x900, 2026-11-21","d":"Hero and body ink."},"ink-soft":{"v":"#2c3441","t":"color","s":"computed style on https://mymind.com/pricing at 1440x900, 2026-11-21; h1 color","d":"Pricing display ink."},"muted":{"v":"#4a5465","t":"color","s":"computed style of the hero paragraph on https://mymind.com/ at 1440x900, 2026-11-21","d":"Hero supporting copy."},"muted-2":{"v":"#748297","t":"color","s":"computed style on https://mymind.com/pricing at 1440x900, 2026-11-21; price caption color rgb(116, 130, 151)","d":"Secondary captions on pricing."},"faint":{"v":"#7e90a7","t":"color","s":"computed style on https://mymind.com/pricing at 1440x900, 2026-11-21; Monthly/Yearly button color rgb(126, 144, 167)","d":"Unselected billing toggle."},"paper":{"v":"#f9fafc","t":"color","s":"computed backgroundColor of .transition-wrap on https://mymind.com/ at 1440x900, 2026-11-21","d":"Page ground."},"white":{"v":"#ffffff","t":"color","s":"computed backgroundColor of .header-video-container and pricing cards on https://mymind.com/, 2026-11-21"},"chip":{"v":"#f5f7f9","t":"color","s":"computed style of the iPhone app .is-content chip on https://mymind.com/, 2026-11-21","d":"App-store chip fill."},"tab":{"v":"#ebebf1","t":"color","s":"computed backgroundColor of the iOS/Android role=button tabs on https://mymind.com/mobile, 2026-11-21"},"ember":{"v":"#ff5924","t":"color","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21; also authored background-color:#ff5924 on .is-content in home.css","d":"The only filled accent."},"link":{"v":"#1573dd","t":"color","s":"computed color of the Log in anchor, matching the authored `a { color:#1573dd }` rule in https://mymind.com/css/styles.css"},"card-sand":{"v":"#f3f0e7","t":"color","s":"computed backgroundColor of a home feature card (.content-wrapper), 2026-11-21"},"card-blue":{"v":"#e5eaf2","t":"color","s":"computed backgroundColor of a home feature card (.content-wrapper), 2026-11-21"},"card-green":{"v":"#dde9d3","t":"color","s":"computed backgroundColor of a home feature card (.content-wrapper), 2026-11-21"},"card-blush":{"v":"#f4ecef","t":"color","s":"computed backgroundColor of a home feature card (.content-wrapper), 2026-11-21"},"card-peach":{"v":"#ffece5","t":"color","s":"computed backgroundColor of a home feature card (.content-wrapper), 2026-11-21"},"section-warm":{"v":"#f6f4f2","t":"color","s":"computed backgroundColor of the IT JUST WORKS section container, 2026-11-21"},"section-reviews":{"v":"#fff1f1","t":"color","s":"computed backgroundColor of section.reviews-section, 2026-11-21"}},"font":{"family":{"display":{"v":"Avenir LT W01_45 Book1475508, sans-serif","t":"fontFamily","s":"computed style of h1.mm-title on https://mymind.com/ at 1440x900, 2026-11-21; fonts.net stylesheet https://fast.fonts.net/cssapi/ea5bdd24-21b4-4016-9bfc-2f59fe29ac87.css"},"serif":{"v":"Louize-Regular-205TF, sans-serif","t":"fontFamily","s":"computed fontFamily of the Log in anchor and of #content-holder h1 in styles.css"},"ui":{"v":"Nunito-SemiBold, sans-serif","t":"fontFamily","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21; @font-face name declared in https://mymind.com/css/fonts.css"},"body":{"v":"Inter-Regular, sans-serif","t":"fontFamily","s":"computed style of the hero paragraph on https://mymind.com/ at 1440x900, 2026-11-21; fonts.css comment says the Inter face lives there"},"fallback":{"v":"Open Sans, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of body on https://mymind.com/, 2026-11-21"}}},"typography":{"display":{"v":{"fontFamily":"{font.family.display}","fontSize":"140px","fontWeight":400,"lineHeight":"119px","letterSpacing":"-8.4px"},"t":"typography","s":"computed style of h1.mm-title on https://mymind.com/ at 1440x900, 2026-11-21"},"heading":{"v":{"fontFamily":"{font.family.serif}","fontSize":"134px","fontWeight":400,"lineHeight":"122px"},"t":"typography","s":"computed style on https://mymind.com/pricing at 1440x900, 2026-11-21; computed fontSize 134.11px on h1, box height 244px across two lines so lineHeight 122px is Derived from that box. letterSpacing was not read and is omitted"},"title":{"v":{"fontFamily":"{font.family.serif}","fontSize":"50px","fontWeight":400,"lineHeight":"45px"},"t":"typography","s":"computed style on https://mymind.com/pricing at 1440x900, 2026-11-21; plan name computed fontSize 50px and box height 45px, used as lineHeight. letterSpacing was not read and is omitted"},"body":{"v":{"fontFamily":"{font.family.body}","fontSize":"20px","fontWeight":400,"lineHeight":"44px","letterSpacing":"-0.4px"},"t":"typography","s":"computed style of the hero paragraph on https://mymind.com/ at 1440x900, 2026-11-21"},"ui":{"v":{"fontFamily":"{font.family.ui}","fontSize":"15px","fontWeight":400,"lineHeight":"25px","letterSpacing":"0.8px"},"t":"typography","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21"},"nav":{"v":{"fontFamily":"{font.family.serif}","fontSize":"20px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"computed style of the Log in anchor. The computed lineHeight was 0px; 24px is the measured border-box height, Derived as the line box. letterSpacing was normal and is omitted"},"label":{"v":{"fontFamily":"{font.family.display}","fontSize":"16px","fontWeight":400,"lineHeight":"28px"},"t":"typography","s":"computed style of h2.mm-title.ts4 (OUR MANIFESTO) on https://mymind.com/, 2026-11-21. letterSpacing computed as normal and is omitted"},"faq":{"v":{"fontFamily":"{font.family.ui}","fontSize":"28px","fontWeight":400,"lineHeight":"28px"},"t":"typography","s":"computed fontSize 28px and fontFamily of h3 questions on https://mymind.com/faq. lineHeight was not read; 28px repeats the measured font size and is Derived, not a line-box measurement"}},"radius":{"none":{"v":"0px","t":"dimension","s":"computed borderRadius of h1.mm-title and body, 2026-11-21"},"card":{"v":"22px","t":"dimension","s":"computed style on https://mymind.com/pricing at 1440x900, 2026-11-21; pricing card borderRadius"},"pill":{"v":"120px","t":"dimension","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21; authored border-radius: 6.666666666666667rem on the ember .is-content in home.css"},"chip":{"v":"100px","t":"dimension","s":"computed style of the iPhone app .is-content chip on https://mymind.com/, 2026-11-21"},"signup":{"v":"25px","t":"dimension","s":"computed style on https://mymind.com/pricing at 1440x900, 2026-11-21; SIGN UP button borderRadius"}},"space":{"0":{"v":"0px","t":"dimension","s":"computed padding of body, 2026-11-21"},"10":{"v":"10px","t":"dimension","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21; CTA padding-block"},"22":{"v":"22px","t":"dimension","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21; CTA padding-inline"},"60":{"v":"60px","t":"dimension","s":"computed padding-bottom 60px of the OUR MANIFESTO column, 2026-11-21"}},"size":{"cta-height":{"v":"45px","t":"dimension","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21"},"chip-height":{"v":"50px","t":"dimension","s":"computed style of the iPhone app .is-content chip on https://mymind.com/, 2026-11-21"},"signup-height":{"v":"50px","t":"dimension","s":"computed style on https://mymind.com/pricing at 1440x900, 2026-11-21; SIGN UP button height"},"nav-link-height":{"v":"24px","t":"dimension","s":"computed height of the Log in anchor, 2026-11-21"},"content":{"v":"1300px","t":"dimension","s":"computed style of h1.mm-title on https://mymind.com/ at 1440x900, 2026-11-21; measured width of h1.mm-title"}},"motion":{"link":{"v":"200ms","t":"duration","s":"authored rule in https://mymind.com/css/styles.css, read 2026-11-21; `a { transition: all .2s linear }`"},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":"authored rule in https://mymind.com/css/styles.css, read 2026-11-21; :root --linear is the keyword linear, recorded as the matching curve"},"ease-out-quart":{"v":[0.165,0.84,0.44,1],"t":"cubicBezier","s":"authored rule in https://mymind.com/css/styles.css, read 2026-11-21; :root --ease-out-quart. Declared, not observed on a painted control"}},"border":{"none":{"v":"0px","t":"dimension","s":"computed borderTopWidth of the TRY IT OUT control and of body, 2026-11-21"}}},"light":{"background":{"page":{"v":"{color.paper}","t":"color","s":"alias of a measured core colour"},"surface":{"v":"{color.white}","t":"color","s":"alias of a measured core colour"},"chip":{"v":"{color.chip}","t":"color","s":"alias of a measured core colour"},"accent":{"v":"{color.ember}","t":"color","s":"alias of a measured core colour"}},"text":{"primary":{"v":"{color.ink}","t":"color","s":"alias of a measured core colour"},"secondary":{"v":"{color.muted}","t":"color","s":"alias of a measured core colour"},"muted":{"v":"{color.muted-2}","t":"color","s":"alias of a measured core colour"},"on-accent":{"v":"#ffffff","t":"color","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21; CTA anchor color"},"link":{"v":"{color.link}","t":"color","s":"alias of a measured core colour"}},"border":{"default":{"v":"#000000","t":"color","s":"computed border color of body is the text colour with 0px width; no painted border was measured. Recorded as the ink, width 0"}},"accent":{"default":{"v":"{color.ember}","t":"color","s":"alias of a measured core colour"}},"component":{"button":{"bg":{"v":"{color.ember}","t":"color","s":"alias of a measured core colour"},"text":{"v":"#ffffff","t":"color","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21"},"radius":{"v":"{radius.pill}","t":"dimension","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21"},"height":{"v":"{size.cta-height}","t":"dimension","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21"},"padding":{"v":"{space.10}","t":"dimension","s":"computed style of the TRY IT OUT .is-content wrap and its anchor on https://mymind.com/, 2026-11-21"}},"link":{"text":{"v":"{color.link}","t":"color","s":"alias of a measured core colour"}}}},"dark":{}};
+const root = document.getElementById("swatches");
+function walk(node, prefix) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (k.startsWith("$")) continue;
+    const path = prefix ? prefix + "." + k : k;
+    if (v && v.t === "color") {
+      const el = document.createElement("div");
+      el.className = "sw";
+      el.innerHTML = `<i style="background:${v.v.startsWith("{") ? "var(--" + v.v.slice(1, -1).replaceAll(".", "-") + ")" : v.v}"></i><div><div>${path}</div><small>${v.v}</small></div>`;
+      root.appendChild(el);
+    } else if (v && typeof v === "object" && !v.t) walk(v, path);
+  }
+}
+walk(TOKENS.core, "core");
+walk(TOKENS.light, "light");
+</script>
+</body>
+</html>
