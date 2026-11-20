@@ -4324,9 +4324,9 @@
       "description": "Pay, Send and Save Money with PayPal",
       "status": "pending",
       "package": null,
-      "notes": "The user signed in. Product not walked.",
+      "notes": "https://www.paypal.com/myaccount/summary redirected to the sign-in page. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 13
     },
     {
