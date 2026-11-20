@@ -24,6 +24,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { prefer } from './pin.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -75,8 +76,10 @@ async function newPage(key, { mobile = false, wait = 9000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(9000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || BASE + URLS[key], { wait, promo });
-  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); liveCtx = null; return false; }
+  // open() returns false when the bot check did not clear: that page is a boundary, never measured
+  // as the product (finding 20-4), whatever blocked() reads off the page afterwards.
+  const cleared = await open(page, url || BASE + URLS[key], { wait, promo });
+  if (!cleared || await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); liveCtx = null; return false; }
   // A Wayback replay can serve the HTML without the product's stylesheets: then every reading is the
   // browser's default (Times 16px, link blue; a native button would read the UA sans). Require the
   // site's own face on some text before measuring: DD Norms on the prism pages, TT Norms Pro on the
@@ -317,12 +320,11 @@ async function markPainted(sel, tag, { maxUp = 8, minW = 100, minH = 60, descend
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }
 
-// markPainted() and domFind() return a locator that matches nothing on a miss (never null) and
-// Locator.or() is a union resolved in DOM order, so neither `x || fallback` nor `.or()` prefers x.
-// orElse() takes the preferred locator when it matches and the fallback only when it does not.
-async function orElse(preferred, fallback) {
-  return preferred && (await preferred.count().catch(() => 0)) ? preferred : fallback;
-}
+// markPainted() and domFind() return a locator that matches nothing on a miss (never null), and so
+// does NONE() when either throws. Locator.or() is a union resolved in DOM order, so neither
+// `x || fallback` nor `.or()` prefers x: prefer() (pin.mjs) takes the first candidate with a visible
+// match, in the order given.
+const NONE = () => q('[data-m-mark="__none__"]');
 
 const G = {
   shell: 'App shell and navigation', hero: 'Marketing hero', bands: 'CTA bands and cards',
@@ -339,12 +341,12 @@ async function home() {
   // The marketing home's top bar carries the wordmark, language select and
   // the Sign in / Sign Up buttons (anchors to identity.doordash.com —
   // measured, never followed).
-  const bar = await markPainted('[data-testid="signInButton"]', 'm-topbar', { minW: 600, minH: 40 }).catch(() => null);
+  const bar = await markPainted('[data-testid="signInButton"]', 'm-topbar', { minW: 600, minH: 40 }).catch(NONE);
   // The painted ancestor this climbs to is the campaign hero field itself
   // (the top bar floats on it — the marketing page has no separate bar
   // background), so this component IS the hero band.
-  await S('hero-band', await orElse(bar, q('[data-testid="signInButton"]').locator('xpath=ancestor::div[4]')), ['default'], { group: g, title: 'Hero band', desc: 'The marketing hero region the top bar floats on: wordmark, Sign in and Sign Up over the campaign field (the bar has no separate paint).', sel: 'painted ancestor of [data-testid=signInButton] (the hero)' }, { noScroll: true });
-  await S('logo', await orElse(q('a[href="/"], a[href*="doordash.com/"], svg').filter({ hasText: /^\s*DoorDash\s*$/i }).first(), q('a').filter({ has: q('span[class*="VisuallyHiddenText"]') }).first()), ['default'], { group: g, title: 'Wordmark', desc: 'The DoorDash wordmark anchor (svg + visually-hidden label).', sel: 'wordmark anchor' }, { noScroll: true });
+  await S('hero-band', await prefer(bar, q('[data-testid="signInButton"]').locator('xpath=ancestor::div[4]')), ['default'], { group: g, title: 'Hero band', desc: 'The marketing hero region the top bar floats on: wordmark, Sign in and Sign Up over the campaign field (the bar has no separate paint).', sel: 'painted ancestor of [data-testid=signInButton] (the hero)' }, { noScroll: true });
+  await S('logo', await prefer(q('a[href="/"], a[href*="doordash.com/"], svg').filter({ hasText: /^\s*DoorDash\s*$/i }).first(), q('a').filter({ has: q('span[class*="VisuallyHiddenText"]') }).first()), ['default'], { group: g, title: 'Wordmark', desc: 'The DoorDash wordmark anchor (svg + visually-hidden label).', sel: 'wordmark anchor' }, { noScroll: true });
   await S('signin-btn', q('[data-testid="signInButton"]'), B4, { group: g, title: 'Sign-in button', desc: 'kind="BUTTON/PRIMARY" anchor to identity.doordash.com; measured, never followed.', sel: '[data-testid=signInButton]' }, { noScroll: true });
   await S('signup-btn', q('[data-testid="signUpButton"]'), B4, { group: g, title: 'Sign-up button', desc: 'kind="BUTTON/PLAIN" red pill to the signup URL; measured, never followed.', sel: '[data-testid=signUpButton]' }, { noScroll: true });
   await S('language-select', q('[data-testid="LanguageDropdown"]'), ['default', 'focused'], { group: g, title: 'Language select', desc: 'The footer/top-bar native <select> of locales (data-size="small").', sel: '[data-testid=LanguageDropdown]' }, { noScroll: true });
@@ -354,10 +356,10 @@ async function home() {
   // The two address pills under the hero copy — "Sign in for saved address"
   // and "Use current Location" — are the product's address gate. Measured,
   // never pressed (a press either opens sign-in or prompts geolocation).
-  const pill = await domFind(page, /Sign in for saved address/i, { sel: 'a,button,[role="button"]', tag: 'm-pill', minW: 100 }).catch(() => null);
-  await S('address-pill', await orElse(pill, q('a,button').filter({ hasText: /saved address/i }).first()), B4, { group: h, title: 'Address pill (sign-in gate)', desc: 'The "Sign in for saved address" hero pill — an authentication gate, never pressed.', sel: 'hero pill "Sign in for saved address"' });
-  const pill2 = await domFind(page, /Use current Location/i, { sel: 'a,button,[role="button"]', tag: 'm-pill2', minW: 80 }).catch(() => null);
-  await S('location-pill', await orElse(pill2, q('a,button').filter({ hasText: /current Location/i }).first()), B4, { group: h, title: 'Location pill', desc: 'The "Use current Location" hero pill — a geolocation prompt, never pressed.', sel: 'hero pill "Use current Location"' });
+  const pill = await domFind(page, /Sign in for saved address/i, { sel: 'a,button,[role="button"]', tag: 'm-pill', minW: 100 }).catch(NONE);
+  await S('address-pill', await prefer(pill, q('a,button').filter({ hasText: /saved address/i }).first()), B4, { group: h, title: 'Address pill (sign-in gate)', desc: 'The "Sign in for saved address" hero pill — an authentication gate, never pressed.', sel: 'hero pill "Sign in for saved address"' });
+  const pill2 = await domFind(page, /Use current Location/i, { sel: 'a,button,[role="button"]', tag: 'm-pill2', minW: 80 }).catch(NONE);
+  await S('location-pill', await prefer(pill2, q('a,button').filter({ hasText: /current Location/i }).first()), B4, { group: h, title: 'Location pill', desc: 'The "Use current Location" hero pill — a geolocation prompt, never pressed.', sel: 'hero pill "Use current Location"' });
   const b = G.bands;
   await S('cta-band', q('[data-testid="splash-cta-background"], [data-testid="CTASplash"]').first(), ['default'], { group: b, title: 'CTA band', desc: 'A mid-page CTA section (CTASplash) — tinted band with headline, copy and a primary action.', sel: '[data-testid=CTASplash]' });
   await S('cta-band-title', q('[data-testid="CTAContentHeader"]').first(), ['default'], { group: b, title: 'CTA band headline', sel: '[data-testid=CTAContentHeader]' });
@@ -369,7 +371,7 @@ async function home() {
   await S('section-title', q('h2').filter({ hasText: /neighborhood|popular|cities/i }).first(), ['default'], { group: d, title: 'Section title', desc: 'A "Get more from your neighborhood" h2.', sel: 'h2 section title' });
   await S('tab-selected', q('[role="tab"][data-testid$="-selected"], [data-testid="tab-topcities-selected"]').first(), B4, { group: d, title: 'Directory tab, selected', desc: 'The selected tab (Top Cities) — 3px bottom border in the selected colour.', sel: '[role=tab][data-testid$=-selected]' });
   await S('tab-idle', q('[role="tab"][data-testid$="-not-selected"]').first(), B4, { group: d, title: 'Directory tab, idle', desc: 'An idle tab (Top Cuisines / Top Chains).', sel: '[role=tab][data-testid$=-not-selected]' });
-  await S('dir-link', await orElse(await domFind(page, /^(Atlanta|Austin|Boston|Chicago|Denver|Pizza|Chinese Food|Sushi)$/i, { sel: 'a', tag: 'm-dirlink', minW: 40 }).catch(() => null), q('a').filter({ hasText: /^\s*(Atlanta|Chicago|Pizza)\s*$/ }).first()), B4, { group: d, title: 'Directory link', desc: 'A city/cuisine/chain link in the tabbed directory lists.', sel: 'directory a' });
+  await S('dir-link', await prefer(await domFind(page, /^(Atlanta|Austin|Boston|Chicago|Denver|Pizza|Chinese Food|Sushi)$/i, { sel: 'a', tag: 'm-dirlink', minW: 40 }).catch(NONE), q('a').filter({ hasText: /^\s*(Atlanta|Chicago|Pizza)\s*$/ }).first()), B4, { group: d, title: 'Directory link', desc: 'A city/cuisine/chain link in the tabbed directory lists.', sel: 'directory a' });
   await S('show-more', q('[data-testid="rest-items-toggle"], [data-testid="rest-items-toggle-icon-button"]').first(), B4, { group: d, title: 'Show-more toggle', desc: 'The expand/collapse control on a directory list; measured, not pressed here (toggled in the shot pass).', sel: '[data-testid=rest-items-toggle]' });
   await S('cross-link', q('[data-testid="cross-link-anchor"]').first(), B4, { group: d, title: 'Cross link', desc: 'A cross-category link tile (e.g. grocery → convenience).', sel: '[data-testid=cross-link-anchor]' });
   save();
@@ -381,8 +383,8 @@ async function foodDelivery() {
   await chrome('food-delivery');
   const g = G.dir;
   await S('fd-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Page title', desc: 'The food-delivery page headline.', sel: 'h1 on /food-delivery/' }, { noScroll: true });
-  const city = await domFind(page, /^(Atlanta|Austin|Boston|Chicago|Dallas|Denver|Houston|Las Vegas|Los Angeles|Miami|New York)$/i, { sel: 'a,button,[role="button"],[data-testid]', tag: 'm-city', minW: 30 }).catch(() => null);
-  await S('city-link', await orElse(city, q('[data-testid="Atlanta"], a').filter({ hasText: /^\s*Atlanta\s*$/ }).first()), B4, { group: g, title: 'City link', desc: 'A city directory entry (per-city data-testid); measured, never followed.', sel: 'city link' });
+  const city = await domFind(page, /^(Atlanta|Austin|Boston|Chicago|Dallas|Denver|Houston|Las Vegas|Los Angeles|Miami|New York)$/i, { sel: 'a,button,[role="button"],[data-testid]', tag: 'm-city', minW: 30 }).catch(NONE);
+  await S('city-link', await prefer(city, q('[data-testid="Atlanta"], a').filter({ hasText: /^\s*Atlanta\s*$/ }).first()), B4, { group: g, title: 'City link', desc: 'A city directory entry (per-city data-testid); measured, never followed.', sel: 'city link' });
   await S('fd-faq', q('[data-testid="seo-faq-block"], details, [class*="faq" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'FAQ block', desc: 'The SEO FAQ accordion block, if published on this route.', sel: 'seo-faq-block' });
   save();
 }
@@ -394,8 +396,8 @@ async function business() {
   const g = G.bands;
   await S('biz-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Business hero', desc: 'The DoorDash for Business headline.', sel: 'h1 on /en-US/business/' }, { noScroll: true });
   await S('biz-cta', q('a,button').filter({ hasText: /Get started|Learn more|Sign up|Contact/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Business CTA', desc: 'The business page primary action; measured, never followed.', sel: 'business page CTA' });
-  const merchant = await domFind(page, /^(7-Eleven|Safeway|ALDI|CVS|Walgreens)$/i, { sel: 'a,div,li,[data-testid]', tag: 'm-merch', minW: 30 }).catch(() => null);
-  await S('biz-merchant', await orElse(merchant, q('[data-testid="7-Eleven"]').first()), ['default'], { group: g, title: 'Merchant link', desc: 'A merchant-name entry in the business directory lists.', sel: 'merchant entry' });
+  const merchant = await domFind(page, /^(7-Eleven|Safeway|ALDI|CVS|Walgreens)$/i, { sel: 'a,div,li,[data-testid]', tag: 'm-merch', minW: 30 }).catch(NONE);
+  await S('biz-merchant', await prefer(merchant, q('[data-testid="7-Eleven"]').first()), ['default'], { group: g, title: 'Merchant link', desc: 'A merchant-name entry in the business directory lists.', sel: 'merchant entry' });
   save();
 }
 
@@ -427,8 +429,8 @@ async function restaurants() {
   // the anchor's nearest ancestor that also holds the tile image.
   await S('rest-card', q('a[href*="/store/"]').filter({ hasText: /\S/ }).first().locator('xpath=ancestor::div[.//img][1]'), ['default'], { group: g, title: 'Restaurant card', desc: 'A restaurant tile: image, name, rating/ETA and an offer badge.', sel: 'a[href*=/store/] ancestor with img' });
   await S('rest-card-title', q('a[href*="/store/"]').filter({ hasText: /\S/ }).first(), ['default'], { group: g, title: 'Card title', sel: 'a[href*=/store/] with text' });
-  const sub = await domFind(page, /^\d+(\.\d+)?\s*(mi|km)$|^\d+(\.\d+)?\s*min$/i, { sel: 'span,div,p', tag: 'm-rsub', minW: 30 }).catch(() => null);
-  await S('rest-card-sub', await orElse(sub, q('a[href*="/store/"]').first().locator('xpath=following::div[1]')), ['default'], { group: g, title: 'Card subtitle', desc: 'The rating · ETA · fee line under the restaurant name (a single styled leaf of the row).', sel: 'rating/ETA leaf under a card' });
+  const sub = await domFind(page, /^\d+(\.\d+)?\s*(mi|km)$|^\d+(\.\d+)?\s*min$/i, { sel: 'span,div,p', tag: 'm-rsub', minW: 30 }).catch(NONE);
+  await S('rest-card-sub', await prefer(sub, q('a[href*="/store/"]').first().locator('xpath=following::div[1]')), ['default'], { group: g, title: 'Card subtitle', desc: 'The rating · ETA · fee line under the restaurant name (a single styled leaf of the row).', sel: 'rating/ETA leaf under a card' });
   await S('offer-badge', q('[data-testid^="offer:"]').first(), ['default'], { group: g, title: 'Offer badge', desc: 'A promo chip on a restaurant card ("20% off on $40+").', sel: '[data-testid^=offer:]' });
   await S('leaderboard-badge', q('[data-testid^="top_rated_leaderboard"], [data-testid^="farther_away"]').first(), ['default'], { group: g, title: 'Leaderboard badge', desc: 'A "Top 10%"-style tag on a restaurant card.', sel: '[data-testid^=top_rated_leaderboard]' });
   await S('popular-btn', q('[data-testid="PopularItemsButton"]').first(), B4, { group: g, title: 'Popular-items button', sel: '[data-testid=PopularItemsButton]' });
@@ -515,8 +517,8 @@ async function mobile() {
   if (!(await newPage('mobile', { mobile: true }))) return;
   await chrome('mobile');
   const g = G.mobile;
-  const bar = await markPainted('[data-testid="signInButton"], [data-testid="signinSignupButton"]', 'm-mtopbar', { minW: 200, minH: 40 }).catch(() => null);
-  await S('m-topbar', await orElse(bar, q('header').filter({ visible: true }).first()), ['default'], { group: g, title: 'Mobile top bar', sel: 'top bar at 390' }, { noScroll: true });
+  const bar = await markPainted('[data-testid="signInButton"], [data-testid="signinSignupButton"]', 'm-mtopbar', { minW: 200, minH: 40 }).catch(NONE);
+  await S('m-topbar', await prefer(bar, q('header').filter({ visible: true }).first()), ['default'], { group: g, title: 'Mobile top bar', sel: 'top bar at 390' }, { noScroll: true });
   await S('m-identity-btn', q('[data-testid="signinSignupButton"], [data-testid="signInButton"]').first(), B4, { group: g, title: 'Mobile identity button', desc: 'The combined sign-in/sign-up control at 390 wide.', sel: 'identity button at 390' }, { noScroll: true });
   await S('m-hero', q('[data-testid="HomePageHeroHeader"], h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile headline', sel: 'h1 at 390' });
   save();
