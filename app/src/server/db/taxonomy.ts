@@ -1,4 +1,5 @@
 import type { Client, Transaction } from "@libsql/client";
+import { packageTopUps } from "./package-top-ups";
 import type {
   TaxonomyGroup,
   TaxonomySnapshot,
@@ -236,25 +237,53 @@ async function recordLedger(
 }
 
 /**
- * Migration v44 starts the ledger on a store that ran the per-package
- * migrations (v4-v43). Every such store had been offered seed rows for the
- * 212 references in the seeds when v43 first shipped, frozen in
- * seed-ledger-v43.json, so their current seed keys are recorded as offered:
- * an empty one there was cleared by the user. Every other seed key is left
- * for topUpSeeds to offer, including the packages later migrations were
- * renumbered under v43 for, which a store already at v43 skipped.
+ * Migration v44 starts the ledger. It runs after migrations v1-v43, so it
+ * records every seed key those have offered this store; a key among them with
+ * no rows was cleared by the user and must stay cleared.
+ *
+ * - A store opened below v8 has just run the v6-v8 top-ups, which offer the
+ *   whole current seed: every key is offered.
+ * - Otherwise: the packages in the seed when v8 shipped (seed-before-v9.json)
+ *   and every package a v9-v43 top-up names (packageTopUps).
+ * - Any other package (one that merged without a migration) reached the store
+ *   only if it was created after the package landed. Rows are the evidence:
+ *   a package with rows in a seed was offered it, so its empty keys there are
+ *   cleared choices. A package with none is offered by topUpSeeds.
  */
-export async function backfillSeedLedger(tx: Transaction) {
-  const { default: frozen } = await import("@/data/seed-ledger-v43.json");
+export async function backfillSeedLedger(tx: Transaction, openedAt: number) {
+  const { default: before } = await import("@/data/seed-before-v9.json");
   const { default: categories } = await import("@/data/system-categories.json");
   const { default: media } = await import("@/data/media-taxonomy.json");
-  const offered = new Set(frozen.references);
+  const offered = new Set([
+    ...before.references,
+    ...packageTopUps.flatMap((step) => step.references),
+  ]);
+  const everything = openedAt < 8;
+  const categorised = new Set(
+    (
+      await tx.execute(
+        "SELECT DISTINCT c.reference_id,t.group_id FROM reference_categories c JOIN taxonomy_terms t ON t.id=c.term_id",
+      )
+    ).rows.map((row) => `${row.reference_id}\u0000${row.group_id}`),
+  );
+  const labelled = new Set(
+    (
+      await tx.execute(
+        "SELECT DISTINCT reference_id FROM media_term_assignments",
+      )
+    ).rows.map((row) => String(row.reference_id)),
+  );
   await recordLedger(
     tx,
     "category_seed_ledger",
     "group_id",
     categories
-      .filter((row) => offered.has(row.referenceId))
+      .filter(
+        (row) =>
+          everything ||
+          offered.has(row.referenceId) ||
+          categorised.has(`${row.referenceId}\u0000${row.groupId}`),
+      )
       .map((row) => [row.referenceId, row.groupId] as const),
   );
   await recordLedger(
@@ -262,7 +291,12 @@ export async function backfillSeedLedger(tx: Transaction) {
     "media_seed_ledger",
     "media_id",
     media.assignments
-      .filter((row) => offered.has(row.referenceId))
+      .filter(
+        (row) =>
+          everything ||
+          offered.has(row.referenceId) ||
+          labelled.has(row.referenceId),
+      )
       .map((row) => [row.referenceId, row.mediaId] as const),
   );
 }
