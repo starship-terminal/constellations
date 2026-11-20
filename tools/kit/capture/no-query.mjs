@@ -89,9 +89,12 @@ const AMP = /&(?!#|[a-z]+;)|&amp;|&#0*38;|&#x0*26;|\\0{0,4}26(?:\r\n|[ \t\n\r\f]
 const at = (re, text, i) => { const m = re.exec(text.slice(i)); return m && m.index === 0 ? m[0].length : 0; };
 const firstAt = (re, text) => { const m = re.exec(text); return m ? m.index : -1; };
 
-// A fragment carries a parameter when, before the next space or quote, its name runs into an "=" or an
-// "&" in any spelling.
-const fragmentParams = (frag) => { const word = frag.match(/^[^\s"']*/)[0]; return E.test(word) || AMP.test(word); };
+// A fragment carries a parameter when it holds an "=" or an "&" in any spelling: anywhere in a URL field
+// (the whole field is the URL, spaces and all), and in free text before the next space or quote.
+const fragmentParams = (frag, whole = false) => {
+  const word = whole ? frag : frag.match(/^[^\s"']*/)[0];
+  return E.test(word) || AMP.test(word);
+};
 
 // A URL-valued field: everything from its first "?" in any spelling goes (a field holds a URL, so that is
 // its query), and its fragment when the fragment carries a parameter.
@@ -101,7 +104,7 @@ function cutField(v) {
   let h = -1;
   for (let i = 0; i < v.length && (q < 0 || i < q); i++) {
     const n = at(H, v, i);
-    if (n && fragmentParams(v.slice(i + n))) { h = i; break; }
+    if (n && fragmentParams(v.slice(i + n), true)) { h = i; break; }
   }
   const cut = h >= 0 ? h : q;
   return cut < 0 ? v : v.slice(0, cut);

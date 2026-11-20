@@ -141,6 +141,10 @@ const CUT = {
   // "&amp;#63;" is no "?" in any one layer, but its literal "#" followed by "63;tok=" still trips the
   // fragment rule: an over-cut, kept on purpose (fail closed)
   '"/p.png&amp;#63;tok=x"': '"/p.png&amp;"',
+  // a URL field's fragment is the rest of the field, spaces included (review of the spelling rule)
+  'img[src="/cb#section name&access_token=secret"]': 'img[src="/cb"]',
+  'img[href="/cb#a b c&#61;d"]': 'img[href="/cb"]',
+  'url("/cb#x y=1")': 'url("/cb")',
   // free text: no URL needed at all, only the query shape
   'What? a=b': 'What',
 };
