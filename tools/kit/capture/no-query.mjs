@@ -3,9 +3,9 @@
 // credential or an account id. Plain JavaScript; tested in test_no_query.mjs.
 //
 // Where a URL ends is decided by its context, never by guessing which characters a query may hold:
-//   - inside quotes, it ends at its own closing quote: a quoted value that starts with a URL is that
-//     URL, so a space inside the quotes does not end it (a srcset-style list loses what follows its
-//     first query, never keeps a query);
+//   - inside quotes, it ends at its own closing quote: the first URL in the quoted text, wherever it
+//     starts (after a space or words), runs to that quote, so a space after it does not end it (a
+//     srcset-style list loses what follows its first query, never keeps a query);
 //   - inside an unquoted url( ), it ends at the ) that closes the url( (CSS allows no ) in it);
 //   - bare, it ends at the next space or quote, and a closing ) or ] at the very end is given back
 //     only when the part of the token that is kept opened it.
@@ -29,8 +29,20 @@ function cutAt(u) {
   return URLISH.test(u.slice(0, at)) ? at : -1;
 }
 
-// One whitespace-free piece whose end is fixed by its wrapper (a quote or url( )): cut, nothing given back.
+// One whitespace-free piece whose end is fixed by its wrapper (url( )): cut, nothing given back.
 const cutWhole = (u) => { const at = cutAt(u); return at < 0 ? u : u.slice(0, at); };
+
+// Quoted text: the first word that is a URL with a query (or a parameter fragment) is cut there, and
+// the rest of the quoted text goes with it, since only the closing quote ends that URL. A word is one
+// after the start, a space, a bracket, a comma or =; a data: URL keeps the rest of the text whole.
+function cutQuoted(inner) {
+  for (const m of inner.matchAll(/(?:^|(?<=[\s([,=]))\S+/g)) {
+    if (/^data:/i.test(m[0])) return inner;
+    const at = cutAt(m[0]);
+    if (at >= 0) return inner.slice(0, m.index + at);
+  }
+  return inner;
+}
 
 // A bare token: cut, then give back the closing brackets at its end that close what the kept part opened.
 function cutBare(t) {
@@ -53,7 +65,7 @@ function cutBare(t) {
 export const noQuery = (v) => (typeof v === 'string'
   ? v.replace(SPAN, (m, quote, inner, urlOpen, urlBody, urlClose) => {
     if (/^data:/i.test(m)) return m;
-    if (quote) return quote + cutWhole(inner) + quote;
+    if (quote) return quote + cutQuoted(inner) + quote;
     if (urlOpen) return urlOpen + cutWhole(urlBody) + urlClose;
     return cutBare(m);
   })
