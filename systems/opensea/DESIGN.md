@@ -230,7 +230,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The screenshots and crops are reconstructions. Positions and colours come from computed styles. The wordmark in those PNGs is a blue circle, not the SVG paths. The style guide uses the system sans for gtAmerica. That family is proprietary and is not in the package.
+The screenshots and crops are reconstructions, drawn with Pillow from the measured boxes, including [screenshots/home-dark-default.png](screenshots/home-dark-default.png), which the gallery shows as this package's cover. Positions and colours come from computed styles. The wordmark in those PNGs is a blue circle, not the SVG paths. The style guide uses the system sans for gtAmerica. That family is proprietary and is not in the package.
 
 Desktop Sign in was a transparent pill. Phone Sign in, at 390, was a filled `#0086ff` pill. Both readings are live. Do not treat one as the other's hover.
 
