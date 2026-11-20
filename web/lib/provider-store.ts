@@ -79,6 +79,10 @@ export class StoreError extends Error {
 /** SQLite's primary result codes. */
 const SQLITE_BUSY = 5;
 const SQLITE_LOCKED = 6;
+/** Extended codes: a plain read-only file, and a file deleted (by a
+    recovery) while this connection held it, which SQLite refuses to write. */
+const SQLITE_READONLY = 8;
+const SQLITE_READONLY_DBMOVED = 1032;
 const SQLITE_CORRUPT = 11;
 const SQLITE_NOTADB = 26;
 
@@ -88,8 +92,9 @@ const primaryCode = (cause: unknown): number | null => {
 };
 
 function storeError(message: string, cause: unknown, file?: FileIdentity): StoreError {
-  const err = new StoreError(message);
   const code = primaryCode(cause);
+  const full = (cause as { errcode?: unknown } | null)?.errcode;
+  const err = new StoreError(full === SQLITE_READONLY ? READ_ONLY : full === SQLITE_READONLY_DBMOVED ? MOVED : message);
   if (code !== null) err.damaged = [SQLITE_CORRUPT, SQLITE_NOTADB].includes(code);
   if (file) err.file = file;
   return err;
@@ -99,6 +104,8 @@ const CONFIG_DIR_HELP = `${CONFIG_DIR_ENV} must be an absolute path outside the 
 const LINK_HELP = `${FILE_NAME} or a file next to it in ${CONFIG_DIR_ENV} is a symbolic link. The store never follows one: a link has no use here, and it could send the saved key into the checkout or anywhere else. Replace the link with the file itself, or remove it.`;
 const OPENED_ELSEWHERE = `The saved provider file opened somewhere other than ${CONFIG_DIR_ENV}: the folder changed while it was being opened. Nothing was written.`;
 const RECOVERY_BUSY = "The saved provider file is being repaired by another request. Try again in a moment.";
+const READ_ONLY = "The saved provider file is read-only, so nothing can be saved or removed. It is still used as saved.";
+const MOVED = "The saved provider file was replaced while this request used it. Nothing was written; try again.";
 
 const inside = (child: string, parent: string): boolean => {
   const rel = path.relative(parent, child);
@@ -220,10 +227,15 @@ const SCHEMA = `CREATE TABLE IF NOT EXISTS provider (
 -- has since removed.
 CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY);
 CREATE TRIGGER IF NOT EXISTS provider_saved AFTER INSERT ON provider
-BEGIN INSERT OR IGNORE INTO meta (k) VALUES ('saved'); END;
--- A file made before meta existed, or by the first version of it, can hold a
--- provider with an empty meta table: mark it as having held one.
-INSERT OR IGNORE INTO meta (k) SELECT 'saved' FROM provider;`;
+BEGIN INSERT OR IGNORE INTO meta (k) VALUES ('saved'); END;`;
+
+// A file made before meta existed, or by the first version of it, can hold a
+// provider with an empty meta table: mark it as having held one. Written only
+// when a read shows it is needed, so opening a complete file never writes and
+// a read-only file (mode 0400, a read-only volume) still reads.
+const NEEDS_BACKFILL =
+  "SELECT EXISTS (SELECT 1 FROM provider) AND NOT EXISTS (SELECT 1 FROM meta WHERE k = 'saved') AS needed";
+const BACKFILL = "INSERT OR IGNORE INTO meta (k) SELECT 'saved' FROM provider";
 
 const COLUMNS = "api, base_url, key_header, models_url, model, name, api_key";
 
@@ -257,10 +269,10 @@ const sameFile = (a: FileIdentity | null | undefined, b: FileIdentity | null | u
   !!a && !!b && a.dev === b.dev && a.ino === b.ino;
 
 /** Create `file` 0600 when it is new, never through a link (O_EXCL and
-    O_NOFOLLOW), and tighten an existing one. Opening and closing an
-    existing database outside SQLite would drop the POSIX locks another
-    connection in this process holds on it, so an existing file is only
-    chmod-ed by path. */
+    O_NOFOLLOW), and take group and other access off an existing one.
+    Opening and closing an existing database outside SQLite would drop the
+    POSIX locks another connection in this process holds on it, so an
+    existing file is only chmod-ed by path. */
 function createPrivate(file: string): void {
   try {
     closeSync(openSync(file, constants.O_CREAT | constants.O_EXCL | constants.O_WRONLY | (constants.O_NOFOLLOW ?? 0), 0o600));
@@ -269,8 +281,10 @@ function createPrivate(file: string): void {
   }
   identityOf(file);
   // By path, so no descriptor is opened: a restored or copied file with a
-  // looser mode is tightened before a key is written into it.
-  chmodSync(file, 0o600);
+  // looser mode is tightened before a key is written into it. The owner's
+  // own bits are kept, so a file the operator made read-only stays so.
+  const mode = lstatSync(file).mode & 0o777;
+  if (mode & 0o077) chmodSync(file, mode & 0o600);
 }
 
 /** Confirm that `db` opened `file` itself. Neither node:sqlite nor Python's
@@ -321,6 +335,7 @@ function open(M: Sqlite, create: boolean): Opened | null {
       db.exec("PRAGMA secure_delete = ON");
       db.exec("PRAGMA journal_mode = DELETE");
       db.exec(SCHEMA);
+      if ((db.prepare(NEEDS_BACKFILL).get() as { needed?: unknown } | undefined)?.needed) db.exec(BACKFILL);
     } catch (e) {
       throw storeError("The saved provider file cannot be read.", e, id);
     }
@@ -482,6 +497,13 @@ export async function loadSaved(): Promise<SavedProvider | null> {
   const row = run(o, (db) => db.prepare(`SELECT ${COLUMNS} FROM provider WHERE id = 1`).get() as Record<string, unknown> | undefined);
   return rowToProvider(row);
 }
+
+// Why a plain save takes no lock beyond SQLite's own: only a recovery ever
+// deletes provider.db (discardIfStillDamaged, under the recovery lock), a new
+// file is only ever created with O_EXCL, and a writer still holding a file
+// that a recovery deleted gets an error from SQLite, not a save that quietly
+// went into the deleted file. So a save either lands in the file at the path
+// or fails visibly. Keep those three true before adding a lock here.
 
 /** How a save may treat a provider that is already saved:
     - "replace": always (a key the provider checked);

@@ -405,6 +405,27 @@ describe("recovery and key bytes", () => {
     assert.equal((await fs.stat(providerFile())).mode & 0o777, 0o600);
   });
 
+  it("reads a file made read-only after a save, and refuses a save into it without the env key", async () => {
+    process.env.ANTHROPIC_API_KEY = ENV_KEY;
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    await fs.chmod(providerFile(), 0o400);
+    try {
+      const st = await providerState();
+      assert.deepEqual([st.source, st.configured, st.provider?.model], ["saved", true, GOOD.model]);
+      const held = await resolveProvider();
+      assert.deepEqual([held.source, held.cfg?.api_key], ["saved", KEY]);
+      const r = await handleSave({ ...GOOD, api_key: KEY2 }, okModels);
+      assert.equal(r.status, 500);
+      assert.match(String(r.body.error), /read-only/);
+      assert.equal((await handleRemove()).status, 500);
+      assert.equal((await fs.stat(providerFile())).mode & 0o777, 0o400, "a read-only file stays read-only");
+      assert.equal((await resolveProvider()).cfg?.api_key, KEY, "still the saved key, never the env key");
+      assert.ok(!everything(r.body).includes(KEY2));
+    } finally {
+      await fs.chmod(providerFile(), 0o600);
+    }
+  });
+
   it("never deletes a working database because it is busy", async () => {
     await handleSave({ ...GOOD, api_key: KEY }, okModels);
     const { DatabaseSync } = await import("node:sqlite");

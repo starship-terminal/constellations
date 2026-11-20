@@ -134,7 +134,10 @@ These steps are for the owner; nothing in this repo contacts the host.
    point; otherwise a saved key is lost when the container is recreated.
 3. Make sure the folder belongs to the user the units run as. The app
    creates it 0700 and the database 0600 itself; an existing folder keeps its
-   mode, so check it is not readable by others. Keep it on a local disk, not
+   mode, so check it is not readable by others. A save takes group and other
+   access off an existing database but never adds any, so a database made
+   read-only (0400, or a read-only volume) keeps serving the chat, and Save
+   and Remove report that it is read-only. Keep it on a local disk, not
    a network share, since both units lock the same SQLite files (the
    database and `provider.lock`) and a network share's locks are not
    reliable. Do not make `provider.db` or the files next to it symbolic
