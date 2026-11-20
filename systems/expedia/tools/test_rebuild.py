@@ -72,17 +72,32 @@ class RebuildTest(unittest.TestCase):
         self.assertNotIn("outlineColor", self.built["core"]["measured"]["focus"])
         self.assertIn("core.measured.focus.outlineColor", {g["token"] for g in self.spec["_gaps"]})
 
-    def test_builder_stops_when_a_cited_state_is_missing(self):
+    def _build_with(self, edit):
+        """Run build_component_tokens.py on a temp copy whose readings `edit` changed."""
         with tempfile.TemporaryDirectory() as tmp:
             root = pathlib.Path(tmp)
             shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("capture", "__pycache__"))
             shutil.copytree(PKG / "raw", root / "raw")
             raw = json.loads((root / "raw" / "components-computed.json").read_text())
-            del raw["components"]["search-submit"]["states"]["focus-visible"]
+            edit(raw["components"])
             (root / "raw" / "components-computed.json").write_text(json.dumps(raw))
-            r = subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, capture_output=True, text=True)
-            self.assertNotEqual(r.returncode, 0)
-            self.assertIn("search-submit focus-visible", r.stderr)
+            return subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, capture_output=True, text=True)
+
+    def test_builder_stops_when_a_cited_state_is_missing(self):
+        r = self._build_with(lambda c: c["search-submit"]["states"].pop("focus-visible"))
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("search-submit focus-visible", r.stderr)
+
+    def test_builder_stops_on_a_component_flagged_missing(self):
+        # a subset capture that did not find search-submit keeps its old states and flags it
+        r = self._build_with(lambda c: c["search-submit"].update(missing=True))
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("flagged missing", r.stderr)
+
+    def test_builder_stops_on_a_missing_colour(self):
+        r = self._build_with(lambda c: c["search-submit"]["states"]["default"]["style"].pop("color"))
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("core.measured.button.search.text", r.stderr)
 
     def test_marketing_band_labels_from_its_own_palette(self):
         md = (PKG / "components.md").read_text()
