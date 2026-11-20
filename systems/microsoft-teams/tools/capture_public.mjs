@@ -5,7 +5,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createRequire } from 'node:module';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const PKG = path.resolve(here, '..');
@@ -18,8 +17,9 @@ fs.mkdirSync(SHOTS, { recursive: true });
 fs.mkdirSync(CROPS, { recursive: true });
 fs.mkdirSync(ICONS, { recursive: true });
 
-const require = createRequire(process.env.PLAYWRIGHT || '/Users/kaichen/.design-systems/pw/node_modules/playwright/index.mjs');
-const { chromium } = require('playwright');
+// The kit pattern: PLAYWRIGHT names the module, else the installed package (no machine-specific path).
+const pw = await import(process.env.PLAYWRIGHT || 'playwright');
+const { chromium } = pw.default ?? pw;
 
 const HOME = 'https://www.microsoft.com/en-us/microsoft-teams/';
 const PAGES = [
@@ -123,7 +123,7 @@ async function readVars(page) {
     const resolved = {};
     for (const n of interesting) resolved[n] = root.getPropertyValue(n).trim();
     return {
-      varCount: names.length,
+      varCount: names.size,
       interestingCount: interesting.length,
       resolved,
       fontFaces: fonts.slice(0, 40),
@@ -225,9 +225,10 @@ async function icons(page) {
         label: (label || '').trim().replace(/\s+/g, ' ').slice(0, 40),
         w: Math.round(r.width),
         h: Math.round(r.height),
-        html: svg.outerHTML.slice(0, 4000),
+        html: svg.outerHTML,
       };
-    }).filter((s) => s.w >= 12 && s.w <= 48 && s.html.includes('<path') || s.html.includes('<use'));
+      // A size check applies to <use> icons too, and an icon too long to keep is skipped, never cut into invalid SVG.
+    }).filter((s) => s.w >= 12 && s.w <= 48 && (s.html.includes('<path') || s.html.includes('<use')) && s.html.length <= 4000);
   });
 }
 
@@ -257,9 +258,11 @@ async function shoot(context, prefix, pageName, url, extra) {
     finalHost: new URL(info.href).host + new URL(info.href).pathname,
   };
   fs.writeFileSync(file + '.capture.json', JSON.stringify(sidecar, null, 2) + '\n');
-  // full page, capped
+  // Whole page, bounded at eight viewports (AGENTS.md "Bound every full-page capture").
   const full = path.join(SHOTS, `${prefix}${pageName}-light-full.png`);
-  await page.screenshot({ path: full, fullPage: true });
+  const vp = page.viewportSize();
+  const docH = await page.evaluate(() => document.documentElement.scrollHeight);
+  await page.screenshot({ path: full, clip: { x: 0, y: 0, width: vp.width, height: Math.min(docH, vp.height * 8) }, fullPage: true });
   const comp = await components(page);
   let states = {};
   if (pageName === 'home' && !prefix) states = await hoverAndFocus(page, /Download now/);
