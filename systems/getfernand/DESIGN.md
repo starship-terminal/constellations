@@ -92,6 +92,10 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
 
+### What to distrust (from README.md)
+
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
+
 ### Do and don't (from README.md)
 
 1. **Do keep the palette flat.** One `:root` palette of named neutrals and accents — `white`/`grey`/`black`/`blue`/`border` — resolved per host, no ramps. Take the per-host values from the `light`/`help`/`app`/`dark` sets in [tokens.json](tokens.json); never blend them. ([home-light-default](screenshots/home-light-default.png))

@@ -90,6 +90,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## Boundaries
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - The signed-in app (creating curations, the TasteScope questionnaire, saving items, settings) sits behind 'Log in or sign up' / the Google SSO button and was never reached; every captured control was measured, never followed.
 - /feed scrolls in an inner container (not the document): the desktop full-page capture is bounded at the first 27,850px and mobile at 57,550px — the tail is a documented boundary.
 - One curation (/curation/qDNMdxe5) and one profile (/ravi) were captured as representatives of their page types; the catalog's full range is not enumerated.
