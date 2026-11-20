@@ -3678,7 +3678,7 @@
       "description": "AI-Powered No‑Code App Builder for Entrepreneurs",
       "status": "pending",
       "package": null,
-      "notes": "https://getmocha.com/login does not resolve. No sign-in form.",
+      "notes": "https://getmocha.com/login does not resolve. No sign-in form. Public walk 2026-11-21: getmocha.com has no DNS record. Product hosts return HTTP 410, This app is no longer available. Docs site captured in PR 1485 at e4d49cd49. catalog.json not in that PR. No signed-in surface. Signup closed. Skipped the product shell this pass.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 11
