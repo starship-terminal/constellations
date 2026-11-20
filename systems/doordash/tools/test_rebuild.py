@@ -88,5 +88,20 @@ class RebuildTest(unittest.TestCase):
         self.assertIn("Focus could not be captured on 6 more", self.md)
 
 
+    def test_measurements_rebuild_matches(self):
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node is not installed")
+        root = pathlib.Path(self.tmp.name)
+        (root / "tools" / "capture" / "public").mkdir(parents=True, exist_ok=True)
+        shutil.copy(PKG / "tools" / "capture" / "css-colour.mjs", root / "tools" / "capture")
+        shutil.copy(PKG / "tools" / "capture" / "public" / "build-measurements.mjs", root / "tools" / "capture" / "public")
+        subprocess.run([node, str(root / "tools" / "capture" / "public" / "build-measurements.mjs")], cwd=root, check=True, capture_output=True)
+        built = (root / "raw" / "measurements.md").read_text()
+        self.assertEqual((PKG / "raw" / "measurements.md").read_text(), built)
+        # a failed keyboard focus reads Skipped, never the element at rest
+        entry = built.split("#### tab-selected\n")[1].split("\n#### ")[0]
+        self.assertIn("| Skipped |", entry)
+
 if __name__ == "__main__":
     unittest.main()
