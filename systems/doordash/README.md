@@ -15,8 +15,9 @@ DoorDash is worth a capture because its consumer web declares a complete, legibl
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (74, 171 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the red hero, value props and CTA bands, the SEO directory, the restaurant cards, the storefront, the careers site, mobile |
 | [components/crops/](components/crops) | 171 element screenshots, `{component}-{state}.png` at 2x, 256 colours |
-| [screenshots/](screenshots) | 29 `{page}-light-{state}.png` captures at 256 colours. Desktop 1440 x 900 at 1x, `-full` whole pages (food-delivery and mobile-food-delivery are part-stitched; the 91,084px mobile food-delivery page was bounded at the kit's 8-chunk cap and the boundary recorded), `mobile-*` shots at 390 x 844 2x, `home-light-cuisines` the toggled directory tab, `store-light-pickup` the toggled fulfilment pill, `mobile-store-light-menu` an attempted hamburger (no menu exists on this shell — kept as evidence) |
+| [screenshots/](screenshots) | 29 public `{page}-light-{state}.png` captures at 256 colours, plus 9 `signed-in-*.png` from the 2026-11-20 signed-in walk. Public desktop shots are 1440 x 900 at 1x, `-full` whole pages (food-delivery and mobile-food-delivery are part-stitched; the 91,084px mobile food-delivery page was bounded at the kit's 8-chunk cap and the boundary recorded), `mobile-*` shots at 390 x 844 2x. Signed-in desktop PNGs are 2880 x 1800 (1440 x 900 CSS at devicePixelRatio 2). The phone orders PNG is 780 x 1688 (390 x 844 CSS at devicePixelRatio 2). |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (298 rules, 100 font faces, 2,453 theme names resolved on a `body.prism-theme` probe; the deliveroo/plus sibling themes and the careers Tailwind layer binned separately), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [archive-urls.json](raw/archive-urls.json) (snapshot provenance per route) |
+| [login-review.json](login-review.json) | The 2026-11-20 signed-in walk: nav, settings, and the gift-card create page, with the screenshot for each opened screen. The manifest flip is deferred. |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
 ## Brief
@@ -35,7 +36,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 6. Do mark the selected state in ink.
 7. Do show ratings as compact inline text.
 8. Don't put DoorDash red on large fills except the hero.
-9. Don't style the signed-in product from this package.
+9. Don't style checkout or DashPass from this package.
 10. Don't call the deliveroo/plus scopes "DoorDash dark mode".
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
@@ -106,7 +107,8 @@ Nothing was signed into, ordered, address-entered or submitted: the Sign-in/Sign
 - **This is archival evidence, not a live read.** Live *.doordash.com Cloudflare-blocks this client on every surface tried; the DOM, sheets and imagery are the product's own via Wayback snapshots dated 2026-09-30 → 2026-11-12. Colours, tokens and components are real; a value could have changed since the snapshot — trust it as "the product at that snapshot", not "the product today".
 - **Hydration-dependent content is absent.** The archived pages serve SSR HTML; React hydration under Wayback does not complete, so anything mounted after hydration — lazy directory rows, the HSA/seasonal catalog bodies (a spinner, never loaded), some imagery — is missing from shots and measurements. What rendered is real; what did not is a recorded gap, never faked.
 - **Ghost duplicate nodes.** The restaurants page carries `CompactCard*` testid nodes that paint 0x0 (SSR duplicates); the visible cards are `/store/` anchors and were measured as such. Selector names in components-computed.json say which shape was read.
-- **The signed-in product is unknown.** Past sign-in or the address gate — ordering, cart, checkout, DashPass, merchant/Dasher onboarding — nothing was reached or inferred. Tokens for those components exist in the `--comp-*` layer (declared, tokenised), but their painted behaviour is unevidenced.
+- **The public shots are still archival.** Live *.doordash.com Cloudflare-blocked the 2026-11-13 capture client. Those screenshots, tokens, and crops stay Wayback evidence.
+- **A signed-in walk was added on 2026-11-20.** The default preview profile was already signed in. Opened screens are named in [login-review.json](login-review.json): account menu, profile, change password (empty, not submitted), manage account (archive and delete not clicked), orders empty state (desktop and 390 x 844), rewards empty state, gift card buy/redeem (not submitted), and help. Cart stayed at 0. Credential fields on the profile shot are blurred. Home feed frames from this pass were compositor-blurred and were not committed. Checkout, DashPass purchase, address entry, group order, and business-profile create were not started.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour PNGs; photographs band. Read exact colours from tokens or the raw files.
 - **Sibling brand themes in the sheet.** The prism bundle ships deliveroo/plus `[data-dt-theme]` scopes (light and dark). They are real declarations but not what doordash.com paints; only the unscoped doordash light set is tokenised — do not read them as "DoorDash dark mode".
 - **Browser defaults under the replay.** Elements the site styles only through their text children kept the browser's inherited defaults in the replay (Times 16px, #000000, the #0000ee link blue on anchors and the icons inside them); 92 states carry them. The `light.component.*.text` tokens now read the first text node instead of the wrapper (12 of them changed, for example `offerBadge.text` #0000ee to #d91400 and `heroBand.text`/`footer.text` #000000 to #ffffff); `menuItem.text` and `hsaSearch.text`, which have no text node, say they are unconfirmed. components.md marks those values as browser defaults. The capture script now refuses a page on which the prism face did not apply (not re-run).
@@ -138,7 +140,8 @@ Two served faces do the work. **DD Norms** (the prism `--base-font-family-defaul
 | States: default, hover, focus-visible, pressed | captured | every interactive entry (171 states); pressed via CDP forcePseudoState; focus-visible held on 27 of 33 attempted — six recorded `via: focus failed` and marked uncaptured in components.md |
 | States: toggled, focused | captured | `home-light-cuisines`, `store-light-pickup`; `focused` on the address/search/language fields |
 | States: disabled, error, loading | declared only | rich in the `--comp-*` layer (`*-disabled`, `*-progressing` — tokenised); rarely painted signed out |
-| Form with validation, checkout, ordering, OAuth | not captured | gates never crossed — recorded boundary |
+| Signed-in shell | captured 2026-11-20 | account menu, profile, password, manage account, orders, rewards, gift cards, help. See [login-review.json](login-review.json) |
+| Form with validation, checkout, ordering, OAuth | not captured | checkout, cart add, DashPass purchase, and address entry not started |
 | Dark theme | not published | the doordash scope paints light only; deliveroo/plus dark scopes in the sheet are sibling brands, not this surface |
 | Widths: 1440, 390 | captured | desktop + mobile passes |
 
@@ -152,7 +155,7 @@ Two served faces do the work. **DD Norms** (the prism `--base-font-family-defaul
 6. **Do mark the selected state in ink.** Selected tabs, chips and the toggle's on-pill take the near-black `border.selected`/`background.selected` (#191919 neutral-100 family), not the action red — red is reserved for actions and promos. See [tab-selected](components/crops/tab-selected-default.png).
 7. **Do show ratings as compact inline text.** The `4.8 (6k+) • 0.7 mi • 21 min` row is one muted line with `•` separators under the name — badges (offer, leaderboard) chip beside it. See [rest-card](components/crops/rest-card-default.png).
 8. **Don't put DoorDash red on large fills except the hero.** The full-bleed `#eb1700` band is the campaign hero signature; ordinary sections stay white/tint — a page of red reads wrong. See [home-light-full](screenshots/home-light-full.png).
-9. **Don't style the signed-in product from this package.** Ordering, cart, checkout, DashPass and onboarding are behind gates never crossed; the `--comp-*` declarations are intent, not measured paint. See [dashpass-light-default](screenshots/dashpass-light-default.png).
+9. **Don't style checkout or DashPass from this package.** The 2026-11-20 walk opened the signed-in shell, empty orders, rewards, profile, password, manage account, gift cards, and help ([login-review.json](login-review.json)). Checkout, cart add, DashPass purchase, and address entry were not started. The public DashPass shot is still the signed-out marketing page. See [signed-in-orders-desktop](screenshots/signed-in-orders-desktop.png).
 10. **Don't call the deliveroo/plus scopes "DoorDash dark mode".** They are sibling brands in the same prism sheet; the doordash surface publishes light only. See [store-light-default](screenshots/store-light-default.png).
 
 ## Rebuild

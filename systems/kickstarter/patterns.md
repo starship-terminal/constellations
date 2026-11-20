@@ -34,6 +34,18 @@ A public campaign: title, video, pledged amount in brand green, backer count, a 
 
 About, rules, trust, press, creators, environment, and the blog are public marketing or policy pages on the same white chrome. [about-light-default](screenshots/about-light-default.png), [creators-light-default](screenshots/creators-light-default.png), [rules-light-default](screenshots/rules-light-default.png).
 
+## Signed-in shell
+
+Walked on 2026-11-20. The header swaps Log in for an avatar. The account menu lists Profile, Saved projects, Recommended for you, Following, Settings, Messages, Activity, and Log out. [recommendations-light-signed-in](screenshots/recommendations-light-signed-in.png), [menu-account-open](components/crops/menu-account-open.png).
+
+On a 390-wide phone the same menu opens as a centred card over a dimmed page, with a close button. [account-menu-light-phone](screenshots/account-menu-light-phone.png).
+
+Settings is a title, a tab row (Account, Edit profile, Notifications, Saved searches, Payment methods, Shipping address, Following), then the account card and a right-hand list of privacy, security, and delete links. [settings-account-light-default](screenshots/settings-account-light-default.png). Notifications is a list of rows with Email and App switches, left off. [settings-notifications-light-default](screenshots/settings-notifications-light-default.png).
+
+Empty states are a sentence and one button: Discover projects on saved projects, Get started on Following. Messages is a search field, an Inbox select, and a yellow spam note. Activity is a short paragraph and a link. The profile says the page is only visible to the owner and shows a backed count of zero.
+
+`/start` while signed in is step 1 of 3, with the same category selects and a disabled Next. Next was not clicked. [start-project-light-step1](screenshots/start-project-light-step1.png).
+
 ## Not on the signed-out surface
 
 Empty, loading, and error states of a submitted form, a destructive confirmation, and feedback after a pledge or a save. Those need an account or a checkout, recorded in the catalog gaps.
