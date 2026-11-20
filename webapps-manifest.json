@@ -3302,9 +3302,9 @@
       "description": "Free AI Stock Images & Pictures",
       "status": "pending",
       "package": null,
-      "notes": "https://www.lummi.ai/login asks for email and password, or Google. Password not submitted.",
+      "notes": "https://www.lummi.ai/login asks for email and password, or Google. Password not submitted. Public walk 2026-11-21: header opened Photos, Illustrations, 3D, a search dialog, a Try Pro pricing dialog, and an overflow menu. Overflow opened updates, pricing, contribute, developers, blog, trends, events, style references, docs, plugin landings, about, advertise, wall of love, privacy, terms, license, and the cookie center. Cards opened one photo, illustration, 3D, creator, shoot, collection, search, category, and daily page. Log in, signup, Google, Apple, Forgot password, and Stripe checkout stop at a wall and were not entered. No form was submitted. Public package in PR 1525 at 6ea292f23. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 10
     },
     {
