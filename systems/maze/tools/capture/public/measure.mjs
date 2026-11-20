@@ -27,6 +27,7 @@ const out = {
 };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+const freshThisRun = new Set();
 
 let page, context, browser, cdp, current;
 
@@ -101,9 +102,10 @@ async function states(key, loc, list, meta) {
     out.components[key] = { missing: true, ...meta, url: current, states: {} };
     return;
   }
-  // Found: start this component afresh, so neither an old missing flag nor states this run no longer
-  // reads survive from the committed file.
-  out.components[key] = { states: {}, ...meta, url: current };
+  // Found: start this component afresh on its first call in this run, so neither an old missing flag
+  // nor states this run no longer reads survive from the committed file. A later call for the same
+  // component (the platform menu reads default, then hover) adds to it.
+  if (!freshThisRun.has(key)) { out.components[key] = { states: {}, ...meta, url: current }; freshThisRun.add(key); }
   for (const st of list) {
     await reset();
     let undo;

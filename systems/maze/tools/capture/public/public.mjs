@@ -101,7 +101,13 @@ class Shooter {
           const vh = this.p.viewportSize().height;
           const scrolled = file.replace(/\.png$/, '-scrolled.png');
           fs.renameSync(file, scrolled);
-          if (fs.existsSync(file + '.capture.json')) fs.renameSync(file + '.capture.json', scrolled + '.capture.json');
+          if (fs.existsSync(file + '.capture.json')) {
+            // The moved sidecar names its own image, as full() does for renamed captures.
+            const meta = JSON.parse(fs.readFileSync(file + '.capture.json', 'utf8'));
+            meta.screenshot = path.basename(scrolled);
+            fs.writeFileSync(scrolled + '.capture.json', JSON.stringify(meta, null, 1) + '\n');
+            fs.unlinkSync(file + '.capture.json');
+          }
           const cropped = file;
           execFileSync('python3', [crop, full, cropped, String(this.vw * this.dpr), String(vh * this.dpr)], { stdio: 'inherit' });
           fs.writeFileSync(cropped + '.capture.json', JSON.stringify({
