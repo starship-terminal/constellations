@@ -26,6 +26,26 @@ def color(value: str, note: str) -> dict:
     }
 
 
+# Custom properties the page declared that no file in raw/ holds: raw/ has computed styles of
+# controls (components-computed.json) and motion rules, but no custom-property dump. These values
+# were typed in from the T3 preview at capture time, so they carry the hand-entered label.
+HAND = {
+    "black2", "white2", "blue", "blueAdaDark", "greenDark", "redDark", "orange", "sentimentOrange",
+    "edgeBlue", "edgePurple", "stLightGrey3", "stLightGrey7", "stDarkGrey3", "stDarkGrey4",
+    "stDarkGrey5", "stDarkGrey6", "charcoalDarker3", "pageDark",
+}
+
+
+def hand(token: dict) -> dict:
+    """Relabel a token whose reading is not in raw/: Reconstruction, entered by hand."""
+    note = token["$extensions"]["source"][len(SRC) + 2:]
+    token["$extensions"]["source"] = (
+        f"Reconstruction: entered by hand at capture time from {note} on stocktwits.com "
+        "(T3 preview, 2026-11-19); no raw/ file holds this reading"
+    )
+    return token
+
+
 def dim(value: str, note: str) -> dict:
     return {
         "$value": value,
@@ -83,7 +103,7 @@ def text(value: str, note: str) -> dict:
 
 
 def core() -> dict:
-    return {
+    doc = {
         "color": {
             "black": color("#000000", "--black"),
             "black2": color("#101010", "--black-2"),
@@ -185,6 +205,9 @@ def core() -> dict:
             },
         },
     }
+    for key in HAND:
+        hand(doc["color"][key])
+    return doc
 
 
 def semantic(theme: str) -> dict:
@@ -234,14 +257,15 @@ def semantic(theme: str) -> dict:
                 f"--st-input-background on {note}; the sign-in field computed rgb(242, 242, 247)",
             ),
         },
-        "focus": color(
+        "focus": hand(color(
             "#86b7fe" if theme == "light" else "#000000",
             f"--select-focused on {note}. The focused sign-in field computed outline none and box-shadow none, so this token is declared and not painted on that control",
-        ),
+        )),
     }
 
 
 def build() -> dict:
+    """The token document; nothing is written (main() writes it)."""
     return {
         "core": core(),
         "light": semantic("light"),
@@ -253,8 +277,13 @@ def build() -> dict:
     }
 
 
+def render() -> str:
+    """tokens.json's exact text."""
+    return json.dumps(build(), indent=2) + "\n"
+
+
 def main() -> None:
-    OUT.write_text(json.dumps(build(), indent=2) + "\n")
+    OUT.write_text(render())
     print(f"wrote {OUT}")
 
 
