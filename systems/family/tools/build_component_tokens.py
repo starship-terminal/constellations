@@ -253,10 +253,10 @@ def emit(root, name, leaf):
                 path += "." + key
                 break
         else:
-            raise ValueError(f"{name}: no free key to hold the leaf beside its group")
+            raise ValueError(f"{'.'.join(tuple(gprefix) + tuple(parts))}: no free key to hold the leaf beside its group")
     else:
         if last in node:
-            raise ValueError(f"{name}: duplicate token path {path}")
+            raise ValueError(f"duplicate token path {path}")
         node[last] = leaf
     EMITTED[name] = path
     _OWNER[path] = name
@@ -377,10 +377,10 @@ def _place(node, parts, leaf, gprefix=()):
                 path = ".".join(base + [parts[-1], key])
                 break
         else:
-            raise ValueError(f"{name}: no free key to hold the leaf beside its group")
+            raise ValueError(f"{'.'.join(tuple(gprefix) + tuple(parts))}: no free key to hold the leaf beside its group")
     else:
         if parts[-1] in node:
-            raise ValueError(f"{name}: duplicate token path {path}")
+            raise ValueError(f"duplicate token path {path}")
         node[parts[-1]] = leaf
     return path
 
@@ -499,6 +499,25 @@ for name in sorted(set(D) - set(R)):
 role_alias = dict(color_alias)
 
 
+def var_path(tree, name, prefix=""):
+    """The dotted path of the leaf that resolves `name` in a spec tree, read from the tree
+    itself (a demoted leaf lives under .default)."""
+    for k, v in tree.items():
+        if not isinstance(v, dict) or k.startswith("_"):
+            continue
+        here = f"{prefix}.{k}" if prefix else k
+        if v.get("var") == name:
+            return here
+        if "var" not in v and "value" not in v:
+            hit = var_path(v, name, here)
+            if hit:
+                return hit
+    return None
+
+
+TRANSPARENT = re.compile(r"transparent|rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0(\.0+)?\s*\)")
+
+
 def semcolor(raw, src, desc, prefer=()):
     """Alias to a preferred declared name when it resolves to this colour."""
     for p in prefer:
@@ -562,6 +581,16 @@ for key, comp, state, prop, group, prefer, desc in [
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+        if TRANSPARENT.fullmatch(norm_color(raw)):
+            # A transparent reading paints nothing: never commit it as a fill. Take the declared
+            # role the element sits on when there is one, else leave the role out.
+            found = next(((d, var_path(SPEC["light"], d)) for d in prefer if var_path(SPEC["light"], d)), None)
+            if not found:
+                continue
+            decl, where = found
+            put_sem(sem, group, key, lit(f"{{{where}}}", "color",
+                    f"declared {decl}; {comp} {state} itself paints {prop} transparent (raw/components-computed.json)", desc))
+            continue
         put_sem(sem, group, key, semcolor(raw, src, desc, prefer=prefer))
     except KeyError:
         pass
@@ -589,7 +618,7 @@ for key, comp, state, desc in [
         continue
     src = f"computed fontSize of {comp} {state} — the first text node's reading where the kit recorded one (raw/components-computed.json)"
     alias = size_alias.get(raw)
-    ty.setdefault("measured", {})[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
+    ty.setdefault("measured", {})[key] = lit(f"{{{alias[0]}}}" if alias else raw, "dimension",
                   src + (f"; matches declared {alias[1]}" if alias else ""), desc)
 
 # ------------------------------------------------------------------ shape
@@ -662,5 +691,6 @@ for name, cname, state, prop, ty_, desc in [
     except KeyError:
         pass
 
-(RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
-print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
+    print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})
