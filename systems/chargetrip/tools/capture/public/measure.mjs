@@ -172,9 +172,12 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
         const fld = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
+        // A click moves a range thumb and opens a native select's popup; those two only take focus().
+        const noClick = await fld.evaluate((el) => el.tagName === 'SELECT' || (el.tagName === 'INPUT' && el.type === 'range'));
+        if (noClick) await fld.evaluate((el) => el.focus());
+        else await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
         await page.waitForTimeout(400);
-        via = 'clicked into the field';
+        via = noClick ? 'focus() (no click)' : 'clicked into the field';
       } else if (st === 'filled') {
         const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
         await f.click({ timeout: 4000 });
@@ -396,7 +399,7 @@ async function sales() {
   if (!(await newPage('sales'))) return;
   const g = G.sales;
   await S('contact-h1', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Contact title', desc: '"Grow your business with routing." in 64px Cirka.', sel: 'h1' }, { noScroll: true });
-  await S('form-input', q('form input[name="firstname"], input[name="firstname"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Text field', desc: 'The First-name text field; filled with sample text then deleted, never submitted.', sel: 'input[name=firstname]', fillText: 'Ada' });
+  await S('form-input', q('form input[name="firstname"], input[name="firstname"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Text field', desc: 'The First-name text field; filled with sample text then deleted, never submitted.', sel: 'input[name=firstname]' }, { fillText: 'Ada' });
   await S('form-email', q('form input[type="email"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'E-mail field', desc: 'The required E-mail field.', sel: 'form input[type=email]' });
   await S('form-tel', q('form input[type="tel"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Phone field', desc: 'The optional Phone-number field.', sel: 'form input[type=tel]' });
   await S('form-select', q('form select').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Select', desc: 'The Job-function native select; focused only, its dropdown never opened.', sel: 'form select' });
@@ -439,7 +442,8 @@ async function footer() {
   await S('footer-link', q('a').filter({ hasText: /^No-code$/ }).filter({ visible: true }).last(), B4, { group: g, title: 'Footer link', sel: 'footer a:has-text("No-code")' }, { noScroll: true });
   await S('footer-social', q('a[href*="linkedin" i], a[href*="x.com" i], a[href*="youtube" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Social link', sel: 'footer social a' }, { noScroll: true });
   await S('newsletter-cta', q('a, button').filter({ hasText: /^Sign up$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Newsletter CTA', desc: 'The footer newsletter "Sign up" button; never followed.', sel: 'footer a:has-text("Sign up")' }, { noScroll: true });
-  await S('status-pill', q('a, div').filter({ hasText: /Stable$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Status pill', desc: 'The "● Stable" status link in the footer (green dot; links to status.chargetrip.com, never followed).', sel: 'footer "Stable" link' }, { noScroll: true });
+  // The link itself: a text filter on 'a, div' caught the outermost footer column whose text ends in "Stable".
+  await S('status-pill', q('a[href*="status.chargetrip.com"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Status pill', desc: 'The "● Stable" status link in the footer (green dot; links to status.chargetrip.com, never followed).', sel: 'a[href*="status.chargetrip.com"]' }, { noScroll: true });
   save();
 }
 

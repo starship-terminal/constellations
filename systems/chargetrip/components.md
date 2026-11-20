@@ -92,11 +92,11 @@ The "Products" menu trigger; its own press opens the mega menu (opened state, th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 99 x 32; background transparent; text Geist Variable 18/28.8 400, #262322 `color.ink.800` |
+| default (same: pressed) | size 99 x 32; background transparent; text Geist Variable 18/28.8 400, #262322 `color.ink.800` |
 | hover | text Geist Variable 18/28.8 400, #dc3b04; child paint div.framer-tBbOV.framer-i5yBN: size 99.0x32.0; background rgba(221, 59, 0, 0.15); radius 24px |
 | opened | text Geist Variable 18/28.8 400, #dd3b00 `color.orange.600`; child paint div.framer-tBbOV.framer-i5yBN: size 99.0x32.0; background rgba(221, 59, 0, 0.15); radius 24px |
 
-![Nav item default](components/crops/nav-item-default.png) ![Nav item hover](components/crops/nav-item-hover.png) ![Nav item focus-visible](components/crops/nav-item-focus-visible.png) ![Nav item pressed](components/crops/nav-item-pressed.png) ![Nav item opened](components/crops/nav-item-opened.png)
+![Nav item default](components/crops/nav-item-default.png) ![Nav item hover](components/crops/nav-item-hover.png) ![Nav item pressed](components/crops/nav-item-pressed.png) ![Nav item opened](components/crops/nav-item-opened.png)
 
 #### Mega menu
 The Products mega-menu card row (No-code / API / Integration Partners photo cards), held open by the nav-item toggle. Read as `menu-panel` on the home page.
