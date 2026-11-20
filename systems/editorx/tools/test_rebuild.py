@@ -94,6 +94,22 @@ class RebuildTest(unittest.TestCase):
             self.assertEqual(t["$value"], "#%02x%02x%02x" % (r, g, b), theme)
             self.assertEqual(t["$extensions"]["source"], "computed color of nav-cta default (raw/components-computed.json)")
 
+    def test_text_on_action_follows_the_reading(self):
+        # The committed reading is white, so also rebuild with a different one: a typed "#ffffff" fails here.
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = pathlib.Path(tmp.name) / "pkg"
+        shutil.copytree(self.root, root)
+        raw = root / "raw" / "components-computed.json"
+        J = json.loads(raw.read_text())
+        J["components"]["nav-cta"]["states"]["default"]["style"]["color"] = "rgb(18, 52, 86)"
+        raw.write_text(json.dumps(J))
+        for b in ("build_component_tokens.py", "build_tokens.py"):
+            subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
+        built = json.loads((root / "tokens.json").read_text())
+        for theme in ("light", "dark"):
+            self.assertEqual(built[theme]["text"]["on"]["action"]["$value"], "#123456", theme)
+
     def test_wrong_logo_reading_is_marked(self):
         # 11d-10: the logo entry holds the Pricing link's values.
         md = (PKG / "components.md").read_text()
