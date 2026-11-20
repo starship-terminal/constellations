@@ -6143,9 +6143,9 @@
       "description": "National and local weather forecast",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://weather.com/login showed email and password. Password not submitted. No Google button.",
+      "notes": "Email probe: https://weather.com/login showed email and password. Password not submitted. No Google button. Public walk 2026-11-21: news header opens location search, Settings (units), and Sign in. Section links open news, science, safety, health, and severe. Maps opens the classic maps chrome. Phone width adds Menu and a bottom bar. Sign in stops at weather.com/login. The root URL hit a challenge interstitial and a geolocated forecast was mapped and not screenshotted. Location search was not typed. No email was typed. No form was submitted. Signed-in account was not captured. Public package refresh in PR 1591 at bab50c7cf6cd. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 18
     },
     {
