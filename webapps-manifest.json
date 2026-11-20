@@ -3916,7 +3916,7 @@
       "description": "Shoes, Sneakers, & Athletic Wear",
       "status": "pending",
       "package": null,
-      "notes": "https://www.newbalance.co.uk/login create account accepted the capture inbox, then returned Something went wrong. Account not created.",
+      "notes": "https://www.newbalance.co.uk/login create account accepted the capture inbox, then returned Something went wrong. Account not created. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 12
@@ -4341,7 +4341,7 @@
       "description": "Official online shop",
       "status": "pending",
       "package": null,
-      "notes": "https://www.peakperformance.com/se/en/customer/account/create asked to press and hold before a form. Not retried.",
+      "notes": "https://www.peakperformance.com/se/en/customer/account/create asks for a Swedish phone number. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 13
@@ -5293,7 +5293,7 @@
       "description": "Web's largest event ticket search engine",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://seatgeek.com/login returned 403 before a form. Not retried.",
+      "notes": "https://seatgeek.com/login blocked the browser as a bot. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 16
