@@ -31,6 +31,35 @@ class CssColour(unittest.TestCase):
         for rel in ("public/build-measurements.mjs", "signed-in/build-measurements.mjs"):
             self.assertIn("from '../css-colour.mjs'", (CAPTURE / rel).read_text(), rel)
 
+    def test_lch_oklch_display_p3_and_out_of_range_srgb(self):
+        # Chromium keeps oklch()/lch()/color(display-p3) as computed (Tailwind 4's palette is oklch), and
+        # color(srgb) can hold a value over 1, below 0 or in e-notation; 1.02 used to become a 3-digit byte.
+        mod = (CAPTURE / "css-colour.mjs").as_uri()
+        values = ["oklch(62.8% 0.2577 29.23)", "oklch(0.5 0 0 / 50%)", "lch(50 0 0)", "lch(50 0 0deg)",
+                  "color(display-p3 1 0 0)", "color(display-p3 0.5 0.5 0.5)", "color(srgb 1.02 0 0)",
+                  "color(srgb 1e-3 0 0)", "color(srgb -0.1 0.5 0.5)", "color(srgb 0.2 0.4 0.6 / 0.25)",
+                  "0 1px 2px oklch(0 0 0 / 0.1)"]
+        res = subprocess.run([NODE, "--input-type=module", "-e",
+                              f"import {{ hex }} from {json.dumps(mod)}; console.log(JSON.stringify({json.dumps(values)}.map(hex)))"],
+                             capture_output=True, text=True, timeout=30)
+        self.assertEqual(res.returncode, 0, res.stderr)
+        self.assertEqual(json.loads(res.stdout), ["#ff0000", "#636363 @ 0.5", "#777777", "#777777", "#ff0000", "#7f7f7f",
+                                                  "#ff0000", "#000000", "#008080", "#336699 @ 0.25", "0 1px 2px #000000 @ 0.1"])
+
+    def test_one_colour_in_every_notation_and_a_missing_component(self):
+        # CSS Color 4's worked example, rgb(125 35 41), written in each notation (lch and oklch with plain
+        # and percentage chroma, display-p3 from the inverse matrices); `none` converts as zero.
+        mod = (CAPTURE / "css-colour.mjs").as_uri()
+        same = ["lab(29.2345% 39.3825 20.0664)", "lch(29.2345% 44.2 27)", "lch(29.2345% 29.4667% 27)",
+                "oklab(40.101% 0.1147 0.0453)", "oklch(40.101% 0.12332 21.555)", "oklch(40.101% 30.83% 21.555)",
+                "color(display-p3 0.45124 0.16432 0.1715)"]
+        other = ["oklch(0 0 none / 0.85)", "lch(none none none)", "color(srgb none 0.5 1)"]
+        res = subprocess.run([NODE, "--input-type=module", "-e",
+                              f"import {{ hex }} from {json.dumps(mod)}; console.log(JSON.stringify({json.dumps(same + other)}.map(hex)))"],
+                             capture_output=True, text=True, timeout=30)
+        self.assertEqual(res.returncode, 0, res.stderr)
+        self.assertEqual(json.loads(res.stdout), ["#7d2329"] * len(same) + ["#000000 @ 0.85", "#000000", "#0080ff"])
+
 
 # Node test files with a runner of their own elsewhere under tools/ (test_capture_screenshot.py, test_kit_motion.py).
 NODE_RUN_ELSEWHERE = {"test_screenshot.mjs", "test_motion.mjs"}
