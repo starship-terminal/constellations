@@ -12,7 +12,10 @@ const OUT = path.join(RAW, 'components-computed.json');
 // writes) keeps every component it did not reach instead of erasing them.
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
 out.components ??= {};
-out._meta = { ...(out._meta || {}), product: 'Klarna', captured: new Date().toLocaleDateString('en-CA'), route: 'public-web', market: 'https://www.klarna.com/us/' };
+// Each refreshed component carries its own run date; _meta.captured moves only when the whole
+// run finishes, so retained readings never take a date they were not measured on.
+const RUN = new Date().toLocaleDateString('en-CA');
+out._meta = { ...(out._meta || {}), product: 'Klarna', route: 'public-web', market: 'https://www.klarna.com/us/', lastRun: RUN };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 const { browser, context } = await launch({ width: 1440, height: 900, dpr: 2 });
@@ -92,7 +95,7 @@ async function measure(key, state, loc, via) {
 }
 
 function comp(key, meta) {
-  out.components[key] = { ...meta, states: {} };
+  out.components[key] = { ...meta, run: RUN, states: {} };
 }
 
 async function states(key, loc, list, meta) {
@@ -233,6 +236,7 @@ try {
     });
   }
   await page.close();
+  out._meta.captured = RUN;   // every page ran
 } finally {
   fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
   await browser.close();
