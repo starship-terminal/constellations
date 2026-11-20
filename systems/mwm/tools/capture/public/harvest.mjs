@@ -126,8 +126,8 @@ for (const [name, url] of PAGES) {
       log('  ok', probe.href, 'vars', Object.keys(probe.resolved).length);
     }
   } catch (e) {
-    log('  FAIL', name, String(e.message).split('\\n')[0]);
-    readings[name] = { error: String(e.message).split('\\n')[0], url };
+    log('  FAIL', name, String(e.message).split('\n')[0]);
+    readings[name] = { error: String(e.message).split('\n')[0], url };
   }
   await ctx.close();
 }
@@ -156,7 +156,7 @@ for (const [name, url] of PAGES) {
     const inner = await page.evaluate(() => [innerWidth, innerHeight, devicePixelRatio]);
     readings.mobileHome = { inner };
     log('  mobile', inner.join('x'));
-  } catch (e) { log('  mobile FAIL', e.message.split('\\n')[0]); }
+  } catch (e) { log('  mobile FAIL', e.message.split('\n')[0]); }
   await ctx.close();
 }
 await browser.close();
