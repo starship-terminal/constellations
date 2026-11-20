@@ -68,6 +68,18 @@ class Rebuild(unittest.TestCase):
         missing = {n for n, v in resolved.items() if n.startswith("--wpds-color-") and (v.get("value", v.get("raw")) if isinstance(v, dict) else v)} - cited
         self.assertEqual(missing, set())
 
+    def test_unconverted_colour_forms_are_refused(self):
+        """lab(), oklch(), color() and color-mix() fail the build instead of shipping as colours nothing can check."""
+        src = (PKG / "tools" / "build_tokens.py").read_text().split("\ncore = build(")[0]  # the helpers, nothing written
+        ns = {"__file__": str(PKG / "tools" / "build_tokens.py")}
+        exec(compile(src, "build_tokens.py", "exec"), ns)
+        norm = ns["norm_color"]
+        self.assertEqual(norm("#ABC"), "#aabbcc")
+        self.assertEqual(norm("rgba(0, 0, 0, 0.5)"), "rgba(0, 0, 0, 0.5)")
+        for v in ("lab(50% 20 30)", "oklch(0.6 0.1 30)", "color(srgb 1 0 0)", "color-mix(in srgb, red, blue)"):
+            with self.subTest(v), self.assertRaises(ValueError):
+                norm(v)
+
     def test_no_token_holds_tokens(self):
         for set_name in ("core", "light"):
             for path, leaf in leaves(self.tokens[set_name]):
