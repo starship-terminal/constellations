@@ -319,39 +319,200 @@
    ]
   },
   {
-   "name": "other learners' avatars, leaderboard rows, dark desktop (2026-11-21: other learners' avatars pixelated; the own row, the Duolingo account and catalog art stay)",
+   "name": "other learners' avatars, leaderboard rows, dark desktop, hovered row (2026-11-21: one box per row; the own row, medals and the promotion zone stay)",
    "files": [
-    "screenshots/leaderboard-dark-row-hover.png",
-    "screenshots/leaderboard-dark-top.png"
+    "screenshots/leaderboard-dark-row-hover.png"
    ],
    "rects": [
     [
-     725,
-     505,
-     870,
-     -1,
+     694,
+     506,
+     826,
+     615,
+     "pixelate:32"
+    ],
+    [
+     694,
+     634,
+     826,
+     743,
+     "pixelate:32"
+    ],
+    [
+     694,
+     762,
+     826,
+     871,
+     "pixelate:32"
+    ],
+    [
+     694,
+     890,
+     826,
+     999,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1018,
+     826,
+     1127,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1146,
+     826,
+     1255,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1274,
+     826,
+     1383,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1402,
+     826,
+     1511,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1530,
+     826,
+     1600,
      "pixelate:32"
     ]
    ]
   },
   {
-   "name": "other learners' avatars, leaderboard rows, dark desktop, own row 12 kept",
+   "name": "other learners' avatars, leaderboard rows, dark desktop, top of the list",
+   "files": [
+    "screenshots/leaderboard-dark-top.png"
+   ],
+   "rects": [
+    [
+     694,
+     508,
+     826,
+     617,
+     "pixelate:32"
+    ],
+    [
+     694,
+     636,
+     826,
+     745,
+     "pixelate:32"
+    ],
+    [
+     694,
+     764,
+     826,
+     873,
+     "pixelate:32"
+    ],
+    [
+     694,
+     892,
+     826,
+     1001,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1020,
+     826,
+     1129,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1148,
+     826,
+     1257,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1276,
+     826,
+     1385,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1404,
+     826,
+     1513,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1532,
+     826,
+     1600,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "other learners' avatars, leaderboard rows, dark desktop, own row 12 and the promotion zone kept",
    "files": [
     "screenshots/leaderboard-dark-populated.png"
    ],
    "rects": [
     [
-     725,
-     440,
-     870,
-     1300,
+     694,
+     498,
+     826,
+     520,
      "pixelate:32"
     ],
     [
-     725,
-     1405,
-     870,
-     -1,
+     694,
+     538,
+     826,
+     647,
+     "pixelate:32"
+    ],
+    [
+     694,
+     666,
+     826,
+     775,
+     "pixelate:32"
+    ],
+    [
+     694,
+     794,
+     826,
+     903,
+     "pixelate:32"
+    ],
+    [
+     694,
+     922,
+     826,
+     1031,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1050,
+     826,
+     1159,
+     "pixelate:32"
+    ],
+    [
+     694,
+     1434,
+     826,
+     1543,
      "pixelate:32"
     ]
    ]
@@ -363,9 +524,65 @@
    ],
    "rects": [
     [
-     795,
+     766,
      500,
-     945,
+     898,
+     609,
+     "pixelate:32"
+    ],
+    [
+     766,
+     628,
+     898,
+     737,
+     "pixelate:32"
+    ],
+    [
+     766,
+     756,
+     898,
+     865,
+     "pixelate:32"
+    ],
+    [
+     766,
+     884,
+     898,
+     993,
+     "pixelate:32"
+    ],
+    [
+     766,
+     1012,
+     898,
+     1121,
+     "pixelate:32"
+    ],
+    [
+     766,
+     1140,
+     898,
+     1249,
+     "pixelate:32"
+    ],
+    [
+     766,
+     1268,
+     898,
+     1377,
+     "pixelate:32"
+    ],
+    [
+     766,
+     1396,
+     898,
+     1505,
+     "pixelate:32"
+    ],
+    [
+     766,
+     1524,
+     898,
      1545,
      "pixelate:32"
     ]
@@ -379,17 +596,45 @@
    ],
    "rects": [
     [
-     128,
-     480,
-     278,
-     1035,
+     134,
+     490,
+     266,
+     518,
      "pixelate:32"
     ],
     [
-     128,
-     1170,
-     278,
-     1410,
+     134,
+     536,
+     266,
+     645,
+     "pixelate:32"
+    ],
+    [
+     134,
+     664,
+     266,
+     773,
+     "pixelate:32"
+    ],
+    [
+     134,
+     920,
+     266,
+     1029,
+     "pixelate:32"
+    ],
+    [
+     134,
+     1176,
+     266,
+     1285,
+     "pixelate:32"
+    ],
+    [
+     134,
+     1304,
+     266,
+     1414,
      "pixelate:32"
     ]
    ]
@@ -402,10 +647,59 @@
    ],
    "rects": [
     [
-     128,
-     500,
-     278,
-     1430,
+     134,
+     502,
+     266,
+     611,
+     "pixelate:32"
+    ],
+    [
+     134,
+     630,
+     266,
+     739,
+     "pixelate:32"
+    ],
+    [
+     134,
+     758,
+     266,
+     867,
+     "pixelate:32"
+    ],
+    [
+     134,
+     886,
+     266,
+     995,
+     "pixelate:32"
+    ],
+    [
+     134,
+     1014,
+     266,
+     1123,
+     "pixelate:32"
+    ],
+    [
+     134,
+     1142,
+     266,
+     1251,
+     "pixelate:32"
+    ],
+    [
+     134,
+     1270,
+     266,
+     1379,
+     "pixelate:32"
+    ],
+    [
+     134,
+     1398,
+     266,
+     1428,
      "pixelate:32"
     ]
    ]
@@ -745,6 +1039,19 @@
      1665,
      850,
      "pixelate:40"
+    ],
+    [
+     1665,
+     675,
+     1700,
+     766,
+     "pixelate:16"
+    ],
+    [
+     1665,
+     766,
+     1677,
+     790
     ]
    ]
   },
@@ -953,10 +1260,66 @@
    ],
    "rects": [
     [
-     135,
-     505,
-     280,
-     -1,
+     142,
+     508,
+     274,
+     617,
+     "pixelate:32"
+    ],
+    [
+     142,
+     636,
+     274,
+     745,
+     "pixelate:32"
+    ],
+    [
+     142,
+     764,
+     274,
+     873,
+     "pixelate:32"
+    ],
+    [
+     142,
+     892,
+     274,
+     1001,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1020,
+     274,
+     1129,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1148,
+     274,
+     1257,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1276,
+     274,
+     1385,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1404,
+     274,
+     1513,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1532,
+     274,
+     1600,
      "pixelate:32"
     ]
    ]
@@ -968,17 +1331,73 @@
    ],
    "rects": [
     [
-     135,
+     142,
      500,
-     280,
-     -1,
+     274,
+     609,
+     "pixelate:32"
+    ],
+    [
+     142,
+     628,
+     274,
+     737,
+     "pixelate:32"
+    ],
+    [
+     142,
+     756,
+     274,
+     865,
+     "pixelate:32"
+    ],
+    [
+     142,
+     884,
+     274,
+     993,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1012,
+     274,
+     1121,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1140,
+     274,
+     1249,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1268,
+     274,
+     1377,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1396,
+     274,
+     1505,
+     "pixelate:32"
+    ],
+    [
+     142,
+     1524,
+     274,
+     1594,
      "pixelate:32"
     ],
     [
      285,
      1555,
      700,
-     -1
+     1594
     ]
    ]
   },
@@ -989,10 +1408,10 @@
    ],
    "rects": [
     [
-     138,
+     142,
      12,
-     250,
-     128,
+     274,
+     121,
      "pixelate:32"
     ],
     [
@@ -1010,10 +1429,10 @@
    ],
    "rects": [
     [
-     138,
-     10,
-     278,
-     130,
+     142,
+     6,
+     274,
+     124,
      "pixelate:32"
     ]
    ]
