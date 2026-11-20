@@ -60,11 +60,13 @@ async function blocked() {
 async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url = null } = {}) {
   current = key;
   const b = context.browser();
-  for (let attempt = 0; attempt < 20; attempt++) {
+  // A bot check is a boundary: a few tries, then the page is recorded as failed (never a 20-try,
+  // hour-long wait for PerimeterX to let the run through).
+  for (let attempt = 0; attempt < 3; attempt++) {
     const mode = mobile ? 'mobile' : 'desktop';
     if (!liveCtx[mode]) {
       liveCtx[mode] = await b.newContext(mobile
-        ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_DESKTOP, locale: 'en-US' }
+        ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
         : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA_DESKTOP, locale: 'en-US' });
       await patch(liveCtx[mode]);
     }
@@ -79,10 +81,9 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
       await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
       return true;
     }
-    log('  BLOCKED', key, attempt < 2 ? '- same-context retry in 90s' : '- fresh context after 5 min quiet');
+    log('  BLOCKED', key, attempt < 2 ? '- fresh context in 30s' : '- recorded as a boundary');
     await page.close().catch(() => {});
-    if (attempt < 2) { await new Promise((r) => setTimeout(r, 90000)); }
-    else { await liveCtx[mode].close().catch(() => {}); liveCtx[mode] = null; await new Promise((r) => setTimeout(r, 300000)); }
+    if (attempt < 2) { await liveCtx[mode].close().catch(() => {}); liveCtx[mode] = null; await new Promise((r) => setTimeout(r, 30000)); }
   }
   failedPages.add(key);
   return false;
@@ -354,13 +355,25 @@ async function login() {
       // redirect can carry a token or an email in its query, and this lands in a
       // committed desc.
       const dest = safeUrl(page.url()).replace(BASE, '');
-      const cleared = await clearChallenge(page, { tries: 40, step: 4000 }).catch(() => false);
-      await page.waitForTimeout(4000);
+      // Bot check: recorded as a boundary, not waited out in a loop and not measured. The 2026-11-16 run
+      // read the PerimeterX "Press & Hold" container here and published it as the signup page.
+      const cleared = await clearChallenge(page, { tries: 3, step: 4000 }).catch(() => false);
+      await page.waitForTimeout(1500);
+      if (!cleared || (await blocked())) {
+        comp('signup-page', { title: 'Signup page', group: g, desc: `The page the Try-Calm-for-Free button navigates to (${dest}): a PerimeterX bot check served instead of the signup flow, recorded as a boundary.` });
+        out.components['signup-page'].blocked = true;
+        log('  ! signup landing is a bot check: recorded as a boundary');
+        await page.goBack({ waitUntil: 'domcontentloaded' }).catch(() => {});
+        await page.waitForTimeout(4000);
+      } else {
+      // a fresh reading replaces an earlier run's bot-check boundary
+      if (out.components['signup-page']) delete out.components['signup-page'].blocked;
       await S('signup-page', q('main, [role="main"], form, body > div').filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup page', desc: `The page the Try-Calm-for-Free button navigates to (${dest}) — the signup flow's first step, reached by its own button and never submitted${cleared ? '' : '; its landing stayed PerimeterX-blocked this run'}.`, sel: 'signup landing main' }, { noScroll: true, pad: 24 });
       await S('signup-field', q('input, main button, main a, form button, form a, button').filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup control', desc: 'The first interactive control on the signup landing page; never pressed for real.', sel: 'signup page control' }, { noScroll: true });
       await page.goBack({ waitUntil: 'domcontentloaded' }).catch(() => {});
       await page.waitForTimeout(4000);
       log('  signup navigated to a page; measured it and went back');
+      }
     } else {
       // Older behaviour: a card opens in place (the same ModalBody in signup
       // mode). The consent banner also carries role=dialog, so it is excluded.
@@ -451,13 +464,18 @@ async function mobile() {
   await S('m-nav-item', await domFind(page, /^\s*(Sleep|Mindfulness|Screening)\s*$/, { sel: 'nav[aria-label*="Mobile" i] button, nav[aria-label*="Mobile" i] a', tag: 'mn', inView: true }), B4, { group: g, title: 'Mobile nav item', desc: 'A button inside the opened mobile menu (Sleep, Mindfulness or Screening — the same styled-components nav items as desktop).', sel: 'mobile nav button' }, { noScroll: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('m-hero', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile headline', sel: 'h1 at 390' });
+  // only a run that re-measured the mobile group may describe it as a phone capture
+  out._meta.viewport = VIEWPORT_PHONE;
   save();
   await closePage();
 }
 
 run = new Date().toISOString().slice(0, 10);
 out._meta.read = run;
-out._meta.viewport = '1440 x 900 (mobile group 390 x 844); the marketing pages paint light, the /app/* preview shell paints dark';
+// The viewport note describes the readings on file: a run that does not re-measure the mobile group
+// keeps the earlier note (whose mobile readings were taken at 390 x 844 without phone emulation).
+const VIEWPORT_PHONE = '1440 x 900 (mobile group 390 x 844 as a phone: mobile UA, isMobile, touch); the marketing pages paint light, the /app/* preview shell paints dark';
+out._meta.viewport ??= '1440 x 900 (mobile group 390 x 844); the marketing pages paint light, the /app/* preview shell paints dark';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;

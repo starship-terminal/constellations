@@ -16,17 +16,26 @@ MOTION = RAW["motion"]
 SHEET = "sol.css :root"
 
 
-def color(value, source):
+def color(value, source, evidence="Measured"):
     return {
         "$type": "color",
         "$value": value,
-        "$extensions": {"source": f"Measured. {source}"},
+        "$extensions": {"source": f"{evidence}. {source}"},
     }
 
 
-def dim(value, source):
+def dim(value, source, evidence="Measured"):
     return {
         "$type": "dimension",
+        "$value": value,
+        "$extensions": {"source": f"{evidence}. {source}"},
+    }
+
+
+def duration(value, source):
+    """A time is a DTCG duration, not a dimension (consumers that expect one length drop it)."""
+    return {
+        "$type": "duration",
         "$value": value,
         "$extensions": {"source": f"Measured. {source}"},
     }
@@ -113,13 +122,13 @@ core = {
     "radius": {
         "none": dim("0px", "computed border-radius 0px on header, cards, Tickets, Donate, Join"),
         "focus": dim("4px", "--focus-radius 0.4rem"),
-        "pill": dim("999px", "Derived. Help chip on the login card is a full pill. Radius was not read as a custom property."),
+        "pill": dim("999px", "A stand-in for a full pill: the Help chip on the login card is one. No radius was read for it.", evidence="Reconstruction"),
     },
     "motion": {
         "duration": {
-            "100": dim("100ms", f"{SHEET} {MOTION['--motion--transition--duration']} via --motion--transition--duration"),
-            "200": dim("200ms", "--motion--transition--color--duration and --motion--transition--transform--duration"),
-            "4000": dim("4000ms", "--motion--animation--duration"),
+            "100": duration("100ms", f"{SHEET} {MOTION['--motion--transition--duration']} via --motion--transition--duration"),
+            "200": duration("200ms", "--motion--transition--color--duration and --motion--transition--transform--duration"),
+            "4000": duration("4000ms", "--motion--animation--duration"),
         },
         "easing": {
             "in": {"$type": "cubicBezier", "$value": [0.42, 0, 1, 1], "$extensions": {"source": "Derived. --motion--transition--curve ease-in expanded to control points."}},
@@ -140,7 +149,7 @@ light = {
         "text": color("#000000", "computed color rgb(0, 0, 0) on h1 and body. --color--black #000"),
         "muted": color("#767676", "computed color rgb(118, 118, 118) on exhibition dates, class $color/gray:767. --color--gray--767"),
         "accent": color("#00b7f2", "--color--brand--10. Tickets carries $color/background:brand:10. Session colour also aliases this step when html is $color/session:10."),
-        "border": color("#000000", "1px solid rgb(0, 0, 0) on the login card, observed in login-light-default.png. Focus colour --color--focus resolves to --color--black."),
+        "border": color("#000000", "1px solid black on the login card, seen in login-light-default.png; no computed reading of the card border is saved. Focus colour --color--focus resolves to --color--black.", evidence="Observed"),
         "danger": color("#e42d00", "--color--red. 'Error 404' on the /members/ miss paints this red."),
         "footer": color("#444444", "computed footer background rgb(68, 68, 68). --color--gray--444"),
         "brand": {
@@ -167,6 +176,9 @@ doc = {
     ],
 }
 
-out = HERE / "tokens.json"
-out.write_text(json.dumps(doc, indent=2) + "\n")
-print("wrote", out, "bytes", out.stat().st_size)
+TEXT = json.dumps(doc, indent=2) + "\n"
+
+if __name__ == "__main__":
+    out = HERE / "tokens.json"
+    out.write_text(TEXT)
+    print("wrote", out, "bytes", out.stat().st_size)

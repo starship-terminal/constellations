@@ -119,12 +119,32 @@ def gradient_stops(comp, state):
     hay += [n.get("bgImage", "") for n in c.get("ancestors", [])]
     cols = []
     for h in hay:
-        for mcol in re.findall(r"(?:rgba?\([\d.,\s]+\)|#[0-9a-fA-F]{3,8})\s*(\d+(?:\.\d+)?%)?", h):
-            pass
         found = re.findall(r"(rgba?\([\d.,\s]+\)|#[0-9a-fA-F]{3,8})", h)
         if "gradient" in h and found:
             return [norm_color(f) for f in found]
     return cols
+
+
+def place_stops(stops):
+    """CSS stop placement: an unpositioned first stop is 0 and last is 1; unpositioned stops between two
+    positioned ones are spread evenly between them (not pushed to the end)."""
+    pos = [p for _, p in stops]
+    if pos[0] is None:
+        pos[0] = 0.0
+    if pos[-1] is None:
+        pos[-1] = 1.0
+    i = 0
+    while i < len(pos):
+        if pos[i] is None:
+            j = i
+            while pos[j] is None:
+                j += 1
+            lo, hi, n = pos[i - 1], pos[j], j - i + 1
+            for k in range(i, j):
+                pos[k] = round(lo + (hi - lo) * (k - i + 1) / n, 4)
+            i = j
+        i += 1
+    return [(col, p) for (col, _), p in zip(stops, pos)]
 
 
 def gradient_full(comp, state):
@@ -142,10 +162,7 @@ def gradient_full(comp, state):
         stops = [(norm_color(col), float(pct[:-1]) / 100 if pct else None)
                  for col, pct in re.findall(r"(rgba?\([\d.,\s]+\)|#[0-9a-fA-F]{3,8})\s*(\d+(?:\.\d+)?%)?", h)]
         if stops:
-            # unpositioned stops default to the ends
-            stops = [(col, pos if pos is not None else (0.0 if i == 0 else 1.0))
-                     for i, (col, pos) in enumerate(stops)]
-            return stops
+            return place_stops(stops)
     return []
 
 

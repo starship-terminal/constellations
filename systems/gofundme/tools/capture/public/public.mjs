@@ -42,7 +42,7 @@ async function lazyScroll(p) {
 }
 
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr, sourceUrl) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: sourceUrl }; this.count = 0; }
+  constructor(p, prefix, vw, vh, dpr, sourceUrl) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: sourceUrl && String(sourceUrl).split(/[?#]/)[0] /* no query or fragment in a sidecar */ }; this.count = 0; }
   async view(name) { await closePromo(this.p); await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
   async full(name = 'full') {
     const p = this.p;
@@ -129,7 +129,7 @@ const desktop = {
   fundraiser: { url: null, wait: 12000, theme: 'light', run: async (p, S) => {
     const slug = await firstFundraiser(p);
     await p.goto(BASE + slug, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    S.requested.sanitizedSourceUrl = BASE + '/f/<slug> (' + slug + ')';
+    S.requested.sanitizedSourceUrl = BASE + slug;  // a real URL (the first live card on /discover)
     await wait(p, 9000);
     await S.view('default');
     await S.full();
@@ -168,7 +168,7 @@ const mobile = {
   fundraiser: { url: null, wait: 12000, theme: 'light', run: async (p, S) => {
     const slug = await firstFundraiser(p);
     await p.goto(BASE + slug, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    S.requested.sanitizedSourceUrl = BASE + '/f/<slug> (' + slug + ')';
+    S.requested.sanitizedSourceUrl = BASE + slug;  // a real URL (the first live card on /discover)
     await wait(p, 9000);
     await S.view('default');
     await S.full();

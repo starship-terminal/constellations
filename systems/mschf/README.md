@@ -43,7 +43,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | page | #000000 `dark.surface.page` |
 | surface | #000000 `dark.surface.raised` |
 | text | #84898e `dark.text.primary` |
-| muted | rgba(168, 145, 65, 0.3) `dark.text.muted` |
+| muted | #84898e `dark.text.muted` |
 | accent | #ffc700 `dark.accent` |
 | border | rgba(168, 145, 65, 0.3) `dark.border.subtle` |
 
@@ -57,9 +57,9 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| dark | 5.94:1 pass | 5.94:1 pass | 1.50:1 fail | 1.50:1 fail |
+| dark | 5.94:1 pass | 5.94:1 pass | 5.94:1 pass | 5.94:1 pass |
 
-2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `core.color.focus` #005fcc.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `core.color.focus` #005fcc.
 
 <!-- brief:end -->
 

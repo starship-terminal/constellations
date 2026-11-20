@@ -30,7 +30,7 @@ export const RAW = path.join(REF, 'raw');
 // hash does not break the kit.
 export const M = (name) => `[class*="_${name}"]`;
 
-// The per-context patches every page gets: the webdriver mask, the theme the
+// The per-context patches every page gets: the theme the
 // run asked for (doctronic.ai reads localStorage.theme on boot — "light",
 // "dark" or "system"; a fresh visitor with nothing stored gets light, so dark
 // is reached exactly the way a user who chose dark reaches it), plus a record
@@ -40,7 +40,7 @@ export const M = (name) => `[class*="_${name}"]`;
 // __captureDPR keeps the launch-time value for the screenshot sidecar.
 export async function patch(context, theme = 'light') {
   await context.addInitScript((t) => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: navigator.webdriver is left as the browser reports it; a challenge is recorded as a boundary, not bypassed (D7)
     try { localStorage.setItem('theme', t); } catch { /* private mode */ }
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   }, theme);
@@ -132,10 +132,12 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
 }
 
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});  // measure.mjs's newPage() re-checks the page (blocked()), which also catches a blank page
+  const cleared = await clearChallenge(page);
+  if (!cleared) console.log('  ! the bot check did not clear on', url);
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return cleared;  // false: the caller records the page as blocked, never as the product (20-4)
 }
 
 // Computed style properties recorded for every component and state.

@@ -17,7 +17,7 @@ Screenshot frames failed in the preview browser (`The browser is not producing s
 | [patterns.md](patterns.md) | Page patterns from the public pages |
 | [raw/](raw/readings.json) | Computed-style dump |
 | [icons/](icons/INDEX.tsv) | The product-card arrow |
-| [tools/](tools/) | Kit copy |
+| [tools/](tools/) | Kit copy. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 ## Brief
 
@@ -140,4 +140,4 @@ python3 tools/catalog.py design-md pattern-brands
 python3 tools/package_tests.py pattern-brands
 ```
 
-Tokens were written from [raw/readings.json](raw/readings.json). There is no `build_tokens.py` mapping for this package. The kit under [tools/](tools/) is the shared capture kit, unchanged.
+Tokens were written from [raw/readings.json](raw/readings.json). There is no `build_tokens.py` mapping for this package. [tools/](tools/) keeps the generic capture helpers from the shared kit.

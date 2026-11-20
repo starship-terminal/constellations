@@ -226,7 +226,13 @@ for key, comp, prop, desc in [
 ]:
     if have(comp, "default", prop):
         v = st(comp, "default")[prop]
-        fv = str(int(float(v[:-2]))) + "px" if v.endswith("px") and v[:-2].replace('.', '').isdigit() else v
+        # %g keeps a fractional radius (int() truncated 2.5px to 2px); a computed rounded-full above
+        # 9999px is written 9999px, the kit's pill.
+        try:
+            n = float(v[:-2]) if v.endswith("px") else None
+        except ValueError:
+            n = None
+        fv = ("9999px" if n > 9999 else "%gpx" % n) if n is not None else v
         radii[key] = lit(fv, "dimension",
             f"computed {prop} of {comp} default (raw/components-computed.json)", desc)
 
@@ -274,7 +280,7 @@ for key, comp, prop, val, desc in [
             f"computed rect height of {comp} default (raw/components-computed.json)", desc)
     elif comp is None:
         sp[key] = lit(val, "dimension",
-            "declared .content max-width in the home page's inline styles (raw/css-vars.json sheets)", desc)
+            "Reconstruction: entered by hand at capture time; raw/css-vars.json holds no .content max-width rule", desc)
     else:
         w = rc(comp, "default", "w")
         sp[key] = lit(w, "dimension",
@@ -337,9 +343,11 @@ try:
         "description": "The Sign up pill's glow track: 0 0 100px 20% orange at rest, tightening to 0 0 25px 40% on hover."}
 except KeyError:
     pass
-comp["meta-color"] = {"value": "{color.text.meta}", "type": "color",
-    "source": "alias of color.text.meta (the declared --ratio #616161)",
-    "description": "The #616161 meta/date tone — the entries' dates render it; the post-meta element itself computed #000."}
+# Emit the alias only when its target exists, so a missed --ratio never leaves a dangling alias.
+if "meta" in SPEC["light"].get("color", {}).get("text", {}):
+    comp["meta-color"] = {"value": "{color.text.meta}", "type": "color",
+        "source": "alias of color.text.meta (the declared --ratio #616161)",
+        "description": "The #616161 meta/date tone — the entries' dates render it; the post-meta element itself computed #000."}
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 

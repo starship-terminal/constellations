@@ -27,7 +27,7 @@ export const HIDE_CONSENT =
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    try { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); } catch { /* already defined */ }
+    // no navigator.webdriver mask: removed in the 2026-11 audit (D7), not run since
   });
 }
 

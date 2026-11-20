@@ -139,3 +139,7 @@ python3 tools/build_style_guide.py
 ```
 
 Screenshots and crops come from `tools/capture/public/public.mjs` and `measure.mjs` with `PLAYWRIGHT` set to a Playwright install. Full-colour shots stay in `~/.design-systems/hims/raw-shots`. `python3 tools/capture/quantize.py` writes `screenshots/`.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

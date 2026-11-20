@@ -62,7 +62,9 @@ const sheets = [...bodies.entries()].concat(inline);
 await page.close();
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The probe resolves vw/vh/dvh and @media at the 1440 x 900 the notes below claim; a bare
+// browser.newPage() would give Playwright's 1280 x 720 default (finding 19-1).
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
@@ -106,7 +108,7 @@ const result = await probe.evaluate((sheets) => {
 
 // ---- resolution: probe document with the real sheets, at 1440 and 390 ----
 const shell = () => '<!doctype html><html lang="en-GB"><head>'
-  + sheets.map(([n, css]) => '<style>' + css.replace(/<\/style>/gi, '<\\/style') + '</style>').join('')
+  + sheets.map(([n, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
   + '</head><body><div id="probe-root"></div></body></html>';
 const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]
   .filter((n) => !/^--(tw-|_|lightningcss-)/.test(n)).sort();

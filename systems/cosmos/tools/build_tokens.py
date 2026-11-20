@@ -40,6 +40,114 @@ if not DECL["dark"]:
     DECL["dark"] = {n: v for n, v in DECL["light"].items() if n.startswith("--dark-")}
 
 
+# ---- CSS Color 4 -> sRGB (finding 15-10). tools/catalog.py reads only hex/rgb()/rgba(), so a lab(), lch(),
+# oklab(), oklch() or color-mix() value left as written is never contrast-checked. These are converted the
+# way the browser paints them and the authored form is kept in $extensions.authored.
+import math as _math
+
+
+def _gamma(c):
+    return 12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055
+
+
+def _rgb255(lin):
+    return [round(min(1, max(0, _gamma(c))) * 255) for c in lin]
+
+
+def _oklab_lin(L, a, b):
+    l_ = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    m_ = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    s_ = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3
+    return [4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_,
+            -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_,
+            -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_]
+
+
+def _lab_lin(L, a, b):
+    """CIE Lab (D50) -> linear sRGB (D65), Bradford-adapted as CSS Color 4 specifies."""
+    k, e = 24389 / 27, 216 / 24389
+    fy = (L + 16) / 116
+    fx, fz = fy + a / 500, fy - b / 200
+    x = fx ** 3 if fx ** 3 > e else (116 * fx - 16) / k
+    y = ((L + 16) / 116) ** 3 if L > k * e else L / k
+    z = fz ** 3 if fz ** 3 > e else (116 * fz - 16) / k
+    X, Y, Z = x * 0.3457 / 0.3585, y, z * (1 - 0.3457 - 0.3585) / 0.3585
+    M1 = [[0.9554734527042182, -0.023098536874261423, 0.0632593086610217],
+          [-0.028369706963208136, 1.0099954580058226, 0.021041398966943008],
+          [0.012314001688319899, -0.020507696433477912, 1.3303659366080753]]
+    X, Y, Z = (sum(M1[i][j] * v for j, v in enumerate((X, Y, Z))) for i in range(3))
+    M2 = [[3.2409699419045226, -1.537383177570094, -0.4986107602930034],
+          [-0.9692436362808796, 1.8759675015077202, 0.04155505740717559],
+          [0.05563007969699366, -0.20397695888897652, 1.0569715142428786]]
+    return [sum(M2[i][j] * v for j, v in enumerate((X, Y, Z))) for i in range(3)]
+
+
+def _num(s, pct_scale=1.0):
+    s = s.strip()
+    return float(s[:-1]) * pct_scale / 100 if s.endswith("%") else float(s)
+
+
+def _fmt(rgb, alpha):
+    alpha = round(alpha, 4)
+    if alpha >= 1:
+        return "#%02x%02x%02x" % tuple(rgb)
+    return "rgba(%d, %d, %d, %g)" % (rgb[0], rgb[1], rgb[2], alpha)
+
+
+_FN = re.compile(r"(lab|lch|oklab|oklch)\(\s*([^)]*)\)", re.I)
+
+
+def css4_parts(v):
+    """(r, g, b) 0-255 and alpha for a lab()/lch()/oklab()/oklch() value, or None."""
+    m = _FN.fullmatch(v.strip())
+    if not m:
+        return None
+    kind, body = m.group(1).lower(), m.group(2)
+    main, _, alpha = body.partition("/")
+    p = main.split()
+    if len(p) != 3:
+        raise ValueError("cannot read colour " + v)
+    p = ["0" if x == "none" else x.replace("deg", "") for x in p]
+    a = 1.0 if not alpha.strip() else _num(alpha, 1.0)
+    if kind in ("lab", "lch"):
+        L = _num(p[0], 100)
+        if kind == "lab":
+            A, B = _num(p[1], 125), _num(p[2], 125)
+        else:
+            c, h = _num(p[1], 150), _math.radians(float(p[2]))
+            A, B = c * _math.cos(h), c * _math.sin(h)
+        return _rgb255(_lab_lin(L, A, B)), a
+    L = _num(p[0], 1)
+    if kind == "oklab":
+        A, B = _num(p[1], 0.4), _num(p[2], 0.4)
+    else:
+        c, h = _num(p[1], 0.4), _math.radians(float(p[2]))
+        A, B = c * _math.cos(h), c * _math.sin(h)
+    return _rgb255(_oklab_lin(L, A, B)), a
+
+
+def css4_srgb(v):
+    """A lab()/lch()/oklab()/oklch() value, or color-mix(in <space>, <one of those or rgb()> P%, transparent),
+    as #rrggbb or rgba(); None when v is none of these. Mixing a colour with transparent keeps the colour and
+    scales its alpha (premultiplied), in any interpolation space. Any other color-mix raises."""
+    v = v.strip()
+    if v.lower().startswith("color-mix("):
+        m = re.fullmatch(r"color-mix\(\s*in\s+[a-z0-9-]+(?:\s+[a-z]+\s+hue)?\s*,\s*(.+?)\s+([\d.]+)%\s*,\s*transparent\s*\)", v, re.I)
+        if not m:
+            raise ValueError("cannot convert " + v)
+        inner = m.group(1)
+        parts = css4_parts(inner)
+        if parts is None:
+            rm = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+))?\s*\)", inner)
+            if not rm:
+                raise ValueError("cannot convert " + v)
+            parts = [int(rm.group(i)) for i in (1, 2, 3)], float(rm.group(4) or 1)
+        rgb, a = parts
+        return _fmt(rgb, a * float(m.group(2)) / 100)
+    parts = css4_parts(v)
+    return _fmt(*parts) if parts else None
+
+
 def norm_color(v):
     """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla(), "R G B" channels -> #rrggbb or rgba(r, g, b, a)."""
     v = v.strip().lower()
@@ -68,9 +176,10 @@ def norm_color(v):
         lvl = round(float(m.group(1)) * 2.55)
         a = float(m.group(2) or 1)
         return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    # CSS Color 4 / composited values pass through verbatim (lab, oklch, color-mix, ...)
-    if re.match(r"(ok)?lab\(|(ok)?lch\(|(ok)?color\(|color-mix\(", v.strip()):
-        return v.strip()
+    # CSS Color 4 / composited values convert to sRGB (lab, lch, oklab, oklch, color-mix with transparent)
+    c4 = css4_srgb(v)
+    if c4:
+        return c4
     raise ValueError("not a colour: " + v)
 
 
@@ -119,7 +228,10 @@ def leaf(path, spec, theme):
     else:
         val = spec["value"]
         src = spec["source"]
+    authored = None
     if ty == "color" and not str(val).startswith("{"):
+        if css4_srgb(str(val)):
+            authored = str(val).strip()
         val = norm_color(val)
     if ty == "cubicBezier" and isinstance(val, str):
         m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
@@ -147,6 +259,8 @@ def leaf(path, spec, theme):
                 val = val + "px"
     check(path, ty, val)
     t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
+    if authored:
+        t["$extensions"]["authored"] = authored
     if spec.get("description"):
         t["$description"] = spec["description"]
     if spec.get("responsive"):

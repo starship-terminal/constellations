@@ -47,7 +47,7 @@ rounded:
   "2xl": "16px"
   "3xl": "24px"
   "4xl": "32px"
-  full: "33554400px"
+  full: "9999px"
   nav: "26px"
 spacing:
   base: "4px"
@@ -115,7 +115,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `default` 10px, `2xl` 16px, `3xl` 24px, `4xl` 32px, `full` 33554400px, `nav` 26px.
+Corner radii from `core.radius`: `default` 10px, `2xl` 16px, `3xl` 24px, `4xl` 32px, `full` 9999px, `nav` 26px.
 
 ## Components
 

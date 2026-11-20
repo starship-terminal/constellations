@@ -10,6 +10,7 @@
    MSCHFSansMono is proprietary and is not loaded here. The specimens use ui-monospace. */
 :root {
 /*CORE*/
+/*LIGHT*/
 /*DARK*/
   color-scheme: dark;
   --sg-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -41,7 +42,7 @@ h2 { font: 400 13px/1 var(--sg-mono); text-transform: uppercase; letter-spacing:
 .index .line { display: flex; height: 56px; align-items: center; white-space: nowrap; overflow: hidden; }
 .index .n { width: 4ch; flex: none; font-size: 26px; line-height: 28px; }
 .index .t { font-size: 65px; line-height: 56px; }
-.index .t:hover { color: var(--color-ink-hover); }
+.index .t:hover { color: var(--color-inkHover); }
 .index .t.gold { color: var(--accent); }
 .index .t.red { color: var(--color-red); }
 .logo {
@@ -93,7 +94,16 @@ for (const [name, tok] of Object.entries(colors)) {
   const v = tok.v;
   const el = document.createElement("div");
   el.className = "sw";
-  el.innerHTML = `<i style="background:${v}"></i><div><b>${name}</b><span>${v}</span></div>`;
+  // textContent and style properties, not innerHTML, for names and values.
+  const sw = document.createElement("i");
+  sw.style.background = v;
+  const box = document.createElement("div");
+  const b = document.createElement("b");
+  b.textContent = name;
+  const span = document.createElement("span");
+  span.textContent = v;
+  box.append(b, span);
+  el.append(sw, box);
   root.appendChild(el);
 }
 </script>

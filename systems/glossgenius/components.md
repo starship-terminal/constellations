@@ -86,7 +86,7 @@ Values that apply across entries, from the measurement files.
 | [Plan card](#plan-card) | 357.33 x 404.75 | - | - | transparent | none | 0 |
 | [Popular plan card](#popular-plan-card) | 389.33 x 629.16 | - | 16px | #ffffff `apps.colors.background.default` | none | 0 |
 | [Feature card](#feature-card) | 386.66 x 302 | - | 8px | #f0f7f6 `color.primary.gloss.white` | none | 0 |
-| [FAQ accordion](#faq-accordion) | 1352 x 211 | B: 1px solid rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70` | - | transparent | none | 0 |
+| [FAQ accordion](#faq-accordion) | 1352 x 211 | B: 1px solid rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` | - | transparent | none | 0 |
 | [Sign-in card](#sign-in-card) | 390 x 230 | - | - | transparent | none | 0 |
 | [Demo text field](#demo-text-field) | 244 x 56 | 1px solid transparent | 12px | #ffffff `apps.colors.background.default` | none | 19.2px 16px 0px 16px |
 | [Service card](#service-card) | 1154.56 x 287 | - | - | transparent | rgba(27, 29, 33, 0.5) 0px 0px 46px 0px | 0 |
@@ -236,7 +236,7 @@ A feature/benefit card on the marketing home. Read as `home-card` on the home pa
 | default | size 1243.63 x 659.88; padding 0px 12px; background transparent; text Basel Grotesk Book 32/35.2 500, #17150e `color.primary.gloss.black`; layers div.img-wrapper_new.img-wrapper_new--tabs 1219.6x659.9 24px; div.swiper-progress-wrap 1219.6x329.9; div.swiper-progress 1187.6x8.0 color(srgb 1 1 1 / 0.5) 1440px; div.swiper-progress__bar 1187.6x8.0 rgb(255, 255, 255) 1440px |
 | hover | layers div.img-wrapper_new.img-wrapper_new--tabs 1219.6x659.9 24px; div.swiper-progress-wrap 1219.6x329.9; div.swiper-progress 1187.6x8.0 color(srgb 1 1 1 / 0.5) 1440px; div.swiper-progress__bar 39.2x8.0 rgb(255, 255, 255) 1440px |
 
-Child layers that carry the look: div 1219.6x659.9 image linear-gradient(#f0f7f6 `color.primary.gloss.white`, #c7cfd1 `color.primary.gray.1`) radius 24px; div 1219.6x329.9 image linear-gradient(transparent, rgba(23, 21, 14, 0.1) `color.primary.opacity.gloss.black.10` ; div 1187.6x8 background rgba(255, 255, 255, 0.5) `color.primary.opacity.white.50` `color.primary.opacity.white.50` radius 1440px.
+Child layers that carry the look: div 1219.6x659.9 image linear-gradient(#f0f7f6 `color.primary.gloss.white`, #c7cfd1 `color.primary.gray.1`) radius 24px; div 1219.6x329.9 image linear-gradient(transparent, rgba(23, 21, 14, 0.1) `color.primary.opacity.gloss.black.10`); div 1187.6x8 background rgba(255, 255, 255, 0.5) `color.primary.opacity.white.50` radius 1440px.
 
 ![Home card default](components/crops/home-card-default.png) ![Home card hover](components/crops/home-card-hover.png)
 
@@ -278,7 +278,7 @@ A pricing plan card (Standard: $28/mo monthly, $24/mo annual — "Essential tool
 
 **Values (default).** size 357.33 x 404.75; background transparent; text Basel Grotesk Book 40/40 500, #17150e `color.primary.gloss.black`; layers div.pricing-table-row 357.3x52.6 T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 357.3x52.6 T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); a.btn_new.w-inline-block 357.3x48.4 rgb(23, 21, 14) T:1px rgba(0, 0, 0, 0) / R:1px rgba(0, 0, 0, 0) / B:1px rgba(0, 0, 0, 0) / L:1px rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) 0px 0px 0px 0px inset 1440px.
 
-Child layers that carry the look: div 357.3x52.6 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`; div 357.3x52.6 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`; a 357.3x48.4 background #17150e `color.primary.gloss.black` border 1px transparent radius 1440px shadow transparent 0px 0px 0px 0px inset.
+Child layers that carry the look: div 357.3x52.6 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`; div 357.3x52.6 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`; a 357.3x48.4 background #17150e `color.primary.gloss.black` border 1px transparent radius 1440px shadow transparent 0px 0px 0px 0px inset.
 
 ![Plan card default](components/crops/plan-card-default.png)
 
@@ -306,14 +306,14 @@ A plan card's action button/link; its states were measured but it was never foll
 | default | size 357.33 x 48.41; border 1px solid transparent; radius 1440px; background #17150e `color.primary.gloss.black`; text Basel Grotesk Book 16/22.4 400, #f0f7f6 `color.primary.gloss.white`; transition color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) |
 | hover | background oklab(0.195557 -0.000953875 0.0137073 / 0.800164) |
 | focus-visible | outline 1px solid #17150e `color.primary.gloss.black`, offset 1.5px |
-| pressed | background rgba(23, 21, 14, 0.8) `color.primary.opacity.gloss.black.80` `color.primary.opacity.gloss.black.80` |
+| pressed | background rgba(23, 21, 14, 0.8) `color.primary.opacity.gloss.black.80` |
 
 ![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
 #### Plan feature row
 A feature/comparison row inside the pricing block (rate or feature line). Read as `plan-row` on the pricing page.
 
-**Values (default).** size 357.33 x 52.59; padding 16px 0px; border T: 1px solid rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`; background transparent; text Basel Grotesk Book 16/19.2 500, #17150e `color.primary.gloss.black`.
+**Values (default).** size 357.33 x 52.59; padding 16px 0px; border T: 1px solid rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`; background transparent; text Basel Grotesk Book 16/19.2 500, #17150e `color.primary.gloss.black`.
 
 ![Plan feature row default](components/crops/plan-row-default.png)
 
@@ -334,10 +334,10 @@ A native <details>/<summary> disclosure in the pricing "Included in every plan" 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 1352 x 211; border B: 1px solid rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`; background transparent; text Basel Grotesk Book 32/35.2 500, #17150e `color.primary.gloss.black`; icon 67.88 x 67.88, #17150e `color.primary.gloss.black`; layers details.accordion-item 1352.0x211.0 B:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x57.0 T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x57.0 color(srgb 0.941176 0.968628 0.964706 / 0.3) T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x71.4 color(srgb 0.941176 0.968628 0.964706 / 0.3) T:1px color(srgb |
+| default (same: hover) | size 1352 x 211; border B: 1px solid rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`; background transparent; text Basel Grotesk Book 32/35.2 500, #17150e `color.primary.gloss.black`; icon 67.88 x 67.88, #17150e `color.primary.gloss.black`; layers details.accordion-item 1352.0x211.0 B:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x57.0 T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x57.0 color(srgb 0.941176 0.968628 0.964706 / 0.3) T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x71.4 color(srgb 0.941176 0.968628 0.964706 / 0.3) T:1px color(srgb |
 | opened | size 1352 x 97; icon 48 x 48, #17150e `color.primary.gloss.black`; layers details.accordion-item 1352.0x97.0 B:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x57.0 T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x57.0 color(srgb 0.941176 0.968628 0.964706 / 0.3) T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x71.4 color(srgb 0.941176 0.968628 0.964706 / 0.3) T:1px color(srgb  |
 
-Child layers that carry the look: details 1352x211 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`; div 1352x57 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`; div 1352x57 background rgba(240, 247, 246, 0.3) `color.primary.opacity.gloss.white.30` `color.primary.opacity.gloss.white.30` border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`.
+Child layers that carry the look: details 1352x211 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`; div 1352x57 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`; div 1352x57 background rgba(240, 247, 246, 0.3) `color.primary.opacity.gloss.white.30` border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`.
 
 ![FAQ accordion default](components/crops/faq-item-default.png) ![FAQ accordion hover](components/crops/faq-item-hover.png) ![FAQ accordion opened](components/crops/faq-item-opened.png)
 
@@ -346,7 +346,7 @@ An expanded accordion's answer block (plan feature rows). Read as `faq-answer` o
 
 **Values (default).** size 1352 x 285; background transparent; text Basel Grotesk Book 16/19.2 500, #17150e `color.primary.gloss.black`; layers div.pricing-table-row 1352.0x57.0 T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x57.0 color(srgb 0.941176 0.968628 0.964706 / 0.3) T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x57.0 color(srgb 0.941176 0.968628 0.964706 / 0.3) T:1px color(srgb 0.627451 0.686275 0.690196 / 0.7); div.pricing-table-row 1352.0x57.0 color(srgb 0.94117.
 
-Child layers that carry the look: div 1352x57 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`; div 1352x57 background rgba(240, 247, 246, 0.3) `color.primary.opacity.gloss.white.30` `color.primary.opacity.gloss.white.30` border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`; div 1352x57 background rgba(240, 247, 246, 0.3) `color.primary.opacity.gloss.white.30` `color.primary.opacity.gloss.white.30` border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70` `color.primary.opacity.gray.2.70`.
+Child layers that carry the look: div 1352x57 border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`; div 1352x57 background rgba(240, 247, 246, 0.3) `color.primary.opacity.gloss.white.30` border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`; div 1352x57 background rgba(240, 247, 246, 0.3) `color.primary.opacity.gloss.white.30` border 1px rgba(160, 175, 176, 0.7) `color.primary.opacity.gray.2.70`.
 
 ![Accordion content default](components/crops/faq-answer-default.png)
 
@@ -367,7 +367,7 @@ The feature page's "Get started for free" hero action; measured, never followed.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 386.66 x 48.41; border 1px solid transparent; radius 1440px; background #17150e `color.primary.gloss.black`; text Basel Grotesk Book 16/22.4 400, #f0f7f6 `color.primary.gloss.white`; transition color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) |
-| hover | background rgba(23, 21, 14, 0.8) `color.primary.opacity.gloss.black.80` `color.primary.opacity.gloss.black.80` |
+| hover | background rgba(23, 21, 14, 0.8) `color.primary.opacity.gloss.black.80` |
 | focus-visible | outline 1px solid #17150e `color.primary.gloss.black`, offset 1.5px |
 | pressed | background oklab(0.195557 -0.000953875 0.0137073 / 0.800165) |
 
@@ -469,7 +469,7 @@ The "Get a demo" link that reveals step 2; its states were measured but it was n
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 504 x 48.41; border 1px solid #17150e `color.primary.gloss.black`; radius 1440px; background transparent; text Basel Grotesk Book 16/22.4 400, #17150e `color.primary.gloss.black`; transition color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) |
-| hover | border 1px solid rgba(23, 21, 14, 0.7) `color.primary.opacity.gloss.black.70` `color.primary.opacity.gloss.black.70`; background rgba(23, 21, 14, 0.1) `color.primary.opacity.gloss.black.10` `color.primary.opacity.gloss.black.10` |
+| hover | border 1px solid rgba(23, 21, 14, 0.7) `color.primary.opacity.gloss.black.70`; background rgba(23, 21, 14, 0.1) `color.primary.opacity.gloss.black.10` |
 | focus-visible | outline 1px solid #17150e `color.primary.gloss.black`, offset 1.5px |
 | pressed | border 1px solid oklab(0.195557 -0.000953875 0.0137073 / 0.700579); background oklab(0.195557 -0.000953875 0.0137073 / 0.0998069) |
 

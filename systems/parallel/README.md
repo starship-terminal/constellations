@@ -18,7 +18,7 @@ Signup is a LinkedIn button. No email was entered. LinkedIn was not clicked. The
 | [components/](components/) | Eight element crops. |
 | [screenshots/](screenshots/) | Quantised page shots, desktop and phone. |
 | [raw/](raw/) | [measured.json](raw/measured.json), the page readings and the declared custom properties. |
-| [tools/](tools/) | The copied kit, plus [test_measured.py](tools/test_measured.py). |
+| [tools/](tools/) | The copied kit, plus [test_measured.py](tools/test_measured.py). The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 ## Brief
 

@@ -152,3 +152,7 @@ python3 tools/token_checks.py             # structural token checks
 ```
 
 Screenshots: set one scratch directory and use it for both steps, `export RAW=~/.design-systems/fal/raw-shots`, then `node tools/capture/public/public.mjs` (raw shots land in `$RAW`; the script's own default is `raw/full/` inside the package, so a bare run writes somewhere else) and `python3 tools/capture/quantize.py "$RAW"` (writes `screenshots/` with `.capture.json` sidecars; it quantizes every PNG in `$RAW`, so start from an empty directory or capture only the pages you mean to replace, `node tools/capture/public/public.mjs docs-dark`). `docs-dark` selects the docs dark theme with the page's own switcher and fails when `<html>` does not become dark. The stylesheet harvest is `node tools/capture/vars.mjs` (raw/css-vars.json). Measurements and crops: `node tools/capture/public/measure.mjs` (optionally page names: `home pricing explore model api login docs mobile`, or `motion` for the reduced-motion check alone). All capture scripts take `PLAYWRIGHT=<path to playwright/index.mjs>` and run signed out only.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

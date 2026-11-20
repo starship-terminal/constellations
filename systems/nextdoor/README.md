@@ -16,7 +16,7 @@ The neighborhood feed, address verification and signup were not entered. The hom
 | [components/](components/) | Empty crops, same reason |
 | [icons/](icons/) | Empty. Glyphs are product artwork and are not kept |
 | [icon.png](icon.png) | 128 px apple-touch icon from the site |
-| [tools/](tools/) | Capture kit copy. Tokens were written from the live readings, not from these builders |
+| [tools/](tools/) | `test_tokens.py`. `capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`). Tokens were written by hand from the live readings; there is no generating builder |
 
 ## Brief
 
@@ -137,4 +137,4 @@ python3 tools/catalog.py design-md nextdoor
 python3 tools/package_tests.py nextdoor
 ```
 
-Tokens were written from [raw/tokens-declared.json](raw/tokens-declared.json). The kit builders under [tools/](tools/) are the starting copy and were not adapted to regenerate this file.
+Tokens were written from [raw/tokens-declared.json](raw/tokens-declared.json). There is no generating builder; `tools/test_tokens.py` checks the file.

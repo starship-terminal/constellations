@@ -156,24 +156,10 @@ async function authFilled(p, S, shotName) {
 // Adds the first service to the wizard's local cart via its "+" button, shoots
 // the cart line and the enabled Continue, then removes it again. The wizard
 // never advances past "Select services"; nothing is booked.
-async function bookingTicked(p, S, shotName) {
-  const add = p.locator('button[aria-label*="add" i], button:has-text("+")').filter({ visible: true }).first();
-  let btn = add;
-  if (!(await btn.count())) {
-    const found = await domFind(p, /^\s*\+\s*$|^Add$/, { sel: 'button, [role="button"]', tag: 'sadd', leaf: true });
-    btn = found;
-  }
-  if (!(await btn.count())) return;
-  await btn.first().scrollIntoViewIfNeeded().catch(() => {});
-  await clickEl(btn.first());
-  await wait(p, 900);
-  await S.view(shotName);
-  // Restore: the same control usually becomes a remove/"−" stepper.
-  const rm = p.locator('button[aria-label*="remove" i], button[aria-label*="minus" i], button:has-text("−"), button:has-text("-")').filter({ visible: true }).first();
-  if (await rm.count()) await clickEl(rm).catch(() => {});
-  else await clickEl(btn.first()).catch(() => {});
-  await wait(p, 500);
-}
+// No "ticked" booking shot: pressing the service's "+" puts it in a real
+// venue's cart, a state change on a third-party site. The committed
+// booking-light-ticked screenshot is from a run before this edit (2026-11
+// audit; not run since).
 
 const desktop = {
   home: { url: BASE + '/', wait: 9000, theme: 'light', run: async (p, S) => {
@@ -214,7 +200,6 @@ const desktop = {
   } },
   booking: { url: VENUE_BOOKING, wait: 11000, theme: 'light', run: async (p, S) => {
     await S.view('default');
-    await step('ticked', () => bookingTicked(p, S, 'ticked'));
   } },
   pricing: { url: BASE + '/pricing', wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');

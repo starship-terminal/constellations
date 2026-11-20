@@ -19,6 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, LOGIN_URL, SIGNUP_URL, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { startRun, markRead } from './dates.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -59,7 +60,11 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
+  // open() throws on a failed navigation or a challenge that never clears; treat it like BLOCKED, so
+  // the page's committed readings are kept rather than replaced with the interstitial.
+  const opened = await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo })
+    .then(() => true, (e) => { log('  OPEN FAILED', key, String(e.message).slice(0, 100)); return false; });
+  if (!opened) { failedPages.add(key); await page.close(); await ctx.close(); return false; }
   if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
@@ -119,7 +124,8 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
+  // `run` is left as it was: markRead() moves it when a state is actually read.
+  Object.assign(c, { page: current, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -136,7 +142,7 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via, run };
+    markRead(out, c, state, { ...s, crop: file, via: opts.via }, run);
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -396,7 +402,8 @@ async function mobile() {
 }
 
 run = process.env.CAPTURE_DATE || new Date().toISOString().slice(0, 10);
-out._meta.read = run;
+// _meta.read keeps the earlier date until a state is read (markRead); lastAttempt is this run.
+startRun(out, run);
 out._meta.viewport = '1440 x 900 (mobile group 390 x 844); mailchimp.com paints light only; login.mailchimp.com is a separate signed-out card';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();

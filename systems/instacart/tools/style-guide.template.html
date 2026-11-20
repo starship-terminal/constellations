@@ -35,15 +35,15 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .mock { border: 1px solid var(--color-border, #e8e9eb); border-radius: 12px; overflow: hidden; background: #fff; }
 .hero { background: var(--color-hero, #003d29); color: #fff; padding: 28px 24px; display: flex; gap: 24px; align-items: center; }
 .hero h3 { margin: 0 0 12px; font: 700 28px/1.15 var(--sg-sans); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid transparent; font: 600 16px/1 var(--sg-sans); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height, 40px); padding: 0 18px; border-radius: var(--component-button-primary-radius, 20px); border: 1px solid transparent; font: var(--typography-button, 400 16px/24px var(--sg-sans)); line-height: 1; }
 .btn.primary { background: var(--color-accent, #108910); color: #fff; }
-.btn.lg { height: 56px; padding: 0 28px; }
+.btn.lg { height: var(--component-button-primary-height-lg, 56px); padding: 0 28px; border-radius: var(--component-button-primary-radius-lg, 28px); }
 .btn.secondary { background: #fff; color: var(--color-text, #242529); border-color: var(--color-border, #e8e9eb); }
 .nav { display: flex; align-items: center; gap: 12px; padding: 12px 16px; }
 .mark { font-weight: 700; color: var(--color-hero, #003d29); }
 .search { flex: 1; height: 40px; border-radius: 999px; border: 1px solid var(--color-border, #e8e9eb); background: var(--color-surface, #f7f5f0); padding: 0 16px; color: var(--color-muted, #72767e); }
 .chips { display: flex; gap: 8px; padding: 16px; flex-wrap: wrap; }
-.chip { height: 32px; padding: 0 14px; border-radius: 999px; background: #f6f7f8; border: 0; font: 500 14px/32px var(--sg-sans); }
+.chip { height: 32px; padding: 0 14px; border-radius: 999px; background: #f6f7f8; border: 0; font: var(--typography-label, 600 14px/20px var(--sg-sans)); line-height: 32px; }
 .chip.on { background: #242529; color: #fff; }
 .deal { display: inline-block; background: var(--color-deal, #ffdc23); font: 700 12px/1 var(--sg-sans); padding: 4px 6px; }
 .card { border: 1px solid var(--color-border, #e8e9eb); border-radius: 12px; padding: 12px; width: 220px; }

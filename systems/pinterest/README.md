@@ -14,7 +14,7 @@ Pinterest's public signed-out marketing chrome and the signup wall, measured on 
 | [icons/](icons/) | Empty. Icon extraction was not run. |
 | [screenshots/](screenshots/) | Reconstruction of measured chrome. The live page did not produce frames. |
 | [raw/](raw/) | Viewport and computed readings |
-| [tools/](tools/) | Capture kit copy |
+| [tools/](tools/) | Capture kit copy. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 | [icon.png](icon.png) | Site icon |
 
 ## Brief

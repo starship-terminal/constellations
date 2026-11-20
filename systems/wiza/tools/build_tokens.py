@@ -35,16 +35,16 @@ def norm_color(v):
     if v in ("white",):
         return "#ffffff"
     if v in ("transparent",):
-        return "rgba(0, 0, 0, 0)"
+        return "#00000000"
     m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
     if m:
         h = m.group(1)
         if len(h) in (3, 4):
             h = "".join(c * 2 for c in h)
         r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-        if len(h) == 8:
-            a = round(int(h[6:8], 16) / 255, 3)
-            return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
+        # Translucent colours stay #rrggbbaa: tools/catalog.py and the contrast check read only hex.
+        if len(h) == 8 and h[6:8] != "ff":
+            return "#" + h
         return "#%02x%02x%02x" % (r, g, b)
     m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
     if m:
@@ -52,28 +52,22 @@ def norm_color(v):
         if a is None:
             return "#%02x%02x%02x" % (int(r), int(g), int(b))
         a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, a)
+        hexed = "#%02x%02x%02x" % (int(r), int(g), int(b))
+        return hexed if a >= 1 else hexed + "%02x" % round(a * 255)
     raise ValueError("not a colour: " + v)
 
 
-def hex_alpha(h):
-    """#RRGGBBAA -> rgba(). The neutral swatches are stored this way."""
-    h = h[1:]
-    r, g, b, a = (int(h[i:i + 2], 16) for i in (0, 2, 4, 6))
-    alpha = round(a / 255, 3)
-    return "rgba(%d, %d, %d, %g)" % (r, g, b, alpha)
-
-
-DIM = re.compile(r"-?(\d+(\.\d+)?|\.\d+)(px|rem|em)")
+# One px or rem length. em tracking is relative to a font size, so it is not a dimension token.
+DIM = re.compile(r"-?(\d+(\.\d+)?|\.\d+)(px|rem)")
 
 
 def check(path, ty, val):
     if isinstance(val, str) and val.startswith("{"):
         return
     if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px, rem or em length, got {val!r}")
-    if ty == "color" and not str(val).startswith("{"):
-        norm_color(val)
+        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
+    if ty == "color" and not str(val).startswith("{") and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", str(val)):
+        raise ValueError(f"{path}: colour {val!r} is not #rrggbb(aa)")
     if ty == "number" and not isinstance(val, (int, float)):
         raise ValueError(f"{path}: number {val!r}")
     if ty == "fontWeight" and not isinstance(val, int):
@@ -161,9 +155,8 @@ NEUTRALS = {
 }
 for step, value in NEUTRALS.items():
     css = f"--swatch--neutral-{step}"
-    painted = hex_alpha(value) if len(value) == 9 else value
     put(CORE, f"color.neutral.{step}", leaf(
-        f"core.color.neutral.{step}", "color", painted,
+        f"core.color.neutral.{step}", "color", value,
         f"css-var {css} declared {DECL[css]}",
     ))
 
@@ -241,7 +234,7 @@ put(CORE, "font.family.body", leaf(
 ))
 put(CORE, "font.family.auth", leaf(
     "core.font.family.auth", "fontFamily", "Inter var, ui-sans-serif, system-ui, sans-serif",
-    "computed font-family on wiza.co/auth/login body. Inter var is a separate face from the marketing Inter",
+    "Reconstruction: entered by hand at capture time from the computed font-family on wiza.co/auth/login body. Inter var is a separate face from the marketing Inter",
 ))
 put(CORE, "font.weight.regular", leaf("core.font.weight.regular", "fontWeight", 400, "css-var --_typography---font--primary-regular"))
 put(CORE, "font.weight.medium", leaf("core.font.weight.medium", "fontWeight", 500, "css-var --_typography---font--primary-medium"))
@@ -249,14 +242,12 @@ put(CORE, "font.weight.bold", leaf("core.font.weight.bold", "fontWeight", 700, "
 put(CORE, "font.lineHeight.tight", leaf("core.font.lineHeight.tight", "number", 1, "css-var --_typography---line-height--1"))
 put(CORE, "font.lineHeight.snug", leaf("core.font.lineHeight.snug", "number", 1.1, "css-var --_typography---line-height--1-1"))
 put(CORE, "font.lineHeight.body", leaf("core.font.lineHeight.body", "number", 1.5, "css-var --_typography---line-height--1-5"))
-put(CORE, "font.letterSpacing.tight", leaf(
-    "core.font.letterSpacing.tight", "dimension", "-0.03em",
-    "css-var --_typography---letter-spacing--0-03em",
-))
+# --_typography---letter-spacing--0-03em (-.03em) is relative to the font size, so it is listed
+# under core.$extensions.notTokenised below rather than as a dimension token.
 
 # Desktop computed sizes at 1440 CSS px (16px root). The clamp is in raw/css-vars.json.
 TYPE = {
-    "display": ("80px", "64px", "5rem desktop end of --_typography---font-size--display; computed h1 on / was 64px because the heading uses the h1 step"),
+    "display": ("80px", "80px", "5rem desktop end of --_typography---font-size--display; computed h1 on / was 64px because the heading uses the h1 step"),
     "h1": ("64px", "64px", "computed font-size of h1 on https://wiza.co/ at 1440px. Declared clamp ends at 4rem"),
     "h2": ("56px", "56px", "computed font-size of h2 on https://wiza.co/ at 1440px. Declared clamp ends at 3.5rem"),
     "h3": ("48px", "48px", "declared --_typography---font-size--h3 desktop end 3rem. Not used as a visible heading size on the measured pages"),
@@ -276,16 +267,25 @@ for name, (size, line, note) in TYPE.items():
             "fontSize": size,
             "fontWeight": 500 if name in ("display", "h1", "h2", "h3", "h4", "h5", "h6") else 400,
             "lineHeight": line,
-            "letterSpacing": "0em",
         },
         "$type": "typography",
-        "$extensions": {"source": note},
+        "$extensions": {"source": (
+            # 12px at the declared 1.3 or 1.5 would be 15.6px or 18px, so textXsmall's 16px is the
+            # computed line height of the elements it was read from, not a declared step.
+            "Reconstruction: lineHeight 16px entered by hand at capture time from the computed line height "
+            "of .pricing_tag_text and .pricing_card_price_desc; it is not a declared step (1.3 or 1.5 of 12px "
+            "give 15.6px or 18px), and raw/ does not hold the computed value. fontSize: " + note
+            if name == "textXsmall" else
+            "Reconstruction: lineHeight entered by hand at capture time (headings at the declared "
+            "--_typography---line-height--1, text steps at the declared 1.3 or 1.5); no style's computed "
+            "line height or tracking was saved in raw/. fontSize: " + note
+        )},
     })
 
 put(CORE, "layout.columnCount", leaf("core.layout.columnCount", "number", 12, "css-var --site--column-count"))
 put(CORE, "layout.viewportMax", leaf("core.layout.viewportMax", "dimension", "75rem", "css-var --site--viewport-max (unitless 75, times 1rem)"))
 put(CORE, "layout.viewportMin", leaf("core.layout.viewportMin", "dimension", "20rem", "css-var --site--viewport-min (unitless 20, times 1rem)"))
-put(CORE, "layout.contentMax", leaf("core.layout.contentMax", "dimension", "1200px", "measured content width of the home h1 and hero video at 1440px"))
+put(CORE, "layout.contentMax", leaf("core.layout.contentMax", "dimension", "1200px", "Reconstruction: entered by hand at capture time from the measured content width of the home h1 and hero video at 1440px"))
 
 # Semantic light set: declared theme roles, resolved, plus painted components.
 LIGHT = {}
@@ -310,7 +310,7 @@ put(LIGHT, "color.muted", leaf("light.color.muted", "color", "#615e6e", "compute
 put(LIGHT, "color.footerInk", leaf("light.color.footerInk", "color", "#312749", "computed color of the footer on https://wiza.co/ (rgb(49, 39, 73)), matching --swatch--the-problem-colors-text"))
 put(LIGHT, "color.accent", leaf("light.color.accent", "color", "#7e43ff", "computed color of prose links on /privacy and the login submit (rgb(126, 67, 255)), matching --swatch--brand-100"))
 put(LIGHT, "color.onAccent", leaf("light.color.onAccent", "color", "#ffffff", "computed color of the filled primary button label"))
-put(LIGHT, "color.heroGround", leaf("light.color.heroGround", "color", "#231645", "computed background of the animated heading wrap on the home hero (rgb(35, 22, 69))"))
+put(LIGHT, "color.heroGround", leaf("light.color.heroGround", "color", "#231645", "Reconstruction: entered by hand at capture time from the computed background of the animated heading wrap on the home hero (rgb(35, 22, 69))"))
 put(LIGHT, "color.enterpriseHeroInk", leaf("light.color.enterpriseHeroInk", "color", "#ffffff", "computed color of the h1 on /enterprise"))
 
 # Painted components. Values are computed styles, not guesses.
@@ -323,16 +323,17 @@ for name, spec in COMPONENTS.items():
         ))
 
 
-def walk_aliases(tree, prefix=""):
-    if isinstance(tree, dict) and "$value" in tree:
-        return
-    if not isinstance(tree, dict):
-        return
-    for k, v in tree.items():
-        if k.startswith("$"):
-            continue
-        walk_aliases(v, prefix + k + ".")
+CORE.setdefault("$extensions", {})["notTokenised"] = [
+    "--_typography---letter-spacing--0-03em: -.03em, declared (raw/css-vars.json). em tracking scales "
+    "with the font size and is not one px or rem length. No measured style was seen using it.",
+    "Type steps carry no letterSpacing: no style's computed tracking was saved in raw/.",
+]
 
+import token_checks  # noqa: E402  (tools/ is on sys.path above)
+
+_errors = token_checks.alias_errors(CORE, LIGHT)
+if _errors:
+    raise SystemExit("\n".join(_errors))
 
 doc = {
     "core": CORE,
@@ -341,6 +342,14 @@ doc = {
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }
 
-out = json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
-(HERE / "tokens.json").write_text(out)
-print(f"tokens.json: {out.count(chr(10))} lines")
+
+
+def render():
+    """tokens.json's exact text; importing this module writes nothing."""
+    return json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
+
+
+if __name__ == "__main__":
+    out = render()
+    (HERE / "tokens.json").write_text(out)
+    print(f"tokens.json: {out.count(chr(10))} lines")

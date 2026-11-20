@@ -5,7 +5,9 @@ Source: raw/css-vars.json, harvested from literal.club on 2026-11-18.
 Light is :root, :root.light. Dark is :root.dark and :root:not(.light),
 and it resolves when prefers-color-scheme is dark. No public theme
 toggle was found. Spacing is --size-N (4px steps). Motion comes from
-raw/motion.json via tools/motion.py.
+raw/motion.json via tools/motion.py; easings DTCG cannot hold are listed under
+core.$extensions.notTokenised. Type and radius come from the computed styles in
+raw/components-computed.json; a value no raw file holds is labelled Reconstruction.
 
 Every token carries $extensions.source. Deterministic.
 """
@@ -19,6 +21,7 @@ from motion import build as motion_build
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
+COMP = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
 LIGHT = RAW["resolved"]["light"]
 DARK = RAW["resolved"]["dark"]
 SRC = "css-var"
@@ -69,6 +72,35 @@ def dim(name, table=LIGHT):
 
 def font(family, source):
     return {"$type": "fontFamily", "$value": family, "$extensions": {"source": source}}
+
+
+def reading(comp, state="default"):
+    """The computed style of one measured component state; refuse a missing one."""
+    try:
+        return COMP[comp]["states"][state]["style"]
+    except KeyError:
+        raise SystemExit(f"raw/components-computed.json has no {comp}.{state} style reading")
+
+
+def run_of(comp, state="default"):
+    """The date the cited state was read: a state kept after a failed rerun keeps its own run."""
+    return COMP[comp]["states"][state].get("run") or COMP[comp].get("run")
+
+
+def measured_type(comp, family):
+    s = reading(comp)
+    src = f"Measured computed style on {comp}.default ({COMP[comp].get('page')}, {run_of(comp)}): fontSize, lineHeight, fontWeight"
+    return typography(s["fontSize"], s["lineHeight"], s["fontWeight"], family, src)
+
+
+def measured_radius(comp):
+    s = reading(comp)
+    v = s["borderTopLeftRadius"]
+    corners = {s[k] for k in ("borderTopLeftRadius", "borderTopRightRadius", "borderBottomRightRadius", "borderBottomLeftRadius")}
+    if len(corners) != 1 or not re.fullmatch(r"\d+(\.\d+)?px", v):
+        raise SystemExit(f"{comp}: corners are not one px radius: {sorted(corners)}")
+    return {"$type": "dimension", "$value": v,
+            "$extensions": {"source": f"Measured computed borderTopLeftRadius on {comp}.default ({COMP[comp].get('page')}, {run_of(comp)})"}}
 
 
 def typography(size, line, weight, family, source):
@@ -129,26 +161,28 @@ def core():
     for i in range(1, 41):
         name = f"--size-{i}"
         spacing[str(i)] = dim(name)
-    motion = {}
-    motion_path = HERE / "raw" / "motion.json"
-    if motion_path.exists():
-        motion, _skipped = motion_build(json.loads(motion_path.read_text()))
+    motion, not_tokenised = motion_build(json.loads((HERE / "raw" / "motion.json").read_text()))
     return {
+        "$extensions": {"notTokenised": not_tokenised},
         "font": {
             "family": {
-                "sans": font("Inter, sans-serif", "computed body font-family on literal.club"),
-                "serif": font("Libre Baskerville, Georgia, serif", "computed h1 font-family on the home hero"),
+                "sans": font(reading("nav-explore")["fontFamily"], f"Measured computed fontFamily on nav-explore.default (home, {run_of('nav-explore')}), the Inter every UI control measures"),
+                "serif": font(reading("hero-title")["fontFamily"], f"Measured computed fontFamily on hero-title.default (home, {run_of('hero-title')})"),
             }
         },
         "typography": {
-            "body": typography("14px", "20px", "400", "{font.family.sans}", "computed body on literal.club"),
-            "hero": typography("40px", "54px", "500", "{font.family.serif}", "computed h1.LandingPage_heroTitle on /"),
-            "display": typography("24px", "36px", "400", "{font.family.serif}", "computed h1.displayHeader on /signin"),
-            "book-title": typography("32px", "42px", "400", "{font.family.serif}", "computed h1 on /book/the-midnight-library-mrpx0"),
+            "body": typography("14px", "20px", "400", "{font.family.sans}",
+                               "Reconstruction: entered by hand at capture time; no raw reading holds the body element's "
+                               "style. Inherited Inter text measures 14px / 400 with a 20.3px line height (book-card, author-link)"),
+            "hero": measured_type("hero-title", "{font.family.serif}"),
+            "display": measured_type("signin-title", "{font.family.serif}"),
+            "book-title": measured_type("book-title", "{font.family.serif}"),
         },
         "spacing": spacing,
         "radius": {
-            "none": {"$type": "dimension", "$value": "0px", "$extensions": {"source": "computed border-radius on header Join and the sign-in submit"}},
+            "none": measured_radius("nav-join"),
+            "sm": measured_radius("signin-submit"),
+            "md": measured_radius("join-free"),
         },
         "border": {
             "outline": dim("--outlineWidth"),

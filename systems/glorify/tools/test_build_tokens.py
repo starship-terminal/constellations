@@ -68,6 +68,16 @@ class CheckTest(unittest.TestCase):
 
 
 class CommittedTokensTest(unittest.TestCase):
+    def test_committed_file_matches_an_in_memory_build(self):
+        # build_tokens writes only under __main__, so importing it built the tokens without touching the file.
+        self.assertEqual(json.loads(TOKENS.read_text()), build_tokens.tokens)
+
+    def test_weight_names_match_their_values(self):
+        names = {100: "thin", 200: "extralight", 300: "light", 400: "regular", 500: "medium",
+                 600: "semibold", 700: "bold", 800: "extrabold", 900: "black"}
+        for name, tok in leaves(build_tokens.tokens["core"]["font"]["weight"]):
+            self.assertEqual(names.get(tok["$value"]), name, name)
+
     @unittest.skipUnless(TOKENS.exists(), "no tokens.json yet")
     def test_every_leaf_passes_check(self):
         doc = json.loads(TOKENS.read_text())

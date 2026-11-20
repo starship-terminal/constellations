@@ -91,7 +91,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 - Session colour is not one brand step. `html` carries `$color/session:N`, and `--color--session` aliases that step. One homepage read resolved `#ff8f1c` (brand 5). A later read resolved `#00b7f2` (brand 10). The Tickets fill is the class `$color/background:brand:10`, which is stable.
 - Spacing in the first `:root` block is `2.4rem`. The live 1440px page overrides `--page-spacing` to `3.2rem` and `--page-spacing--fixed` to `4.8rem`. Tokens use the live values.
 - Type roles are the computed sizes on the public pages, named after MoMA's `$typography/size:*` classes. They are not a separate declared type-token group.
-- `core.radius.pill` is derived from the Help chip on the login screenshot. It is not a custom property.
+- `core.radius.pill` is a stand-in for the Help chip's full pill, seen on the login screenshot, and is labelled Reconstruction. It is not a custom property. `light.color.border` is the login card's 1px black border as seen in that screenshot; no computed reading of it was saved, so it is labelled Observed.
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.
 - The street address on the visit page is published museum copy. It is not a private address.
 - `/members/` is a 404 (Ruscha's *OOF*). The membership marketing page is `https://membership.moma.org/`.
@@ -160,3 +160,5 @@ python3 tools/build_style_guide.py
 ```
 
 Screenshots were taken by `tools/capture/public/moma-capture.mjs` in headed Chrome, then quantized with `tools/capture/quantize.py`.
+
+Each raw file has one writer. `moma-capture.mjs` writes `capture-readings.json`, `moma-membership.mjs` writes `states.json` (the committed file is its output), and `moma-states.mjs` writes `login-states.json`. No script in `tools/` writes `membership-components.json`. Before, `moma-states.mjs` also wrote `states.json`, so whichever ran last replaced the other's readings. `moma-states.mjs` no longer presses Continue on the empty login form (that submits it), no longer clicks at a fixed point, and opens the Membership menu only through its menu button. The login validation state is not captured.

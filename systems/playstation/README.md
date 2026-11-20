@@ -10,7 +10,7 @@ Public marketing pages and signed-out store chrome of playstation.com, read on 2
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Home, store, and the signup wall |
 | [raw/](raw/) | Computed readings: [raw/computed.json](raw/computed.json), [raw/measurements.md](raw/measurements.md) |
-| [tools/](tools/) | Kit copy plus the package test |
+| [tools/](tools/) | Kit copy plus the package test. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 | [icon.png](icon.png) | Site icon, 128 px |
 | [components/](components/) | Empty crops folder. Frames never arrived |
 
@@ -136,4 +136,4 @@ python3 tools/package_tests.py playstation
 python3 tools/fetch_icon.py playstation
 ```
 
-`tools/build_tokens.py` in this package is the kit's Claude-shaped builder. It is not the writer of this `tokens.json`. The tokens were written from [raw/computed.json](raw/computed.json). `tools/test_build_tokens.py` checks the committed file.
+`tools/build_tokens.py` in this package is a copy of the kit's native (Grok Bot) builder, kept because `tools/test_build_tokens.py` imports it to check the committed file. It is not the writer of this `tokens.json`. The tokens were written from [raw/computed.json](raw/computed.json). `tools/test_build_tokens.py` checks the committed file.

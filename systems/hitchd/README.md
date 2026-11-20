@@ -126,3 +126,7 @@ python3 tools/build_components_md.py                # components.md
 ```
 
 Nothing was signed into, typed into, submitted or paid: the only presses are local UI toggles — the Sort by select, a gift card's own tap that opens its modal, and the documented absence of a menu toggle on the demo registry.
+
+## Capture conduct
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

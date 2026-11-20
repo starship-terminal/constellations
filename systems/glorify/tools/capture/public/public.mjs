@@ -14,9 +14,9 @@
 // Nothing is sent, bought or signed into: the only activations are local UI
 // toggles — the marketing nav's "Features" dropdown (hover), the pricing
 // billing switcher, the mobile burger menu, the editor's inspector tabs, the
-// "Try with Placeholder Image" card and the Craft dialog's style pick +
-// "Add to canvas" — the advertised Play-for-free path on a scratch file the
-// SPA itself creates for a signed-out visitor. The sign-in and sign-up forms
+// "Try with Placeholder Image" card and the Craft dialog's style pick, on a
+// scratch file the SPA itself creates for a signed-out visitor. "Add to canvas"
+// starts an AI generation and is never pressed. The sign-in and sign-up forms
 // are shot at rest, never submitted; Login, Signup, Share, Download and every
 // "Start a free trial" link are shot and measured, never followed.
 import fs from 'fs';
@@ -168,13 +168,9 @@ const desktop = {
         await wait(p, 2000);
         await S.view('style-picked');
       });
-      await step('canvas', async () => {
-        const add = p.locator('button').filter({ hasText: /Add to canvas/i }).filter({ visible: true }).first();
-        if (!(await add.count()) || !(await add.isEnabled().catch(() => false))) { log('  ! Add to canvas not enabled'); return; }
-        await add.click({ timeout: 6000 });
-        await wait(p, 35000);
-        await S.view('canvas');
-      });
+      // Add to canvas: a boundary, not a step. It runs a server-side AI generation for the visitor (generation
+      // quota on a live service), so the capture stops at the enabled button. The committed designer-*-canvas
+      // shot was taken past that step (README, What to distrust).
       await step('layers-tab', async () => {
         const tab = p.locator('div,button,span').filter({ hasText: /^LAYERS$/ }).filter({ visible: true }).first();
         if (!(await tab.count())) return;

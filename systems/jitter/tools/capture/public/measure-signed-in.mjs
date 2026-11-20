@@ -20,7 +20,7 @@ const ctx = await chromium.launchPersistentContext(PROFILE, {
   deviceScaleFactor: 1,
   userAgent: UA,
   locale: 'en-US',
-  args: ['--disable-blink-features=AutomationControlled'],
+  args: [] /* no AutomationControlled flag: removed in the 2026-11 audit (D7) */,
 });
 await patch(ctx);
 const page = ctx.pages()[0] || await ctx.newPage();

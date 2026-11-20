@@ -57,7 +57,8 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, BASE + URLS[key], { wait, promo });
+  // a page whose bot check does not clear fails here; the run loop keeps that page's earlier readings
+  if (!(await open(page, BASE + URLS[key], { wait, promo }))) throw new Error('blocked: the bot check did not clear on ' + key);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
 }
 

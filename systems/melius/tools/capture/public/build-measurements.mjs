@@ -73,6 +73,8 @@ for (const g of groups) {
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
+      // A skipped state (keyboard focus never landed) holds no reading: say so, do not read its rect.
+      if (v.skipped) { rows['Not captured'] = rows['Not captured'] || {}; rows['Not captured'][st] = v.skipped; continue; }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }
     W(`| Property | ${states.join(' | ')} |`);

@@ -1079,8 +1079,8 @@
   "plan-card": {
    "value": "547.188px",
    "type": "dimension",
-   "source": "computed width of plan-card default (raw/components-computed.json)",
-   "description": "The 547px plan card column."
+   "source": "computed width of plan-card default (raw/components-computed.json); read from the wrong element (a Rebuild FlowSuite promo card); recapture needed",
+   "description": "547px. Read from the wrong element: a \"Rebuild FlowSuite\" promo card, not a plan card; recapture needed."
   },
   "product-card": {
    "value": "362.672px",
@@ -1091,8 +1091,8 @@
   "menu-button": {
    "value": "44px",
    "type": "dimension",
-   "source": "computed width of m-menu-button default (raw/components-computed.json)",
-   "description": "The 44px mobile menu button."
+   "source": "computed width of m-menu-button default (raw/components-computed.json); read from the wrong element (the mobile Search button); recapture needed",
+   "description": "44px. Read from the wrong element: the mobile Search button, not the menu button; recapture needed."
   },
   "theme-toggle": {
    "value": "32px",
@@ -1108,13 +1108,13 @@
   },
   "promo-text": {
    "value": "13px",
-   "type": "fontSize",
+   "type": "dimension",
    "source": "computed fontSize of promo-banner default (raw/components-computed.json)",
    "description": "The 13px promo text."
   },
   "nav-link-size": {
    "value": "16px",
-   "type": "fontSize",
+   "type": "dimension",
    "source": "computed fontSize of nav-link default (raw/components-computed.json)",
    "description": "Nav link 16px."
   },

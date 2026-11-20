@@ -7,14 +7,15 @@ import importlib.util
 import os
 import pathlib
 import unittest
-
-os.environ.setdefault("SNAPS", os.devnull)
+from unittest import mock
 
 HERE = pathlib.Path(__file__).resolve().parent
 spec = importlib.util.spec_from_file_location(
     "rules_under_test", HERE / "capture" / "rules.py")
 rules = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(rules)
+# SNAPS is set only while rules.py loads, then restored: no process-global state leaks to other tests.
+with mock.patch.dict(os.environ, {"SNAPS": os.environ.get("SNAPS", os.devnull)}):
+    spec.loader.exec_module(rules)
 
 
 def rows(css):

@@ -17,7 +17,7 @@ The home page loaded with title "Free Stock Photos, Royalty Free Stock Images & 
 | [icons/](icons/) | Wordmark and four sprite icons, with [INDEX.tsv](icons/INDEX.tsv). |
 | [screenshots/](screenshots/) | Home, desktop and phone. |
 | [raw/](raw/) | Palette, type, and component readings. |
-| [tools/](tools/) | The capture kit copy. |
+| [tools/](tools/) | The capture kit copy. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 ## Brief
 
@@ -140,4 +140,4 @@ python3 tools/catalog.py design-md pexels
 python3 tools/package_tests.py pexels
 ```
 
-There is no product-specific token builder. `tokens.json` was written from the live readings. `systems/pexels/tools/` is the kit copy, kept as the record of the capture scripts.
+There is no product-specific token builder. `tokens.json` was written from the live readings. `systems/pexels/tools/` keeps the generic capture helpers from the kit.

@@ -38,7 +38,10 @@ function assertNotChallenge(title, text) {
   if (/just a moment|cf-browser-verification|attention required|checking your browser|cloudflare/i.test(blob) && !/Museum of Modern Art/i.test(title)) {
     console.error('STOP: Cloudflare or challenge page. Not launching another browser.');
     console.error(JSON.stringify({ title, text: text.slice(0, 200) }));
-    process.exit(3);
+    // Throw, not exit: process.exit here skipped the finally below that saves the readings so far.
+    const e = new Error('STOP: challenge page');
+    e.code = 3;
+    throw e;
   }
 }
 
@@ -328,6 +331,9 @@ async function runWidth(mobile) {
 try {
   await runWidth(false);
   await runWidth(true);
+} catch (e) {
+  if (e.code === 3) process.exitCode = 3;
+  else throw e;
 } finally {
   fs.writeFileSync(path.join(READ, 'capture-readings.json'), JSON.stringify(readings, null, 2));
   log('readings', Object.keys(readings.pages).join(','));

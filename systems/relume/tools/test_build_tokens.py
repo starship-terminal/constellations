@@ -35,8 +35,6 @@ class Tokens(unittest.TestCase):
         def walk(node, path):
             if isinstance(node, dict) and "$value" in node:
                 ext = node.get("$extensions") or {}
-                if "$extensions" not in node and isinstance(node["$value"], str) and node["$value"].startswith("{"):
-                    return
                 if "source" not in ext:
                     missing.append(path)
             elif isinstance(node, dict):

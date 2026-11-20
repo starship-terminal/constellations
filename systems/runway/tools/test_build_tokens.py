@@ -1,4 +1,5 @@
-"""Check that tokens.json only holds values this capture measured."""
+"""tokens.json is hand-written from this capture (there is no builder): every token says it was
+Measured, and the measured roles keep their values."""
 import json
 import unittest
 from pathlib import Path

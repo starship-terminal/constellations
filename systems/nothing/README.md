@@ -13,7 +13,7 @@ Nothing (nothing.tech) is a hardware brand. This package records the public sign
 | [screenshots/](screenshots/) | Declared missing. The preview browser did not produce screenshot frames |
 | [components/](components/) | Declared missing. Same screenshot failure |
 | [icon.png](icon.png) | Site icon, 128 px |
-| [tools/](tools/) | Kit copy used as the capture record |
+| [tools/](tools/) | `test_tokens.py`. `capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`). The values were read in a preview browser, not by a kit script |
 
 <!-- brief:start -->
 <!-- brief:end -->

@@ -71,6 +71,11 @@ def paint(s):
     return style
 
 
+def cell(text):
+    """A table cell: a pipe would split it into two cells and a newline would end the row."""
+    return " ".join(str(text).split()).replace("|", "\\|")
+
+
 def row(state, s, base):
     style = paint(s)
     bits = []
@@ -90,7 +95,7 @@ def row(state, s, base):
     size = f"{round(rect.get('w', 0))}×{round(rect.get('h', 0))}"
     crop = s.get("crop") or ""
     link = f"[crop]({crop})" if crop else ""
-    return f"| {state} | {size} | {', '.join(bits) or 'same'} | {s.get('via', '')} | {link} |"
+    return f"| {cell(state)} | {size} | {cell(', '.join(bits) or 'same')} | {cell(s.get('via', ''))} | {link} |"
 
 
 lines = [
@@ -122,7 +127,7 @@ for group, items in groups.items():
         base = None
         for name, s in states.items():
             if s.get("error"):
-                lines.append(f"| {name} |  | {s['error']} | {s.get('via', '')} | |")
+                lines.append(f"| {cell(name)} |  | {cell(s['error'])} | {cell(s.get('via', ''))} | |")
                 continue
             lines.append(row(name, s, base))
             base = base or paint(s)

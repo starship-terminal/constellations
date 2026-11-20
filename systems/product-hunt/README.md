@@ -15,7 +15,7 @@ Public signed-out surfaces of [producthunt.com](https://www.producthunt.com/), c
 | [screenshots/](screenshots/) | Empty. The preview browser did not produce frames. |
 | [components/](components/) | Empty crops, for the same reason. |
 | [icon.png](icon.png) | Site icon, fetched by `tools/fetch_icon.py`. |
-| [tools/](tools/) | The capture kit, copied in and not adapted to a headless run. |
+| [tools/](tools/) | The capture kit, copied in and not adapted to a headless run. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 ## Brief
 

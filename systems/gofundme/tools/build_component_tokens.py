@@ -272,39 +272,50 @@ SPEC["core"].setdefault("componentVars", {}).setdefault(
 
 # -------------------------------------------- measured roles -> aliases
 
-# When several declared --hrt-color-* vars resolve to the same colour, the
-# measured role aliases to the most semantic family (an ink reads
-# text.default, not border.focused; the page field reads surface.*).
-ALIAS_RANK = ["surface", "text", "button", "control", "input", "link",
-              "border", "icon", "data", "progress", "tooltip", "header",
-              "goal", "dropdown", "tooltip", "badge", "chip", "tag",
-              "banner", "loader", "spinner", "drop", "texture", "table", "list"]
-
-
-def alias_rank(p):
-    fam = p.split(".", 1)[0]
-    try:
-        return (ALIAS_RANK.index(fam), p)
-    except ValueError:
-        return (len(ALIAS_RANK), p)
-
-
-role_alias = {}
-cands = {}
+# When several declared --hrt-color-* vars resolve to the same colour, a
+# measured role aliases only to a var of its own kind: an ink to text.* (or a
+# button's text.*), a fill to surface.* (or a button's surface.*), a border to
+# border.*. A role with no var of its kind stays a literal, so a change to some
+# unrelated token that happens to share the value never recolours it. Within
+# a kind the shortest, then first-sorted, path wins.
+CANDS = {}
 for name in sorted(k for k in EMITTED):
     nv = norm_color(str(resolved(name) or ""))
-    if not nv or not nv.startswith(("#", "rgba")):
-        continue
-    p = EMITTED[name]
-    cur = cands.get(nv)
-    if cur is None or alias_rank(p) < alias_rank(cur):
-        cands[nv] = p
-role_alias = {nv: "color." + p for nv, p in cands.items()}
+    if nv and nv.startswith(("#", "rgba")):
+        CANDS.setdefault(nv, []).append(EMITTED[name])
+
+INK = [("button", ".text"), ("text", "")]
+FILL = [("button", ".surface"), ("surface", "")]
+KIND = {
+    ("text", "color"): [("text", "")],
+    ("action", "color"): INK,
+    ("action", "backgroundColor"): FILL,
+    ("border", "outlineColor"): [("border", "")],
+    ("surface", "backgroundColor"): [("surface", "")],
+    ("data", "backgroundColor"): [("data", ""), ("progress", ""), ("goal", "")],
+    ("form", "color"): [("input", ".text"), ("text", "")],
+    ("form", "placeholder"): [("input", ".placeholder"), ("text", "")],
+    ("form", "backgroundColor"): [("input", ".surface"), ("surface", "")],
+    ("form", "borderTopColor"): [("input", ".border"), ("border", "")],
+}
 
 
-def semcolor(raw, src, desc):
+def role_alias(nv, group, prop):
+    kinds = KIND.get((group, prop), [])
+    best = None
+    for p in CANDS.get(nv, []):
+        for i, (fam, sub) in enumerate(kinds):
+            if p.split(".", 1)[0] == fam and (not sub or sub + "." in "." + p + "."):
+                key = (i, p.count("."), p)
+                if best is None or key < best[0]:
+                    best = (key, p)
+                break
+    return "color." + best[1] if best else None
+
+
+def semcolor(raw, src, desc, group, prop):
     nv = norm_color(raw)
-    alias = role_alias.get(nv)
+    alias = role_alias(nv, group, prop)
     value = "{%s}" % alias if alias else nv
     return lit(value, "color", src + ("; matches declared %s" % alias if alias else ""), desc)
 
@@ -387,18 +398,15 @@ for key, comp, state, prop, group, desc in [
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         if raw in (None, ""):
             raise KeyError(prop)
-        sem.setdefault("color", {}).setdefault(group, {})[key] = semcolor(raw, src, desc)
+        sem.setdefault("color", {}).setdefault(group, {})[key] = semcolor(raw, src, desc, group, prop)
     except KeyError:
         pass
 
 # The page field behind every consumer page: the declared surface token,
 # visible as the white field in every screenshot.
-page_bg = None
-for nv, p in cands.items():
-    if nv == "#ffffff":
-        page_bg = p
+page_bg = role_alias("#ffffff", "surface", "backgroundColor")
 sem.setdefault("color", {}).setdefault("background", {})["page"] = lit(
-    "{color.%s}" % page_bg if page_bg else "#ffffff", "color",
+    "{%s}" % page_bg if page_bg else "#ffffff", "color",
         "the :root-declared surface token (raw/css-vars.json); visible as the page field behind every consumer page (screenshots/*-light-*.png)",
         "The page field — the consumer light surface.")
 
