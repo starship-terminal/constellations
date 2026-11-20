@@ -35,13 +35,17 @@ function collect() {
     const SHAPES = 'path,circle,rect,line,polyline,polygon,ellipse';
     const paintInto = (src, dst, imported = false) => {
       const shapes = [...src.querySelectorAll(SHAPES)], cshapes = [...dst.querySelectorAll(SHAPES)];
+      // What an imported target's shapes would inherit from outside it (the hidden sprite sheet around it).
+      const outside = imported && src.parentElement ? getComputedStyle(src.parentElement) : null;
       shapes.forEach((e, i) => {
-        // A shape in an imported symbol inherits its paint from the <use> that draws it, unless its own
-        // class or style sets it: only then is anything written, or the copy could no longer recolour.
+        // A shape in an imported symbol inherits its paint from the <use> that draws it, unless something
+        // inside the target sets it: its own class or style, or a group's (whose class and style the copy
+        // loses too). Only then is anything written, or the copy could no longer recolour.
         const cs = getComputedStyle(e), t = cshapes[i];
         // a var() in a paint attribute names a property the standalone file will not have: resolve it first
         for (const a of ['fill', 'stroke']) if ((t.getAttribute(a) || '').startsWith('var(')) t.setAttribute(a, rgb(cs[a]) === col ? 'currentColor' : hex(cs[a]));
-        if (imported && !e.hasAttribute('class') && !e.hasAttribute('style')) return;
+        const setInside = outside && ['fill', 'stroke', 'strokeWidth'].some((k) => cs[k] !== outside[k]);
+        if (imported && !e.hasAttribute('class') && !e.hasAttribute('style') && !setInside) return;
         if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
         else if (imported && !t.hasAttribute('fill') && cs.fill === 'none') t.setAttribute('fill', 'none');   // its style goes below
         else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
@@ -90,6 +94,9 @@ function collect() {
       (c.querySelector('defs') || c.insertBefore(document.createElementNS('http://www.w3.org/2000/svg', 'defs'), c.firstChild)).appendChild(copy);
       pending.push(...refsOf(copy.outerHTML));
     }
+    // A <use> that points into another file (href="/icons/sprite.svg#x") draws nothing once the icon is
+    // saved on its own, and that file is not fetched: the icon is left out, not saved blank (finding 20-8).
+    if ([...c.querySelectorAll('use')].some((u) => !/^#/.test(u.getAttribute('href') || u.getAttribute('xlink:href') || '#'))) return null;
     const refs = refsOf(c.outerHTML);
     c.querySelectorAll('[id],[class],[style]').forEach((e) => { if (!refs.has(e.id)) e.removeAttribute('id'); e.removeAttribute('class'); if (e.tagName !== 'mask') e.removeAttribute('style'); });
     c.querySelectorAll('image').forEach((e) => e.remove());
@@ -107,7 +114,8 @@ function collect() {
 
 const seen = new Map();
 async function grab(p, tag) {
-  const list = await p.evaluate(collect);
+  const all = await p.evaluate(collect);
+  const list = all.filter(Boolean);   // an icon drawn from another file's sprite comes back null
   let fresh = 0;
   for (const ic of list) {
     const key = crypto.createHash('md5').update(ic.html.replace(/\s(width|height|id)="[^"]*"/g, '').replace(/<(desc|title)>.*?<\/\1>/g, '').replace(/url\(#[^)]*\)/g, '')).digest('hex').slice(0, 8);
@@ -116,7 +124,7 @@ async function grab(p, tag) {
     fresh++;
     seen.set(key, { ...ic, key, where: new Set([tag]), sizes: new Set([`${ic.w}x${ic.h}`]), labels: new Set(ic.label ? [ic.label] : []), places: new Set([ic.place]) });
   }
-  console.log(' ', tag, list.length, 'svgs,', fresh, 'new');
+  console.log(' ', tag, list.length, 'svgs,', fresh, 'new' + (all.length > list.length ? `, ${all.length - list.length} drawn from another file's sprite left out` : ''));
 }
 async function scrollAll(p, tag) {
   const h = await p.evaluate(() => document.documentElement.scrollHeight);

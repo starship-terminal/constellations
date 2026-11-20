@@ -102,6 +102,52 @@ def icons_collect():
 
 @unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
 class IconPaint(unittest.TestCase):
+    def collect(self, page):
+        """collect() run in Chromium on one page: the saved html of each icon, or None for one left out."""
+        script = (f"const pw = await import({json.dumps(PLAYWRIGHT)}); const {{ chromium }} = pw.default ?? pw;\n"
+                  f"{icons_collect()}\n"
+                  "const b = await chromium.launch(); const p = await b.newPage();\n"
+                  f"await p.setContent({json.dumps(page)});\n"
+                  "const list = await p.evaluate(collect); await b.close();\n"
+                  "console.log(JSON.stringify(list.map((x) => x && x.html)));")
+        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
+        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+        return json.loads(res.stdout)
+
+    def test_paint_a_group_inside_a_sprite_symbol_sets_is_kept(self):
+        # Train 20's review: a path in an imported symbol with no class or style of its own was left to
+        # inherit from the <use>, but a group around it supplied the paint through its class, and the cleanup
+        # dropped that class, so the line vanished. A shape that inherits from the sprite sheet stays
+        # recolourable (no paint written).
+        page = ("<style>.line{fill:none;stroke:#ff0000;stroke-width:2px}.dot{fill:#00ff00}</style>"
+                "<svg width='0' height='0' style='position:absolute'><symbol id='a' viewBox='0 0 24 24'>"
+                "<g class='line'><path d='M2 12h20'/></g><g style='fill:#0000ff'><circle cx='4' cy='4' r='2'/></g>"
+                "<path class='dot' d='M0 0h1v1z'/><path d='M3 3h1v1z'/></symbol></svg>"
+                "<button aria-label='Go' style='color:#333'><svg width='24' height='24'><use href='#a'/></svg></button>")
+        (html,) = self.collect(page)
+        paths = re.findall(r"<(?:path|circle)[^>]*>", html)
+        self.assertEqual(len(paths), 4, html)
+        self.assertIn('stroke="#ff0000"', paths[0])
+        self.assertIn('fill="none"', paths[0])
+        self.assertIn('stroke-width="2"', paths[0])
+        self.assertIn('fill="#0000ff"', paths[1])
+        self.assertIn('fill="#00ff00"', paths[2])
+        self.assertNotIn("fill=", paths[3])   # inherits from the <use>, so the icon can still be recoloured
+        self.assertNotIn("class=", html)
+        self.assertNotIn("style=", html)
+
+    def test_an_icon_drawn_from_another_files_sprite_is_left_out(self):
+        # finding 20-8: <use href="/icons/sprite.svg#x"> draws nothing in the saved file, so it was saved blank
+        page = ("<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'><path d='M0 0h24v24z'/></symbol></svg>"
+                "<button aria-label='A'><svg width='24' height='24'><use href='/icons/icon_definitions.svg#add'/></svg></button>"
+                "<button aria-label='B'><svg width='24' height='24'><use xlink:href='https://cdn.example.test/s.svg#x'/></svg></button>"
+                "<button aria-label='C'><svg width='24' height='24'><use href='#s'/></svg></button>")
+        got = self.collect(page)
+        self.assertEqual(len(got), 3)
+        self.assertIsNone(got[0])
+        self.assertIsNone(got[1])
+        self.assertIn('<symbol id="s"', got[2])
+
     def test_a_shared_gradient_keeps_its_styled_stop_colours(self):
         # Greptile on PR 1004: a gradient imported from the page whose stops are coloured by a class or a
         # style lost those colours when the copy's classes and styles were stripped, and drew black.
@@ -110,15 +156,7 @@ class IconPaint(unittest.TestCase):
                 "<stop offset='0' class='a'/><stop offset='1' style='stop-color:#00ff00;stop-opacity:0.4'/>"
                 "<stop offset='1' class='b'/><stop offset='1' stop-color='#123456'/></linearGradient></defs></svg>"
                 "<button aria-label='Go'><svg width='24' height='24' viewBox='0 0 24 24'><rect width='24' height='24' fill='url(#g)'/></svg></button>")
-        script = (f"const pw = await import({json.dumps(PLAYWRIGHT)}); const {{ chromium }} = pw.default ?? pw;\n"
-                  f"{icons_collect()}\n"
-                  "const b = await chromium.launch(); const p = await b.newPage();\n"
-                  f"await p.setContent({json.dumps(page)});\n"
-                  "const list = await p.evaluate(collect); await b.close();\n"
-                  "console.log(JSON.stringify(list.map((x) => x.html)));")
-        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
-        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
-        (html,) = json.loads(res.stdout)
+        (html,) = self.collect(page)
         stops = re.findall(r"<stop[^>]*>", html)
         self.assertEqual(len(stops), 4, html)
         self.assertIn('stop-color="#ff0000"', stops[0])
