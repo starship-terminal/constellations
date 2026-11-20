@@ -1,0 +1,341 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. thenavia.com declares Relume --color-scheme-1 slots (cream page, ink text, chartreuse accent) and --_primitives---colors--* hues. The light set holds the roles the public site paints. Measured control sizes come from raw/components-computed.json. No dark theme is bound.",
+ "core": {
+  "base": {
+   "color": {
+    "neutral": {
+     "": {
+      "black": {
+       "var": "--base-color-neutral--black<deleted|relume-variable-color-neutral-1>",
+       "type": "color",
+       "note": "the var name carries a deleted Relume variable tombstone"
+      },
+      "neutral": {
+       "lightest": {
+        "var": "--base-color-neutral--neutral-lightest<deleted|relume-variable-color-neutral-3>",
+        "type": "color",
+        "note": "the var name carries a deleted Relume variable tombstone"
+       }
+      },
+      "white": {
+       "var": "--base-color-neutral--white<deleted|relume-variable-color-neutral-2>",
+       "type": "color",
+       "note": "the var name carries a deleted Relume variable tombstone"
+      }
+     }
+    }
+   }
+  },
+  "color": {
+   "scheme": {
+    "1": {
+     "": {
+      "accent": {
+       "var": "--color-scheme-1--accent",
+       "type": "color"
+      },
+      "background": {
+       "var": "--color-scheme-1--background",
+       "type": "color"
+      },
+      "border": {
+       "var": "--color-scheme-1--border",
+       "type": "color"
+      },
+      "foreground": {
+       "var": "--color-scheme-1--foreground",
+       "type": "color"
+      },
+      "text": {
+       "var": "--color-scheme-1--text",
+       "type": "color"
+      }
+     }
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "heading": {
+     "type": "fontFamily",
+     "value": "\"Lora Variablefont Wght\",\"Times New Roman\",sans-serif",
+     "source": "declared on :root in the Webflow stylesheet as --_typography---font-styles--heading; vars.mjs did not resolve it onto the probe element",
+     "description": "Lora, the display face. Computed fontFamily on hero-title matches this stack."
+    },
+    "body": {
+     "type": "fontFamily",
+     "value": "\"Publicsans Variablefont Wght\",Arial,sans-serif",
+     "source": "declared on :root in the Webflow stylesheet as --_typography---font-styles--body; vars.mjs did not resolve it onto the probe element",
+     "description": "Public Sans, the UI face. Computed fontFamily on nav-link and submit matches this stack."
+    },
+    "handwriting": {
+     "type": "fontFamily",
+     "value": "Notemakersmark,\"Times New Roman\",sans-serif",
+     "source": "declared on :root in the Webflow stylesheet as --_typography---font-styles--handwriting; vars.mjs did not resolve it onto the probe element",
+     "description": "Notemakersmark, declared for handwritten accents. No captured control computed this family."
+    }
+   }
+  },
+  "radius": {
+   "small": {
+    "type": "dimension",
+    "value": "0.25rem",
+    "source": "declared on :root in the Webflow stylesheet as --_ui-styles---radius--small; vars.mjs did not resolve it onto the probe element",
+    "description": "0.25rem. Fields measure 4px, which is this step at 16px root."
+   },
+   "medium": {
+    "type": "dimension",
+    "value": "0.5rem",
+    "source": "declared on :root in the Webflow stylesheet as --_ui-styles---radius--medium; vars.mjs did not resolve it onto the probe element",
+    "description": "0.5rem. Declared. No captured control measured 8px."
+   },
+   "large": {
+    "type": "dimension",
+    "value": "1rem",
+    "source": "declared on :root in the Webflow stylesheet as --_ui-styles---radius--large; vars.mjs did not resolve it onto the probe element",
+    "description": "1rem. Declared. Primary buttons measure 64px, not this step."
+   }
+  },
+  "typography": {
+   "display": {
+    "$value": {
+     "fontFamily": "{font.family.heading}",
+     "fontSize": "80px",
+     "lineHeight": "96px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of blog-title default (raw/components-computed.json); the 80px blog h1"
+    }
+   },
+   "heading": {
+    "$value": {
+     "fontFamily": "{font.family.heading}",
+     "fontSize": "64px",
+     "lineHeight": "76.8px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of contact-title default (raw/components-computed.json); the 64px contact h1"
+    }
+   },
+   "title": {
+    "$value": {
+     "fontFamily": "{font.family.heading}",
+     "fontSize": "56px",
+     "lineHeight": "61.6px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of hero-title default (raw/components-computed.json); the 56px hero h1"
+    }
+   },
+   "section": {
+    "$value": {
+     "fontFamily": "{font.family.heading}",
+     "fontSize": "48px",
+     "lineHeight": "57.6px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of section-title default (raw/components-computed.json); the 48px section h2"
+    }
+   },
+   "feature": {
+    "$value": {
+     "fontFamily": "{font.family.heading}",
+     "fontSize": "22.4px",
+     "lineHeight": "26.88px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of feature-item default (raw/components-computed.json); the 22.4px feature label"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "{font.family.body}",
+     "fontSize": "16px",
+     "lineHeight": "25.6px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of text-field default (raw/components-computed.json); the 16px field"
+    }
+   },
+   "label": {
+    "$value": {
+     "fontFamily": "{font.family.body}",
+     "fontSize": "16px",
+     "lineHeight": "16px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of nav-link default (raw/components-computed.json); the 16px nav label"
+    }
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "{font.family.body}",
+     "fontSize": "16px",
+     "lineHeight": "24px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of submit default (raw/components-computed.json); the 16px submit label"
+    }
+   }
+  }
+ },
+ "light": {
+  "$extensions": {
+   "notTokenised": [
+    "text.muted: Not captured. No secondary text colour is declared; body uses --color-scheme-1--text.",
+    "text.disabled: Not captured. No disabled control was shown.",
+    "border.focus: Not captured. Measured focus-visible states did not paint a site-authored ring.",
+    "status.success, status.warning, status.danger, status.info: Not captured. The public site shows none.",
+    "color.dark: Not captured. prefers-color-scheme: dark still paints the cream page. html.dark resolves the same custom properties."
+   ]
+  },
+  "page": {
+   "var": "--color-scheme-1--background",
+   "type": "color",
+   "description": "The page field: cream #faf4e6."
+  },
+  "surface": {
+   "var": "--color-scheme-1--foreground",
+   "type": "color",
+   "description": "The scheme-1 foreground, the same cream as the page."
+  },
+  "text": {
+   "var": "--color-scheme-1--text",
+   "type": "color",
+   "description": "Ink #36312a."
+  },
+  "accent": {
+   "var": "--color-scheme-1--accent",
+   "type": "color",
+   "description": "Chartreuse #e8ff39, the primary button fill on the marketing nav and hero."
+  },
+  "accent-pressed": {
+   "value": "#36312a",
+   "type": "color",
+   "source": "computed backgroundColor of submit hover (raw/components-computed.json): the orange submit inverts to ink. The chartreuse button's hover overlay was not isolated as its own token.",
+   "description": "Pressed/hover fill observed on the contact submit."
+  },
+  "on-accent": {
+   "var": "--color-scheme-1--text",
+   "type": "color",
+   "description": "Ink on the chartreuse button."
+  },
+  "border": {
+   "var": "--color-scheme-1--border",
+   "type": "color",
+   "description": "The declared border #cdc7b8."
+  },
+  "field": {
+   "value": "#faf4e6",
+   "type": "color",
+   "source": "computed backgroundColor of text-field default (raw/components-computed.json)",
+   "description": "Contact field fill, the page cream."
+  },
+  "field-focus": {
+   "value": "#ffffff",
+   "type": "color",
+   "source": "computed backgroundColor of text-field focus-visible (raw/components-computed.json)",
+   "description": "Contact field fill when focused."
+  },
+  "orange": {
+   "value": "#f88450",
+   "type": "color",
+   "source": "css-var --_primitives---colors--orange, also computed backgroundColor of submit default",
+   "description": "The contact submit and the contact-page nav button."
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of submit default (raw/components-computed.json)",
+    "description": "The contact submit is 48px."
+   },
+   "field": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of text-field default (raw/components-computed.json)",
+    "description": "Contact fields are 44px."
+   },
+   "area": {
+    "type": "dimension",
+    "value": "180px",
+    "source": "computed height of text-area default (raw/components-computed.json)",
+    "description": "The message field is 180px."
+   },
+   "select": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of select default (raw/components-computed.json)",
+    "description": "The topic select is 44px."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed borderTopLeftRadius of submit default (raw/components-computed.json)",
+    "description": "The submit is a 64px pill."
+   }
+  },
+  "field": {
+   "radius": {
+    "type": "dimension",
+    "value": "4px",
+    "source": "computed borderTopLeftRadius of text-field default (raw/components-computed.json)",
+    "description": "Fields are 4px, the small radius step."
+   }
+  },
+  "shell": {
+   "header": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The desktop nav is 72px."
+   },
+   "headerMobile": {
+    "type": "dimension",
+    "value": "61.0156px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The phone nav is 61px."
+   }
+  },
+  "button": {
+   "fill": {
+    "var": "--color-scheme-1--accent",
+    "type": "color",
+    "description": "The chartreuse fill painted on .button-base inside the nav and hero CTAs."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed borderRadius of .button-base inside the Get started anchor, read live on / on 2026-11-21 (the anchor itself is transparent)",
+    "description": "Primary buttons are 64px pills."
+   }
+  }
+ }
+}
