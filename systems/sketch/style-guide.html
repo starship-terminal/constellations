@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sketch public style guide</title>
+<style>
+:root {
+  --core-font-family-display: Reckless, serif;
+  --core-font-family-ui: InterVariable, Inter, system-ui, -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --core-font-family-auth: Inter, -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --core-radius-control: 24px;
+  --core-radius-field: 16px;
+  --core-radius-auth: 6px;
+  --core-radius-card: 28px;
+  --core-radius-promo: 20px;
+  --core-radius-tooltip: 18px;
+  --core-radius-pill: 16px;
+  --light-page: #f5f5f5;
+  --light-surface: #ffffff;
+  --light-text: #212123;
+  --light-muted: rgba(0, 0, 0, 0.64);
+  --light-accent: #151515;
+  --light-on-accent: #ffffff;
+  --light-border: rgba(0, 0, 0, 0.08);
+  --light-link: #575fff;
+  --light-link-hover: rgba(87, 95, 255, 0.7);
+  --light-nav-hover: rgba(0, 0, 0, 0.48);
+  --light-field: #f9f9f9;
+  --light-field-focus: #ffffff;
+  --light-auth-field: rgba(0, 0, 0, 0.04);
+  --light-auth-field-focus: #ffffff;
+  --light-sso: #ffffff;
+  --light-sso-hover: #e6e6e6;
+  --light-disabled: rgba(87, 95, 255, 0.3);
+  --light-on-disabled: rgba(255, 255, 255, 0.7);
+  --light-card: rgba(255, 255, 255, 0.9);
+  --light-tooltip: rgba(255, 255, 255, 0.85);
+  --light-footer: #fafafa;
+  --light-phone-header: rgba(255, 255, 255, 0.8);
+  --light-menu: #ffffff;
+  --light-component-button-height: 47px;
+  --light-component-button-radius: var(--radius-control);
+  --light-component-button-padding-top: 11px;
+  --light-component-button-padding-x: 24px;
+  --light-component-header-height: 80px;
+  --light-component-header-phone-height: 64px;
+  --light-component-field-height: 48px;
+  --light-component-field-auth-height: 40px;
+  --light-component-card-radius: var(--radius-card);
+  --light-component-card-padding: 36px;
+  --sg-sans: var(--core-font-family-ui);
+  --sg-display: var(--core-font-family-display);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--light-page); color: var(--light-text); font: 400 16px/1.4 var(--sg-sans); }
+header, main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+h1 { font-family: var(--sg-display); font-weight: 500; font-size: 48px; line-height: 1; letter-spacing: -1px; margin: 0 0 8px; }
+h2 { font-size: 13px; letter-spacing: 0.08em; text-transform: none; margin: 32px 0 12px; }
+p.note { color: var(--light-muted); max-width: 62ch; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { background: var(--light-surface); border-radius: var(--core-radius-promo); padding: 10px; }
+.sw i { display: block; height: 48px; border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
+.sw span { display: block; margin-top: 8px; font-weight: 600; }
+.sw code { font-size: 11px; color: var(--light-muted); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-flex; align-items: center; height: var(--light-component-button-height); padding: 0 24px; border-radius: var(--core-radius-control); background: var(--light-accent); color: var(--light-on-accent); font-weight: 600; text-decoration: none; }
+.field { height: var(--light-component-field-height); border: 0; border-radius: var(--core-radius-field); background: var(--light-field); padding: 0 14px; font: inherit; min-width: 240px; }
+.card { background: var(--light-card); border-radius: var(--core-radius-card); padding: 24px; max-width: 280px; }
+a.link { color: var(--light-link); font-weight: 600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sketch</h1>
+  <p class="note">Public marketing site, light theme, measured 2026-11-21. Reckless is not loaded here, so the display falls back to a serif. Values come from tokens.json.</p>
+</header>
+<main>
+  <h2>Colour roles</h2>
+  <div class="swatches"><div class="sw"><i style="background:var(--light-page)"></i><span>page</span><code>var(--light-page)</code></div><div class="sw"><i style="background:var(--light-surface)"></i><span>surface</span><code>var(--light-surface)</code></div><div class="sw"><i style="background:var(--light-text)"></i><span>text</span><code>var(--light-text)</code></div><div class="sw"><i style="background:var(--light-muted)"></i><span>muted</span><code>var(--light-muted)</code></div><div class="sw"><i style="background:var(--light-accent)"></i><span>accent</span><code>var(--light-accent)</code></div><div class="sw"><i style="background:var(--light-on-accent)"></i><span>on-accent</span><code>var(--light-on-accent)</code></div><div class="sw"><i style="background:var(--light-link)"></i><span>link</span><code>var(--light-link)</code></div><div class="sw"><i style="background:var(--light-border)"></i><span>border</span><code>var(--light-border)</code></div><div class="sw"><i style="background:var(--light-field)"></i><span>field</span><code>var(--light-field)</code></div><div class="sw"><i style="background:var(--light-card)"></i><span>card</span><code>var(--light-card)</code></div><div class="sw"><i style="background:var(--light-disabled)"></i><span>disabled</span><code>var(--light-disabled)</code></div></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn" href="#">Get started</a>
+    <input class="field" placeholder="Email" readonly>
+    <a class="link" href="#">Create an account</a>
+  </div>
+  <h2>Plan card</h2>
+  <div class="card">
+    <strong>Standard</strong>
+    <p class="note">Radius and fill from the measured pricing card. Prices are not tokens.</p>
+  </div>
+</main>
+</body>
+</html>
