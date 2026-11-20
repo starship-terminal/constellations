@@ -230,7 +230,10 @@ async function pass(mobile) {
             const node = await page.$(sel);
             if (!node) continue;
             const box = await node.boundingBox();
-            if (state === 'hover' && box) await page.mouse.move(box.x + 8, box.y + 8);
+            if (state === 'hover' && box) {
+              await page.mouse.move(box.x + 8, box.y + 8);
+              await page.waitForTimeout(400);   // let the hover transition settle, as crops.mjs does
+            }
             if (state === 'focus-visible') {
               await node.focus().catch(() => {});
               // Force :focus-visible on the element itself: mark it, find it with DOM.querySelector

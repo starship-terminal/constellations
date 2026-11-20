@@ -165,7 +165,7 @@
           "borderRadius": "15px",
           "page": "home",
           "sel": "a.rl_navbar2_button.w-button:not(.loginbutton)",
-          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (signup-button-hover)",
+          "source": "computed style read after signup.hover() in tools/capture/crops.mjs, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (signup-button-hover)",
           "evidence": "Measured"
         }
       }

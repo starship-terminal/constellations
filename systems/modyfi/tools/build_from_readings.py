@@ -41,30 +41,37 @@ if signup:
         **{k: v for k, v in hover.items() if k not in ("component", "source")},
         "page": "home",
         "sel": "a.rl_navbar2_button.w-button:not(.loginbutton)",
-        "source": hover.get("source") or f"{CROP_SRC} (signup-button-hover)",
+        "source": hover.get("source") or "computed style read after signup.hover() in tools/capture/crops.mjs, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (signup-button-hover)",
         "evidence": "Measured",
     }
-cta = components.get("cta-button")
-if cta:
+
+
+def cta_focus(states):
+    """The CTA's focus-visible row: a saved reading is Measured; without one, the hand-entered row is
+    Reconstruction."""
     focus = states.get("focus-visible")
     if focus:
-        cta["states"]["focus-visible"] = {**{k: v for k, v in focus.items() if k != "component"}, "page": "home", "evidence": "Measured"}
-    else:
-        # No saved reading holds this state: the values were entered by hand here. run.mjs could not
-        # force :focus-visible then (a point lookup found no node), so the state came from a
-        # programmatic focus(), and its outline is the browser's own ring, not a Modyfi style.
-        cta["states"]["focus-visible"] = {
-            "color": "rgb(0, 0, 0)",
-            "backgroundColor": "rgb(255, 255, 255)",
-            "borderTopColor": "rgb(0, 0, 0)",
-            "borderRadius": "15px",
-            "outline": "rgb(153, 200, 255) auto 1px",
-            "boxShadow": "none",
-            "page": "home",
-            "sel": "a.rl-button",
-            "source": "entered by hand in tools/build_from_readings.py; no saved reading backs it. A programmatic focus() shows the browser's default ring, not a Modyfi style",
-            "evidence": "Reconstruction",
-        }
+        return {**{k: v for k, v in focus.items() if k != "component"}, "page": "home", "evidence": "Measured"}
+    # No saved reading holds this state: the values were entered by hand here. run.mjs could not
+    # force :focus-visible then (a point lookup found no node), so the state came from a
+    # programmatic focus(), and its outline is the browser's own ring, not a Modyfi style.
+    return {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "borderRadius": "15px",
+        "outline": "rgb(153, 200, 255) auto 1px",
+        "boxShadow": "none",
+        "page": "home",
+        "sel": "a.rl-button",
+        "source": "entered by hand in tools/build_from_readings.py; no saved reading backs it. A programmatic focus() shows the browser's default ring, not a Modyfi style",
+        "evidence": "Reconstruction",
+    }
+
+
+cta = components.get("cta-button")
+if cta:
+    cta["states"]["focus-visible"] = cta_focus(states)
 
 COMPONENTS_TEXT = json.dumps({
     "source": "getComputedStyle on the Wayback replay of https://www.modyfi.com/ snapshot 20250219221151, 1440x900, 2026-11-19. Live site is a Webflow 404.",

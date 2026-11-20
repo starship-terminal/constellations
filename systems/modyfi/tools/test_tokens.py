@@ -52,9 +52,11 @@ class Contract(unittest.TestCase):
         self.assertEqual(states["default"]["backgroundColor"], "rgba(0, 0, 0, 0)")
         self.assertEqual(states["hover"]["backgroundColor"], "rgb(255, 3, 87)")
 
-    def test_unread_focus_is_not_measured(self):
-        focus = json.loads(build_from_readings.COMPONENTS_TEXT)["components"]["cta-button"]["states"]["focus-visible"]
-        self.assertEqual(focus["evidence"], "Reconstruction")
+    def test_focus_label_follows_the_reading(self):
+        # A saved focus reading (after a recapture) is Measured; without one the hand row is not.
+        saved = {"focus-visible": {"outline": "rgb(0, 0, 0) solid 2px", "component": "cta-button", "sel": "a.rl-button"}}
+        self.assertEqual(build_from_readings.cta_focus(saved)["evidence"], "Measured")
+        self.assertEqual(build_from_readings.cta_focus({})["evidence"], "Reconstruction")
 
 
 if __name__ == "__main__":
