@@ -781,6 +781,14 @@ class ProviderKeyTest(TempConfig):
         self.assertEqual(got["provider"]["base_url"], "https://models.example/v1?key=[redacted]")
         self.assert_no_key()
 
+    def test_an_empty_or_missing_body_is_the_same_400_as_the_web_app(self):
+        self.chat.env_cfg = {"api": "anthropic", "base_url": "https://api.anthropic.com", "api_key": ENV_KEY, "model": "m"}
+        for path in ("/api/provider/test", "/api/provider"):
+            for raw in (b"", b"{}", b"[]", b"null", b"nope"):
+                handled, h = _post(self.routes, path, raw=raw)
+                self.assertEqual((h.status, h.json()["error"]), (400, "JSON body required"), (path, raw))
+        self.assertEqual(self.models_calls(), [])
+
     def test_delete_is_only_the_provider_route(self):
         handled, h = _send(self.routes, "delete", "/api/mcp")
         self.assertFalse(handled)

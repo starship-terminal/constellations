@@ -147,7 +147,10 @@ function carriesText(value: string, key: string): boolean {
 /** Validate and normalise a posted provider object. Throws BadRequest with a
     message that never quotes the submitted values. */
 function parse(body: unknown): Submitted {
-  if (typeof body !== "object" || body === null || Array.isArray(body)) throw new BadRequest("Send a JSON object.");
+  // No body, a body that is not a JSON object, or an empty object: the same
+  // 400 server/routes.py answers, so both servers agree on it.
+  if (typeof body !== "object" || body === null || Array.isArray(body) || !Object.keys(body).length)
+    throw new BadRequest("JSON body required");
   const b = body as Record<string, unknown>;
   if (b.migrate !== undefined && typeof b.migrate !== "boolean") throw new BadRequest("migrate must be true or false.");
   const s: Record<string, string> = {};

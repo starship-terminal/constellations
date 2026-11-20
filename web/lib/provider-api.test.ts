@@ -361,6 +361,16 @@ describe("a key in a URL field", () => {
 });
 
 describe("testing a key", () => {
+  it("answers an empty or missing body with the same 400 as server/routes.py", async () => {
+    process.env.ANTHROPIC_API_KEY = ENV_KEY;
+    for (const body of [undefined, null, {}, [], "x"])
+      for (const handler of [handleTest, handleSave]) {
+        const r = await handler(body, okModels);
+        assert.deepEqual([r.status, r.body.error], [400, "JSON body required"], JSON.stringify(body));
+      }
+    assert.deepEqual(calls, [], "no provider call, not even with an env key held");
+  });
+
   it("tests a typed key against the typed endpoint", async () => {
     const r = await handleTest({ ...GOOD, api_key: KEY }, okModels);
     assert.equal(r.body.ok, true);
