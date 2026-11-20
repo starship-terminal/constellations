@@ -200,6 +200,8 @@ The "Ask Endless…" textarea; sample text was typed and deleted, nothing sent. 
 #### Composer send
 The send/generate control inside the composer; measured, never pressed. Read as `composer-send` on the home page.
 
+**Wrong element.** These readings are the composer's "Add to prompt" attach button, not the send control: the selector's `form button` fallback matched it first. Recapture needed.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 36 x 36; border 1px solid transparent; radius 12px; background transparent; text TikTok Sans 14/20 500, #6e6e6e `light.muted.foreground`; transition color 0.15s cubic-bezier(0, 0, 0.2, 1), background-color 0.15s cubic-bezier(0, 0, 0.2, 1), border-color 0.15s cubic-bezier(0, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0, 0, 0.2, 1), fill 0.15s cubic-bezier(0, 0, 0.2, 1), stroke 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0, 0, 0.2, 1), opacity 0.15s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0, 0, 0.2, 1), transform 0.15s cubic-bezier(0, 0, 0.2, 1), translate 0.15s cubic-bezier(0, 0, 0.2, 1), scale 0.15s cubic-bezier(0, 0, 0.2, 1), rotate 0.15s cubic-bezier(0, 0, 0.2, 1), filter 0.15s cubic-bezier(0, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0, 0, 0.2, 1), display 0.15s cubic-bezier(0, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0, 0, 0.2, 1), overlay 0.15s cubic-bezier(0, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #6e6e6e `light.muted.foreground` |
@@ -732,7 +734,7 @@ The same home chrome re-measured under emulated prefers-color-scheme dark — th
 #### Header (dark)
 The sticky header painted by the dark token scope. Read as `d-header` on the home page.
 
-**Values (default).** size 1440 x 56; border B: 1px solid transparent; background rgba(0, 0, 0, 0.9); text TikTok Sans 14/20 500, #fafafa `light.primary.foreground`; transition background-color 0.15s cubic-bezier(0.22, 1, 0.36, 1), border-bottom-color 0.15s cubic-bezier(0.22, 1, 0.36, 1); icon 24 x 24, #fafafa `light.primary.foreground`.
+**Values (default).** size 1440 x 56; border B: 1px solid transparent; background rgba(0, 0, 0, 0.9); text TikTok Sans 14/20 500, #fafafa `dark.foreground`; transition background-color 0.15s cubic-bezier(0.22, 1, 0.36, 1), border-bottom-color 0.15s cubic-bezier(0.22, 1, 0.36, 1); icon 24 x 24, #fafafa `dark.foreground`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -741,7 +743,7 @@ The sign-up pill under .dark. Read as `d-nav-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 138.86 x 32; padding 0px 16px; border 1px solid transparent; radius 8px; background #fafafa `light.primary.foreground`; text TikTok Sans 14/20 600, #000000 `color.tailwind.black`; transition color 0.15s cubic-bezier(0, 0, 0.2, 1), background-color 0.15s cubic-bezier(0, 0, 0.2, 1), border-color 0.15s cubic-bezier(0, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0, 0, 0.2, 1), fill 0.15s cubic-bezier(0, 0, 0.2, 1), stroke 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0, 0, 0.2, 1), opacity 0.15s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0, 0, 0.2, 1), transform 0.15s cubic-bezier(0, 0, 0.2, 1), translate 0.15s cubic-bezier(0, 0, 0.2, 1), scale 0.15s cubic-bezier(0, 0, 0.2, 1), rotate 0.15s cubic-bezier(0, 0, 0.2, 1), filter 0.15s cubic-bezier(0, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0, 0, 0.2, 1), display 0.15s cubic-bezier(0, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0, 0, 0.2, 1), overlay 0.15s cubic-bezier(0, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0, 0, 0.2, 1); layers ::before transparent 0px none 1 |
+| default | size 138.86 x 32; padding 0px 16px; border 1px solid transparent; radius 8px; background #fafafa `dark.foreground`; text TikTok Sans 14/20 600, #000000 `color.tailwind.black`; transition color 0.15s cubic-bezier(0, 0, 0.2, 1), background-color 0.15s cubic-bezier(0, 0, 0.2, 1), border-color 0.15s cubic-bezier(0, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0, 0, 0.2, 1), fill 0.15s cubic-bezier(0, 0, 0.2, 1), stroke 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0, 0, 0.2, 1), opacity 0.15s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0, 0, 0.2, 1), transform 0.15s cubic-bezier(0, 0, 0.2, 1), translate 0.15s cubic-bezier(0, 0, 0.2, 1), scale 0.15s cubic-bezier(0, 0, 0.2, 1), rotate 0.15s cubic-bezier(0, 0, 0.2, 1), filter 0.15s cubic-bezier(0, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0, 0, 0.2, 1), display 0.15s cubic-bezier(0, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0, 0, 0.2, 1), overlay 0.15s cubic-bezier(0, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0, 0, 0.2, 1); layers ::before transparent 0px none 1 |
 | hover | background rgba(250, 250, 250, 0.9) |
 | focus-visible | border 1px solid #01bcff `color.brand.accent`; shadow rgba(1, 188, 255, 0.3) 0px 0px 0px 3px |
 | pressed | size 133.3 x 30.72; background rgba(250, 250, 250, 0.9) |
@@ -751,9 +753,9 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 #### Hero headline (dark)
 The display headline under .dark. Read as `d-hero-title` on the home page.
 
-**Values (default).** size 504.11 x 127.88; background transparent; text TikTok Sans 59.2/63.93 500, #fafafa `light.primary.foreground`; icon 35.17 x 35.17, #fafafa `light.primary.foreground`; layers div.home-sticker-frame.bg-surface-control 52.8x52.8 #171717 `light.primary.default` rgba(255, 255, 255, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.6) 0px 8px 24px -12px calc(22.5% + 2.2px); div.flex.size-10 44.0x44.0 #ffffff `color.tailwind.white` rgba(255, 255, 255, 0.08) 0px 0px 0px 1px 22.5%; div.rounded-xl.bg-surface-control 93.5x112.5 #171717 `light.primary.default` rgba(255, 255, 255, 0.08) 0px .
+**Values (default).** size 504.11 x 127.88; background transparent; text TikTok Sans 59.2/63.93 500, #fafafa `dark.foreground`; icon 35.17 x 35.17, #fafafa `dark.foreground`; layers div.home-sticker-frame.bg-surface-control 52.8x52.8 #171717 `dark.card.default` rgba(255, 255, 255, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.6) 0px 8px 24px -12px calc(22.5% + 2.2px); div.flex.size-10 44.0x44.0 #ffffff `color.tailwind.white` rgba(255, 255, 255, 0.08) 0px 0px 0px 1px 22.5%; div.rounded-xl.bg-surface-control 93.5x112.5 #171717 `dark.card.default` rgba(255, 255, 255, 0.08) 0px 0px 0px .
 
-Child layers that carry the look: div 52.8x52.8 background #171717 `light.primary.default` radius calc(22.5% + 2.2px) shadow rgba(255, 255, 255, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.6) 0px 8px 24px -12px; div 44x44 background #ffffff `color.tailwind.white` radius 22.5% shadow rgba(255, 255, 255, 0.08) 0px 0px 0px 1px; div 93.5x112.5 background #171717 `light.primary.default` radius 16px shadow rgba(255, 255, 255, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.6) 0px 8px 24px -12px.
+Child layers that carry the look: div 52.8x52.8 background #171717 `dark.card.default` radius calc(22.5% + 2.2px) shadow rgba(255, 255, 255, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.6) 0px 8px 24px -12px; div 44x44 background #ffffff `color.tailwind.white` radius 22.5% shadow rgba(255, 255, 255, 0.08) 0px 0px 0px 1px; div 93.5x112.5 background #171717 `dark.card.default` radius 16px shadow rgba(255, 255, 255, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.6) 0px 8px 24px -12px.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -762,7 +764,7 @@ The Ask-Endless textarea under .dark; focused, nothing typed or sent. Read as `d
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 660 x 72; padding 16px 20px 4px 20px; background transparent; text TikTok Sans 16/24 400, #fafafa `light.primary.foreground`; placeholder #a1a1a1 |
+| default (same: focused) | size 660 x 72; padding 16px 20px 4px 20px; background transparent; text TikTok Sans 16/24 400, #fafafa `dark.foreground`; placeholder #a1a1a1 `dark.muted.foreground` |
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -771,10 +773,10 @@ A header link under .dark. Read as `d-nav-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 65.91 x 32; padding 6px 10px; radius 8px; background transparent; text TikTok Sans 14/20 400, #a1a1a1; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
-| hover | background rgba(38, 38, 38, 0.5); text TikTok Sans 14/20 400, #fafafa `light.primary.foreground` |
+| default | size 65.91 x 32; padding 6px 10px; radius 8px; background transparent; text TikTok Sans 14/20 400, #a1a1a1 `dark.muted.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
+| hover | background rgba(38, 38, 38, 0.5) `dark.muted.hover`; text TikTok Sans 14/20 400, #fafafa `dark.foreground` |
 | focus-visible | background #262626 `color.tailwind.neutral-800` |
-| pressed | background rgba(38, 38, 38, 0.5); text TikTok Sans 14/20 400, #fafafa `light.primary.foreground` |
+| pressed | background rgba(38, 38, 38, 0.5) `dark.muted.hover`; text TikTok Sans 14/20 400, #fafafa `dark.foreground` |
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 

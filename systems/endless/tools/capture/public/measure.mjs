@@ -317,10 +317,14 @@ async function home() {
   const h = G.hero;
   await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: 'The home display headline.', sel: 'h1' }, { noScroll: true });
   await S('hero-lede', q('p.home-intro').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero copy', desc: 'The lede under the headline.', sel: 'p.home-intro' });
-  const comp0 = await markPainted('textarea', 'm-composer', { minW: 200, minH: 40 }).catch(() => null);
-  await S('composer', comp0 || q('textarea').filter({ visible: true }).first(), ['default'], { group: h, title: 'Prompt composer', desc: 'The painted Ask-Endless prompt box (the hero\'s chat composer). Its send control is never pressed.', sel: 'painted ancestor of the hero textarea' });
+  // markPainted returns the __none__ locator on a miss (S records it missing), never null.
+  const comp0 = await markPainted('textarea', 'm-composer', { minW: 200, minH: 40 });
+  await S('composer', comp0, ['default'], { group: h, title: 'Prompt composer', desc: 'The painted Ask-Endless prompt box (the hero\'s chat composer). Its send control is never pressed.', sel: 'painted ancestor of the hero textarea' });
   await S('composer-input', q('textarea').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: h, title: 'Composer input', desc: 'The "Ask Endless…" textarea; sample text was typed and deleted, nothing sent.', sel: 'textarea' }, { fillText: 'A launch post for the winter drop' });
-  await S('composer-send', q('button[type="submit"], button[aria-label*="send" i], form button').filter({ visible: true }).first(), B4, { group: h, title: 'Composer send', desc: 'The send/generate control inside the composer; measured, never pressed.', sel: 'composer send button' });
+  // Not `form button`: that union caught the composer's "Add to prompt" attach
+  // button first. Only a submit or a send-labelled control counts; anything
+  // else is recorded missing. (Edited after the last run; not re-run.)
+  await S('composer-send', q('button[type="submit"], button[aria-label*="send" i]').filter({ hasNotText: /add to prompt/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Composer send', desc: 'The send/generate control inside the composer; measured, never pressed.', sel: 'composer send button' });
   await S('mode-pill', q('button').filter({ hasText: /Terra|GPT|Claude|Gemini|model/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Model pill', desc: 'The model-picker pill on the composer ("GPT-6.1 Terra" on this pass).', sel: 'model picker button' });
   await S('prompt-chip', q('button, a').filter({ hasText: /Account analysis|Launch post|Product video/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Prompt chip', desc: 'A suggestion chip under the composer; measured, never pressed.', sel: 'prompt suggestion chip' });
   const s = G.home;
@@ -334,12 +338,12 @@ async function pricing() {
   await chrome('pricing');
   const g = G.pricing;
   await S('pricing-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing title', desc: 'The pricing page heading.', sel: 'h1 on /pricing' }, { noScroll: true });
-  await S('billing-toggle', q('button').filter({ hasText: /^\s*(Monthly|Annual)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing toggle', desc: 'The Monthly/Annual billing segment; Annual was toggled for the screenshot state, never checked out.', sel: 'button "Annual"' }, { noScroll: true });
+  await S('billing-toggle', q('button').filter({ hasText: /^\s*(Monthly|Annual)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing toggle', desc: 'The Monthly/Annual billing segment, read on its Monthly button at rest (Annual was pressed only for the pricing-*-annual screenshots, by public.mjs); never checked out.', sel: 'button "Monthly" or "Annual", first' }, { noScroll: true });
   await S('plan-name', q('h2, h3').filter({ hasText: /^\s*(Free|Pro|Team|Business|Enterprise|Creator)\s*$/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan name', desc: 'A plan card\'s name.', sel: 'plan name heading' });
   await S('plan-price', q('span, div, p').filter({ hasText: /^\s*(US)?\$\d+/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price', desc: 'A plan card\'s price figure.', sel: 'plan price' });
   await S('plan-cta', q('button, a').filter({ hasText: /^\s*(Get started|Start free)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s action; measured never followed (sign-up goes to s.endless.app).', sel: 'plan CTA button' });
-  const planCard = await markPainted('h2, h3', 'm-plan', { minW: 220, minH: 200 }).catch(() => null);
-  await S('plan-card', planCard || q('[class*="card" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan card (the painted ancestor of the plan name).', sel: 'plan card' });
+  const planCard = await markPainted('h2, h3', 'm-plan', { minW: 220, minH: 200 });
+  await S('plan-card', planCard, ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan card (the painted ancestor of the plan name).', sel: 'plan card' });
   await S('credits-slider', q('input[type="range"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Credits slider', desc: 'The shared-credits range input on /pricing; focused only, never dragged.', sel: 'input[type=range]' });
   await S('faq-item', q('button, summary, [role="button"]').filter({ hasText: /\?\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'FAQ row', desc: 'A pricing FAQ accordion row; measured closed, never opened.', sel: 'faq row' });
   save();
@@ -367,8 +371,8 @@ async function toolgen() {
   await chrome('toolgen');
   const g = G.toolgen;
   await S('tool-title', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Tool title', desc: 'The free-tool page heading (AI image generator).', sel: 'h1' }, { noScroll: true });
-  const card = await markPainted('input', 'm-tool', { minW: 250, minH: 60 }).catch(() => null);
-  await S('tool-panel', card || q('form, main').filter({ visible: true }).first(), ['default'], { group: g, title: 'Tool panel', desc: 'The prompt panel of the free tool; Generate is never pressed.', sel: 'tool panel' });
+  const card = await markPainted('input', 'm-tool', { minW: 250, minH: 60 });
+  await S('tool-panel', card, ['default'], { group: g, title: 'Tool panel', desc: 'The prompt panel of the free tool; Generate is never pressed.', sel: 'tool panel' });
   await S('tool-prompt', q('input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Prompt field', desc: 'The tool\'s prompt input ("e.g. a fox reading a map…" placeholder); sample text typed and deleted, nothing generated.', sel: 'tool prompt input' }, { fillText: 'a fox reading a map in a snowy forest' });
   await S('tool-generate', q('button').filter({ hasText: /Generate the image|Generate/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Generate button', desc: 'The Generate-the-image submit; measured, never pressed.', sel: 'button "Generate the image"' });
   await S('tool-step', q('h2, h3').filter({ hasText: /how|step|describe|generate|download/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'How-it-works heading', desc: 'A how-it-works heading on the tool page.', sel: 'tool h2' });
@@ -423,8 +427,8 @@ async function blog() {
   const g = G.blog;
   await S('blog-title', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Blog title', desc: 'The blog index heading.', sel: 'h1' }, { noScroll: true });
   await S('blog-pill', q('button, a').filter({ hasText: /^\s*(All|Guides|Customer stories)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Category pill', desc: 'A blog category filter pill; measured, never toggled.', sel: 'category pill' });
-  const card = await markPainted('article a, a[href*="/blog/"]', 'm-post', { minW: 150, minH: 100 }).catch(() => null);
-  await S('blog-card', card || q('a[href*="/blog/"], article').filter({ visible: true }).first(), B4, { group: g, title: 'Post card', desc: 'A post card in the blog index; measured, never followed.', sel: 'post card' });
+  const card = await markPainted('article a, a[href*="/blog/"]', 'm-post', { minW: 150, minH: 100 });
+  await S('blog-card', card, B4, { group: g, title: 'Post card', desc: 'A post card in the blog index; measured, never followed.', sel: 'post card' });
   save();
 }
 
@@ -500,14 +504,22 @@ async function mobile() {
   save();
 }
 
+// A page argument that matches no page fails loudly before anything is
+// rewritten: a misspelt one used to run nothing yet stamp _meta.read with
+// today's date, so stale readings looked fresh.
+const plan = { home, pricing, contact, toolgen, models, radar, brand, blog, docs, mcp, darkp, mobile };
+const pages = process.argv.slice(2);
+const unknown = pages.filter((p) => !(p in plan));
+if (unknown.length) {
+  console.error(`unknown page argument(s): ${unknown.join(', ')} — known pages: ${Object.keys(plan).join(', ')}`);
+  process.exit(1);
+}
 run = new Date().toISOString().slice(0, 10);
 out._meta.read = run;
 out._meta.viewport = '1440 x 900 (mobile group 390 x 844); every page paints light on a light system and dark on a dark system via next-themes .dark (the dark group was measured under emulated prefers-color-scheme dark)';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
-const pages = process.argv.slice(2);
-const plan = { home, pricing, contact, toolgen, models, radar, brand, blog, docs, mcp, darkp, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 try {
   for (const k of order) { if (k !== 'mobile' && k !== 'darkp') await plan[k](); }

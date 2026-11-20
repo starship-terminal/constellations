@@ -169,6 +169,8 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 const TOK = /*TOKENS*/null;
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+// For attribute values: a quoted font family ("TikTok Sans") would otherwise close style="...".
+const attr = (s) => esc(s).replace(/"/g, '&quot;');
 const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
 const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
 
@@ -236,7 +238,7 @@ const valText = (t) => Array.isArray(t.v)
     const v = t.v;
     if (v && typeof v === 'object' && v.fontSize) {
       const px = Math.min(parseFloat(v.fontSize) || 14, 44);
-      h += `<div class="tr"><span class="ts" style="font:${v.fontWeight} ${px}px/${v.lineHeight} ${v.fontFamily};letter-spacing:${v.letterSpacing}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontFamily.split(',')[0].replace(/"/g, ''))} ${esc(v.fontSize)}/${esc(v.lineHeight)} ${esc(v.fontWeight)} ${esc(v.letterSpacing)}</span></div>`;
+      h += `<div class="tr"><span class="ts" style="${attr(`font:${v.fontWeight} ${px}px/${v.lineHeight} ${v.fontFamily};letter-spacing:${v.letterSpacing}`)}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontFamily.split(',')[0].replace(/"/g, ''))} ${esc(v.fontSize)}/${esc(v.lineHeight)} ${esc(v.fontWeight)} ${esc(v.letterSpacing)}</span></div>`;
     } else {
       h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(typeof v === 'object' ? JSON.stringify(v) : v)}</span></div>`;
     }
