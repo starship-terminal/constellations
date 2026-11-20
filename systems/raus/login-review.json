@@ -1,0 +1,41 @@
+{
+  "product": "Raus",
+  "domain": "raus.life",
+  "reviewed": "2026-11-21",
+  "signedInSurface": false,
+  "reason": "The public site has a newsletter signup and no account sign-in. /login on www.raus.life returns the styled 404 page, title \"(404) Page not found | Raus\", heading \"404\". No password, code, OAuth, or account form was shown.",
+  "cookieConsent": "Cookiebot Customize then Deny. Consent recorded as necessary true, preferences false, statistics false, marketing false, method explicit.",
+  "formsFilled": [],
+  "publicScreensReached": [
+    "https://www.raus.life/",
+    "https://www.raus.life/search",
+    "https://www.raus.life/locations/lodge-am-see",
+    "https://www.raus.life/staying-with-us",
+    "https://www.raus.life/extras",
+    "https://www.raus.life/help",
+    "https://www.raus.life/journal",
+    "https://www.raus.life/about",
+    "https://www.raus.life/lastminute",
+    "https://www.raus.life/raus-cabins-by-the-lake",
+    "https://www.raus.life/partner-categories",
+    "https://www.raus.life/raus-student",
+    "https://www.raus.life/cabin-sales",
+    "https://www.raus.life/media",
+    "https://www.raus.life/sustainable-travelling",
+    "https://www.raus.life/what-to-bring",
+    "https://www.raus.life/imprint",
+    "https://www.raus.life/data-privacy",
+    "https://www.raus.life/terms-and-conditions",
+    "https://www.raus.life/accessibility",
+    "https://www.raus.life/login"
+  ],
+  "notEntered": [
+    "shop.raus.life",
+    "finder.raus.life",
+    "companion.raus.life",
+    "business.raus.life",
+    "newsletter (eepurl.com)",
+    "waiting list (Jotform)",
+    "creator request form"
+  ]
+}

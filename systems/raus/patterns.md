@@ -1,6 +1,6 @@
 # Patterns
 
-Public marketing pages on www.raus.life, signed out, 2026-11-19. No screenshots: `preview_snapshot` did not produce frames. The structure below is what the DOM and computed styles showed.
+Public marketing pages on www.raus.life, signed out. Structure from the 2026-11-19 DOM readings. Screenshots from the 2026-11-21 headless pass are in [screenshots/](screenshots). The map of controls is [site-tree.md](site-tree.md).
 
 ## Page chrome
 
@@ -14,7 +14,7 @@ The footer is transparent, padding `32px 12px 24px`, same ink text. The newslett
 
 The h1 is forest green, 36px, weight 300, letter-spacing -0.54px, in Neue Haas Unica. A later section heading switches to the serif `fonts` family at 40px. Two filled ink pills (Start quiz, and later View all articles) sit under the copy. Cabins near me is the outline twin of Start quiz.
 
-A yellow pill (`light.surface.search`), radius 40px, height 128px, holds Region, dates and guests as text buttons, plus the magenta Book your stay circle.
+A yellow pill (`light.surface.search`), radius 40px, height 128px, holds Region, dates and guests as text buttons, plus the magenta Book your stay circle. See [home-light-default.png](screenshots/home-light-default.png), [home-light-regions.png](screenshots/home-light-regions.png) and [home-light-guests.png](screenshots/home-light-guests.png). On the phone the book control is a yellow pill, [mobile-home-light-default.png](screenshots/mobile-home-light-default.png). The menu is [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
 ## Search
 

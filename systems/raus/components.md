@@ -2,7 +2,7 @@
 
 Measured on the public marketing site on 2026-11-19, signed out. Values are token names. Readings are in [raw/notes.md](raw/notes.md).
 
-`preview_snapshot` returned "The browser is not producing screenshot frames." Crops were not invented.
+Crops were not cut. Whole-page screenshots from 2026-11-21 are in [screenshots/](screenshots).
 
 ## Button
 
@@ -36,15 +36,19 @@ Not present.
 
 The language control is a native `select` named `language`. It computed to a transparent background, no border, Neue Haas Unica 14px, padding `0px 16px 0px 6px`. It was not changed.
 
-Region, dates and guests are buttons, not selects. Their open menus were not captured.
+Region, dates and guests are buttons, not selects. The region list and the guest stepper opened on 2026-11-21: [home-light-regions.png](screenshots/home-light-regions.png), [home-light-guests.png](screenshots/home-light-guests.png). The date picker did not open. The guest popover includes a Dog friendly switch. Its colours were not read.
 
 ## Checkbox
 
-Cookiebot checkboxes were in the consent dialog before Deny was clicked. They were not measured as product controls. No product checkbox was on the later pages.
+The search filter sheet shows product checkboxes (Dogs, Surroundings, Encounters, Wellness) in [search-light-filters.png](screenshots/search-light-filters.png). Their computed styles were not read. Cookiebot checkboxes were not measured as product controls.
 
-## Radio, switch
+## Radio
 
-Not present on the pages measured.
+Not seen on the pages opened.
+
+## Switch
+
+The guest popover has a Dog friendly switch, off in [home-light-guests.png](screenshots/home-light-guests.png). Its computed styles were not read.
 
 ## Tabs
 
