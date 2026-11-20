@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MasterClass style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: dark;
+  --sg-sans: "Sohne", Helvetica, Arial, sans-serif;
+  --sg-display: "Sohne Schmal", Helvetica, Arial, sans-serif;
+  --sg-serif: "Ivar Display Condensed", Georgia, serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/1.5 var(--sg-sans); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; border-bottom: 1px solid var(--border-default); padding-bottom: 16px; }
+h1 { font: 600 28px/1.15 var(--sg-display); letter-spacing: 0.02em; text-transform: uppercase; margin: 0; }
+h2 { font: 600 20px/1.25 var(--sg-sans); margin: 40px 0 12px; }
+p.lead { color: var(--text-secondary); max-width: 70ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: var(--radius-sm); border: 1px solid var(--border-default); }
+.sw b, .sw span { display: block; font: 12px/1.4 var(--sg-mono); margin-top: 4px; }
+.sw span { color: var(--text-secondary); }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--size-button-pad-y) var(--size-button-pad-x); border-radius: var(--radius-sm); border: 0; background: var(--accent-default); color: var(--text-on-accent); font: 600 16px/20px var(--sg-sans); letter-spacing: 0.16px; text-transform: capitalize; }
+.btn.quiet { background: transparent; color: var(--text-primary); box-shadow: inset 0 0 0 1px var(--border-strong); }
+.field { height: var(--size-search); width: 280px; border-radius: var(--radius-sm); border: 1px solid var(--border-default); background: var(--background-raised); color: var(--text-primary); padding: 0 12px; font: 400 16px/1 var(--sg-sans); }
+.card { width: 240px; background: var(--background-surface); border-radius: var(--radius-md); overflow: hidden; }
+.card .ph { height: 140px; background: var(--background-raised); }
+.card .bd { padding: 12px; }
+.card .kicker { color: var(--accent-default); font-size: 12px; }
+.badge { display: inline-block; background: var(--status-success); color: var(--background-page); font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); }
+th { color: var(--text-secondary); font-weight: 400; }
+code { font-family: var(--sg-mono); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>MasterClass</h1>
+  <span>Public site, dark only</span>
+</header>
+<p class="lead">Rendered from tokens.json. The public site ships one dark theme. Sohne, Sohne Schmal and Ivar are proprietary and fall back to Helvetica and Georgia here.</p>
+
+<h2>Colour</h2>
+<div class="row" id="roles"></div>
+
+<h2>Type</h2>
+<p style="font: 600 46px/46px var(--sg-display); text-transform: uppercase; margin: 0;">Learn from the best</p>
+<p style="font: 600 34px/1.15 var(--sg-sans);">A dose of inspiration</p>
+<p>Body at 16px on a 1.5 line. Secondary text sits in the medium neutral.</p>
+<p style="font-size: 12px; color: var(--text-secondary);">Caption, 12px.</p>
+
+<h2>Controls</h2>
+<div class="row">
+  <button class="btn">Get MasterClass</button>
+  <button class="btn quiet">View plans</button>
+  <input class="field" placeholder="What do you want to learn today?" readonly>
+  <span class="badge">New</span>
+</div>
+
+<h2>Card</h2>
+<div class="card">
+  <div class="ph"></div>
+  <div class="bd">
+    <div class="kicker">New</div>
+    <strong>Gordon Ramsay Teaches Cooking</strong>
+    <div style="color: var(--text-secondary); font-size: 14px;">1 hour 12 minutes</div>
+  </div>
+</div>
+
+<h2>Tokens</h2>
+<table id="tokens"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody></tbody></table>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+const roles = [
+  ["page", "background-page"],
+  ["surface", "background-surface"],
+  ["raised", "background-raised"],
+  ["text", "text-primary"],
+  ["muted", "text-secondary"],
+  ["accent", "accent-default"],
+  ["border", "border-default"],
+  ["success", "status-success"],
+  ["warning", "status-warning"],
+  ["danger", "status-danger"]
+];
+const row = document.getElementById("roles");
+for (const [label, name] of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background: var(--${name})"></i><b>${label}</b><span>--${name}</span>`;
+  row.appendChild(el);
+}
+const tb = document.querySelector("#tokens tbody");
+function walk(node, prefix) {
+  for (const [k, v] of Object.entries(node)) {
+    if (v && v.v !== undefined) {
+      const tr = document.createElement("tr");
+      const val = typeof v.v === "object" ? JSON.stringify(v.v) : String(v.v);
+      tr.innerHTML = `<td><code>${prefix}${k}</code></td><td><code>${val}</code></td><td>${v.s || ""}</td>`;
+      tb.appendChild(tr);
+    } else if (v && typeof v === "object") walk(v, prefix + k + ".");
+  }
+}
+walk(TOKENS.core || {}, "core.");
+walk(TOKENS.dark || {}, "dark.");
+</script>
+</body>
+</html>
