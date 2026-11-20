@@ -48,9 +48,9 @@ produced all of it, so a fix goes through the builders rather than a hand
 edit. The library is read three ways: by a person through the gallery app
 (`make dev`), by a script or agent through [catalog.json](catalog.json) and
 the read-only MCP server, and by a terminal through the `ds` CLI. The repo
-(`starship-terminal/constellations`) is public on GitHub; the rights
-position in [docs/RIGHTS.md](docs/RIGHTS.md) is pending the owner's
-decision.
+(`starship-terminal/constellations`) is public on GitHub; the products'
+assets stay their owners', and [docs/RIGHTS.md](docs/RIGHTS.md) says how to
+ask for a removal.
 
 ```
 $ python3 tools/catalog.py find dark chat
@@ -840,7 +840,7 @@ flowchart LR
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
-| [docs/RIGHTS.md](docs/RIGHTS.md) | What is not ours, and the rights position (pending the owner's decision now that the repo is public) |
+| [docs/RIGHTS.md](docs/RIGHTS.md) | What is not ours, and how to ask for something to be removed |
 | [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [AGENTS.md](AGENTS.md) | Instructions for coding agents working here |
 
@@ -879,7 +879,7 @@ CI runs three workflows:
 Rules that bite: Brief, Health, `DESIGN.md`, `web/data/`,
 `docs/scorecard/` and `site/` are regenerated, never hand-edited; every
 binary type goes through Git LFS ([.gitattributes](.gitattributes));
-`systems/`, screenshots and the gallery are never published; `.env` is never
+the docs site never includes the gallery; `.env` is never
 committed. [AGENTS.md](AGENTS.md) is the full brief for agents working here,
 including the pre-commit checks.
 
@@ -892,7 +892,7 @@ including the pre-commit checks.
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
-| [docs/RIGHTS.md](docs/RIGHTS.md) | What is not ours, and the rights position (pending the owner's decision now that the repo is public) |
+| [docs/RIGHTS.md](docs/RIGHTS.md) | What is not ours, and how to ask for something to be removed |
 | [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [docs/TODO.md](docs/TODO.md) | Open work, newest first |
 | [refero/README.md](refero/README.md) | The refero snapshot: layout, provenance, refresh and the media mirror |
@@ -905,6 +905,8 @@ including the pre-commit checks.
 This repository is public on GitHub at
 [starship-terminal/constellations](https://github.com/starship-terminal/constellations),
 so anyone can read it. The captures include signed-in pages and products' own
-artwork; the rights position in [docs/RIGHTS.md](docs/RIGHTS.md) is pending
-the owner's decision. Borrow structure and proportions from a package; never ship a
+artwork. Product names, logos, icons, illustrations, screenshots and fonts
+belong to their owners; a removal request goes in an
+[issue](https://github.com/starship-terminal/constellations/issues)
+([docs/RIGHTS.md](docs/RIGHTS.md)). Borrow structure and proportions from a package; never ship a
 product's logo, icons, illustrations or brand colours.
