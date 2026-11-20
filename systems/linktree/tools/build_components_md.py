@@ -81,6 +81,18 @@ def font(fz, lh, fw, f):
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (via "focus failed") or where the element took focus
+    but did not match :focus-visible. Its style is the element at rest, so it is left out of every
+    table and tally and listed as "could not be driven" (ported from the kit, commit 000d30cca)."""
+    return bool(v.get("skipped")) or "failed" in str(v.get("via", "")) or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def props(v):
     s = v["style"]
     o = {}
@@ -166,7 +178,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -197,7 +209,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -309,10 +321,10 @@ TRANSPARENT = re.compile(r"rgba\(\d+, \d+, \d+, 0\)$")
 foc, failed = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
-        continue
-    if "failed" in str(st.get("via", "")):
+    if st and focus_not_captured(st):
         failed.append(k)
+        continue
+    if not st or "style" not in st:
         continue
     s = st["style"]
     base = (c["states"].get("default") or {}).get("style") or {}
@@ -346,7 +358,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -383,7 +395,7 @@ for k in ["nav-signup", "hero-cta", "plan-select", "profile-link", "claim-wrap"]
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)
@@ -427,6 +439,10 @@ for g in groups:
             W("|---|---|")
             for lab, d in rows:
                 W(f"| {lab} | {fmt(d)} |")
+            W()
+        lost = [st for st, v in c["states"].items() if "style" in v and focus_not_captured(v)]
+        if lost:
+            W(f"Focus could not be captured: keyboard focus never landed on this element, so {', '.join(f'`{x}`' for x in lost)} is the element at rest and is left out of the table.")
             W()
         cl = child_layers(c)
         if cl:
