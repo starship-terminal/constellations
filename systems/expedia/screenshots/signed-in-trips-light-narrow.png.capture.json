@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-20T00:00:00.000Z",
+  "screenshot": "signed-in-trips-light-narrow.png",
+  "sanitizedSourceUrl": "https://www.expedia.com/trips",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "light"
+    },
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 780,
+      "height": 1688
+    },
+    "basis": "measuredInnerViewportTimesDevicePixelRatio"
+  },
+  "visualReview": {
+    "status": "accepted",
+    "note": "Signed-in empty account. Email replaced in the live DOM with a placeholder before the snapshot. No phone, address, or payment data."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop boxes from this PNG."
+  }
+}
