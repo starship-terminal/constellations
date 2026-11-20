@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T03:09:00Z",
+  "screenshot": "signed-in-onboard-light-desktop.png",
+  "sanitizedSourceUrl": "https://hashnode.com/onboard",
+  "route": "T3 in-app preview, default profile, live signed-in session",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [
+        "light"
+      ],
+      "colorScheme": "light"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    }
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 2880,
+      "height": 1800
+    },
+    "basis": "measured innerWidth times devicePixelRatio"
+  },
+  "note": "Quantized to sRGB 256-colour PNG. Colours were read from computed styles, not from this image. The email field is the signed-in account email, allowed in a private-repo screenshot and not copied into notes."
+}

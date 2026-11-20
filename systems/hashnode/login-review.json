@@ -1,0 +1,102 @@
+{
+  "slug": "hashnode",
+  "captured": "2026-11-21",
+  "signed_in": true,
+  "session": "T3 in-app preview, default profile. Signed in. Setup incomplete, so the app stays on /onboard Step 1 of 2. No login wall and no robot check. Empty profile fields were left empty. Nothing was submitted.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 1440, "height": 900, "scale": 1, "offsetLeft": 0, "offsetTop": 0}
+      },
+      "png": {"pixelWidth": 2880, "pixelHeight": 1800}
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 390, "height": 844, "scale": 1, "offsetLeft": 0, "offsetTop": 0}
+      },
+      "png": {"pixelWidth": 780, "pixelHeight": 1688},
+      "theme": "light"
+    }
+  },
+  "theme": {
+    "onArrival": "System checked in the Theme menu",
+    "restoredTo": "Dark, verified on the html class and colorScheme before the last desktop shots"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Signed-in shell",
+        "Search dialog"
+      ],
+      "reached": [
+        "Signed-in shell",
+        "Search dialog"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Account menu"
+      ],
+      "reached": [
+        "Account menu"
+      ]
+    },
+    "create": {
+      "items": [
+        "Onboard step 1"
+      ],
+      "reached": [
+        "Onboard step 1"
+      ]
+    }
+  },
+  "screens": [
+    {
+      "name": "Onboard step 1, dark, desktop",
+      "file": "screenshots/signed-in-onboard-dark-desktop.png"
+    },
+    {
+      "name": "Account menu, dark, desktop",
+      "file": "screenshots/signed-in-account-menu-dark-desktop.png"
+    },
+    {
+      "name": "Search dialog, resting, dark, desktop",
+      "file": "screenshots/signed-in-search-dark-desktop.png"
+    },
+    {
+      "name": "Onboard step 1, light, desktop",
+      "file": "screenshots/signed-in-onboard-light-desktop.png"
+    },
+    {
+      "name": "Onboard step 1, light, phone 390x844",
+      "file": "screenshots/signed-in-onboard-light-phone.png"
+    }
+  ],
+  "gaps": [
+    "Incomplete setup forces every app destination to /onboard. Home, Feed, Drafts, Notifications, Bookmarks, Settings, and the account profile all 307 back to this shell. Dashboard, editor, drafts, bookmarks, notifications, and settings did not render.",
+    "Search lists General settings, Account, Email, and Developer. Those rows were not opened.",
+    "Step 2 of onboarding was not reached. Next was not pressed.",
+    "Write opened a sheet that closed before a frame was saved. The editor was not entered.",
+    "Phone dark was not captured. Phone light at measured 390x844 was.",
+    "Collapsed sidebar was not captured.",
+    "catalog.json was not updated."
+  ],
+  "not_submitted": [
+    "Onboard Next (step 1 was not submitted, step 2 never loaded)",
+    "Username, location, and tagline (left empty)",
+    "Change photo, Remove, Upload photo",
+    "Write / publish",
+    "Search query",
+    "Sign out",
+    "Dismiss on the What's new card",
+    "Invite, buy, and delete (none of those controls were used)"
+  ]
+}
