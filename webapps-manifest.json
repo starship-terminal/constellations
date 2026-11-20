@@ -4239,9 +4239,9 @@
       "description": "Make what you love your work",
       "status": "pending",
       "package": null,
-      "notes": "https://www.useparallel.com/login asks for email and password, or LinkedIn. Password not submitted.",
+      "notes": "https://www.useparallel.com/login asks for email and password, or LinkedIn. Password not submitted. Public walk 2026-11-21: talent home has Explore (Paths, Jobs, AI Training, WorkForm), Talent and Employers tabs, Sign in, and Sign up. Employers mode swaps Explore for Overview, Platform, Recruiting, and Studio. Phone uses Open menu, which adds Explore Companies. Footer adds Manifesto, blog, careers, terms, and privacy. /login, /signup, /employers/login, and /employers/signup were recorded and not filled. LinkedIn was not clicked. /sync-jobs, /post-job, /claim-page, and /energy ask for an email and were not submitted. No form was submitted. Public package in PR 1547 at 7fe8a019ce3a. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 13
     },
     {
