@@ -2,6 +2,7 @@
 import importlib.util
 import json
 import os
+import tempfile
 import unittest
 from unittest import mock
 from pathlib import Path
@@ -461,8 +462,16 @@ class ChatErrorTest(unittest.TestCase):
             raise RuntimeError("/srv/secret/path leaked")
         fake = types.SimpleNamespace(ProviderError=ProviderError, run=boom,
                                      provider_config=lambda p: {"api": "openai"})
-        routes._load = lambda name: fake
+        store = _load("agent_provider_store_500", "provider_store.py")
+        routes._load = lambda name: store if name == "provider_store" else fake
         body = json.dumps({"messages": []}).encode()
+        # No saved provider: the env one (the fake's) runs. A throwaway config
+        # folder keeps a real ~/.config/design-systems/ out of it.
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        env = mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_CONFIG_DIR": tmp.name})
+        env.start()
+        self.addCleanup(env.stop)
 
         class H:
             path = "/api/chat"
@@ -709,6 +718,14 @@ class ApiReloadTest(unittest.TestCase):
     """api.py re-runs the agent modules per request: sys.path must not grow,
     and catalog is reloaded in place once catalog.py changes."""
     api = _load("agent_api_reload", "api.py")
+
+    def setUp(self):
+        # /api/status reads the saved provider: keep it off the real ~/.config.
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        env = mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_CONFIG_DIR": tmp.name})
+        env.start()
+        self.addCleanup(env.stop)
 
     def _get(self, path):
         import io

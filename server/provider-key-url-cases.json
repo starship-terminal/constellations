@@ -1,0 +1,14 @@
+{
+  "about": "URL-field values checked against a key that needs percent-encoding, run by tools/test_routes.py (server/provider_store.py) and web/lib/provider-api.test.ts (web/lib/provider-api.ts) so both servers refuse the same ones. <KEY> is the key as typed, <KEY_UPPER> and <KEY_LOWER> the key percent-encoded with upper and lower case hex. \"refuse\" means the save answers 400 with the API-key-field message; \"allow\" means it is saved.",
+  "key": "sk-a/b+c=d&e?f:g@h",
+  "cases": [
+    { "base_url": "https://models.example/v1?k=<KEY_UPPER>", "expect": "refuse" },
+    { "base_url": "https://models.example/v1?k=<KEY_LOWER>", "expect": "refuse" },
+    { "base_url": "https://models.example/v1?x=%zz&k=<KEY_LOWER>", "expect": "refuse" },
+    { "base_url": "https://models.example/v1?x=100%&k=<KEY_UPPER>", "expect": "refuse" },
+    { "base_url": "https://models.example/v1?x=%&k=<KEY>", "expect": "refuse" },
+    { "models_url": "https://models.example/v1/models?k=<KEY_LOWER>%", "expect": "refuse" },
+    { "base_url": "https://models.example/v1?x=%zz%41", "expect": "allow" },
+    { "base_url": "https://models.example/v1?k=sk-a%2Fb", "expect": "allow" }
+  ]
+}

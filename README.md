@@ -119,9 +119,10 @@ cp .env.example .env                      # fill in what you use; .env is gitign
 
 | Variable | Used by |
 | --- | --- |
-| `ANTHROPIC_API_KEY` | `tools/refero/classify.py`; the gallery chat's fallback provider (stays server-side) |
+| `ANTHROPIC_API_KEY` | `tools/refero/classify.py`; the gallery chat's provider while none is saved under Settings (stays server-side) |
 | `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET` | `tools/refero/upload_r2.py`, the media mirror upload |
-| `DS_CHAT_MODEL` | Optional: the model the gallery chat calls when the browser has none saved |
+| `DS_CHAT_MODEL` | Optional: the model the gallery chat calls with `ANTHROPIC_API_KEY` |
+| `DESIGN_SYSTEMS_CONFIG_DIR` | Optional: where the provider saved under Settings > Model provider is kept (default `~/.config/design-systems/`, outside the checkout); see [web/README.md](web/README.md) |
 | `DESIGN_SYSTEMS_REPO` | Optional: this checkout's path, when the app cannot find it by itself |
 | `DESIGN_SYSTEMS_MEDIA`, `DESIGN_SYSTEMS_MEDIA_BASE` | Optional: where mirrored refero media lives, and the base URL for catalog media absent from the local mirror |
 | `DESIGN_SYSTEMS_ALLOWED_HOSTS` | Optional: extra Host names (`name` or `name:port`, comma-separated) the Python `/api/` server (`server/api.py`) answers to; loopback, IP literals and `*.ts.net` already pass |
@@ -726,8 +727,9 @@ Three ways in:
   server from `--url`, `DESIGNS_URL`, or its saved config.
 
 Inside the app, Settings > Model provider turns the gallery home into a chat
-over the same tools (`ANTHROPIC_API_KEY` in `.env` is the fallback; the key
-stays server-side behind `/api/chat`). The app's Settings > For agents
+over the same tools. The key is sent to the app's server once, tested and
+kept there, never in the browser ([web/README.md](web/README.md));
+`ANTHROPIC_API_KEY` in `.env` applies while none is saved. The app's Settings > For agents
 section prints the MCP and `ds` instructions. The `design-systems` plugin in
 quiver-hub wraps all of this: its `apply-style` skill follows the steps
 above, `extract-style` drives the capture pipeline in
