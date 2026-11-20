@@ -5021,9 +5021,9 @@
       "description": "Build interactive motion graphics that run anywhere",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://rive.app/login/ shows email or username and password, or Google or SSO. Password not submitted.",
+      "notes": "Email probe: https://rive.app/login/ shows email or username and password, or Google or SSO. Password not submitted. Public walk 2026-11-21: PRODUCTS, USE CASES, and RESOURCES open mega menus. PRICING, DOWNLOADS, and DOCS go to pages. GET STARTED stops at editor.rive.app. The phone Open menu opens a sheet. YEARLY and MONTHLY swap prices in place. Docs theme control opens System, Light, and Dark. Light was not applied. Login at rive.app/login shows email or username, password, Google, and SSO. Signup is an account wall. Password was not submitted. Google and SSO were not clicked. No form was submitted. Public package in PR 1563 at 487cf97d1ec6. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
