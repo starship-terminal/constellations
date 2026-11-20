@@ -102,5 +102,33 @@ class RebuildTest(unittest.TestCase):
                 else:
                     self.assertEqual(row[col], "-", f"{k}: {row}")
 
+    def test_skipped_focus_keeps_its_note(self):
+        """A newer capture records a failed focus as {skipped, via} with no style; components.md
+        still has to say focus could not be captured on that component."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            shutil.copytree(pathlib.Path(self.tmp.name) / "tools", root / "tools", ignore=shutil.ignore_patterns("capture"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            shutil.copy(PKG / "tokens.json", root / "tokens.json")
+            raw = json.loads((root / "raw" / "components-computed.json").read_text())
+            k = next(k for k, c in raw["components"].items()
+                     if (c["states"].get("focus-visible") or {}).get("via") == "focus failed")
+            raw["components"][k]["states"]["focus-visible"] = {
+                "skipped": "focus failed: keyboard focus did not reach the element", "via": "focus failed"}
+            (root / "raw" / "components-computed.json").write_text(json.dumps(raw))
+            subprocess.run([sys.executable, str(root / "tools" / "build_components_md.py")], cwd=root, check=True, capture_output=True)
+            md = (root / "components.md").read_text()
+            block = md.split(f"Read as `{k}`", 1)[1].split("\n#### ", 1)[0]
+            self.assertIn("Focus not capturable", block)
+
+    def test_docs_cite_only_existing_tokens(self):
+        names = set()
+        for theme in ("core", "light", "dark"):
+            names |= {f"{theme}.{n}" for n, _ in flat(self.built[theme])}
+        for doc in ("patterns.md", "components.md"):
+            for m in set(re.findall(r"`((?:core|light|dark)\.[A-Za-z0-9._-]+)`", (PKG / doc).read_text())):
+                self.assertTrue(m in names or any(n.startswith(m + ".") for n in names), f"{doc} cites {m}")
+
+
 if __name__ == "__main__":
     unittest.main()
