@@ -112,30 +112,22 @@ async function pick(p, sel, score, tag = 'pk') {
 // CSS.forcePseudoState through CDP: the press never happens, so no link can
 // navigate and no button can fire.
 async function pressOn(loc) {
-  const b = await loc.boundingBox();
-  if (!b) return null;
+  // Force :active:hover on the component element itself, never the topmost
+  // node at its centre (a text span or an svg), so the component's own
+  // :active rule applies (2026-11 audit, finding 12-6; not run since).
   await cdp.send('DOM.getDocument').catch(() => {});
-  let nodeId = null;
+  await loc.evaluate((el) => el.setAttribute('data-press-target', '1'));
   try {
-    const { backendNodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) });
-    const { nodeIds } = await cdp.send('DOM.pushNodesByBackendIdsToFrontend', { backendNodeIds: [backendNodeId] });
-    nodeId = nodeIds[0];
-  } catch {
-    // getNodeForLocation misses on moving elements — mark the element and
-    // resolve it through the runtime objectId instead.
-    await loc.evaluate((el) => el.setAttribute('data-press-target', '1')).catch(() => {});
-    const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false }).catch(() => ({}));
-    if (result && result.objectId) {
-      // DOM.requestNode returns { nodeId } (2026-11 audit; not run since)
-      const req = await cdp.send('DOM.requestNode', { objectId: result.objectId }).catch(() => ({}));
-      nodeId = req.nodeId || null;
-    }
+    const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false });
+    if (!result || !result.objectId) return null;
+    const { nodeId } = await cdp.send('DOM.requestNode', { objectId: result.objectId });
+    if (!nodeId) return null;
+    await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
+    await page.waitForTimeout(400);
+    return nodeId;
+  } finally {
     await loc.evaluate((el) => el.removeAttribute('data-press-target')).catch(() => {});
   }
-  if (nodeId == null) return null;
-  await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
-  await page.waitForTimeout(400);
-  return nodeId;
 }
 const pressOff = (id) => id == null ? null : cdp.send('CSS.forcePseudoState', { nodeId: id, forcedPseudoClasses: [] }).catch(() => {});
 
