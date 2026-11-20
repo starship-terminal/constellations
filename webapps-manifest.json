@@ -6483,9 +6483,9 @@
       "description": "Powering Experience Makers",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://backoffice.understory.io/login showed email and password. Password not submitted. No Google button.",
+      "notes": "Email probe: https://backoffice.understory.io/login showed email and password. Password not submitted. No Google button. Public walk 2026-11-21: header dropdowns open product, marketing, and vertical pages. Pricing, Login, Book a demo, and Try for free are direct links. Phone uses a drawer. Homepage tabs, FAQ rows, the blog filter, and the pricing Monthly/Yearly switch are in-page. Login stops at backoffice.understory.io/login. Try for free stops at preview.understory.io. Those walls were recorded and not filled. No email was typed. No form was submitted. Signed-in backoffice was not captured. Public package in PR 1592 at 3550bb7b71fc. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 19
     },
     {
