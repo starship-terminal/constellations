@@ -275,6 +275,7 @@ tokens["app"]["color"]["legal"] = color(
 # label, not Measured; the rest of the file's values are in raw/readings.json.
 HAND = [
     "core.font.marketingNav", "core.font.mono", "core.fontWeight.light", "core.fontWeight.regular",
+    "core.fontWeight.bold", "core.fontSize.legal", "core.radius.md", "core.size.toolCta", "core.motion.easeStandard",
     "core.fontSize.display", "core.fontSize.price", "core.fontSize.footerLink", "core.lineHeight.heroLead",
     "core.lineHeight.display", "core.lineHeight.price", "core.letterSpacing.h2", "core.letterSpacing.tight",
     "core.radius.testimonial", "core.radius.footer", "core.size.authForm", "core.size.iconWell",

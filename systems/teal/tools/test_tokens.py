@@ -62,6 +62,60 @@ class TokensTest(unittest.TestCase):
                     with self.subTest(token=f"{theme}.color.{name}"):
                         self.assertTrue(value in raw or value in rgb, value)
 
+    def test_measured_values_are_whole_values_in_the_readings(self):
+        """Every scalar of a Measured or Derived token is a whole raw value, or one part of a raw shorthand."""
+        def colour(s):
+            m = re.fullmatch(r"rgba?\(\s*([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\s*\)", s)
+            if not m:
+                return s
+            h = "#%02x%02x%02x" % tuple(int(float(c)) for c in m.groups()[:3])
+            return h + ("%02x" % int(float(m.group(4)) * 255 + 0.5) if m.group(4) and float(m.group(4)) < 1 else "")
+
+        seen = set()
+
+        def collect(node):
+            if isinstance(node, dict):
+                for v in node.values():
+                    collect(v)
+            elif isinstance(node, list):
+                for v in node:
+                    collect(v)
+            else:
+                text = str(node).strip().lower()
+                seen.add(colour(text))
+                if isinstance(node, (int, float)) and not isinstance(node, bool):
+                    seen.add(f"{node}px")
+                seen.update(colour(part) for part in re.split(r"\s+(?![^()]*\))", text))
+
+        collect(READINGS)
+
+        def leaves(node, path):
+            if isinstance(node, dict) and "$value" in node:
+                yield path, node
+            elif isinstance(node, dict):
+                for k, v in node.items():
+                    if not k.startswith("$"):
+                        yield from leaves(v, f"{path}.{k}" if path else k)
+
+        def scalars(v):
+            if isinstance(v, dict):
+                for x in v.values():
+                    yield from scalars(x)
+            elif isinstance(v, list):
+                for x in v:
+                    yield from scalars(x)
+            else:
+                yield str(v).strip().lower()
+
+        for path, token in leaves(TOKENS, ""):
+            if token["$extensions"]["source"].startswith("Reconstruction"):
+                continue
+            for s in scalars(token["$value"]):
+                if s.startswith("{"):
+                    continue
+                with self.subTest(token=path):
+                    self.assertIn(colour(s), seen, s)
+
     def test_no_dark_set(self):
         self.assertNotIn("dark", TOKENS)
 
