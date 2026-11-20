@@ -59,15 +59,32 @@ class EverySource(unittest.TestCase):
         missing = [p for p, t in self.leaves().items() if not (t.get("$extensions") or {}).get("source")]
         self.assertEqual(missing, [])
 
+    def dead_aliases(self, flat):
+        """(path, reference) for every alias that names no token or that loops back on itself."""
+        def target(path, ref):
+            return next((c for c in (ref, f"{path.split('.')[0]}.{ref}", f"core.{ref}") if c in flat), None)
+
+        def reaches_a_value(path, ref, seen):
+            at = target(path, ref)
+            if at is None or at in seen:
+                return False
+            for text in self.strings(flat[at]["$value"]):
+                for inner in re.findall(r"\{([^{}]+)\}", text):
+                    if not reaches_a_value(at, inner, seen | {at}):
+                        return False
+            return True
+
+        return [(path, ref) for path, token in flat.items() for text in self.strings(token["$value"])
+                for ref in re.findall(r"\{([^{}]+)\}", text) if not reaches_a_value(path, ref, {path})]
+
     def test_every_alias_resolves(self):
+        self.assertEqual(self.dead_aliases(self.leaves()), [])
+
+    def test_a_circular_alias_fails(self):
         flat = self.leaves()
-        dead = []
-        for path, token in flat.items():
-            for text in self.strings(token["$value"]):
-                for ref in re.findall(r"\{([^{}]+)\}", text):
-                    if not any(c in flat for c in (ref, f"{path.split('.')[0]}.{ref}", f"core.{ref}")):
-                        dead.append((path, ref))
-        self.assertEqual(dead, [])
+        path = next(p for p, t in flat.items() if t.get("$type") == "color")
+        flat[path] = {**flat[path], "$value": "{" + path.split(".", 1)[1] + "}"}
+        self.assertTrue(self.dead_aliases(flat))
 
 
 if __name__ == "__main__":
