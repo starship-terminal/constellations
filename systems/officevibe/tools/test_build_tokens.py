@@ -27,6 +27,30 @@ class BuildTokensTest(unittest.TestCase):
         self.assertEqual(built["light"]["text"]["nav"]["$extensions"]["source"]["evidence"], "Reconstruction")
         self.assertEqual(built["core"]["color"]["brand"]["leapin-blue"]["$extensions"]["source"]["evidence"], "Measured")
 
+    def test_stylesheet_rules_and_their_aliases_are_not_measured(self):
+        built = build_tokens.build()
+        for key in ("display", "h1", "h2", "h3", "h4", "h5"):
+            self.assertEqual(built["core"]["typography"][key]["$extensions"]["source"]["evidence"], "Reconstruction", key)
+        # component.button.text aliases text.on-accent, an element reading raw/ does not hold
+        self.assertEqual(built["light"]["component"]["button"]["text"]["$extensions"]["source"]["evidence"], "Reconstruction")
+
+    def test_every_measured_root_token_names_a_property_the_dump_holds(self):
+        dumps = {build_tokens.MKT: build_tokens.M, build_tokens.LOGIN: build_tokens.H}
+
+        def walk(node):
+            if isinstance(node, dict) and "$value" in node:
+                yield node["$extensions"]["source"]
+            elif isinstance(node, dict):
+                for k, v in node.items():
+                    if not k.startswith("$"):
+                        yield from walk(v)
+
+        built = build_tokens.build()
+        for src in walk({"core": built["core"], "light": built["light"]}):
+            if src["evidence"] == "Measured" and src["from"] in dumps:
+                self.assertEqual(src["selector"], ":root", src)
+                self.assertIn(src["property"], dumps[src["from"]], src)
+
     def test_check_refuses_a_measured_element_reading(self):
         built = build_tokens.build()
         built["light"]["text"]["nav"]["$extensions"]["source"]["evidence"] = "Measured"

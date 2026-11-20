@@ -34,16 +34,45 @@ H = json.loads((RAW / "login-hop-vars.json").read_text())
 
 
 BY_HAND = "Entered by hand at capture time; raw/computed.json does not hold this element's computed style."
+NOT_IN_DUMP = "Entered by hand at capture time from the stylesheet rule; raw/ keeps only the :root custom properties, and this one is not among them."
 
 
 def src(evidence_from, selector, prop, note=None):
-    by_hand = evidence_from == ELEM
-    body = {"evidence": "Reconstruction" if by_hand else "Measured", "from": evidence_from, "selector": selector, "property": prop}
+    # Measured only when the value is one of the two :root dumps' readings; an element style or a
+    # stylesheet rule (.heading-style-h2, .button) was typed in by hand.
+    dump = {MKT: M, LOGIN: H}.get(evidence_from)
+    reason = BY_HAND if evidence_from == ELEM else (NOT_IN_DUMP if dump is not None and (selector != ":root" or prop not in dump) else None)
+    body = {"evidence": "Reconstruction" if reason else "Measured", "from": evidence_from, "selector": selector, "property": prop}
     if note:
         body["note"] = note
-    if by_hand:
-        body["note"] = (body.get("note", "") + ". " if note else "") + BY_HAND
+    if reason:
+        body["note"] = (body.get("note", "") + ". " if note else "") + reason
     return {"$extensions": {"source": body}}
+
+
+def inherit_labels(doc):
+    """An alias of a Reconstruction token is a Reconstruction too: it carries a hand-entered value."""
+    flat = {}
+
+    def walk(node, path):
+        if isinstance(node, dict) and "$value" in node:
+            flat[path] = node
+        elif isinstance(node, dict):
+            for k, v in node.items():
+                if not k.startswith("$"):
+                    walk(v, f"{path}.{k}" if path else k)
+
+    for name in ("core", "light"):
+        walk(doc[name], "")
+    for token in flat.values():
+        v = token["$value"]
+        if isinstance(v, str) and v.startswith("{") and v.endswith("}"):
+            target = flat.get(v[1:-1])
+            body = token["$extensions"]["source"]
+            if target and target["$extensions"]["source"]["evidence"] == "Reconstruction" and body["evidence"] == "Measured":
+                body["evidence"] = "Reconstruction"
+                body["note"] = (body.get("note", "") + ". " if body.get("note") else "") + f"Aliases {v}, which was entered by hand."
+    return doc
 
 
 def color(value, **kw):
@@ -393,7 +422,7 @@ def build():
         "light": light,
         "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
     }
-    return doc
+    return inherit_labels(doc)
 
 
 def check(doc):
