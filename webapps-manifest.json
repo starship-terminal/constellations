@@ -2595,9 +2595,9 @@
       "description": "Beautiful ATS & HR tool for modern teams",
       "status": "pending",
       "package": null,
-      "notes": "https://app.homerun.co/login asks for email and password, or Google or Microsoft. No code was sent.",
+      "notes": "https://app.homerun.co/login asks for email and password, or Google or Microsoft. No code was sent. Public walk 2026-11-21: nav opened ATS, HR, pricing, customers, partnership, and a Resources menu. Resources opened blog, product updates, guides, jobs, templates, referral, integrations, about, and help. Log in stops at https://app.homerun.co/login and https://app.homerun.hr/Account/Logon. Trial stops at the register wall. Book a demo was not opened. No form was submitted. Public package in PR 1529 at 3158b88a2. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 8
     },
     {
@@ -3370,9 +3370,9 @@
       "description": "Salon & Spa Software | Booking & Management",
       "status": "pending",
       "package": null,
-      "notes": "https://app.mangomint.com/login asks for email and password. Password not submitted.",
+      "notes": "https://app.mangomint.com/login asks for email and password. Password not submitted. Public walk 2026-11-21: the top bar opened solution, feature, and Learn more menus, plus Pricing and a video business-type dialog. Pricing has a same-page calculator. Blog, learn, and video indexes opened one article each. Log in, demo, and trial stop at a wall and were not entered. No form was submitted. Public package in PR 1527 at 52dea8cca. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 10
     },
     {
