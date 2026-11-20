@@ -106,6 +106,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **Quantised screenshots band gradients.** Screenshots are 256-colour PNGs; read exact colours, gradients included, from tokens.json or the raw JSON. The full-colour page captures are kept outside the repo.
 - **Hidden twins exist.** The header ships a hidden duplicate "Log in" link and pricing a hidden "Compare plans" heading before the painted ones; the package measures the painted copy (the last match) only.
 - **SFX pages have no large category card.** The nearest real subcategory surface is a small periwinkle in-row text link (`sfx-category-card`, 39 x 20); do not look for tile-style category cards that were never there.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 
