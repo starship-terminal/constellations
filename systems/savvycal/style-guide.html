@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SavvyCal style guide</title>
+<style>
+:root {
+  --color-brand-oatmeal: #fcf7ed;
+  --color-brand-sand: #f4ebda;
+  --color-brand-orange: #f54320;
+  --color-brand-orange-hover: #e03a18;
+  --color-brand-neon-green: #b9ff78;
+  --color-brand-white: #ffffff;
+  --color-olive-950: #0c0c09;
+  --color-olive-800: #2b2b22;
+  --color-olive-600: #5b5b4b;
+  --color-olive-400: #abab9c;
+  --color-olive-50: #fbfbf9;
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-focus-blue: #155dfc;
+  --font-family-ui: InterVariable, sans-serif;
+  --font-family-display: GT-Alpina-Condensed;
+  --font-family-auth: GT-America-Standard;
+  --radius-pill: 9999px;
+  --radius-control: 8px;
+  --spacing-1: 4px;
+  --spacing-2: 6px;
+  --spacing-3: 8px;
+  --spacing-4: 10px;
+  --spacing-5: 14px;
+  --spacing-6: 16px;
+  --spacing-7: 20px;
+  --size-nav-height: 5.25rem;
+  --size-hero-cta-height: 46px;
+  --size-nav-cta-height: 34px;
+  --size-field-height: 36px;
+  --size-oauth-height: 48px;
+  --size-icon-button: 36px;
+  --focus-cta-width: 2px;
+  --focus-cta-offset: 2px;
+  --focus-link-width: 1px;
+  --page: var(--color-brand-oatmeal);
+  --surface: var(--color-brand-sand);
+  --text: var(--color-olive-950);
+  --muted: var(--color-olive-400);
+  --accent: var(--color-brand-orange);
+  --accent-hover: var(--color-brand-orange-hover);
+  --on-accent: var(--color-brand-white);
+  --border: var(--color-olive-800);
+  --neon: var(--color-brand-neon-green);
+  --focus: var(--color-brand-orange);
+  --link-focus: var(--color-focus-blue);
+  --component-button-bg: var(--color-brand-orange);
+  --component-button-text: var(--color-brand-white);
+  --component-button-radius: var(--radius-pill);
+  --component-button-height: 46px;
+  --component-button-padding: 10px;
+  --component-field-bg: var(--color-brand-white);
+  --component-field-text: var(--color-zinc-950);
+  --component-field-radius: 8px;
+  --component-field-height: 36px;
+  --sg-sans: InterVariable, Inter, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text); background: var(--page); }
+main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 700 48px/0.95 GT-Alpina-Condensed, Georgia, serif; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 40px 0 12px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border-radius: 12px; border: 1px solid rgba(12,12,9,.12); }
+.sw b { display: block; font-size: 12px; margin-top: 6px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.cta { display: inline-flex; align-items: center; height: var(--component-button-height); padding: 0 20px; border-radius: var(--radius-pill); background: var(--component-button-bg); color: var(--component-button-text); font-weight: 500; text-decoration: none; }
+.quiet { display: inline-flex; align-items: center; height: 46px; padding: 0 20px; border-radius: var(--radius-pill); color: var(--text); text-decoration: none; }
+.field { height: var(--component-field-height); width: 280px; border-radius: var(--component-field-radius); border: 1px solid rgba(12,12,9,.2); padding: 0 12px; background: var(--component-field-bg); }
+.card { background: var(--surface); border-radius: 16px; padding: 20px; max-width: 360px; }
+</style>
+</head>
+<body>
+<main>
+<h1>SavvyCal</h1>
+<p>Public marketing surface, light only. Values come from tokens.json.</p>
+<h2>Colour</h2>
+<div class="swatches">
+<div class="sw"><i style="background:var(--page)"></i><b>page</b></div>
+<div class="sw"><i style="background:var(--surface)"></i><b>surface</b></div>
+<div class="sw"><i style="background:var(--text)"></i><b>text</b></div>
+<div class="sw"><i style="background:var(--muted)"></i><b>muted</b></div>
+<div class="sw"><i style="background:var(--accent)"></i><b>accent</b></div>
+<div class="sw"><i style="background:var(--neon)"></i><b>neon</b></div>
+</div>
+<h2>Components</h2>
+<div class="row">
+<a class="cta" href="#">Try SavvyCal risk-free</a>
+<a class="quiet" href="#">See plans and pricing</a>
+</div>
+<div class="card">
+<p style="margin:0 0 8px;font-weight:500">Design sync</p>
+<p style="margin:0;color:var(--muted)">A sand card on the oatmeal page.</p>
+</div>
+<div class="row">
+<input class="field" placeholder="Search integrations" aria-label="Search">
+</div>
+</main>
+</body>
+</html>
