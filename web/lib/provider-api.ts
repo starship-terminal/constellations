@@ -255,7 +255,7 @@ export const handleTest = (body: unknown, listModels: ListModels): Promise<ApiRe
     return { status: 200, body: { ...(await test({ ...held.cfg, model: s.model || held.cfg.model }, listModels)) } };
   });
 
-const EXISTING = "The server already has a saved provider, so it kept that one.";
+const EXISTING = "The server already has, or had, its own saved provider, so it kept its own setting.";
 const UNCHECKED =
   "This endpoint has no model list, so the new key could not be checked and the saved key was kept. Remove the saved key first to save this one unchecked.";
 

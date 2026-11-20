@@ -119,7 +119,7 @@ describe("migrateStoredProvider", () => {
     store.set("ds-provider", JSON.stringify(old));
     const note = await migrateStoredProvider(async () => ({ ok: false, existing: true, error: "kept" }));
     assert.equal(store.has("ds-provider"), false);
-    assert.match(String(note), /already has its own saved key/);
+    assert.match(String(note), /already has, or had, its own saved key/);
   });
 
   it("runs once for calls that overlap", async () => {

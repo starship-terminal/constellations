@@ -206,6 +206,18 @@ describe("review fixes", () => {
     assert.ok(!everything(r.body).includes(KEY2));
   });
 
+  it("a migration never brings back a key the user removed", async () => {
+    // The server saved a migrated key but the reply was lost, so the browser
+    // kept its copy; the user then removed the key on the server.
+    await handleSave({ ...GOOD, api_key: KEY, migrate: true }, okModels);
+    await handleRemove();
+    const again = await handleSave({ ...GOOD, api_key: KEY, migrate: true }, okModels);
+    assert.deepEqual([again.body.ok, again.body.existing], [false, true]);
+    assert.equal(await loadSaved(), null);
+    // A save the user makes still works.
+    assert.equal((await handleSave({ ...GOOD, api_key: KEY2 }, okModels)).body.ok, true);
+  });
+
   it("a migration saves when nothing is saved, and needs a key", async () => {
     const r = await handleSave({ ...GOOD, api_key: KEY, migrate: true }, okModels);
     assert.equal(r.body.ok, true);

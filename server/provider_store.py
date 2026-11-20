@@ -135,12 +135,21 @@ SCHEMA = """CREATE TABLE IF NOT EXISTS provider (
   model TEXT NOT NULL,
   name TEXT NOT NULL DEFAULT '',
   api_key TEXT NOT NULL
-)"""
+);
+-- Set by the first save and kept by Remove: a one-time migration from a
+-- browser only fills a store that has never held a provider, so a browser
+-- that kept its old key after a lost reply cannot bring back a key the user
+-- has since removed.
+CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY);
+CREATE TRIGGER IF NOT EXISTS provider_saved AFTER INSERT ON provider
+BEGIN INSERT OR IGNORE INTO meta (k) VALUES ('saved'); END;"""
 COLUMNS = ("api", "base_url", "key_header", "models_url", "model", "name", "api_key")
 _UPDATE = ", ".join(f"{c} = excluded.{c}" for c in COLUMNS)
 _INSERT = f"INSERT INTO provider (id, {', '.join(COLUMNS)}) VALUES (1, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO "
 SAVE_SQL = {
-    "create": _INSERT + "NOTHING",
+    # Only into a store that has never held a provider (see meta in SCHEMA).
+    "create": (f"INSERT INTO provider (id, {', '.join(COLUMNS)}) SELECT 1, ?, ?, ?, ?, ?, ?, ? "
+               "WHERE NOT EXISTS (SELECT 1 FROM meta WHERE k = 'saved') ON CONFLICT(id) DO NOTHING"),
     "same-key": _INSERT + f"UPDATE SET {_UPDATE} WHERE provider.api_key = excluded.api_key",
     "replace": _INSERT + f"UPDATE SET {_UPDATE}",
 }
@@ -188,7 +197,7 @@ def _db(create: bool):
             conn.execute("PRAGMA busy_timeout = 5000")
             conn.execute("PRAGMA secure_delete = ON")
             conn.execute("PRAGMA journal_mode = DELETE")
-            conn.execute(SCHEMA)
+            conn.executescript(SCHEMA)
         except sqlite3.Error as e:
             raise _store_error("The saved provider file cannot be read.", e) from None
         try:
@@ -227,8 +236,8 @@ def _values(cfg: dict) -> tuple:
 
 def save_provider(cfg: dict, mode: str) -> bool:
     """Write the provider in one statement. `mode`: "replace" always (a key the
-    provider checked); "create" only when none is saved (a migration from a
-    browser); "same-key" only when none is saved or it holds this same key (a
+    provider checked); "create" only when the store has never held a provider
+    (a migration from a browser; one saved and later removed still counts); "same-key" only when none is saved or it holds this same key (a
     key the provider could not check). True when the row was written. A
     checked key may replace a damaged file outright; the other modes may not,
     since they only write when they can see what is there."""

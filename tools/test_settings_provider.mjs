@@ -126,7 +126,7 @@ test("a server that already has a key keeps it, and the page says so", async () 
     method === "POST" ? { ok: false, existing: true, error: "kept" } : { ok: true, source: "saved", provider: { api: "openai", model: "m" } },
   );
   assert.equal(store.has("ds-provider"), false);
-  assert.match(els["pf-notice"].textContent, /already has its own saved key/);
+  assert.match(els["pf-notice"].textContent, /already has, or had, its own saved key/);
 });
 
 test("saving posts the typed key to the server and keeps no copy", async () => {

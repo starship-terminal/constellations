@@ -381,7 +381,7 @@ def _provider_test(handler, chat, store) -> None:
         _reply(handler, 500, {"ok": False, "error": "internal error"})
 
 
-_EXISTING = "The server already has a saved provider, so it kept that one."
+_EXISTING = "The server already has, or had, its own saved provider, so it kept its own setting."
 _UNCHECKED = ("This endpoint has no model list, so the new key could not be checked and the saved "
               "key was kept. Remove the saved key first to save this one unchecked.")
 
