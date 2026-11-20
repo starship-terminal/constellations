@@ -19,7 +19,7 @@ const ERROR_BODY = /something went wrong|^not found$|page cannot be found/i;
 export async function pageState(page) {
   const s = await page.evaluate(() => ({
     title: document.title,
-    body: ((document.body && document.body.innerText) || '').trim().slice(0, 400),
+    body: ((document.body && document.body.innerText) || '').trim(),
   })).catch(() => ({ title: '', body: '' }));
   if (CHALLENGE_TITLE.test(s.title) || CHALLENGE_BODY.test(s.body)) return 'challenge';
   if (ERROR_BODY.test(s.body)) return 'error';

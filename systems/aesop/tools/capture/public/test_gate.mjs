@@ -59,6 +59,11 @@ test('pageState and clearChallenge only read the page', async () => {
   assert.ok(page.calls.every(([k]) => k === 'wait'));
 });
 
+test('an error message anywhere in the body is found, not only near the top', async () => {
+  const long = { title: 'Aesop', body: 'Skin Care '.repeat(80) + 'Something went wrong' };
+  assert.equal(await pageState(stubPage([long])), 'error');
+});
+
 test('a blocked page is recorded and earlier readings are kept', () => {
   const out = { _meta: { captured: '2026-11-10' }, components: { 'pdp-title': { page: 'pdp', states: { default: {} } } } };
   const before = JSON.stringify(out.components);
@@ -78,6 +83,17 @@ test('lib.mjs open() loads through loadOnce and nothing else navigates', () => {
   const src = source('lib.mjs');
   assert.match(src, /export async function open\([^)]*\)[^]*?loadOnce\(page, url\)/);
   assert.doesNotMatch(src, /\.goto\(/);
+});
+
+test('vars.mjs checks the page again after the settle wait, before it writes', () => {
+  const src = source('../vars.mjs');
+  const wait = src.indexOf('waitForTimeout(6000)');
+  assert.ok(wait > 0 && src.indexOf('pageState(page)', wait) > wait);
+  assert.ok(src.indexOf('pageState(page)', wait) < src.indexOf('writeFileSync'));
+});
+
+test('measure.mjs records desktop and mobile blocks under separate keys', () => {
+  assert.match(source('measure.mjs'), /mobile && !key\.startsWith\('mobile-'\) \? `mobile-\$\{key\}` : key/);
 });
 
 for (const [name, loader, contexts] of [

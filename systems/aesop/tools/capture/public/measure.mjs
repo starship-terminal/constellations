@@ -88,7 +88,8 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000, url 
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
   log('open', key, mobile ? '(mobile)' : '');
-  return load(key, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
+  // Desktop and mobile runs share page keys (home): a block is recorded per view.
+  return load(mobile && !key.startsWith('mobile-') ? `mobile-${key}` : key, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
 }
 
 async function reset() {
