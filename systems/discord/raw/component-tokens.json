@@ -20986,7 +20986,7 @@
       "page": {
         "value": "{white.default}",
         "type": "color",
-        "source": "the painted field of /download and /nitro (screenshots/download-default.png, nitro-default.png); matches declared --white",
+        "source": "sampled, not measured: the white field of /download and /nitro read off screenshots/download-default.png and nitro-default.png; no computed reading of the page field; matches declared --white",
         "description": "The white field the light marketing pages (/download, /nitro) paint."
       },
       "card": {
@@ -29078,13 +29078,13 @@
       "page": {
         "value": "{background.base.lowest}",
         "type": "color",
-        "source": "the painted field of the app surfaces (screenshots/servers-default.png); matches declared --background-base-lowest; matches declared --background-base-lowest",
+        "source": "declared --background-base-lowest (raw/css-vars.json resolved.dark); no computed reading of the app page field (seen in screenshots/servers-default.png); matches declared --background-base-lowest",
         "description": "The #121214 base field the app surfaces paint (matches --background-base-lowest)."
       },
       "card": {
         "value": "{background.base.low}",
         "type": "color",
-        "source": "painted card-body layer inside sc-card default (raw/components-computed.json); matches declared --background-base-low",
+        "source": "painted article.guildItemContainer card body inside sc-card default (raw/components-computed.json); matches declared --background-base-low",
         "description": "The #202024 card body fill with its rgba(151,151,159,0.12) hairline (matches --background-base-low)."
       },
       "panel": {
@@ -29096,7 +29096,7 @@
       "field": {
         "value": "rgba(0, 0, 0, 0.121569)",
         "type": "color",
-        "source": "painted field layer over lg-pass default (raw/components-computed.json)",
+        "source": "painted div.wrapper field layer over lg-pass default (raw/components-computed.json)",
         "description": "The black@12% input fill inside the auth card."
       },
       "selected": {
@@ -36914,7 +36914,7 @@
       "online": {
         "value": "{mint.green}",
         "type": "color",
-        "source": "painted presence dot inside sc-card default (raw/components-computed.json); matches declared mint.green",
+        "source": "painted div.dotOnline presence dot inside sc-card default (raw/components-computed.json); matches declared mint.green",
         "description": "The #43b581 green of the Online presence dot."
       }
     },

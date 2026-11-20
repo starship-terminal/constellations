@@ -1,8 +1,6 @@
-"""The token builder is deterministic and keeps the measured orange."""
+"""The token builder reproduces tokens.json in memory and keeps the measured orange."""
 import json
 import pathlib
-import subprocess
-import sys
 import unittest
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -17,10 +15,31 @@ class BuildTokens(unittest.TestCase):
         self.assertEqual(tokens["core"]["font"]["size"]["display"]["$value"], "72px")
         self.assertEqual(tokens["light"], {})
 
-    def test_rebuild_is_stable(self):
-        before = (PKG / "tokens.json").read_text()
-        subprocess.run([sys.executable, str(HERE / "build_tokens.py")], check=True, cwd=PKG)
-        self.assertEqual((PKG / "tokens.json").read_text(), before)
+    def test_rebuild_matches(self):
+        # Builds on import and writes only when run as a script, so a mismatch leaves tokens.json alone.
+        import build_tokens
+        self.assertEqual(json.loads((PKG / "tokens.json").read_text()), json.loads(json.dumps(build_tokens.doc)))
+
+    def test_unparseable_colour_fails(self):
+        import build_tokens
+        with self.assertRaises(ValueError):
+            build_tokens.take_color({}, "color", "x", "color-mix(in srgb, red, blue)", "test")
+
+    def test_ua_focus_ring_is_not_labelled_measured(self):
+        focus = json.loads((PKG / "tokens.json").read_text())["dark"]["color"]["focus"]
+        self.assertTrue(focus["$extensions"]["source"].startswith("Observed."))
+
+
+class StyleGuide(unittest.TestCase):
+    def test_guide_matches_render(self):
+        import build_style_guide
+        self.assertEqual((PKG / "style-guide.html").read_text(), build_style_guide.html)
+
+    def test_swatches_read_the_slim_tree(self):
+        # build_style_guide inlines {v, t, s} per token; a script reading DTCG $value finds nothing.
+        tpl = (HERE / "style-guide.template.html").read_text()
+        self.assertNotIn("token.$value", tpl)
+        self.assertIn("token.v", tpl)
 
 
 if __name__ == "__main__":
