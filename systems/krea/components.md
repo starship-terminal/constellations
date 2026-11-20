@@ -47,7 +47,7 @@ Screenshots are named `{page}-dark-state.png`: the painted theme is dark (html.d
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 13 components were given a real keyboard focus. 3 draw an outline ring: `ent-cta` (1px auto #007aff, offset 1px), `plug-link` (1px auto #007aff, offset 1px), `login-google` (1px auto #101010 `light.color.page-950`, offset 0px). 8 draw a focus ring as a shadow instead: `sidebar-toggle`, `nav-signin`, `tools-button`, `search-button`, `mkt-login`, `mkt-signup`, `price-cta`, `m-menu`. The other 2 show no measured change: `nav-home`, `nav-pricing`.
+**Focus.** 13 components were given a real keyboard focus. 3 draw an outline ring: `ent-cta` (1px auto #007aff, offset 1px), `plug-link` (1px auto #007aff, offset 1px), `login-google` (1px auto #101010 `core.color.primary.950`, offset 0px). 8 draw a focus ring as a shadow instead: `sidebar-toggle`, `nav-signin`, `tools-button`, `search-button`, `mkt-login`, `mkt-signup`, `price-cta`, `m-menu`. The other 2 show no measured change: `nav-home`, `nav-pricing`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -74,8 +74,8 @@ Values that apply across entries, from the measurement files.
 | [Feed card](#feed-card) | 362 x 649 | - | - | #df9443 | none | 0 |
 | [Announcement card](#announcement-card) | 143.95 x 40 | - | 3.35544e+07px | oklab(0.173028 0.00000786781 0.00000345707 / 0.4) | none | 0px 40px |
 | [Blog card](#blog-card) | 409.72 x 18.89 | - | - | transparent | none | 0 |
-| [Get Pro](#get-pro) | 280 x 40 | - | 3.35544e+07px | #ffffff `light.color.on-dark` | none | 0px 32px |
-| [Continue with Google](#continue-with-google) | 352 x 46 | 1px solid #ffffff `light.color.on-dark` | 14px | #ffffff `light.color.on-dark` | none | 12px 16px |
+| [Get Pro](#get-pro) | 280 x 40 | - | 3.35544e+07px | #ffffff `core.color.primary.0` | none | 0px 32px |
+| [Continue with Google](#continue-with-google) | 352 x 46 | 1px solid #ffffff `core.color.primary.0` | 14px | #ffffff `core.color.primary.0` | none | 12px 16px |
 
 ## Components
 
@@ -132,9 +132,9 @@ The white sidebar Sign in button. Measured, never followed. It opens /login. Rea
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 239 x 48; padding 8px; radius 10px; background oklch(0.985 0 0); shadow oklab(0 0 0 / 0.1) 0px 0px 0px 0.5px; text Suisse Intl 14/20 400, oklch(0.145 0 0); transition background-color 0.3s cubic-bezier(0, 0, 0.2, 1), transform 0.3s cubic-bezier(0, 0, 0.2, 1) |
-| hover | background #e5e5e5 `light.component.sign-in-hover.backgroundColor` |
+| hover | background #e5e5e5 `core.color.primary.200` |
 | focus-visible | shadow oklab(0 0 0 / 0.1) 0px 0px 0px 2px |
-| pressed | size 234.22 x 47.04; background #e5e5e5 `light.component.sign-in-hover.backgroundColor`; transform scale(0.98) |
+| pressed | size 234.22 x 47.04; background #e5e5e5 `core.color.primary.200`; transform scale(0.98) |
 
 ![Sign in default](components/crops/nav-signin-default.png) ![Sign in hover](components/crops/nav-signin-hover.png) ![Sign in focus-visible](components/crops/nav-signin-focus-visible.png) ![Sign in pressed](components/crops/nav-signin-pressed.png)
 
@@ -170,7 +170,7 @@ The signed-out home: an offer strip, a model-announcement carousel, a public gen
 #### Offer banner
 The top offer strip ("Unlimited Nano Banana for 7 days"). A campaign surface, hidden from other shots by closePromo when it is a dismiss overlay. Measured, never claimed. Read as `promo-banner` on the home page.
 
-**Values (default).** size 119.22 x 40; padding 0px 24px; radius 3.35544e+07px; background oklab(0.173028 0.00000786781 0.00000345707 / 0.4); text Suisse Intl 14/20 450, #ffffff `light.color.on-dark`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers ::after rgba(0, 0, 0, 0) 0px rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0.1) 0px 0px 0px 0px inset, rgba(255, 255, 255, 0.25) 0px -1px 1px 0px inset, rgba(255, 255, 255, 0.25) 0px 1px 1px 0px inset 1; ancestors div.@container.relative bg transparent.
+**Values (default).** size 119.22 x 40; padding 0px 24px; radius 3.35544e+07px; background oklab(0.173028 0.00000786781 0.00000345707 / 0.4); text Suisse Intl 14/20 450, #ffffff `core.color.primary.0`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers ::after rgba(0, 0, 0, 0) 0px rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0.1) 0px 0px 0px 0px inset, rgba(255, 255, 255, 0.25) 0px -1px 1px 0px inset, rgba(255, 255, 255, 0.25) 0px 1px 1px 0px inset 1; ancestors div.@container.relative bg transparent.
 
 ![Offer banner default](components/crops/promo-banner-default.png)
 
@@ -179,15 +179,15 @@ A published generation card on the signed-out home feed. A public demo, not a si
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 362 x 649; background #df9443; text Suisse Intl 16/24 400, #ffffff `light.color.on-dark`; ancestors div.relative.w-full bg transparent |
-| hover | text Suisse Intl 14/20 450, oklch(0 0 0); icon 16 x 16, #ffffff `light.color.on-dark` |
+| default | size 362 x 649; background #df9443; text Suisse Intl 16/24 400, #ffffff `core.color.primary.0`; ancestors div.relative.w-full bg transparent |
+| hover | text Suisse Intl 14/20 450, oklch(0 0 0); icon 16 x 16, #ffffff `core.color.primary.0` |
 
 ![Feed card default](components/crops/feed-card-default.png) ![Feed card hover](components/crops/feed-card-hover.png)
 
 #### Announcement card
 A model-announcement card on the home feed. Read as `announce-card` on the home page.
 
-**Values (default).** size 143.95 x 40; padding 0px 40px; radius 3.35544e+07px; background oklab(0.173028 0.00000786781 0.00000345707 / 0.4); text Suisse Intl 14/20 450, #ffffff `light.color.on-dark`; transition opacity 0.5s cubic-bezier(0, 0, 0.2, 1), scale 0.15s cubic-bezier(0, 0, 0.2, 1), background-color 0.15s cubic-bezier(0, 0, 0.2, 1); opacity 0; layers ::after rgba(0, 0, 0, 0) 0px rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0.1) 0px 0px 0px 0px inset, rgba(255, 255, 255, 0.25) 0px -1px 1px 0px inset, rgba(255, 255, 255, 0.25) 0px 1px 1px 0px inset 1.
+**Values (default).** size 143.95 x 40; padding 0px 40px; radius 3.35544e+07px; background oklab(0.173028 0.00000786781 0.00000345707 / 0.4); text Suisse Intl 14/20 450, #ffffff `core.color.primary.0`; transition opacity 0.5s cubic-bezier(0, 0, 0.2, 1), scale 0.15s cubic-bezier(0, 0, 0.2, 1), background-color 0.15s cubic-bezier(0, 0, 0.2, 1); opacity 0; layers ::after rgba(0, 0, 0, 0) 0px rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0.1) 0px 0px 0px 0px inset, rgba(255, 255, 255, 0.25) 0px -1px 1px 0px inset, rgba(255, 255, 255, 0.25) 0px 1px 1px 0px inset 1.
 
 ![Announcement card default](components/crops/announce-card-default.png)
 
@@ -196,7 +196,7 @@ The signed-out prompt ("Describe an idea or upload an image to edit it"). Sample
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 822 x 48; padding 6px 10px; background transparent; text Suisse Intl 16/24 400, #ffffff `light.color.on-dark`; placeholder oklab(0.999994 0.0000455678 0.0000200868 / 0.5); ancestors div.group/promptbox.bg-primary-100/85 bg transparent |
+| default | size 822 x 48; padding 6px 10px; background transparent; text Suisse Intl 16/24 400, #ffffff `core.color.primary.0`; placeholder oklab(0.999994 0.0000455678 0.0000200868 / 0.5); ancestors div.group/promptbox.bg-primary-100/85 bg transparent |
 | focused | shadow #ffffff 0px 0px 0px 0px, oklch(0.546 0.245 262.881) 0px 0px 0px 0px; outline 2px solid transparent, offset 2px; layers textarea.min-h-[2lh]!.w-full 822.0x48.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 255, 255) 0px 0px 0px 0px, oklch(0.546 0.245 262.881) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 2px solid rgba(0, 0, 0, 0) offset 2px; ancestors div.group/promptbox.bg-primary-100/85 bg rgba(0, 0, 0, 0.34) |
 | filled | shadow #ffffff 0px 0px 0px 0px, oklch(0.546 0.245 262.881) 0px 0px 0px 0px; outline 2px solid transparent, offset 2px; layers textarea.min-h-[2lh]!.w-full 822.0x48.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 255, 255) 0px 0px 0px 0px, oklch(0.546 0.245 262.881) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 2px solid rgba(0, 0, 0, 0) offset 2px; ancestors div.group/promptbox.bg-primary-100/85 bg rgba(0, 0, 0, 0.35) |
 
@@ -214,9 +214,9 @@ The /pricing marketing page: a white Sign up pill, a dark Log in pill, four plan
 #### Marketing nav
 The pricing-page top nav: App, Features, Plugins, Image, Video, API, MCP, Pricing, Enterprise, Sign up, Log in. Read as `mkt-nav` on the pricing page.
 
-**Values (default).** size 1440 x 79.5; padding 16px 64px; border B: 1px solid oklab(0 0 0 / 0.15); background transparent; text Suisse Intl 15/22.5 400, #ffffff `light.color.on-dark`; transition transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease-out, background-color 0.2s ease-out; icon 22 x 22, #ffffff `light.color.on-dark`; layers header.header.section-container 1440.0x79.5 B:1px solid oklab(0 0 0 / 0.15); button.focus-visible:border-ring.focus-visible:ring-ring/50 132.8x36.0 rgb(255, 255, 255) T:1px solid oklab(0 0 0 / 0.2) / R:1px solid oklab(0 0 0 / 0.2) / B:1px solid oklab(0 0 0 / 0.2) / L:1px solid oklab(0 0 0 / 0.2) 3.35544e+07px; button.focus-visible:border-ring.focus-visible:ring-ring/50 71.6x36.0 rgb(38, 38, 38) 3..
+**Values (default).** size 1440 x 79.5; padding 16px 64px; border B: 1px solid oklab(0 0 0 / 0.15); background transparent; text Suisse Intl 15/22.5 400, #ffffff `core.color.primary.0`; transition transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease-out, background-color 0.2s ease-out; icon 22 x 22, #ffffff `core.color.primary.0`; layers header.header.section-container 1440.0x79.5 B:1px solid oklab(0 0 0 / 0.15); button.focus-visible:border-ring.focus-visible:ring-ring/50 132.8x36.0 rgb(255, 255, 255) T:1px solid oklab(0 0 0 / 0.2) / R:1px solid oklab(0 0 0 / 0.2) / B:1px solid oklab(0 0 0 / 0.2) / L:1px solid oklab(0 0 0 / 0.2) 3.35544e+07px; button.focus-visible:border-ring.focus-visible:ring-ring/50 71.6x36.0 rgb(38, 38, 38) 3..
 
-Child layers that carry the look: header 1440x79.5 border 1px solid oklab(0 0 0 / 0.15); button 132.8x36 background #ffffff `light.color.on-dark` border 1px solid oklab(0 0 0 / 0.2) radius 3.35544e+07px; button 71.6x36 background #262626 `light.color.muted` radius 3.35544e+07px.
+Child layers that carry the look: header 1440x79.5 border 1px solid oklab(0 0 0 / 0.15); button 132.8x36 background #ffffff `core.color.primary.0` border 1px solid oklab(0 0 0 / 0.2) radius 3.35544e+07px; button 71.6x36 background #262626 `core.color.primary.800` radius 3.35544e+07px.
 
 ![Marketing nav default](components/crops/mkt-nav-default.png)
 
@@ -225,7 +225,7 @@ The marketing Log in control. Measured, never followed. Destination is /login. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 71.61 x 36; padding 8px 16px; radius 3.35544e+07px; background #262626 `light.color.muted`; text Suisse Intl 14/20 450, #ffffff `light.color.on-dark`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 71.61 x 36; padding 8px 16px; radius 3.35544e+07px; background #262626 `core.color.primary.800`; text Suisse Intl 14/20 450, #ffffff `core.color.primary.0`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background #202020 `core.color.primary.850` |
 | focus-visible | shadow oklab(0.556 0 0 / 0.5) 0px 0px 0px 3px |
 | pressed | background #202020 `core.color.primary.850` |
@@ -237,7 +237,7 @@ The marketing Sign up control. Measured, never followed. Read as `mkt-signup` on
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 132.81 x 36; padding 8px 16px; border 1px solid oklab(0 0 0 / 0.2); radius 3.35544e+07px; background #ffffff `light.color.on-dark`; text Suisse Intl 14/20 450, #000000 `light.color.text-on-accent`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 132.81 x 36; padding 8px 16px; border 1px solid oklab(0 0 0 / 0.2); radius 3.35544e+07px; background #ffffff `core.color.primary.0`; text Suisse Intl 14/20 450, #000000 `core.color.primary.1000`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background #f5f5f5 `core.color.primary.100` |
 | focus-visible | border 1px solid oklch(0.556 0 0); shadow oklab(0.556 0 0 / 0.5) 0px 0px 0px 3px |
 | pressed | background #f5f5f5 `core.color.primary.100` |
@@ -259,7 +259,7 @@ Not on the page when it was captured.
 #### Pro plan heading
 The Pro plan name. Read as `price-pro` on the pricing page.
 
-**Values (default).** size 37.64 x 17.41; background transparent; text Suisse Intl 24/32 500, #ffffff `light.color.on-dark`; ancestors div.home-card.flex bg oklab(0 0 0 / 0.45).
+**Values (default).** size 37.64 x 17.41; background transparent; text Suisse Intl 24/32 500, #ffffff `core.color.primary.0`; ancestors div.home-card.flex bg oklab(0 0 0 / 0.45).
 
 ![Pro plan heading default](components/crops/price-pro-default.png)
 
@@ -268,7 +268,7 @@ The monthly/yearly toggle on pricing. A local UI toggle, never a checkout. Read 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 118 x 36; padding 0px 12px; radius 3.35544e+07px; background transparent; text Suisse Intl 14/20 500, #ffffff `light.color.on-dark`; transition color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), fill 0.2s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1); ancestors div.relative.flex bg oklab(0.999994 0.0000455678 0.0000200868 / 0.15) |
+| default (same: hover, pressed) | size 118 x 36; padding 0px 12px; radius 3.35544e+07px; background transparent; text Suisse Intl 14/20 500, #ffffff `core.color.primary.0`; transition color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), fill 0.2s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1); ancestors div.relative.flex bg oklab(0.999994 0.0000455678 0.0000200868 / 0.15) |
 
 ![Billing interval default](components/crops/price-interval-default.png) ![Billing interval hover](components/crops/price-interval-hover.png) ![Billing interval pressed](components/crops/price-interval-pressed.png)
 
@@ -277,24 +277,24 @@ The Pro plan button. Measured, never followed. Checkout and account creation sit
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 280 x 40; padding 0px 32px; radius 3.35544e+07px; background #ffffff `light.color.on-dark`; text Suisse Intl 14/20 450, #000000 `light.color.text-on-accent`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #000000 `light.color.text-on-accent` |
+| default | size 280 x 40; padding 0px 32px; radius 3.35544e+07px; background #ffffff `core.color.primary.0`; text Suisse Intl 14/20 450, #000000 `core.color.primary.1000`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #000000 `core.color.primary.1000` |
 | hover | background oklab(0.999994 0.0000455678 0.0000200868 / 0.9) |
 | focus-visible | shadow oklab(0.556 0 0 / 0.5) 0px 0px 0px 3px |
-| pressed | size 277.2 x 39.6; background oklab(0.999994 0.0000455678 0.0000200868 / 0.9); icon 15.84 x 15.84, #000000 `light.color.text-on-accent` |
+| pressed | size 277.2 x 39.6; background oklab(0.999994 0.0000455678 0.0000200868 / 0.9); icon 15.84 x 15.84, #000000 `core.color.primary.1000` |
 
 ![Get Pro default](components/crops/price-cta-default.png) ![Get Pro hover](components/crops/price-cta-hover.png) ![Get Pro focus-visible](components/crops/price-cta-focus-visible.png) ![Get Pro pressed](components/crops/price-cta-pressed.png)
 
 #### Yearly discount badge
 The blue "40% off" chip on the Yearly interval. Read as `price-badge` on the pricing page.
 
-**Values (default).** size 55.45 x 21; padding 4px 6px; border 1px solid transparent; radius 8px; background oklch(0.579 0.2497 257.07); text Suisse Intl 11/11 450, #ffffff `light.color.on-dark`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1).
+**Values (default).** size 55.45 x 21; padding 4px 6px; border 1px solid transparent; radius 8px; background oklch(0.579 0.2497 257.07); text Suisse Intl 11/11 450, #ffffff `core.color.primary.0`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1).
 
 ![Yearly discount badge default](components/crops/price-badge-default.png)
 
 #### Most popular badge
 The badge on the Pro card. Read as `price-popular` on the pricing page.
 
-**Values (default).** size 86.5 x 17.5; background transparent; text Suisse Intl 14/17.5 500, #ffffff `light.color.on-dark`; ancestors span.focus-visible:border-ring.focus-visible:ring-ring/50 bg transparent.
+**Values (default).** size 86.5 x 17.5; background transparent; text Suisse Intl 14/17.5 500, #ffffff `core.color.primary.0`; ancestors span.focus-visible:border-ring.focus-visible:ring-ring/50 bg transparent.
 
 ![Most popular badge default](components/crops/price-popular-default.png)
 
@@ -310,7 +310,7 @@ The /enterprise page. Book a call was measured, never followed.
 #### Enterprise heading
 The enterprise hero heading. Read as `ent-h1` on the enterprise page.
 
-**Values (default).** size 539.13 x 191.66; background transparent; text Suisse Intl 74.88/65.89 500, #ffffff `light.color.on-dark`.
+**Values (default).** size 539.13 x 191.66; background transparent; text Suisse Intl 74.88/65.89 500, #ffffff `core.color.primary.0`.
 
 ![Enterprise heading default](components/crops/ent-h1-default.png)
 
@@ -319,7 +319,7 @@ The sales CTA. Measured, never followed. The booking form is a gated surface. Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 119.06 x 40; padding 0px 24px; radius 3.35544e+07px; background #ffffff `light.color.on-dark`; text Suisse Intl 14/20 500, #000000 `light.color.text-on-accent`; transition color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), fill 0.2s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
+| default (same: hover, pressed) | size 119.06 x 40; padding 0px 24px; radius 3.35544e+07px; background #ffffff `core.color.primary.0`; text Suisse Intl 14/20 500, #000000 `core.color.primary.1000`; transition color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), fill 0.2s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | focus-visible | outline 1px auto #007aff, offset 1px |
 
 ![Book a call default](components/crops/ent-cta-default.png) ![Book a call hover](components/crops/ent-cta-hover.png) ![Book a call focus-visible](components/crops/ent-cta-focus-visible.png) ![Book a call pressed](components/crops/ent-cta-pressed.png)
@@ -331,7 +331,7 @@ The public blog index.
 #### Blog heading
 The blog index heading. Read as `blog-h1` on the blog page.
 
-**Values (default).** size 1392 x 40; background transparent; text system-ui 36/40 500, #000000 `light.color.text-on-accent`.
+**Values (default).** size 1392 x 40; background transparent; text system-ui 36/40 500, #000000 `core.color.primary.1000`.
 
 ![Blog heading default](components/crops/blog-h1-default.png)
 
@@ -340,7 +340,7 @@ A published blog card. Measured, not opened in this pass. Read as `blog-card` on
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 409.72 x 18.89; background transparent; text system-ui 12/16.2 600, #ffffff `light.color.on-dark`; layers span.announce-label 42.7x18.2 rgba(255, 255, 255, 0.2) 999px; ancestors div.announce bg #2b5cff |
+| default (same: hover) | size 409.72 x 18.89; background transparent; text system-ui 12/16.2 600, #ffffff `core.color.primary.0`; layers span.announce-label 42.7x18.2 rgba(255, 255, 255, 0.2) 999px; ancestors div.announce bg #2b5cff |
 
 Child layers that carry the look: span 42.7x18.2 background rgba(255, 255, 255, 0.2) radius 999px.
 
@@ -353,7 +353,7 @@ The plugins marketing page, including the light hero on the marketing chrome.
 #### Plugins heading
 The plugins marketing heading. Read as `plug-h1` on the plugins page.
 
-**Values (default).** size 768 x 135.34; background transparent; text Suisse Intl 72/67.68 500, #000000 `light.color.text-on-accent`.
+**Values (default).** size 768 x 135.34; background transparent; text Suisse Intl 72/67.68 500, #000000 `core.color.primary.1000`.
 
 ![Plugins heading default](components/crops/plug-h1-default.png)
 
@@ -362,7 +362,7 @@ A plugin product link. Measured, never followed into an install flow. Read as `p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 72 x 72; radius 22%; background rgba(255, 255, 255, 0.3); shadow rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.35) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; text Suisse Intl 13/19.5 500, #ffffff `light.color.on-dark` |
+| default | size 72 x 72; radius 22%; background rgba(255, 255, 255, 0.3); shadow rgba(255, 255, 255, 0.85) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.35) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; text Suisse Intl 13/19.5 500, #ffffff `core.color.primary.0` |
 | hover | size 111.59 x 111.59 |
 | focus-visible | outline 1px auto #007aff, offset 1px |
 
@@ -375,7 +375,7 @@ The /login page: Continue with Google, Continue with Apple, Single Sign-On (SSO)
 #### Login heading
 "Welcome to Krea" / "Log in or sign up". The auth boundary. Nothing is submitted. Read as `login-h1` on the login page.
 
-**Values (default).** size 352 x 40; background transparent; text Suisse Intl 34/40 600, #ffffff `light.color.on-dark`.
+**Values (default).** size 352 x 40; background transparent; text Suisse Intl 34/40 600, #ffffff `core.color.primary.0`.
 
 ![Login heading default](components/crops/login-h1-default.png)
 
@@ -384,10 +384,10 @@ OAuth button. Measured, never clicked through. Following it is an OAuth flow. Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 352 x 46; padding 12px 16px; border 1px solid #ffffff `light.color.on-dark`; radius 14px; background #ffffff `light.color.on-dark`; text Suisse Intl 14/20 500, #000000 `light.color.text-on-accent`; transition all 0.35s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #000000 `light.color.text-on-accent` |
-| hover | background #e5e5e5 `light.component.sign-in-hover.backgroundColor` |
-| focus-visible | outline 1px auto #101010 `light.color.page-950`, offset 0px |
-| pressed | background #e5e5e5 `light.component.sign-in-hover.backgroundColor` |
+| default | size 352 x 46; padding 12px 16px; border 1px solid #ffffff `core.color.primary.0`; radius 14px; background #ffffff `core.color.primary.0`; text Suisse Intl 14/20 500, #000000 `core.color.primary.1000`; transition all 0.35s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #000000 `core.color.primary.1000` |
+| hover | background #e5e5e5 `core.color.primary.200` |
+| focus-visible | outline 1px auto #101010 `core.color.primary.950`, offset 0px |
+| pressed | background #e5e5e5 `core.color.primary.200` |
 
 ![Continue with Google default](components/crops/login-google-default.png) ![Continue with Google hover](components/crops/login-google-hover.png) ![Continue with Google focus-visible](components/crops/login-google-focus-visible.png) ![Continue with Google pressed](components/crops/login-google-pressed.png)
 
@@ -396,8 +396,8 @@ OAuth button. Measured, never followed. Read as `login-apple` on the login page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 352 x 46; padding 12px 16px; border 1px solid #ffffff `light.color.on-dark`; radius 14px; background #ffffff `light.color.on-dark`; text Suisse Intl 14/20 500, #000000 `light.color.text-on-accent`; transition all 0.35s cubic-bezier(0, 0, 0.2, 1); icon 18 x 18, #000000 `light.color.text-on-accent` |
-| hover | background #e5e5e5 `light.component.sign-in-hover.backgroundColor` |
+| default | size 352 x 46; padding 12px 16px; border 1px solid #ffffff `core.color.primary.0`; radius 14px; background #ffffff `core.color.primary.0`; text Suisse Intl 14/20 500, #000000 `core.color.primary.1000`; transition all 0.35s cubic-bezier(0, 0, 0.2, 1); icon 18 x 18, #000000 `core.color.primary.1000` |
+| hover | background #e5e5e5 `core.color.primary.200` |
 
 ![Continue with Apple default](components/crops/login-apple-default.png) ![Continue with Apple hover](components/crops/login-apple-hover.png)
 
@@ -406,8 +406,8 @@ SSO button. Measured, never followed. Read as `login-sso` on the login page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 352 x 46; padding 12px 16px; border 1px solid #ffffff `light.color.on-dark`; radius 14px; background #ffffff `light.color.on-dark`; text Suisse Intl 14/20 500, #000000 `light.color.text-on-accent`; transition color 0.15s cubic-bezier(0, 0, 0.2, 1), background-color 0.15s cubic-bezier(0, 0, 0.2, 1), border-color 0.15s cubic-bezier(0, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0, 0, 0.2, 1), fill 0.15s cubic-bezier(0, 0, 0.2, 1), stroke 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0, 0, 0.2, 1); icon 20 x 20, #000000 `light.color.text-on-accent` |
-| hover | background #e5e5e5 `light.component.sign-in-hover.backgroundColor` |
+| default | size 352 x 46; padding 12px 16px; border 1px solid #ffffff `core.color.primary.0`; radius 14px; background #ffffff `core.color.primary.0`; text Suisse Intl 14/20 500, #000000 `core.color.primary.1000`; transition color 0.15s cubic-bezier(0, 0, 0.2, 1), background-color 0.15s cubic-bezier(0, 0, 0.2, 1), border-color 0.15s cubic-bezier(0, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0, 0, 0.2, 1), fill 0.15s cubic-bezier(0, 0, 0.2, 1), stroke 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0, 0, 0.2, 1); icon 20 x 20, #000000 `core.color.primary.1000` |
+| hover | background #e5e5e5 `core.color.primary.200` |
 
 ![SSO default](components/crops/login-sso-default.png) ![SSO hover](components/crops/login-sso-hover.png)
 
@@ -416,8 +416,8 @@ The email field on the login boundary. Sample text is typed and deleted. Enter i
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 352 x 46; padding 12px 12px 12px 44px; border 1px solid #404040 `core.color.primary.700`; radius 14px; background oklab(0 0 0 / 0.25); text Suisse Intl 14/20 450, #ffffff `light.color.on-dark`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #737373 `light.color.ring` |
-| focused, filled | background #000000 `light.color.text-on-accent`; shadow #ffffff 0px 0px 0px 0px, oklch(0.546 0.245 262.881) 0px 0px 0px 0px |
+| default | size 352 x 46; padding 12px 12px 12px 44px; border 1px solid #404040 `core.color.primary.700`; radius 14px; background oklab(0 0 0 / 0.25); text Suisse Intl 14/20 450, #ffffff `core.color.primary.0`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #737373 `core.color.primary.500` |
+| focused, filled | background #000000 `core.color.primary.1000`; shadow #ffffff 0px 0px 0px 0px, oklch(0.546 0.245 262.881) 0px 0px 0px 0px |
 
 ![Email field default](components/crops/login-email-default.png) ![Email field focused](components/crops/login-email-focused.png) ![Email field filled](components/crops/login-email-filled.png)
 
@@ -435,8 +435,8 @@ The Terms of Service link on the login page. Read as `login-terms` on the login 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 93 x 16; background transparent; text Suisse Intl 12/16 450, #e5e5e5 `light.component.sign-in-hover.backgroundColor` |
-| hover | text Suisse Intl 12/16 450, #ffffff `light.color.on-dark` |
+| default | size 93 x 16; background transparent; text Suisse Intl 12/16 450, #e5e5e5 `core.color.primary.200` |
+| hover | text Suisse Intl 12/16 450, #ffffff `core.color.primary.0` |
 
 ![Terms link default](components/crops/login-terms-default.png) ![Terms link hover](components/crops/login-terms-hover.png)
 
@@ -449,7 +449,7 @@ The signed-out /image tool. Generation is gated: the prompt is measured if prese
 
 **Values (default).** size 1440 x 900; background transparent; text Suisse Intl 16/24 500, oklch(0.708 0 0); icon 20 x 20, oklch(0.708 0 0); layers div.bg-primary-0.sm:bg-primary-150 1440.0x900.0 rgb(0, 0, 0); div.fixed.inset-y-0 256.0x900.0 R:1px solid oklch(1 0 0 / 0.1); div.bg-sidebar.group-data-[variant=floating]:border-sidebar-border 255.0x900.0 oklch(0 0 0); a.peer/menu-button.ring-sidebar-ring 239.0x36.0 oklch(0.269 0 0) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.999994.
 
-Child layers that carry the look: div 1440x900 background #000000 `light.color.text-on-accent`; div 256x900 border 1px solid oklch(1 0 0 / 0.1); div 255x900 background oklch(0 0 0).
+Child layers that carry the look: div 1440x900 background #000000 `core.color.primary.1000`; div 256x900 border 1px solid oklch(1 0 0 / 0.1); div 255x900 background oklch(0 0 0).
 
 ![Image tool shell default](components/crops/image-shell-default.png)
 
@@ -458,7 +458,7 @@ The image prompt, if the signed-out page paints one. Sample text is typed and de
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 870 x 48; padding 6px 10px; background transparent; text Suisse Intl 16/24 400, #ffffff `light.color.on-dark`; placeholder oklab(0.999994 0.0000455678 0.0000200868 / 0.5) |
+| default | size 870 x 48; padding 6px 10px; background transparent; text Suisse Intl 16/24 400, #ffffff `core.color.primary.0`; placeholder oklab(0.999994 0.0000455678 0.0000200868 / 0.5) |
 | focused, filled | shadow #ffffff 0px 0px 0px 0px, oklch(0.546 0.245 262.881) 0px 0px 0px 0px; outline 2px solid transparent, offset 2px; layers textarea.min-h-[2lh]!.w-full 870.0x48.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 255, 255) 0px 0px 0px 0px, oklch(0.546 0.245 262.881) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 2px solid rgba(0, 0, 0, 0) offset 2px |
 
 ![Prompt field default](components/crops/image-prompt-default.png) ![Prompt field focused](components/crops/image-prompt-focused.png) ![Prompt field filled](components/crops/image-prompt-filled.png)
