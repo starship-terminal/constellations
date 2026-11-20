@@ -2,7 +2,9 @@
 
 The builders run on a temporary copy of tools/ and raw/, so nothing committed is rewritten.
 """
+import contextlib
 import importlib.util
+import io
 import json
 import pathlib
 import re
@@ -34,11 +36,22 @@ class RebuildTest(unittest.TestCase):
         shutil.copytree(PKG / "raw", root / "raw")
         for b in ("build_component_tokens.py", "build_tokens.py"):
             subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
+        # raw/measurements.md comes from the capture folder's build-measurements.mjs; copy only it
+        # and the colour helper it imports, and run it on the temp copy.
+        cls.measurements = None
+        if shutil.which("node"):
+            (root / "tools" / "capture" / "public").mkdir(parents=True)
+            shutil.copy(PKG / "tools" / "capture" / "css-colour.mjs", root / "tools" / "capture")
+            shutil.copy(PKG / "tools" / "capture" / "public" / "build-measurements.mjs", root / "tools" / "capture" / "public")
+            subprocess.run(["node", str(root / "tools" / "capture" / "public" / "build-measurements.mjs")],
+                           cwd=root, check=True, capture_output=True)
+            cls.measurements = (root / "raw" / "measurements.md").read_text()
         cls.built = json.loads((root / "tokens.json").read_text())
         cls.spec = json.loads((root / "raw" / "component-tokens.json").read_text())
         spec = importlib.util.spec_from_file_location("exa_bct", root / "tools" / "build_component_tokens.py")
         cls.B = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(cls.B)  # re-runs the builder inside the temp copy
+        with contextlib.redirect_stdout(io.StringIO()):
+            spec.loader.exec_module(cls.B)  # re-runs the builder inside the temp copy
         cls.C = json.loads((PKG / "raw" / "components-computed.json").read_text())["components"]
         cls.core = dict(flat(cls.built["core"]))
 
@@ -95,6 +108,42 @@ class RebuildTest(unittest.TestCase):
     def test_font_sizes_are_dimensions(self):
         for path, leaf in flat(self.built["core"]["font"]["size"]):
             self.assertEqual(leaf["$type"], "dimension", path)
+
+    def test_failed_focus_is_not_published_as_a_reading(self):
+        if self.measurements is None:
+            self.skipTest("node is not installed")
+        self.assertEqual((PKG / "raw" / "measurements.md").read_text(), self.measurements)
+        failed = [k for k, c in self.C.items() if (c["states"].get("focus-visible") or {}).get("via") == "focus failed"]
+        self.assertTrue(failed)
+        for k in failed:
+            block = self.measurements.split(f"#### {k}\n", 1)[1].split("\n#### ", 1)[0]
+            cells = lambda r: [c.strip() for c in r.strip().strip("|").split("|")]  # noqa: E731
+            table = [cells(r) for r in block.splitlines() if r.startswith("| ") and not r.startswith("|---")]
+            col = table[0].index("focus-visible")
+            for row in table[1:]:
+                if row[0] == "Skipped":
+                    self.assertTrue(row[col].startswith("focus failed"), k)
+                else:
+                    self.assertEqual(row[col], "-", f"{k}: {row}")
+
+    def test_skipped_focus_keeps_its_note(self):
+        """A newer capture records a failed focus as {skipped, via} with no style; components.md
+        still has to say focus could not be captured on that component."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            shutil.copytree(pathlib.Path(self.tmp.name) / "tools", root / "tools", ignore=shutil.ignore_patterns("capture"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            shutil.copy(PKG / "tokens.json", root / "tokens.json")
+            raw = json.loads((root / "raw" / "components-computed.json").read_text())
+            k = next(k for k, c in raw["components"].items()
+                     if (c["states"].get("focus-visible") or {}).get("via") == "focus failed")
+            raw["components"][k]["states"]["focus-visible"] = {
+                "skipped": "focus failed: keyboard focus did not reach the element", "via": "focus failed"}
+            (root / "raw" / "components-computed.json").write_text(json.dumps(raw))
+            subprocess.run([sys.executable, str(root / "tools" / "build_components_md.py")], cwd=root, check=True, capture_output=True)
+            md = (root / "components.md").read_text()
+            block = md.split(f"Read as `{k}`", 1)[1].split("\n#### ", 1)[0]
+            self.assertIn("Focus not capturable", block)
 
 
 if __name__ == "__main__":

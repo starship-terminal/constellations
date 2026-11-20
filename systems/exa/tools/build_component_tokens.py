@@ -273,13 +273,18 @@ def split_list(v):
     return [p.strip() for p in re.split(r",\s*(?![^()]*\))", v or "") if p.strip()]
 
 
+UA_RING = "#101010"  # Chrome's own -webkit-focus-ring-color: an `auto` outline in it is the browser default
+
+
 def painted_ring(sty):
     """(colour, how) of the focus ring a state really paints, from its computed style: a drawn
-    outline (a real style, not none or the browser's own `auto` ring, and a width above 0), else
-    the outermost visible box-shadow layer with a spread. Ported from fal's builder."""
-    if sty.get("outlineStyle", "none") not in ("none", "auto") and float(sty.get("outlineWidth", "0px")[:-2] or 0) > 0 \
-            and not transparent(sty.get("outlineColor")):
-        return sty["outlineColor"], f"outline {sty['outlineWidth']} {sty['outlineStyle']}"
+    outline (a style other than none, a width above 0, and not the browser's default `auto` ring
+    colour), else the outermost visible box-shadow layer with a spread, else None. Ported from
+    fal's builder."""
+    style, colour = sty.get("outlineStyle", "none"), sty.get("outlineColor")
+    if style != "none" and float(sty.get("outlineWidth", "0px")[:-2] or 0) > 0 and not transparent(colour) \
+            and not (style == "auto" and css_color(colour) == UA_RING):
+        return colour, f"outline {sty['outlineWidth']} {style}"
     ring = None
     for layer in split_list(sty.get("boxShadow", "none")):
         m = re.match(r"^(rgba?\([^)]*\))\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(\s+inset)?$", layer)
@@ -794,8 +799,8 @@ def role(root, where, key, comp, state, prop, desc, theme, parent=False):
         ring = painted_ring(sty)
         if not ring:
             return gap(path, f"{comp} {state} paints no focus ring of its own: outline {sty.get('outlineWidth')} "
-                             f"{sty.get('outlineStyle')} (`auto` is the browser's ring, not a product colour), "
-                             f"box-shadow {sty.get('boxShadow')}")
+                             f"{sty.get('outlineStyle')} {css_color(sty.get('outlineColor'))} is the browser's default "
+                             f"auto ring, and no box-shadow layer has a spread")
         raw, how = ring
         src = (f"the {how} focus ring of {comp} {state} (raw/components-computed.json); "
                f"its outline is {sty.get('outlineWidth')} {sty.get('outlineStyle')}")

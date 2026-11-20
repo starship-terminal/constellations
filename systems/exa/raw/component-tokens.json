@@ -3458,7 +3458,7 @@
     },
     {
       "token": "light.marketing.focus",
-      "why": "mkt-nav-link focus-visible paints no focus ring of its own: outline 1px auto (`auto` is the browser's ring, not a product colour), box-shadow none"
+      "why": "mkt-nav-link focus-visible paints no focus ring of its own: outline 1px auto #101010 is the browser's default auto ring, and no box-shadow layer has a spread"
     },
     {
       "token": "light.marketing.menu-hover",

@@ -226,11 +226,17 @@ async function S(key, target, list, meta = {}, opts = {}) {
         // Keyboard focus never reached the element, so a reading now would be the element at rest
         // saved as its focus. Record the miss instead (the builders list it as "focus could not be
         // captured"), and drop the crop an earlier run saved for this state.
+        // An earlier run's real focus reading is kept, with the failed retry noted beside it.
         const prevSt = out.components[key].states[st];
-        const old = prevSt?.crop && path.resolve(REF, prevSt.crop);
-        if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
-        out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via, run };
-        log('  -', key, st, 'skipped: focus failed');
+        if (prevSt?.style && prevSt.via !== 'focus failed') {
+          prevSt.rerunError = 'focus failed: keyboard focus did not reach the element';
+          log('  !', key, st, 'focus failed; earlier reading kept');
+        } else {
+          const old = prevSt?.crop && path.resolve(REF, prevSt.crop);
+          if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
+          out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via, run };
+          log('  -', key, st, 'skipped: focus failed');
+        }
       } else await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
@@ -287,8 +293,10 @@ async function sheetsFor(key) {
 
 // Whether the page paints a different transition under prefers-reduced-motion:
 // the same component re-read in a context with reduce on.
-async function reducedMotion(key, sel) {
-  const slot = `${key} ${sel}`; // one entry per element, so a second call cannot overwrite the first
+async function reducedMotion(key, sel, text = null) {
+  // `text` narrows `sel` to the named, visible element the normal pass measured (the header's
+  // `a` also matches the logo link, which has no transition).
+  const slot = `${key} ${sel}${text ? ` "${text.source}"` : ''}`; // one entry per element
   out._meta.reducedMotion ??= {};
   try {
     const b = context.browser();
@@ -298,13 +306,17 @@ async function reducedMotion(key, sel) {
     await p.goto(URLS[key], { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     await p.waitForTimeout(7000);
     await closePromo(p);
-    const v = await p.evaluate((s) => {
-      const el = document.querySelector(s);
+    const v = await p.evaluate(([s, src]) => {
+      const re = src && new RegExp(src);
+      const el = [...document.querySelectorAll(s)].find((n) => {
+        const r = n.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && (!re || re.test((n.innerText || '').trim()));
+      });
       if (!el) return null;
       const cs = getComputedStyle(el);
       return { transition: cs.transition, animation: cs.animation, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
-    }, sel).catch(() => null);
-    out._meta.reducedMotion[slot] = { page: key, selector: sel, reduce: v };
+    }, [sel, text && text.source]).catch(() => null);
+    out._meta.reducedMotion[slot] = { page: key, selector: sel, text: text && text.source, reduce: v };
     await ctx.close();
   } catch (e) { out._meta.reducedMotion[slot] = { page: key, selector: sel, error: String(e).slice(0, 120) }; }
 }
@@ -494,7 +506,7 @@ try {
   }
   // Controls that declare a transition (the header links transition colour over 0.15s); a
   // heading with no transition says nothing about reduced motion.
-  await reducedMotion('home', 'div.header a');
+  await reducedMotion('home', 'div.header a', /^(Docs|Pricing)$/);
   await reducedMotion('home', 'button[aria-label="Run preview"]');
 } finally {
   for (const k of failedPages) log('blocked:', k);
