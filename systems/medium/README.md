@@ -147,7 +147,7 @@ Help center colours are a separate Zendesk layer (`--bg-base`, `--text-primary`)
 
 ## Rebuild
 
-The tokens file was written from [raw/css-vars.json](raw/css-vars.json). `tools/build_tokens.py` is the kit's Claude builder and does not rebuild this file. To regenerate the generated docs from the repo root:
+The tokens file was written from [raw/css-vars.json](raw/css-vars.json). No builder in `tools/` rebuilds it; the kit's unadapted Claude token and style-guide builders were removed in the 2026-11 audit. To regenerate the generated docs from the repo root:
 
 ```sh
 python3 tools/brief.py
