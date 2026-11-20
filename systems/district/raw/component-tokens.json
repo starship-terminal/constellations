@@ -93,7 +93,7 @@
           "display": {
             "value": "{font.size.4xl}",
             "type": "fontSize",
-            "source": "computed fontSize of ev-h1 default (raw/components-computed.json); matches declared --font-size-4xl",
+            "source": "computed fontSize of ev-h1 default (raw/components-computed.json); matches declared --font-size-4xl; ev-h1 caught an off-screen carousel slide title, not the listing heading (read from the wrong element; recapture needed)",
             "description": "The 40px listing display heading."
           }
         }
@@ -3529,7 +3529,7 @@
       "page": {
         "value": "{color.background.primary}",
         "type": "color",
-        "source": "the painted field of /, /movies/, /events/ (screenshots/home-default.png); matches declared --color-background-primary; matches declared --color-background-primary",
+        "source": "declared --color-background-primary (raw/css-vars.json resolved.light); no computed reading of the light page field (seen in screenshots/home-default.png); matches declared --color-background-primary",
         "description": "The white field every public page paints (matches --color-background-primary)."
       },
       "selected": {
@@ -4175,7 +4175,7 @@
       "ink": {
         "value": "{color.text.primary}",
         "type": "color",
-        "source": "the repainted nav/tab ink under data-theme=dark (screenshots/home-dark-default.png); matches declared --color-text-primary dark; matches declared --color-text-primary",
+        "source": "computed color of dk-nav default, the repainted nav ink under data-theme=dark (raw/components-computed.json); matches declared --color-text-primary",
         "description": "The #f7f7f7 ink the dark theme paints on its text roles (matches --color-text-primary dark)."
       }
     },

@@ -99,6 +99,7 @@ Computed styles on the live DOM, 2026-11-19, desktop 1440×900 at 1x and phone 3
 - Font files. Arcadia, Arcadia Display, Tiempos Headline, and IBM Plex Mono are named. The files are not in this package.
 - Screenshots are 256-colour. Read colours from the tokens, not from the PNGs.
 - `--spacing` is 1px. The control scale steps by 4. Both are declared.
+- [components.md](components.md) is written by hand from the measured crops and [raw/components-computed.json](raw/components-computed.json). `tools/build_components_md.py` only checks that every crop it links exists, so a recapture does not update its values: compare them with the raw readings after one.
 
 ## Fonts
 
