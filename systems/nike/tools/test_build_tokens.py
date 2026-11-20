@@ -39,15 +39,23 @@ class BuildTokens(unittest.TestCase):
         self.assertEqual(tokens["light"]["accent"]["$value"], "#111111")
         self.assertEqual(tokens["core"]["control"]["add-height"]["$value"], "60px")
 
-    def test_style_guide_attributes_survive_a_quoted_font_name(self):
-        # A font-family holding double quotes must not close the style attribute (finding 19-5).
+    def test_style_guide_type_rows_survive_a_quoted_font_name(self):
+        # A font-family holding double quotes must not close the style attribute (finding 19-5):
+        # render the real type rows from a copy of the tokens whose stack names a quoted family.
+        import copy
         sys.path.insert(0, str(HERE))
         import build_style_guide
-        quoted = '"Helvetica Now Text", Helvetica'
-        out = f'<div style="font-family:{build_style_guide.attr(quoted)};font-size:16px">'
-        style = re.search(r'style="([^"]*)"', out).group(1)
-        self.assertEqual(html.unescape(style), f"font-family:{quoted};font-size:16px")
-
+        saved = build_style_guide.T
+        doc = copy.deepcopy(saved)
+        doc["core"]["font"]["family"]["text"]["$value"] = ['"Helvetica Now Text"', "Helvetica"]
+        build_style_guide.T = doc
+        try:
+            rows = build_style_guide.type_rows()
+        finally:
+            build_style_guide.T = saved
+        style = re.search(r'<div class="ty" style="([^"]*)"', rows).group(1)
+        self.assertIn("font-size:16px", style)
+        self.assertEqual(html.unescape(style).split(";")[0], 'font-family:"Helvetica Now Text", Helvetica')
 
 if __name__ == "__main__":
     unittest.main()
