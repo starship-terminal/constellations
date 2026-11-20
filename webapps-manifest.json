@@ -5259,9 +5259,9 @@
       "description": "Reliable AI Systems for Critical Decisions",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://dashboard.scale.com/login shows email and password, or Google or GitHub. Password not submitted.",
+      "notes": "Email probe: https://dashboard.scale.com/login shows email and password, or Google or GitHub. Password not submitted. Public walk 2026-11-21: header opens Products, Solutions, Research, and Resources. Phone opens one drawer. Homepage carousel and footer repeat those destinations. /pricing redirects to /demo. Login stops at https://dashboard.scale.com/login. Google and GitHub were not clicked. No password was submitted. No form was submitted. Cookie dialog was hidden and not clicked. Signed-in dashboard was not captured. Public package in PR 1571 at a9380e85a65b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 16
     },
     {
