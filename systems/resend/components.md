@@ -1,57 +1,33 @@
-# Components
+# Resend components
 
-Public signed-out Resend, measured on 2026-11-19 at a 1169 by 731 CSS viewport. Screenshots were not saved: the preview browser returned "The browser is not producing screenshot frames." Values below are computed styles.
+Public marketing and docs only. Signed out, 2026-11-21. Crops are in [components/crops/](components/crops/).
 
-## Button
-
-Marketing and auth buttons use `border-radius: 16px` (`rounded-2xl`).
-
-| State | Where | Values |
+| Component | Status | Evidence |
 |---|---|---|
-| Primary, header | "Get started" on https://resend.com/ | transparent background, white text, 14px / 600 / 20px, padding 0 16px, height 40px, radius 16px, 2px border `oklab(0.999994 0.0000455678 0.0000200868 / 0.05)` |
-| Primary, hero | Home "Get started" | same border and radius, 16px / 600 / 24px, padding 0 20px, height 48px, background image `linear-gradient(104deg, rgba(253, 253, 253, 0.05) 5%, rgba(240, 240, 228, 0.1) 100%)`, transition `0.2s cubic-bezier(0.4, 0, 0.2, 1)` |
-| Ghost | Header "Log in" and hero "Documentation" | transparent background, text `#a1a4a5`, 16px radius. Header is 40px / 14px / 600. Hero is 48px / 16px / 600, padding 0 20px |
-| OAuth | Login "Log in with Google" and "Log in with GitHub" | same glass border as primary, white text, 16px / 600, height 48px, width 248px, padding 0 20px |
-| Submit, disabled | Signup "Create account" while the password was too short | text `oklab` white at 50 percent (canvas `#808080`), opacity 0.3, cursor not-allowed, height 48px, 14px / 600 |
-| Submit, enabled | Same button after a 12-character mixed password was typed | opacity 1, color `#ffffff`, cursor pointer. The form was not submitted |
-| Icon button | Password "Show value" | 24 by 24, radius 8px, text `#a1a4a5` |
+| Button | Captured, partial | Header Get started: default, hover, focus-visible, pressed. [button-primary-default.png](components/crops/button-primary-default.png). Login submit is disabled until a field is filled, which was not done. |
+| Icon button | Not present | No icon-only control was isolated on the public pages. The phone menu button is a labelled menu control. |
+| Link | Captured, partial | Header Pricing link, default and hover. Hover did not change the computed colour. [link-nav-default.png](components/crops/link-nav-default.png) |
+| Text field | Captured, partial | Login email field, default and focus. Nothing was typed. The placeholder was masked. [text-field-default.png](components/crops/text-field-default.png) |
+| Text area | Not present | No public textarea. |
+| Select | Captured, observed | Home "Select test mode" listbox is a public demo. Its open state was not cropped. |
+| Checkbox | Not present | No public checkbox. |
+| Radio | Not present | No public radio. |
+| Switch | Not present | No public switch. Docs theme buttons are three buttons, not a switch. |
+| Tabs | Captured | Pricing Transactional and Marketing tabs. [tab-selected.png](components/crops/tab-selected.png) |
+| Menu | Captured | Features, Company, AI and Docs hover menus. [home-dark-features-menu.png](screenshots/home-dark-features-menu.png). Phone menu: [mobile-home-dark-menu.png](screenshots/mobile-home-dark-menu.png) |
+| Tooltip | Not captured | Glossary buttons on the home page were not opened. |
+| Dialog | Captured, partial | Docs search dialog. [docs-light-search.png](screenshots/docs-light-search.png). The crop measured the search bar, not the full popup. |
+| Toast | Not present | No public toast. Nothing was submitted. |
+| Card | Captured, observed | Pricing plan cards and docs quickstart cards are in the page screenshots. No separate crop. |
+| List row | Not present | No app list. Docs sidebar links are navigation, not list rows. |
+| Table | Not present | No public data table. |
+| Avatar | Not present | No public avatar. |
+| Badge | Not captured | Status pills on the marketing page were not isolated. |
 
-Hover, focus-visible, pressed and loading were not forced. The button class names `duration-200`, `disabled:opacity-70` on ghost buttons, and `focus-visible:ring-2` on nav links. Those states were not shown, so they stay gaps.
+## Gaps
 
-## Link
-
-Nav links (Pricing) are 14px / 500, `#a1a4a5`, height 58px, padding 4px 16px, no radius. "Learn more" on home is 14px / 400, `#f0f0f0` or `display-p3 0.988 0.992 1 / 0.937` (canvas `#ecedef`). Signup "Sign up" is 14px / 600, `#f0f0f0`. Docs links in dark are Inter 16px, `#f2f2f2`. Docs links in light are `oklch(0.21 0.034 264.665)`, canvas `#101828`.
-
-## Text field
-
-Login email on https://resend.com/login: transparent background, white text, 2px border `oklab` white at 5 percent, radius 16px, height 48px, padding 0 16px, 16px / 400, width 512px. Placeholder "alan.turing@example.com", color `oklab` white at 50 percent (canvas `#808080`). Password uses the same field with padding `0 44px 0 12px` and placeholder "••••••••••••". Label "Email" is 14px / 400, `#a1a4a5`. Focus outline on the email field computed as `rgb(153, 200, 255) none 1px` (none, so the colour is the outline colour, not a visible ring). A visible focus ring was not shown.
-
-Signup at https://resend.com/signup uses the same fields. The email was set to kaichen@agentmail.to and the password to a 24-character mixed string, then both were cleared. The form was not submitted. Google and GitHub were not followed. An invisible Stripe hCaptcha iframe is in the page. It was not interacted with.
-
-## Password hints
-
-On signup, before a valid password: "At least 12 characters" and "Mix of letters, numbers, and symbols" at 12px, `#a1a4a5`, with "— not satisfied". After a valid password: the list item colour is `color(display-p3 0.434 0.828 0.573)` and the inner span is `oklab(0.346038 -0.00882651 -0.00805217)`. Those oklab and display-p3 strings are the reading. They are not forced into a hex token.
-
-## Checkbox
-
-Signup has a checkbox labelled "Send me occasional updates, guides, and promotions." The input itself measured 1 by 1 CSS pixels with `appearance: auto` and a transparent background. The painted box was not measured, so size, colour and checked state are gaps. The label is 14px / 400, `#a1a4a5`.
-
-## Text area, select, radio, switch, tabs, menu, tooltip, dialog, toast
-
-Not present on the public pages that were opened. Docs search is a button labelled "Search... ⌘K", not a field that was typed into. Pricing has no month/year switch in the buttons that were listed.
-
-## Card
-
-Pricing plan cards on https://resend.com/pricing: 271px wide, 681px tall at this viewport, padding 24px, radius 16px, transparent background, 1px border `color(display-p3 0.882 0.949 0.996 / 0.183)`. Four cards: Free, Pro, Scale, Custom. Plan titles are aBCFavorit 16px / 400, colour `display-p3 0.988 0.992 1 / 0.937`.
-
-## Table
-
-https://resend.com/pricing contains six `table` elements under the plan cards. Cell padding, borders and type were not read individually. That is a gap.
-
-## Avatar, badge
-
-Not captured as components. "Recommended" sits inside the plan `h3` and was not a separate badge. The footer status link "All systems operational" is 12px, `#f0f0f0`.
-
-## Docs search, light
-
-After "Switch to light theme" on https://resend.com/docs/introduction, the search button is background `#ffffff`, text `#6f6f6f`, radius 12px, border `#eeeeee`. Docs `h1` is Inter 36px / 600, `#161616`. Main background is `#ffffff`. `html` class becomes `light`.
+- Signed-in dashboard, settings, and sending flows are behind login. Not captured.
+- Button default fill computes to transparent. The painted fill is a white gradient the background-color does not report. See README.
+- Focus-visible and pressed were forced with CDP pseudo states, not a real key press, so a navigation click could not fire.
+- Disabled, loading, and error states of buttons were not reached. The login submit is disabled because the field was left empty.
+- Checkbox, radio, switch, textarea, table, avatar, and toast do not appear on the public surface.

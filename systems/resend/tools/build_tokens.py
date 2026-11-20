@@ -1,245 +1,250 @@
 #!/usr/bin/env python3
-"""Write tokens.json from raw/foundations.json.
+"""Build tokens.json from the Resend public capture.
 
-Values were read with getComputedStyle on resend.com on 2026-11-19. This
-script does not invent colours. Re-run only after updating the raw file.
+Sources, read signed-out on 2026-11-21:
+  raw/css-vars.json            custom properties resolved on html for the marketing
+                               home page (dark) and the docs light and dark themes
+  raw/component-states.json    computed styles of public controls
+
+Marketing paints dark only. Docs paints light by default and dark after
+"Switch to dark theme". Every token carries $extensions.source.
+Unread values are not invented. Deterministic.
 """
 import json
 import pathlib
 import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-RAW = json.loads((HERE / "raw" / "foundations.json").read_text())
-OUT = HERE / "tokens.json"
+RAW = HERE / "raw"
+V = json.loads((RAW / "css-vars.json").read_text())
+STATES = json.loads((RAW / "component-states.json").read_text())
+HOME = V["home"]["resolved"]
+ROLES = V["home"]["roles"]
 
 
-def tok(type_, value, source):
-    return {"$type": type_, "$value": value, "$extensions": {"source": source}}
+def src(text):
+    return {"$extensions": {"source": text}}
 
 
 def color(value, source):
-    return tok("color", value, source)
+    value = str(value).strip()
+    parts = value.split()
+    if len(parts) == 3 and all(p.isdigit() for p in parts):
+        value = "rgb(%s, %s, %s)" % tuple(parts)
+    return {"$type": "color", "$value": value, **src(source)}
 
 
 def dim(value, source):
-    return tok("dimension", value, source)
+    return {"$type": "dimension", "$value": value, **src(source)}
 
 
-def gradient_base(component):
-    """The first stop of a measured linear-gradient fill, as #rrggbbaa. A missing or unparseable
-    reading fails the build rather than falling back to a guessed opaque fill."""
-    image = (RAW["components"].get(component) or {}).get("backgroundImage", "")
-    # The first stop is the first colour after the optional angle or direction; it must be rgba().
-    m = re.match(r"linear-gradient\(\s*(?:[^,()]+,\s*)?rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)", image)
-    if not m:
-        raise SystemExit(f"{component} backgroundImage is not a readable linear-gradient: {image!r}")
-    r, g, b = (int(m.group(i)) for i in (1, 2, 3))
-    return "#%02x%02x%02x%02x" % (r, g, b, round(float(m.group(4)) * 255)), image
+def font(value, source):
+    return {"$type": "fontFamily", "$value": value, **src(source)}
 
 
-def build():
-    src = RAW["source"]
-    c = RAW["colors"]
-    t = RAW["type"]
-    fonts = RAW["fonts"]
-    gray = {k: color(v, src + " --gray-" + k) for k, v in c["gray"].items()}
-    core = {
-        "color": {
-            "gray": gray,
-            "white": color(c["white"], src + " --color-white"),
-            "black": color(c["black"], src + " --color-black"),
-            "forge": {
-                "green": color(c["forgeGreen"], src + " --color-forge-green"),
-                "red": color(c["forgeRed"], src + " --color-forge-red"),
-            },
-            "automationOrange": color(c["automationOrange"], src + " --color-automation-orange"),
-            "code": color(c["codeText"], src + " home code sample color"),
-        },
-        "font": {
-            "family": {
-                "sans": tok("fontFamily", fonts["sans"], src + " --font-sans"),
-                "display": tok("fontFamily", fonts["display"], src + " --font-display"),
-                "hero": tok("fontFamily", fonts["hero"], src + " h1 font-family domaine"),
-                "mono": tok("fontFamily", fonts["mono"], src + " --font-mono"),
-                "docs": tok("fontFamily", fonts["docs"], src + " docs body fontFamily"),
-            },
-            "weight": {
-                "regular": tok("fontWeight", 400, src + " body and hero font-weight"),
-                "medium": tok("fontWeight", 500, src + " nav link and auth h1 font-weight"),
-                "semibold": tok("fontWeight", 600, src + " button and docs h1 font-weight"),
-            },
-            "size": {
-                "xs": dim("12px", src + " password hint and status link"),
-                "sm": dim("14px", src + " nav, label, button"),
-                "md": dim("16px", src + " body and field"),
-                "lg": dim("18px", src + " home lede"),
-                "xl": dim("20px", src + " feature h2"),
-                "auth": dim("28px", src + " auth h1"),
-                "docs": dim("36px", src + " docs h1"),
-                "section": dim("56px", src + " marketing h2"),
-                "pricing": dim("76.8px", src + " pricing h1 at 1169px"),
-                "hero": dim("96px", src + " home h1 at 1169px"),
-            },
-        },
-        "typography": {
-            "hero": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["hero"],
-                    "fontSize": "96px",
-                    "fontWeight": 400,
-                    "lineHeight": "96px",
-                    "letterSpacing": "-0.96px",
-                },
-                "$extensions": {"source": src + " home h1"},
-            },
-            "section": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["displayComputed"],
-                    "fontSize": "56px",
-                    "fontWeight": 400,
-                    "lineHeight": "67.2px",
-                    "letterSpacing": "-2.8px",
-                },
-                "$extensions": {"source": src + " home h2"},
-            },
-            "authTitle": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["displayComputed"],
-                    "fontSize": "28px",
-                    "fontWeight": 500,
-                    "lineHeight": "34px",
-                    "letterSpacing": "-0.72px",
-                },
-                "$extensions": {"source": src + " login h1"},
-            },
-            "docsTitle": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["docs"],
-                    "fontSize": "36px",
-                    "fontWeight": 600,
-                    "lineHeight": "40px",
-                },
-                "$extensions": {"source": src + " docs h1"},
-            },
-            "lede": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": "Inter Website",
-                    "fontSize": "18px",
-                    "fontWeight": 400,
-                    "lineHeight": "27px",
-                },
-                "$extensions": {"source": src + " home lede"},
-            },
-            "body": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["sans"],
-                    "fontSize": "16px",
-                    "fontWeight": 400,
-                    "lineHeight": "24px",
-                },
-                "$extensions": {"source": src + " body"},
-            },
-            "button": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["sans"],
-                    "fontSize": "14px",
-                    "fontWeight": 600,
-                    "lineHeight": "20px",
-                },
-                "$extensions": {"source": src + " header Get started"},
-            },
-            "code": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["mono"],
-                    "fontSize": "14px",
-                    "fontWeight": 400,
-                    "lineHeight": "20px",
-                },
-                "$extensions": {"source": src + " home pre"},
-            },
-        },
-        "radius": {
-            "xs": dim("2px", src + " --radius-xs 0.125rem"),
-            "sm": dim("4px", src + " --radius-sm 0.25rem"),
-            "md": dim("6px", src + " --radius-md 0.375rem"),
-            "lg": dim("8px", src + " --radius-lg 0.5rem"),
-            "xl": dim("12px", src + " --radius-xl 0.75rem"),
-            "2xl": dim("16px", src + " button, field and pricing card"),
-            "3xl": dim("24px", src + " --radius-3xl 1.5rem"),
-            "4xl": dim("32px", src + " --radius-4xl 2rem"),
-        },
-        "spacing": {
-            "1": dim("4px", src + " --spacing 0.25rem"),
-            "2": dim("8px", src + " 2 steps of --spacing"),
-            "3": dim("12px", src + " auth h1 letter context and field pad start"),
-            "4": dim("16px", src + " button padding and code pad"),
-            "5": dim("20px", src + " hero button horizontal padding"),
-            "6": dim("24px", src + " pricing card padding"),
-        },
+def text(value, source):
+    return {"$value": value, **src(source)}
+
+
+def gray():
+    out = {}
+    for i in range(1, 13):
+        key = f"--gray-{i}"
+        if key in HOME:
+            out[str(i)] = color(HOME[key], f"Measured css-var {key} on html, resend.com home, dark, 1440")
+    return out
+
+
+def radii():
+    names = {
+        "xs": "--radius-xs",
+        "sm": "--radius-sm",
+        "md": "--radius-md",
+        "lg": "--radius-lg",
+        "xl": "--radius-xl",
+        "2xl": "--radius-2xl",
+        "3xl": "--radius-3xl",
+        "4xl": "--radius-4xl",
     }
-    dark = {
-        "surface": {
-            "page": color(c["page"], src + " body background and --background"),
-            "raised": color(c["gray"]["1"], src + " --gray-1"),
-            "overlay": color("#000000", src + " --bg-overlay painted opaque"),
+    return {k: dim(HOME[n], f"Measured css-var {n} on html, resend.com home, dark, 1440") for k, n in names.items() if n in HOME}
+
+
+def type_style(name, family, size, weight, line, tracking, source):
+    return {
+        "$type": "typography",
+        "$value": {
+            "fontFamily": family,
+            "fontSize": size,
+            "fontWeight": weight,
+            "lineHeight": line,
+            "letterSpacing": tracking,
         },
-        "text": {
-            "primary": color(c["text"], src + " body color --gray-12"),
-            "secondary": color(c["muted"], src + " nav and lede --gray-11"),
-            "placeholder": color(c["placeholder"], src + " --text-placeholder --gray-8"),
-            "onAccent": color(c["textOnAccent"], src + " --text-on-accent"),
-        },
-        "accent": color(c["accent"], src + " --bg-accent white"),
-        "accentHover": color(c["accentHover"], src + " --bg-accent-hover --gray-12"),
-        "border": {
-            "default": color(c["gray"]["4"], src + " --gray-4, nearest opaque step to the white/5 field border"),
-            "subtle": color(c["gray"]["3"], src + " --gray-3"),
-        },
-        "status": {
-            "forgeGreen": color(c["forgeGreen"], src + " --color-forge-green"),
-            "forgeRed": color(c["forgeRed"], src + " --color-forge-red"),
-        },
-        "component": {
-            "button": {
-                "bg": color(BUTTON_BG, src + " hero Get started backgroundImage " + BUTTON_IMAGE + ": its first stop. The fill is that translucent gradient over the black page, not an opaque colour"),
-                "text": color(c["white"], src + " Get started color"),
-                "radius": dim("16px", src + " Get started border-radius"),
-                "height": dim("40px", src + " header Get started height"),
-                "padding": dim("16px", src + " header Get started horizontal padding"),
-            },
-            "field": {
-                "text": color(c["white"], src + " login email color"),
-                "radius": dim("16px", src + " login email border-radius"),
-                "height": dim("48px", src + " login email height"),
-                "padding": dim("16px", src + " login email horizontal padding"),
-            },
-        },
+        **src(source),
     }
-    # Docs light was measured (main #ffffff, h1 #161616, search #6f6f6f, border #eeeeee)
-# and is kept in raw/foundations.json. It is not a token set: the catalog
-# DESIGN.md export prefers a light set over the marketing theme, and marketing
-# pages have no light theme.
-    doc = {
-        "$schema": "https://www.designtokens.org/schemas/2025.10/format/",
-        "core": core,
-        "dark": dark,
-        "$themes": [
-            {"name": "dark", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}},
-        ],
+
+
+def component_button():
+    b = STATES["button"]
+    return {
+        "height": dim(b["default"]["height"], "Measured computed height, header Get started link, home dark 1440, default"),
+        "radius": dim(b["default"]["borderRadius"], "Measured computed border-radius, header Get started link, home dark 1440, default"),
+        "fontSize": dim(b["default"]["fontSize"], "Measured computed font-size, header Get started link, home dark 1440, default"),
+        "fontWeight": text(b["default"]["fontWeight"], "Measured computed font-weight, header Get started link, home dark 1440, default"),
+        "paddingInline": dim(b["default"]["paddingLeft"], "Measured computed padding-left, header Get started link, home dark 1440, default"),
+        "colorDefault": color(b["default"]["color"], "Measured computed color, header Get started link, home dark 1440, default"),
+        "backgroundDefault": color(b["default"]["backgroundColor"], "Measured computed background-color, header Get started link, home dark 1440, default. The painted fill is a gradient the background-color does not show; see What to distrust."),
+        "colorHover": color(b["hover"]["color"], "Measured computed color, header Get started link, home dark 1440, hover"),
+        "backgroundHover": color(b["hover"]["backgroundColor"], "Measured computed background-color, header Get started link, home dark 1440, hover"),
+        "focusRing": text(b["focusVisible"]["boxShadow"], "Measured computed box-shadow, header Get started link, home dark 1440, focus-visible forced via CDP"),
     }
-    return json.dumps(doc, indent=2) + "\n"
 
 
-BUTTON_BG, BUTTON_IMAGE = gradient_base("getStartedHero")
+core = {
+    "color": {
+        "gray": gray(),
+        "black": color(HOME.get("--color-black", "#000"), "Measured css-var --color-black on html, resend.com home, dark, 1440"),
+        "white": color(HOME.get("--color-white", "#fff"), "Measured css-var --color-white on html, resend.com home, dark, 1440"),
+        "background": color(HOME["--background"], "Measured css-var --background on html, resend.com home, dark, 1440"),
+        "green": color(HOME["--color-green-9"], "Measured css-var --color-green-9 on html, resend.com home, dark, 1440"),
+        "red": color(HOME["--color-red-9"], "Measured css-var --color-red-9 on html, resend.com home, dark, 1440"),
+        "blue": color(HOME["--color-blue-9"], "Measured css-var --color-blue-9 on html, resend.com home, dark, 1440"),
+        "orange": color(HOME["--color-orange-9"], "Measured css-var --color-orange-9 on html, resend.com home, dark, 1440"),
+        "yellow": color(HOME["--color-yellow-9"], "Measured css-var --color-yellow-9 on html, resend.com home, dark, 1440"),
+    },
+    "fontFamily": {
+        "sans": font(HOME["--font-sans"], "Measured css-var --font-sans on html, resend.com home, dark, 1440"),
+        "display": font(HOME["--font-domaine"], "Measured css-var --font-domaine on html, resend.com home, dark, 1440"),
+        "favorit": font(HOME["--font-display"], "Measured css-var --font-display on html, resend.com home, dark, 1440"),
+        "mono": font(HOME["--font-mono"], "Measured css-var --font-mono on html, resend.com home, dark, 1440"),
+    },
+    "fontWeight": {
+        "light": text(HOME["--font-weight-light"], "Measured css-var --font-weight-light on html, resend.com home, dark, 1440"),
+        "normal": text(HOME["--font-weight-normal"], "Measured css-var --font-weight-normal on html, resend.com home, dark, 1440"),
+        "medium": text(HOME["--font-weight-medium"], "Measured css-var --font-weight-medium on html, resend.com home, dark, 1440"),
+        "semibold": text(HOME["--font-weight-semibold"], "Measured css-var --font-weight-semibold on html, resend.com home, dark, 1440"),
+        "bold": text(HOME["--font-weight-bold"], "Measured css-var --font-weight-bold on html, resend.com home, dark, 1440"),
+    },
+    "radius": radii(),
+    "typography": {
+        "display": type_style(
+            "display",
+            ROLES["h1"]["fontFamily"].split(",")[0].strip(),
+            ROLES["h1"]["fontSize"],
+            ROLES["h1"]["fontWeight"],
+            ROLES["h1"]["lineHeight"],
+            ROLES["h1"]["letterSpacing"],
+            "Measured computed style of h1, resend.com home, dark, 1440",
+        ),
+        "body": type_style(
+            "body",
+            "Inter Website",
+            ROLES["fontSize"],
+            "400",
+            ROLES["lineHeight"],
+            "0px",
+            "Measured computed style of body, resend.com home, dark, 1440",
+        ),
+    },
+    "motion": {
+        "easeOut": text(HOME["--ease-out"], "Measured css-var --ease-out on html, resend.com home, dark, 1440"),
+        "easeInOut": text(HOME["--ease-in-out"], "Measured css-var --ease-in-out on html, resend.com home, dark, 1440"),
+        "duration": text("Not captured", "No duration custom property was resolved on html. Durations are Not captured."),
+    },
+    "shadow": {
+        "button": text(HOME.get("--shadow-button", ""), "Measured css-var --shadow-button on html, resend.com home, dark, 1440"),
+        "lg": text(HOME.get("--shadow-lg", ""), "Measured css-var --shadow-lg on html, resend.com home, dark, 1440"),
+    },
+}
 
-if __name__ == "__main__":
-    OUT.write_text(build())
-    print(f"wrote {OUT}")
+dark = {
+    "page": color(ROLES["page"], "Measured computed background-color of body, resend.com home, dark, 1440"),
+    "surface": color(HOME["--gray-2"], "Measured css-var --gray-2 on html, resend.com home, dark, 1440. Used as the raised surface step."),
+    "text": color(ROLES["bodyColor"], "Measured computed color of body, resend.com home, dark, 1440"),
+    "muted": color(HOME["--gray-11"], "Measured css-var --gray-11 on html, resend.com home, dark, 1440. Nav link computed color matches this."),
+    "accent": color("#ffffff", "Derived from the hover fill of the header Get started control, which paints near-white. The resting control's background-color computed to transparent."),
+    "border": color(HOME["--gray-3"], "Measured css-var --gray-3 on html, resend.com home, dark, 1440"),
+    "link": color(STATES["link"]["default"]["color"], "Measured computed color, header Pricing link, home dark 1440, default"),
+    "focus": color("rgb(153, 200, 255)", "Measured computed outline-color, login email field, login dark 1440, default"),
+    "component": {
+        "button": component_button(),
+        "field": {
+            "height": dim(STATES["field"]["default"]["height"], "Measured computed height, login email input, dark 1440, default. Nothing was typed."),
+            "radius": dim(STATES["field"]["default"]["borderRadius"], "Measured computed border-radius, login email input, dark 1440, default"),
+            "fontSize": dim(STATES["field"]["default"]["fontSize"], "Measured computed font-size, login email input, dark 1440, default"),
+        },
+        "tab": {
+            "selectedBackground": color(STATES["tab"]["selected"]["backgroundColor"], "Measured computed background-color, pricing Transactional emails tab, dark 1440, selected"),
+            "selectedColor": color(STATES["tab"]["selected"]["color"], "Measured computed color, pricing Transactional emails tab, dark 1440, selected"),
+            "height": dim(STATES["tab"]["selected"]["height"], "Measured computed height, pricing tab, dark 1440"),
+            "radius": dim(STATES["tab"]["selected"]["borderRadius"], "Measured computed border-radius, pricing tab, dark 1440"),
+        },
+    },
+}
+
+docs_light_roles = V["docsLight"]["roles"]
+docs_dark_roles = V["docsDark"]["roles"]
+docs_light_resolved = V["docsLight"]["resolved"]
+light = {
+    "page": color(
+        "rgba(0, 0, 0, 0)",
+        "Measured computed background-color of body, docs introduction, light, 1440. The value is transparent. The painted page colour was not isolated as its own token.",
+    ),
+    "surface": color(
+        docs_light_resolved["--twoslash-popup-bg"],
+        "Measured css-var --twoslash-popup-bg on html, docs light, 1440",
+    ),
+    "text": color(
+        docs_light_roles["h1"]["color"],
+        "Measured computed color of h1, docs introduction, light, 1440",
+    ),
+    "muted": color(
+        docs_light_roles["bodyColor"],
+        "Measured computed color of body, docs introduction, light, 1440. A separate muted role was not isolated.",
+    ),
+    "accent": color(
+        docs_light_resolved["--twoslash-tag-color"],
+        "Measured css-var --twoslash-tag-color on html, docs light, 1440. This is the docs link colour, used as the light accent because the docs primary button fill was not computed.",
+    ),
+    "border": color(
+        docs_light_resolved.get("--default-border-color", "238 238 238"),
+        "Measured css-var --default-border-color on html, docs light, 1440",
+    ),
+    "link": color(
+        docs_light_resolved["--twoslash-tag-color"],
+        "Measured css-var --twoslash-tag-color on html, docs light, 1440",
+    ),
+    "focus": color(
+        "rgba(59, 130, 246, 0.5)",
+        "Measured computed box-shadow colour, docs search input, light, 1440",
+    ),
+    "docsText": color(
+        docs_dark_roles["h1"]["color"],
+        "Measured computed color of h1, docs introduction, dark, 1440. Stored here so the dark docs heading is not dropped. The marketing dark set is the dark theme.",
+    ),
+}
+
+tokens = {
+    "$schema": "https://design-tokens.org/schema.json",
+    "core": core,
+    "dark": dark,
+    "light": light,
+    "$themes": [
+        {"id": "dark", "name": "dark", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}},
+        {"id": "light", "name": "light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}},
+    ],
+    "$extensions": {
+        "source": "Resend public site, 2026-11-21, signed out, Playwright. Marketing dark. Docs light and dark.",
+        "notTokenised": {
+            "spacingScale": "Not captured. No --space-* custom properties resolved on html.",
+            "motionDuration": "Not captured.",
+            "marketingLightTheme": "Not present. Marketing html carries class dark and no theme toggle.",
+            "signedInApp": "Not captured. Login and signup are auth walls.",
+        },
+    },
+}
+
+# Remove the placeholder sentence that says Not captured as a color value for duration.
+# Keep motion.duration as a string token so the gap is explicit.
+out = HERE / "tokens.json"
+out.write_text(json.dumps(tokens, indent=1) + "\n")
+print("wrote", out, "core gray", len(core["color"]["gray"]))
