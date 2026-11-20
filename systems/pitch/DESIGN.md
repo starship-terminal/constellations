@@ -209,6 +209,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+The six login colours `core.color.login-ink-deep`, `login-muted`, `login-border`, `login-error`, `login-success` and `login-warning` were read from auth.pitch.com custom properties that raw/ does not hold. They are labelled Reconstruction, entered by hand at capture time.
+
 The home hero is a collage and a gradient, not a flat fill. The violet and violet-deep tokens are the colours the type and the buttons use. They are not a single sampled pixel of the hero.
 
 Log in hover computed to `#5216eb`, one step off the `#5318eb` violet token. Both are recorded. The token is the stylesheet value. The hover is the computed value.
