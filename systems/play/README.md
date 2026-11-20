@@ -9,7 +9,7 @@ Surfaces: homepage, pricing, and download from January 2026 Internet Archive rep
 | [README.md](README.md) | This file |
 | [icon.png](icon.png) | 128px PNG from the dashboard webclip archived 26 November 2025 |
 | [DESIGN.md](DESIGN.md) | Generated from tokens.json |
-| [tokens.json](tokens.json) | Measured marketing tokens, dark only |
+| [tokens.json](tokens.json) | Marketing tokens typed in from archive readings, dark only; labelled Reconstruction because the readings were not saved |
 | [style-guide.html](style-guide.html) | Swatches and buttons from those tokens |
 | [components.md](components.md) | Components that were on the public pages |
 | [patterns.md](patterns.md) | The captured pages |
@@ -80,6 +80,8 @@ The measurements come from headless Chrome (Playwright, channel `chrome`) on pub
 Framer `--token-*` colours were read from the homepage stylesheet. Stitches `--colors-*` names were read from the archived dashboard HTML shell. The login form that shell belongs to did not paint, so those names stay in [raw/dashboard-stitches.json](raw/dashboard-stitches.json) and are not semantic tokens.
 
 ## What to distrust
+
+The computed styles and stylesheet declarations above were typed into tokens.json by hand and not saved: raw/ holds the capture notes and the unused Stitches names, not the readings. Every token is therefore labelled Reconstruction, entered by hand at capture time. A recapture of a replay should save the readings to raw/.
 
 The pages are archive replays, not a live server. Wayback's toolbar was hidden before the screenshots. Some images in the hero are broken archive assets, so the lower half of the home screenshot is mostly black.
 

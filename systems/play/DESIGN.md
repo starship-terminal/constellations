@@ -235,6 +235,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+The computed styles and stylesheet declarations above were typed into tokens.json by hand and not saved: raw/ holds the capture notes and the unused Stitches names, not the readings. Every token is therefore labelled Reconstruction, entered by hand at capture time. A recapture of a replay should save the readings to raw/.
+
 The pages are archive replays, not a live server. Wayback's toolbar was hidden before the screenshots. Some images in the hero are broken archive assets, so the lower half of the home screenshot is mostly black.
 
 The green nav button did not change under hover, and focus left `outline: none`. That is what the computed style returned. It is not a designed focus ring.
