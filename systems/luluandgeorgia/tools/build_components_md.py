@@ -7,30 +7,45 @@ ROOT = Path(__file__).resolve().parent.parent
 J = json.loads((ROOT / "raw" / "components-computed.json").read_text())
 C = J["components"]
 
-def line(key):
-    comp = C.get(key) or {}
-    states = comp.get("states") or {}
-    good = [s for s, v in states.items() if isinstance(v, dict) and "error" not in v]
-    if not good:
-        return f"| {key} | not captured | selector missed on the live page |"
-    crops = ", ".join(f"[{s}]({states[s].get('crop')})" for s in good if states[s].get("crop"))
-    sample = states[good[0]]
-    return f"| {comp.get('title', key)} | captured | {sample.get('fontSize', '')} {sample.get('color', '')} on {sample.get('backgroundColor', '')}. {crops} |"
+def hexc(v):
+    """rgb(26, 23, 19) -> #1a1713"""
+    import re
+    m = re.fullmatch(r"rgba?\((\d+), (\d+), (\d+)(?:, [\d.]+)?\)", v)
+    if not m:
+        raise SystemExit(f"not a colour: {v!r}")
+    return "#%02x%02x%02x" % tuple(int(x) for x in m.groups())
 
-rows = [
-    "button",
-]
-# Hand-written inventory that names what was actually measured.
-text = """# Components
+
+def st(key, state="default"):
+    """One measured state. A missing reading fails the build, so the prose cannot outlive raw/."""
+    v = (C.get(key) or {}).get("states", {}).get(state)
+    if not v or "error" in v:
+        raise SystemExit(f"{key} {state} missing from raw/components-computed.json")
+    return v
+
+
+def missing(key):
+    return all("error" in v for v in (C.get(key) or {}).get("states", {"default": {"error": 1}}).values())
+
+
+F = J["foundations"]
+atc, acct, cart, nav, search, qty = st("atc"), st("icon-account"), st("icon-cart"), st("nav-link"), st("search"), st("qty")
+same_fill = all(st("atc", s)["backgroundColor"] == atc["backgroundColor"] for s in ("hover", "pressed"))
+if not missing("wishlist"):
+    raise SystemExit("wishlist now has a reading: write its row from it")
+
+# The inventory prose was written by hand at capture time; every measured number in it is read
+# from raw/components-computed.json below.
+text = f"""# Components
 
 Public signed-out components measured on luluandgeorgia.com on 2026-11-18. Crops are in [components/crops/](components/crops). Colours are computed styles. The site paints square corners and one ink.
 
 | Component | Status | Evidence |
 |---|---|---|
-| Button | captured | Add to cart is 40px, fill #1a1713, label #ffffff, weight 800. [default](components/crops/atc-default.png), [hover](components/crops/atc-hover.png), [focus](components/crops/atc-focus.png), [pressed](components/crops/atc-pressed.png). Hover and pressed did not change the fill. |
-| Icon button | captured | Account 22px and bag 23px in the header. Wishlist beside add to cart is 40px with a 1px ink border. [account](components/crops/icon-account-default.png), [bag](components/crops/icon-cart-default.png). |
-| Link | captured | Category links are 11px uppercase, 1.2px tracking, ink #1a1713. Sale is #b11515. [furniture](components/crops/nav-link-default.png). Account drawer link in [account-link](components/crops/account-link-default.png). |
-| Text field | captured | Header search is 44px, fill #ebebeb, placeholder #747474, radius 0. [default](components/crops/search-default.png), [focus](components/crops/search-focus.png), [filled](components/crops/search-filled.png). Quantity on the product page is 28x40. [qty](components/crops/qty-default.png). |
+| Button | captured | Add to cart is {atc['rect']['h']}px, fill {hexc(atc['backgroundColor'])}, label {hexc(atc['color'])}, weight {atc['fontWeight']}. [default](components/crops/atc-default.png), [hover](components/crops/atc-hover.png), [focus](components/crops/atc-focus.png), [pressed](components/crops/atc-pressed.png). {"Hover and pressed did not change the fill." if same_fill else "Hover or pressed changed the fill."} The focus crop is a script focus with the pointer still over the button, not a keyboard focus (see States). |
+| Icon button | captured | Account {acct['rect']['w']}px and bag {cart['rect']['w']}px in the header. [account](components/crops/icon-account-default.png), [bag](components/crops/icon-cart-default.png). The wishlist button beside add to cart was not found by the measure pass, so it has no reading. |
+| Link | captured | Category links are {nav['fontSize']} uppercase, {nav['letterSpacing']} tracking, ink {hexc(nav['color'])}. Sale is {hexc(F['sale']['color'])}. [furniture](components/crops/nav-link-default.png). Account drawer link in [account-link](components/crops/account-link-default.png). |
+| Text field | captured | Header search is {search['rect']['h']}px, fill {hexc(search['backgroundColor'])}, placeholder {hexc(search['color'])}, radius {search['borderRadius'].replace('0px', '0')}. [default](components/crops/search-default.png), [focus](components/crops/search-focus.png), [filled](components/crops/search-filled.png). Quantity on the product page is {qty['rect']['w']}x{qty['rect']['h']}. [qty](components/crops/qty-default.png). |
 | Text area | not present | No textarea on the signed-out pages. |
 | Select | not captured | A variant select exists in the DOM (`select.product-variants`) and was not visible on the Sachs dining table page, which paints a single price. |
 | Checkbox | observed | The Shop sign-in page paints "Email me with news and offers" checked. That page is shopify.com, not the storefront. It was not measured as a store token. See [login-light-default](screenshots/login-light-default.png). |
@@ -45,12 +60,16 @@ Public signed-out components measured on luluandgeorgia.com on 2026-11-18. Crops
 | List row | captured | Filter groups are rows with a plus. [filter](screenshots/collection-light-filter.png). |
 | Table | not present | No data table on the public pages. |
 | Avatar | not present | No avatar on the signed-out storefront. |
-| Badge | observed | Search suggestions paint Exclusive and New chips. The crop selector matched the card, not the chip, so the chip has no separate crop. See [home-light-search](screenshots/home-light-search.png). |
+| Badge | observed | Search suggestions paint Exclusive and New chips. The badge selector matched the whole product card ({st('badge')['rect']['w']}x{st('badge')['rect']['h']}), so `badge` in raw/ and its crop are the card, not the chip. Recapture needed. See [home-light-search](screenshots/home-light-search.png). |
 | Hero button | not captured | "Shop bestsellers" is visible in the home screenshot and was not a stable locator during measurement (the hero is a carousel). See [home-light-default](screenshots/home-light-default.png). |
 
 ## States
 
-Hover, focus, and pressed were forced on add to cart. The computed fill stayed #1a1713. Focus did not paint a separate ring. Disabled was not painted. Loading was not painted. A validation error was not produced, because the login form was not submitted and add to cart was not clicked.
+Hover was a real pointer hover and pressed was forced (`CSS.forcePseudoState`) on add to cart. The computed fill stayed {hexc(atc['backgroundColor'])}. Focus was a script `focus()` taken with the pointer still over the button, so `:focus-visible` was not produced: the reading cannot say whether a keyboard focus draws a ring. Recapture needed (`tools/capture/public/measure.mjs` now takes a keyboard focus from rest). Disabled was not painted. Loading was not painted. A validation error was not produced, because the login form was not submitted and add to cart was not clicked.
 """
+import re
+dead = sorted({t for t in re.findall(r"\]\(((?:screenshots|components|raw)/[^)#\s]+)\)", text) if not (ROOT / t).exists()})
+if dead:
+    raise SystemExit("components.md links files that do not exist: " + ", ".join(dead))
 (ROOT / "components.md").write_text(text)
 print("components.md")

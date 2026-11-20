@@ -137,6 +137,10 @@ export async function crop(page, locator, name, pad = 8) {
   const height = Math.min(vh - y, box.height + pad * 2);
   const file = path.join(CROPS, `${name}.png`);
   await page.screenshot({ path: file, clip: { x, y, width, height } });
+  // Stored as 256 colours like every other committed image.
+  execFileSync(PYTHON, ['-c',
+    'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)',
+    file]);
   return `components/crops/${name}.png`;
 }
 
@@ -145,10 +149,12 @@ export async function centre(locator) {
   await locator.page().waitForTimeout(250);
 }
 
+// Returns false when a bot check never cleared, so the caller does not measure the challenge page.
 export async function open(page, url, { wait = 3500 } = {}) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
-  await clearChallenge(page);
+  if (!(await clearChallenge(page))) return false;
   await page.waitForTimeout(wait);
   await hideOverlays(page);
   await page.waitForTimeout(400);
+  return true;
 }

@@ -82,14 +82,16 @@ code { font-family: var(--sg-mono); font-size: 12px; }
 const TOKENS = /*TOKENS*/null;
 const light = (TOKENS && TOKENS.light && TOKENS.light.color) || {};
 const pal = document.getElementById('palette');
+// The builder inlines a slim tree: each token is {v: value, t: type, s: source}.
+const esc = (x) => String(x).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function walk(node, prefix) {
   Object.entries(node).forEach(([k, v]) => {
-    if (v && v.$value && v.$type === 'color') {
+    if (v && v.v !== undefined && v.t === 'color') {
       const el = document.createElement('div');
       el.className = 'sw';
-      el.innerHTML = '<i style="background:' + v.$value + '"></i><div><b>' + prefix + k + '</b><span>' + v.$value + '</span></div>';
+      el.innerHTML = '<i style="background:' + esc(v.v) + '"></i><div><b>' + esc(prefix + k) + '</b><span>' + esc(v.v) + '</span></div>';
       pal.appendChild(el);
-    } else if (v && typeof v === 'object' && !v.$value) walk(v, prefix + k + '.');
+    } else if (v && typeof v === 'object' && v.v === undefined) walk(v, prefix + k + '.');
   });
 }
 walk(light, '');
