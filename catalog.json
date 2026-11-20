@@ -2853,6 +2853,88 @@
    }
   },
   {
+   "slug": "stable-audio",
+   "name": "Stable Audio",
+   "url": "https://stableaudio.com",
+   "category": "media",
+   "platform": "web",
+   "goodFor": "Dark generative-audio marketing: black page, square controls, white hairline rules, Neue Haas Grotesk, a sand platform primary on pricing and a homepage accent that changes between loads",
+   "tags": [
+    "web",
+    "audio",
+    "music",
+    "generative",
+    "saas",
+    "marketing",
+    "dark",
+    "dark-only",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-21",
+   "access": "signed out (public pages only; workspace, sampler, labs, generate, checkout and account settings sit behind AuthKit and were not opened)",
+   "themes": [
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/stable-audio/README.md",
+   "tokens": "systems/stable-audio/tokens.json",
+   "styleGuide": "systems/stable-audio/style-guide.html",
+   "preview": {
+    "cover": "systems/stable-audio/screenshots/home-dark-default.png",
+    "icon": "systems/stable-audio/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.page",
+      "surface": "dark.surface",
+      "text": "dark.text.strong",
+      "muted": "dark.text.muted",
+      "accent": "dark.color.primary",
+      "border": "dark.border"
+     }
+    },
+    "fonts": [
+     "core.font.ui",
+     "core.font.display"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "stableaudio.com in headless Chromium (Playwright), desktop 1440x900 and phone 390x844. --sx-* tokens read from same-origin stylesheets; component values from getComputedStyle. Cookie banner hidden, never clicked. AuthKit recorded and not continued",
+    "timestamp": "2026-11-21T00:00:00Z",
+    "harness": "Grok",
+    "model": "grok-4.7",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/plugin",
+     "/pricing",
+     "/guide",
+     "/docs/manual",
+     "/terms",
+     "/account",
+     "/blog"
+    ],
+    "gaps": [
+     "workspace, sampler, labs, generate, checkout and account settings sit behind AuthKit and were not opened",
+     "no email was typed and no password was submitted",
+     "homepage primary button colour changes between loads; the measured accent is one load",
+     "light theme is not offered on the public site",
+     "text field, select, checkbox, radio, switch, toast, table, avatar and badge are not on the public pages",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 90,
+    "pr": "https://github.com/starship-terminal/constellations/pull/0"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG set was lifted; glyphs are in the screenshots",
+    "components/": "states are full screenshots, not element crops"
+   }
+  },
+  {
    "slug": "butter",
    "name": "Butter",
    "url": "https://www.butter.video",

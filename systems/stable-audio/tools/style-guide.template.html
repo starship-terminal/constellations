@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stable Audio style guide</title>
+<meta name="description" content="Stable Audio public-site tokens, rendered from tokens.json.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-strong, #fff); background: var(--page, #000); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 600 40px/1.05 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.03em; }
+h2 { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text, #cfcdc6); margin: 48px 0 12px; }
+.lead, .note { max-width: 68ch; color: var(--text, #cfcdc6); }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 200px; }
+.sw i { width: 28px; height: 28px; border: 1px solid rgba(255,255,255,.22); display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text, #cfcdc6); }
+.mock { border: 1px solid rgba(255,255,255,.22); background: var(--page, #000); padding: 28px; }
+.nav { display: flex; align-items: center; gap: 18px; font-size: 13px; color: var(--text, #cfcdc6); }
+.nav b { color: var(--text-strong, #fff); letter-spacing: .08em; }
+.nav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; height: var(--component-button-primary-height, 36px); padding: 0 16px; border: 1px solid transparent; font: 600 13px/1 var(--sg-sans); background: transparent; color: var(--component-button-secondary-color, #e8e8e8); }
+.btn.primary { background: var(--component-button-primary-background, #9d4edd); color: var(--component-button-primary-color, #000); border-color: var(--component-button-primary-background, #9d4edd); }
+.btn.secondary { border-color: var(--border, rgba(255,255,255,.22)); }
+.hero { font: 600 48px/1.02 var(--sg-sans); letter-spacing: -0.03em; margin: 36px 0 12px; max-width: 12ch; }
+.hero small { display: block; margin-top: 12px; font: 400 16px/1.45 var(--sg-sans); color: var(--text, #cfcdc6); letter-spacing: 0; max-width: 42ch; }
+.word { display: inline-block; border-bottom: 2px solid #fff; box-shadow: inset 0 -2px 0 rgba(255,255,255,.34); }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.card { background: var(--surface, #0b0b0b); border: 1px solid rgba(255,255,255,.1); border-radius: var(--component-card-radius, 4px); padding: 16px; font-size: 14px; }
+.dialog { width: 320px; background: var(--component-dialog-background, #141414); border-radius: var(--component-dialog-radius, 6px); padding: 20px; margin-top: 20px; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 16px; font: 400 12px/1.7 var(--sg-mono); }
+.kv span { color: var(--text, #cfcdc6); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Stable Audio</h1>
+  <p class="lead">Public site, one dark surface. Values come from <code>tokens.json</code>. The homepage primary fill is the colour measured on this capture; it changes between loads.</p>
+
+  <h2>Page</h2>
+  <div class="mock">
+    <div class="nav"><b>STABLE AUDIO</b><span>How it works</span><span>Plugin</span><span>Pricing</span><span class="sp"></span><span class="btn secondary">Sign in</span><span class="btn primary">Start free</span></div>
+    <div class="hero">Shape the sound you’re after.<small>An <span class="word">explosive</span> jazz track. Square corners, white rules, one accent on the primary button.</small></div>
+    <div class="cards">
+      <div class="card"><b>Free</b><p>$0/mo. Commercial license.</p><span class="btn primary">Start free</span></div>
+      <div class="card"><b>Session</b><p>More credits. Same square button.</p><span class="btn secondary">Get Session</span></div>
+    </div>
+    <div class="dialog"><b>Sign up to make it yours</b><p class="note">The dialog is the only rounded surface on the homepage. Sign up free was not followed.</p><span class="btn primary">Sign up free</span></div>
+  </div>
+
+  <h2>Colour</h2>
+  <div id="roles" class="pal"></div>
+
+  <h2>Components</h2>
+  <div id="comp" class="kv"></div>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const roles = flat(TOK.dark, '').filter(([, t]) => t.t === 'color');
+document.getElementById('roles').innerHTML = roles.map(([n, t]) => `<div class="sw"><i style="background:${esc(t.v)}"></i><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`).join('');
+document.getElementById('comp').innerHTML = flat(TOK.dark.component, 'component.').map(([n, t]) => `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`).join('');
+</script>
+</body>
+</html>

@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 84,
-    "system_domains": 76,
-    "matched_domains": 51,
-    "missing_domains": 382,
+    "system_packages": 85,
+    "system_domains": 77,
+    "matched_domains": 52,
+    "missing_domains": 381,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -872,6 +872,23 @@
           "slug": "spotify",
           "name": "Spotify",
           "url": "https://www.spotify.com",
+          "name_match": true
+        }
+      ]
+    },
+    "stableaudio.com": {
+      "catalog": [
+        {
+          "name": "Stable Audio",
+          "domain": "stableaudio.com",
+          "id": 481
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "stable-audio",
+          "name": "Stable Audio",
+          "url": "https://stableaudio.com",
           "name_match": true
         }
       ]
@@ -2974,13 +2991,6 @@
         "name": "SSENSE",
         "domain": "ssense.com",
         "id": 702
-      }
-    ],
-    "stableaudio.com": [
-      {
-        "name": "Stable Audio",
-        "domain": "stableaudio.com",
-        "id": 481
       }
     ],
     "stage.so": [
