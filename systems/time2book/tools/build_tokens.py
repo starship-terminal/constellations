@@ -15,6 +15,8 @@ HEX = RAW["hexFromCanvas"]
 
 
 def tok(value, ty, evidence, where, **extra):
+    if evidence is S:  # declared in the stylesheet raw/readings.json names: a Measured declaration
+        evidence, extra = M, {"stylesheet": RAW["stylesheet"], **extra}
     source = {"evidence": evidence, "where": where}
     source.update(extra)
     return {"$value": value, "$type": ty, "$extensions": {"source": source}}
@@ -29,12 +31,13 @@ def dim(value, evidence, where, **extra):
 
 
 def ref(value, evidence, where):
-    return {"$value": value, "$type": "dimension", "$extensions": {"source": {"evidence": evidence, "where": where}}}
+    return tok(value, "dimension", evidence, where)
 
 
 M = "Measured"
 D = "Derived"
-S = "Stylesheet"
+R = "Reconstruction"
+S = object()  # a declaration read from the stylesheet; tok() writes it as Measured, naming the sheet
 
 LIGHT = "computed style on https://www.time2book.me/ and https://time2book.me/login, 2026-11-19"
 ROOT = ":root custom property in _astro/base.BIUhdRuW.css, resolved to sRGB in the T3 page"
@@ -56,7 +59,7 @@ core = {
     "fontWeight": {
         "regular": tok(400, "fontWeight", M, "body and eyebrow computed font-weight"),
         "medium": tok(500, "fontWeight", M, "display heading, nav link and primary button"),
-        "semibold": tok(600, "fontWeight", S, "--font-weight-semibold. Not seen on a public text node."),
+        "semibold": tok(600, "fontWeight", R, "Entered by hand at capture time from --font-weight-semibold; no raw/ file holds this reading. Not seen on a public text node."),
     },
     "fontSize": {
         "legal": dim("12px", M, "signup Terms of Service link"),
@@ -355,14 +358,22 @@ def check(doc):
     for set_name in ("core", "light", "dark"):
         if set_name not in doc:
             continue
+        # An alias resolves in its own set, then in core (as tools/catalog.py's Resolver does),
+        # never in another theme's set.
         local = dict(tokens_of(doc["core"]))
         local.update(dict(tokens_of(doc[set_name])))
         for path, token in tokens_of(doc[set_name]):
             for alias in aliases(token["$value"]):
-                if alias not in local and alias not in names:
+                if alias not in local:
                     raise SystemExit(f"{set_name}.{path} alias {{{alias}}} points at nothing")
 
 
-check(tokens)
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("wrote", HERE / "tokens.json")
+def render():
+    """tokens.json's exact text, after the checks; nothing is written."""
+    check(tokens)
+    return json.dumps(tokens, indent=2) + "\n"
+
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(render())
+    print("wrote", HERE / "tokens.json")
