@@ -1,0 +1,131 @@
+{
+  "signed_in": true,
+  "account": "owner Personal team",
+  "when": "2026-11-20",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}, "png": "2880x1800"},
+    "narrow": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}, "png": "780x1688"}
+  },
+  "theme": "System, which painted dark in this browser. Light was opened from the command palette and captured on home, then System was restored.",
+  "offered": {
+    "nav": {
+      "items": [
+        "Home",
+        "Search",
+        "Agent",
+        "Contents",
+        "Answer",
+        "Websets",
+        "Monitors",
+        "Usage",
+        "Requests",
+        "Billing",
+        "API Keys",
+        "Team Settings",
+        "Exa in Slack",
+        "Websets Settings",
+        "Docs",
+        "Exa MCP",
+        "Templates",
+        "Find",
+        "Give us feedback"
+      ],
+      "reached": [
+        "Home",
+        "Search",
+        "Agent",
+        "Contents",
+        "Answer",
+        "Websets",
+        "Monitors",
+        "Usage",
+        "Requests",
+        "Billing",
+        "API Keys",
+        "Team Settings",
+        "Exa in Slack",
+        "Websets Settings",
+        "Docs",
+        "Exa MCP",
+        "Templates",
+        "Find",
+        "Give us feedback"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Team Settings",
+        "Billing",
+        "API Keys",
+        "Websets Settings",
+        "Exa in Slack",
+        "account menu"
+      ],
+      "reached": [
+        "Team Settings",
+        "Billing",
+        "API Keys",
+        "Websets Settings",
+        "Exa in Slack",
+        "account menu"
+      ]
+    },
+    "create": {
+      "items": [
+        "Create Key",
+        "Invite team member",
+        "Create Webset",
+        "Create monitor",
+        "home composer"
+      ],
+      "reached": [
+        "Create Key",
+        "Invite team member",
+        "Create Webset",
+        "Create monitor",
+        "home composer"
+      ]
+    }
+  },
+  "screens": [
+    {"name": "Home, dark, desktop", "file": "screenshots/signed-in-home-dark-desktop.png"},
+    {"name": "Home, light, desktop", "file": "screenshots/signed-in-home-light-desktop.png"},
+    {"name": "Home, dark, phone", "file": "screenshots/signed-in-home-dark-narrow.png"},
+    {"name": "Navigation drawer, dark, phone", "file": "screenshots/signed-in-nav-dark-narrow.png"},
+    {"name": "Search playground, dark, desktop", "file": "screenshots/signed-in-search-dark-desktop.png"},
+    {"name": "Agent playground, dark, desktop", "file": "screenshots/signed-in-agent-dark-desktop.png"},
+    {"name": "Contents playground, dark, desktop", "file": "screenshots/signed-in-contents-dark-desktop.png"},
+    {"name": "Answer playground, dark, desktop", "file": "screenshots/signed-in-answer-dark-desktop.png"},
+    {"name": "Create webset, dark, desktop", "file": "screenshots/signed-in-websets-create-dark-desktop.png"},
+    {"name": "Create monitor, dark, desktop", "file": "screenshots/signed-in-monitors-dark-desktop.png"},
+    {"name": "Usage, dark, desktop", "file": "screenshots/signed-in-usage-dark-desktop.png"},
+    {"name": "Request history, dark, desktop", "file": "screenshots/signed-in-requests-dark-desktop.png"},
+    {"name": "Billing, dark, desktop", "file": "screenshots/signed-in-billing-dark-desktop.png"},
+    {"name": "Billing, dark, phone", "file": "screenshots/signed-in-billing-dark-narrow.png"},
+    {"name": "API keys, dark, desktop", "file": "screenshots/signed-in-api-keys-dark-desktop.png"},
+    {"name": "Create API key dialog, dark, desktop", "file": "screenshots/signed-in-create-key-dark-desktop.png"},
+    {"name": "Create API key dialog, dark, phone", "file": "screenshots/signed-in-create-key-dark-narrow.png"},
+    {"name": "Team settings, dark, desktop", "file": "screenshots/signed-in-team-settings-dark-desktop.png"},
+    {"name": "Invite dialog, dark, desktop", "file": "screenshots/signed-in-invite-dark-desktop.png"},
+    {"name": "Exa in Slack, dark, desktop", "file": "screenshots/signed-in-slack-dark-desktop.png"}
+  ],
+  "gaps": [
+    "Docs and Exa MCP leave the dashboard for the public docs site. They were not recaptured; the public package already holds the docs.",
+    "Templates was opened and read. It was not screenshotted.",
+    "Find was opened (command palette: page list plus Light, Dark and System theme). The palette itself was not screenshotted.",
+    "Give us feedback was not opened. It is a feedback form.",
+    "Account menu offers Contact us and Log out. Contact us was not followed. Log out was not clicked.",
+    "Websets Settings is a paid-plan gate (Upgrade to a paid plan). The Websets API was not reached.",
+    "Enterprise upgrade, add credits, payment method, auto recharge and Slack install were not followed.",
+    "Playground runs (Search, Agent, Contents, Answer, Create Webset, Create monitor) were not executed. A confirm or credit spend was not started.",
+    "No light-theme shot except home. Phone shots are home, the nav drawer, billing and the create-key dialog.",
+    "Reduced motion was not probed on the signed-in app."
+  ],
+  "not_submitted": [
+    "Create a Key was opened and cancelled. No key was created.",
+    "Invite team member was opened and closed. No invite was sent and no invite link was copied.",
+    "No search, agent, contents, answer, webset or monitor run was started.",
+    "No credit purchase, payment method, auto recharge, upgrade or Slack install was submitted.",
+    "Log out was not clicked. Feedback was not sent."
+  ]
+}
