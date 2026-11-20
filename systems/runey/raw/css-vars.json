@@ -1,0 +1,5 @@
+{
+  "note": "Custom properties declared in https://runey.app/assets/index-BNow9ey6.css on 2026-11-21. The :root and .dark blocks are copied into token-blocks.json and turned into tokens.json by tools/build_tokens.py. Sonner toast variables and Tailwind internals are not tokenised.",
+  "stylesheet": "https://runey.app/assets/index-BNow9ey6.css",
+  "sourceFile": "token-blocks.json"
+}

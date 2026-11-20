@@ -1,6 +1,6 @@
 # Patterns
 
-Public pages only. The product app was not entered.
+Public pages only. The product app was not entered. Which control opens which page is in [site-tree.md](site-tree.md). A second pass on 2026-11-21 walked that tree at 1440×900 and 390×844 and stopped at https://runey.app/auth.
 
 ## Home
 
@@ -13,6 +13,8 @@ The footer uses `light.surface.footer` with links in `light.text.footer`. It is 
 ## Pricing on the home
 
 Three cards share one body: Solo, Team and Agency. A pill track above them selects Monthly, Yearly or Lifetime. Yearly was selected when the page loaded. Each card ends in a primary pill labelled Start 14-day free trial. That pill links to `/auth`. It was not followed into a payment.
+
+The 2026-11-21 pass also opened the Features menu, the feature tabs, Yearly and Lifetime pricing, the FAQ answer, the cookie Customize panel, and the phone menu. Those shots are named in [site-tree.md](site-tree.md) and sit beside the earlier home shots in [screenshots/](screenshots/). Feature pages, updates, help, contact, feedback, and the legal pages were captured the same day. `/pricing`, `/blog`, `/about`, `/privacy`, `/changelog`, `/features`, and `/legal` redirect to the auth wall and were not entered.
 
 ## Auth
 

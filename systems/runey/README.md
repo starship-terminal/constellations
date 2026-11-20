@@ -13,7 +13,8 @@ Runey is invoicing, projects and clients for freelancers and small teams. This p
 | [patterns.md](patterns.md) | How the home and the auth page are put together |
 | [components/](components/) | Crops of the buttons, fields, chips, cards and FAQ |
 | [icons/](icons/) | An index. The wordmark is an inline SVG, and the UI icons are Lucide |
-| [screenshots/](screenshots/) | Home, cookie, auth sign-in, auth sign-up, and a phone shot |
+| [screenshots/](screenshots/) | Home, cookie, auth sign-in, auth sign-up, and a phone shot, plus the 2026-11-21 public pages (features, FAQ, help, updates, contact, legal, menus) |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or auth wall |
 | [raw/](raw/) | The computed readings the tokens come from |
 | [tools/](tools/) | The kit copy. This capture was measured live, not rebuilt by the kit scripts. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
@@ -102,10 +103,13 @@ The painted family is Poppins, loaded from Google Fonts at weights 400, 500, 600
 |---|---|
 | Home, light, 1440 and 390 | Yes. [screenshots/](screenshots/) |
 | Home with the cookie card | Yes |
+| Features menu, pricing toggles, FAQ open, phone menu | Yes, 2026-11-21. [site-tree.md](site-tree.md) |
+| Feature pages, updates, FAQ, help, contact, feedback, terms, policy, cookies | Yes, 2026-11-21, desktop. Phone: home, updates, FAQ, help, contact, feedback, one feature page, terms, auth |
 | Auth sign-in and sign-up, light, 1440 | Yes. Nothing typed |
 | Dark theme | Declared in CSS, not painted |
 | Signed-in app | Not entered |
 | Google continue | Not followed |
+| `/pricing`, `/blog`, `/about`, `/privacy`, `/changelog`, `/features`, `/legal` | Redirect to https://runey.app/auth. Branch stopped. Public pricing is `/#pricing`. Public privacy is `/policy` |
 | Payment, phone, company SSO | Not present on the pages that were opened, and not entered |
 
 The component checklist is in [patterns.md](patterns.md).
