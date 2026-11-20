@@ -1,0 +1,422 @@
+{
+  "_note": "District: the top bar's detected location (city and state, placed by matching the location pin) and, in text elsewhere, the city or state word and venue distances (placed by OCR) are masked as a precise location. Boxes only, no values.",
+  "families": [
+    {
+      "name": "location line cm-h1-default",
+      "files": ["components/crops/cm-h1-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line dk-body-default",
+      "files": ["components/crops/dk-body-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "place words and distances dk-body-default",
+      "files": ["components/crops/dk-body-default.png"],
+      "rects": [
+        [777, 2287, 833, 2308]
+      ]
+    },
+    {
+      "name": "location line dk-nav-default",
+      "files": ["components/crops/dk-nav-default.png"],
+      "rects": [
+        [372, 18, 574, 122]
+      ]
+    },
+    {
+      "name": "place words and distances ev-card-default",
+      "files": ["components/crops/ev-card-default.png"],
+      "rects": [
+        [40, 394, 417, 425]
+      ]
+    },
+    {
+      "name": "place words and distances ev-card-hover",
+      "files": ["components/crops/ev-card-hover.png"],
+      "rects": [
+        [40, 394, 417, 425]
+      ]
+    },
+    {
+      "name": "location line ev-h1-default",
+      "files": ["components/crops/ev-h1-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "place words and distances ev-listcard-default",
+      "files": ["components/crops/ev-listcard-default.png"],
+      "rects": [
+        [40, 396, 417, 427]
+      ]
+    },
+    {
+      "name": "place words and distances ev-listcard-hover",
+      "files": ["components/crops/ev-listcard-hover.png"],
+      "rects": [
+        [40, 396, 417, 427]
+      ]
+    },
+    {
+      "name": "location line ev-price-default",
+      "files": ["components/crops/ev-price-default.png"],
+      "rects": [
+        [186, 9, 287, 50]
+      ]
+    },
+    {
+      "name": "location line m-bar-default",
+      "files": ["components/crops/m-bar-default.png"],
+      "rects": [
+        [86, 16, 288, 120]
+      ]
+    },
+    {
+      "name": "location line m-card-default",
+      "files": ["components/crops/m-card-default.png"],
+      "rects": [
+        [43, 8, 144, 60]
+      ]
+    },
+    {
+      "name": "location line mv-h1-default",
+      "files": ["components/crops/mv-h1-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line nv-bar-default",
+      "files": ["components/crops/nv-bar-default.png"],
+      "rects": [
+        [372, 18, 574, 122]
+      ]
+    },
+    {
+      "name": "location line artist-default",
+      "files": ["screenshots/artist-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line artist-full",
+      "files": ["screenshots/artist-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line comedy-full",
+      "files": ["screenshots/comedy-full.png"],
+      "rects": [
+        [186, 9, 287, 61],
+        [186, 909, 287, 961],
+        [186, 1809, 287, 1861],
+        [186, 2709, 287, 2761]
+      ]
+    },
+    {
+      "name": "place words and distances comedy-full",
+      "files": ["screenshots/comedy-full.png"],
+      "rects": [
+        [852, 2474, 917, 2494],
+        [881, 1344, 946, 1364],
+        [1139, 1322, 1204, 1342]
+      ]
+    },
+    {
+      "name": "location line dining-default",
+      "files": ["screenshots/dining-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line dining-full",
+      "files": ["screenshots/dining-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line events-default",
+      "files": ["screenshots/events-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line events-full",
+      "files": ["screenshots/events-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "place words and distances events-full",
+      "files": ["screenshots/events-full.png"],
+      "rects": [
+        [98, 1468, 170, 1490],
+        [249, 3839, 315, 3860],
+        [251, 2685, 317, 2706],
+        [358, 1468, 425, 1490],
+        [487, 4439, 553, 4460],
+        [494, 5595, 560, 5616],
+        [550, 5017, 616, 5038],
+        [590, 4418, 673, 4441],
+        [618, 1468, 672, 1490],
+        [837, 4996, 920, 5038],
+        [879, 1468, 927, 1490],
+        [1138, 1468, 1190, 1490],
+        [1146, 2663, 1212, 2684],
+        [1182, 4439, 1248, 4460]
+      ]
+    },
+    {
+      "name": "location line home-dark-default",
+      "files": ["screenshots/home-dark-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line home-dark-full",
+      "files": ["screenshots/home-dark-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "place words and distances home-dark-full",
+      "files": ["screenshots/home-dark-full.png"],
+      "rects": [
+        [98, 1162, 170, 1184],
+        [358, 1162, 425, 1184],
+        [618, 1162, 672, 1184],
+        [679, 2960, 793, 2984],
+        [777, 2287, 833, 2307],
+        [879, 1162, 927, 1184],
+        [1138, 1162, 1190, 1184]
+      ]
+    },
+    {
+      "name": "location line home-default",
+      "files": ["screenshots/home-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line home-full",
+      "files": ["screenshots/home-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "place words and distances home-full",
+      "files": ["screenshots/home-full.png"],
+      "rects": [
+        [98, 1162, 212, 1184],
+        [358, 1162, 425, 1184],
+        [605, 3207, 681, 3229],
+        [618, 1162, 672, 1184],
+        [777, 3187, 844, 3208],
+        [879, 1162, 927, 1184],
+        [1004, 2362, 1071, 2383],
+        [1138, 1162, 1190, 1184],
+        [1230, 1795, 1297, 1816],
+        [1266, 2362, 1333, 2383]
+      ]
+    },
+    {
+      "name": "location line mobile-home-default",
+      "files": ["screenshots/mobile-home-default.png"],
+      "rects": [
+        [86, 16, 288, 120]
+      ]
+    },
+    {
+      "name": "location line mobile-home-full",
+      "files": ["screenshots/mobile-home-full.png"],
+      "rects": [
+        [43, 8, 144, 60]
+      ]
+    },
+    {
+      "name": "place words and distances mobile-home-full",
+      "files": ["screenshots/mobile-home-full.png"],
+      "rects": [
+        [31, 1472, 101, 1508],
+        [352, 2677, 390, 2696]
+      ]
+    },
+    {
+      "name": "location line mobile-movies-default",
+      "files": ["screenshots/mobile-movies-default.png"],
+      "rects": [
+        [86, 16, 288, 120]
+      ]
+    },
+    {
+      "name": "location line mobile-movies-full",
+      "files": ["screenshots/mobile-movies-full.png"],
+      "rects": [
+        [43, 8, 144, 60]
+      ]
+    },
+    {
+      "name": "location line movies-dark-default",
+      "files": ["screenshots/movies-dark-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line movies-dark-full",
+      "files": ["screenshots/movies-dark-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line movies-default",
+      "files": ["screenshots/movies-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line movies-full",
+      "files": ["screenshots/movies-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line play-default",
+      "files": ["screenshots/play-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "place words and distances play-default",
+      "files": ["screenshots/play-default.png"],
+      "rects": [
+        [130, 796, 207, 813]
+      ]
+    },
+    {
+      "name": "location line play-full",
+      "files": ["screenshots/play-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "place words and distances play-full",
+      "files": ["screenshots/play-full.png"],
+      "rects": [
+        [107, 2819, 155, 2837],
+        [108, 1499, 151, 1517],
+        [108, 1820, 155, 1838],
+        [108, 2177, 143, 2195],
+        [108, 2498, 154, 2516],
+        [108, 3140, 154, 3158],
+        [153, 2177, 219, 2198],
+        [161, 1499, 227, 1520],
+        [164, 2498, 230, 2519],
+        [164, 3140, 230, 3161],
+        [165, 1820, 231, 1841],
+        [165, 2819, 231, 2840],
+        [422, 2819, 470, 2837],
+        [422, 3140, 470, 3158],
+        [423, 1499, 466, 1517],
+        [423, 1820, 469, 1838],
+        [423, 2177, 467, 2195],
+        [423, 2498, 469, 2516],
+        [476, 1499, 542, 1520],
+        [477, 2177, 543, 2198],
+        [479, 1820, 537, 1841],
+        [479, 2498, 545, 2519],
+        [480, 2819, 546, 2840],
+        [480, 3140, 546, 3161],
+        [737, 2498, 774, 2516],
+        [738, 1499, 781, 1517],
+        [738, 1820, 784, 1838],
+        [738, 2177, 773, 2195],
+        [738, 2819, 784, 2837],
+        [738, 3140, 781, 3158],
+        [783, 2177, 849, 2198],
+        [784, 2498, 850, 2519],
+        [791, 1499, 857, 1520],
+        [791, 3140, 857, 3161],
+        [794, 1820, 860, 1841],
+        [794, 2819, 860, 2840],
+        [1052, 2498, 1097, 2516],
+        [1053, 1499, 1088, 1517],
+        [1053, 1842, 1099, 1860],
+        [1053, 2177, 1098, 2195],
+        [1053, 2819, 1099, 2837],
+        [1053, 3140, 1099, 3158],
+        [1098, 1499, 1164, 1520],
+        [1107, 2498, 1173, 2519],
+        [1108, 2177, 1174, 2198],
+        [1109, 1842, 1167, 1863],
+        [1109, 2819, 1175, 2840],
+        [1109, 3140, 1175, 3161]
+      ]
+    },
+    {
+      "name": "location line stores-default",
+      "files": ["screenshots/stores-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line stores-full",
+      "files": ["screenshots/stores-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "location line tickets-default",
+      "files": ["screenshots/tickets-default.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "place words and distances tickets-default",
+      "files": ["screenshots/tickets-default.png"],
+      "rects": [
+        [1002, 829, 1048, 848]
+      ]
+    },
+    {
+      "name": "location line tickets-full",
+      "files": ["screenshots/tickets-full.png"],
+      "rects": [
+        [186, 9, 287, 61]
+      ]
+    },
+    {
+      "name": "place words and distances tickets-full",
+      "files": ["screenshots/tickets-full.png"],
+      "rects": [
+        [1002, 829, 1048, 848]
+      ]
+    }
+  ]
+}
