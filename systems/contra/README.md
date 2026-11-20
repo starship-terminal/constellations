@@ -16,7 +16,7 @@ Surfaces: home, payments, partners, challenges, and the log-in page. Themes: lig
 | [components/](components/) | Two button crops |
 | [screenshots/](screenshots/) | Six page screenshots |
 | [raw/](raw/) | Computed-style readings and the capture note |
-| [tools/](tools/) | The token builder and its test |
+| [tools/](tools/) | The token checker (`check_tokens.py`) and its test |
 
 ## Brief
 
@@ -139,8 +139,8 @@ Fallback in tokens: `sans-serif` after the first family.
 ## Rebuild
 
 ```bash
-python3 systems/contra/tools/build_tokens.py
+python3 systems/contra/tools/check_tokens.py
 python3 tools/catalog.py design-md contra
 ```
 
-The readings were taken in a preview tab and headless Chrome as [raw/capture-note.md](raw/capture-note.md) describes, not with the kit's capture scripts. The unadapted kit copy that sat under `tools/` (Gauth and ChatGPT examples, never pointed at contra.com) was deleted in the 2026-11 audit; `tools/build_tokens.py` is the only builder this package runs.
+The readings were taken in a preview tab and headless Chrome as [raw/capture-note.md](raw/capture-note.md) describes, not with the kit's capture scripts. The unadapted kit copy that sat under `tools/` (Gauth and ChatGPT examples, never pointed at contra.com) was deleted in the 2026-11 audit; `tools/check_tokens.py` is the only script this package runs: `tokens.json` is written by hand from the readings, and it checks that file (it builds nothing).

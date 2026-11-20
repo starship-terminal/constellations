@@ -8,10 +8,10 @@ import unittest
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-BUILD = HERE / "build_tokens.py"
+BUILD = HERE / "check_tokens.py"
 
 
-class BuildTokensTest(unittest.TestCase):
+class CheckTokensTest(unittest.TestCase):
     def test_package_tokens_pass(self):
         proc = subprocess.run([sys.executable, str(BUILD)], cwd=HERE, capture_output=True, text=True)
         self.assertEqual(proc.returncode, 0, proc.stderr)

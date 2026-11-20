@@ -5,7 +5,7 @@ Contra's tokens were written from computed styles on public signed-out pages.
 This script does not invent values. It refuses a token whose source string is
 empty, a dimension that is not one px length, and a colour that is not hex.
 
-    python3 tools/build_tokens.py
+    python3 tools/check_tokens.py
 """
 from __future__ import annotations
 
