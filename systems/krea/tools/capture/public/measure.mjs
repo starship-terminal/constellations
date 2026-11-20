@@ -25,8 +25,7 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => { fs.mkdirSync(RAW, { recursive: true }); fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n'); };
 const URLS = {
   home: '/', pricing: '/pricing', enterprise: '/enterprise', blog: '/blog',
-  plugins: '/plugins', login: '/login', image: '/image', features: '/features/ai-image-generator',
-  notfound: '/about', docs: '/docs',
+  plugins: '/plugins', login: '/login', image: '/image',
 };
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
@@ -154,6 +153,8 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // fillText is an option for the filled state; several specs pass it with the record fields.
+  if (meta.fillText && !opts.fillText) opts = { ...opts, fillText: meta.fillText };
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
