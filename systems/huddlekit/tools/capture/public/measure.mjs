@@ -265,6 +265,9 @@ const PRICING = [
       { name: 'off', via: 'the switch\'s own press (aria-checked flips; pressed again to restore)', fn: async (loc) => {
         await loc.click({ timeout: 4000 }).catch(() => {});
         await page.waitForTimeout(700);
+      }, restore: async (loc) => {
+        if ((await loc.getAttribute('aria-checked').catch(() => null)) === 'false') await loc.click({ timeout: 4000 }).catch(() => {});
+        await page.waitForTimeout(700);
       } },
     ] },
   { key: 'plan-cta', group: 'Pricing', title: '"Sign up free" button',
@@ -529,6 +532,9 @@ for (const [key, g] of Object.entries(GROUPS)) {
         log(' ', spec.key, name, 'FAILED', e.message.split('\n')[0]);
       } finally {
         if (pressed != null) await pressOff(pressed).catch(() => {});
+        // a toggled state presses its control back, so later components are
+        // read in the resting layout (the ifttt pattern; 2026-11 audit, not run)
+        if (st && typeof st === 'object' && st.restore) await st.restore(readLoc).catch(() => {});
         if (darkOn) {
           let back = await darkFn(page, 'light').catch(() => false);
           if (!back) back = await darkFn(page, 'light').catch(() => false);

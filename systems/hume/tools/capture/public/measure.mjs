@@ -175,6 +175,10 @@ const HOME = [
         await pl.click({ timeout: 4000 }).catch(() => {});
         await page.waitForTimeout(2500);
         return loc;
+      }, restore: async () => {
+        const stop = page.locator('button[aria-label="Stop"], button[aria-label="Pause"]').first();
+        if (await stop.count()) await stop.click({ timeout: 4000 }).catch(() => {});
+        await page.waitForTimeout(600);
       } },
     ] },
   { key: 'player-transport', group: 'Home', title: 'Player transport button',
@@ -227,6 +231,10 @@ const BLOG = [
       { name: 'selected', via: 'the filter\'s own activation — a local UI toggle (All restored after)', fn: async (loc) => {
         await loc.click({ timeout: 4000 }).catch(() => {});
         await page.waitForTimeout(1200);
+      }, restore: async () => {
+        const all = page.locator('button, a').filter({ hasText: /^all$/i }).filter({ visible: true }).first();
+        if (await all.count()) await all.click({ timeout: 4000 }).catch(() => {});
+        await page.waitForTimeout(800);
       } },
     ] },
 ];
@@ -466,6 +474,9 @@ for (const [key, g] of Object.entries(GROUPS)) {
         log(' ', spec.key, name, 'FAILED', e.message.split('\n')[0]);
       } finally {
         if (pressed != null) await pressOff(pressed).catch(() => {});
+        // a toggled state presses its control back, so later components are
+        // read in the resting layout (the ifttt pattern; 2026-11 audit, not run)
+        if (st && typeof st === 'object' && st.restore) await st.restore(readLoc).catch(() => {});
         if (darkOn) {
           let back = await setTheme(page, 'light').catch(() => false);
           if (!back) back = await setTheme(page, 'light').catch(() => false);
