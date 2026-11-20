@@ -104,7 +104,7 @@ def gradient_stops(body):
         stops[-1][1] = 1.0
     # CSS: a position smaller than an earlier one is moved up to it, before
     # the missing positions are spread
-    top = 0.0
+    top = float("-inf")
     for st in stops:
         if st[1] is not None:
             st[1] = max(st[1], top)

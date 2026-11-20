@@ -29,6 +29,11 @@ class GradientStopsTest(unittest.TestCase):
     def test_backwards_positions_move_forward_first(self):
         self.assertEqual([p for _, p in gradient_stops("#000 80%, #111 20%, #222, #fff")], [0.8, 0.8, 0.9, 1.0])
 
+    def test_negative_first_stop_is_kept(self):
+        # CSS allows a stop before 0%; only a stop that moves backwards is raised
+        self.assertEqual([p for _, p in gradient_stops("#000 -50%, #fff 50%")], [-0.5, 0.5])
+        self.assertEqual([p for _, p in gradient_stops("#000 -20%, #111 -40%, #fff")], [-0.2, -0.2, 1.0])
+
     def test_unreadable_stop_raises(self):
         with self.assertRaises(ValueError):
             gradient_stops("#000 10px")
