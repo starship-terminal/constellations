@@ -10,10 +10,20 @@ PKG = HERE.parent
 
 class Tokens(unittest.TestCase):
     def test_rebuild_matches(self):
+        # Built in memory; the committed file is never rewritten by the test.
         import build_tokens
-        committed = json.loads((PKG / "tokens.json").read_text())
-        built = build_tokens.build()
-        self.assertEqual(committed, built)
+        self.assertEqual((PKG / "tokens.json").read_text(), build_tokens.render())
+
+    def test_components_without_a_reading_are_labelled_by_hand(self):
+        tokens = json.loads((PKG / "tokens.json").read_text())
+        for key, group in tokens["light"]["component"].items():
+            for name, token in group.items():
+                source = token["$extensions"]["source"]
+                with self.subTest(token=f"{key}.{name}"):
+                    if key in ("button-glass", "price"):
+                        self.assertIn("raw/declared-tokens.json computed.", source)
+                    else:
+                        self.assertTrue(source.startswith("Reconstruction: entered by hand"))
 
     def test_painted_brand_and_ink(self):
         tokens = json.loads((PKG / "tokens.json").read_text())
