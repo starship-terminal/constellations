@@ -405,19 +405,10 @@ def carry_forward(criteria: dict, audits: list[dict], slugs: set[str]) -> tuple[
     return out, restored
 
 
-# Reviews lost to sibling snapshots before carry_forward existed, as {slug: review date}.
-# `--check` warns about these instead of failing until the next `make grade` carries them
-# into the newest snapshot (or they are restored by hand); any other loss, including a
-# later review of one of these packages, fails. Delete an entry once its review is back.
-KNOWN_LOST = {
-    "calm": "2026-11-16", "chargetrip": "2026-11-16", "discord": "2026-11-15", "district": "2026-11-15",
-    "jace": "2026-11-18", "jasper": "2026-11-18", "jetbrains": "2026-11-18", "jitter": "2026-11-18",
-    "julienne": "2026-11-18", "kickstarter": "2026-11-18", "kinhive": "2026-11-18", "kit": "2026-11-18",
-    "kitchen": "2026-11-18", "kitchenstories": "2026-11-18", "klarna": "2026-11-18", "kraken": "2026-11-18",
-    "krea": "2026-11-18", "krisp": "2026-11-18", "lego": "2026-11-18", "lemni": "2026-11-18",
-    "lemonsqueezy": "2026-11-18", "limitless": "2026-11-18", "lummi": "2026-11-18",
-    "linear": "2026-11-14", "polaris": "2026-11-14",
-}
+# Reviews lost to sibling snapshots, as {slug: review date}: `--check` warns about these
+# instead of failing until the next `make grade` carries them into the newest snapshot.
+# Empty since the 2026-11-20 restore; any loss now fails. Add an entry only with a reason.
+KNOWN_LOST: dict[str, str] = {}
 
 
 def lost_reviews(criteria: dict, audits: list[dict], slugs: set[str],
