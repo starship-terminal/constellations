@@ -110,7 +110,10 @@ def norm_color(v):
         return f"rgba({int(float(r))}, {int(float(g))}, {int(float(b))}, {'%g' % float(a)})"
     m = re.fullmatch(r"okl(?:ch|ab)\(\s*([\d.]+)\s+(?:0(?:\.0+)?|none)\s+(?:none|[-\d.]+)\s*(?:/\s*([\d.]+))?\s*\)", v)
     if m:
-        lvl = round(float(m.group(1)) * 255)
+        # an achromatic OKLab colour is linear grey L^3, then sRGB gamma:
+        # oklch(0.5 0 0) is #636363, not L x 255 (2026-11 audit, finding 14-22)
+        lin = float(m.group(1)) ** 3
+        lvl = max(0, min(255, round((12.92 * lin if lin <= 0.0031308 else 1.055 * lin ** (1 / 2.4) - 0.055) * 255)))
         a = float(m.group(2) or 1)
         return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
     return v
