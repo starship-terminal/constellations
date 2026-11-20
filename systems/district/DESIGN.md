@@ -227,3 +227,11 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't read colours off the screenshots; they are 256-colour PNGs.
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
+
+### Known gaps (from README.md)
+
+These readings caught another element in the 2026-11 run. `tools/capture/public/measure.mjs` now targets the right one (edited, not run); each needs a recapture.
+
+- `mv-h1`, `ev-h1`, `cm-h1`: the first visible `h1`/`h2` was an off-screen carousel slide title (x < 0), not the listing heading. `core.font.size.measured.display` cites `ev-h1` and says so; its 40px matches the declared `--font-size-4xl`.
+- `cm-filter`: the loose text filter matched the 632x500 sort dropdown panel, not a filter control.
+- `at-book`: the loose text filter matched the show card that `at-show` already reads (it carries the price), not a booking control.

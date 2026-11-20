@@ -57,11 +57,11 @@ for _set in ("core", "light", "dark"):
             else:
                 BY_COLOR[_set].setdefault(v, n)
 
-# Which theme each component's readings were painted in. App surfaces paint
-# .theme-dark.theme-darker; marketing chrome paints .theme-light. Set per
-# component in the render loop and read by colour().
-_DARK_GROUPS = {"Server discovery", "Server card", "Server detail", "Sign-in / register"}
-_DARK_COMPONENTS = {"m-search", "m-card"}
+# Which theme each component's readings were painted in, by the page it was
+# read on: only the homeDark pass (html[data-theme=dark] forced on the home
+# feed) paints dark; every other page is the light theme. Set per component in
+# the render loop and read by colour().
+PAGE_THEME = {"homeDark": "dark"}
 _THEME = "light"
 
 
@@ -483,7 +483,7 @@ for g in groups:
     for k, c in C.items():
         if c.get("group") != g:
             continue
-        _THEME = "dark" if (g in _DARK_GROUPS or k in _DARK_COMPONENTS) else "light"
+        _THEME = PAGE_THEME.get(c.get("page"), "light")
         W()
         W(f"#### {c['title']}")
         desc = (c.get("desc") or "").strip()
