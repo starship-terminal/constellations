@@ -236,13 +236,44 @@ GROUP_INTRO = {
 SHOTS = [
     ("home", "Home", "/"),
     ("websites", "Winners grid", "/websites/"),
-    ("site", "Site detail", "first site card on the winners grid"),
+    ("nominees", "Nominees", "/websites/nominees/"),
+    ("sotd", "Sites of the Day", "/websites/sites_of_the_day/"),
+    ("sotm", "Sites of the Month", "/websites/sites_of_the_month/"),
+    ("soty", "Sites of the Year", "/websites/sites_of_the_year/"),
+    ("honors", "Honors", "/honors/winners"),
+    ("winners", "Most Awarded Profiles", "/winner-list/"),
+    ("jury", "Jury 2026", "/jury/2026/"),
+    ("awards", "Annual Awards", "/annual-awards/"),
+    ("site", "Site detail", "first /websites/ card whose page still has a Vote control"),
     ("collections", "Collections", "/collections/"),
+    ("library", "Library", "/library/"),
+    ("elements", "Elements", "/elements/"),
+    ("directory", "Directory", "/directory/"),
+    ("academy", "Academy", "/academy/"),
+    ("jobs", "Jobs", "/jobs/"),
+    ("market", "Market", "/market/"),
+    ("pro", "Be Pro", "/pro"),
     ("submit", "Submit gate", "/submit/"),
+    ("plans", "User plans", "/plans/user-plans"),
+    ("blog", "Blog", "/blog/"),
+    ("conferences", "Conferences", "/conferences/"),
+    ("faqs", "FAQs", "/faqs/"),
+    ("about", "About", "/about-us/"),
+    ("contact", "Contact", "/contact-us/"),
+    ("cookies", "Cookies policy", "/cookies-policy/"),
+    ("terms", "Legal terms", "/terms/"),
+    ("privacy", "Privacy policy", "/privacy-policy/"),
 ]
 MOBILE = [
     ("mobile-home", "Home, phone", "/"),
     ("mobile-websites", "Winners grid, phone", "/websites/"),
+    ("mobile-collections", "Collections, phone", "/collections/"),
+    ("mobile-directory", "Directory, phone", "/directory/"),
+    ("mobile-academy", "Academy, phone", "/academy/"),
+    ("mobile-jobs", "Jobs, phone", "/jobs/"),
+    ("mobile-market", "Market, phone", "/market/"),
+    ("mobile-blog", "Blog, phone", "/blog/"),
+    ("mobile-submit", "Submit, phone", "/submit/"),
 ]
 
 L = []
@@ -270,7 +301,7 @@ icons = []
 
 W("# Awwwards components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from awwwards.com on {J['_meta']['read']}, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was voted on, signed into, created, sent or submitted.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Screenshots were taken from awwwards.com on 2026-11-21, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844). Computed styles were read on {J['_meta']['read']} from the same class selectors. Nothing was voted on, signed into, created, sent or submitted. The control map is [site-tree.md](site-tree.md).")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [patterns.md](patterns.md).")
 W()
@@ -295,7 +326,8 @@ W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
     ("Arrival view", "home, on load", "the page as it arrives, before any consent or promo layer is hidden (nothing is ever answered)", "[home-light-arrival](screenshots/home-light-arrival.png)"),
-    ("Card hover layer", "home site cards", "the card held under the pointer; the Vote Now layer shows", "[home-light-card-hover](screenshots/home-light-card-hover.png)"),
+    ("Explore dropdown", "home header", "the Explore control's own toggle", "[home-light-explore-open](screenshots/home-light-explore-open.png)"),
+    ("Card hover layer", "home site cards", "not captured on 2026-11-21: the card hover timed out in headless Chrome", "Not captured"),
     ("Filter dropdown", "winners grid", "the first filter tab's own toggle", "[websites-light-filter-open](screenshots/websites-light-filter-open.png), [filter-dropdown](#filter-dropdown)"),
     ("Mobile menu", "home, phone", "the menu button's own toggle", "[mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-open](#mobile-menu-open)"),
 ]
@@ -449,11 +481,13 @@ W("## Gaps")
 W()
 W("### Pages")
 W()
-W("- **Voting, submitting and anything behind sign-in.** The Vote button was measured but never clicked (a vote records a score), /submit/ was never submitted, and Log in / Sign Up did not render on the headless loads — no public login page exists signed-out. Jury tools, Pro dashboards and account pages were never reached.")
-W("- **Anything that sends or joins.** No form was submitted, no vote cast, no search was run, no account was created, no consent choice was made.")
-W("- **The filter dropdown's innards** were measured at the first option only; Academy, Jobs, Market, Directory and Jury pages are outside this pass.")
-W("- **The card hover layer.** The Vote Now overlay on grid cards stayed `display:none` under headless hover on the measured runs (recorded as a gap on `card-cta`/`card-action`, not fabricated); the screenshot `home-light-card-hover` shows it.")
-W("- **Headless access.** awwwards.com serves headless Chrome a 200 on every captured route.")
+W("- **Voting, submitting and anything behind sign-in.** The Vote button was measured but never clicked (a vote records a score). `/submit/` and `/contact-us/` were never submitted. `https://www.awwwards.com/login` asks for email or username and a password. Those fields were not filled. Google, Twitter, and Facebook on that page were not clicked. `/register` and `/forgot-password` were not opened.")
+W("- **Anything that sends or joins.** No form was submitted, no vote cast, no search query was run, no account was created, no consent choice was made.")
+W("- **The filter dropdown's innards** were measured at the first option only. Academy, Jobs, Market, Directory, and Jury have viewport screenshots. Their inner filters were not re-measured.")
+W("- **The card hover layer.** The Vote Now overlay stayed `display:none` under headless hover (recorded as a gap on `card-cta`/`card-action`). The 2026-11-21 recapture of `home-light-card-hover` timed out, so that file is gone.")
+W("- **Market full page.** `/market/` grows without bound. The capture keeps the viewport shot. The 8-chunk full-page tiles were not committed.")
+W("- **Unread token values** on pages that were only screenshotted (directory filters, job cards, course cards, legal type) are Not captured.")
+W("- **Headless access.** awwwards.com served headless Chrome a 200 on every captured route on 2026-11-21.")
 W()
 W("### States")
 W()

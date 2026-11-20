@@ -58,7 +58,7 @@ Good for: Web-awards directory and curated gallery: near-achromatic ink-on-white
 
 Captured 2026-11-11, signed out (every captured surface is public; voting, submission and account areas were never performed or reached). Themes: light.
 
-A token set and component reference for Awwwards' public directory — for building awards-gallery and curated-index surfaces in the style of the real thing. It was read from **awwwards.com** on **2026-11-11**, signed out, in **headless Chrome** at 1440 x 900 and 390 x 844, covering the home page, the `/websites/` winners grid, a site-detail page discovered at run time, the `/collections/` index, the public `/submit/` gate, and the same surfaces at phone width.
+A token set and component reference for Awwwards' public directory — for building awards-gallery and curated-index surfaces in the style of the real thing. It was read from **awwwards.com** on **2026-11-21**, signed out, in **headless Chrome** at 1440 x 900 and 390 x 844. The site tree is [site-tree.md](site-tree.md). Screenshots cover every public section index reached from the header, the Explore dropdown, and the footer, plus one site-detail sample. Login, signup, votes, and form submits were not taken.
 
 Awwwards is worth a capture because it is the reference for *the web-awards directory look*: a near-achromatic interface — ink #222 text on white, #f8f8f8 washes and #ededed hairlines — where colour is reserved for meaning (six category accent triads plus the orange/blue brand accents and the measured #e3c352 award gold), a single family does all the work (Inter Tight at declared weights 300–800, four named UI sizes, display titles past 120px), radius is the signature (8px buttons, 14px cards, 72px tag chips), and every declared value is a hand-named custom property on `:root`.
 
@@ -114,7 +114,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The award gold is measured, not declared.** The Vote button's #e3c352 fill (`core.measured.action-award`) exists in no var; likewise the #383838 the outlined Submit Website fills on hover/pressed, and the #005fcc browser focus ring on nav/footer links.
 - **`component.*` tokens are measured**, not site variables. The site declares control heights (`--button-height` 48px, `--sf-height` 42px, `--nf-height` 54px); the Vote CTA's 60px is a measured value.
 - **The card hover layer stayed hidden under headless hover.** The Vote Now overlay on grid cards did not materialise for measurement (`card-cta`/`card-action` are recorded gaps); `home-light-card-hover` shows it in the screenshot.
-- **Log in / Sign Up did not render on the captured loads** — recorded missing, not evidence they are absent: the first recon run saw them in the header. No public login page exists signed-out (`/session/login` 404s).
+- **Log in and Sign Up are visible in the header** on the 2026-11-21 shots ([home-light-default](screenshots/home-light-default.png)). They were not clicked. `https://www.awwwards.com/login` asks for email or username and a password. Those fields were not filled. `/register`, `/forgot-password`, and the Google, Twitter, and Facebook login links were not opened.
 - **`submit-cta-2` is a recorded miss** — /submit/ showed no measurable CTA to headless; the plan card is the evidence.
 - **Focus styles were not systematically captured** beyond focus-visible states on the measured components.
 
