@@ -119,42 +119,56 @@ if _errors:
 # (typography, shadow, gradient), and an alias must name a token of the same type
 from token_checks import tokens_of  # noqa: E402
 
-_named = dict(tokens_of(core))
-_named.update(dict(tokens_of(light)))
+_core_named = dict(tokens_of(core))
+# a set resolves against core and itself, core first (the $themes order)
+_light_named = {**dict(tokens_of(light)), **_core_named}
 COMPOSITE = {"fontFamily": "fontFamily", "fontSize": "dimension", "fontWeight": "fontWeight",
              "letterSpacing": "dimension"}
 
 
-def _typed(path, ty, val):
-    if isinstance(val, str) and val.startswith("{") and val.endswith("}"):
-        target = _named.get(val[1:-1])
+def _is_alias(val):
+    return isinstance(val, str) and val.startswith("{") and val.endswith("}")
+
+
+def _typed(path, ty, val, named):
+    if _is_alias(val):
+        target = named.get(val[1:-1])
         if target is None:
             raise KeyError(f"{path}: alias {val} points at nothing")
         if target["$type"] != ty:
             raise TypeError(f"{path}: alias {val} is a {target['$type']}, not a {ty}")
         return
+    if ty == "fontFamily" and not (isinstance(val, str) and val.strip()
+                                   or isinstance(val, list) and val and all(isinstance(x, str) and x.strip() for x in val)):
+        raise ValueError(f"{path}: fontFamily must be a name or a list of names, got {val!r}")
     check(path, ty, val)
 
 
-for _set, _tree in (("core", core), ("light", light)):
+def _number(x):
+    return isinstance(x, (int, float)) and not isinstance(x, bool)
+
+
+for _set, _tree, _named in (("core", core, _core_named), ("light", light, _light_named)):
     for _n, _t in tokens_of(_tree):
         _p, _ty, _v = f"{_set}.{_n}", _t["$type"], _t["$value"]
-        if _ty == "typography":
+        if _is_alias(_v):  # a whole-value alias, composite or not
+            _typed(_p, _ty, _v, _named)
+        elif _ty == "typography":
             for _k, _sub in COMPOSITE.items():
                 if _k in _v:
-                    _typed(f"{_p}.{_k}", _sub, _v[_k])
+                    _typed(f"{_p}.{_k}", _sub, _v[_k], _named)
         elif _ty == "shadow":
             for _layer in _v:
                 for _k in ("offsetX", "offsetY", "blur", "spread"):
-                    _typed(f"{_p}.{_k}", "dimension", _layer[_k])
-                _typed(f"{_p}.color", "color", _layer["color"])
+                    _typed(f"{_p}.{_k}", "dimension", _layer[_k], _named)
+                _typed(f"{_p}.color", "color", _layer["color"], _named)
         elif _ty == "gradient":
             for _stop in _v:
-                _typed(f"{_p}.color", "color", _stop["color"])
-                if not isinstance(_stop["position"], (int, float)) or not 0 <= _stop["position"] <= 1:
+                _typed(f"{_p}.color", "color", _stop["color"], _named)
+                if not _number(_stop["position"]) or not 0 <= _stop["position"] <= 1:
                     raise ValueError(f"{_p}: gradient position {_stop['position']!r}")
         else:
-            _typed(_p, _ty, _v)
+            _typed(_p, _ty, _v, _named)
 
 tokens = {
     "core": core,
