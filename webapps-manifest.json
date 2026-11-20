@@ -5548,9 +5548,9 @@
       "description": "Hear the world's sounds",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://secure.soundcloud.com/web-auth email Continue said something unexpected happened and did not advance. Facebook, Google, and Apple were not used.",
+      "notes": "Email probe: https://secure.soundcloud.com/web-auth email Continue said something unexpected happened and did not advance. Facebook, Google, and Apple were not used. Public walk 2026-11-21: home, discover, and search loaded. Feed, Library, For artists, Artist Membership, and phone Feed stop at sign-in (HTTP 401) and were not entered. Sign in and Create account open the secure.soundcloud.com web-auth iframe and were not entered. No form was submitted. Public package in PR 1507 at 8cdd6eaa8. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 17
     },
     {
