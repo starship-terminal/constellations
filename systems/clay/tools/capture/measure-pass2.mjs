@@ -2,7 +2,8 @@
 // plus motion, footer, and the sign-in field. Nothing is submitted.
 import fs from 'node:fs';
 import path from 'node:path';
-import { chromium } from '/Users/kaichen/.design-systems/pw/node_modules/playwright/index.mjs';
+const pw = await import(process.env.PLAYWRIGHT || 'playwright');  // PLAYWRIGHT=/path/to/playwright/index.mjs
+const { chromium } = pw.default ?? pw;
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..');
 const RAW = path.join(ROOT, 'raw');
@@ -59,144 +60,147 @@ const out = { components: {}, motion: {}, notes: [] };
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
 const page = await context.newPage();
+// One missing selector or a throw must not lose the whole pass: whatever was read is written.
+try {
 
-await page.goto('https://clay.earth/', { waitUntil: 'domcontentloaded', timeout: 60000 });
-await page.waitForTimeout(3000);
+  await page.goto('https://clay.earth/', { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await page.waitForTimeout(3000);
 
-// Real hero CTA: the painted inner of the main CTA, not the header "Get started" link.
-const hero = page.locator('[class*="mainCTA"] [class*="ctaInner"], [class*="mainCTA"]').first();
-if (await hero.count()) {
-  out.components['hero-cta'] = { default: await styleOf(hero), crop: await crop(page, hero, 'hero-cta-default') };
-  await hero.hover().catch(() => {});
-  await page.waitForTimeout(300);
-  out.components['hero-cta'].hover = await styleOf(hero);
-  await crop(page, hero, 'hero-cta-hover');
-} else out.notes.push('hero CTA selector missed');
+  // Real hero CTA: the painted inner of the main CTA, not the header "Get started" link.
+  const hero = page.locator('[class*="mainCTA"] [class*="ctaInner"], [class*="mainCTA"]').first();
+  if (await hero.count()) {
+    out.components['hero-cta'] = { default: await styleOf(hero), crop: await crop(page, hero, 'hero-cta-default') };
+    await hero.hover().catch(() => {});
+    await page.waitForTimeout(300);
+    out.components['hero-cta'].hover = await styleOf(hero);
+    await crop(page, hero, 'hero-cta-hover');
+  } else out.notes.push('hero CTA selector missed');
 
-const bottom = page.locator('[class*="ctaButton"]').first();
-if (await bottom.count()) {
-  await bottom.scrollIntoViewIfNeeded();
-  await page.waitForTimeout(400);
-  out.components['bottom-cta'] = { default: await styleOf(bottom), crop: await crop(page, bottom, 'bottom-cta-default') };
+  const bottom = page.locator('[class*="ctaButton"]').first();
+  if (await bottom.count()) {
+    await bottom.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(400);
+    out.components['bottom-cta'] = { default: await styleOf(bottom), crop: await crop(page, bottom, 'bottom-cta-default') };
+  }
+
+  const logo = page.locator('header a, nav a, a[href="/"]').first();
+  out.components.logo = { default: await styleOf(logo) };
+
+  const footer = page.locator('footer').first();
+  if (await footer.count()) {
+    await footer.scrollIntoViewIfNeeded();
+    out.components.footer = { default: await styleOf(footer), crop: await crop(page, footer, 'footer-default') };
+    const link = footer.locator('a').first();
+    if (await link.count()) out.components['footer-link'] = { default: await styleOf(link) };
+  }
+
+  // Filter pill
+  const pill = page.locator('[class*="filterButton"]').first();
+  if (await pill.count()) {
+    await pill.scrollIntoViewIfNeeded();
+    out.components['filter-pill'] = { default: await styleOf(pill), crop: await crop(page, pill, 'filter-pill-default') };
+    await pill.hover().catch(() => {});
+    await page.waitForTimeout(250);
+    out.components['filter-pill'].hover = await styleOf(pill);
+  }
+
+  // Nav pill container
+  const nav = page.locator('[class$="_nav"], [class*="_nav"]').first();
+  if (await nav.count()) {
+    await page.evaluate(() => scrollTo(0, 0));
+    out.components['nav-pill'] = { default: await styleOf(nav), crop: await crop(page, nav, 'nav-pill-default') };
+  }
+
+  // Motion sample: computed transitions on a few controls, plus reduced-motion media.
+  out.motion.home = await page.evaluate(() => {
+    const sample = (sel) => {
+      const el = document.querySelector(sel);
+      if (!el) return null;
+      const cs = getComputedStyle(el);
+      return { sel, transition: cs.transition, animation: cs.animationName + ' ' + cs.animationDuration, scroll: getComputedStyle(document.documentElement).scrollBehavior };
+    };
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    return {
+      reduce,
+      samples: [
+        sample('[class*="mainCTA"]'),
+        sample('[class*="signInBtn"]'),
+        sample('a[href="/pricing"]'),
+        sample('[class*="filterButton"]'),
+      ].filter(Boolean),
+    };
+  });
+
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.waitForTimeout(200);
+  out.motion.homeReduced = await page.evaluate(() => ({
+    reduce: matchMedia('(prefers-reduced-motion: reduce)').matches,
+    htmlScroll: getComputedStyle(document.documentElement).scrollBehavior,
+    cta: (() => { const el = document.querySelector('[class*="mainCTA"]'); if (!el) return null; const cs = getComputedStyle(el); return { transition: cs.transition, animation: cs.animationName + ' ' + cs.animationDuration }; })(),
+  }));
+
+  // Pricing extras
+  await page.goto('https://me.sh/pricing', { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await page.waitForTimeout(2500);
+  const popular = page.locator('[class*="popular"]').first();
+  if (await popular.count()) {
+    await popular.scrollIntoViewIfNeeded();
+    out.components['plan-popular'] = { default: await styleOf(popular), crop: await crop(page, popular, 'plan-popular-default') };
+  }
+  const planBtn = page.locator('[class*="_card"] [class*="button"]').first();
+  if (await planBtn.count()) {
+    await planBtn.scrollIntoViewIfNeeded();
+    out.components['plan-cta'] = { default: await styleOf(planBtn), crop: await crop(page, planBtn, 'plan-cta-default') };
+    await planBtn.hover().catch(() => {});
+    await page.waitForTimeout(250);
+    out.components['plan-cta'].hover = await styleOf(planBtn);
+    await crop(page, planBtn, 'plan-cta-hover');
+  }
+  const toggle = page.locator('[class*="toggle"]').filter({ hasText: /month|annual/i }).first();
+  if (await toggle.count()) {
+    out.components['billing-toggle'] = { default: await styleOf(toggle), crop: await crop(page, toggle, 'billing-toggle-default') };
+  }
+  const price = page.locator('[class*="planPrice"], [class*="price"]').first();
+  if (await price.count()) out.components['plan-price'] = { default: await styleOf(price) };
+
+  // Sign-in field. Focus only. Do not type. Do not click Sign in with email / Apple / Google / SSO.
+  const sign = await context.newPage();
+  await sign.goto('https://app.me.sh/login?signin', { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await sign.waitForTimeout(2500);
+  const email = sign.locator('input[placeholder="Enter your email"]').first();
+  if (await email.count()) {
+    out.components['signin-email'] = { default: await styleOf(email), crop: await crop(sign, email, 'signin-email-default') };
+    await email.focus();
+    await sign.waitForTimeout(200);
+    out.components['signin-email'].focus = await styleOf(email);
+    await crop(sign, email, 'signin-email-focus');
+  } else out.notes.push('email placeholder not found');
+  const emailBtn = sign.getByRole('button', { name: /sign in with email/i });
+  if (await emailBtn.count()) {
+    out.components['signin-email-btn'] = { default: await styleOf(emailBtn), crop: await crop(sign, emailBtn, 'signin-email-btn-default') };
+    await emailBtn.hover().catch(() => {});
+    await sign.waitForTimeout(200);
+    out.components['signin-email-btn'].hover = await styleOf(emailBtn);
+  }
+  const google = sign.getByRole('button', { name: /google/i });
+  if (await google.count()) out.components['signin-google'] = { default: await styleOf(google), crop: await crop(sign, google, 'signin-google-default') };
+  const apple = sign.getByRole('button', { name: /apple/i });
+  if (await apple.count()) out.components['signin-apple'] = { default: await styleOf(apple) };
+  out.notes.push('signin buttons measured at rest or hover only; Apple, Google, SSO, Create account and Sign in with email were not clicked');
+  out.signinPage = await sign.evaluate(() => ({
+    htmlBg: getComputedStyle(document.documentElement).backgroundColor,
+    bodyFont: getComputedStyle(document.body).fontFamily,
+    bodySize: getComputedStyle(document.body).fontSize,
+    bodyColor: getComputedStyle(document.body).color,
+  }));
+
+  await sign.close();
+} catch (e) {
+  out.notes.push('pass stopped early: ' + String(e.message || e).split('\n')[0]);
+} finally {
+  fs.writeFileSync(path.join(RAW, 'readings-pass2.json'), JSON.stringify(out, null, 2));
+  await browser.close().catch(() => {});
 }
-
-const logo = page.locator('header a, nav a, a[href="/"]').first();
-out.components.logo = { default: await styleOf(logo) };
-
-const footer = page.locator('footer').first();
-if (await footer.count()) {
-  await footer.scrollIntoViewIfNeeded();
-  out.components.footer = { default: await styleOf(footer), crop: await crop(page, footer, 'footer-default') };
-  const link = footer.locator('a').first();
-  if (await link.count()) out.components['footer-link'] = { default: await styleOf(link) };
-}
-
-// Filter pill
-const pill = page.locator('[class*="filterButton"]').first();
-if (await pill.count()) {
-  await pill.scrollIntoViewIfNeeded();
-  out.components['filter-pill'] = { default: await styleOf(pill), crop: await crop(page, pill, 'filter-pill-default') };
-  await pill.hover().catch(() => {});
-  await page.waitForTimeout(250);
-  out.components['filter-pill'].hover = await styleOf(pill);
-}
-
-// Nav pill container
-const nav = page.locator('[class$="_nav"], [class*="_nav"]').first();
-if (await nav.count()) {
-  await page.evaluate(() => scrollTo(0, 0));
-  out.components['nav-pill'] = { default: await styleOf(nav), crop: await crop(page, nav, 'nav-pill-default') };
-}
-
-// Motion sample: computed transitions on a few controls, plus reduced-motion media.
-out.motion.home = await page.evaluate(() => {
-  const sample = (sel) => {
-    const el = document.querySelector(sel);
-    if (!el) return null;
-    const cs = getComputedStyle(el);
-    return { sel, transition: cs.transition, animation: cs.animationName + ' ' + cs.animationDuration, scroll: getComputedStyle(document.documentElement).scrollBehavior };
-  };
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  return {
-    reduce,
-    samples: [
-      sample('[class*="mainCTA"]'),
-      sample('[class*="signInBtn"]'),
-      sample('a[href="/pricing"]'),
-      sample('[class*="filterButton"]'),
-    ].filter(Boolean),
-  };
-});
-
-await page.emulateMedia({ reducedMotion: 'reduce' });
-await page.waitForTimeout(200);
-out.motion.homeReduced = await page.evaluate(() => ({
-  reduce: matchMedia('(prefers-reduced-motion: reduce)').matches,
-  htmlScroll: getComputedStyle(document.documentElement).scrollBehavior,
-  cta: (() => { const el = document.querySelector('[class*="mainCTA"]'); if (!el) return null; const cs = getComputedStyle(el); return { transition: cs.transition, animation: cs.animationName + ' ' + cs.animationDuration }; })(),
-}));
-
-// Pricing extras
-await page.goto('https://me.sh/pricing', { waitUntil: 'domcontentloaded', timeout: 60000 });
-await page.waitForTimeout(2500);
-const popular = page.locator('[class*="popular"]').first();
-if (await popular.count()) {
-  await popular.scrollIntoViewIfNeeded();
-  out.components['plan-popular'] = { default: await styleOf(popular), crop: await crop(page, popular, 'plan-popular-default') };
-}
-const planBtn = page.locator('[class*="_card"] [class*="button"]').first();
-if (await planBtn.count()) {
-  await planBtn.scrollIntoViewIfNeeded();
-  out.components['plan-cta'] = { default: await styleOf(planBtn), crop: await crop(page, planBtn, 'plan-cta-default') };
-  await planBtn.hover().catch(() => {});
-  await page.waitForTimeout(250);
-  out.components['plan-cta'].hover = await styleOf(planBtn);
-  await crop(page, planBtn, 'plan-cta-hover');
-}
-const toggle = page.locator('[class*="toggle"]').filter({ hasText: /month|annual/i }).first();
-if (await toggle.count()) {
-  out.components['billing-toggle'] = { default: await styleOf(toggle), crop: await crop(page, toggle, 'billing-toggle-default') };
-}
-const price = page.locator('[class*="planPrice"], [class*="price"]').first();
-if (await price.count()) out.components['plan-price'] = { default: await styleOf(price) };
-
-// Sign-in field. Focus only. Do not type. Do not click Sign in with email / Apple / Google / SSO.
-const sign = await context.newPage();
-await sign.goto('https://app.me.sh/login?signin', { waitUntil: 'domcontentloaded', timeout: 60000 });
-await sign.waitForTimeout(2500);
-const email = sign.locator('input[placeholder="Enter your email"]').first();
-if (await email.count()) {
-  out.components['signin-email'] = { default: await styleOf(email), crop: await crop(sign, email, 'signin-email-default') };
-  await email.focus();
-  await sign.waitForTimeout(200);
-  out.components['signin-email'].focus = await styleOf(email);
-  await crop(sign, email, 'signin-email-focus');
-} else out.notes.push('email placeholder not found');
-const emailBtn = sign.getByRole('button', { name: /sign in with email/i });
-if (await emailBtn.count()) {
-  out.components['signin-email-btn'] = { default: await styleOf(emailBtn), crop: await crop(sign, emailBtn, 'signin-email-btn-default') };
-  await emailBtn.hover().catch(() => {});
-  await sign.waitForTimeout(200);
-  out.components['signin-email-btn'].hover = await styleOf(emailBtn);
-}
-const google = sign.getByRole('button', { name: /google/i });
-if (await google.count()) out.components['signin-google'] = { default: await styleOf(google), crop: await crop(sign, google, 'signin-google-default') };
-const apple = sign.getByRole('button', { name: /apple/i });
-if (await apple.count()) out.components['signin-apple'] = { default: await styleOf(apple) };
-out.notes.push('signin buttons measured at rest or hover only; Apple, Google, SSO, Create account and Sign in with email were not clicked');
-out.signinPage = await sign.evaluate(() => ({
-  htmlBg: getComputedStyle(document.documentElement).backgroundColor,
-  bodyFont: getComputedStyle(document.body).fontFamily,
-  bodySize: getComputedStyle(document.body).fontSize,
-  bodyColor: getComputedStyle(document.body).color,
-}));
-
-await sign.close();
-await page.close();
-await context.close();
-await browser.close();
-
-fs.writeFileSync(path.join(RAW, 'readings-pass2.json'), JSON.stringify(out, null, 2));
 console.log('components', Object.keys(out.components));
 console.log('notes', out.notes);
 for (const [k, v] of Object.entries(out.components)) {

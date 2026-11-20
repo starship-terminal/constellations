@@ -4,7 +4,8 @@
 // Nothing is typed into a phone, card, SSO, or CRM import.
 import fs from 'node:fs';
 import path from 'node:path';
-import { chromium } from '/Users/kaichen/.design-systems/pw/node_modules/playwright/index.mjs';
+const pw = await import(process.env.PLAYWRIGHT || 'playwright');  // PLAYWRIGHT=/path/to/playwright/index.mjs
+const { chromium } = pw.default ?? pw;
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..');
 const RAW = path.join(ROOT, 'raw');
@@ -170,10 +171,15 @@ async function vars(page) {
   });
 }
 
+const MAX_CHUNKS = 8;  // bound every full-page shot (AGENTS.md): at most 8 viewport heights, as the kit's shooter
+
 async function shot(page, name, full = false) {
   const file = path.join(SHOTS, name + '.png');
   const m = await meta(page);
-  await page.screenshot({ path: file, fullPage: full, animations: 'disabled' });
+  const docH = full ? await page.evaluate(() => document.documentElement.scrollHeight) : 0;
+  const truncated = full && docH > MAX_CHUNKS * m.innerHeight;
+  await page.screenshot({ path: file, fullPage: full, animations: 'disabled',
+    ...(truncated ? { clip: { x: 0, y: 0, width: m.innerWidth, height: MAX_CHUNKS * m.innerHeight } } : {}) });
   const buf = fs.readFileSync(file);
   const pngW = buf.readUInt32BE(16);
   const pngH = buf.readUInt32BE(20);
@@ -186,6 +192,7 @@ async function shot(page, name, full = false) {
     actual: m,
     png: { width: pngW, height: pngH },
     fullPage: full,
+    ...(truncated ? { boundary: `document is ${docH}px tall; the shot stops at ${MAX_CHUNKS} viewport heights` } : {}),
     note: 'Live headless Chromium. Preview browser could not navigate off a stuck tab and returned "The browser is not producing screenshot frames".',
   };
   fs.writeFileSync(file + '.capture.json', JSON.stringify(sidecar, null, 2) + '\n');
@@ -239,7 +246,8 @@ async function record(page, key, locator, states, extra = {}) {
         await target.hover({ timeout: 4000 });
         await page.waitForTimeout(250);
       } else if (st === 'focus-visible') {
-        await target.focus().catch(async () => { await target.click({ timeout: 2000 }); });
+        // keyboard focus only: a click fallback followed nav links and navigated mid-recording
+        await target.focus();
         await page.waitForTimeout(200);
       }
       const style = await styleOf(target);
@@ -277,7 +285,8 @@ async function runDesktop() {
     const v = name === 'home' || name === 'signin' || name === 'pricing' ? await vars(page) : null;
     readings.pages[name] = { requested: url, status, gate, finalUrl, meta: m, vars: v && { declared: v.declared, sheetErrors: v.sheetErrors, fontCount: v.fonts.length, fonts: v.fonts, propNames: Object.keys(v.props), resolvedOnRoot: v.resolvedOnRoot } };
     if (v) fs.writeFileSync(path.join(RAW, `css-vars-${name}.json`), JSON.stringify(v, null, 2));
-    await shot(page, `${name}-${m.htmlBg === 'rgb(0, 0, 0)' ? 'dark' : 'light'}-default`, false);
+    const theme = m.htmlBg === 'rgb(0, 0, 0)' ? 'dark' : 'light';  // every shot name takes the painted theme
+    await shot(page, `${name}-${theme}-default`, false);
     if (name === 'home') {
       await page.evaluate(() => window.scrollTo(0, 0));
       await record(page, 'page', pick(page, 'html'), ['default'], { group: 'Foundations', title: 'Page ground' });
@@ -293,19 +302,19 @@ async function runDesktop() {
         await record(page, 'nav-menu-trigger', menuBtn, ['default'], { group: 'Menu', title: 'Nav menu trigger' });
         await menuBtn.click({ timeout: 3000 }).catch(() => {});
         await page.waitForTimeout(600);
-        await shot(page, 'home-dark-menu', false);
+        await shot(page, `home-${theme}-menu`, false);
         await record(page, 'nav-menu', page.locator('[role="menu"], [class*="dropdown"], [class*="Dropdown"], [class*="popover"]').first(), ['default'], { group: 'Menu', title: 'Opened nav menu' });
         await page.keyboard.press('Escape');
       } else {
         readings.gaps.push('home: no Releases/Resources/Company menu button found');
       }
-      await shot(page, 'home-dark-full', true);
+      await shot(page, `home-${theme}-full`, true);
     }
     if (name === 'pricing') {
       await record(page, 'pricing-ground', pick(page, 'main'), ['default'], { group: 'Foundations', title: 'Pricing ground' });
       await record(page, 'pricing-title', pick(page, 'h1'), ['default'], { group: 'Type', title: 'Pricing title' });
       await record(page, 'plan-card', page.locator('[class*="card"]').first(), ['default'], { group: 'Card', title: 'Plan card' });
-      await shot(page, 'pricing-light-full', true);
+      await shot(page, `pricing-${theme}-full`, true);
     }
     if (name === 'signin') {
       const email = page.locator('input[type="email"], input[name="email"], input[autocomplete="email"]').first();
@@ -354,14 +363,15 @@ async function runDesktop() {
   const { page } = await openPage(mctx, 'https://clay.earth/');
   const m = await meta(page);
   readings.pages.mobileHome = { finalUrl: page.url(), meta: m };
-  await shot(page, 'home-dark-mobile', false);
+  const mTheme = m.htmlBg === 'rgb(0, 0, 0)' ? 'dark' : 'light';
+  await shot(page, `home-${mTheme}-mobile`, false);
   const burger = page.locator('button').filter({ hasText: /menu/i }).first();
   const anyBtn = page.locator('header button, nav button, button[aria-label*="menu" i], button[class*="toggle" i], button[class*="hamburger" i]').first();
   const opener = (await burger.count()) ? burger : anyBtn;
   if (await opener.count()) {
     await opener.click({ timeout: 3000 }).catch(() => {});
     await page.waitForTimeout(700);
-    await shot(page, 'home-dark-mobile-menu', false);
+    await shot(page, `home-${mTheme}-mobile-menu`, false);
     readings.pages.mobileHome.menuOpened = true;
   } else {
     readings.gaps.push('mobile: hamburger control not found by role or class');
