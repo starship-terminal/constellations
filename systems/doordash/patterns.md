@@ -10,6 +10,16 @@ consumer-web-next (Next.js SSR, styled-components) over the prism token
 system; careersatdoordash.com is a separate WordPress/Tailwind stack.
 Values are the `light` set unless marked.
 
+## Signed-in shell (2026-11-20)
+
+The signed-in consumer app keeps the red wordmark and a 64px header: address control labeled Your Address, a notification bell, and a cart pill that read 0 on this account ([signed-in-password-desktop](screenshots/signed-in-password-desktop.png)). Account pages add a left rail (Home, Grocery, Retail, Convenience, Browse All, Orders, Account). Account opens a menu with View Profile, Home, Pickup, Orders, Account, Saved stores, My rewards, Payment, Gift card, Help, and Sign out ([signed-in-account-menu-desktop](screenshots/signed-in-account-menu-desktop.png)). Sign out was not clicked.
+
+Empty states are a single ink line on white. Orders says "No Previous Deliveries, Order Today!" ([signed-in-orders-desktop](screenshots/signed-in-orders-desktop.png), phone [signed-in-orders-phone](screenshots/signed-in-orders-phone.png)). Rewards centres a burger illustration under "No rewards...yet" ([signed-in-rewards-desktop](screenshots/signed-in-rewards-desktop.png)). Help repeats the empty-orders line and pins a Help Center chip ([signed-in-help-desktop](screenshots/signed-in-help-desktop.png)).
+
+Settings stay on the same shell. Profile is a two-column form with Change Password and Manage Account as red text links; Save stays disabled until a field changes, and it was not pressed ([signed-in-profile-desktop](screenshots/signed-in-profile-desktop.png)). Change password is three empty fields and a disabled "Change my password" button ([signed-in-password-desktop](screenshots/signed-in-password-desktop.png)). Manage account offers Request Archive and Delete Account as red links; neither was followed ([signed-in-manage-account-desktop](screenshots/signed-in-manage-account-desktop.png)).
+
+The only create surface opened was gift cards: a card carousel, a red Buy Gift Card button, and a disabled Redeem Gift Card field ([signed-in-gift-cards-desktop](screenshots/signed-in-gift-cards-desktop.png)). Neither button was used. Checkout, cart add, DashPass purchase, and address entry were not started. The walk is recorded in [login-review.json](login-review.json).
+
 ## The marketing hero
 
 The home page ([home-light-default](screenshots/home-light-default.png))
