@@ -4273,9 +4273,9 @@
       "description": "Fastest visual website feedback tool for web designers ",
       "status": "pending",
       "package": null,
-      "notes": "https://usepastel.com/login asks for email and password, or SSO. Password not submitted.",
+      "notes": "https://usepastel.com/login asks for email and password, or SSO. Password not submitted. Public walk 2026-11-21: header opens Features, Case Studies (redirects to /customers), Blog, Pricing, Login, and Sign up. Phone adds a menu with those links. Footer opens teams, customers, help, about, status, legal pages, the blog, and five tools. Pricing has a Monthly/Annual switch. FAQ questions expand in place. /login asks for email and password, or Google or SSO. /home redirects there and was not entered. Google and SSO were not clicked. No form was submitted. Public package in PR 1548 at e04368cb0309. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 13
     },
     {
@@ -4375,9 +4375,9 @@
       "description": "Professional Network for people in tech",
       "status": "pending",
       "package": null,
-      "notes": "https://peerlist.io/login asks for email and password, or Google. Password not submitted.",
+      "notes": "https://peerlist.io/login asks for email and password, or Google. Password not submitted. Public walk 2026-11-21: home bar opens Scroll, Jobs, Launchpad, Log in, and Create Profile. The app rail repeats those plus Search and Blog. Post, Launch, and the Search Projects/Jobs/Posts tabs open a login dialog and stop. /login and /signup ask for email and password, or Google. Legal links on this origin 404. The working legal page is on help.peerlist.io. Google was not clicked. No form was submitted. Public package in PR 1549 at dcaf427b6556. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 13
     },
     {
