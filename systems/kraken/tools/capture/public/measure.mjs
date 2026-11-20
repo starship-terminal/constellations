@@ -9,7 +9,11 @@ import { BASE, launch, open, hideConsent, styleOf, crop, centre, RAW, chromium }
 
 const OUT = path.join(RAW, 'components-computed.json');
 fs.mkdirSync(RAW, { recursive: true });
-const out = { _meta: { product: 'kraken', captured: '2026-11-18', route: 'public-web' }, components: {} };
+// Earlier readings are loaded and merged, so a run that dies mid-page keeps every component
+// it did not reach instead of writing a file without them.
+const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
+out.components ??= {};
+out._meta = { ...(out._meta || {}), product: 'kraken', captured: new Date().toLocaleDateString('en-CA'), route: 'public-web' };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 
@@ -133,7 +137,10 @@ const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 
 async function markVisible(page, predicateSource) {
   return page.evaluate((src) => {
-    const pred = new Function('el', src);
+    // A page whose CSP forbids eval makes new Function throw; that is a missed match, not a
+    // reason to abort the whole run.
+    let pred;
+    try { pred = new Function('el', src); } catch { return false; }
     const all = [...document.querySelectorAll('a, button, input, [role="tab"], h1, header, footer, table, tr')];
     const el = all.find((node) => {
       const r = node.getBoundingClientRect();
