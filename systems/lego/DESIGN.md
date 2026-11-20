@@ -20,23 +20,23 @@ colors:
   positive: "#007133"
   warning: "#955025"
   negative: "#bd0000"
-  focus: "#005ad2"
+  focus: "#4695f0"
 typography:
   body:
     fontFamily: "Cera Pro"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.4
+    lineHeight: 1.5
   button:
     fontFamily: "Cera Pro"
     fontSize: "18px"
     fontWeight: 500
-    lineHeight: 1.2
+    lineHeight: 1.5
   price:
     fontFamily: "Cera Pro"
     fontSize: "24px"
     fontWeight: 700
-    lineHeight: 1.2
+    lineHeight: 1.35
 rounded:
   "100": "8px"
   "150": "12px"
@@ -152,6 +152,19 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### What to distrust (from README.md)
 
 Screenshots are 256-colour PNGs. Read colours from the tokens. Cera Pro is not loaded in the style guide, so the guide's type is a fallback. The listing Add to Bag measured `#f47d20` (`--ds-color-brand-bright-orange`); the product Add to Bag measured `#e96f14` (`--ds-color-action-emphasis-enabled`). Both are real. A forced pressed state on the listing button came back as a `lab()` colour and is not tokenised. The filter panel did not open, so its interior is unmeasured.
+
+Known-wrong state readings. `tools/capture/public/measure.mjs` left the pointer on each control from the hover step through focus-visible and pressed, and kept the keyboard focus into pressed. The script now resets the pointer and focus before every state; it was not re-run.
+
+- `nav-shop`: focus-visible carries the hover yellow fill (rgb(250, 196, 0)) beside the 2px focus ring, and pressed carries the focus ring; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `filter-button`: focus-visible carries the hover grey fill (rgb(203, 203, 203)), and pressed carries the focus ring; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `sort-button`: focus-visible carries the hover grey fill (rgb(203, 203, 203)), and pressed carries the focus ring; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `pdp-add`: focus-visible carries the hover fill (rgb(201, 105, 43)), and pressed carries the focus ring; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `account-button`: pressed carries the focus ring left from the focus-visible step; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `wishlist-button`: pressed carries the focus ring left from the focus-visible step; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `bag-link`: pressed carries the focus ring left from the focus-visible step; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `add-to-bag`: pressed carries the focus ring left from the focus-visible step; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+
+Every committed reading was taken with `navigator.webdriver` masked by the capture context. That mask is removed from `tools/capture/public/lib.mjs`; the readings are kept.
 
 ### Do and don't (from README.md)
 

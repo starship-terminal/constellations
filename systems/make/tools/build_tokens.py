@@ -171,8 +171,8 @@ core = {
         },
     },
     "layout": {
-        "desktop": dim("1440px", f"{M}: capture viewport"),
-        "phone": dim("390px", f"{M}: capture viewport"),
+        "desktop": dim("1440px", "Reconstruction: the desktop capture viewport of 2026-11-18, not a width the product declares"),
+        "phone": dim("390px", "Reconstruction: the phone capture viewport of 2026-11-18, not a width the product declares"),
     },
 }
 
@@ -251,5 +251,8 @@ tokens = {
     }],
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("tokens", len(names))
+TEXT = json.dumps(tokens, indent=2) + "\n"
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(TEXT)
+    print("tokens", len(names))

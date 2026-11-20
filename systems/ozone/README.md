@@ -12,10 +12,10 @@ Ozone was a browser video editor. The manifest domain is ozone.tech. That host d
 | [patterns.md](patterns.md) | Home and blog. |
 | [icon.png](icon.png) | Site icon from the Framer icon link on the 2024-05-06 page, 128 px. |
 | [raw/](raw/) | Host check and the computed-style dumps. |
-| [components/](components/) | Empty of crops. Screenshot frames were not produced. |
-| [screenshots/](screenshots/) | Empty. `preview_snapshot` failed. |
+| `components/` | Not present: no crops. Screenshot frames were not produced. |
+| `screenshots/` | Not present. `preview_snapshot` failed. |
 | [icons/](icons/) | INDEX.tsv only. Icons were not extracted. |
-| [tools/](tools/) | The capture kit, unadapted. Tokens were written from the live preview read, not from these scripts. |
+| [tools/](tools/) | `capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`). Tokens were written from the live preview read; no kit script ran. |
 
 ## Brief
 

@@ -16,7 +16,7 @@ omitted:
 colors:
   primary: "#1dbf73"
   neutral: "#ffffff"
-  surface: "rgba(0, 0, 0, 0)"
+  surface: "#ffffff"
   on-surface: "#222325"
   on-surface-variant: "#62646a"
   outline: "#dadbdd"
@@ -29,7 +29,7 @@ colors:
   color-neutral-nav-ink: "#222325"
   color-neutral-paper: "#ffffff"
   color-neutral-scrim: "#000000"
-  color-neutral-hover-wash: "rgba(0, 0, 0, 0)"
+  color-neutral-press-wash: "#efeff0"
   color-neutral-on-dark-wash: "rgba(255, 255, 255, 0.1)"
   color-brand-fill: "#222325"
   color-brand-fill-hover: "#222325"
@@ -63,7 +63,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 - **primary (#1dbf73):** `core.color.brand.accent`
 - **neutral (#ffffff):** `core.color.neutral.paper`
-- **surface (rgba(0, 0, 0, 0)):** `core.color.neutral.hover-wash`
+- **surface (#ffffff):** `core.color.neutral.paper`
 - **on-surface (#222325):** `core.color.neutral.ink`
 - **on-surface-variant (#62646a):** `core.color.neutral.muted`
 - **outline (#dadbdd):** `core.color.neutral.line`

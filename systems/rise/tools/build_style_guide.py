@@ -138,7 +138,6 @@ code { font-size: 13px; }
   </div>
 </div>
 <script>
-const tokens = /*TOKENS*/null;
 const box = document.getElementById("swatches");
 const names = ["background-page","background-canvas","background-surface","background-input","background-primary","text-primary","text-secondary","text-link","border-default"];
 for (const name of names) {
@@ -157,8 +156,9 @@ for (const name of names) {
 
 
 def main():
-    data = json.dumps({"light": {path: token["$value"] for path, token in walk(T["light"])}}, separators=(",", ":"))
-    html = HTML.replace("/*LIGHT*/", block("core") + "\n" + block("light")).replace("/*TOKENS*/null", data)
+    # The swatches read the custom properties, so no copy of the token tree is inlined (the old one was
+    # unused, and unescaped inside <script>).
+    html = HTML.replace("/*LIGHT*/", block("core") + "\n" + block("light"))
     (HERE / "style-guide.html").write_text(html)
     print("style-guide.html", len(html.encode()), "bytes")
 

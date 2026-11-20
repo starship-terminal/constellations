@@ -4,7 +4,7 @@
 //
 // Writes raw/components-computed.json and one crop per component and state.
 // The OneTrust banner is hidden, never answered. Sign-in, sign-up and form
-// submit are never followed. Pressed is a CDP :active force, not a real click
+// submit are never followed. Pressed is a CDP :active:hover force, not a real click
 // on a navigation control.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -102,8 +102,8 @@ async function S(key, target, list, meta = {}) {
       } else if (st === 'focus-visible') {
         via = await kbFocus(loc);
       } else if (st === 'pressed') {
-        undo = await forcePseudo(loc, ['active']);
-        via = 'CDP forcePseudoState :active';
+        undo = await forcePseudo(loc, ['active', 'hover']);  // as every other package forces it
+        via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
         await loc.click({ timeout: 3000 }).catch(() => loc.evaluate((el) => el.focus()));
         await page.waitForTimeout(250);
@@ -165,7 +165,7 @@ if (want('home')) {
   });
   // Webflow paints the pill on .button_inner, not the transparent anchor.
   await S('cta-primary', page.locator('a.button_component').filter({ hasText: 'Get started for free' }).first().locator('.button_inner'), B4, {
-    title: 'Get started for free', group: 'Button', desc: 'Hero CTA fill (.button_inner). The anchor was never followed. Pressed is a CDP :active force.', sel: 'a.button_component .button_inner',
+    title: 'Get started for free', group: 'Button', desc: 'Hero CTA fill (.button_inner). The anchor was never followed. Pressed is a CDP :active:hover force.', sel: 'a.button_component .button_inner',
   });
   await S('cta-secondary', page.locator('a.button_component').filter({ hasText: /^Contact us$/ }).first().locator('.button_inner'), B4, {
     title: 'Contact us (hero)', group: 'Button', desc: 'Stroke pill beside the hero CTA. Never followed.', sel: 'a.button_component .button_inner stroke',

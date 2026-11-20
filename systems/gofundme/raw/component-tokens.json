@@ -4195,33 +4195,33 @@
       "color": {
         "text": {
           "ink": {
-            "value": "{color.surface.implied.selected.strong.default}",
+            "value": "{color.text.default}",
             "type": "color",
-            "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.implied.selected.strong.default",
+            "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.text.default",
             "description": "The ink on the hero display heading."
           },
           "navInk": {
-            "value": "{color.surface.implied.selected.strong.default}",
+            "value": "{color.text.default}",
             "type": "color",
-            "source": "computed color of nav-search default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.implied.selected.strong.default",
+            "source": "computed color of nav-search default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.text.default",
             "description": "The header control ink."
           },
           "navInkHover": {
-            "value": "{color.surface.implied.selected.strong.default}",
+            "value": "{color.text.default}",
             "type": "color",
-            "source": "computed color of nav-search hover — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.implied.selected.strong.default",
+            "source": "computed color of nav-search hover — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.text.default",
             "description": "The header control ink on hover."
           },
           "footerInk": {
-            "value": "{color.surface.implied.selected.strong.default}",
+            "value": "{color.text.default}",
             "type": "color",
-            "source": "computed color of footer-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.implied.selected.strong.default",
+            "source": "computed color of footer-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.text.default",
             "description": "A footer link's ink."
           },
           "priceH1": {
-            "value": "{color.surface.implied.selected.strong.default}",
+            "value": "{color.text.default}",
             "type": "color",
-            "source": "computed color of price-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.implied.selected.strong.default",
+            "source": "computed color of price-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.text.default",
             "description": "The pricing masthead ink on the content stack."
           }
         },
@@ -4233,9 +4233,9 @@
             "description": "The header \"Start a GoFundMe\" pill fill."
           },
           "ctaInk": {
-            "value": "{color.surface.implied.selected.strong.default}",
+            "value": "{color.button.secondary.text.default}",
             "type": "color",
-            "source": "computed color of nav-start default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.implied.selected.strong.default",
+            "source": "computed color of nav-start default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.button.secondary.text.default",
             "description": "The text on the header CTA pill."
           },
           "ctaHover": {
@@ -4245,51 +4245,51 @@
             "description": "The header CTA hover fill."
           },
           "heroCtaFill": {
-            "value": "{color.surface.brand.strong.default}",
+            "value": "{color.button.primary.surface.default}",
             "type": "color",
-            "source": "computed backgroundColor of hero-cta default (raw/components-computed.json); matches declared color.surface.brand.strong.default",
+            "source": "computed backgroundColor of hero-cta default (raw/components-computed.json); matches declared color.button.primary.surface.default",
             "description": "The hero \"Start a GoFundMe\" primary button fill."
           },
           "heroCtaInk": {
-            "value": "{color.surface.brand.medium.default}",
+            "value": "{color.button.primary.text.default}",
             "type": "color",
-            "source": "computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.brand.medium.default",
+            "source": "computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.button.primary.text.default",
             "description": "The hero CTA text."
           },
           "donateFill": {
-            "value": "{color.surface.brand.medium.default}",
+            "value": "{color.button.special.surface.default}",
             "type": "color",
-            "source": "computed backgroundColor of f-donate default (raw/components-computed.json); matches declared color.surface.brand.medium.default",
+            "source": "computed backgroundColor of f-donate default (raw/components-computed.json); matches declared color.button.special.surface.default",
             "description": "The \"Donate now\" button fill on a fundraiser page (measured, never pressed)."
           },
           "donateInk": {
-            "value": "{color.surface.brand.strong.default}",
+            "value": "{color.button.special.text}",
             "type": "color",
-            "source": "computed color of f-donate default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.brand.strong.default",
+            "source": "computed color of f-donate default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.button.special.text",
             "description": "The \"Donate now\" button text."
           },
           "shareInk": {
-            "value": "{color.surface.brand.medium.default}",
+            "value": "{color.button.primary.text.default}",
             "type": "color",
-            "source": "computed color of f-share default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.brand.medium.default",
+            "source": "computed color of f-share default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.button.primary.text.default",
             "description": "The \"Share\" button ink on a fundraiser page."
           },
           "continueFill": {
-            "value": "{color.surface.brand.strong.default}",
+            "value": "{color.button.primary.surface.default}",
             "type": "color",
-            "source": "computed backgroundColor of create-continue default (raw/components-computed.json); matches declared color.surface.brand.strong.default",
+            "source": "computed backgroundColor of create-continue default (raw/components-computed.json); matches declared color.button.primary.surface.default",
             "description": "The wizard \"Continue\" button fill (measured, never pressed)."
           },
           "wpButtonFill": {
-            "value": "{color.surface.brand.medium.default}",
+            "value": "{color.button.special.surface.default}",
             "type": "color",
-            "source": "computed backgroundColor of wp-button default (raw/components-computed.json); matches declared color.surface.brand.medium.default",
+            "source": "computed backgroundColor of wp-button default (raw/components-computed.json); matches declared color.button.special.surface.default",
             "description": "A wp-block CTA fill on the /c/* content stack."
           },
           "wpButtonInk": {
-            "value": "{color.surface.brand.strong.default}",
+            "value": "{color.button.special.text}",
             "type": "color",
-            "source": "computed color of wp-button default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.brand.strong.default",
+            "source": "computed color of wp-button default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.button.special.text",
             "description": "A wp-block CTA's text."
           }
         },
@@ -4303,21 +4303,21 @@
         },
         "surface": {
           "promoFill": {
-            "value": "{color.surface.brand.medium.default}",
+            "value": "{color.surface.green.medium}",
             "type": "color",
-            "source": "computed backgroundColor of mkt-promo default (raw/components-computed.json); matches declared color.surface.brand.medium.default",
+            "source": "computed backgroundColor of mkt-promo default (raw/components-computed.json); matches declared color.surface.green.medium",
             "description": "The global promo banner fill."
           },
           "cardBg": {
-            "value": "{color.surface.brand.logo.on.media}",
+            "value": "{color.surface.default.default}",
             "type": "color",
-            "source": "computed backgroundColor of fundraiser-card default (raw/components-computed.json); matches declared color.surface.brand.logo.on.media",
+            "source": "computed backgroundColor of fundraiser-card default (raw/components-computed.json); matches declared color.surface.default.default",
             "description": "A discover fundraiser card surface."
           },
           "menuPanel": {
-            "value": "{color.surface.brand.logo.on.media}",
+            "value": "{color.surface.default.default}",
             "type": "color",
-            "source": "computed backgroundColor of nav-panel default (raw/components-computed.json); matches declared color.surface.brand.logo.on.media",
+            "source": "computed backgroundColor of nav-panel default (raw/components-computed.json); matches declared color.surface.default.default",
             "description": "The header dropdown panel fill."
           },
           "footerBg": {
@@ -4343,9 +4343,9 @@
             "description": "The wizard postcode field fill."
           },
           "fieldInk": {
-            "value": "{color.surface.implied.selected.strong.default}",
+            "value": "{color.text.default}",
             "type": "color",
-            "source": "computed color of create-zip default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.implied.selected.strong.default",
+            "source": "computed color of create-zip default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.text.default",
             "description": "The field text ink in the wizard."
           },
           "placeholder": {
@@ -4355,9 +4355,9 @@
             "description": "The postcode field's placeholder ink."
           },
           "fieldBorder": {
-            "value": "{color.surface.implied.selected.strong.default}",
+            "value": "{color.border.focused}",
             "type": "color",
-            "source": "computed borderTopColor of create-zip default (raw/components-computed.json); matches declared color.surface.implied.selected.strong.default",
+            "source": "computed borderTopColor of create-zip default (raw/components-computed.json); matches declared color.border.focused",
             "description": "The field border colour."
           },
           "countryFieldBg": {
@@ -4367,21 +4367,21 @@
             "description": "The country select's fill."
           },
           "pillInk": {
-            "value": "{color.surface.implied.selected.strong.default}",
+            "value": "{color.text.default}",
             "type": "color",
-            "source": "computed color of create-pill default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.implied.selected.strong.default",
+            "source": "computed color of create-pill default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.text.default",
             "description": "A category pill's ink."
           },
           "pillBorder": {
-            "value": "{color.surface.neutral.subtle.pressed}",
+            "value": "{color.border.neutral.default}",
             "type": "color",
-            "source": "computed borderTopColor of create-pill default (raw/components-computed.json); matches declared color.surface.neutral.subtle.pressed",
+            "source": "computed borderTopColor of create-pill default (raw/components-computed.json); matches declared color.border.neutral.default",
             "description": "A category pill's border."
           }
         },
         "background": {
           "page": {
-            "value": "{color.surface.brand.logo.on.media}",
+            "value": "{color.surface.default.default}",
             "type": "color",
             "source": "the :root-declared surface token (raw/css-vars.json); visible as the page field behind every consumer page (screenshots/*-light-*.png)",
             "description": "The page field — the consumer light surface."

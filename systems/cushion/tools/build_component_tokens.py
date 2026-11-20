@@ -104,7 +104,8 @@ def lit(value, ty, src, desc):
 # ------------------------------------------------------------------- fonts
 
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
-fam["display"] = {"value": '"Inter Tight", sans-serif',
+# Read from the hero heading, not typed in: a recapture with another stack changes the token.
+fam["display"] = {"value": st("hero-h1", "default")["fontFamily"],
     "type": "fontFamily",
     "source": "computed fontFamily of hero-h1 / feature-h2 / m-hero-h1 (raw/components-computed.json); css-var --font-inter-tight (raw/css-vars.json)",
     "description": "Inter Tight — every heading (hero 60px, sections 36px)."}

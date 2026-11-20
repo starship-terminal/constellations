@@ -596,6 +596,8 @@ A freelancer card (resume-user-card): avatar, name, PRO+/SELECT badges, star rat
 #### Designer name
 The freelancer's display name on the card. Read as `designer-name` on the designers directory page.
 
+**Wrong element.** The name filter's /LAB|STUDIO/ matched inside "available", so these are the "15 Services available" meta line's values, not a designer name. The selector is fixed in tools/capture/public/measure.mjs; the entry needs a recapture.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 153.55 x 28; background transparent; text Mona Sans 14/28 500, #3a3546 `color.measured.muted`; transition color 0.1s ease; icon 17 x 17, #3a3546 `color.measured.muted` |
@@ -1000,6 +1002,8 @@ Read as `m-hero` on the home page at 390 wide.
 
 #### Mobile search field
 Read as `m-search` on the home page at 390 wide.
+
+**Wrong element.** The union's `a[href*="/search"]` matched first, so this is the "dashboard" tag chip, not the search field. The selector is fixed in tools/capture/public/measure.mjs; the entry needs a recapture.
 
 **Values (default).** size 98.48 x 31; padding 0px 16px; border 1px solid #e7e7e9; radius 1e+07px; background #ffffff `color.neutral.0`; text Mona Sans 13/13 400, #0d0c22 `color.measured.ink`; transition color 0.1s ease.
 

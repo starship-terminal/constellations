@@ -61,7 +61,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | dark | 18.74:1 pass | 17.01:1 pass | 3.89:1 fail | 3.53:1 fail |
 
-2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus.ring` rgba(173, 173, 173, 0.5); `dark.focus.default` #adadad; `dark.border.focusRing` rgba(250, 250, 250, 0.7).
+2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus.ring` rgba(173, 173, 173, 0.5); `dark.focus.default` #adadad; `dark.border.focusRing` rgba(173, 173, 173, 0.5).
 
 <!-- brief:end -->
 
@@ -108,6 +108,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 ## What to distrust
 
+- **Gradient-faced buttons.** The hero CTA, Continue with Google and the plan Get Started buttons paint `linear-gradient(to top, #adadad 20%, #cacaca 80%)` over a transparent `backgroundColor`; their `dark.action.*Fill` tokens are that gradient. The demo share popover paints no fill of its own, so `dark.surface.demoCardBg` is not a token. The focus ring is the 2px `box-shadow` ring (`rgba(173, 173, 173, 0.5)`, the declared `--focus-ring`); the outline is `none`.
 - **The signed-in product.** The workspace behind /home — uploads, the canvas, feedback threads, folders, versions, sharing, settings — needs an account this capture does not have. /home redirects to /login; the Sign Up and Open Flask CTAs were measured, never followed. The product UI on the home page is a pre-rendered marketing demo, not the product.
 - **The demo mock's deeper states.** The embedded demo's controls were measured as painted; pointer attempts on its overlay-guarded controls were intercepted, so opened/menu states inside the mock are uncaptured — only the Version chip was toggled (`home-dark-demo-asset-2`).
 - **The login form.** The e-mail field was typed into then cleared and Continue with Google/Email were never pressed — validation, error, loading and success states are unverified.
@@ -152,3 +153,7 @@ python3 tools/build_style_guide.py && python3 tools/build_components_md.py
 ```
 
 All deterministic: same inputs, byte-identical outputs.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

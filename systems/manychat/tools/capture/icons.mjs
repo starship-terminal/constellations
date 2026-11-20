@@ -11,7 +11,7 @@
 // wherever the computed fill or stroke equals the svg's text colour.
 import crypto from 'crypto';
 import fs from 'fs';
-import { BASE, chromium, closePromo, UA } from './public/lib.mjs';
+import { BASE, chromium, clearChallenge, closePromo, UA } from './public/lib.mjs';
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -88,6 +88,8 @@ async function scrollAll(p, tag) {
 }
 async function open(p, path, w = 5000) {
   await p.goto(BASE + path, { waitUntil: 'load', timeout: 90000 });
+  // A bot check that never clears fails the page (tryDo records it), so the set is not replaced.
+  if (!(await clearChallenge(p))) throw new Error('challenge did not clear: ' + path);
   await wait(p, w);
   await closePromo(p);
 }
@@ -95,7 +97,7 @@ async function open(p, path, w = 5000) {
 const failed = [];
 async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(label); console.log('  skip', label, String(e.message).split('\n')[0]); } }
 
-const b = await chromium.launch({ args: ['--disable-blink-features=AutomationControlled'] });
+const b = await chromium.launch() /* automation is not hidden: a bot check is a boundary, not bypassed */;
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
 const p = await ctx.newPage();
 

@@ -6,10 +6,12 @@
 // Desktop 1440x900 at 1x, mobile 390x844 at 2x. Consent is hidden, never
 // answered. Add to Bag, Sign In, checkout and the email field are never used.
 import fs from 'fs';
+import os from 'node:os';
+import path from 'node:path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, withGate } from './lib.mjs';
 
-const RAW = process.env.RAW || (process.env.HOME + '/.design-systems/lego/raw-shots');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'lego', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

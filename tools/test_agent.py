@@ -22,7 +22,13 @@ chat = _load("agent_chat", "chat.py")
 # The tests stand up providers on loopback and name invented *.test hosts;
 # list them, as an owner with a self-hosted model would. ProviderHostTest
 # checks the unlisted defaults.
-_HOSTS = mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_PROVIDER_HOSTS": "x.test,p.test,127.0.0.1,localhost,::1"})
+# The other keys server/ copies from the repo's .env (chat.py's and api.py's
+# load_env calls) are pinned empty: load_env never overrides a variable that is
+# set, and an empty one reads as unset, so no test reads the owner's .env and
+# nothing from it stays in os.environ.
+DOTENV_KEYS = ("ANTHROPIC_API_KEY", "DS_CHAT_MODEL", "DESIGN_SYSTEMS_ALLOWED_HOSTS")
+_HOSTS = mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_PROVIDER_HOSTS": "x.test,p.test,127.0.0.1,localhost,::1",
+                                      **dict.fromkeys(DOTENV_KEYS, "")})
 
 
 def setUpModule():
@@ -31,6 +37,24 @@ def setUpModule():
 
 def tearDownModule():
     _HOSTS.stop()
+
+
+class DotenvIsolationTest(unittest.TestCase):
+    def test_no_server_key_is_taken_from_a_dotenv(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            env = Path(d) / ".env"
+            env.write_text("".join(f"{k}=from-dotenv\n" for k in DOTENV_KEYS + ("DESIGN_SYSTEMS_PROVIDER_HOSTS",)))
+            self.assertEqual(chat._env.load_env(DOTENV_KEYS + ("DESIGN_SYSTEMS_PROVIDER_HOSTS",), env_file=env), [])
+        self.assertFalse(any("from-dotenv" in os.environ.get(k, "") for k in DOTENV_KEYS))
+
+    def test_a_dotenv_is_not_even_opened_when_every_key_is_pinned(self):
+        # Bytes no locale decodes: reading the file at all would raise.
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            env = Path(d) / ".env"
+            env.write_bytes(b"\xff\xfe\x00 not text")
+            self.assertEqual(chat._env.load_env(DOTENV_KEYS + ("DESIGN_SYSTEMS_PROVIDER_HOSTS",), env_file=env), [])
 
 
 class SearchTest(unittest.TestCase):
@@ -139,6 +163,21 @@ class CatalogCacheTest(unittest.TestCase):
                 self.assertIs(first, again)
                 path.write_text(json.dumps({"systems": [{"slug": "a"}, {"slug": "b"}]}))
                 self.assertEqual([s["slug"] for s in library._catalog()["systems"]], ["a", "b"])
+
+    def test_repeated_searches_parse_once(self):
+        # search_styles ranks with catalog.find, which must use the cached parse too.
+        real = library.catalog.load_catalog
+        calls = []
+
+        def counted():
+            calls.append(1)
+            return real()
+        with mock.patch.object(library.catalog, "_library_cache", None, create=True), \
+                mock.patch.object(library.catalog, "load_catalog", counted):
+            first = library.search_styles("dark dense", store="systems")
+            for _ in range(3):
+                self.assertEqual(library.search_styles("dark dense", store="systems"), first)
+        self.assertEqual(len(calls), 1)
 
     def test_concurrent_requests_parse_once(self):
         import tempfile

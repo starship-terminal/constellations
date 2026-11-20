@@ -93,7 +93,7 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 The colour ramps were read from the Webflow stylesheet's `:root` block. That sheet is cross-origin, so `tools/capture/vars.mjs` records the CSS response and parses the custom properties from the text. Computed control styles come from `tools/capture/public/measure.mjs`, which opens the live pages and records default, hover, focus-visible and pressed (pressed via CSS `forcePseudoState`, so no submit fires). Sample text typed into the email field was deleted on the public pass.
 
-The signed-in pass submitted two forms: the business-intent step (testing name, `https://example.com`) and a failed merchant login. `tools/capture/public/gated.mjs` takes those screenshots. `tools/capture/public/measure-gated.mjs` measures the closed-signup card, the Get started button (never followed) and the login error text.
+On 2026-11-18 the signed-in pass submitted two forms: the business-intent step (testing name, `https://example.com`) and a failed merchant login that typed the account's address and stored password. The closed-signup screenshots (`register-light-validation`, `register-smp-light-default`, `mobile-register-smp-light-default`, `mobile-register-smp-light-full`), the login-error screenshots (`login-light-error`, `mobile-login-light-error`) and the `login-error`, `smp-card` and `smp-cta` readings in raw/components-computed.json were taken past those submits. The 2026-11 audit removed both steps: `tools/capture/public/gated.mjs` now shows the business-intent step at rest and probes the app host, and `tools/capture/public/measure-gated.mjs` measures only the customer order portal at rest. The committed readings and screenshots stay as they were read; a rerun does not retake them. Every committed reading and screenshot was also taken with `navigator.webdriver` masked in the browser context; the audit removed that mask too, so a rerun may meet a bot check, which is recorded as a boundary.
 
 Screenshots were taken at a measured 1440×900 (1x) and 390×844 (2x), then quantized to 256-colour sRGB PNGs. Read colours from the tokens, not the PNGs.
 
@@ -105,9 +105,11 @@ Focus on marketing links is the browser's default outline (`1px auto`, `#005fcc`
 
 `--dark-mode-bg-lighter` (`#141414`) is declared and unused. It is not a dark theme.
 
-Circular Pro Book and Circular XX are proprietary. The tokens name them and fall back to sans-serif. The font files are not in the repo. The style guide loads Inter from Google Fonts as the UI face.
+Circular Pro Book and Circular XX are proprietary. The tokens name them and fall back to sans-serif. The font files are not in the repo. The style guide loads no web fonts: it names Inter and falls back to the system sans-serif when Inter is not installed.
 
 The docs search dialog was screenshotted and not measured. The selector missed the button.
+
+Five type roles and one colour were never measured and were entered by hand at capture time: `typography.display` (the home h1, 80px), `typography.title` (`.text-size-xlarge`, 26px), `typography.body` (the hero paragraph, 18px / 30.6px), `typography.label` (14px / 500), `typography.code` and `light.surface.scrim`. They carry the Reconstruction label in tokens.json. `size.orchid` is the measured 46.3906px height of the help-centre pill, not a rounded 46px.
 
 The merchant dashboard was not opened. New store signups are closed. The login error colour matches `--red-500`. The native register tooltip is browser chrome, not a designed error.
 
@@ -117,7 +119,7 @@ The merchant dashboard was not opened. New store signups are closed. The login e
 |---|---|---|
 | Circular Pro Book | Hero and section headings, `@font-face` on the marketing site | Proprietary. Not committed. Fallback: sans-serif |
 | Circular XX | Declared, rarely used on the captured pages | Proprietary. Not committed |
-| Inter | Body, nav, buttons, auth card | SIL Open Font License. The style guide loads it from Google Fonts |
+| Inter | Body, nav, buttons, auth card | SIL Open Font License. The style guide names it and uses it only when it is installed |
 | JetBrains Mono | Declared as `Jetbrainsmono` | SIL Open Font License. Barely used on the marketing pages |
 
 ## Coverage

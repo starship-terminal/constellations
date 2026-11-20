@@ -1,4 +1,5 @@
-"""Robinhood tokens resolve and the committed file matches a fresh read of itself."""
+"""Robinhood tokens (hand-written; no builder): every token has a source, every alias resolves in
+its own set, then core, then from the root."""
 import json
 import pathlib
 import unittest
@@ -20,6 +21,36 @@ class TokensTest(unittest.TestCase):
                 token = doc[theme]["color"][role]
                 self.assertTrue(token["$extensions"]["source"])
                 self.assertEqual(token["$extensions"]["evidence"], "Measured")
+
+class Contract(unittest.TestCase):
+    def setUp(self):
+        self.doc = json.loads(TOKENS.read_text())
+
+    @staticmethod
+    def leaves(node, prefix=""):
+        for k, v in node.items():
+            if k.startswith("$"):
+                continue
+            if isinstance(v, dict) and "$value" in v:
+                yield prefix + k, v
+            elif isinstance(v, dict):
+                yield from Contract.leaves(v, prefix + k + ".")
+
+    def test_every_token_has_a_source(self):
+        missing = [f"{s}.{n}" for s in ("core", "light", "dark") for n, t in self.leaves(self.doc[s])
+                   if not (t.get("$extensions") or {}).get("source")]
+        self.assertEqual(missing, [])
+
+    def test_every_alias_resolves(self):
+        import re
+        flat = {f"{s}.{n}": t for s in ("core", "light", "dark") for n, t in self.leaves(self.doc[s])}
+        bad = []
+        for path, tok in flat.items():
+            own = path.split(".")[0]
+            for ref in re.findall(r"\{([^{}]+)\}", json.dumps(tok["$value"])):
+                if not any(c in flat for c in (f"{own}.{ref}", f"core.{ref}", ref)):
+                    bad.append(f"{path} -> {ref}")
+        self.assertEqual(bad, [])
 
 
 if __name__ == "__main__":

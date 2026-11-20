@@ -120,6 +120,8 @@ The marketing names are emitted under `core` at their natural paths (`color.prim
 - **Presses are forced.** `pressed` states were read with `CSS.forcePseudoState` — any script-driven mousedown look is uncaptured.
 - **The booking site is one business's skin.** honeyhivesalon.glossgenius.com paints the Organic-style layout; other businesses' sites re-skin the same chrome through other `.tokens_glossDS__*` layout classes and palette picks — treat `booking` tokens as this surface's resolution, not a universal brand set.
 - **The booking flow stops at the date-picker.** Slot confirmation, the YOUR DETAILS form and payment were never reached — they sit past a "Next" that was never pressed.
+- **The booking-flow readings were taken past a booking step.** `bk-steps`, `bk-cal`, `bk-day`, `bk-next` and the `book-calendar` / `book-slots` shots were reached by selecting a service and pressing "BOOK 1 SERVICE" on a real business's live booking site, and a day cell was opened to show its time slots. They stay as evidence; the capture scripts now stop at the BOOK bar (edited 2026-11, not rerun).
+- **Weight tokens are named for what they measure.** `font.weight.regular` is 400 (the nav links) and `font.weight.medium` is 500 (plan rows, the eyebrow, the hero heading); no semibold or bold weight was measured on these components.
 - **Prices are photographed, not promised.** The plan cards load annual-checked (showing struck monthly and billed-annual figures); the monthly state was reached by the local toggle.
 
 ## Rebuild

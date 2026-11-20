@@ -25,8 +25,7 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => { fs.mkdirSync(RAW, { recursive: true }); fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n'); };
 const URLS = {
   home: '/', pricing: '/pricing', enterprise: '/enterprise', blog: '/blog',
-  plugins: '/plugins', login: '/login', image: '/image', features: '/features/ai-image-generator',
-  notfound: '/about', docs: '/docs',
+  plugins: '/plugins', login: '/login', image: '/image',
 };
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
@@ -64,8 +63,7 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   // fresh context before recording the route as blocked this run.
   let ok = false;
   for (let tries = 0; tries < 2 && !ok; tries++) {
-    await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo });
-    ok = !(await blocked());
+    ok = (await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo })) && !(await blocked());
     if (!ok && tries === 0) { log('  challenge, one reload', key); }
   }
   if (!ok) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); liveCtx = null; return false; }
@@ -154,6 +152,8 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // fillText is an option for the filled state; several specs pass it with the record fields.
+  if (meta.fillText && !opts.fillText) opts = { ...opts, fillText: meta.fillText };
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });

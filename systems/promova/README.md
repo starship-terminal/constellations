@@ -32,7 +32,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 5. Don't invent a second accent.
 6. Don't round the marketing buttons.
 7. Don't ship a dark theme from these tokens.
-8. Don't treat the focus token as a measured ring.
+8. Don't invent a focus ring from these tokens.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -59,7 +59,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 1.00:1 fail | 21.00:1 pass | 1.00:1 fail | 3.97:1 fail |
 
-1 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.border.focus` #000000.
+1 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus: no focus tokens (no token path contains "focus").
 
 <!-- brief:end -->
 
@@ -85,8 +85,8 @@ The entry promo was closed with its close button. Nothing was submitted.
 
 - The signed-in app, checkout, and any paid plan were not opened.
 - `/log-in` is a 404. Log in is a control on `/sign-up`, and that control was not followed into a second form.
-- Focus on the email field did not paint a ring. `light.border.focus` aliases black and is marked as a gap.
-- Nav hover and pressed colours are stylesheet rules, not a forced computed hover.
+- Focus on the email field did not paint a ring, so the package publishes no focus token.
+- Nav hover and pressed colours are stylesheet rules, not a forced computed hover. The rules were read in the preview browser and not saved (`rules` in raw/extra.json is empty), so `core.color.ink-hover`, `ink-pressed`, `gray.200` and the hover use of `gray.100` are labelled Reconstruction. So are the other values only the preview browser read: `core.color.ink.50`, `progress`, the 26px and 34px body line heights, and the 0.5s body transition.
 - Screenshots are headless Chromium, not preview-browser frames. The sign-up viewport shot was taken before the form painted; the card crop is the form.
 - Quantisation was not run. Read colours from tokens.json.
 - No dark theme exists. The black page is the light theme's ground.
@@ -129,7 +129,7 @@ Nekst (`--heading-font`, `--nekst-font`) for titles and buttons. Manrope (`--bod
 - **Don't invent a second accent.** The yellow `#fff584` is the announcement strip and the route-progress bar, not a CTA colour.
 - **Don't round the marketing buttons.** The 10px radius belongs to the sign-up submit only. See [signup-card-default.png](components/crops/signup-card-default.png).
 - **Don't ship a dark theme from these tokens.** The black ground is the light theme.
-- **Don't treat the focus token as a measured ring.** Focusing the email field changed nothing visible.
+- **Don't invent a focus ring from these tokens.** Focusing the email field changed nothing visible, so there is no focus token.
 
 ## Rebuild
 

@@ -108,6 +108,7 @@ Every value was read signed-out from flutterflow.io in headless Chromium (Playwr
 - **Hidden-slot readings.** `replay-btn-home` and `composer-key` record the DOM slot's declared style where the element painted 0x0 at capture time; their descriptions say so.
 - **Dark beyond four pages.** Home, product, pricing and enterprise have verified dark paint; the other routes' dark look is covered by the token set but not screenshot-verified.
 - **Screenshots are 256-colour** — never read a colour off them; use tokens.json or the raw files.
+- **Dark provenance.** Until the 2026-11 audit every dark token's `declared` and `responsive` extensions came from the light pass (the dark page cited a declared `#fcfcfb`). They now come from the dark and dark-390 resolutions; no value changed. The 48px `heading` type role no longer carries the 66px home-title measurement, which belongs to `display` only.
 
 ## Fonts
 
@@ -146,3 +147,7 @@ python3 tools/capture/quantize.py ~/.design-systems/flutterflow/raw-shots
 # builders (repo venv python3):
 python3 tools/build_tokens.py && node tools/capture/public/build-measurements.mjs && python3 tools/build_components_md.py && python3 tools/build_style_guide.py
 ```
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

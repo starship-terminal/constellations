@@ -185,7 +185,6 @@ colors:
   measured-auth-authContinueFill: "#000000"
   measured-auth-authGoogleFill: "#ffffff"
   measured-research-researchCardBg: "rgba(0, 0, 0, 0)"
-  measured-tokenization-tokNavInk: "#b8b8b5"
 rounded:
   "01": "2px"
   "02": "4px"

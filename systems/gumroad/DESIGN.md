@@ -216,6 +216,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Product/creator dark**: the subdomain's inline styles pin a light palette; no `product-dark-*` or `creator-dark-*` shots exist because the live page does not repaint. Any dark product page is a guess, not evidence.
 - **Search results**: the marketplace search fields were measured empty; no query was ever submitted.
 - **Checkout beyond the form**: the public checkout page was captured empty — payment, confirmation and post-purchase screens were never reached.
+- **The checkout readings were taken past a state change.** Reaching the checkout page meant pressing Subscribe / opening a checkout URL for a real product, which starts a checkout session (a server-side cart) on gumroad.com. The committed `checkout-*` readings and the checkout screenshot stay as evidence; the capture scripts now stop at the button (edited 2026-11, not rerun).
+- **Two pressed readings equal their default.** The capture forced `:active` on the topmost node at each control's centre (its label span or icon), not on the control, so the control's own `:active` rule could not apply: `home-search-button` and `login-submit` read pressed identical to default. The script now forces the control itself (edited, not rerun); those pressed states need a recapture.
 - **ABC Favorit rendering**: the face is served from assets.gumroad.com and is not shipped here; crops show it, the style guide falls back to system fonts.
 - **Pressed states** are DevTools-forced; a script-applied mousedown style would not show.
 - **Reduced motion**: the probe saw prefers-reduced-motion partially honoured (three of 185 moving elements removed) — see `raw/motion.json`.

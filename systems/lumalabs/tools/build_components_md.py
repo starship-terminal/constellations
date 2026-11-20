@@ -21,6 +21,21 @@ C = J["components"]
 LAYOUT = json.load(open("raw/layout.json")) if Path("raw/layout.json").exists() else {}
 T = json.load(open("tokens.json"))
 
+# Components whose computed values come from another element (2026-11 audit, recapture needed). A
+# state whose S() target was a stand-in carries the real element's reading in extra.card (measure.mjs
+# writes it for price-card since the audit); when it is there, it replaces the stand-in's reading.
+WRONG_ELEMENT = {
+    "price-card": "The computed values in the raw reading are the page `body`'s, not the plan card's: the capture's target was `body`, and only the crop was taken from the Plus card. They are left out here. Recapture needed (the pk-k recapture tracking issue, 2026-11 audit).",
+}
+for _k, _c in C.items():
+    for _st, _v in (_c.get("states") or {}).items():
+        _ex = _v.get("extra") or {}
+        if _ex.get("card"):
+            _c["states"][_st] = {**_ex["card"], "crop": _ex.get("crop") or _v.get("crop"), "via": _v.get("via")}
+            WRONG_ELEMENT.pop(_k, None)
+        elif _ex.get("crop") and not _v.get("crop"):
+            _v["crop"] = _ex["crop"]
+
 # --------------------------------------------------------------------------- colours and tokens
 
 
@@ -150,8 +165,19 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
+def focus_not_captured(v):
+    """A focus-visible reading taken where keyboard focus never landed (kbFocus returned "focus failed"),
+    a skipped state, or one that did not match :focus-visible: its style is the element at rest, so it
+    is left out of every table and tally (ported from the kit's builder, 2026-11 audit D4)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -180,7 +206,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -205,9 +231,8 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
-PAGE_NAME = {"home": "Homework home", "science": "Academy (Science Labs)", "math": "Academy (Math Curriculum)", "history": "Academy (History Signature)",
-             "my": "Academy (My Course)", "unit": "unit", "lesson-science": "science lesson", "lesson-math": "math lesson",
-             "lesson-history": "history lesson", "atlas": "Atlas", "story": "Atlas story", "news": "Insights"}
+# The pages measure.mjs reads, named as an entry says them ("Read as `x` on the home page").
+PAGE_NAME = {"home": "home", "pricing": "pricing", "about": "about", "api": "API", "enterprise": "enterprise", "ray": "Ray", "news": "news"}
 
 GROUP_INTRO = {
     "Marketing shell": "The header shared by the public pages: a wordmark, uppercase nav labels, and a Sign In pill. Sign In was measured and never followed.",
@@ -301,13 +326,6 @@ OVER = [
     ("Prompt filled", "home", "sample text typed, then deleted; Submit was not clicked", "[home-dark-prompt-filled](screenshots/home-dark-prompt-filled.png)"),
     ("Yearly interval", "pricing", "the Yearly button, a local toggle", "[pricing-light-yearly](screenshots/pricing-light-yearly.png)"),
     ("Phone nav", "home at 390", "the menu button, a local toggle; Sign In was not followed", "[mobile-home-dark-nav](screenshots/mobile-home-dark-nav.png)"),
-    ("Quiz", "science lesson", "reached by letting the lesson play about three minutes; no option chosen", "[lesson-science-light-quiz](screenshots/lesson-science-light-quiz.png)"),
-    ("Chapters panel", "math and history lessons", "the chapters button", "[lesson-math-light-chapters](screenshots/lesson-math-light-chapters.png), [lesson-history-light-chapters](screenshots/lesson-history-light-chapters.png)"),
-    ("Show more", "Math Curriculum", "the Show 14 more button", "[academy-math-light-show-more](screenshots/academy-math-light-show-more.png)"),
-    ("Folded sidebar", "Homework home", "the sidebar's collapse button", "[home-light-sidebar-folded](screenshots/home-light-sidebar-folded.png)"),
-    ("Story preview", "Atlas", "a story card pressed (opens a video preview)", "[atlas-light-story-preview](screenshots/atlas-light-story-preview.png)"),
-    ("Story page", "Atlas", "Explore in the preview (opens the published story)", "[atlas-light-story](screenshots/atlas-light-story.png), [mobile-atlas-light-story](screenshots/mobile-atlas-light-story.png)"),
-    ("Video Settings popover", "Atlas story", "hovering Generate Video; nothing in it pressed", "[atlas-light-story-video-settings](screenshots/atlas-light-story-video-settings.png)"),
 ]
 for r in OVER:
     W("| " + " | ".join(r) + " |")
@@ -318,17 +336,21 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+foc, unfocused = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if st and focus_not_captured(st):
+        unfocused.append(f"`{k}`")
+    if not st or not measured(st):
         continue
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
+none_text = f" The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}." if without else ""
+unfocused_text = f" Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}." if unfocused else ""
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}.{none_text}{unfocused_text}")
 W()
 W("**Pressed.** Pressed on Sign In, Try for free, Start Now and Use the API was a forced :active:hover so the link was not followed. Monthly, Yearly and the news filter are local toggles.")
 W()
@@ -339,7 +361,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -365,10 +387,13 @@ def dur_ms(d):
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
     W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
-W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
-W()
-W("| Page | 1440 | 1920 | 1024 | 390 |")
-W("|---|---|---|---|---|")
+if LAYOUT:
+    W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
+    W()
+    W("| Page | 1440 | 1920 | 1024 | 390 |")
+    W("|---|---|---|---|---|")
+else:
+    W("**Layout grid.** Not captured: `tools/capture/layout.mjs` was not run, so there is no `raw/layout.json`.")
 
 
 def grid_of(key):
@@ -381,11 +406,23 @@ def grid_of(key):
     return f"{main}; grid {cols} gap {g['colGap']}" if g else main
 
 
-for page in ["home", "pricing", "about", "api", "ray", "news"]:
+for page in ["home", "pricing", "about", "api", "ray", "news"] if LAYOUT else []:
     row = " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390))
     if row.replace("|", "").replace("-", "").strip():
         W(f"| {page} | {row} |")
 W()
+def covering_layer(st):
+    """The first painted layer inside the component that fills or frames at least 90% of its box. The
+    capture records a layer's size but not its offset, so the most it can cover is the smaller width
+    times the smaller height (ported from the kit's builder, 2026-11 audit finding 18-3)."""
+    rw, rh = st["rect"]["w"], st["rect"]["h"]
+    for x in st.get("paint") or []:
+        dims = [float(n) for n in re.findall(r"[\d.]+", x.get("size", ""))[:2]]
+        if len(dims) == 2 and rw and rh and min(dims[0], rw) * min(dims[1], rh) >= 0.9 * rw * rh and (x.get("bg") or x.get("border")):
+            return x
+    return None
+
+
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
@@ -394,15 +431,21 @@ W("|---|---|---|---|---|---|---|")
 for k in ["price-card", "prompt", "nav-signin", "hero-cta", "news-card", "ent-field"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
-    if not c or c.get("missing"):
+    if not c or c.get("missing") or k in WRONG_ELEMENT:
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+    if p["background"] == "transparent" and "border" not in p and st.get("paint"):
+        # The root paints nothing: its look is a painted child that covers it (at least 90% of its
+        # box), named in the row. A smaller child (a CTA, a badge, a divider) is not the card, so the
+        # row then keeps the root's own values.
+        p0 = covering_layer(st)
+        if p0:
+            p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius") or p.get("radius", "-"),
+                     background=(colour(p0["bg"]) if p0.get("bg") else "-") + f" (on `{p0['node']}`)",
+                     shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
@@ -430,6 +473,12 @@ for g in groups:
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
+            continue
+        if k in WRONG_ELEMENT:
+            W(WRONG_ELEMENT[k])
+            W()
+            imgs = [f"![{c['title']} {st}](components/crops/{os.path.basename(v['crop'])})" for st, v in c["states"].items() if v.get("crop")]
+            W(" ".join(imgs) if imgs else "No crop was saved for this entry.")
             continue
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
@@ -496,5 +545,10 @@ W("### Content left out")
 W()
 W("- No prompt was submitted and no account was created. The pages were read signed out.")
 
+# Every image or file this page links must exist in the package (2026-11 audit finding 18-2: rows
+# copied from another product's builder linked screenshots this capture never took).
+dead = sorted({t for t in re.findall(r"\]\(((?:screenshots|components|raw|icons)/[^)#\s]+)\)", "\n".join(L)) if not Path(t).exists()})
+if dead:
+    raise SystemExit("components.md links files that do not exist: " + ", ".join(dead))
 Path("components.md").write_text("\n".join(L) + "\n")
 print("components.md:", len(L), "lines,", len(C), "entries,", n_crops, "crops,", len(icons), "icons")

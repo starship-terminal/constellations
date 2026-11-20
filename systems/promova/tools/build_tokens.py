@@ -66,7 +66,8 @@ S_HERO = "computed backgroundColor of section.hero_section_concept5__section__kN
 S_BTN = "computed backgroundColor of a.navigation_actions__main_button__KANxM7 (raw/nav.json)"
 S_SIGN = "computed styles of https://promova.com/sign-up form (raw/signup.json)"
 S_VARS = "computed custom properties on :root at https://promova.com/ (preview evaluate, 2026-11-19)"
-S_HOVER = "stylesheet rule .navigation_actions__login__zl9Mva:hover and :active, and .navigation_actions__main_button__KANxM7:hover and :active (preview evaluate)"
+HAND = "Reconstruction: entered by hand at capture time; no reading in raw/ holds it"
+S_HOVER = HAND + " (stylesheet rule .navigation_actions__login__zl9Mva:hover and :active, and .navigation_actions__main_button__KANxM7:hover and :active, read in the preview browser; raw/extra.json rules is empty)"
 
 core = {
     "color": {
@@ -74,10 +75,10 @@ core = {
         "white": color("#ffffff", S_NAV, "Declared --white. Nav bar, cards, footer, field fill."),
         "ink": {
             "30": color("rgba(0, 0, 0, 0.3)", "computed border-top-color of input.input__input__0C3wAo (raw/signup.json)", "Field hairline and muted ink at 30%."),
-            "50": color("rgba(0, 0, 0, 0.5)", "computed color of the sign-up hint 'Minimum 6 characters' and the 'or' divider (preview evaluate)", "Hint and divider ink."),
+            "50": color("rgba(0, 0, 0, 0.5)", HAND + " (the sign-up hint 'Minimum 6 characters' and the 'or' divider, read in the preview browser)", "Hint and divider ink."),
         },
         "gray": {
-            "100": color("#f5f5f5", S_HOVER + "; also section.what-you-get-concept8 background", "SIGN UP hover wash, and the 'Why Promova' section."),
+            "100": color("#f5f5f5", "computed backgroundColor of section.what-you-get-concept8 (raw/harvest.json); its use as the SIGN UP hover wash is " + S_HOVER, "SIGN UP hover wash, and the 'Why Promova' section."),
             "200": color("#e0e0e0", S_HOVER, "SIGN UP pressed wash."),
             "300": color("#eeeeee", S_SIGN, "Sign-up page ground."),
             "400": color("#f4f4f4", "computed backgroundColor of the FAQ section (raw/harvest.json)", "FAQ section ground."),
@@ -95,7 +96,7 @@ core = {
         "blush": color("#f5a3d0", "computed backgroundColor of the awards section (raw/harvest.json)", "Awards section."),
         "sand": color("#ebe0d3", "computed backgroundColor of the resources section (raw/harvest.json)", "Resources and links section."),
         "ice": color("#f2f4ff", "computed backgroundColor of the reviews section (raw/harvest.json)", "Reviews section."),
-        "progress": color("#fffd00", "declared --bprogress-color on :root", "Route-progress bar. Not a brand accent."),
+        "progress": color("#fffd00", HAND + " (declared --bprogress-color on :root, read in the preview browser)", "Route-progress bar. Not a brand accent."),
     },
     "font": {
         "family": {
@@ -113,7 +114,7 @@ core = {
         "size": {
             "nav": dim("14px", "computed font-size of SIGN UP and GET STARTED (raw/nav.json)", "Nav actions."),
             "body-2": dim("15px", S_VARS + " --body2-font-size; also field text", "Fields and nav triggers."),
-            "body": dim("16px", "computed font-size of body (raw/nav.json)", "Body."),
+            "body": dim("16px", "derived: raw/ holds no reading of body itself; the nav header, which inherits the body face, computes 16px (raw/nav.json header)", "Body."),
             "body-1": dim("18px", S_VARS + " --body1-font-size; filled CTA", "Filled CTA and footer links."),
             "hero-phone": dim("50px", "computed font-size of h1 at 390px (raw/harvest.json mobile-home)", "Hero title on the phone width."),
             "course": dim("60px", "computed font-size of h1 on /learn-english-online (raw/harvest.json)", "Course-page title."),
@@ -125,8 +126,8 @@ core = {
         "display": text_style("{core.font.family.display}", "70px", 700, "70px", "computed h1 on / at 1440 (raw/harvest.json)", "Home hero title."),
         "display-phone": text_style("{core.font.family.display}", "50px", 700, "50px", "computed h1 at 390 (raw/harvest.json)", "Home hero title at 390. Letter-spacing measured -1px."),
         "section": text_style("{core.font.family.display}", "24px", 400, "24px", "computed h2 on / (preview evaluate)", "Section titles, including the FAQ summary."),
-        "body": text_style("{core.font.family.ui}", "16px", 400, "26px", S_VARS + " --body1-line-height is 26px at 18px; body itself is 16px/normal", "Default body. Line-height token uses the declared body1 step."),
-        "body-lg": text_style("{core.font.family.ui}", "24px", 400, "34px", "computed p.hero_section_concept5__description__ZIW-SC (preview evaluate)", "Hero lede."),
+        "body": text_style("{core.font.family.ui}", "16px", 400, "26px", "derived: raw/ holds no reading of body itself; the nav header, which inherits the body face, computes manrope 16px 400 (raw/nav.json header). The 26px line height is " + HAND + " (--body1-line-height, declared at 18px; body itself computes 16px/normal)", "Default body. Line-height token uses the declared body1 step."),
+        "body-lg": text_style("{core.font.family.ui}", "24px", 400, "34px", "manrope 24px 400 in raw/harvest.json fonts; the 34px line height of p.hero_section_concept5__description__ZIW-SC is " + HAND, "Hero lede."),
         "nav": text_style("{core.font.family.display}", "15px", 400, "18px", "computed button.navigation_list__navmenu_trigger (preview evaluate)", "Nav triggers."),
         "button": text_style("{core.font.family.display}", "18px", 700, "18px", "computed TRY NOW (preview evaluate): 18px/700, line-height 18px, letter-spacing 0.72px, uppercase", "Filled CTA."),
         "field": text_style("{core.font.family.ui}", "15px", 500, "22px", S_SIGN, "Email and password fields."),
@@ -139,7 +140,6 @@ core = {
         "card-phone": dim("20px", "computed section border-radius at 390 (raw/harvest.json mobile-home)", "Section islands on the phone width."),
         "auth-card": dim("20px", "computed border-radius of .sG6Sda_form_container (raw/signup.json)", "Sign-up card."),
         "section": dim("30px", "computed border-radius of the nav bar and home sections at 1440 (raw/nav.json)", "Nav, hero, sections, footer."),
-        "round": dim("50%", "computed border-radius of button.qkTZoW_close_button (preview evaluate)", "Promo close control."),
     },
     "spacing": {
         "gutter": dim("20px", "section.getBoundingClientRect().x at 1440 (raw/nav.json gutter.x)", "Inset of the nav and sections from the viewport edge."),
@@ -165,7 +165,7 @@ core = {
         "page": {
             "$value": "0.5s",
             "$type": "duration",
-            "$extensions": {"source": "computed transition 0.5s background-color on body (preview evaluate)"},
+            "$extensions": {"source": HAND + " (transition 0.5s background-color on body, read in the preview browser)"},
             "$description": "Body background transition. The black ground does not animate between the captured routes.",
         },
     },
@@ -186,21 +186,12 @@ light = {
     "text": {
         "primary": color("{core.color.black}", "computed color of h1 and body (raw/nav.json)", "Ink on white and on the pastel islands."),
         "on-action": color("{core.color.white}", "computed color of GET STARTED (raw/nav.json)", "Ink on the filled button."),
-        "secondary": color("{core.color.ink.50}", "computed color of the sign-up hint (preview evaluate)", "Hints and the 'or' divider."),
+        "secondary": color("{core.color.ink.50}", HAND + " (the sign-up hint, read in the preview browser)", "Hints and the 'or' divider."),
         "muted": color("{core.color.ink.30}", "computed color used at 30% black on fields and disabled-looking chrome", "30% ink. Used as the field border; text at this step was not a separate computed color on body copy."),
     },
     "border": {
         "stroke": color("{core.color.ink.30}", S_SIGN, "Field border, 1px solid rgba(0,0,0,0.3)."),
         "strong": color("{core.color.black}", "computed border of SIGN UP (1px solid #000) and the FAQ item (1px #000) (raw/harvest.json, raw/extra.json)", "Outlined controls and FAQ rules."),
-        "focus": {
-            "$value": "{core.color.black}",
-            "$type": "color",
-            "$extensions": {
-                "source": "gap: focusing the email field left border rgba(0,0,0,0.3), outline none, box-shadow none (preview evaluate). No focus colour was painted.",
-                "gap": "focus ring not painted",
-            },
-            "$description": "No painted focus ring was measured. The token aliases ink so the path exists; do not treat it as a measured focus style.",
-        },
     },
     "component": {
         "button": {
@@ -242,22 +233,34 @@ light = {
     },
 }
 
-doc = {
-    "core": core,
-    "light": light,
-    "$themes": [
-        {
-            "id": "light",
-            "name": "light",
-            "selectedTokenSets": {"core": "source", "light": "enabled"},
-        }
-    ],
-    "$metadata": {
-        "tokenSetOrder": ["core", "light"],
-    },
-}
+core["$extensions"] = {"notTokenised": [
+    {"name": "radius.round", "value": "50%",
+     "why": "a percentage, not one px or rem length; the promo close control button.qkTZoW_close_button, read in the preview browser (raw/harvest.json radii lists 50%)"},
+]}
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem|%)")
+
+def build():
+    """The token document, checked, without writing it."""
+    doc = {
+        "core": core,
+        "light": light,
+        "$themes": [
+            {
+                "id": "light",
+                "name": "light",
+                "selectedTokenSets": {"core": "source", "light": "enabled"},
+            }
+        ],
+        "$metadata": {
+            "tokenSetOrder": ["core", "light"],
+        },
+    }
+    walk(doc["core"])
+    walk(doc["light"])
+    return json.loads(json.dumps(doc))
+
+
+DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
 
 
 def check(path, node):
@@ -289,8 +292,11 @@ def walk(node, path=""):
             walk(v, f"{path}.{k}" if path else k)
 
 
-walk(doc["core"])
-walk(doc["light"])
-out = HERE / "tokens.json"
-out.write_text(json.dumps(doc, indent=2) + "\n")
-print(f"wrote {out}")
+def main():
+    out = HERE / "tokens.json"
+    out.write_text(json.dumps(build(), indent=2) + "\n")
+    print(f"wrote {out}")
+
+
+if __name__ == "__main__":
+    main()

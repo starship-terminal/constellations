@@ -169,19 +169,19 @@
     "display": {
      "type": "fontFamily",
      "value": "Unbounded, \"Unbounded Placeholder\", sans-serif",
-     "source": "measured hero-heading/section-heading on / (display face)",
+     "source": "computed fontFamily of hero-heading default on home (raw/components-computed.json)",
      "description": "Unbounded — the marketing display face; headings only"
     },
     "body": {
      "type": "fontFamily",
      "value": "Inter, \"Inter Placeholder\", sans-serif",
-     "source": "measured nav-link/body text on / (UI face)",
+     "source": "computed fontFamily of nav-link default on home (raw/components-computed.json)",
      "description": "Inter — the marketing UI face; nav, body copy, buttons"
     },
     "docs": {
      "type": "fontFamily",
      "value": "\"General Sans\", \"General Sans Placeholder\", sans-serif",
-     "source": "measured docs-nav/docs-link on /docs (the hosted docs platform's face)",
+     "source": "computed fontFamily of docs-link default on doc-post (raw/components-computed.json)",
      "description": "General Sans — the docs surface's face (a different platform than the marketing site)"
     }
    },
@@ -189,89 +189,89 @@
     "regular": {
      "type": "fontWeight",
      "value": 400,
-     "source": "measured hero-copy/theme-control on /, login fields on app"
+     "source": "computed fontWeight of hero-copy default on home (raw/components-computed.json)"
     },
     "medium": {
      "type": "fontWeight",
      "value": 500,
-     "source": "measured faq-question/post-card text on /pricing, login-continue on app"
+     "source": "computed fontWeight of faq-question default on pricing (raw/components-computed.json)"
     },
     "semibold": {
      "type": "fontWeight",
      "value": 600,
-     "source": "measured nav-link/footer-link/CTA text on /, docs-nav on /docs"
+     "source": "computed fontWeight of nav-link default on home (raw/components-computed.json)"
     },
     "bold": {
      "type": "fontWeight",
      "value": 700,
-     "source": "measured plan-card title on /pricing"
+     "source": "Reconstruction — entered by hand at capture time, no raw reading behind it (no captured element paints 700; the plan-card title is 500)"
     }
    },
    "size": {
     "xs": {
      "type": "dimension",
      "value": "12px",
-     "source": "measured footer text on /"
+     "source": "Reconstruction — entered by hand at capture time, no raw reading behind it (the footer and docs wrappers compute 12px, but no text node paints it)"
     },
     "sm": {
      "type": "dimension",
      "value": "13px",
-     "source": "measured login-forgot link on app/login"
+     "source": "computed fontSize of login-forgot default on login (raw/components-computed.json)"
     },
     "smMd": {
      "type": "dimension",
      "value": "14px",
-     "source": "measured docs-link/theme-control; login-signup on app"
+     "source": "computed fontSize of docs-link default on doc-post (raw/components-computed.json)"
     },
     "md": {
      "type": "dimension",
      "value": "15px",
-     "source": "measured login fields/share chrome on app"
+     "source": "computed fontSize of login-input-email default on login (raw/components-computed.json)"
     },
     "base": {
      "type": "dimension",
      "value": "16px",
-     "source": "measured nav/body/button text on /, share-doc on app"
+     "source": "computed fontSize of nav-link default on home (raw/components-computed.json)"
     },
     "lg": {
      "type": "dimension",
      "value": "17px",
-     "source": "measured login-continue on app"
+     "source": "computed fontSize of login-continue default on login (raw/components-computed.json)"
     },
     "xl": {
      "type": "dimension",
-     "value": "18px",
-     "source": "measured plan-card title on /pricing"
+     "value": "20px",
+     "source": "computed fontSize of plan-card default on pricing (raw/components-computed.json)"
     },
     "title2": {
      "type": "dimension",
      "value": "23px",
-     "source": "measured login-card heading on app"
+     "source": "computed fontSize of login-card default on login (raw/components-computed.json)"
     },
     "lead": {
      "type": "dimension",
      "value": "27px",
-     "source": "measured hero-copy on /"
+     "source": "computed fontSize of hero-copy default on home (raw/components-computed.json)"
     },
     "displaySm": {
      "type": "dimension",
      "value": "32px",
-     "source": "measured m-hero-heading on / at 390px"
+     "source": "computed fontSize of m-hero-heading default on home (raw/components-computed.json)"
     },
     "displayMd": {
      "type": "dimension",
      "value": "34px",
-     "source": "measured feature-card title on /features"
+     "source": "computed fontSize of feature-card default on features (raw/components-computed.json)"
     },
     "displayLg": {
      "type": "dimension",
      "value": "62px",
-     "source": "measured section-heading on /"
+     "source": "computed fontSize of section-heading default on home (raw/components-computed.json)"
     },
     "displayXl": {
      "type": "dimension",
      "value": "82px",
-     "source": "measured hero-heading on /"
+     "source": "computed fontSize of hero-heading default on home (raw/components-computed.json)"
     }
    }
   },
@@ -279,13 +279,13 @@
    "field": {
     "type": "dimension",
     "value": "10px",
-    "source": "measured login-input/login-continue/login-google radius on app",
+    "source": "computed borderTopLeftRadius of login-input-email default on app/login (raw/components-computed.json); login-continue and login-google match",
     "description": "the product's control corner — inputs and buttons"
    },
    "pill": {
     "type": "dimension",
     "value": "9999px",
-    "source": "measured nav-cta/hero-cta/plan-cta borderTopLeftRadius on / — a pill",
+    "source": "computed borderTopLeftRadius of nav-cta default on / (raw/components-computed.json); hero-cta matches — a pill",
     "description": "the marketing pill — every marketing button"
    }
   },
@@ -493,13 +493,13 @@
    "link": {
     "type": "color",
     "value": "#0099ff",
-    "source": "css-var --framer-link-text-color declared by the rich-text presets (light)",
-    "description": "in-body link blue (#0099ff) — the same declaration under dark"
+    "source": "declared --framer-link-text-color #0099ff on five rich-text preset rules (raw/css-vars.json); two other presets point it at the ink tokens, and which preset paints a body link was not measured",
+    "description": "in-body link blue (#0099ff) on the default rich-text preset"
    },
    "linkHover": {
     "type": "color",
     "value": "#555555",
-    "source": "css-var --framer-link-hover-text-color declared by the rich-text presets (light)",
+    "source": "declared --framer-link-hover-text-color #555555 on one rich-text preset rule (raw/css-vars.json); another points it at the ink token",
     "description": "link hover grey"
    }
   },
@@ -552,13 +552,13 @@
    "link": {
     "type": "color",
     "value": "#0099ff",
-    "source": "css-var --framer-link-text-color declared by the rich-text presets (dark)",
-    "description": "in-body link blue (#0099ff) — the same declaration under dark"
+    "source": "declared --framer-link-text-color #0099ff on five rich-text preset rules (raw/css-vars.json); two other presets point it at the ink tokens, and which preset paints a body link was not measured",
+    "description": "in-body link blue (#0099ff) on the default rich-text preset"
    },
    "linkHover": {
     "type": "color",
     "value": "#555555",
-    "source": "css-var --framer-link-hover-text-color declared by the rich-text presets (dark)",
+    "source": "declared --framer-link-hover-text-color #555555 on one rich-text preset rule (raw/css-vars.json); another points it at the ink token",
     "description": "link hover grey"
    }
   },

@@ -46,7 +46,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #ffbe3c `light.accent` | #ffb224 `dark.accent` |
 | border | #e9e9e7 `light.border` | #2d2d2a `dark.border` |
 
-Fonts: `core.font.family.beausite` is Beausite, then 16 fallbacks; `core.font.family.beausite-app` is beausite, then 5 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 7 type styles (`core.typography`), 15 radius steps (`core.radius`), 7 spacing steps (`core.spacing`).
+Fonts: `core.font.family.beausite` is Beausite, then 16 fallbacks; `core.font.family.beausite-app` is beausite, then 5 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 7 type styles (`core.typography`), 15 radius steps (`core.radius`), 31 spacing steps (`core.spacing`).
 
 ### Using components
 

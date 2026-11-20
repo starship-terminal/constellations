@@ -165,12 +165,45 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
 
 
+# Three focus-visible states (nav-link, m-burger, m-menu-pill) were recorded `via: focus failed`;
+# their via was later rewritten by hand to this sentence, not re-measured.
+HAND_RELABELLED_FOCUS = "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
+
+# An entry flagged missing keeps no readings: four (flyout, flyout-tab, flyout-card, m-filter-radio)
+# were flagged by hand with their misidentified states left in raw/, and none of those states is
+# a reading of the component.
+LIVE = {k: c for k, c in C.items() if not c.get("missing")}
+
+# Entries whose committed reading is not the component the name says.
+WRONG = {
+    "cart-empty": "The reading is the 1440 x 80 \"Your cart\" h1, not the empty-basket block; the 2026-11-13 run did not find the block and kept these states (recaptureMissed).",
+}
+
+
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and listed as "focus could not be captured"."""
+    return (bool(v.get("skipped")) or v.get("via") in ("focus failed", HAND_RELABELLED_FOCUS)
+            or (v.get("focus") or {}).get("matches") is False)
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
+def visible(colour_value):
+    """False for a fully transparent colour: a `2px solid transparent` outline draws nothing."""
+    return not re.search(r"rgba\(\d+, \d+, \d+, 0\)|transparent|/ 0\)", colour_value)
+
+
 def state_rows(c):
     # A state whose capture failed (e.g. via: "focus failed" — the element would
     # not hold a real keyboard focus) is not a captured state: it is reported
     # separately so a failed attempt can never read as a measured absence of a
     # focus ring.
-    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -199,7 +232,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -321,13 +354,15 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
-for k, c in C.items():
+foc, unfocused = [], []
+for k, c in LIVE.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st or st.get("via") == "focus failed":
+    if st and focus_not_captured(st):
+        unfocused.append(f"`{k}`")
+    if not st or not measured(st):
         continue
     s = st["style"]
-    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
+    base = next((v["style"] for v in c["states"].values() if measured(v)), s)
     # A fully transparent outline paints nothing: a transparent outline must
     # not count as a painted ring.
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and s["outlineColor"] != "rgba(0, 0, 0, 0)"
@@ -353,6 +388,8 @@ if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
 if without:
     parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
+if unfocused:
+    parts.append(f"Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
 W()
 W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.")
@@ -362,9 +399,9 @@ W()
 W("| Duration | Easing | Property | Where |")
 W("|---|---|---|---|")
 mot = {}
-for k, c in C.items():
+for k, c in LIVE.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -400,7 +437,7 @@ for k in ["content-card", "product-card", "login-card", "new-card", "flyout-card
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)
@@ -428,15 +465,19 @@ for g in groups:
             desc += "."
         where = PAGE_NAME.get(c["page"], c["page"])
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
+        if k in WRONG:
+            W()
+            W(f"**Known wrong; recapture needed.** {WRONG[k]}")
         if c.get("note"):
             # A recorded caveat on the entry itself — e.g. a selector that
             # measured a neighbouring section until it was scoped.
+            W()
             W(f"**Note:** {c['note']}")
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
+        failed = [s for s, v in c["states"].items() if focus_not_captured(v)]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -448,7 +489,8 @@ for g in groups:
                 W(f"| {lab} | {fmt(d)} |")
             W()
         if failed:
-            W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.")
+            hand = any(c["states"][s].get("via") == HAND_RELABELLED_FOCUS for s in failed)
+            W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`{'; the via was later rewritten by hand, not re-measured' if hand else ''}), so its focus look is uncaptured — not measured as absent.")
             W()
         cl = child_layers(c)
         if cl:

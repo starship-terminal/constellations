@@ -13,7 +13,7 @@ Overflow is a user-flow diagramming tool (overflow.io, PROTOIO Inc.). This packa
 | [components/](components/) | Crops of buttons, fields, and the sign-in heading |
 | [screenshots/](screenshots/) | Viewport shots of the public pages and the signed-out shell |
 | [raw/](raw/) | Computed-style readings the tokens were built from |
-| [tools/](tools/) | The kit copy, the builders, and test_build_tokens.py |
+| [tools/](tools/) | The builders and test_build_tokens.py. `capture/signed-in/` holds only the kit's page-copy privacy guards; no kit capture script took these readings |
 | [icon.png](icon.png) | Site icon |
 
 ## Brief
@@ -56,7 +56,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 21.00:1 pass | 21.00:1 pass | 5.74:1 pass | 5.74:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus.width` 1px; `light.focus.offset` 1px; `light.focus.outline` #005fcc; `light.app.input-focus` #a3cdf5.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus.width` 1px (Observed, not measured); `light.focus.offset` 1px (Observed, not measured); `light.focus.outline` #005fcc (Observed, not measured); `light.app.input-focus` #a3cdf5.
 
 <!-- brief:end -->
 
@@ -79,6 +79,12 @@ Computed styles were read on the live DOM at 1440x900 and 390x844. Hover was a r
 App colour, type, shadow, and motion tokens are the custom properties resolved on `body` at `/n/signin` (`raw/app-vars.json`). Marketing colour and type are computed styles (`raw/deep.json`, `raw/pricing-bits.json`, `raw/focus-visible.json`).
 
 ## What to distrust
+
+The forced focus-visible outline is `outline-style: auto` in `rgb(0, 95, 204)`: Chromium's default focus ring. Overflow sets no focus colour, so `core.color.focus-ring` and `light.focus.*` are labelled Observed and are not a brand value to copy.
+
+Five marketing values have no reading in raw/: the h3 eyebrow colour `#acacbc`, the `.btn-secondary` fill `#f0f0f2`, and the `section`, `card-title` and `eyebrow` type styles. They are labelled Reconstruction (typed in by hand at capture time).
+
+The cookie banner was dismissed with its Required only choice before the readings; every marketing reading was taken after that click.
 
 The hero wash has no CSS `background-image` on the section or its ancestors. Its stops are not in the tokens.
 
@@ -133,4 +139,4 @@ python3 tools/build_style_guide.py
 python3 tools/catalog.py design-md overflow
 ```
 
-Run the last command from the repository root. `tools/build_components_md.py` is the kit's starter and is not wired to these readings; [components.md](components.md) was written from the readings directly.
+Run the last command from the repository root. [components.md](components.md) was written from the readings directly; it has no builder.

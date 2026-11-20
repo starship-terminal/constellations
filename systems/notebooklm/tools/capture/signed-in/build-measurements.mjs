@@ -118,7 +118,8 @@ W('Every component has one table per theme: a column per state, a row per proper
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab), skipped where the element cannot take focus; `pressed` is the mouse held down on the element (:active). NotebookLM draws focus rings in plain CSS (:focus-visible outlines on nb-buttons, the .mat-focus-indicator ::before box on Material controls), so they survive in the static copies. The rest (`selected`, `open`, `readonly`, `off`, `option-highlighted`) are other elements or copies captured in that state. Light states are prefixed `light` and were read from the same copies with the body class swapped to light-theme. The 390 wide copies are measured at rest only.');
 W('');
-W(`${comps.length} components, ${allStates.length} states (${ok.length} measured, ${allStates.filter((x) => x.v.skipped).length} skipped, ${allStates.filter((x) => x.v.error).length} not found).`);
+const stale = allStates.filter((x) => x.v.recaptureError).length;
+W(`${comps.length} components, ${allStates.length} states (${ok.length} measured, ${allStates.filter((x) => x.v.skipped).length} skipped, ${allStates.filter((x) => x.v.error).length} not found${stale ? `, ${stale} kept from an earlier run because the latest rerun failed: see the "Not refreshed" rows` : ''}).`);
 W('');
 W('## Shared values');
 W('');
@@ -189,6 +190,7 @@ for (const g of groups) {
         const v = c.states[st];
         if (v.error) { (rows['Not found'] ||= {})[st] = v.error; continue; }
         if (v.skipped) { (rows.Skipped ||= {})[st] = v.skipped; continue; }
+        if (v.recaptureError) (rows['Not refreshed'] ||= {})[st] = `kept from an earlier run; the latest rerun failed: ${v.recaptureError}`;
         for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
       }
       W('');

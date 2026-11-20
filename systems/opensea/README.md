@@ -13,10 +13,10 @@ OpenSea declares a real token layer. `:root, .dark` and `.light` set `--color-*`
 | [components.md](components.md) | The inventory, with measured values and reconstruction crops |
 | [patterns.md](patterns.md) | How the home, collection, connect dialog, and drops page are built |
 | [components/crops/](components/crops) | Element crops. These are reconstructions drawn from computed boxes, not live pixels |
-| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` reconstructions at the measured viewports |
+| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` reconstructions at the measured viewports, drawn with Pillow by `build_package.py --drawings`. Not live captures; the catalog's gallery cover is one of these drawings |
 | [icons/](icons) | The wordmark SVG and [INDEX.tsv](icons/INDEX.tsv) |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
-| [tools/](tools) | The capture kit, [build_package.py](tools/build_package.py), and a package test |
+| [tools/](tools) | [build_package.py](tools/build_package.py) (tokens.json and style-guide.html; `--drawings` also redraws the reconstruction PNGs) and a package test. `capture/signed-in/` holds only the kit's page-copy privacy guards |
 
 ## Brief
 
@@ -84,7 +84,7 @@ The live theme was dark. Light values come from the `.light` rule in the same st
 
 ## What to distrust
 
-The screenshots and crops are reconstructions. Positions and colours come from computed styles. The wordmark in those PNGs is a blue circle, not the SVG paths. The style guide uses the system sans for gtAmerica. That family is proprietary and is not in the package.
+The screenshots and crops are reconstructions, drawn with Pillow from the measured boxes, including [screenshots/home-dark-default.png](screenshots/home-dark-default.png), which the gallery shows as this package's cover. Positions and colours come from computed styles. The wordmark in those PNGs is a blue circle, not the SVG paths. The style guide uses the system sans for gtAmerica. That family is proprietary and is not in the package.
 
 Desktop Sign in was a transparent pill. Phone Sign in, at 390, was a filled `#0086ff` pill. Both readings are live. Do not treat one as the other's hover.
 
@@ -158,4 +158,4 @@ python3 tools/catalog.py design-md opensea
 python3 tools/package_tests.py opensea
 ```
 
-`build_package.py` rewrites [tokens.json](tokens.json), [style-guide.html](style-guide.html), and the reconstruction PNGs from [raw/](raw). Run it from the repository root, or run the script by path. `design-md` must be run from the repository root.
+`build_package.py` rewrites [tokens.json](tokens.json) and [style-guide.html](style-guide.html) from [raw/](raw). It leaves the reconstruction PNGs alone; `python3 tools/build_package.py --drawings` redraws them too, with Pillow's bundled font, so expect them to differ from the committed drawings (those were drawn with the system Arial). Run it from the repository root, or run the script by path. `design-md` must be run from the repository root.

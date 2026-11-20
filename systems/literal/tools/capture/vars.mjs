@@ -22,7 +22,7 @@ const NAMES = [
 for (let i = 1; i <= 40; i++) NAMES.push(`--size-${i}`);
 
 const browser = await launchBrowser();
-const page = await newPage({ context: browser.contexts()[0], width: 1440, height: 900, colorScheme: 'light' });
+const page = await newPage({ browser, width: 1440, height: 900, colorScheme: 'light' });
 await open(page, 'https://literal.club/', { wait: 1200 });
 
 const declared = await page.evaluate(() => {
@@ -71,7 +71,7 @@ const light = await resolve('light');
 const dark = await resolve('dark');
 fs.mkdirSync(RAW, { recursive: true });
 const out = {
-  read: '2026-11-18',
+  read: new Date().toLocaleDateString('en-CA'),
   url: 'https://literal.club/',
   note: 'Declared on :root, :root.light, :root.dark and :root:not(.light). Dark resolves when prefers-color-scheme is dark; no public theme toggle was found. :root.dark matches :root:not(.light).',
   declared,

@@ -33,9 +33,9 @@ def color(value):
         raise ValueError("not a colour: " + value)
     red, green, blue, alpha = match.groups()
     alpha = float(alpha) if alpha is not None else 1
-    if alpha >= 1:
-        return "#%02x%02x%02x" % (int(red), int(green), int(blue))
-    return "rgba(%d, %d, %d, %g)" % (int(red), int(green), int(blue), alpha)
+    hexed = "#%02x%02x%02x" % (int(red), int(green), int(blue))
+    # Translucent colours as #rrggbbaa: tools/catalog.py and the contrast check read only hex.
+    return hexed if alpha >= 1 else hexed + "%02x" % round(alpha * 255)
 
 
 def leaf(type_, value, source, description=None):
@@ -62,23 +62,68 @@ def alias(path, source, description=None):
 
 
 def check(doc):
-    def walk(node, path):
+    """Refuse a leaf with no source, a dimension that is not one length, a colour that is not
+    #rrggbb(aa), a malformed alias, an alias (at any depth of a value) that resolves neither in its
+    own set nor in core, and an alias chain that loops."""
+    def leaves(node, path=""):
         if not isinstance(node, dict):
             return
         if "$value" in node:
-            if "$extensions" not in node or "source" not in node.get("$extensions", {}):
-                raise ValueError(f"{path} has no source")
-            value = node["$value"]
-            if node.get("$type") == "dimension" and isinstance(value, str) and not value.startswith("{"):
-                if not DIM.fullmatch(value):
-                    raise ValueError(f"{path} dimension {value!r}")
+            yield path, node
             return
         for key, child in node.items():
-            if key.startswith("$"):
-                continue
-            walk(child, f"{path}.{key}" if path else key)
+            if not key.startswith("$"):
+                yield from leaves(child, f"{path}.{key}" if path else key)
 
-    walk(doc, "")
+    def strings(value):
+        if isinstance(value, str):
+            yield value
+        elif isinstance(value, dict):
+            for v in value.values():
+                yield from strings(v)
+        elif isinstance(value, list):
+            for v in value:
+                yield from strings(v)
+
+    def alias_refs(value, where):
+        """Every alias inside a value, at any depth. A string holding a brace must be one whole alias."""
+        refs = []
+        for text in strings(value):
+            if "{" in text or "}" in text:
+                m = re.fullmatch(r"\{([A-Za-z0-9_.-]+)\}", text)
+                if not m:
+                    raise ValueError(f"{where} malformed alias {text!r}")
+                refs.append(m.group(1))
+        return refs
+
+    def follow(ref, own, core, where, chain):
+        """Resolve ref in its own set, then core, then follow the target's aliases; refuse a cycle."""
+        if ref in chain:
+            raise ValueError(f"{where} alias cycle through {{{ref}}}")
+        target = own.get(ref) or core.get(ref)
+        if target is None:
+            raise ValueError(f"{where} alias {{{ref}}} points at nothing")
+        for nxt in alias_refs(target["$value"], where):
+            follow(nxt, own if ref in own else core, core, where, chain + [ref])
+
+    sets = [k for k in doc if not k.startswith("$")]
+    core = {p: t for p, t in leaves(doc.get("core", {}))}
+    for name in sets:
+        own = {p: t for p, t in leaves(doc[name])}
+        for path, node in own.items():
+            where = f"{name}.{path}"
+            if "$extensions" not in node or "source" not in node.get("$extensions", {}):
+                raise ValueError(f"{where} has no source")
+            value = node["$value"]
+            refs = alias_refs(value, where)
+            for ref in refs:
+                follow(ref, own, core, where, [path])
+            if isinstance(value, str) and refs:
+                continue
+            if node.get("$type") == "dimension" and isinstance(value, str) and not DIM.fullmatch(value):
+                raise ValueError(f"{where} dimension {value!r}")
+            if node.get("$type") == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", str(value)):
+                raise ValueError(f"{where} colour {value!r}")
 
 
 S = "raw/readings.json"
@@ -312,9 +357,18 @@ def main():
         ],
     }
     check(doc)
-    OUT.write_text(json.dumps(doc, indent=1) + "\n")
+    return doc
+
+
+def render():
+    """tokens.json's exact text; nothing is written."""
+    return json.dumps(main(), indent=1) + "\n"
+
+
+def write():
+    OUT.write_text(render())
     print(f"wrote {OUT}")
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    write()

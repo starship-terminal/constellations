@@ -21,7 +21,7 @@ The README has no "Do and don't" section, so this package states no principles.
 | text | #0d0d0d `light.color.text.primary` | #ffffff `dark.color.text.primary` |
 | muted | #6e6a69 `light.color.text.secondary` | #aeabab `dark.color.text.secondary` |
 | accent | #0d0d0d `light.color.button.primary` | #ffffff `dark.color.button.primary` |
-| border | color-mix(in oklch, lab(3.63782% -.00000745058 0) 12%, transparent) `light.color.border.primary` | rgba(247, 245, 243, 0.12) `dark.color.border.primary` |
+| border | rgba(13, 13, 13, 0.12) `light.color.border.primary` | rgba(247, 245, 243, 0.12) `dark.color.border.primary` |
 
 Fonts: `core.font.family.oracle` is cosmosOracle, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 10 radius steps (`core.radius`), 4 spacing steps (`core.spacing`).
 
@@ -102,3 +102,5 @@ A Next.js/Tailwind product with a real dual semantic layer: the sheets declare `
 - Search and profile pages run to ~23-24k px (infinite feeds); `-full` shots truncate at the 8-chunk bound.
 - The explore tab-bar toggle state was never shot (selector miss); `cat-tab`'s measured states stand in.
 - No standalone icon set was lifted; the mark, glyphs and imagery in shots are the product's artwork.
+- **Three entries were read from the wrong element; they need a recapture.** `hero-search` is the header's Log in / Sign up group (204 x 58), not the hero search pill, so `light.component.hero-search-height` says so in its source. `element-tile` is the whole 1376 x 3500 grid, not one tile, and `seq-card` is a 32 x 32 empty icon link, not a sequence card; no token uses those two.
+- **`raw/measurements.md` predates the committed readings.** Its tables were written from an earlier `components-computed.json` (for example `hero-search` 684.76 x 8.92, not the committed 204.77 x 58) and list no crops; [components.md](components.md) and the tokens are built from the committed readings. Rebuild it with `node tools/capture/public/build-measurements.mjs` after a recapture.

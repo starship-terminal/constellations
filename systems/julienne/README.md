@@ -114,7 +114,7 @@ python3 tools/build_style_guide.py
 
 ## What to distrust
 
-Screenshots are 256-colour PNGs. Read colours from tokens.json. The home hero photos are lazy and can be blank in a viewport shot taken before they paint. The signup page shows "Security verification failed" because the Turnstile widget does not complete in headless Chromium. That banner is the widget's own failure, not a submitted form. Dark muted text is Tailwind gray-400 from the `dark:text-gray-400` class, not a second computed reading of the recipe meta. EB Garamond and Inter are loaded from Google Fonts and are not shipped in this package.
+Screenshots are 256-colour PNGs. Read colours from tokens.json. The home hero photos are lazy and can be blank in a viewport shot taken before they paint. The signup page shows "Security verification failed" because the Turnstile widget does not complete in headless Chromium. That banner is the widget's own failure, not a submitted form. Dark muted text `#a3a3a3` was entered by hand from the `dark:text-gray-400` class name, not read: it is Tailwind's neutral-400, not gray-400 (`#9ca3af`), and its source says Reconstruction. EB Garamond and Inter are not shipped in this package, and the style guide does not fetch them.
 
 ## Fonts
 
@@ -190,3 +190,7 @@ python3 tools/build_style_guide.py
 ```
 
 `make brief`, `make design-md` and `make grade` from the repo root rewrite Brief, DESIGN.md and Health.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

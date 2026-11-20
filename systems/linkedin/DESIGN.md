@@ -148,6 +148,10 @@ The keyword field and the company About us tab were not in the painted box this 
 
 about.linkedin.com, business.linkedin.com, and news.linkedin.com returned 403. The people directory redirected to an auth wall. Those surfaces are not in the package.
 
+Four core steps were never measured on an element and were entered by hand at capture time: `fontSize.lg` (20px), `radius.md` (8px), `radius.full` (9999px) and `spacing.1` (4px). They carry the Reconstruction label in tokens.json. Every other size, weight, radius and spacing step is read from a named component in raw/components-computed.json. `size.icon-nav` is the measured 20px width of the nav icon (20 x 18 painted), not the 24px the capture notes assumed.
+
+Every committed reading and screenshot was taken with `navigator.webdriver` masked in the browser context. The 2026-11 audit removed the mask from `tools/capture/public/lib.mjs`; a rerun shows the site an unmasked automated browser and may hit a bot check, which is recorded as a boundary.
+
 ### Do and don't (from README.md)
 
 1. **Do paint actions as 48px brand pills.** Join now, See jobs, Apply, and the sign-in submit are `#0a66c2` fills with a white label and a 24px radius. See [nav-join](components/crops/nav-join-default.png).

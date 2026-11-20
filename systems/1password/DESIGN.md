@@ -210,9 +210,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - **The vault.** Nothing behind `my.1password.com`/`start.1password.com` was reached; the app needs credentials this capture does not have. The unsupported-browser page is the honest boundary. Do not read app functionality into this package — it is a marketing-site system.
 - **Cross-origin embeds.** The Vimeo player (`video-embed`) and the Marketo sales form (`form-embed`) are measured as element boxes only; their contents are unreachable and nothing inside them is claimed.
-- **The consent card.** The OneTrust "We use cookies" card renders in a closed shadow root; it is suppressed for captures (seeded consent cookie + a geometric sweep), so it has no measurements — it is chrome of the consent vendor, not of the design system.
+- **The consent card.** The OneTrust "We use cookies" card renders in a closed shadow root; it was suppressed for the committed captures, so it has no measurements — it is chrome of the consent vendor, not of the design system. The committed screenshots (public.mjs) and component readings (measure.mjs) were taken past a consent choice: those scripts wrote OneTrust's consent cookie with all four groups opted in, and their dialog sweep clicked Accept All, Reject or Agree where a dialog offered one. The CSS variable readings (vars.mjs) were not: that script opens its own context and calls neither. The scripts now block the OneTrust SDK and remove the banner instead (not run since), so a recapture's pages may load fewer third-party scripts than these did.
 - **`--knox-*` variables that resolve to nothing.** Some Knox names (e.g. button hover/pressed fills) are unset on this site; only resolved values made it into tokens.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 
 ### Do and don't (from README.md)
 

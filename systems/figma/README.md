@@ -112,6 +112,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 - **The forms.** Contact, login, signup and Make prompt fields were typed into then cleared — validation, error, loading and success states are unverified because nothing was submitted. `/contact`'s `name=topic` input is a display:none honeypot; the measured `field-topic` is the visible unnamed text input beside it.
 - **Detail pages.** The community, blog, customers and careers indexes were captured; individual community files, posts, case studies and job ads were not opened (careers links out to an external ATS — out of scope).
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
+- **Unpainted fills are not tokens.** The product shell's Google button and community search compute a transparent `backgroundColor`, and the plan card's reading matched only the transparent `--fig-theme-btn-ghost-bg`; `core.component.productShell.google-btn-fill`, `comm-search-bg` and `light.surface.planCardBg` were dropped in the 2026-11 audit. The declared transparent theme variables stay: they are what the sheet declares.
 
 ## Fonts
 
@@ -150,3 +151,7 @@ python3 tools/build_style_guide.py && python3 tools/build_components_md.py
 ```
 
 All deterministic: same inputs, byte-identical outputs.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

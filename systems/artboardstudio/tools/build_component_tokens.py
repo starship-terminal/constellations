@@ -99,24 +99,49 @@ for name in sorted(n for n in R if n.startswith("--")):
 
 # ------------------------------------------------------------- light roles
 
+def _norm(v):
+    """rgb()/rgba() -> #hex, or rgba(r, g, b, a) when translucent."""
+    m = re.fullmatch(r"rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)", (v or "").strip())
+    if not m:
+        return (v or "").strip().lower()
+    r, g, b, a = m.groups()
+    if a is None or float(a) >= 1:
+        return "#%02x%02x%02x" % (int(float(r)), int(float(g)), int(float(b)))
+    return f"rgba({int(float(r))}, {int(float(g))}, {int(float(b))}, {'%g' % float(a)})"
+
+
+def _rd(reads, prop):
+    """The computed value every (component, state) named here reads; refuse a missing or stale
+    component and readings that disagree, instead of typing the value in."""
+    vals = set()
+    for comp, state in reads:
+        c = C[comp]
+        if c.get("missing") or c.get("recaptureMissed"):
+            raise KeyError(comp)
+        vals.add(_norm(c["states"][state]["style"][prop]))
+    if len(vals) != 1:
+        raise ValueError(f"{reads} {prop}: readings differ: {sorted(vals)}")
+    return vals.pop()
+
+
 LIGHT = [
     ("page", var("--color-scheme-1--background", description="The page field: pure white (Relume scheme-1 background).")),
     ("surface", var("--color-scheme-1--foreground", description="The section wash (#eeeeee) the scheme classes swap in.")),
-    ("field", {"value": "#ffffff", "type": "color", "source": "computed backgroundColor of the library search field (raw/components-computed.json)", "description": "The search field fill."}),
+    ("field", {"value": _rd([("search-field", "default")], "backgroundColor"), "type": "color", "source": "computed backgroundColor of search-field (the library search field, raw/components-computed.json)", "description": "The search field fill."}),
     ("text", var("--color-scheme-1--text", description="The ink #0d1400, a near-black olive.")),
     ("muted", var("--mg-border", description="Secondary ink #444444, the site's own dark grey.")),
-    ("link-hover", {"value": "#aaaaaa", "type": "color", "source": "computed color of nav-link/footer-link hover (raw/components-computed.json)", "description": "Text links fade to #aaa on hover."}),
+    ("link-hover", {"value": _rd([("nav-link", "hover"), ("footer-link", "hover")], "color"), "type": "color", "source": "computed color of nav-link/footer-link hover (raw/components-computed.json)", "description": "Text links fade to #aaa on hover."}),
     ("accent", var("--color-scheme-1--accent", description="The accent slot — same near-black #0d1400 on this site.")),
     ("ink", var("--color-scheme-1--text", description="Button fills: near-black #0d1400.")),
-    ("ink-hover", {"value": "#222222", "type": "color", "source": "computed backgroundColor of button hover (raw/components-computed.json)", "description": "Black buttons lift to #222 on hover."}),
+    ("ink-hover", {"value": _rd([("plugin-cta", "hover"), ("contact-cta", "hover"), ("filter-chip", "hover")], "backgroundColor"), "type": "color", "source": "computed backgroundColor of plugin-cta/contact-cta/filter-chip hover (raw/components-computed.json)", "description": "Black buttons lift to #222 on hover."}),
     ("on-ink", var("--color-scheme-1--background", description="Text on the black buttons.")),
     ("border", var("--color-scheme-1--border", description="Control borders, near-black.")),
-    ("hover-fill", {"value": "#f4f3f2", "type": "color", "source": "computed backgroundColor of library-card hover (raw/components-computed.json)", "description": "The warm grey row/card hover fill."}),
+    ("hover-fill", {"value": _rd([("lib-card", "hover")], "backgroundColor"), "type": "color", "source": "computed backgroundColor of lib-card hover (raw/components-computed.json)", "description": "The warm grey row/card hover fill."}),
     ("brand", var("--mg-gree", description="The ARKET-bright brand green #aaff00 (the editor's accent, shown on the site in the logo and highlights).")),
     ("brand-hover", var("--mg-green-hover", description="The green's hover tint #cfff6f.")),
     ("brand-dark", var("--mg-darkest", description="The dark green-black panel #2c2c2c.")),
-    ("focus-ring", {"value": "#4d65ff", "type": "color",
-                    "source": "computed outlineColor on keyboard focus of the menu button (raw/components-computed.json); most controls show the browser's default #005fcc, this indigo ring is the site's own Webflow focus style",
+    ("focus-ring", {"value": _rd([("m-menu-button", "focus-visible")], "outlineColor"), "type": "color",
+                    "source": "computed outlineColor of m-menu-button focus-visible (raw/components-computed.json); most controls show the browser's default #005fcc, this indigo ring is the site's own Webflow focus style",
                     "description": "The site-styled 2px #4d65ff focus ring."}),
 ]
 for key, leaf in LIGHT:
@@ -139,7 +164,8 @@ def tstyle(comp, state, desc):
         "fontSize": s["fontSize"],
         "lineHeight": s["lineHeight"],
         "fontWeight": int(s["fontWeight"]),
-        "letterSpacing": "0em" if s.get("letterSpacing") in (None, "normal") else s["letterSpacing"],
+        # computed "normal" is no tracking; DTCG wants a px or rem dimension, so 0px, not 0em
+        "letterSpacing": "0px" if s.get("letterSpacing") in (None, "normal") else s["letterSpacing"],
     }, f"computed type of {comp} {state} (raw/components-computed.json); {desc}"
 
 

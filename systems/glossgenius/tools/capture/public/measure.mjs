@@ -539,28 +539,6 @@ async function bookservices() {
   save();
 }
 
-async function bookflow() {
-  // The /book date-picker step, reached after selecting a service on
-  // bookservices — a public read-only surface (day cells, time slots, the
-  // Next button). Nothing is ever booked: no day/time is confirmed past a
-  // shot, and the details form is never submitted.
-  if (!(await newPage('bookflow', { url: BOOK_SERVICES, wait: 10000 }))) return;
-  const g = G.book;
-  const sel = q('button').filter({ hasText: /^Select$/ }).filter({ visible: true }).first();
-  if (await sel.count()) { await sel.evaluate((el) => el.scrollIntoView({ block: 'center' })).catch(() => {}); await sel.click({ timeout: 4000 }).catch(() => sel.evaluate((el) => el.click())); await page.waitForTimeout(1200); }
-  const book = q('button, a').filter({ hasText: /book \d+ service/i }).filter({ visible: true }).first();
-  if (!(await book.count())) { log('  ! no BOOK button for bookflow'); return; }
-  await book.click({ timeout: 4000 }).catch(() => book.evaluate((el) => el.click()));
-  await page.waitForTimeout(6000);
-  if (!/\/book/.test(page.url())) { log('  ! did not reach /book:', page.url()); return; }
-  current = 'bookflow';
-  await S('bk-steps', q('[class*="step"], [class*="Step"], ol, ul').filter({ hasText: /select service|date . time|your details/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Booking stepper', desc: 'The SELECT SERVICE / DATE & TIME / YOUR DETAILS step header on /book.', sel: 'booking stepper' }, { noScroll: true });
-  await S('bk-cal', q('[class*="calendar"], [class*="Calendar"], [class*="month"], table').filter({ visible: true }).first(), ['default'], { group: g, title: 'Booking calendar', desc: 'The month calendar on the date-picker step.', sel: 'booking calendar' });
-  await S('bk-day', q('button, [role="button"], td, [class*="day"], [class*="Day"]').filter({ hasText: /^\s*\d{1,2}\s*$/ }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Day cell', desc: 'A day cell in the booking calendar.', sel: 'booking day cell' });
-  await S('bk-next', q('button').filter({ hasText: /^Next$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Next button', desc: 'The date-step "Next" button; its states were measured but it was never clicked — no details form was reached.', sel: 'booking Next button' });
-  save();
-}
-
 async function mobile() {
   if (!(await newPage('mobile', { mobile: true, url: BASE + '/' }))) return;
   await chrome('mobile');
@@ -583,7 +561,12 @@ out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
 const pages = process.argv.slice(2);
-const plan = { home, pricing, feature, demo, login, signup, forgot, bookhome, bookservices, bookflow, mobile };
+// Booking flow (/book): a boundary, not a page. Reaching it means selecting a service and pressing
+// "BOOK n SERVICE" on a real business's live booking site, which starts a booking for that business;
+// the capture stops at the bar and measures it at rest (bk-book-btn). It is not in the plan, so it never
+// counts as a finished page and the committed bk-steps, bk-cal, bk-day and bk-next readings (taken past
+// that step, README What to distrust) are kept as evidence, never pruned.
+const plan = { home, pricing, feature, demo, login, signup, forgot, bookhome, bookservices, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 const finishedPages = new Set();
 try {

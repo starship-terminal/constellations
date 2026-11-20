@@ -30,7 +30,7 @@ out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
-const URLS = { home: '/', pricing: '/pricing', integrations: '/integrations', signin: 'https://app.me.sh/login?signin', library: 'https://library.me.sh/' };
+const URLS = { home: '/', pricing: '/pricing', signin: 'https://app.me.sh/login?signin', library: 'https://library.me.sh/' };
 let page, cdp, current, view, context, run;
 const touched = new Set();
 const listed = new Map();
@@ -312,7 +312,7 @@ async function home() {
   };
   const markMenu = () => page.evaluate(() => {
     const cand = [...document.querySelectorAll('[role="menu"], [role="listbox"], [class*="dropdown"], [class*="Dropdown"], [class*="popover"], [class*="Popover"], [class*="menuContent"], [class*="Menu_content"], ul')]
-      .filter((n) => { const r = n.getBoundingClientRect(); const cs = getComputedStyle(n); return r.height > 40 && r.width > 100 && r.top > 20 && r.top < 700 && (cs.position === 'absolute' || cs.position === 'fixed') && cs.visibility !== 'hidden'; })
+      .filter((n) => { const r = n.getBoundingClientRect(); const cs = getComputedStyle(n); return r.height > 40 && r.width > 100 && r.top > 20 && r.top < 700 && (cs.position === 'absolute' || cs.position === 'fixed') && cs.visibility !== 'hidden' && parseFloat(cs.opacity) > 0; })
       .sort((a, b) => a.querySelectorAll('a').length ? -1 : 1)[0];
     if (!cand) return;
     cand.setAttribute('data-m-panel', '1');
@@ -326,7 +326,7 @@ async function home() {
   await S('nav-signin', q('[class*="signInBtn"]').filter({ visible: true }).first(), B4, { group: g, title: 'Sign-in link', desc: 'The "Sign In" action in the nav pill; links to app.me.sh/login, measured never followed.', sel: '.y0DxmG_signInBtn' }, { noScroll: true });
   const h = G.home;
   await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero title', desc: '"Every relationship, organized." — the VerlagCondensed display headline.', sel: 'h1' }, { noScroll: true });
-  await S('hero-sub', q('h1').locator('xpath=following::p[1]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero subcopy', desc: '"Mesh brings together everyone you\'ve ever met…" — the serif lede under the display headline.', sel: 'first p after h1' }, { noScroll: true });
+  await S('hero-sub', q('h1').locator('xpath=following-sibling::p[1]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero subcopy', desc: '"Mesh brings together everyone you\'ve ever met…" — the serif lede under the display headline.', sel: 'first p after h1' }, { noScroll: true });
   await S('section-title', q('h2').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section title', desc: '"Never miss what matters." — the first section heading (Verlag, 480x48); the hero carries no lede, only the display h1 and an animated stat counter.', sel: 'first h2' }, { noScroll: true });
   await S('stat-counter', q('[class*="animatedDigit"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Stat counter', desc: 'One digit of the animated relationship-count ticker beside the hero (the digits cycle).', sel: '.IQmOHa_animatedDigit' }, { noScroll: true });
   // The white "Get Mesh Free" pill — the inverted CTA on the dark page.

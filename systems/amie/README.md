@@ -14,7 +14,7 @@ Amie is worth a capture because it is a current reference for a soft, colorful p
 | [patterns.md](patterns.md) | How the components combine: the floating shell, CTA vocabulary, hero, pricing, forms, footer |
 | [components/crops/](components/crops) | ~110 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 27 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-features`/`-yearly`/`-faq` the opened states |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property, binned app/theme/vendor/tailwind/utility, resolved light+dark), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) (full-colour captures with `.capture.json` sidecars) |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property, binned app/theme/vendor/tailwind/utility, resolved light+dark), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
 ## Brief
@@ -101,12 +101,13 @@ Nothing was sent, downloaded, signed into or trialled. The public marketing surf
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** `.dark` exists in the stylesheet but only re-declares `--foreground` and the two `--shadow-wysiwyg-*` vars; nothing on the captured routes sets it, so no dark set is emitted.
 - **RGB triplets.** `--color-*` values are stored as `r,g,b` strings for `<alpha-value>` utilities; tokens carry the converted hex.
 - **`component.*` tokens are measured**, not site variables.
 - **No hamburger at 390px.** The mobile header collapses to the icon row — the `m-menu-*` entries are recorded missing.
 - **`hero-title` missed its selector** on this pass (the headline isn't an `h1`); visible in screenshots.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 
 ## Fonts
 
@@ -165,10 +166,10 @@ The kit under [tools/capture/](tools/capture) re-reads the live site; the builde
 ```sh
 cd systems/amie
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
-  node tools/capture/public/public.mjs            # page screenshots -> raw/full/
+  node tools/capture/public/public.mjs            # page screenshots -> ~/.design-systems/amie/raw-shots/ (outside the repo)
 PYTHON=<python with Pillow> node tools/capture/vars.mjs    # raw/css-vars.json
 PLAYWRIGHT=... PYTHON=<python with Pillow> node tools/capture/public/measure.mjs   # raw/components-computed.json + crops
-python3 tools/capture/quantize.py raw/full        # -> screenshots/
+python3 tools/capture/quantize.py ~/.design-systems/amie/raw-shots        # -> screenshots/
 node tools/capture/public/build-measurements.mjs  # raw/measurements.md
 python3 tools/build_component_tokens.py           # raw/component-tokens.json
 python3 tools/build_tokens.py                     # tokens.json

@@ -108,6 +108,7 @@ Every colour, radius, length and font on this package is a **measured** value �
 
 ## What to distrust
 
+- **One ink step was typed in.** `core.palette.ink.a33` `rgba(0, 0, 0, 0.33)` appears in no raw file; its source says Reconstruction. The other ink steps cite the reading that paints them, the sans stack cites the article card (nav and footer paint CareSans), and the rule-body declaration counts on palette swatches were counted by hand in sheets that are not committed, which their sources now say.
 - **Live origin unreachable.** www.forhers.com serves this network a Cloudflare managed challenge (HTTP 403) on every route; nothing here is current live evidence — every value is an archived reading, dated in the sidecars and `raw/css-vars.json`.
 - **Nothing dark paints.** No theme control, no dark class or attribute, no applied `prefers-color-scheme: dark` rules on any captured page. The token file ships an empty dark set.
 - **Scripts are stripped.** Wayback SSR markup hydrates nothing — menus, accordions, carousels, the quiz/intake flow and `Read more` were captured closed, and their open states are recorded gaps.
@@ -136,3 +137,7 @@ python3 tools/build_tokens.py                                                   
 python3 tools/build_style_guide.py                                                 # -> style-guide.html
 python3 tools/build_components_md.py                                               # -> components.md
 ```
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

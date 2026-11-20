@@ -165,7 +165,7 @@ brand = SPEC["core"].setdefault("color", {}).setdefault("brand", {})
 for key, n, desc in [
     ("black", "--color-black", "Declared black lab(0 0 0)."),
     ("white", "--color-white", "Declared white lab(100 0 0)."),
-    ("paper", "--color-paper", "Declared paper lab(96.648 0.43 1.2) — the warm off-white card surface (element-tile measures it)."),
+    ("paper", "--color-paper", "Declared paper lab(96.648 0.43 1.2) — the warm off-white card surface."),
     ("arena", "--color-arena", "Declared arena brand black."),
     ("pinterest", "--color-pinterest", "Declared pinterest brand red."),
     ("tumblr", "--color-tumblr", "Declared tumblr brand navy."),
@@ -244,10 +244,13 @@ for n in sorted(R):
             description=f"Declared radius {n[len('--radius-'):]}.")
 try:
     fv = st("signup-cta", "default")["borderTopLeftRadius"]
-    fv = str(int(float(fv[:-2]))) + "px" if fv.endswith("px") else fv
+    # %g keeps 2.5px as 2.5px (int() truncated it); a computed rounded-full (3.35544e+07px, the CSS maximum)
+    # is written 9999px as the kit writes a pill radius, never as an exact 33554400px.
+    n = float(fv[:-2]) if fv.endswith("px") else None
+    fv = ("9999px" if n > 9999 else "%gpx" % n) if n is not None else fv
     radii["full"] = {"value": fv, "type": "dimension",
-                     "source": "computed borderTopLeftRadius of signup-cta default (raw/components-computed.json)",
-                     "description": "rounded-full computes to the CSS maximum 3.35544e+07px — every pill control (CTAs, tabs, menu button, Next)."}
+                     "source": "computed borderTopLeftRadius of signup-cta default (raw/components-computed.json), %s" % st("signup-cta", "default")["borderTopLeftRadius"],
+                     "description": "rounded-full computes to the CSS maximum 3.35544e+07px, written 9999px — every pill control (CTAs, tabs, menu button, Next)."}
     radii["card-quarter"] = {"value": st("qr-card", "default")["borderTopLeftRadius"], "type": "other",
                              "source": "computed borderTopLeftRadius of qr-card default (raw/components-computed.json)",
                              "description": "The QR-card's 25% radius."}
@@ -306,24 +309,28 @@ for key, n in [("canvas-enter", "--animate-canvas-enter"), ("enter", "--animate-
 # ------------------------------------------------------------- components
 
 comp = SPEC["component"]
+# Components the capture read from the wrong element (README, What to distrust).
+WRONG_ELEMENT = {"hero-search": "the header's Log in / Sign up group, 204 x 58, not the hero search pill"}
+
 for name, cname, state, prop, ty_, desc in [
     ("button-height-medium", "signup-cta", "default", "height", "dimension", "Header CTA height (48px)."),
     ("button-height-large", "auth-next", "default", "height", "dimension", "Auth Next / mobile sign-up height (56px)."),
     ("button-padding", "signup-cta", "default", "paddingLeft", "dimension", "CTA horizontal padding."),
-    ("nav-link-size", "nav-link", "default", "fontSize", "fontSize", "Nav link 15px/22."),
+    ("nav-link-size", "nav-link", "default", "fontSize", "dimension", "Nav link 15px/22."),
     ("field-height", "auth-input", "default", "height", "dimension", "Auth input height."),
     ("card-width-auth", "auth-card", "default", "width", "dimension", "Auth card width (344px)."),
     ("menu-button", "m-menu-button", "default", "width", "dimension", "Mobile menu button 44x44 hit area."),
     ("search-pill-height", "search-pill", "default", "height", "dimension", "Explore search pill height (56px)."),
-    ("hero-search-height", "hero-search", "default", "height", "dimension", "Home hero search pill height (~82px)."),
+    ("hero-search-height", "hero-search", "default", "height", "dimension", "Read from the wrong element: the header's Log in / Sign up group (204 x 58), not the hero search pill; recapture needed."),
     ("tab-height", "cat-tab", "default", "height", "dimension", "Category tab height (~40px)."),
 ]:
     if have(cname, state):
         v = st(cname, state).get(prop)
         if v and v not in ("0px", "auto"):
-            comp[name] = {"value": v, "type": ty_,
-                          "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
-                          "description": desc}
+            src = f"computed {prop} of {cname} {state} (raw/components-computed.json)"
+            if cname in WRONG_ELEMENT:
+                src += "; read from the wrong element (%s); recapture needed" % WRONG_ELEMENT[cname]
+            comp[name] = {"value": v, "type": ty_, "source": src, "description": desc}
 # measured state move: disabled→enabled on the auth Next button
 try:
     comp.setdefault("button", {})["state-move"] = {

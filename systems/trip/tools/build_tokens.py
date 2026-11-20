@@ -48,7 +48,41 @@ SRC_STATE = (
 FONT = '"Trip Geom", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif'
 
 
+def to_hex(value: str) -> str:
+    """A CSS colour as #rrggbb, or #rrggbbaa when translucent; refuses anything else.
+    tools/catalog.py and the contrast check read only hex, so hsla()/rgba() strings were skipped."""
+    v = re.sub(r"\s+", " ", value.strip().lower())
+    if v == "transparent":
+        return "#00000000"
+    m = re.fullmatch(r"#([0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})", v)
+    if m:
+        h = m.group(1)
+        h = "".join(c * 2 for c in h) if len(h) in (3, 4) else h
+        return "#" + (h[:6] if h[6:] == "ff" else h)
+    m = re.fullmatch(r"(rgba?|hsla?)\((.*)\)", v)
+    if not m:
+        raise SystemExit(f"not a colour: {value!r}")
+    fn, parts = m.group(1), [x for x in re.split(r"[\s,/]+", m.group(2).strip()) if x]
+    if len(parts) not in (3, 4):
+        raise SystemExit(f"not a colour: {value!r}")
+    pct = lambda x, scale: float(x[:-1]) / 100 * scale if x.endswith("%") else float(x)
+    a = pct(parts[3], 1) if len(parts) == 4 else 1.0
+    if fn.startswith("rgb"):
+        r, g, b = (pct(x, 255) for x in parts[:3])
+    else:
+        hh, ss, ll = float(parts[0]) % 360 / 30, pct(parts[1], 1), pct(parts[2], 1)
+        f = lambda n: ll - ss * min(ll, 1 - ll) * max(-1, min((n + hh) % 12 - 3, 9 - (n + hh) % 12, 1))
+        r, g, b = (f(n) * 255 for n in (0, 8, 4))
+    out = "#" + "".join("%02x" % max(0, min(255, round(c))) for c in (r, g, b))
+    return out if a >= 1 else out + "%02x" % round(a * 255)
+
+
 def tok(value, typ, source, **ext):
+    if typ == "color" and isinstance(value, str) and not value.startswith("{"):
+        hexed = to_hex(value)
+        if hexed != value.strip().lower():
+            ext = {**ext, "declared": value.strip()}
+        value = hexed
     out = {"$value": value, "$type": typ, "$extensions": {"source": source}}
     out["$extensions"].update(ext)
     return out
@@ -197,7 +231,9 @@ def build() -> dict:
 
     # Computed elevation, not in the custom-property dump.
     light["shadow"]["search-card"] = tok(
-        "0px 0px 4px 0px {core.color.neutral-black-a16}, 0px 8px 32px 0px rgba(7, 20, 60, 0.12)",
+        # The first layer's computed colour is rgba(7, 20, 60, 0.16), not the palette's
+        # neutral-black-a16 rgba(0, 0, 0, 0.16) it was once aliased to.
+        "0px 0px 4px 0px rgba(7, 20, 60, 0.16), 0px 8px 32px 0px rgba(7, 20, 60, 0.12)",
         "shadow",
         SRC_SHADOW,
         element=".mc-srh-box.experiment-e",

@@ -54,7 +54,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   const ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
   page.setDefaultTimeout(8000);

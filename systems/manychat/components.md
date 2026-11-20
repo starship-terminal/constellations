@@ -127,7 +127,7 @@ The EN language switch is a div. Measured; the locale was never changed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 99.92 x 44.31; padding 14px 20px; radius 999px; background transparent; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; a::before.p_y-s.p_x-l 99.9219pxx44.3125px T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 999px |
+| default (same: hover, focus-visible, pressed) | size 99.92 x 44.31; padding 14px 20px; radius 999px; background transparent; text CoFo Sans Mono 12/16.32 400, #000000 (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; a::before.p_y-s.p_x-l 99.9219pxx44.3125px T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 999px |
 
 Child layers that carry the look: a::before 99.9219pxx44.3125px border 1px solid transparent radius 999px.
 
@@ -138,7 +138,7 @@ The nav "Get started" pill. It opens the sign-up flow. Measured, never followed.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, #0f0f0f `core.color.raw.neutral-900`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0` (measured white on a white fill, so the visible label's colour was not read); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Get started pill default](components/crops/nav-cta-default.png) ![Get started pill hover](components/crops/nav-cta-hover.png) ![Get started pill focus-visible](components/crops/nav-cta-focus-visible.png) ![Get started pill pressed](components/crops/nav-cta-pressed.png)
 
@@ -184,7 +184,7 @@ The neon-pink hero pill. It opens sign-up. Measured, never followed. Read as `he
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 149.95 x 48; padding 14px 20px; radius 999px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 14/20 400, #ffffff `core.color.raw.neutral-0`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 149.95 x 48; padding 14px 20px; radius 999px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 14/20 400, #ffffff `core.color.raw.neutral-0` (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Hero Get started default](components/crops/hero-cta-default.png) ![Hero Get started hover](components/crops/hero-cta-hover.png) ![Hero Get started focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero Get started pressed](components/crops/hero-cta-pressed.png)
 
@@ -243,7 +243,7 @@ The Free plan card: $0, 25 active contacts, Start for free. Read as `price-card`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 304.53 x 48; padding 14px 20px; radius 999px; background #0f0f0f `core.color.raw.neutral-900`; text CoFo Sans Mono 12/20 400, #ffffff `core.color.raw.neutral-0`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; ancestors div.relative.h-full bg #ffffff `core.color.raw.neutral-0` |
+| default (same: hover, focus-visible, pressed) | size 304.53 x 48; padding 14px 20px; radius 999px; background #0f0f0f `core.color.raw.neutral-900`; text CoFo Sans Mono 12/20 400, #ffffff `core.color.raw.neutral-0` (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; ancestors div.relative.h-full bg #ffffff `core.color.raw.neutral-0` |
 
 ![Price CTA default](components/crops/price-cta-default.png) ![Price CTA hover](components/crops/price-cta-hover.png) ![Price CTA focus-visible](components/crops/price-cta-focus-visible.png) ![Price CTA pressed](components/crops/price-cta-pressed.png)
 
@@ -268,7 +268,7 @@ A product-page Get started pill. Measured, never followed. Read as `product-cta`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, #0f0f0f `core.color.raw.neutral-900`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0` (measured white on a white fill, so the visible label's colour was not read); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Product CTA default](components/crops/product-cta-default.png) ![Product CTA hover](components/crops/product-cta-hover.png) ![Product CTA focus-visible](components/crops/product-cta-focus-visible.png) ![Product CTA pressed](components/crops/product-cta-pressed.png)
 
@@ -330,7 +330,7 @@ A Get started link at 390px. Measured, never followed. Read as `m-cta` on the ho
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 128.53 x 32.31; padding 8px 16px; radius 32px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0`; transition background 0.3s ease, transform 0.3s ease; opacity 0; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 128.53 x 32.31; padding 8px 16px; radius 32px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0` (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; opacity 0; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Mobile Get started default](components/crops/m-cta-default.png) ![Mobile Get started hover](components/crops/m-cta-hover.png) ![Mobile Get started focus-visible](components/crops/m-cta-focus-visible.png) ![Mobile Get started pressed](components/crops/m-cta-pressed.png)
 

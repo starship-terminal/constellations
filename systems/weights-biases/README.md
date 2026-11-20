@@ -131,4 +131,4 @@ python3 tools/build_style_guide.py
 python3 tools/catalog.py design-md weights-biases
 ```
 
-Run the last command from the repo root. `tools/build_tokens.py` checks that every token has a source. It does not regenerate tokens.json. The tokens were written from the readings.
+Run the last command from the repo root. `tools/build_tokens.py` checks that every token has a source, that every alias resolves, and that every colour labelled Measured is held by a file in [raw/](raw/). It does not regenerate tokens.json: the tokens were written by hand from the readings at capture time.

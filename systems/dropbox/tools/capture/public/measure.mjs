@@ -145,8 +145,8 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    c.states[state] = { error: String(e.message).slice(0, 200) };
-    log('  !', key, state, String(e.message).slice(0, 120));
+    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    log('  !', key, state, String(e.message || e).slice(0, 120));
   }
 }
 
@@ -157,7 +157,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
-  if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
+  if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message || e).slice(0, 80)); } }
   const loc = target.filter({ visible: true }).first();
   // A briefly unmounted element gets up to 6s to come back before declaring a
   // miss (sections hydrate lazily as the page scrolls them in).
@@ -201,12 +201,22 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          // Close it again after the reading: a menu left open holds focus, so every later
+          // focus-visible on the page records 'focus failed'. Escape closes a menu; an
+          // accordion still reporting aria-expanded=true is toggled back.
+          undo = async () => {
+            await page.keyboard.press('Escape'); await page.waitForTimeout(300);
+            const l = loc.filter({ visible: true }).first();
+            if ((await l.getAttribute('aria-expanded').catch(() => null)) === 'true') { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(600); }
+          };
+        }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
-      log('  !', key, st, String(e.message).slice(0, 120));
+      log('  !', key, st, String(e.message || e).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
@@ -385,7 +395,7 @@ async function home() {
   await S('nav-signup', q('nav.dwg-nav a').filter({ hasText: /^\s*Sign up\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Sign-up link', desc: 'The header Sign up link; measured, never followed.', sel: 'nav a Sign up' }, { noScroll: true });
   await S('nav-login', q('nav.dwg-nav a').filter({ hasText: /^\s*Log in\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Log-in link', desc: 'The header Log in link; measured, never followed.', sel: 'nav a Log in' }, { noScroll: true });
   await S('nav-cta', q('nav.dwg-nav a').filter({ hasText: /^\s*Get started\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Get-started action', desc: 'The header Get started action (the blue pill); measured, never followed.', sel: 'nav a Get started' }, { noScroll: true });
-  try { await openFlyout(); } catch (e) { log('  ! flyout open failed', String(e.message).split('\n')[0]); }
+  try { await openFlyout(); } catch (e) { log('  ! flyout open failed', String(e.message || e).split('\n')[0]); }
   await markFlyout();
   await S('nav-dropdown', q('[data-m-mark="flyout"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Nav mega-menu', desc: 'The Products mega-menu panel (Dropbox / Replay / Sign / Reclaim.ai / Dash / DocSend / Early access), opened by its own trigger.', sel: 'opened Products panel' }, { noScroll: true, noReset: true });
   // The panel closes when the pointer leaves; re-hover Products before every
@@ -493,7 +503,8 @@ async function footer() {
   await page.waitForTimeout(1500);
   await S('footer', q('footer').filter({ visible: true }).last(), ['default'], { group: g, title: 'Footer', desc: 'The footer: the product/company link columns, app links, the language and legal links.', sel: 'footer' }, { noScroll: true });
   await S('footer-link', q('footer a').filter({ hasText: /Help center|Plans|Desktop app|Cookie policy/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Footer link', sel: 'footer a' }, { noScroll: true });
-  await S('social-icon', q('footer a[href*="instagram"], footer a[href*="facebook"], footer a[href*="x.com"], footer a[href*="twitter"], footer a[href*="linkedin"], footer a[href*="youtube"], footer a[aria-label*="Instagram" i], footer a[aria-label*="Facebook" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Social link', desc: 'A social link in the footer.', sel: 'footer social a' }, { noScroll: true });
+  // href*="x.com" matched dropbox.com links ("Dropbox Sign"): match the x.com host only.
+  await S('social-icon', q('footer a[href*="instagram"], footer a[href*="facebook"], footer a[href^="https://x.com"], footer a[href^="https://twitter.com"], footer a[href*="linkedin"], footer a[href*="youtube"], footer a[aria-label*="Instagram" i], footer a[aria-label*="Facebook" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Social link', desc: 'A social link in the footer.', sel: 'footer social a' }, { noScroll: true });
   save();
 }
 
@@ -506,7 +517,7 @@ async function mobile() {
   await S('m-menu-button', menu, ['default'], { group: g, title: 'Menu button', desc: 'The hamburger toggle in the mobile nav.', sel: 'dwg-nav hamburger button' }, { noScroll: true });
   try {
     if (await menu.count()) { await menu.click({ timeout: 5000 }).catch(() => menu.evaluate((el) => el.click())); await page.waitForTimeout(1600); }
-  } catch (e) { log('  ! mobile menu toggle failed', String(e.message).split('\n')[0]); }
+  } catch (e) { log('  ! mobile menu toggle failed', String(e.message || e).split('\n')[0]); }
   await markMobileMenu();
   await S('m-menu-open', q('[data-m-mark="mmenu"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The opened mobile navigation panel (the overlay holding the menu items and the auth actions).', sel: 'opened mobile menu' }, { noScroll: true });
   await S('m-nav-item', q('[data-m-mark="mmenu"] a, [data-m-mark="mmenu"] button, [data-m-mark="mmenu"] [role="link"], [data-m-mark="mmenu"] [role="button"]').filter({ hasText: /^\s*(Products|Solutions|Business|Pricing|Get app)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav item', desc: 'A row inside the opened mobile menu (Products / Solutions / Business / Pricing / Get app).', sel: 'mobile menu row' }, { noScroll: true });

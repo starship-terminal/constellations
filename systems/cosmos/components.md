@@ -196,7 +196,7 @@ A "Selected by Cosmos" carousel card (artwork, title, @handle and element count)
 |---|---|
 | default (same: hover, focus-visible, pressed) | size 365 x 200.98; background transparent; text cosmosOracle 32/48 800, lab(100 0 0); layers div.relative.flex 365.0x151.0 lab(95.1978 0.212193 0.601578) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 2px 12px 0px, rgba(0, 0, 0, 0.1) 0px 4px 16px 0px 16px; div.absolute.inset-0 365.0x151.0 oklab(0 0 0 / 0.35) |
 
-Child layers that carry the look: div 365x151 background lab(95.1978 0.212193 0.601578) radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 2px 12px 0px, rgba(0, 0, 0, 0.1) 0px 4px 16px 0px; div 365x151 background oklab(0 0 0 / 0.35).
+Child layers that carry the look: div 365x151 background lab(95.1978 0.212193 0.601578) radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 2px 12px 0px, rgba(0, 0, 0, 0.1) `shadow.color.primary` 0px 4px 16px 0px; div 365x151 background oklab(0 0 0 / 0.35).
 
 ![Selected card default](components/crops/selected-card-default.png) ![Selected card hover](components/crops/selected-card-hover.png) ![Selected card focus-visible](components/crops/selected-card-focus-visible.png) ![Selected card pressed](components/crops/selected-card-pressed.png)
 

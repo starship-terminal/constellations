@@ -98,6 +98,8 @@ The login stylesheets were cross-origin (13 blocked). Login values are computed 
 
 Screenshots are missing, declared under layoutGaps. Do not treat the style guide specimens as captures of the live page.
 
+tokens.json is written by hand. `tools/build/build_tokens.py` does not write it: it checks that every value appears in [raw/computed.json](raw/computed.json) and that every alias resolves. Four values have no reading there and say so in their source: the home h2 type (`core.typography.section`) and the Find a Creator radius (`core.radius.search`) are Reconstruction, and the nav line height and the login font's fallback stack were entered by hand.
+
 ## Fonts
 
 Marketing: Oracle, then Noto Sans JP, Noto Sans KR, Noto Sans SC, Noto Sans TC, Noto Sans Regular, Helvetica Neue, Helvetica, Arial, sans-serif. Oracle is proprietary and is not in this package. The style guide falls back to Helvetica Neue.
@@ -132,7 +134,7 @@ Login: ABC Oracle Plus Variable. Also proprietary, also not shipped. Computed we
 ## Rebuild
 
 ```bash
-python3 tools/build/build_tokens.py
+python3 tools/build/build_tokens.py   # checks tokens.json against raw/; writes nothing
 python3 tools/package_tests.py patreon
 python3 tools/catalog.py design-md patreon
 ```

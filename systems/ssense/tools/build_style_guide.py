@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Light only: no dark set was measured."""
+import html
 import json
 import pathlib
 import re
@@ -53,14 +54,17 @@ for name, token in flat(T["light"]):
         f'<span>{name}</span><code>{token["$value"]}</code></div>'
     )
 
+FALLBACK = "Helvetica, Arial, sans-serif"  # the body's fallback, which the note promises
 type_rows = []
 for name, token in flat(T["core"]):
     if token["$type"] != "typography":
         continue
     v = token["$value"]
     type_rows.append(
-        f'<p class="type" style="font: {v["fontWeight"]} {v["fontSize"]}/{v["lineHeight"]} {v["fontFamily"]};'
-        f'letter-spacing:{v["letterSpacing"]}">{name} · SSENSE</p>'
+        # The family is an alias ({font.family.favorit}): resolve it to its custom property.
+        # The proprietary faces are not loaded here, so the guide's own fallback follows the token's family.
+        f'<p class="type" style="font: {alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}, {FALLBACK};'
+        f'letter-spacing:{alias(v["letterSpacing"])}">{name} · SSENSE</p>'
     )
 
 html = f"""<!doctype html>

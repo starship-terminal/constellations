@@ -35,6 +35,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { chromium, BASE, BLOG, M, open, closePromo, setTheme, setBlogTheme, paintedTheme, styleOf, crop, centre, domFind, patch, UA, UA_MOBILE, RAW } from './lib.mjs';
 import { safeUrl } from '../safe-url.mjs';
+import { toggleBefore, toggleOpen, toggleRestore } from './toggle.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -145,6 +146,14 @@ const via = { 'hover': 'mouse hover over the element', 'focus-visible': 'keyboar
 const SIDEBAR = 'div[class*="bg-sidebar"]';
 const MENU_BTN = 'button[class*="peer/menu-button"]';
 const MENU_LINK = 'a[class*="peer/menu-button"]';
+// The sidebar's open state: the shadcn wrapper's data-state when present,
+// else the rail's width (the collapsed rail is 64px), for the toggle restore.
+const sidebarState = () => page.evaluate((sel) => {
+  const w = document.querySelector('[data-state="expanded"], [data-state="collapsed"]');
+  if (w) return w.getAttribute('data-state');
+  const s = document.querySelector(sel);
+  return s ? (s.getBoundingClientRect().width > 100 ? 'expanded' : 'collapsed') : null;
+}, SIDEBAR);
 
 const CHROME = [
   { key: 'app-sidebar', group: 'App chrome', title: 'App sidebar',
@@ -160,7 +169,9 @@ const CHROME = [
     desc: 'The sidebar footer control that collapses the rail — a local UI toggle. "opened" is its own press (the rail collapsed), restored afterwards.',
     sel: 'button (text Toggle Sidebar)', find: async (p) => await domFind(p, /toggle sidebar/i, { sel: 'button', tag: 'st', minW: 40 }), states: ['default', 'hover',
       { name: 'opened', via: 'the "Toggle Sidebar" button\'s own press (sidebar collapsed; pressed again to restore)',
-        fn: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); } },
+        stateOf: sidebarState,
+        fn: async (loc) => { await loc.click({ timeout: 4000 }); await page.waitForTimeout(900); },
+        restore: async (loc) => { await loc.click({ timeout: 4000 }); await page.waitForTimeout(900); } },
     ] },
   { key: 'app-search-button', group: 'App chrome', title: 'Search button (Ctrl K)',
     desc: 'The sidebar "Search" menu-button carrying the ⌘K hint; opens the command search dialog.',
@@ -272,10 +283,12 @@ const PRO = [
   { key: 'faq-question', group: 'Pro', title: 'FAQ accordion question',
     desc: 'A question row in the /pro FAQ accordion. "opened" is its own press revealing the answer.',
     sel: 'button (text What do I get with Pro)', find: async (p) => await domFind(p, /what do i get with pro/i, { sel: 'button', tag: 'fq', minW: 100 }), states: ['default', 'hover', 'focus-visible',
-      { name: 'opened', via: 'the question row\'s own press (answer visible; pressed again to close)', fn: async (loc) => {
-        await loc.click({ timeout: 4000 }).catch(() => {});
+      { name: 'opened', via: 'the question row\'s own press (answer visible; pressed again to close)',
+      stateOf: async (loc) => (await loc.getAttribute('aria-expanded')) ?? (await loc.getAttribute('data-state')),
+      fn: async (loc) => {
+        await loc.click({ timeout: 4000 });
         await page.waitForTimeout(700);
-      } },
+      }, restore: async (loc) => { await loc.click({ timeout: 4000 }); await page.waitForTimeout(700); } },
     ] },
 ];
 
@@ -551,6 +564,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
       // the forced state into the next measurement.
       let pressed = null;
       let darkOn = false;
+      let toggle = null;  // a toggled state's press and its state before, for the restore
       try {
         await reset();
         let viaText = 'resting state';
@@ -561,7 +575,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
         else if (st === 'pressed') { pressed = await pressOn(readLoc); viaText = via.pressed; }
         else if (st === 'dark') { if (!(await darkFn(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = isBlog(g.page) ? via.darkblog : via.dark; }
         else if (st === 'darkblog') { if (!(await setBlogTheme(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = via.darkblog; }
-        else if (st && typeof st === 'object' && st.fn) { const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
+        else if (st && typeof st === 'object' && st.fn) { toggle = await toggleBefore(st, readLoc); const alt = await toggleOpen(st, toggle); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
         else if (typeof st === 'function') { await st(readLoc); viaText = 'reached by the component\'s own UI toggle'; }
         await centre(readLoc).catch(() => {});
         const v = await styleOf(readLoc);
@@ -580,6 +594,15 @@ for (const [key, g] of Object.entries(GROUPS)) {
         log(' ', spec.key, name, 'FAILED', e.message.split('\n')[0]);
       } finally {
         if (pressed != null) await pressOff(pressed).catch(() => {});
+        // A toggled state puts the page back to the state it had before its
+        // press, even when the reading failed: without it every later
+        // component was measured in the toggled layout (the collapsed
+        // sidebar, an open FAQ row). A press that never landed leaves
+        // nothing to undo; a stale control is found again (toggle.mjs).
+        if (toggle && st.restore) {
+          const refind = async () => { const a = await spec.find(page).catch(() => null); return a && await a.count() ? a.first() : null; };
+          await toggleRestore(st, toggle, refind).catch((e) => log(' ', spec.key, name, 'restore failed', e.message.split('\n')[0]));
+        }
         if (darkOn) {
           let back = await darkFn(page, 'light').catch(() => false);
           if (!back) back = await darkFn(page, 'light').catch(() => false);

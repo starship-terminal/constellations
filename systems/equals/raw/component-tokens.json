@@ -831,79 +831,79 @@
       "size": {
         "tab": {
           "value": "11px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of wb-sheet-tab default (raw/components-computed.json)",
           "description": "The 11px workbook sheet-tab label."
         },
         "app": {
           "value": "12px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of signin-continue default (raw/components-computed.json)",
           "description": "The 12px go.equals.com app text — sign-in field, submit, footer."
         },
         "cell": {
           "value": "12px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of wb-cell default (raw/components-computed.json)",
           "description": "The 12px workbook cell label."
         },
         "small": {
           "value": "14px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of mkt-nav-link default (raw/components-computed.json)",
           "description": "The 14px marketing UI size — nav links, eyebrow labels, buttons, plan features' chrome."
         },
         "field": {
           "value": "16px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of hero-email default (raw/components-computed.json)",
           "description": "The 16px field and plan-feature text."
         },
         "body": {
           "value": "24px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of faq-question default (raw/components-computed.json)",
           "description": "The 18px marketing body size (plan cards, FAQ, header text)."
         },
         "docs-body": {
           "value": "18px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of docs-para default (raw/components-computed.json)",
           "description": "The 18px docs paragraph size."
         },
         "lede": {
           "value": "24px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
           "description": "The 24px hero lede and use-case lede."
         },
         "signin-display": {
           "value": "30px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of signin-heading default (raw/components-computed.json)",
           "description": "The 30px 'Sign in to Equals' card heading — Serrif Condensed inside the app."
         },
         "docs-h1": {
           "value": "36px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of docs-h1 default (raw/components-computed.json)",
           "description": "The 36px docs page heading."
         },
         "section": {
           "value": "48px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
           "description": "The 48px marketing section heading; also the mobile display size."
         },
         "mobile-display": {
           "value": "48px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of m-hero-h1 default (raw/components-computed.json)",
           "description": "The 48px display at 390px."
         },
         "display": {
           "value": "110px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
           "description": "The 110px marketing display ('What's after Excel?', 'ARR Dashboard')."
         }
@@ -1343,7 +1343,7 @@
       "focus": {
         "value": "{color.app.primary}",
         "type": "color",
-        "source": "computed outlineColor of docs-search focus-visible (raw/components-computed.json); matches declared color.app.primary",
+        "source": "the outline 1px auto focus ring of docs-search focus-visible (raw/components-computed.json outline/boxShadow); matches declared color.app.primary",
         "description": "The primary outline the docs search draws on keyboard focus."
       }
     },
@@ -1371,12 +1371,6 @@
         "type": "color",
         "source": "computed borderTopColor of faq default (raw/components-computed.json)",
         "description": "The 10%-black hairline the FAQ dividers draw."
-      },
-      "focus": {
-        "value": "#101010",
-        "type": "color",
-        "source": "computed outlineColor of mkt-nav-link focus-visible (raw/components-computed.json)",
-        "description": "The #101010 keyboard-focus outline on marketing links (1px auto, 1px offset)."
       },
       "card": {
         "value": "{color.brand.grey-1}",
@@ -1561,12 +1555,6 @@
         "type": "color",
         "source": "css-var --color-background behind the sign-in card (raw/css-vars.json); matches declared color.app.background",
         "description": "The #fcfcfc app canvas behind the sign-in card (declared --color-background, app grey-25)."
-      },
-      "card": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of signin-card default (raw/components-computed.json)",
-        "description": "The sign-in card's own surface (transparent on the canvas)."
       },
       "heading": {
         "value": "{color.brand.black}",
@@ -1772,7 +1760,7 @@
       "focus": {
         "value": "{color.app.primary}",
         "type": "color",
-        "source": "computed outlineColor of d-docs-search focus-visible (raw/components-computed.json); matches declared color.app.primary",
+        "source": "the outline 1px auto focus ring of d-docs-search focus-visible (raw/components-computed.json outline/boxShadow); matches declared color.app.primary",
         "description": "The primary outline on dark."
       },
       "line": {
@@ -1892,5 +1880,15 @@
       "source": "measured h of m-hamburger default (raw/components-computed.json)",
       "description": "The 40px phone hamburger hit area."
     }
-  }
+  },
+  "_gaps": [
+    {
+      "token": "light.marketing.focus",
+      "why": "mkt-nav-link focus-visible paints no focus ring of its own: outline 1px auto #101010 is the browser's default auto ring, and no box-shadow layer has a spread"
+    },
+    {
+      "token": "light.signin.card",
+      "why": "signin-card default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    }
+  ]
 }

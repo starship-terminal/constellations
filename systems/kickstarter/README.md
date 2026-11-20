@@ -105,13 +105,15 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## What to distrust
 
-- Spacing steps other than 2, 4, 8, and 16 are a 4px module derived from the radius tokens, not a declared `--kds-spacing-*` scale. The sheet does not publish one.
-- Type roles are derived from computed sizes on the public pages (home h1, banner, body, buttons), not from a declared type-token group. Inter is the computed body family. One `@font-face` names Effra and was not the painted body font.
+- The spacing steps are a 4px module typed in by hand at capture time and labelled Reconstruction. 2, 4, 8 and 16 equal declared elevation and radius values, and 48 is the measured search height. The sheet publishes no `--kds-spacing-*` scale.
+- `core.typography.display` and `core.fontSize.display` are the measured home hero h1 (34/42, weight 400). The other type roles and sizes were typed in by hand at capture time and are labelled Reconstruction: no reading in raw/ holds them, and the sheet declares no type-token group. Inter is the computed body family. One `@font-face` names Effra and was not the painted body font.
+- `core.motion.duration.enter` (300ms) and `core.motion.easing.nav` (cubic-bezier(0, 1, 1, 1)) were typed from the creator-nav submenu rule, which raw/motion.json does not hold; they are Reconstructions. `easing.out` is the CSS `ease-out` keyword, cubic-bezier(0, 0, 0.58, 1).
 - The pledge green (`#028858` / `#015738`) is measured on the button. It is not a `--kds-color-*` name. The nearest declared greens are `light.color.background.accent.green.bold` (`#037242`) and `light.color.brand` (`#05ce78`).
 - `--kds-shadow-0-foo: bar` is in the sheet and was left out of tokens. Elevation 0 is the transparent rest shadow.
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.
 - Login's Continue button is mid-load in the viewport shot (a spinner over the label) because Turnstile is present. The full-page shot shows the same card. The widget was not solved.
 - A yellow status toast was on the live site. It is not part of the design system.
+- Every committed reading and screenshot was taken by scripts that hid `navigator.webdriver` and launched Chrome with `--disable-blink-features=AutomationControlled`. The scripts no longer hide automation (2026-11 audit), so a recapture may meet bot checks this one did not.
 
 ## Fonts
 
@@ -122,8 +124,8 @@ Inter, loaded from Google Fonts (`fonts.googleapis.com`, weights 100–900, opti
 | Item | Status | Evidence |
 |---|---|---|
 | Colour roles | captured | `light.color.*` from `--kds-color-*` |
-| Type roles | captured | `core.typography.*`, derived from computed styles |
-| Spacing | captured | `core.spacing`, 4px module, 4 and 8 from radius tokens |
+| Type roles | captured | `core.typography.*`: display measured, the rest a hand-typed reconstruction |
+| Spacing | captured | `core.spacing`, a hand-typed 4px module (reconstruction); 48 measured |
 | Radii | captured | `core.radius.small/medium/large` |
 | Borders | captured | `light.color.border.*`, 1px hairline |
 | Elevation | captured | `core.elevation.0`–`4` from `--kds-shadow-*` |

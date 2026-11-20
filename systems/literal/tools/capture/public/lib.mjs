@@ -1,12 +1,16 @@
 // Shared helpers for the literal.club public captures.
 // Run with PLAYWRIGHT pointing at a Playwright install (index.mjs).
 //
-// literal.club sits behind Cloudflare. Headless Chromium and Playwright's
-// headed Chrome channel both stop on "Verify you are human". A real Chrome
-// process (no automation flag) clears the managed challenge on its own.
-// Launch that Chrome, then set CDP=http://127.0.0.1:9339. This kit attaches
-// to it. The Turnstile checkbox is never clicked. Consent overlays are
-// hidden, never answered. Nothing is signed into or submitted.
+// literal.club sits behind Cloudflare. A bot check is a boundary: when a
+// challenge page ("Verify you are human", "Just a moment") is still showing
+// after clearChallenge's wait, open() throws and the page is not measured or
+// shot. Nothing here solves, clicks, hides or works around a challenge.
+// The scripts attach over CDP (CDP=http://127.0.0.1:9339) to a Chrome the
+// operator starts with a throwaway profile, for example
+//   chrome --remote-debugging-port=9339 --user-data-dir="$(mktemp -d)"
+// and never the operator's own profile. Every page opens in a fresh browser
+// context, so no cookie or sign-in of that Chrome is used. Consent overlays
+// are hidden, never answered. Nothing is signed into or submitted.
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -36,14 +40,14 @@ export async function launchBrowser() {
   return chromium.connectOverCDP(CDP);
 }
 
-export async function newContext(browser, { mobile = false, width = 1440, height = 900, dpr = 1, colorScheme = 'light' } = {}) {
-  const context = browser.contexts()[0];
-  if (!context) throw new Error('CDP Chrome has no default context. Launch Chrome with --remote-debugging-port first.');
-  return { context, mobile, width, height, dpr, colorScheme, shared: true };
-}
-
-export async function newPage(bundle) {
-  const page = await bundle.context.newPage();
+// A page in a fresh context of the CDP browser: never the default context,
+// which holds whatever profile that Chrome was started with. Closing the
+// page closes its context.
+export async function newPage({ browser, width = 1440, height = 900, colorScheme = 'light' }) {
+  const context = await browser.newContext({ viewport: { width, height }, colorScheme });
+  const page = await context.newPage();
+  page.on('close', () => { context.close().catch(() => {}); });
+  const bundle = { width, height, colorScheme };
   await page.setViewportSize({ width: bundle.width, height: bundle.height });
   if (bundle.colorScheme === 'dark') await page.emulateMedia({ colorScheme: 'dark' });
   else await page.emulateMedia({ colorScheme: 'light' });
@@ -56,7 +60,7 @@ export async function hideConsent(page) {
     #onetrust-consent-sdk, #onetrust-banner-sdk, .onetrust-pc-dark-filter,
     .osano-cm-window, #transcend-consent-manager,
     [id*="cookie-banner"], [class*="cookie-banner"], [class*="CookieBanner"],
-    iframe[src*="consent"], iframe[src*="challenges.cloudflare"] {
+    iframe[src*="consent"] {
       display: none !important; visibility: hidden !important; pointer-events: none !important;
     }
   ` }).catch(() => {});
@@ -88,6 +92,8 @@ export async function clearChallenge(page, { tries = 16, step = 1500 } = {}) {
 export async function open(page, url, { wait = 1400 } = {}) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
   const ok = await clearChallenge(page);
+  // bot check: recorded as a boundary, not bypassed.
+  if (!ok) throw new Error(`bot check still showing on ${new URL(url).pathname}: recorded as a boundary, not bypassed`);
   await hideConsent(page);
   await page.waitForTimeout(wait);
   await hideConsent(page);

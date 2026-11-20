@@ -15,7 +15,7 @@ Every token carries $extensions.source: "css-var <name>" or "computed <where>".
 
 clearful.com paints ONE light theme across its Webflow marketing routes and
 the Tailwind /library surface; the Flutter sign-in's sampled shades sit
-under light.app.*.
+under core.sampled.app.*.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """

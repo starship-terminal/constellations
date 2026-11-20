@@ -79,7 +79,9 @@ console.log('sheets kept', sheets.length, 'dropped', bodies.size - (sheets.lengt
 await page.close();
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The probe gets the 1440 x 900 viewport its notes claim. A bare newPage() is 1280 x 720, so vw and vh
+// values resolved 11% and 20% small (4.5vw read 57.59px, not 64.8px).
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];

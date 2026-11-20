@@ -74,6 +74,27 @@ def check(path, ty, val):
         raise ValueError(f"{path}: duration {val!r}")
     if ty == "cubicBezier" and not (isinstance(val, list) and len(val) == 4):
         raise ValueError(f"{path}: cubicBezier {val!r}")
+    if ty == "shadow":
+        # The kit's shadow check: a list of layers, each with px offsets, blur and spread and a colour.
+        if not isinstance(val, list) or not val:
+            raise ValueError(f"{path}: shadow {val!r} is not a list of layers")
+        for layer in val:
+            for k in ("offsetX", "offsetY", "blur", "spread"):
+                if not re.fullmatch(r"-?\d*\.?\d+px", str(layer.get(k, ""))):
+                    raise ValueError(f"{path}: shadow {k} {layer.get(k)!r}")
+            if not str(layer.get("color", "")).startswith("{"):
+                norm_color(layer.get("color", ""))
+    if ty == "gradient":
+        # At least two stops, each with a readable colour and a numeric position between 0 and 1.
+        if not isinstance(val, list) or len(val) < 2:
+            raise ValueError(f"{path}: gradient {val!r} needs two or more stops")
+        for st in val:
+            if not isinstance(st, dict) or "color" not in st or "position" not in st:
+                raise ValueError(f"{path}: gradient stop {st!r} needs a colour and a position")
+            if not isinstance(st["position"], (int, float)) or isinstance(st["position"], bool) or not 0 <= st["position"] <= 1:
+                raise ValueError(f"{path}: gradient stop position {st['position']!r} is not a number from 0 to 1")
+            if not str(st["color"]).startswith("{"):
+                norm_color(st["color"])
 
 
 def leaf(path, spec, theme):
@@ -139,11 +160,36 @@ def aliases(v):
     return []
 
 
-for prefix, tree, names in (("core", core, NAMES), ("light", light, NAMES_L), ("dark", dark, NAMES_D)):
-    for n, t in list(tokens_of(tree)):
-        for a in aliases(t["$value"]):
-            if a not in names:
-                raise KeyError(f"{prefix}.{n}: alias {{{a}}} points at nothing")
+MEMBER = {"fontFamily": "fontFamily", "fontSize": "dimension", "fontWeight": "fontWeight",
+          "lineHeight": "dimension", "letterSpacing": "dimension", "color": "color",
+          "duration": "duration", "timingFunction": "cubicBezier"}
+
+def check_aliases(core, light, dark):
+    """Every alias names a token of its own set or core, of the type its place needs."""
+    NAMES = {n for n, _ in tokens_of(core)}
+    NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
+    NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
+    for prefix, tree, names in (("core", core, NAMES), ("light", light, NAMES_L), ("dark", dark, NAMES_D)):
+        by = dict(tokens_of(core))
+        by.update(dict(tokens_of(tree)))
+        for n, t in list(tokens_of(tree)):
+            for a in aliases(t["$value"]):
+                if a not in names:
+                    raise KeyError(f"{prefix}.{n}: alias {{{a}}} points at nothing")
+            # An alias must name a token of the type its place needs (the kit's check; a colour that
+            # aliases a gradient or a dimension would pass the name check alone).
+            v = t["$value"]
+            if isinstance(v, str) and aliases(v) and t["$type"] in ("color", "dimension", "fontFamily", "duration"):
+                if by[aliases(v)[0]]["$type"] != t["$type"]:
+                    raise TypeError(f"{prefix}.{n}: alias {v} is a {by[aliases(v)[0]]['$type']}, not a {t['$type']}")
+            items = v.items() if isinstance(v, dict) else [(k, x) for layer in v for k, x in layer.items()] if isinstance(v, list) and v and isinstance(v[0], dict) else []
+            for k, m in items:
+                want = MEMBER.get(k)
+                if want and isinstance(m, str) and aliases(m) and by[aliases(m)[0]]["$type"] != want:
+                    raise TypeError(f"{prefix}.{n}: {k} {m} is a {by[aliases(m)[0]]['$type']}, not a {want}")
+
+
+check_aliases(core, light, dark)
 
 tokens = {
     "core": core,
@@ -165,11 +211,13 @@ tokens = {
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(ROOT / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+TEXT = json.dumps(tokens, indent=2, ensure_ascii=False) + "\n"
 
 
 def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+if __name__ == "__main__":
+    (ROOT / "tokens.json").write_text(TEXT)
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})

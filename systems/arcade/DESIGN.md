@@ -32,37 +32,37 @@ typography:
     fontSize: "56px"
     fontWeight: 400
     lineHeight: "67.2px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   title:
     fontFamily: "Inter Display"
     fontSize: "48px"
     fontWeight: 400
     lineHeight: "57.6px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   price:
     fontFamily: "Inter Display"
     fontSize: "36px"
     fontWeight: 400
     lineHeight: "36px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   body:
     fontFamily: "Inter Variable"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   ui:
     fontFamily: "Inter Variable"
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "20px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   small:
     fontFamily: "Inter Variable"
     fontSize: "12px"
     fontWeight: 500
     lineHeight: "16px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   mobile-nav:
     fontFamily: "Inter Variable"
     fontSize: "24px"
@@ -153,6 +153,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The app is absent.** Sign up / Log in lead to the product behind an account; no editor, agent or dashboard screen is in this package — only the marketing site that links to it.
 - **The brand blue is not the site's main action colour.** On the marketing surface every primary CTA is black `ink`; `--primary-*` shows on the demo pages (url-to-demo button, signup pair) and in links. Do not paint primary actions blue.
 - **Hover values are mild.** Nav ghosts lift to a 6%-black wash and black CTAs to `#404040`; pressed states shrink ~3% (a Webflow transform). Nothing changes colour.

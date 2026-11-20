@@ -129,12 +129,12 @@ The "Get Started" action inside the nav pill; links to /start, measured never fo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 123 x 32.03; background transparent; text Verlag 12/12 600, #ffffff `color.paper.100` |
+| default (same: pressed) | size 123 x 32.03; background transparent; text Verlag 12/12 600, #ffffff `color.paper.100` |
 | hover | child paint div.eoWgla_cta.y0DxmG_cta: background rgba(255, 255, 255, 0.04) |
 
 Child layers that carry the look: div 123x32 radius 8px shadow rgba(255, 255, 255, 0.24) `color.white-alpha.24` 0px 0px 0px 1px inset; div::after calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) radius 100%; div::before calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%).
 
-![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
+![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
 
 #### Sign-in link
 The "Sign In" action in the nav pill; links to app.me.sh/login, measured never followed. Read as `nav-signin` on the home page.
@@ -178,20 +178,20 @@ The "Get Mesh Free" pill — the painted 205x54 off-white inner of the hero CTA;
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 205 x 54; padding 0px 27px; radius 14px; background #fdfcfa `color.paper.0`; shadow rgba(255, 255, 255, 0.98) 0px 0px 4px 1px; text Verlag 18/18 600, #000000 `color.ink.950`; transition transform 0.35s ease |
+| default (same: pressed) | size 205 x 54; padding 0px 27px; radius 14px; background #fdfcfa `color.paper.0`; shadow rgba(255, 255, 255, 0.98) 0px 0px 4px 1px; text Verlag 18/18 600, #000000 `color.ink.950`; transition transform 0.35s ease |
 | hover | size 202.95 x 53.46; transform scale(0.99); child paint div.eoWgla_ctaInner: size 202.9x53.5 |
 
-![Hero CTA default](components/crops/cta-default.png) ![Hero CTA hover](components/crops/cta-hover.png) ![Hero CTA focus-visible](components/crops/cta-focus-visible.png) ![Hero CTA pressed](components/crops/cta-pressed.png)
+![Hero CTA default](components/crops/cta-default.png) ![Hero CTA hover](components/crops/cta-hover.png) ![Hero CTA pressed](components/crops/cta-pressed.png)
 
 #### Bottom CTA
 The "Get Mesh Free" pill closing the page — a white 185x52 button on the #0f0f10 bottom band; never followed. Read as `cta-bottom` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 185 x 52; radius 16px; background #ffffff `color.paper.100`; text Verlag 16/16 600, #000000 `color.ink.950`; transition background-color 0.15s ease-in-out |
+| default (same: pressed) | size 185 x 52; radius 16px; background #ffffff `color.paper.100`; text Verlag 16/16 600, #000000 `color.ink.950`; transition background-color 0.15s ease-in-out |
 | hover | size 181.3 x 50.96; child paint div.eoWgla_cta.JzsFla_ctaButton: size 181.3x51.0 |
 
-![Bottom CTA default](components/crops/cta-bottom-default.png) ![Bottom CTA hover](components/crops/cta-bottom-hover.png) ![Bottom CTA focus-visible](components/crops/cta-bottom-focus-visible.png) ![Bottom CTA pressed](components/crops/cta-bottom-pressed.png)
+![Bottom CTA default](components/crops/cta-bottom-default.png) ![Bottom CTA hover](components/crops/cta-bottom-hover.png) ![Bottom CTA pressed](components/crops/cta-bottom-pressed.png)
 
 #### Feature pill
 A feature filter pill (Birthdays/Events/News/…); its press swaps the demo panel — a local toggle. Read as `filter-button` on the home page.
@@ -260,19 +260,19 @@ The "Get Started" outline action inside the Personal plan card (a button-styled 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 238 x 44; border 1px solid rgba(31, 31, 31, 0.4) `color.ink-alpha.40`; radius 10px; background transparent; text Verlag 14/27 600, #1f1f1f `color.ink.800`; transition background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out |
+| default | size 238 x 44; border 1px solid rgba(31, 31, 31, 0.4) `color.ink-alpha.40`; radius 10px; background transparent; text Verlag 14/27 600, #1f1f1f `color.ink.800`; transition background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out |
 | hover, pressed | border 1px solid transparent; background #fb7232 `color.orange.500`; text Verlag 14/27 600, #ffffff `color.paper.100`; child paint div.htJ5kW_button: background #fb7232 `color.orange.500`; border 1px solid transparent |
 
-![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
+![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
 #### Plan CTA, filled
 The filled orange "Try it free" action inside the popular Team card; never pressed for real. Read as `plan-cta-filled` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 238 x 44; border 1px solid transparent; radius 10px; background #fb7232 `color.orange.500`; wrapper div._3K18mq_card._3K18mq_popular: shadow rgba(251, 114, 50, 0.24) 0px 0px 0px 3px; text Verlag 14/27 600, #ffffff `color.paper.100`; transition background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out |
+| default (same: hover, pressed) | size 238 x 44; border 1px solid transparent; radius 10px; background #fb7232 `color.orange.500`; wrapper div._3K18mq_card._3K18mq_popular: shadow rgba(251, 114, 50, 0.24) 0px 0px 0px 3px; text Verlag 14/27 600, #ffffff `color.paper.100`; transition background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out |
 
-![Plan CTA, filled default](components/crops/plan-cta-filled-default.png) ![Plan CTA, filled hover](components/crops/plan-cta-filled-hover.png) ![Plan CTA, filled focus-visible](components/crops/plan-cta-filled-focus-visible.png) ![Plan CTA, filled pressed](components/crops/plan-cta-filled-pressed.png)
+![Plan CTA, filled default](components/crops/plan-cta-filled-default.png) ![Plan CTA, filled hover](components/crops/plan-cta-filled-hover.png) ![Plan CTA, filled pressed](components/crops/plan-cta-filled-pressed.png)
 
 #### Billing toggle
 The "Pay monthly / Pay annually" switcher above the plan cards (226x40, gray-chip fill); a local toggle, never flipped. Read as `billing-toggle` on the pricing page.
@@ -321,9 +321,9 @@ The orange "Sign in with email" button — the brand accent on this light surfac
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 272 x 40; radius 12px; background #ff6821 `color.orange-app.500`; text SF Pro Text 14/21 400, rgba(255, 255, 255, 0.6) `color.white-alpha.60`; transition background-color 0.15s ease-in-out, color 0.15s ease-in-out |
+| default (same: hover, pressed) | size 272 x 40; radius 12px; background #ff6821 `color.orange-app.500`; text SF Pro Text 14/21 400, rgba(255, 255, 255, 0.6) `color.white-alpha.60`; transition background-color 0.15s ease-in-out, color 0.15s ease-in-out |
 
-![E-mail sign-in default](components/crops/signin-email-btn-default.png) ![E-mail sign-in hover](components/crops/signin-email-btn-hover.png) ![E-mail sign-in focus-visible](components/crops/signin-email-btn-focus-visible.png) ![E-mail sign-in pressed](components/crops/signin-email-btn-pressed.png)
+![E-mail sign-in default](components/crops/signin-email-btn-default.png) ![E-mail sign-in hover](components/crops/signin-email-btn-hover.png) ![E-mail sign-in pressed](components/crops/signin-email-btn-pressed.png)
 
 #### Apple sign-in
 The "Sign in with Apple" OAuth button; never followed. Read as `signin-apple` on the sign-in page.
@@ -432,11 +432,11 @@ The fixed "Get Started" pill in the mobile bar; links to /start, never followed.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 123 x 32.03; background transparent; text Verlag 12/12 600, #1f1f1e `color.ink.750` |
-| focus-visible, pressed | child paint a.y0DxmG_signInBtn: size 0.0x0.0; background rgba(255, 255, 255, 0.08) `color.white-alpha.8`; radius 8px |
+| pressed | child paint a.y0DxmG_signInBtn: size 0.0x0.0; background rgba(255, 255, 255, 0.08) `color.white-alpha.8`; radius 8px |
 
 Child layers that carry the look: div 123x32 background #ffffff `color.paper.100` radius 8px; div::after calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) radius 100%; div::before calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%).
 
-![Mobile CTA default](components/crops/m-cta-default.png) ![Mobile CTA hover](components/crops/m-cta-hover.png) ![Mobile CTA focus-visible](components/crops/m-cta-focus-visible.png) ![Mobile CTA pressed](components/crops/m-cta-pressed.png)
+![Mobile CTA default](components/crops/m-cta-default.png) ![Mobile CTA hover](components/crops/m-cta-hover.png) ![Mobile CTA pressed](components/crops/m-cta-pressed.png)
 
 ## Icons
 

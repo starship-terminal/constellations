@@ -201,7 +201,10 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
-        if (opts.noToggle) via = 'held open by an earlier toggle';
+        // A `before.opened` hook has already opened it (and says how): toggling
+        // again would close it and overwrite that provenance.
+        if (opts.before?.[st] && via) { /* opened by the hook */ }
+        else if (opts.noToggle) via = 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });

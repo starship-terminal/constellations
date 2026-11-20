@@ -26,7 +26,7 @@ out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
-const URLS = { home: '/', platform: '/platform/secrets-manager', pricing: '/pricing', demo: '/demo', integrations: '/integrations', customers: '/customers', blog: '/blog', about: '/about', agents: '/agents' };
+const URLS = { home: '/', platform: '/platform/secrets-manager', pricing: '/pricing', demo: '/demo', integrations: '/integrations', customers: '/customers', blog: '/blog', agents: '/agents' };
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
 const listed = new Map();
@@ -59,8 +59,8 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || BASE + URLS[key], { wait, promo });
-  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
+  const cleared = await open(page, url || BASE + URLS[key], { wait, promo });  // false: the bot check did not clear (lib.mjs)
+  if (!cleared || (await blocked())) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }
@@ -299,6 +299,12 @@ async function reducedMotion(key, sel) {
 
 // Marks the nearest ancestor of the element matching sel that paints a fill
 // or a background image, or falls back to marking a painted descendant.
+// markPainted() returns a locator that matches nothing on a miss (never null), so `x || fallback`
+// never fell back; orElse() takes x when it matches and the fallback only when it does not.
+async function orElse(preferred, fallback) {
+  return preferred && (await preferred.count().catch(() => 0)) ? preferred : fallback;
+}
+
 async function markPainted(sel, tag, { maxUp = 8, minW = 100, minH = 60, descend = false } = {}) {
   const ok = await page.evaluate(([s, t, up, w, h, desc]) => {
     document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
@@ -350,7 +356,7 @@ async function home() {
     if (await t.count()) { await t.hover({ timeout: 5000 }); await page.waitForTimeout(1200); }
   } catch (e) { log('  ! dropdown hover failed', String(e.message).split('\n')[0]); }
   const panel = await markPainted('header a[href*="platform"], header a[href*="secrets-manager"], header a[href*="govern"]', 'm-panel', { minW: 300, minH: 150 }).catch(() => null);
-  await S('nav-dropdown', panel || q('header div[class*="absolute"][class*="rounded"], header [class*="dropdown" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Nav dropdown', desc: 'The Platform mega-menu panel, opened by its own trigger.', sel: 'header platform panel' }, { noScroll: true, noReset: true });
+  await S('nav-dropdown', await orElse(panel, q('header div[class*="absolute"][class*="rounded"], header [class*="dropdown" i]').filter({ visible: true }).first()), ['default'], { group: g, title: 'Nav dropdown', desc: 'The Platform mega-menu panel, opened by its own trigger.', sel: 'header platform panel' }, { noScroll: true, noReset: true });
   const openPanel = async () => {
     const t = q('header nav button, header button').filter({ hasText: /^\s*Platform\s*$/ }).filter({ visible: true }).first();
     if (await t.count()) { await t.hover({ timeout: 5000 }).catch(() => {}); await page.waitForTimeout(900); }
@@ -386,7 +392,7 @@ async function pricing() {
   await S('plan-cta', q('.interactive-card a, .interactive-card button').filter({ hasText: /Start|Free|Talk|Contact|Get/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s action; measured never followed.', sel: '.interactive-card CTA on /pricing' });
   await S('plan-badge', q('span, div').filter({ hasText: /^\s*MOST POPULAR\s*$/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan badge', desc: 'The MOST POPULAR chip on the Team card.', sel: '"MOST POPULAR" chip' });
   const planCard = await markPainted('h2, h3', 'm-plan', { minW: 200, minH: 300 }).catch(() => null);
-  await S('plan-card', planCard || q('[class*="card" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan card (the painted ancestor of the plan name).', sel: 'plan card' });
+  await S('plan-card', await orElse(planCard, q('[class*="card" i]').filter({ visible: true }).first()), ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan card (the painted ancestor of the plan name).', sel: 'plan card' });
   await S('faq-item', q('button[aria-expanded="false"]').filter({ hasText: /What does Doppler do|How long does it take|Is Doppler secure/i }).filter({ visible: true }).first(), B4, { group: g, title: 'FAQ accordion', desc: 'A closed FAQ row (aria-expanded=false); the open state below is a row expanded by its own toggle.', sel: 'pricing FAQ button, closed' });
   // The first FAQ row is open by default; if nothing is expanded, open a row
   // by its own toggle — a local UI state, nothing sent.
@@ -408,7 +414,7 @@ async function demo() {
   const g = G.demo;
   await S('demo-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Demo title', desc: 'The demo-request display heading.', sel: 'h1 on /demo' }, { noScroll: true });
   const card = await markPainted('form, input, select', 'm-demo', { minW: 300, minH: 300 }).catch(() => null);
-  await S('demo-card', card || q('form, [class*="card" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Demo card', desc: 'The "See Doppler in action" form panel; never submitted.', sel: 'demo form panel' });
+  await S('demo-card', await orElse(card, q('form, [class*="card" i]').filter({ visible: true }).first()), ['default'], { group: g, title: 'Demo card', desc: 'The "See Doppler in action" form panel; never submitted.', sel: 'demo form panel' });
   await S('demo-field', q('form input[type="text"], input[type="text"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Text field', desc: 'The First-name input; sample text was typed and deleted, nothing sent.', sel: 'demo input[type=text]' });
   await S('demo-email', q('input[type="email"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Email field', desc: 'The company-email input; focused only, never filled or submitted.', sel: 'input[type=email]' });
   await S('demo-select', q('select').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Select', desc: 'The Company-Size select; focused, never opened (a native list would paint).', sel: 'select' });
@@ -426,7 +432,7 @@ async function integrations() {
   await S('search-field', q('input[placeholder*="Search" i], input[type="search"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Search field', desc: 'The integrations search input; sample text was typed and deleted, nothing sent.', sel: 'input "Search"' }, { fillText: 'aws' });
   await S('filter-chip', q('button').filter({ hasText: /^\s*(WEBHOOKS|KUBERNETES|SYNCS|SCIM)\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Filter chip', desc: 'An integration-category filter button; measured, never toggled (a toggle would filter the grid).', sel: 'category filter button' });
   const icard = await markPainted('a[href*="/integrations/"], [class*="card" i]', 'm-int', { minW: 150, minH: 80 }).catch(() => null);
-  await S('integration-card', icard || q('a[href*="/integrations/"]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Integration card', desc: 'An integration tile (a provider name and glyph) in the grid; never followed.', sel: 'integration tile' });
+  await S('integration-card', await orElse(icard, q('a[href*="/integrations/"]').filter({ visible: true }).first()), ['default', 'hover'], { group: g, title: 'Integration card', desc: 'An integration tile (a provider name and glyph) in the grid; never followed.', sel: 'integration tile' });
   await S('request-integration', q('a, button').filter({ hasText: /Request Integration/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Request link', desc: 'The Request-Integration action; measured, never followed.', sel: '"Request Integration"' });
   save();
 }
@@ -440,7 +446,7 @@ async function blog() {
   await S('cat-chip', q('button, a').filter({ hasText: /^\s*(COMPANY|DEVREL|ENGINEERING|PRODUCT|TUTORIALS|SECURITY)\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Category chip', desc: 'A blog-category filter chip; measured, never toggled. Labels are sentence-case in the DOM, painted uppercase by text-transform.', sel: 'blog category button' });
   await S('cat-chip-active', q('button, a').filter({ hasText: /^\s*ALL\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Category chip, active', desc: 'The ALL filter chip, selected at rest (no toggle needed for the selected state).', sel: 'blog "ALL" chip' });
   const pcard = await markPainted('a[href*="/blog/"], article, h2, h3', 'm-post', { minW: 200, minH: 120 }).catch(() => null);
-  await S('post-card', pcard || q('a[href*="/blog/"], article').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Post card', desc: 'A blog post card in the index grid; never followed.', sel: 'post card' });
+  await S('post-card', await orElse(pcard, q('a[href*="/blog/"], article').filter({ visible: true }).first()), ['default', 'hover'], { group: g, title: 'Post card', desc: 'A blog post card in the index grid; never followed.', sel: 'post card' });
   await S('page-number', q('button, a').filter({ hasText: /^\s*[2-9]\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Pagination button', desc: 'A numbered pagination control; measured, never followed.', sel: 'pagination "2"' });
   await S('read-more', q('a').filter({ hasText: /^Read More$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Read-More link', desc: 'The Read-More card link under each post; measured never followed.', sel: 'a "Read More"' });
   save();
@@ -454,7 +460,7 @@ async function customers() {
   await S('customers-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Customers title', desc: 'The "Doppler effect" customers heading.', sel: 'h1 on /customers' }, { noScroll: true });
   await S('industry-chip', q('button, a').filter({ hasText: /^\s*(AI|Software development|Marketplace|Health|Insurtech)\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Industry chip', desc: 'A customer-industry filter chip; measured, never toggled.', sel: 'industry filter button' });
   const ccard = await markPainted('a[href*="case-stud"], [class*="card" i]', 'm-case', { minW: 200, minH: 120 }).catch(() => null);
-  await S('case-card', ccard || q('a[href*="case-stud"]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Case-study card', desc: 'A customer case-study card; never followed.', sel: 'case-study card' });
+  await S('case-card', await orElse(ccard, q('a[href*="case-stud"]').filter({ visible: true }).first()), ['default', 'hover'], { group: g, title: 'Case-study card', desc: 'A customer case-study card; never followed.', sel: 'case-study card' });
   save();
 }
 

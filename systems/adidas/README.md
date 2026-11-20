@@ -97,6 +97,7 @@ Every surface is public, so pages were captured signed out in headless Chromium 
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **This is adidas.com.cn, not adidas.com.** Same brand language, different front end and market. Values here are the China flagship's — do not project them onto the global storefront without re-measuring.
 - The PDP captured showed a disabled add-to-cart state (white fill, grey #c8cbcc text/border, "加入购物袋"); an in-stock enabled bar was not captured.
 - The site renders pages as fixed-height app shells with inner scroll containers, so `-full` shots capture the viewport-height shell, not a tall page — a hard boundary of the front end, not a truncation.

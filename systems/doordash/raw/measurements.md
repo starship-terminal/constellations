@@ -251,21 +251,22 @@ Page: dashpass. Selector: `[data-testid=NotificationBell]`. States: default, hov
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 24 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Times 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #191919 | 24 x 24, colour #242424 | = | = |
-| Painted layers | button.ButtonRootInternal-sc-j2wkqj-0.dxDIIR 32.0x32.0 bg #f1f1f1 r 9999px shadow #f1f1f1 0px 0px 0px 1px inset | button.ButtonRootInternal-sc-j2wkqj-0.dxDIIR 32.0x32.0 bg #d6d6d6 r 9999px shadow #d6d6d6 0px 0px 0px 1px inset | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 24 x 32 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Times 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 24 x 24, colour #191919 | 24 x 24, colour #242424 | - | = |
+| Painted layers | button.ButtonRootInternal-sc-j2wkqj-0.dxDIIR 32.0x32.0 bg #f1f1f1 r 9999px shadow #f1f1f1 0px 0px 0px 1px inset | button.ButtonRootInternal-sc-j2wkqj-0.dxDIIR 32.0x32.0 bg #d6d6d6 r 9999px shadow #d6d6d6 0px 0px 0px 1px inset | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `bell-btn-default.png`, `bell-btn-hover.png`, `bell-btn-focus-visible.png`, `bell-btn-pressed.png`.
 
@@ -673,21 +674,22 @@ Page: home. Selector: `[role=tab][data-testid$=-selected]`. States: default, hov
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 376.63 x 40 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | T: none; R: none; B: 3px solid #191919; L: none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | #ffffff | #f7f7f7 | = | #f7f7f7 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Times 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.i3ez6m5: DD Norms 16px/22px 700, #191919, ls -0.01px | = | = | = |
-| Transition | background-color, box-shadow 0.15s, 0.15s ease-in-out, ease-in-out delay 0s, 0s | = | = | = |
-| Painted layers | div.s2g7gtm 376.6x40.0 bg #ffffff border B:3px solid #191919 | div.s2g7gtm 376.6x40.0 bg #f7f7f7 border B:3px solid #191919 | = | div.s2g7gtm 376.6x40.0 bg #f7f7f7 border B:3px solid #191919 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 376.63 x 40 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | T: none; R: none; B: 3px solid #191919; L: none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | #ffffff | #f7f7f7 | - | #f7f7f7 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Times 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.i3ez6m5: DD Norms 16px/22px 700, #191919, ls -0.01px | = | - | = |
+| Transition | background-color, box-shadow 0.15s, 0.15s ease-in-out, ease-in-out delay 0s, 0s | = | - | = |
+| Painted layers | div.s2g7gtm 376.6x40.0 bg #ffffff border B:3px solid #191919 | div.s2g7gtm 376.6x40.0 bg #f7f7f7 border B:3px solid #191919 | - | div.s2g7gtm 376.6x40.0 bg #f7f7f7 border B:3px solid #191919 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Cursor | - | pointer | = | pointer |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `tab-selected-default.png`, `tab-selected-hover.png`, `tab-selected-focus-visible.png`, `tab-selected-pressed.png`.
 
@@ -699,21 +701,22 @@ Page: home. Selector: `[role=tab][data-testid$=-not-selected]`. States: default,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 376.63 x 40 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | T: none; R: none; B: 2px solid #e4e4e4; L: none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | #ffffff | #f7f7f7 | = | #f7f7f7 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Times 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.i3ez6m5: DD Norms 16px/22px 500, #606060, ls -0.01px | = | = | = |
-| Transition | background-color, box-shadow 0.15s, 0.15s ease-in-out, ease-in-out delay 0s, 0s | = | = | = |
-| Painted layers | div.s2g7gtm 376.6x40.0 bg #ffffff border B:2px solid #e4e4e4 | div.s2g7gtm 376.6x40.0 bg #f7f7f7 border B:2px solid #e4e4e4 | = | div.s2g7gtm 376.6x40.0 bg #f7f7f7 border B:2px solid #e4e4e4 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 376.63 x 40 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | T: none; R: none; B: 2px solid #e4e4e4; L: none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | #ffffff | #f7f7f7 | - | #f7f7f7 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Times 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.i3ez6m5: DD Norms 16px/22px 500, #606060, ls -0.01px | = | - | = |
+| Transition | background-color, box-shadow 0.15s, 0.15s ease-in-out, ease-in-out delay 0s, 0s | = | - | = |
+| Painted layers | div.s2g7gtm 376.6x40.0 bg #ffffff border B:2px solid #e4e4e4 | div.s2g7gtm 376.6x40.0 bg #f7f7f7 border B:2px solid #e4e4e4 | - | div.s2g7gtm 376.6x40.0 bg #f7f7f7 border B:2px solid #e4e4e4 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Cursor | - | pointer | = | pointer |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `tab-idle-default.png`, `tab-idle-hover.png`, `tab-idle-focus-visible.png`, `tab-idle-pressed.png`.
 
@@ -828,19 +831,20 @@ Page: food-delivery. Selector: `city link`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 211.39 x 40 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | DD Norms 16px/40px 500 | = | = | = |
-| Letter spacing | -0.01px | = | = | = |
-| Colour | #191919 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 211.39 x 40 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | DD Norms 16px/40px 500 | = | - | = |
+| Letter spacing | -0.01px | = | - | = |
+| Colour | #191919 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `city-link-default.png`, `city-link-hover.png`, `city-link-focus-visible.png`, `city-link-pressed.png`.
 
@@ -1388,20 +1392,21 @@ Page: store. Selector: `CreateGroupCartModalButton`. States: default, hover, foc
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 107.63 x 38 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Times 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span: DD Norms 14px/20px 700, #191919, ls -0.01px | span: DD Norms 14px/20px 700, #242424, ls -0.01px | = | = |
-| Transition | none | = | = | = |
-| Painted layers | button.ButtonRoot-sc-j2wkqj-0.jcvtZg 107.6x38.0 bg #f1f1f1 r 9999px shadow #f1f1f1 0px 0px 0px 1px inset | button.ButtonRoot-sc-j2wkqj-0.jcvtZg 107.6x38.0 bg #d6d6d6 r 9999px shadow #d6d6d6 0px 0px 0px 1px inset | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 107.63 x 38 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Times 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span: DD Norms 14px/20px 700, #191919, ls -0.01px | span: DD Norms 14px/20px 700, #242424, ls -0.01px | - | = |
+| Transition | none | = | - | = |
+| Painted layers | button.ButtonRoot-sc-j2wkqj-0.jcvtZg 107.6x38.0 bg #f1f1f1 r 9999px shadow #f1f1f1 0px 0px 0px 1px inset | button.ButtonRoot-sc-j2wkqj-0.jcvtZg 107.6x38.0 bg #d6d6d6 r 9999px shadow #d6d6d6 0px 0px 0px 1px inset | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `group-order-default.png`, `group-order-hover.png`, `group-order-focus-visible.png`, `group-order-pressed.png`.
 
@@ -1783,21 +1788,22 @@ Page: mobile. Selector: `identity button at 390`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 390 x 40 | = | = | = |
-| Padding | 0px 24px 0px 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Times 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.Text-sc-yxnz5n-0.huQgjs: DD Norms 18px/22px 800, #ffffff, ls -0.2px | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | a.ButtonRoot-sc-j2wkqj-0.iLCINK 82.4x40.0 bg #eb1700 r 9999px shadow #191919 @ 0 0px 0px 0px 1px inset; a.ButtonRoot-sc-j2wkqj-0.iLCINK 90.5x40.0 bg #ffffff r 9999px shadow #191919 @ 0 0px 0px 0px 1px inset | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 390 x 40 | = | - | = |
+| Padding | 0px 24px 0px 16px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Times 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.Text-sc-yxnz5n-0.huQgjs: DD Norms 18px/22px 800, #ffffff, ls -0.2px | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | a.ButtonRoot-sc-j2wkqj-0.iLCINK 82.4x40.0 bg #eb1700 r 9999px shadow #191919 @ 0 0px 0px 0px 1px inset; a.ButtonRoot-sc-j2wkqj-0.iLCINK 90.5x40.0 bg #ffffff r 9999px shadow #191919 @ 0 0px 0px 0px 1px inset | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `m-identity-btn-default.png`, `m-identity-btn-hover.png`, `m-identity-btn-focus-visible.png`, `m-identity-btn-pressed.png`.
 

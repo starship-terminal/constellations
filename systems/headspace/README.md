@@ -121,6 +121,8 @@ Every colour, radius, length and font on this package is a **measured** value â€
 - **Full pages are bounded.** `-full` screenshots tile at most 8 chunks; taller pages truncate from the bottom and their sidecars note the document height.
 - **`/pricing` is a 404.** Headspace serves its own "Whoops! Something's changed" page there; it is a recorded absence, not a capture.
 - **Screenshots are 256-colour PNGs.** Read exact colours from the tokens or the raw files, never from a screenshot pixel.
+- **`hero-h1` is the /share page's headline.** The capture read `hero-h1` on 16 pages under one key and kept only the last one, so the home headline reading was lost. `core.font.family/size/lineHeight/weight.display` and `light.color.ink.primary` come from /share and say so in their source; a recapture is needed. `auth-card` was read on /login and /signup under one key; the kept reading is the /signup card ("Create your account"), so the /login card was lost. `tools/capture/public/measure.mjs` now keeps the bare key for the first page that lists it (home's hero, /login's card) and prefixes the rest (edited, not run).
+- **Four Lottie icons were dropped.** `mindfulness-for-kids`, `start-therapy` and the two `process-thoughts` SVGs referenced `<use>` targets the icon harvest stripped, so they rendered blank. They are deleted with their `icons/INDEX.tsv` rows; they were animation frames, not interface icons.
 
 ## Rebuild
 
@@ -140,3 +142,7 @@ python3 tools/build_tokens.py                                                  #
 python3 tools/build_style_guide.py                                             # -> style-guide.html
 python3 tools/build_components_md.py                                           # -> components.md
 ```
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

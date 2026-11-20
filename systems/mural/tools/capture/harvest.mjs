@@ -459,7 +459,9 @@ for (const ic of icons.values()) {
 }
 fs.writeFileSync(path.join(ICONS, 'INDEX.tsv'), index.join('\n') + '\n');
 
-fs.writeFileSync(path.join(RAW, 'components-computed.json'), JSON.stringify({
+// measure-only.mjs is the one writer of raw/components-computed.json (the committed readings); the
+// harvest keeps its own looser first pass apart so a rerun cannot replace them.
+fs.writeFileSync(path.join(RAW, 'components-harvest.json'), JSON.stringify({
   _meta: {
     product: 'Mural',
     readAt: new Date().toISOString(),

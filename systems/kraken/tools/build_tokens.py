@@ -231,14 +231,14 @@ def core():
         })
 
     # Spacing: Kraken does not publish a 4px space scale as custom properties.
-    # The control gaps that do exist are recorded, and a 4px scale is derived
-    # from the radius step (2px) and the measured paddings (8/12/16).
+    # The control gaps that do exist are recorded. The 4px steps were picked by
+    # hand at capture time, so they are a Reconstruction (docs/EVIDENCE.md).
     for step, px in (("1", "4px"), ("2", "8px"), ("3", "12px"), ("4", "16px"), ("5", "20px"), ("6", "24px"), ("8", "32px"), ("10", "40px"), ("12", "48px"), ("16", "64px")):
         put(c, f"spacing.{step}", {
             "$value": px,
             "$type": "dimension",
             "$description": "4px spacing step. Kraken's public CSS does not declare a space scale; the step matches measured control padding (8, 12, 16) and the 2px radius increment.",
-            "$extensions": {"source": f"Derived 4px scale from measured button padding and --border-radius-ds-* increment, {CAPTURED}"},
+            "$extensions": {"source": f"Reconstruction: entered by hand at capture time; no reading in raw/ holds a spacing scale. A 4px step list chosen to fit the measured button padding (8, 12, 16) and the 2px --border-radius-ds-* increment, {CAPTURED}"},
         })
     for var, key in (
         ("--gap-ds-checkbox-md", "gap.checkbox-md"),
@@ -420,13 +420,14 @@ def apply_motion(doc):
     if not motion_path.exists():
         return
     import sys
+    # The package's own motion.py, never the repo kit's: a kit change must not change this
+    # package's rebuild.
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-    # kit motion.py lives next to this file after the copy; fall back to the repo kit.
-    kit = pathlib.Path(__file__).resolve().parents[3] / "tools" / "kit" / "build"
-    sys.path.insert(0, str(kit))
     import motion
-    core_motion, _skipped = motion.build(json.loads(motion_path.read_text()))
+    core_motion, skipped = motion.build(json.loads(motion_path.read_text()))
     doc.setdefault("core", {})["motion"] = core_motion
+    if skipped:  # what DTCG cannot carry is kept, as the kit does
+        doc["core"].setdefault("$extensions", {})["notTokenised"] = skipped
 
 
 if __name__ == "__main__":

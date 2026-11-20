@@ -229,7 +229,7 @@ export async function listScreens(
   }
   if (query.mode === "flows") return queryScreens([], query);
   const captures = await capturedScreens();
-  const [references, assignments] = await Promise.all([
+  const [references, byMedia] = await Promise.all([
     withReferenceCategories(
       [
         ...new Map(
@@ -238,15 +238,8 @@ export async function listScreens(
       ],
       store,
     ),
-    store.listMediaTermAssignments(),
+    store.mediaTermsByMedia(),
   ]);
-  const byMedia = new Map<string, string[]>();
-  for (const assignment of assignments) {
-    const id = `${assignment.referenceId}:${assignment.mediaId}`;
-    const terms = byMedia.get(id) || [];
-    terms.push(assignment.termId);
-    byMedia.set(id, terms);
-  }
   const byId = new Map(
     references.map((reference) => [reference.id, reference]),
   );

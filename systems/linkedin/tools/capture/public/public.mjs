@@ -195,7 +195,8 @@ for (const { k, mob } of runs) {
   const p = await ctx.newPage();
   log(name);
   const target = spec.url || BASE + spec.path;
-  const S = new Shooter(p, `${name}-${theme}`, vw, vh, dpr, target);
+  // The sidecar names the page, not its search query or tracking parameters.
+  const S = new Shooter(p, `${name}-${theme}`, vw, vh, dpr, target.split(/[?#]/)[0]);
   try {
     await p.goto(target, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     if (!(await clearChallenge(p))) { log('  BLOCKED challenge', target); await ctx.close(); continue; }

@@ -102,8 +102,8 @@ def build():
         "space": {k: dim(v, src + " " + note) for k, (v, note) in space.items()},
         "motion": {
             "duration": {
-                "fast": dim(motion["fast"], src + " --default-transition-duration"),
-                "accordion": dim(motion["accordion"], src + " --animate-accordion-down"),
+                "fast": tok("duration", motion["fast"], src + " --default-transition-duration"),
+                "accordion": tok("duration", motion["accordion"], src + " --animate-accordion-down"),
             },
             "easing": {
                 "standard": tok("cubicBezier", [0.4, 0, 0.2, 1], src + " --default-transition-timing-function"),
@@ -169,7 +169,7 @@ def build():
             "border": {"default": color(values["border"], label + " border")},
             "status": {
                 "danger": color(values["danger"], label + " danger"),
-                "success": color(values.get("success", status["green500"]), label + " success"),
+                "success": color(values["success"], label + " success"),
             },
         }
 
@@ -227,9 +227,14 @@ def build():
             {"name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
         ],
     }
-    OUT.write_text(json.dumps(doc, indent=2) + "\n")
+    return doc
+
+
+def main():
+    """Write tokens.json; build() alone writes nothing."""
+    OUT.write_text(json.dumps(build(), indent=2) + "\n")
     print(f"wrote {OUT}")
 
 
 if __name__ == "__main__":
-    build()
+    main()

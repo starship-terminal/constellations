@@ -112,6 +112,7 @@ Custom properties were harvested from the stylesheets on `https://www.ikea.com/s
 
 ## What to distrust
 
+- **Most type weights and line heights were typed.** Every `core.typography.*` size is the declared Skapa step. Only heading-l (24/30 700, the login heading) and heading-s (16/20 700, the product title) are read from a component; the other weights and line heights (display 80/64/48px, heading 40/24px, body 24/22/18px, price 32px) have no reading and say Reconstruction. `core.font.family.sans` is abridged by hand from the measured body stack.
 The buy button's own `background-color` is transparent. The blue fill is painted by the inner `.pipf-btn__inner` span. A reading of the button element alone looks unfilled. Hover on that button did not change the computed background in this pass, so hover is the declared `--colour-interactive-emphasised-bg-hover` (`#004f93`), not a second computed reading. Noto IKEA is proprietary and is not in the package. The style guide falls back to Noto Sans. Currency-symbol faces lead the live font stack and are not design faces.
 
 ## Fonts

@@ -15,7 +15,7 @@ On's public site is a white page with black type, pill buttons, and a transparen
 | [components/crops/](components/crops) | Element crops from the page screenshots |
 | [screenshots/](screenshots) | Page captures, 256-colour PNGs. Desktop is 1440 x 900 at 2x. Phone is 390 x 844 at 2x |
 | [raw/](raw) | `readings.json` and the screenshot sidecars |
-| [tools/](tools) | The capture kit, copied in and not re-run as the source of these tokens, plus [tools/test_tokens.py](tools/test_tokens.py), which checks the tokens against [raw/readings.json](raw/readings.json) |
+| [tools/](tools) | [tools/test_tokens.py](tools/test_tokens.py), which checks the tokens against [raw/readings.json](raw/readings.json). `capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`); no kit capture script took these readings |
 
 ## Brief
 
@@ -132,7 +132,7 @@ On ships its own faces from `cdn.on-running.com/on-running-webfonts/`: **On** (O
 
 ## Rebuild
 
-The tokens were written from the live readings in [raw/readings.json](raw/readings.json), not from the kit's Playwright tour. To regenerate the generated files from the repo root:
+The tokens were written from the live readings in [raw/readings.json](raw/readings.json), not by a kit capture script. To regenerate the generated files from the repo root:
 
 ```sh
 python3 tools/catalog.py design-md on

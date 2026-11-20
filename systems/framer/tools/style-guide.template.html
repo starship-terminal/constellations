@@ -20,6 +20,10 @@
 [data-mode="dark"], .dark {
 /*DARK*/
 }
+/* the /login shell's own readings, scoped to the login mock */
+.auth {
+/*AUTH*/
+}
 * { box-sizing: border-box; }
 /* framer.com paints one theme — the dark body-declared --token-<uuid> palette — so the guide's
    body carries the .dark scope exactly the way the site's :root does. */
@@ -97,7 +101,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--line-2, #282828); padding: 
       <div class="tile"><div class="img">Enterprise</div><b>Custom</b><span class="sub">Security, support, scale</span></div>
     </div>
     <div style="margin-top:18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="chip">Trending</span><span class="chip">Recent</span><span class="chip">Vibe</span><span class="btn small ghost">Open</span><span class="badge">1,000 AI credits / month</span></div>
-    <div style="margin-top:18px"><input class="field" placeholder="Enter your work email&hellip;"></div>
+    <div class="auth" style="margin-top:18px"><input class="field" placeholder="Enter your work email&hellip;"></div>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -165,10 +169,12 @@ const motionVal = (t) => {
   }
   // framer.com paints one theme: the dark set is the palette, resolved under
   // the body's .dark scope.
-  for (const [setname, label] of [['dark', 'the dark roles — the only theme the site ships']]) {
+  // The auth set is the light /login shell's own readings, painted under
+  // its .auth scope.
+  for (const [setname, label, scope] of [['dark', 'the dark roles — the only theme the site ships', ' dark'], ['auth', 'auth — the light /login shell', ' auth']]) {
     const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
     if (!roles.length) continue;
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
     for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }

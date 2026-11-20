@@ -230,11 +230,13 @@ tokens = {
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "app"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
 
 def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "app")})
+# Written only when run as a script: importing the builder (the tests do) must never rewrite tokens.json.
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "app")})

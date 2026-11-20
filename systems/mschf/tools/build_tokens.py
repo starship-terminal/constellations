@@ -119,7 +119,7 @@ dark = {
     },
     "text": {
         "primary": tok("{color.ink}", "color", SRC),
-        "muted": tok("{color.rule}", "color", SRC + "; the gold rule at 30% is the quiet colour beside the grey ink. The unreleased question-mark rows use the same ink, not a second grey"),
+        "muted": tok("{color.ink}", "color", SRC + "; no second text colour was read: the unreleased question-mark rows paint the same grey ink as body text. The 30% gold rule is a border colour (border.subtle), not text"),
         "onAccent": tok("{color.red}", "color", SRC + "; logo paths on the gold button"),
     },
     "accent": tok("{color.gold}", "color", SRC + "; the header button is the only filled control"),
@@ -205,5 +205,8 @@ for n, t in list(names.items()):
         if not re.fullmatch(r"-?\d*\.?\d+(px|rem)", t["$value"]):
             raise SystemExit(f"dimension {n} {t['$value']!r}")
 
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
-print("tokens", len(names))
+TEXT = json.dumps(tokens, indent=2, ensure_ascii=False) + "\n"
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(TEXT)
+    print("tokens", len(names))

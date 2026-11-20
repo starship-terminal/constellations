@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. One light theme."""
+import html as _html
 import json
 import pathlib
 
@@ -15,6 +16,12 @@ def flat(node, prefix=""):
             yield prefix + k, v
         elif isinstance(v, dict):
             yield from flat(v, prefix + k + ".")
+
+
+def e(value):
+    """Escape a token value or name for an attribute or text: a quoted font stack or a stray
+    character would otherwise end the style attribute."""
+    return _html.escape(str(value), quote=True)
 
 
 def css_color(token):
@@ -34,22 +41,22 @@ for name, tok in flat(T["light"]["color"]):
         continue
     val = tok["$value"]
     swatches.append(
-        f'<div class="sw"><i style="background:{val}"></i><div><code>{name}</code><span>{val}</span></div></div>'
+        f'<div class="sw"><i style="background:{e(val)}"></i><div><code>{e(name)}</code><span>{e(val)}</span></div></div>'
     )
 
 type_rows = []
 for name, tok in flat(T["core"]["typography"]):
     v = tok["$value"]
     type_rows.append(
-        f'<div class="ty" style="font-weight:{v["fontWeight"]};font-size:{v["fontSize"]};line-height:{v["lineHeight"]};letter-spacing:{v["letterSpacing"]};font-family:Helvetica,sans-serif">{name}<small>{v["fontSize"]} / {v["lineHeight"]} / {v["fontWeight"]}</small></div>'
+        f'<div class="ty" style="font-weight:{e(v["fontWeight"])};font-size:{e(v["fontSize"])};line-height:{e(v["lineHeight"])};letter-spacing:{e(v["letterSpacing"])};font-family:Helvetica,sans-serif">{e(name)}<small>{e(v["fontSize"])} / {e(v["lineHeight"])} / {e(v["fontWeight"])}</small></div>'
     )
 
 space_rows = "".join(
-    f'<div class="sp"><i style="width:{t["$value"]}"></i><code>{n}</code><span>{t["$value"]}</span></div>'
+    f'<div class="sp"><i style="width:{e(t["$value"])}"></i><code>{e(n)}</code><span>{e(t["$value"])}</span></div>'
     for n, t in flat(T["core"]["spacing"])
 )
 radius_rows = "".join(
-    f'<div class="rd" style="border-radius:{t["$value"]}"><code>{n}</code><span>{t["$value"]}</span></div>'
+    f'<div class="rd" style="border-radius:{e(t["$value"])}"><code>{e(n)}</code><span>{e(t["$value"])}</span></div>'
     for n, t in flat(T["core"]["radius"])
 )
 

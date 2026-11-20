@@ -89,6 +89,7 @@ Custom properties were resolved on `documentElement` at www.forhims.co.uk in hea
 
 ## What to distrust
 
+- **Typography line heights were entered by hand.** Each `core.typography.*` size and family is declared (`--fontSizes-*`, `--b-font-family-sans`), and heading-large and heading-small take the declared `--fontWeights-*`; the line heights (1.05 to 1.45), the letter spacing and the other weights have no reading behind them and their sources say Reconstruction. The site's own `--b-line-height-*` roles are `calc()` expressions on the newer `--b-*` scale (about 1.01 at 32px for headings, 1.24 at 18px for body), and the measured titles paint 1.12.
 The hero CTA's computed `backgroundColor` is transparent because the black fill is painted by a child or a pseudo layer. The screenshot shows the black pill. Use `light.color.button.primary` (`#000000`) for that control, and the crop for the shape. Care Sans and Ivar Soft are the product's faces and are not committed. The style guide falls back to Helvetica. `--colors-button-primaryHover` resolves to `transparent` with black text, which is the declared hover token, not a guess. The account menu drawer in the signed-in capture did not paint in the 1440 screenshot (the click registered, the drawer stayed off-canvas). The signed-out menu drawer in [home-light-menu](screenshots/home-light-menu.png) is the one to trust. The profile email region is a flat fill, not a measured text style.
 
 ## Fonts
@@ -138,3 +139,7 @@ python3 tools/build_style_guide.py
 ```
 
 Screenshots and crops come from `tools/capture/public/public.mjs` and `measure.mjs` with `PLAYWRIGHT` set to a Playwright install. Full-colour shots stay in `~/.design-systems/hims/raw-shots`. `python3 tools/capture/quantize.py` writes `screenshots/`.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

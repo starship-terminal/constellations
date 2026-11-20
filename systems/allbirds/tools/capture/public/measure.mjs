@@ -18,8 +18,9 @@
 //   open           a resting state reached by a UI toggle (accordion, drawer, menu)
 //   anything else  a resting state reached by the page itself
 // Nothing is sent, bought or signed into: the only presses are the geo dialog's
-// US choice, the MEN mega-menu button, a size chip, Add to Cart (a session cart,
-// never checkout) and accordions.
+// US choice, the MEN mega-menu button, a size chip, the header cart button and
+// accordions. Add to Cart is measured at rest and never pressed: it writes a
+// cart on the store's server (state change: recorded as a boundary).
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, open, closePromo, killGeo, domClick, domFind, styleOf, crop, centre, RAW, UA_MOBILE } from './lib.mjs';
@@ -305,19 +306,21 @@ async function product() {
   const sw = q('.swatch-group').filter({ visible: true }).first();
   await S('swatch-group', sw, ['default'], { group: g, title: 'Swatch group', desc: 'The colour picker: rows of circular swatches (uppercase group labels like "JERSEY", "STRIPE").', sel: '.swatch-group' });
   await S('swatch', sw.locator('button, a, [role="radio"], [class*="swatch" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Swatch', desc: 'One colour circle; the selected one carries a ring.', sel: 'swatch' });
-  await S('size-tab-active', await domFind(page, /SIZES/i, { tag: 'tab0', nth: 0 }), ['default'], { group: g, title: 'Size tab, active', desc: 'The underlined "MEN\'S SIZES" tab of the men/women size-grid switch.', sel: 'size tab' });
-  await S('size-tab', await domFind(page, /SIZES/i, { tag: 'tab1', nth: 1 }), ['default', 'hover'], { group: g, title: 'Size tab', desc: 'The inactive tab: light-charcoal, transparent border.', sel: 'size tab' });
+  // Exact labels: /SIZES/ matched both tabs and the same WOMEN'S tab was read twice.
+  await S('size-tab-active', await domFind(page, /^MEN'S SIZES$/i, { tag: 'tab0' }), ['default'], { group: g, title: 'Size tab, active', desc: 'The underlined "MEN\'S SIZES" tab of the men/women size-grid switch.', sel: 'size tab' });
+  await S('size-tab', await domFind(page, /^WOMEN'S SIZES$/i, { tag: 'tab1' }), ['default', 'hover'], { group: g, title: 'Size tab', desc: 'The inactive tab: light-charcoal, transparent border.', sel: 'size tab' });
   const chipOn = q('button.btn-size:not(.disabled)').filter({ visible: true }).first();
-  await S('size-button', chipOn, ['default', 'hover', 'pressed'], { group: g, title: 'Size button', desc: '.btn-size: the bordered size chip; selected state fills black with white text (measured after one was clicked).', sel: 'button.btn-size' });
+  await S('size-button', chipOn, ['default', 'hover', 'pressed'], { group: g, title: 'Size button', desc: '.btn-size: the bordered size chip, measured before any chip is picked (no selected state was read).', sel: 'button.btn-size' });
   await S('size-button-disabled', q('button.btn-size.disabled').filter({ visible: true }).first(), ['default'], { group: g, title: 'Size button, sold out', desc: '.btn-size.disabled: the struck-through greyed chip.', sel: 'button.btn-size.disabled' });
   await S('fit-guide', q('button, a').filter({ hasText: /fit guide/i }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Fit Guide link', desc: 'The underlined text button under the size grid.', sel: 'fit guide' });
   // pick a size so the ATC button mounts, then measure it
   await chipOn.click().catch(() => chipOn.evaluate((el) => el.click())).catch(() => {});
   await page.waitForTimeout(800);
   const atc = q('button:has-text("ADD TO CART"), button:has-text("Add to Cart"), button:has-text("ADD TO BAG")').filter({ visible: true }).first();
-  await S('atc-button', atc, B4, { group: g, title: 'Add to Cart button', desc: '.btn.btn-secondary: the full-width black pill under the buy box ("ADD TO CART - $100"). Mounted once a size is picked; clicked once for the cart drawer, checkout never pressed.', sel: 'btn-secondary ATC' });
+  await S('atc-button', atc, B4, { group: g, title: 'Add to Cart button', desc: '.btn.btn-secondary: the full-width black pill under the buy box ("ADD TO CART - $100"). Mounted once a size is picked; measured at rest, never pressed.', sel: 'btn-secondary ATC' });
   const acc = q('button[aria-expanded]').filter({ hasText: /WHY WE LOVE THIS/ }).filter({ visible: true }).first();
-  await S('accordion', acc, ['default', 'open', 'hover'], { group: g, title: 'Accordion row', desc: 'A PDP details row (WHY WE LOVE THIS, MATERIALS & SUSTAINABILITY, CARE INSTRUCTIONS): full-width, py-6, plus/minus on the right.', sel: 'button[aria-expanded]' }, { before: { open: async (loc) => { if ((await loc.getAttribute('aria-expanded')) === 'false') { await toggle(loc); await page.waitForTimeout(600); } return 'accordion opened'; } } });
+  // open last: nothing collapses the row, so a state after it would be read on the expanded row
+  await S('accordion', acc, ['default', 'hover', 'open'], { group: g, title: 'Accordion row', desc: 'A PDP details row (WHY WE LOVE THIS, MATERIALS & SUSTAINABILITY, CARE INSTRUCTIONS): full-width, py-6, plus/minus on the right.', sel: 'button[aria-expanded]' }, { before: { open: async (loc) => { if ((await loc.getAttribute('aria-expanded')) === 'false') { await toggle(loc); await page.waitForTimeout(600); } return 'accordion opened'; } } });
   await S('tooltip-pill', await domFind(page, /./, { sel: 'button.inline-flex.cursor-pointer', tag: 'pill', minW: 100 }), ['default', 'hover'], { group: g, title: 'Tooltip pill', desc: 'The black pill over the gallery (e.g. "Tree-based upper for lightweight comfort") that opens a material tooltip.', sel: 'tooltip pill' });
   // cart drawer via ATC (DOM-side click: the buy box re-renders, so a locator
   // resolved earlier can be detached); falls back to the header cart button.
@@ -338,9 +341,8 @@ async function product() {
     await page.waitForSelector('button.btn-size:not(.disabled)', { state: 'attached', timeout: 10000 }).catch(() => {});
     const picked = await domClick(page, /^8\.5$/, 'button.btn-size:not(.disabled)') || await domClick(page, /^\d+(\.\d+)?$/, 'button.btn-size:not(.disabled)');
     await page.waitForTimeout(1200);
-    const hit = attempt < 2
-      ? await domClick(page, /add to cart|add to bag/i)
-      : await domClick(page, /^0$|view cart/i, 'button');
+    // the header cart button opens the (empty) drawer; Add to Cart is never pressed
+    const hit = await domClick(page, /^0$|view cart/i, 'button');
     if (!hit) log('  cart open attempt', attempt, 'no target', picked ? '' : '(size pick also missed)');
     await page.waitForTimeout(3000);
   }
@@ -350,7 +352,7 @@ async function product() {
   }
   const c = G.cart;
   const dr = await domFind(page, /CART/, { sel: '.z-takeover', tag: 'cdr', leaf: false, minW: 300, minH: 300 });
-  await S('cart-drawer', dr, ['open'], { group: c, title: 'Cart drawer', desc: 'The right-hand .z-takeover drawer after Add to Cart: CART heading, free-shipping meter, item rows, upsell carousel, subtotal and the checkout buttons. Never checked out.', sel: '.z-takeover cart' }, { noScroll: true });
+  await S('cart-drawer', dr, ['open'], { group: c, title: 'Cart drawer', desc: 'The right-hand .z-takeover drawer opened from the header cart button, with an empty cart: the CART heading and whatever the empty state shows. Add to Cart is never pressed, so no item rows, subtotal or checkout buttons.', sel: '.z-takeover cart' }, { noScroll: true });
   await S('cart-qty', await domFind(page, /^[+−-]$/, { sel: '.z-takeover button', tag: 'qty' }), ['default'], { group: c, title: 'Quantity stepper', desc: 'The +/- stepper on a cart row.', sel: 'qty button' }, { noScroll: true });
   await S('cart-upsell-card', await domFind(page, /Add\+/, { sel: '.z-takeover a, .z-takeover button', tag: 'ups', up: 'li, [class*="card" i], [class*="upsell" i], [class*="item" i]' }), ['default'], { group: c, title: 'Upsell card', desc: 'RECOMMENDED FOR YOU carousel cards with a size select and an "Add+" link.', sel: '.cart-upsells' }, { noScroll: true });
   // the checkout bar may sit outside the .z-takeover scroll root or inside a

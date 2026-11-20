@@ -26,6 +26,7 @@ HOME = VARS["pages"]["/"]
 INLINE = HOME["inline"]
 RESOLVED = HOME["resolved"]
 MOTION = json.loads((RAW / "motion.json").read_text()) if (RAW / "motion.json").exists() else None
+COMP = json.loads((RAW / "components-computed.json").read_text())["components"]
 
 DATE = "2026-11-18"
 M = f"Declared on html style, loom.com, {DATE}, light, 1440"
@@ -91,8 +92,79 @@ def declared_color(name, note=""):
     return color(css, src)
 
 
+def declared(name):
+    """A declared --lns-* value from the html style attribute. Raises when it is missing."""
+    raw = (INLINE.get(name) or RESOLVED.get(name) or "").strip()
+    if not raw:
+        raise SystemExit("missing " + name)
+    return raw
+
+
+def decl_num(name):
+    raw = declared(name)
+    n = float(raw)
+    return int(n) if n == int(n) else n
+
+
+def decl_len(name):
+    raw = declared(name)
+    if raw == "0":
+        return "0px"
+    if not re.fullmatch(r"-?[\d.]+px", raw):
+        raise SystemExit("not a px length: %s = %r" % (name, raw))
+    return raw
+
+
+def measured(key, prop, state="default"):
+    """A computed style of a measured component. Raises when the reading is missing."""
+    try:
+        v = COMP[key]["states"][state]["style"][prop]
+    except KeyError:
+        raise SystemExit("no reading for %s %s %s in raw/components-computed.json" % (key, state, prop))
+    if v in (None, "", "auto"):
+        raise SystemExit("no usable reading for %s %s %s: %r" % (key, state, prop, v))
+    return v
+
+
+def measured_px(key, prop, state="default"):
+    v = measured(key, prop, state)
+    m = re.fullmatch(r"(-?[\d.]+)px", v)
+    if not m:
+        raise SystemExit("not px: %s %s = %r" % (key, prop, v))
+    return "%gpx" % round(float(m.group(1)), 3)
+
+
+HAND = "Reconstruction: entered by hand at capture time; no raw reading holds this value"
+
+
 def unit_px():
-    return 8  # --lns-unit is 0.5rem; body font-size measured 16px
+    # --lns-unit is 0.5rem; body font-size measured 16px
+    if declared("--lns-unit") != "0.5rem":
+        raise SystemExit("--lns-unit is no longer 0.5rem")
+    return 8
+
+
+def calc_len(term):
+    """One shadow length: 0, Npx, or calc(N * 0.5rem) / calc(N * var(--lns-unit, 8px))."""
+    if term == "0":
+        return "0"
+    if re.fullmatch(r"-?[\d.]+px", term):
+        return term
+    px = calc_px(term)
+    if not px:
+        raise SystemExit("shadow length not understood: %r" % term)
+    return px
+
+
+def declared_shadow(name):
+    """--lns-shadow-* is one layer: x y blur colour, the lengths as calc() of --lns-unit."""
+    raw = declared(name)
+    parts = re.findall(r"calc\([^)]*\)\)?|hsla?\([^)]*\)|\S+", raw)
+    *lengths, colour = parts
+    css = hsla_to_css(colour)
+    if not css or len(lengths) != 3:
+        raise SystemExit("shadow not understood: %s = %r" % (name, raw))
+    return " ".join(calc_len(t) for t in lengths) + " " + css
 
 
 def calc_px(expr):
@@ -132,19 +204,19 @@ core = {
     "font": {
         "family": {
             "display": font(
-                '"Charlie Display", sans-serif',
-                f"{C}: h1 font-family. Charlie Display is proprietary and not shipped.",
+                measured("hero-title", "fontFamily"),
+                f"{C}: hero-title (home h1) font-family. Charlie Display is proprietary and not shipped.",
             ),
             "text": font(
-                '"Charlie Text", sans-serif',
-                f"{C}: body and buttons. Charlie Text is proprietary and not shipped.",
+                measured("primary-cta", "fontFamily"),
+                f"{C}: primary-cta font-family; body and buttons. Charlie Text is proprietary and not shipped.",
             ),
         },
         "weight": {
-            "book": num(400, f"{M}: --lns-fontWeight-book", "fontWeight"),
-            "regular": num(400, f"{M}: --lns-fontWeight-regular", "fontWeight"),
-            "medium": num(500, f"{M}: --lns-fontWeight-medium", "fontWeight"),
-            "bold": num(653, f"{M}: --lns-fontWeight-bold. Computed h1 weight was 700.", "fontWeight"),
+            "book": num(decl_num("--lns-fontWeight-book"), f"{M}: --lns-fontWeight-book", "fontWeight"),
+            "regular": num(decl_num("--lns-fontWeight-regular"), f"{M}: --lns-fontWeight-regular", "fontWeight"),
+            "medium": num(decl_num("--lns-fontWeight-medium"), f"{M}: --lns-fontWeight-medium", "fontWeight"),
+            "bold": num(decl_num("--lns-fontWeight-bold"), f"{M}: --lns-fontWeight-bold. Computed h1 weight was {measured('hero-title', 'fontWeight')}.", "fontWeight"),
         },
         "size": {
             "small": declared_dim("--lns-fontSize-small", "Also --lns-fontSize-body-sm."),
@@ -153,25 +225,25 @@ core = {
             "heading-sm": declared_dim("--lns-fontSize-heading-sm"),
             "heading-md": declared_dim("--lns-fontSize-heading-md"),
             "heading-lg": declared_dim("--lns-fontSize-heading-lg"),
-            "display": dim("63.269px", f"{C}: home h1 font-size. The declared heading-lg is 48px; the hero is larger than that step."),
+            "display": dim(measured_px("hero-title", "fontSize"), f"{C}: hero-title (home h1) font-size, rounded to 3 decimals. The declared heading-lg is 48px; the hero is larger than that step."),
         },
         "lineHeight": {
-            "small": num(1.5, f"{M}: --lns-lineHeight-small"),
-            "body": num(1.57, f"{M}: --lns-lineHeight-body-md"),
-            "large": num(1.44, f"{M}: --lns-lineHeight-body-lg"),
-            "heading-sm": num(1.16, f"{M}: --lns-lineHeight-heading-sm"),
-            "heading-md": num(1.125, f"{M}: --lns-lineHeight-heading-md"),
-            "heading-lg": num(1.16, f"{M}: --lns-lineHeight-heading-lg"),
-            "display": dim("65.104px", f"{C}: home h1 line-height"),
+            "small": num(decl_num("--lns-lineHeight-small"), f"{M}: --lns-lineHeight-small"),
+            "body": num(decl_num("--lns-lineHeight-body-md"), f"{M}: --lns-lineHeight-body-md"),
+            "large": num(decl_num("--lns-lineHeight-body-lg"), f"{M}: --lns-lineHeight-body-lg"),
+            "heading-sm": num(decl_num("--lns-lineHeight-heading-sm"), f"{M}: --lns-lineHeight-heading-sm"),
+            "heading-md": num(decl_num("--lns-lineHeight-heading-md"), f"{M}: --lns-lineHeight-heading-md"),
+            "heading-lg": num(decl_num("--lns-lineHeight-heading-lg"), f"{M}: --lns-lineHeight-heading-lg"),
+            "display": dim(measured_px("hero-title", "lineHeight"), f"{C}: hero-title (home h1) line-height"),
         },
         "tracking": {
-            "large": dim("-0.2px", f"{M}: --lns-letterSpacing-body-lg"),
-            "heading-md": dim("-0.5px", f"{M}: --lns-letterSpacing-heading-md"),
-            "heading-lg": dim("-1.2px", f"{M}: --lns-letterSpacing-heading-lg"),
+            "large": dim(decl_len("--lns-letterSpacing-body-lg"), f"{M}: --lns-letterSpacing-body-lg"),
+            "heading-md": dim(decl_len("--lns-letterSpacing-heading-md"), f"{M}: --lns-letterSpacing-heading-md"),
+            "heading-lg": dim(decl_len("--lns-letterSpacing-heading-lg"), f"{M}: --lns-letterSpacing-heading-lg"),
         },
     },
     "space": {
-        "unit": dim("8px", f"{D}. {M}: --lns-unit = 0.5rem, root font-size 16px."),
+        "unit": dim("%dpx" % unit_px(), f"{D}. {M}: --lns-unit = {declared('--lns-unit')}, root font-size 16px."),
         "xsmall": declared_dim("--lns-space-xsmall"),
         "small": declared_dim("--lns-space-small"),
         "medium": declared_dim("--lns-space-medium"),
@@ -180,7 +252,7 @@ core = {
         "xxlarge": declared_dim("--lns-space-xxlarge"),
     },
     "radius": {
-        "none": dim("0px", f"{M}: --lns-radius-none"),
+        "none": dim(decl_len("--lns-radius-none"), f"{M}: --lns-radius-none"),
         "50": declared_dim("--lns-radius-50"),
         "100": declared_dim("--lns-radius-100", "Also --lns-radius-medium."),
         "150": declared_dim("--lns-radius-150"),
@@ -188,27 +260,27 @@ core = {
         "200": declared_dim("--lns-radius-200", "Also --lns-radius-large."),
         "250": declared_dim("--lns-radius-250"),
         "300": declared_dim("--lns-radius-300", "Also --lns-radius-xlarge."),
-        "full": dim("7992px", f"{D}. {M}: --lns-radius-full. The painted CTA uses 9999px, which is the same pill."),
+        "full": declared_dim("--lns-radius-full", f"The painted CTA uses {measured('primary-cta', 'borderTopLeftRadius')}, which is the same pill."),
     },
     "shadow": {
-        "small": shadow("0 4px 10px rgba(0, 0, 0, 0.05)", f"{D}. {M}: --lns-shadow-small."),
-        "medium": shadow("0 4px 10px rgba(0, 0, 0, 0.1)", f"{D}. {M}: --lns-shadow-medium."),
-        "large": shadow("0 6px 24px rgba(0, 0, 0, 0.1)", f"{D}. {M}: --lns-shadow-large."),
+        "small": shadow(declared_shadow("--lns-shadow-small"), f"{D}. {M}: --lns-shadow-small = {declared('--lns-shadow-small')}."),
+        "medium": shadow(declared_shadow("--lns-shadow-medium"), f"{D}. {M}: --lns-shadow-medium = {declared('--lns-shadow-medium')}."),
+        "large": shadow(declared_shadow("--lns-shadow-large"), f"{D}. {M}: --lns-shadow-large = {declared('--lns-shadow-large')}."),
     },
     "sizing": {
         "formFieldHeight": declared_dim("--lns-formFieldHeight"),
-        "formFieldBorder": dim("1px", f"{M}: --lns-formFieldBorderWidth"),
-        "formFieldBorderFocus": dim("2px", f"{M}: --lns-formFieldBorderWidthFocus"),
-        "ctaHeight": dim("48px", f"{C}: Get Loom for free, header"),
-        "loginButtonHeight": dim("40px", f"{C}: Log in with Google"),
-        "emailFieldHeight": dim("56px", f"{C}: #email on /login. Taller than --lns-formFieldHeight (36px)."),
-        "iconButton": dim("32px", f"{C}: Copy link on the public share page"),
+        "formFieldBorder": dim(decl_len("--lns-formFieldBorderWidth"), f"{M}: --lns-formFieldBorderWidth"),
+        "formFieldBorderFocus": dim(decl_len("--lns-formFieldBorderWidthFocus"), f"{M}: --lns-formFieldBorderWidthFocus"),
+        "ctaHeight": dim(measured_px("primary-cta", "height"), f"{C}: primary-cta height (Get Loom for free, header)"),
+        "loginButtonHeight": dim(measured_px("sso-google", "height"), f"{C}: sso-google height (Log in with Google)"),
+        "emailFieldHeight": dim(measured_px("email-field", "height"), f"{C}: email-field height (#email on /login). Taller than --lns-formFieldHeight (36px)."),
+        "iconButton": dim(measured_px("copy-link", "height"), f"{C}: copy-link height (Copy link on the public share page)"),
     },
     "layout": {
-        "desktop": dim("1440px", f"{C}: requested and measured viewport width"),
-        "phone": dim("390px", f"{C}: requested phone viewport. PNG is 780px at devicePixelRatio 2."),
-        "desktopHeight": dim("900px", f"{C}: desktop viewport height"),
-        "phoneHeight": dim("844px", f"{C}: phone viewport height"),
+        "desktop": dim("1440px", f"{HAND}; the desktop viewport the capture scripts request"),
+        "phone": dim("390px", f"{HAND}; the phone viewport the capture scripts request (PNG is 780px at devicePixelRatio 2)"),
+        "desktopHeight": dim("900px", f"{HAND}; the desktop viewport height the capture scripts request"),
+        "phoneHeight": dim("844px", f"{HAND}; the phone viewport height the capture scripts request"),
     },
     "typography": {
         "display": {
@@ -216,10 +288,10 @@ core = {
             "$value": {
                 "fontFamily": "{font.family.display}",
                 "fontSize": "{font.size.display}",
-                "fontWeight": "700",
+                "fontWeight": measured("hero-title", "fontWeight"),
                 "lineHeight": "{font.lineHeight.display}",
             },
-            "$extensions": {"source": f"{C}: home h1"},
+            "$extensions": {"source": f"{C}: hero-title (home h1)"},
         },
         "heading-lg": {
             "$type": "typography",
@@ -227,7 +299,7 @@ core = {
                 "fontFamily": "{font.family.display}",
                 "fontSize": "{font.size.heading-lg}",
                 "fontWeight": "{font.weight.bold}",
-                "lineHeight": "1.16",
+                "lineHeight": declared("--lns-lineHeight-heading-lg"),
                 "letterSpacing": "{font.tracking.heading-lg}",
             },
             "$extensions": {"source": f"{M}: --lns-fontSize-heading-lg and companions"},
@@ -238,7 +310,7 @@ core = {
                 "fontFamily": "{font.family.display}",
                 "fontSize": "{font.size.heading-md}",
                 "fontWeight": "{font.weight.bold}",
-                "lineHeight": "1.125",
+                "lineHeight": declared("--lns-lineHeight-heading-md"),
                 "letterSpacing": "{font.tracking.heading-md}",
             },
             "$extensions": {"source": f"{M}: --lns-fontSize-heading-md"},
@@ -249,7 +321,7 @@ core = {
                 "fontFamily": "{font.family.text}",
                 "fontSize": "{font.size.body}",
                 "fontWeight": "{font.weight.regular}",
-                "lineHeight": "1.57",
+                "lineHeight": declared("--lns-lineHeight-body-md"),
             },
             "$extensions": {"source": f"{M}: --lns-fontSize-body-md. Body computed size was 16px."},
         },
@@ -259,9 +331,9 @@ core = {
                 "fontFamily": "{font.family.text}",
                 "fontSize": "{font.size.small}",
                 "fontWeight": "{font.weight.medium}",
-                "lineHeight": "1.5",
+                "lineHeight": declared("--lns-lineHeight-small"),
             },
-            "$extensions": {"source": f"{M}: --lns-fontSize-small. Nav CTA computed 15.615px."},
+            "$extensions": {"source": f"{M}: --lns-fontSize-small. Nav CTA computed {measured('primary-cta', 'fontSize')}."},
         },
     },
 }
@@ -325,7 +397,10 @@ for role, name in DARK_ROLES.items():
     )
 
 if MOTION:
-    core["motion"], _motion_extra = motion_mod.build(MOTION)
+    core["motion"], motion_extra = motion_mod.build(MOTION)
+    if motion_extra:
+        # Values DTCG cannot hold (linear()/steps() easings, transitions past the 60 kept), as the kit stores them.
+        core["$extensions"] = {"notTokenised": motion_extra}
 
 doc = {
     "$description": "Loom public signed-out capture, 2026-11-18. Lens tokens from html style. Dark set is declared, not painted.",

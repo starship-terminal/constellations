@@ -55,7 +55,7 @@ Read no components.md (No component crops. The preview browser produced no scree
 | light | 16.48:1 pass | 15.38:1 pass | 4.87:1 pass | 4.54:1 pass |
 | dark | 21.00:1 pass | 15.52:1 pass | 14.87:1 pass | 11.57:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus.outline` 2px solid #6fa0ff80; `light.focus.outline` 2px solid #234fa680; `dark.input.error.focus` #421210; `light.input.error.focus` #fde5e3.
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus.outline` 2px solid #6fa0ff80 (Reconstruction, not measured); `light.focus.outline` 2px solid #234fa680; `dark.input.error.focus` #421210; `light.input.error.focus` #fde5e3.
 
 <!-- brief:end -->
 
@@ -88,6 +88,8 @@ Resolved font weights on the marketing site differ from the declared custom prop
 SSO `Continue with email` was a 40px icon button. Its accessible name was "Continue with email". The visible word "Email" sat in a sibling. The 40px circle is the measured control.
 
 `preview.cover` is [icon.png](icon.png) because no page screenshot exists.
+
+- **The foundation scales have no file behind them.** The type, radius, space, size, shadow and motion scales and most painted-chrome values were read in the capture session, but no `raw/foundation.json` was kept. Only the `--rui-color-*` dumps are in [raw/](raw). The builder labels every Measured token whose value raw/ does not hold, with its opacity, "Reconstruction" (87 tokens). A coincidental match, such as a 4px step that also appears in a colour dump, keeps the old label.
 
 ## Fonts
 

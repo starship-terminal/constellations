@@ -29,130 +29,130 @@ colors:
 typography:
   h1:
     fontFamily: "ManyChatGravity"
-    fontSize: "7.2rem"
+    fontSize: "72px"
     fontWeight: 400
     lineHeight: 0.82
-    letterSpacing: "-0.02em"
+    letterSpacing: "-1.44px"
   h1-ai:
     fontFamily: "ManyChatGravity"
-    fontSize: "5.6rem"
+    fontSize: "56px"
     fontWeight: 400
     lineHeight: 1
-    letterSpacing: "-0.02em"
+    letterSpacing: "-1.12px"
   h2:
     fontFamily: "ManyChatGravity"
-    fontSize: "5.6rem"
+    fontSize: "56px"
     fontWeight: 400
     lineHeight: 0.82
-    letterSpacing: "-0.02em"
+    letterSpacing: "-1.12px"
   h3:
     fontFamily: "Rooftop"
-    fontSize: "3.6rem"
+    fontSize: "36px"
     fontWeight: 600
     lineHeight: 1.08
-    letterSpacing: "-0.04em"
+    letterSpacing: "-1.44px"
   h3-regular:
     fontFamily: "Rooftop"
-    fontSize: "3.6rem"
+    fontSize: "36px"
     fontWeight: 400
     lineHeight: 1.08
-    letterSpacing: "-0.04em"
+    letterSpacing: "-1.44px"
   h4:
     fontFamily: "Rooftop"
-    fontSize: "2.8rem"
+    fontSize: "28px"
     fontWeight: 400
     lineHeight: 1.08
-    letterSpacing: "-0.04em"
+    letterSpacing: "-1.12px"
   h5:
     fontFamily: "Rooftop"
-    fontSize: "2.4rem"
+    fontSize: "24px"
     fontWeight: 600
     lineHeight: 1.08
-    letterSpacing: "-0.03em"
+    letterSpacing: "-0.72px"
   h6:
     fontFamily: "Rooftop"
-    fontSize: "2rem"
+    fontSize: "20px"
     fontWeight: 600
     lineHeight: 1.4
-    letterSpacing: "-0.02em"
+    letterSpacing: "-0.4px"
   body:
     fontFamily: "Rooftop"
-    fontSize: "1.6rem"
+    fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   label:
     fontFamily: "Rooftop"
-    fontSize: "1.2rem"
+    fontSize: "12px"
     fontWeight: 400
     lineHeight: 1.36
-    letterSpacing: "0.125px"
+    letterSpacing: "0.12px"
   caption:
     fontFamily: "Rooftop"
-    fontSize: "1.4rem"
+    fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0.125px"
+    letterSpacing: "0.14px"
   ds-3xl:
     fontFamily: "ManyChatGravity"
-    fontSize: "5.6rem"
+    fontSize: "56px"
     fontWeight: 400
     lineHeight: 0.86
-    letterSpacing: "-0.02em"
+    letterSpacing: "-1.12px"
   ds-2xl:
     fontFamily: "ManyChatGravity"
-    fontSize: "4rem"
+    fontSize: "40px"
     fontWeight: 400
     lineHeight: 0.8
-    letterSpacing: "-0.02em"
+    letterSpacing: "-0.8px"
   ds-xl:
     fontFamily: "Rooftop"
-    fontSize: "2.4rem"
+    fontSize: "24px"
     fontWeight: 700
     lineHeight: 1.17
-    letterSpacing: "-0.04em"
+    letterSpacing: "-0.96px"
   ds-l:
     fontFamily: "Rooftop"
-    fontSize: "2.4rem"
+    fontSize: "24px"
     fontWeight: 700
     lineHeight: 1.17
-    letterSpacing: "-0.04em"
+    letterSpacing: "-0.96px"
   ds-m:
     fontFamily: "Rooftop"
-    fontSize: "2rem"
+    fontSize: "20px"
     fontWeight: 700
     lineHeight: 1.2
-    letterSpacing: "-0.03em"
+    letterSpacing: "-0.6px"
   ds-base:
     fontFamily: "Rooftop"
-    fontSize: "1.6rem"
+    fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   ds-s:
     fontFamily: "Rooftop"
-    fontSize: "1.6rem"
+    fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   ds-xs:
     fontFamily: "Rooftop"
-    fontSize: "1.2rem"
+    fontSize: "12px"
     fontWeight: 400
     lineHeight: 1.33
-    letterSpacing: "0.125px"
+    letterSpacing: "0.12px"
   ds-xs-mono:
     fontFamily: "CoFo Sans Mono"
-    fontSize: "1.2rem"
+    fontSize: "12px"
     fontWeight: 400
     lineHeight: 1.33
-    letterSpacing: "0.125px"
+    letterSpacing: "0.12px"
   ds-xss:
     fontFamily: "Rooftop"
-    fontSize: "1.2rem"
+    fontSize: "12px"
     fontWeight: 400
     lineHeight: 1.33
-    letterSpacing: "0.125px"
+    letterSpacing: "0.12px"
 rounded:
   "12": "12px"
   "16": "16px"
@@ -240,6 +240,12 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't read colours off the screenshots; they are 256-colour PNGs.
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
+
+### What to distrust (from README.md)
+
+- **Automation was hidden during the committed capture.** The readings in [raw/](raw), the crops and the screenshots were taken with a `navigator.webdriver` mask and Chromium's `AutomationControlled` flag turned off. The capture scripts no longer hide automation. A rerun that meets a bot check records that page as blocked.
+- **Button label colours.** Each ManyChat button carries a transparent duplicate label span. [components.md](components.md) reports the button's own computed colour. On the nav and product CTAs that colour is white on a white fill, so the visible label's colour there was not read.
+- **Type sizes are converted.** The stylesheet authors the type ramp in rem against a 10px root, and the tokens hold px (7.2rem is 72px). Letter-spacing is authored in em and converted to px at each step's own size.
 
 ### Do and don't (from README.md)
 

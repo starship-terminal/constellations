@@ -67,12 +67,12 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .libband .h { font: 800 var(--font-size-library, 60px)/1.1 var(--sg-library); color: var(--text-appInk, #000); margin-bottom: 18px; }
 .pcard { border: 1px solid var(--border-subtle, #e1e1e1); border-radius: var(--component-card-radiusPrompt, 16px); background: var(--surface-card, #fff); padding: 32px; color: var(--text-appInk, #000); }
 /* ---- sign-in card (Flutter canvas, sampled values) ---- */
-.signin { max-width: 420px; margin: 28px auto; padding: 28px; background: var(--app-ground, #f7f7f7); border-radius: 16px; font-size: 14px; color: var(--app-text-primary, #222); }
-.signin .h { font-size: 22px; font-weight: 600; color: var(--app-text-primary, #222); margin-bottom: 16px; text-align: center; }
+.signin { max-width: 420px; margin: 28px auto; padding: 28px; background: var(--sampled-app-ground, #f7f7f7); border-radius: 16px; font-size: 14px; color: var(--sampled-app-text-primary, #222); }
+.signin .h { font-size: 22px; font-weight: 600; color: var(--sampled-app-text-primary, #222); margin-bottom: 16px; text-align: center; }
 .obtn { display: flex; align-items: center; justify-content: center; height: var(--component-signin-buttonHeight, 56px); border-radius: var(--radius-medium, 8px); margin-bottom: 10px; font-size: 16px; }
-.obtn.email { background: var(--app-oauth-email, #fff); border: 1px solid var(--border-subtle, #e1e1e1); color: var(--app-text-primary, #222); }
-.obtn.apple { background: var(--app-oauth-ink, #222); color: #fff; }
-.obtn.google { background: var(--app-oauth-google, #1a73e8); color: #fff; }
+.obtn.email { background: var(--sampled-app-oauth-email, #fff); border: 1px solid var(--border-subtle, #e1e1e1); color: var(--sampled-app-text-primary, #222); }
+.obtn.apple { background: var(--sampled-app-oauth-ink, #222); color: #fff; }
+.obtn.google { background: var(--sampled-app-oauth-google, #1a73e8); color: #fff; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid #e1e1e1; padding: 6px 14px; text-align: left; }
 </style>
@@ -84,7 +84,7 @@ table.cmp td, table.cmp th { border: 1px solid #e1e1e1; padding: 6px 14px; text-
 
   <h2 class="sh">Clearful, declared and measured</h2>
   <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. Clearful's Webflow stylesheet declares a real design-token palette — the ten-step <code>--base-color-brand--blue-*</code> ramp, the grey ramp, four radius steps and a full semantic layer — so the core colors are those declarations resolved, and the roles are measured on the painted chrome: the #1953ff brand controls, the #1b1bbc hover step (shipped under a deleted variable), the #adc2ff CTA halo and the #d6e0ff brand-light bands.</p>
-  <p class="note">One light theme across the Webflow marketing routes and the Tailwind /library surface; app.clearful.com is a Flutter canvas — its shades are pixel-sampled off the captured screenshot and live under <code>light.app.*</code>. Read from clearful.com on 2026-11-30, signed out, in headless Chromium. Nothing was signed into, paid for or submitted.</p>
+  <p class="note">One light theme across the Webflow marketing routes and the Tailwind /library surface; app.clearful.com is a Flutter canvas — its shades are pixel-sampled off the captured screenshot and live under <code>core.sampled.app.*</code>. Read from clearful.com on 2026-11-30, signed out, in headless Chromium. Nothing was signed into, paid for or submitted.</p>
 
   <h2 class="sh">The marketing surface</h2>
   <p class="lead">The white nav bar with its blue pill, the Literatatt hero (no lede — the headline stands alone) and the CTA ringed by its 6px #adc2ff halo.</p>

@@ -60,8 +60,8 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || BASE + URLS[key], { wait, promo });
-  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
+  const cleared = await open(page, url || BASE + URLS[key], { wait, promo });  // false: the bot check did not clear (lib.mjs)
+  if (!cleared || (await blocked())) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }
@@ -195,7 +195,11 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          // close it again with the same control so it cannot hold focus or cover the next reading
+          undo = async () => { await page.keyboard.press('Escape'); if ((await loc.getAttribute('aria-expanded').catch(() => null)) === 'true' || (await loc.evaluate((el) => !!el.closest('details[open]')).catch(() => false))) await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(400); };
+        }
       } else via = via || 'at rest';
       // A focus attempt that never landed is not a focus-visible reading:
       // record the failure instead of publishing a default-state style under
@@ -413,7 +417,12 @@ async function mobile() {
   await chrome('mobile');
   const g = G.mobile;
   await markCookies();
-  await S('m-cookie-banner', q('[data-m-mark="cookies"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Cookie banner (mobile)', desc: 'The consent notice at 390 wide; hidden after its own reading, never answered. Note: the marked node read as a 555x64 fixed bar at top:1138px — offscreen in the 390x844 viewport and wider than it — and it never painted on the phone pass (the crop caught body text), so the real mobile placement is unverified.', sel: 'fixed cookie banner at 390' }, { noScroll: true });
+  // A marked node outside the 390 x 844 viewport is not the banner as painted (the 2026-11-12 run
+  // read a 555x64 bar at top:1138px and its crop caught body text): record it missing instead.
+  const cookieMark = q('[data-m-mark="cookies"]').filter({ visible: true }).first();
+  const cookieInView = await cookieMark.evaluate((el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.top >= 0 && r.bottom <= innerHeight && r.right <= innerWidth; }).catch(() => false);
+  if (!cookieInView) { log('  ! m-cookie-banner: the marked node is outside the viewport; recorded missing'); delete out.components['m-cookie-banner']; }
+  await S('m-cookie-banner', cookieInView ? cookieMark : q('[data-m-none="m-cookie-banner"]'), ['default'], { group: g, title: 'Cookie banner (mobile)', desc: 'The consent notice at 390 wide; hidden after its own reading, never answered. Recorded missing when the marked node lies outside the viewport.', sel: 'fixed cookie banner at 390' }, { noScroll: true });
   await closePromo(page);
   await S('m-header', q('div[class*="Header__Wrapper"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', sel: 'Header__Wrapper at 390' }, { noScroll: true });
   await S('m-hero', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile headline', sel: 'h1 at 390' });

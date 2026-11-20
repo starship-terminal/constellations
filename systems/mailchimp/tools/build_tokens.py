@@ -225,7 +225,10 @@ if (RAW / "motion.json").exists():
     import sys
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
     import motion
-    core["motion"], _motion_not = motion.build(json.loads((RAW / "motion.json").read_text()))
+    core["motion"], motion_not = motion.build(json.loads((RAW / "motion.json").read_text()))
+    # The easings DTCG cannot carry (steps(), keywords) are listed, as the kit does, not dropped.
+    if motion_not:
+        core.setdefault("$extensions", {}).setdefault("notTokenised", []).extend(motion_not)
 
 tokens = {
     "core": core,
@@ -239,11 +242,13 @@ tokens = {
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+TEXT = json.dumps(tokens, indent=2, ensure_ascii=False) + "\n"
 
 
 def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(TEXT)
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})

@@ -218,9 +218,9 @@ The circular arrow button inside the field pill. Measured, never pressed for rea
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 53 x 53; radius 100%; background #2a2a2a `color.ink.42`; text Clarkson 10/normal 400, #1b1b1b `color.ink.27`; opacity 0.2; icon 28 x 28, #e6e6e6 `color.grey.230` |
+| default (same: hover, pressed) | size 53 x 53; radius 100%; background #2a2a2a `color.ink.42`; text Clarkson 10/normal 400, #1b1b1b `color.ink.27`; opacity 0.2; icon 28 x 28, #e6e6e6 `color.grey.230` |
 
-![Claim submit default](components/crops/claim-submit-default.png) ![Claim submit hover](components/crops/claim-submit-hover.png) ![Claim submit focus-visible](components/crops/claim-submit-focus-visible.png) ![Claim submit pressed](components/crops/claim-submit-pressed.png)
+![Claim submit default](components/crops/claim-submit-default.png) ![Claim submit hover](components/crops/claim-submit-hover.png) ![Claim submit pressed](components/crops/claim-submit-pressed.png)
 
 #### Log in button
 The "Log In" pill top right of the claim screen. Measured, never pressed. Read as `claim-login` on the the signed-out claim screen (/editor) page.
@@ -258,9 +258,9 @@ The giant "BIO.SITE/YOURNAME ↗" call; its ancestor links to /editor. Measured,
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 776.55 x 98; background transparent; text Clarkson 70/98 500, #ffffff `color.white` |
+| default (same: hover, pressed) | size 776.55 x 98; background transparent; text Clarkson 70/98 500, #ffffff `color.white` |
 
-![Footer marquee default](components/crops/footer-cta-default.png) ![Footer marquee hover](components/crops/footer-cta-hover.png) ![Footer marquee focus-visible](components/crops/footer-cta-focus-visible.png) ![Footer marquee pressed](components/crops/footer-cta-pressed.png)
+![Footer marquee default](components/crops/footer-cta-default.png) ![Footer marquee hover](components/crops/footer-cta-hover.png) ![Footer marquee pressed](components/crops/footer-cta-pressed.png)
 
 #### Footer link
 An ABOUT column link (Squarespace). Read as `footer-link` on the home page.

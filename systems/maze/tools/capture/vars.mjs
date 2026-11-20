@@ -75,9 +75,7 @@ const result = await probe.evaluate((sheets) => {
     try { ss.replaceSync(text); } catch (e) { errors.push({ file: String(name).slice(0, 80), error: String(e).slice(0, 120) }); continue; }
     walk(ss.cssRules, [], String(name).split('/').pop().slice(0, 40));
   }
-  // Resolve every kept name on a probe that carries the sheets.
-  const html = '<!doctype html><html><head>' + sheets.map(([, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('') + '</head><body><div id="probe"></div></body></html>';
-  return { rules, fonts, errors, html };
+  return { rules, fonts, errors };
 }, sheets.map(([name, css]) => [name, css.slice(0, 2_500_000)]));
 
 await probe.setContent('<!doctype html><html><head></head><body><div id="probe"></div></body></html>');

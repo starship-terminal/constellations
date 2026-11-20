@@ -50,7 +50,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | Role | light |
 |---|---|
 | page | #ffffff `core.color.neutral.paper` |
-| surface | rgba(0, 0, 0, 0) `core.color.neutral.hover-wash` |
+| surface | #ffffff `core.color.neutral.paper` |
 | text | #222325 `core.color.neutral.ink` |
 | muted | #62646a `core.color.neutral.muted` |
 | accent | #1dbf73 `core.color.brand.accent` |

@@ -45,9 +45,17 @@ try {
   }
 } catch { /* optional */ }
 
+// Pages whose load or challenge failed this run: icons/ is replaced only after a complete
+// collection (the kit's guard), so a dead page cannot leave icons/ and INDEX.tsv out of step.
+const failed = [];
 async function harvest(url, tag) {
-  await page.goto(BASE + url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  let res;
+  try {
+    res = await page.goto(BASE + url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+  } catch (e) { failed.push(`${tag} (${String(e.message || e).split('\n')[0].slice(0, 80)})`); return; }
+  // goto resolves on an HTTP error page (a 503 is not a throw): only a 2xx page counts as collected
+  if (!res || !res.ok()) { failed.push(`${tag} (HTTP ${res ? res.status() : 'no response'})`); return; }
+  if ((await clearChallenge(page)) === false) { failed.push(`${tag} (challenge)`); return; }
   await page.waitForTimeout(7000);
   await closePromo(page);
   const items = await page.evaluate(() => {
@@ -121,7 +129,8 @@ for (const u of PAGES) await harvest(u, u === '/' ? 'home' : u.replace(/^\//, ''
 const mctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' });
 await patch(mctx);
 const mp = await mctx.newPage();
-await mp.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+const mres = await mp.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch((e) => { failed.push(`mobile-home (${String(e.message || e).split('\n')[0].slice(0, 80)})`); return undefined; });
+if (mres !== undefined && (!mres || !mres.ok())) failed.push(`mobile-home (HTTP ${mres ? mres.status() : 'no response'})`);
 await mp.waitForTimeout(7000);
 await mp.locator('div[aria-label="Mobile menu toggle"]').first().click().catch(() => {});
 await mp.waitForTimeout(1200);
@@ -156,6 +165,14 @@ for (const it of await mp.evaluate(() => [...document.querySelectorAll('svg')].m
   seen.set(geo, e);
 }
 await browser.close();
+
+// The old set is replaced only after a complete collection, so a run that dies early or loses a page
+// cannot leave icons/ emptied or out of step with INDEX.tsv (kit tools/kit/capture/icons.mjs).
+if (failed.length || !seen.size) {
+  console.error(`not replacing icons/: ${failed.length ? 'failed pages: ' + failed.join(', ') : 'no icons collected'}`);
+  process.exit(1);
+}
+for (const f of fs.readdirSync(ICONS)) if (f.endsWith('.svg')) fs.unlinkSync(path.join(ICONS, f));
 
 // name files: a curated name from icon-names.tsv when one exists, else the
 // framer-name context, else the control role, else the hash

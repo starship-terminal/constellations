@@ -315,16 +315,8 @@ async function grammarCheck() {
   // so suggestion-card stays a recorded gap.
   await S('suggestions-panel', q(M('contentContainer_')).filter({ hasText: /get started/i }).filter({ visible: true }).first(), ['default'], { group: c, title: 'Suggestions rail (onboarding)', desc: 'The right rail of the free checker: the Suggestions header and the three-step "Let\'s get started" card shown to signed-out visitors.', sel: 'contentContainer_* (get started)' });
   await S('getting-started', q(M('getStartedList_')).filter({ visible: true }).first(), ['default'], { group: c, title: 'Get-started steps', desc: 'The numbered steps inside the rail\'s onboarding card ("Add your text...", "Hover over the underlines...", "Click a suggestion...").', sel: 'getStartedList_*' });
-  // filled state: type a sample sentence, wait for the check, measure what appears, then clear
-  await S('checker-filled', ed, ['default'], { group: c, title: 'Editor, filled', desc: 'The editor after a sample sentence was typed (then deleted): text in the field, issue underlines painted by the checker.', sel: '[contenteditable]' }, {
-    before: { default: async (loc) => {
-      await loc.click({ timeout: 5000 });
-      await page.keyboard.type('Me and him goes to the store every friday.', { delay: 12 });
-      await page.waitForTimeout(6000);
-      return 'sample text typed into the free checker; deleted after measuring, nothing submitted';
-    } },
-    after: { default: async (loc) => { await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(800); } },
-  });
+  // checker-filled: recorded as a boundary, not measured. Typed text is sent to
+  // Grammarly's server checker, so the editor is read at rest only (checker-editor).
   // Deliberately strict: `suggestion*` alone matches the rail's header label
   // (a false positive). The real card classes don't mount for a signed-out
   // visitor, so this records `missing` — an honest gap.

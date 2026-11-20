@@ -127,7 +127,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Dark marketing. The marketing site has no dark theme. The dark set is the mail app only.
 - Tiempos Headline and Inter files. The family names are measured. The files are not in this package.
 - The mail font stack. It names Segoe UI, Roboto, Oxygen and Ubuntu as fallbacks. The painted face on this Mac is the system sans.
-- Pressed states. A click on Try for free leaves for signup, so pressed was not forced.
+- Pressed states. None was captured. A click on Try for free leaves for signup, so pressed had to be forced, and the 2026-11-19 script enabled CSS before DOM on its DevTools session, which Chromium refuses. Every `pressed` entry in [raw/components-computed.json](raw/components-computed.json) is null, although that file's source line says pressed was forced. `tools/capture/public/measure.mjs` now forces `:active:hover` on the element in the kit's order; the readings need a recapture.
+- The `hero-try` reading in [raw/components-computed.json](raw/components-computed.json). Its selector, `a.button-base.w-button`, matched the first nav link (Pricing at y 8), not the hero's Try for free. [components.md](components.md) uses it only as the nav link, so no token comes from it. The script now marks the hero button by its text and position; the hero reading needs a recapture.
+- [components.md](components.md) is written by hand from the readings. `tools/build_components_md.py` only checks that the readings and crops still exist, so after a recapture the tables need a hand update.
 - The signup Cloudflare widget on the dark shot. It is a challenge, not a Missive control.
 - Motion. Home and pricing ignore `prefers-reduced-motion`. Login is partial. That is the reading, not a failed capture.
 - `--textMuted` on light. The hero body is neutral 500. Neutral 400 is the next declared step, used as the muted role, and was not the colour of a measured caption.

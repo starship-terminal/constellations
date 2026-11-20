@@ -59,11 +59,11 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Cookie consent card](#cookie-consent-card) | 343 x 447.9 | 1px solid #000000 `color.black` | 2px | #000000 `color.black` | none | 0 |
-| [Location dialog](#location-dialog) | 538 x 900 | 1px solid #767676 `color.grey.dark` | 2px | #ffffff `color.white` | none | 0 |
+| [Cookie consent card](#cookie-consent-card) | 343 x 447.9 | - | - | #ffffff `color.white` | rgba(0, 0, 0, 0.2) 0px 4px 16px 0px | 0 |
+| [Location dialog](#location-dialog) | 538 x 900 | - | - | #ffffff `color.white` | none | 0 |
 | [Filter panel, open](#filter-panel-open) | 538 x 900 | - | - | #ffffff `color.white` | none | 0 |
-| [Cart drawer, empty](#cart-drawer-empty) | 538 x 900 | - | 2px | #000000 `color.black` | none | 0 |
-| [Product card](#product-card) | 357 x 109.5 | 1px solid #eaeae8 `color.grey.mid` | 2px | #272a3e | none | 0 |
+| [Cart drawer, empty](#cart-drawer-empty) | 538 x 900 | - | - | #ffffff `color.white` | none | 0 |
+| [Product card](#product-card) | 357 x 109.5 | - | - | transparent | none | 0 |
 | [Search field](#search-field) | 680 x 40 | - | 4px | #f9f9f9 `color.grey.light.extra` | none | 0px 48px 0px 44px |
 | [Email field](#email-field) | 624 x 60 | 1px solid #767676 `color.grey.dark` | - | #ffffff `color.white` | none | 8px 8px 10px 15px |
 

@@ -68,85 +68,85 @@ typography:
     fontSize: "1.125rem"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   body-medium:
     fontFamily: "CareSans"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.45
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   body-small:
     fontFamily: "CareSans"
     fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   caption:
     fontFamily: "CareSans"
     fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1.35
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   display-large:
     fontFamily: "CareSans"
     fontSize: "4rem"
     fontWeight: 400
     lineHeight: 1.05
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   display-medium:
     fontFamily: "CareSans"
     fontSize: "3rem"
     fontWeight: 400
     lineHeight: 1.08
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   display-small:
     fontFamily: "CareSans"
     fontSize: "2.5rem"
     fontWeight: 400
     lineHeight: 1.1
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   display-xlarge:
     fontFamily: "CareSans"
     fontSize: "5rem"
     fontWeight: 400
     lineHeight: 1.05
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   heading-large:
     fontFamily: "CareSans"
     fontSize: "2rem"
-    fontWeight: 400
+    fontWeight: 700
     lineHeight: 1.2
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   heading-medium:
     fontFamily: "CareSans"
     fontSize: "1.5rem"
     fontWeight: 400
     lineHeight: 1.25
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   heading-small:
     fontFamily: "CareSans"
     fontSize: "1.25rem"
     fontWeight: 400
     lineHeight: 1.3
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   heading-xlarge:
     fontFamily: "CareSans"
     fontSize: "2.25rem"
     fontWeight: 400
     lineHeight: 1.15
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   label:
     fontFamily: "CareSans"
     fontSize: "0.625rem"
     fontWeight: 400
     lineHeight: 1.3
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   tiny:
     fontFamily: "CareSans"
     fontSize: "0.5rem"
     fontWeight: 400
     lineHeight: 1.2
-    letterSpacing: "0em"
+    letterSpacing: "0px"
 rounded:
   control: "0.25rem"
 spacing:
@@ -240,4 +240,5 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Typography line heights were entered by hand.** Each `core.typography.*` size and family is declared (`--fontSizes-*`, `--b-font-family-sans`), and heading-large and heading-small take the declared `--fontWeights-*`; the line heights (1.05 to 1.45), the letter spacing and the other weights have no reading behind them and their sources say Reconstruction. The site's own `--b-line-height-*` roles are `calc()` expressions on the newer `--b-*` scale (about 1.01 at 32px for headings, 1.24 at 18px for body), and the measured titles paint 1.12.
 The hero CTA's computed `backgroundColor` is transparent because the black fill is painted by a child or a pseudo layer. The screenshot shows the black pill. Use `light.color.button.primary` (`#000000`) for that control, and the crop for the shape. Care Sans and Ivar Soft are the product's faces and are not committed. The style guide falls back to Helvetica. `--colors-button-primaryHover` resolves to `transparent` with black text, which is the declared hover token, not a guess. The account menu drawer in the signed-in capture did not paint in the 1440 screenshot (the click registered, the drawer stayed off-canvas). The signed-out menu drawer in [home-light-menu](screenshots/home-light-menu.png) is the one to trust. The profile email region is a flat fill, not a measured text style.

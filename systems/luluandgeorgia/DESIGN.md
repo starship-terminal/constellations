@@ -58,8 +58,8 @@ typography:
     fontFamily: "Soehne Leicht"
     fontSize: "13px"
     fontWeight: 800
-    lineHeight: "16px"
-    letterSpacing: "0px"
+    lineHeight: "24px"
+    letterSpacing: "2px"
   caption:
     fontFamily: "Soehne Leicht"
     fontSize: "12px"
@@ -152,8 +152,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Spacing steps are the paddings that were measured (8, 12, 16, 40). There is no declared spacing scale.
 - The display face on the home hero is painted over a photograph. The heading token is the collection h1, which was a real text node.
 - Add to cart hover and pressed did not change the computed fill. That is the measurement, not a missing hover style that was filled in.
-- Focus did not paint a separate ring. There is no focus colour token.
+- Focus on Add to cart was a script `focus()` taken with the pointer still over the button, so `:focus-visible` was never produced. The reading cannot say whether a keyboard focus draws a ring, and there is no focus colour token. `add to cart` focus needs a recapture (the pk-k recapture tracking issue, 2026-11 audit); `tools/capture/public/measure.mjs` now resets the pointer and takes a keyboard focus, and was not rerun.
+- The `badge` reading and its crop are the whole product card: the badge selector matched the card, not the chip. Recapture needed (the pk-k recapture tracking issue, 2026-11 audit).
+- Three colours have no reading in `raw/`: `light.color.promo` (the announcement bar's parent), `light.color.cream` (the footer newsletter button) and `light.color.info` (Judge.me's `--jdgm-primary-color`) came from a colour probe that was not committed, and `light.color.border.strong` from a wishlist button the measure pass did not find. They are labelled Reconstruction.
+- The add-to-cart type role is the measured 13px / 24px, weight 800, 2px tracking. Before the 2026-11 audit it said 16px and 0px, which no reading holds.
+- [components.md](components.md) is prose written at capture time; [tools/build_components_md.py](tools/build_components_md.py) fills every measured number in it from `raw/components-computed.json` and fails when one is missing.
 - `light.color.info` is the reviews widget, not a storefront status colour. Success, warning, and danger were not painted as their own roles. Sale red is the only red.
 - The Shop sign-in page uses Libre Franklin and a purple pill. Those values are not in `tokens.json`.
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.
+- The committed readings and screenshots were taken with `navigator.webdriver` hidden by `tools/capture/public/lib.mjs`. The mask has been removed from the script (2026-11 audit); a bot check is now a boundary, not something to get past.
 - The chat bubble (Gladly) is still in some screenshots. It is a third-party widget.

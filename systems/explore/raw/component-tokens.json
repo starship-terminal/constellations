@@ -222,7 +222,7 @@
         "light": {
           "value": 300,
           "type": "fontWeight",
-          "source": "stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-weight:300"
+          "source": "stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): @font-face system{font-weight:300} — the only 300 the sheet declares; no rule sets font-weight:300"
         },
         "regular": {
           "value": 400,
@@ -232,7 +232,7 @@
         "medium": {
           "value": 500,
           "type": "fontWeight",
-          "source": "medium cut carried by the UntitledSansMedium/LabilGrotesk-Medium families rather than font-weight:500",
+          "source": "Reconstruction: entered by hand at capture time; the sheet declares no font-weight:500 — the medium cut is carried by the UntitledSansMedium/LabilGrotesk-Medium families",
           "description": "Medium weight, expressed through the medium families."
         },
         "bold": {
@@ -300,33 +300,33 @@
       },
       "lineHeight": {
         "tight": {
-          "value": 1.02,
+          "value": 1.025,
           "type": "number",
-          "source": "stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .hero__title 40/41px",
+          "source": "derived: line-height 41px / font-size 40px, both declared in app.4ef09b07.css (raw/css-declarations.json); .hero__title",
           "description": "Display leading."
         },
         "snug": {
-          "value": 1.19,
+          "value": 1.1875,
           "type": "number",
-          "source": "stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): 16px/19px buttons"
+          "source": "derived: line-height 19px / font-size 16px, both declared in app.4ef09b07.css (raw/css-declarations.json); buttons"
         },
         "base": {
           "value": 1.375,
           "type": "number",
-          "source": "stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): body 16px/22px",
+          "source": "derived: line-height 22px / font-size 16px, both declared in app.4ef09b07.css (raw/css-declarations.json); body",
           "description": "Body leading."
         },
         "loose": {
           "value": 1.5,
           "type": "number",
-          "source": "stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): legal/longform copy 16px/24px"
+          "source": "derived: line-height 24px / font-size 16px, both declared in app.4ef09b07.css (raw/css-declarations.json); legal/longform copy"
         }
       },
       "letterSpacing": {
         "none": {
           "value": "0px",
           "type": "dimension",
-          "source": "no letter-spacing declarations in the sheet; measured values are normal/0"
+          "source": "derived: no measured component computes a letter-spacing other than normal (raw/components-computed.json); the sheet's two declarations (.auth__stripe 0.2em, a header-menu span 0.3px) sit on elements the capture did not measure"
         }
       }
     },
@@ -490,7 +490,7 @@
       "legal": {
         "value": "760px",
         "type": "dimension",
-        "source": "measured legal-body width 760px",
+        "source": "measured legal-body default rect.w (raw/components-computed.json)",
         "description": "Legal/statement copy column."
       }
     },
@@ -549,15 +549,15 @@
       "modal": {
         "value": 999,
         "type": "number",
-        "source": "stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .v--modal overlay z-index"
+        "source": "Reconstruction: entered by hand at capture time; raw/css-declarations.json declares no z-index of 999 (the sheet's highest is 2000, on .alert)"
       }
     },
     "shadow": {
       "none": {
         "value": "none",
         "type": "other",
-        "source": "no box-shadow declarations on the signed-out chrome; cards are border/flat only",
-        "description": "Flat UI — no shadows in the public surface."
+        "source": "derived: no measured component computes a box-shadow (raw/components-computed.json); the sheet's .box-shadow/.panel utility shadows sit on surfaces the capture did not measure",
+        "description": "Flat UI — no shadows on the measured public surface."
       }
     }
   },
@@ -723,7 +723,7 @@
       "link": {
         "value": "{color.grey.950}",
         "type": "color",
-        "source": "links render ink with underline (measured forgot-link/signup-link)",
+        "source": "measured signup-link default color (raw/components-computed.json): ink with an underline; the forgot-password link paints the muted #9d9d9d without one",
         "description": "Inline links."
       }
     }
@@ -818,7 +818,7 @@
       "gap": {
         "value": "10px",
         "type": "dimension",
-        "source": "stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .pill{margin:0 5px 9px} → 10px column gap"
+        "source": "derived: two .pill{margin:0 5px 9px} side margins of 5px make a 10px column gap (raw/css-declarations.json)"
       }
     },
     "post": {

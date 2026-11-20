@@ -63,7 +63,10 @@ def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
+    # transition/animation composites have no single CSS value (as in the kit);
+    # the guide lists them from the inlined tree instead
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname])
+                     if t["$type"] not in ("transition", "animation"))
 
 
 # a core name and a themed name must not land on the same custom property

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Light only. Deterministic."""
+import html
 import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
@@ -55,10 +56,18 @@ space_rows = [(n, css(t["$value"], t["$type"])) for n, t in flat(T["core"]["spac
 def swatch(name, value):
     return f'<div class="sw"><i style="background:{value}"></i><div><b>{name}</b><span>{value}</span></div></div>'
 
+def specimen_style(v):
+    """The specimen's style attribute, escaped: the quoted family would otherwise close it."""
+    css = ";".join(f"{prop}:{v[key]}" for prop, key in (
+        ("font-family", "fontFamily"), ("font-size", "fontSize"), ("font-weight", "fontWeight"),
+        ("line-height", "lineHeight")))
+    return html.escape(css, quote=True)
+
+
 color_html = "\n".join(swatch(n, v) for n, v in rows_color)
 type_html = "\n".join(
     f'<div class="ty"><div class="k">{n}<small>{v["fontSize"]} / {v["lineHeight"]} · {v["fontWeight"]}</small></div>'
-    f'<div style="font-family:{v["fontFamily"]};font-size:{v["fontSize"]};font-weight:{v["fontWeight"]};line-height:{v["lineHeight"]}">Creative classes</div></div>'
+    f'<div style="{specimen_style(v)}">Creative classes</div></div>'
     for n, v in type_rows
 )
 radius_html = "\n".join(

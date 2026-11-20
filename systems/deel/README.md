@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #b1d8fc `light.action.accent-chip` |
 | border | rgba(250, 244, 238, 0.16) `light.border.hairline` |
 
-Fonts: `core.font.family.display` is BagossCondensedFont, then 1 fallback; `core.font.family.sans` is Inter, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 11 radius steps (`core.radius`), 17 spacing steps (`core.spacing`).
+Fonts: `core.font.family.display` is BagossCondensedFont, then 4 fallbacks; `core.font.family.sans` is Inter, then 4 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 11 radius steps (`core.radius`), 17 spacing steps (`core.spacing`).
 
 ### Using components
 

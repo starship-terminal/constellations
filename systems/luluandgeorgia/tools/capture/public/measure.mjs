@@ -5,11 +5,15 @@
 //
 // Writes raw/components-computed.json and components/crops/.
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { BASE, launch, hideOverlays, open, styleOf, crop, centre, RAW, clearChallenge } from './lib.mjs';
 
 fs.mkdirSync(RAW, { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
+// Written mid-run outside the repo; OUT is replaced only when the whole run finishes, so a page
+// that fails part-way never leaves the committed readings missing every later component.
+const PARTIAL = path.join(os.tmpdir(), 'luluandgeorgia-components-computed.partial.json');
 const out = { _meta: { product: 'Lulu and Georgia', site: BASE, captured: new Date().toISOString().slice(0, 10), route: 'public signed-out' }, components: {}, foundations: {} };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -22,7 +26,8 @@ page.setDefaultTimeout(8000);
 
 async function go(url) {
   log('open', url);
-  await open(page, url.startsWith('http') ? url : BASE + url, { wait: 4000 });
+  // A bot check that never clears stops the run: the challenge page is not the storefront.
+  if (!(await open(page, url.startsWith('http') ? url : BASE + url, { wait: 4000 }))) throw new Error(`challenge did not clear on ${url}`);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
 }
 
@@ -47,22 +52,32 @@ async function measure(key, state, loc, opts = {}) {
   }
   try {
     if (opts.scroll !== false) await centre(target);
+    // Start every state from rest: pointer away, nothing focused, so a focus reading is not a
+    // hover+focus mix left over from the state before it.
+    await page.mouse.move(1, 1);
+    await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur());
+    await page.waitForTimeout(150);
     let undo;
+    let via;
     if (state === 'hover') {
       await target.hover({ timeout: 4000 }).catch(() => target.hover({ force: true }));
       await page.waitForTimeout(350);
     } else if (state === 'focus') {
+      // A keyboard focus, so :focus-visible applies; a failed one is recorded as failed, never as
+      // a state that draws no ring.
       await target.evaluate((el) => el.focus());
+      await page.keyboard.press('Shift+Tab');
+      await page.keyboard.press('Tab');
       await page.waitForTimeout(250);
+      const ok = await target.evaluate((el) => document.activeElement === el && el.matches(':focus-visible'));
+      via = ok ? 'keyboard focus (Shift+Tab, Tab)' : 'focus failed';
     } else if (state === 'pressed') {
       undo = await forcePseudo(target, ['active', 'hover']);
-    } else if (state === 'disabled') {
-      undo = await forcePseudo(target, ['disabled']);
     }
     const s = await styleOf(target);
     let file;
     try { file = await crop(page, target, `${key}-${state}`, opts.pad ?? 10); } catch (e) { s.cropError = String(e.message || e).slice(0, 140); }
-    c.states[state] = { ...s, crop: file };
+    c.states[state] = { ...s, crop: file, ...(via ? { via } : {}) };
     log('  ', key, state, s.rect.w + 'x' + s.rect.h, s.backgroundColor, s.color, s.fontSize);
     if (undo) await undo();
   } catch (e) {
@@ -155,7 +170,7 @@ await page.waitForTimeout(700);
 await measure('cart-drawer', 'empty', page.locator('[class*="cart-drawer"], [class*="drawer"]').filter({ hasText: /bag|cart/i }).first(), { title: 'Cart drawer', group: 'dialog', pad: 0 });
 await page.keyboard.press('Escape');
 
-fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+fs.writeFileSync(PARTIAL, JSON.stringify(out, null, 1) + '\n');
 
 // ---- collection ----
 await go('/collections/furniture');
@@ -244,5 +259,6 @@ out.foundations.motion = await page.evaluate(() => {
 });
 
 fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+fs.rmSync(PARTIAL, { force: true });
 log('wrote', OUT);
 await browser.close();

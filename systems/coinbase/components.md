@@ -332,10 +332,10 @@ The "Continue" submit on the sign-in card; measured never pressed — it would s
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 400 x 56; padding 16px 32px; radius 56px; background #1460ff; text CoinbaseSans 16/24 600, #ffffff `color.gray.0`; opacity 0.5 |
+| default (same: hover) | size 400 x 56; padding 16px 32px; radius 56px; background #1460ff; text CoinbaseSans 16/24 600, #ffffff `color.gray.0`; opacity 0.5 |
 | pressed | size 392 x 54.88; transform scale(0.98); child paint button.flex-ff5rfy6.fgInverse-f1sdlwjn: size 392.0x54.9 |
 
-![Continue button default](components/crops/signin-submit-default.png) ![Continue button hover](components/crops/signin-submit-hover.png) ![Continue button focus-visible](components/crops/signin-submit-focus-visible.png) ![Continue button pressed](components/crops/signin-submit-pressed.png)
+![Continue button default](components/crops/signin-submit-default.png) ![Continue button hover](components/crops/signin-submit-hover.png) ![Continue button pressed](components/crops/signin-submit-pressed.png)
 
 #### OAuth button
 A "Sign in with Google" OAuth row on the sign-in card; measured never pressed. Read as `signin-oauth` on the sign-in page.

@@ -163,7 +163,7 @@ for (const { k, mob } of runs) {
     // past the requested 390 (the animation page did, to 459).
     screen: { width: vw, height: vh },
   });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // Automation is not hidden: no navigator.webdriver mask (bot check: recorded as a boundary, not bypassed).
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr, BASE + spec.path);

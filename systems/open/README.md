@@ -17,7 +17,7 @@ The live host is o-p-e-n.com. The home page loaded with title "Guided Meditation
 | [icons/](icons/) | Wordmark, menu circle, and the safari mask icon, with [INDEX.tsv](icons/INDEX.tsv). |
 | [screenshots/](screenshots/) | Page shots, desktop and phone. |
 | [raw/](raw/) | Palette, type, and space readings. |
-| [tools/](tools/) | The capture kit copy. |
+| [tools/](tools/) | `test_tokens.py`. `capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`). No kit capture script took these readings |
 
 ## Brief
 

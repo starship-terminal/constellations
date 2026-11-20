@@ -216,7 +216,7 @@ table.tok td:last-child { font: 11px var(--fontFamily-mono); color: var(--color-
 
 <script>
 const TOK = /*TOKENS*/null;
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const flat = (o, p='') => Object.entries(o||{}).flatMap(([k,v]) => k.startsWith('$') ? [] : (v && typeof v === 'object' && 'v' in v) ? [[p+k, v]] : flat(v, p+k+'.'));
 const cssname = (p) => '--' + p.replace(/[^a-zA-Z0-9-]/g, '-').replace(/\./g, '-');
 const theme = () => document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';

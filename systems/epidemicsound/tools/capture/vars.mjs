@@ -78,7 +78,9 @@ const sheets = [...bodies.entries()].concat(inline);
 await page.close();
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The probe resolves vw/vh/dvh and @media at the 1440 x 900 the notes below claim; a bare
+// browser.newPage() would give Playwright's 1280 x 720 default (finding 19-1).
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];

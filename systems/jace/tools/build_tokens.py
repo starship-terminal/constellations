@@ -35,22 +35,23 @@ def lin(c):
 
 
 def lab_rgb(L, a, b):
-    # CSS lab() is CIE Lab with L in 0..100 (or 0..1). Browser computed lab() uses 0..100.
-    if L > 1:
-        L = L / 100
-    fy = (L + 0.16) / 1.16
+    """CSS lab() to 8-bit sRGB. CSS Lab is CIE Lab on the D50 white with L in 0..100 (a
+    percentage reads the same), so XYZ is taken on D50 and Bradford-adapted to D65 before the
+    sRGB matrix. L is never rescaled: lab(0.5 ...) is a near-black, not 50% lightness."""
+    fy = (L + 16) / 116
     fx = fy + (a / 500)
     fz = fy - (b / 200)
 
     def f_inv(t):
         return t ** 3 if t > 6 / 29 else 3 * (6 / 29) ** 2 * (t - 4 / 29)
-    X = 0.95047 * f_inv(fx)
+    X = 0.96422 * f_inv(fx)
     Y = 1 * f_inv(fy)
-    Z = 1.08883 * f_inv(fz)
+    Z = 0.82521 * f_inv(fz)
+    # XYZ (D50) -> linear sRGB through the Bradford-adapted matrix
     rgb = [
-        3.2406 * X - 1.5372 * Y - 0.4986 * Z,
-        -0.9689 * X + 1.8758 * Y + 0.0415 * Z,
-        0.0557 * X - 0.2040 * Y + 1.0570 * Z,
+        3.1338561 * X - 1.6168667 * Y - 0.4906146 * Z,
+        -0.9787684 * X + 1.9161415 * Y + 0.0334540 * Z,
+        0.0719453 * X - 0.2289914 * Y + 1.4052427 * Z,
     ]
     return [round(min(1, max(0, lin(x))) * 255) for x in rgb]
 
@@ -124,6 +125,65 @@ def put(group, parts, token):
     for p in parts[:-1]:
         node = node.setdefault(p, {})
     node[parts[-1]] = token
+
+
+def split_top(v, sep=","):
+    """Split on sep outside parentheses: rgba(0, 0, 0, .1) stays whole."""
+    out, depth, cur = [], 0, ""
+    for ch in v:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == sep and depth == 0:
+            out.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    return out + [cur.strip()] if cur.strip() else out
+
+
+def shadow_layers(v):
+    """A computed box-shadow ("rgba(...) 0px 2px 4px -1px, ...", inset anywhere) as DTCG shadow
+    layers. Raises on a layer it cannot read instead of guessing."""
+    layers = []
+    for layer in split_top(v):
+        words = split_top(layer, " ")
+        inset = "inset" in words
+        words = [w for w in words if w != "inset"]
+        colours = [w for w in words if not re.fullmatch(r"-?[\d.]+(px)?", w)]
+        lengths = [w if w.endswith("px") else w + "px" for w in words if re.fullmatch(r"-?[\d.]+(px)?", w)]
+        if len(colours) != 1 or not 2 <= len(lengths) <= 4:
+            raise ValueError(f"cannot read shadow layer: {layer!r}")
+        lengths += ["0px"] * (4 - len(lengths))
+        if not color(colours[0]):
+            raise ValueError(f"cannot read shadow colour: {colours[0]!r}")
+        out = {"color": color(colours[0]), "offsetX": lengths[0], "offsetY": lengths[1],
+               "blur": lengths[2], "spread": lengths[3]}
+        if inset:
+            out["inset"] = True
+        layers.append(out)
+    return layers
+
+
+def unnest(node):
+    """Lift tokens that sit inside another token out as siblings: --theme-primary and
+    --theme-primary-foreground would make theme.primary hold theme.primary.foreground, where DTCG
+    walkers stop at $value and never look. The child becomes theme.primary-foreground."""
+    if not isinstance(node, dict):
+        return node
+    for k in list(node):
+        if k.startswith("$"):
+            continue
+        v = unnest(node[k])
+        if isinstance(v, dict) and "$value" in v:
+            kids = [c for c in v if not c.startswith("$")]
+            for c in kids:
+                lifted = f"{k}-{c}"
+                if lifted in node:
+                    raise SystemExit(f"cannot lift {k}.{c}: {lifted} exists")
+                node[lifted] = v.pop(c)
+            if kids:
+                unnest(node)
+    return node
 
 
 def name_parts(css_name):
@@ -315,7 +375,7 @@ def build_theme(theme):
             else:
                 not_tok.append(name + " " + str(rec.get("value") or raw)[:40])
         elif kind == "shadow":
-            put(sem, path.split("."), tok(rec.get("value"), "shadow", note=name))
+            put(sem, path.split("."), tok(shadow_layers(rec.get("value")), "shadow", note=name))
         elif kind == "dimension":
             put(sem, path.split("."), tok(rec.get("value"), "dimension", note=name))
         elif kind == "fontFamily":
@@ -329,14 +389,20 @@ def build_theme(theme):
     return sem
 
 
-def main():
+def build():
     core = build_core()
     light = build_theme("light")
     dark = build_theme("dark")
     # motion group from the probe, product-free
     motion_path = RAW / "motion.json"
     if motion_path.exists():
-        core["motion"] = motion.build(json.loads(motion_path.read_text()))
+        # motion.build returns (group, notTokenised); the list goes under core $extensions as
+        # the kit does, never into core.motion itself.
+        core["motion"], not_tokenised = motion.build(json.loads(motion_path.read_text()))
+        if not_tokenised:
+            core["$extensions"] = {"notTokenised": not_tokenised}
+    for tree in (core, light, dark):
+        unnest(tree)
     doc = {
         "$schema": "https://design-tokens.org/schema.json",
         "core": core,
@@ -354,9 +420,14 @@ def main():
             },
         },
     }
+    return doc
+
+
+def main():
+    doc = build()
     out = HERE / "tokens.json"
     out.write_text(json.dumps(doc, indent=1) + "\n")
-    print("wrote", out, "core groups", list(core), "light", len(light), "dark", len(dark))
+    print("wrote", out, "core groups", list(doc["core"]), "light", len(doc["light"]), "dark", len(doc["dark"]))
 
 
 if __name__ == "__main__":

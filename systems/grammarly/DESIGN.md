@@ -47,6 +47,8 @@ colors:
   color-border-addition-default: "#016a5e"
   color-border-addition-subdued: "#73e1d4"
   color-border-base-default: "#7f7f7f"
+  color-border-base-default-f3: "rgba(127, 127, 127, 0.3)"
+  color-border-base-default-f5: "rgba(127, 127, 127, 0.5)"
   color-border-base-inverse: "#ffffff"
   color-border-base-subdued: "#d9d9d9"
   color-border-brand-default: "#027e6f"
@@ -73,7 +75,11 @@ colors:
   color-border-warning-default: "#bd5200"
   color-border-warning-subdued: "#ffdc85"
   color-elevation-base-default: "#707070"
+  color-elevation-base-default-f3: "rgba(112, 112, 112, 0.3)"
+  color-elevation-base-default-f4: "rgba(112, 112, 112, 0.4)"
+  color-elevation-base-default-f5: "rgba(112, 112, 112, 0.5)"
   color-elevation-outline-default: "#d9d9d9"
+  color-elevation-outline-default-1: "#d9d9d9"
   color-highlight-addition-default: "#def6f3"
   color-highlight-deletion-default: "#ebebeb"
   color-icon-addition-default: "#016a5e"
@@ -739,6 +745,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Lazy-mounted sections.** The Compare Plans table, FAQ and promo banner mount on scroll; they were scrolled in before measuring, and a slower page could still miss them.
 - **Marketing copy inside shots** (plan prices like $12 USD/month Pro, feature lists, testimonials) is Grammarly's content, kept as captured for layout reference; prices and offers change.
 - **Screenshots are 256-colour** — never read a colour off them; use tokens.json or the raw files.
+- **Two filled states sent text to the server.** The `checker-filled` reading and the [grammar-check-light-filled](screenshots/grammar-check-light-filled.png) and [paraphrasing-tool-light-filled](screenshots/paraphrasing-tool-light-filled.png) shots were taken after a sample sentence was typed into the free checker and paraphraser, which send it to Grammarly for analysis. The scripts no longer type there (edited, not run); a recapture reads those editors at rest only.
+- **Dark provenance named the light rule until 2026-11-20.** Each `dark.*` token now cites its `[data-gds-theme="dark"]` or `[data-origin-mode="dark"]` declaration (and the var it aliases there); values were unchanged. Six variables whose names extend another token's (`--color-border-base-default-f3`) are siblings now (`default-f3`), not children of a token.
 
 ### Do and don't (from README.md)
 

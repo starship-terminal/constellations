@@ -89,6 +89,8 @@ Pill radius computed to `16777215px`. The component tokens record `9999px` for t
 
 The body of the login page also paints an `oklch` wash at alpha 0.09. It is not the page token.
 
+- **The app ramps are not stored in raw/.** The `--rc-*` ramps were read as declared hex during the capture session, but [raw/readings.json](raw/readings.json) holds no copy of them. The builder labels every token whose value raw/ does not hold "Reconstruction": 80 of the 90 app ramp steps, `size.content` and `dark.action.hover`. A recapture should store the ramps in raw/.
+
 ## Fonts
 
 helveticaNeue and objectSans are self-hosted next/font families on the marketing site. IBM Plex Mono is declared as the mono stack and was not used by a visible home-page element at rest. The app uses Inter Variable, with ObjectSans named on the login heading. None of these files are in the package. The style guide falls back to the system sans.

@@ -12,7 +12,7 @@ OneSoil is a precision-agriculture product. This package records the public mark
 | [components/](components/) | Element crops |
 | [screenshots/](screenshots/) | Page captures, 256-colour PNGs |
 | [raw/](raw/) | Computed-style dumps |
-| [tools/](tools/) | Kit copy plus the token check |
+| [tools/](tools/) | The token check (`build_tokens.py`: aliases, sources, formats, and every Measured value against raw/) and its test. `capture/signed-in/` holds only the kit's page-copy privacy guards; no kit capture script took these readings |
 | [icon.png](icon.png) | Site icon |
 
 ## Brief

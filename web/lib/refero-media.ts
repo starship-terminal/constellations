@@ -26,18 +26,16 @@ export const localMedia = (base: string, kind: string, slug: string, ext: string
 
 export const cdnUrl = (cdn: string, u: string | null) => (u ? (u.includes("://") ? u : `${cdn}${u}`) : null);
 
-export const faviconFor = (src: string | null) =>
-  src
-    ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(`https://${host(src)}`)}&size=128`
-    : null;
-
 export const cardImg = (index: ReferoIndex, s: ReferoCard): MediaPair => ({
   local: s.card ? localMedia(index.mediaBase, s.card === "p" ? "posters" : "shots", s.slug, "jpg") : null,
   remote: cdnUrl(index.cdn, s.cardRemote),
 });
+// A favicon has no remote: asking a favicon service for a style's host would
+// tell it which styles are browsed. The mirrored file shows when it exists,
+// the letter tile otherwise.
 export const cardFav = (index: ReferoIndex, s: ReferoCard): MediaPair => ({
   local: localMedia(index.mediaBase, "favicons", s.slug, "png"),
-  remote: faviconFor(s.src),
+  remote: null,
 });
 export const cardVideo = (index: ReferoIndex, s: ReferoCard): MediaPair => ({
   local: localMedia(index.mediaBase, "videos", s.slug, "mp4"),

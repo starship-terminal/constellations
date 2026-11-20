@@ -14,10 +14,11 @@
 // and a 390px mobile pass. Nothing is signed into, registered, followed or
 // submitted. Consent overlays are hidden, never clicked.
 import fs from 'fs';
+import os from 'os';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/luma/raw-shots`;
+const RAW = process.env.RAW || `${os.homedir()}/.design-systems/luma/raw-shots`;
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

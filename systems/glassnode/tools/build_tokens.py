@@ -244,7 +244,7 @@ tokens = {
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
          "$description": "The painted light themes of the public surfaces, namespaced: theme.* is the marketing site's --light_* roles; studio.* the product shell's painted light --gds-* roles; research.* the Ghost publication's painted light --rf-* roles; tokenization.* the registry's light --color-* redeclaration painted by its theme button."},
-        {"id": "dark", "name": "Dark", "selectedTokenSets": {"dark": "enabled"},
+        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
          "$description": "Three surfaces' dark themes, namespaced: studio.* holds the html[data-theme=dark-theme] --gds-*/--ant-* redeclarations — DECLARED-NOT-PAINTED, no public theme control exists on the signed-out shell; research.* the Ghost publication's dark --rf-* roles painted by its 'Switch to dark mode' toggle; tokenization.* the registry's painted dark default."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},

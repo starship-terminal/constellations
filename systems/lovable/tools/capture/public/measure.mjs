@@ -40,9 +40,9 @@ async function newPage(key, { mobile = false, wait = 3500 } = {}) {
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, URLS[key], { wait });
-  const blocked = await page.evaluate(() => /just a moment|verify you are human/i.test(document.title + (document.body.innerText || '').slice(0, 200))).catch(() => true);
-  if (blocked) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
+  const cleared = await open(page, URLS[key], { wait }).catch((e) => { log('  open failed', key, String(e.message || e).slice(0, 120)); return false; });
+  const blocked = !cleared || await page.evaluate(() => /just a moment|verify you are human/i.test(document.title + (document.body.innerText || '').slice(0, 200))).catch(() => true);
+  if (blocked) { log('  BLOCKED', key); sectionBlocked = true; await page.close(); await ctx.close(); return false; }
   opened.add(key);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
@@ -89,9 +89,12 @@ async function forcePseudo(loc, classes) {
   return async () => { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {}); };
 }
 
+let currentSection = null;   // the measure section (home, mobile, ...) that owns a component
+let sectionBlocked = false;  // a page of the current section was blocked or failed to open
+
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] }, meta);
+  Object.assign(c, { page: current, section: currentSection, run, url: URLS[current] }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -259,13 +262,31 @@ const arg = (process.argv[2] || 'all').split(',').filter(Boolean);
 const { browser, context: root } = await launch();
 context = root;
 const want = (k) => arg.includes('all') || arg.includes(k);
+// Sections that ran to the end with every page opened. A component is pruned only when the section that owns it (c.section)
+// finished this run and did not measure it again: a section that was not selected or failed part-way
+// keeps its earlier readings, and home and mobile, which share the home page, prune only their own
+// (the kit's prune, restored in the 2026-11 audit). A reading saved before c.section existed is kept.
+const finishedSections = new Set();
+async function section(name, fn) {
+  currentSection = name;
+  sectionBlocked = false;
+  await fn();
+  // A section whose page never opened returns early without measuring; it is not finished, so its
+  // saved readings stay.
+  if (!sectionBlocked) finishedSections.add(name);
+}
 try {
-  if (want('home')) await home();
-  if (want('pricing')) await pricing();
-  if (want('login')) await login();
-  if (want('docs')) await docs();
-  if (want('mobile')) await mobile();
+  if (want('home')) await section('home', home);
+  if (want('pricing')) await section('pricing', pricing);
+  if (want('login')) await section('login', login);
+  if (want('docs')) await section('docs', docs);
+  if (want('mobile')) await section('mobile', mobile);
 } finally {
+  for (const [key, c] of Object.entries(out.components)) if (finishedSections.has(c.section) && !touched.has(key)) { delete out.components[key]; log('dropped stale', key); }
+  for (const [key, c] of Object.entries(out.components)) {
+    if (!finishedSections.has(c.section) || !listed.has(key)) continue;
+    for (const st of Object.keys(c.states || {})) if (!listed.get(key).has(st)) { delete c.states[st]; log('dropped stale state', key, st); }
+  }
   save();
   await browser.close();
 }

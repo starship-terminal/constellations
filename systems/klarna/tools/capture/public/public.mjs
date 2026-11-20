@@ -139,7 +139,7 @@ for (const { k, mob } of runs) {
     viewport: { width: vw, height: vh }, deviceScaleFactor: dpr,
     userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US',
   });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // navigator.webdriver is left as the browser reports it: automation is not hidden (2026-11 audit).
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);

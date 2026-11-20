@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Light only. Deterministic."""
+import html
 import json
 import pathlib
 import re
@@ -57,10 +58,18 @@ def swatch(name, value):
     )
 
 
+def specimen_style(value):
+    """The specimen's style attribute, escaped: a quoted family would otherwise close it."""
+    css = ";".join(f"{prop}:{value[key]}" for prop, key in (
+        ("font-family", "fontFamily"), ("font-size", "fontSize"), ("font-weight", "fontWeight"),
+        ("line-height", "lineHeight"), ("letter-spacing", "letterSpacing")))
+    return html.escape(css, quote=True)
+
+
 color_html = "\n".join(swatch(name, value) for name, value in rows_color)
 type_html = "\n".join(
     f'<div class="ty"><div class="k">{name}<small>{value["fontSize"]} / {value["lineHeight"]} · {value["fontWeight"]}</small></div>'
-    f'<div style="font-family:{value["fontFamily"]};font-size:{value["fontSize"]};font-weight:{value["fontWeight"]};line-height:{value["lineHeight"]};letter-spacing:{value["letterSpacing"]}">A website makes it real</div></div>'
+    f'<div style="{specimen_style(value)}">A website makes it real</div></div>'
     for name, value in type_rows
 )
 radius_html = "\n".join(

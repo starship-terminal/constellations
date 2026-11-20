@@ -18,7 +18,6 @@ colors:
   outline: "#6453e4"
   surface-page: "#ffffff"
   surface-offWhite: "#fbfbfc"
-  surface-dark: "#313242"
   text-primary: "#313242"
   text-muted: "#64647c"
   text-nav: "#545472"

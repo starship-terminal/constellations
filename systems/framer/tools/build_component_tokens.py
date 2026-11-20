@@ -42,7 +42,12 @@ SPEC = {"_about": (
     "marketing site paints; the community stack is dark too, the /login "
     "auth shell is light. Measured roles alias to the declared values "
     "where they match."),
-    "core": {}, "dark": {}, "component": {}}
+    "core": {}, "dark": {}, "auth": {}, "component": {}}
+
+# The /login shell is a separate light app that declares none of the www
+# --token-* layer: its readings go to the `auth` set, as literals, never into
+# `dark` and never aliased to a www palette name that happens to match.
+AUTH_COMPONENTS = {"login-email", "login-google", "login-panel"}
 
 
 def st(comp, state):
@@ -339,7 +344,10 @@ for key, comp, state, prop, group, desc in [
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         if raw in (None, ""):
             raise KeyError(prop)
-        sem.setdefault("color", {}).setdefault(group, {})[key] = semcolor(raw, src, desc)
+        if comp in AUTH_COMPONENTS:
+            SPEC["auth"].setdefault("color", {}).setdefault(group, {})[key] = lit(raw, "color", src, desc)
+        else:
+            sem.setdefault("color", {}).setdefault(group, {})[key] = semcolor(raw, src, desc)
     except KeyError:
         pass
 
@@ -451,7 +459,7 @@ for key, comp, state, prop, desc in [
         v = st(comp, state)[prop]
         if not v or v == "none":
             raise KeyError(prop)
-        emit_at(SPEC["dark"].setdefault("shadow", {}), "measured." + key,
+        emit_at(SPEC["auth" if comp in AUTH_COMPONENTS else "dark"].setdefault("shadow", {}), "measured." + key,
                 lit(v, "other", f"computed {prop} of {comp} {state} (raw/components-computed.json)", desc))
     except KeyError:
         pass

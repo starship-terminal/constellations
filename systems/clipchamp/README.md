@@ -14,7 +14,7 @@ Clipchamp is worth a capture because Microsoft's video editor runs a server-rend
 | [patterns.md](patterns.md) | How the components combine on each surface: the nav bar and its hover-open dropdowns, the purple hero and white-pill CTA, the 1.05-scale button language, the dark band, the pricing table and FAQ, the sign-in card, the footer and the mobile drawer |
 | [components/crops/](components/crops) | 87 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 32 `{page}-{theme}-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots at 2x; the mobile-home and whatsnew fulls exceed one GPU texture and are stitched from `.partN` tiles |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — the cross-origin CDN sheets fetched and reparsed: 569 variable names across 31 rules including the whole Fluent provider layer, and 24 @font-face records), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) the raw pre-quantization screenshots |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — the cross-origin CDN sheets fetched and reparsed: 569 variable names across 31 rules including the whole Fluent provider layer, and 24 @font-face records), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads). The full-colour pre-quantization shots are kept outside the repo |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
 ## Brief
@@ -84,6 +84,7 @@ Every number in [tokens.json](tokens.json) and [raw/measurements.md](raw/measure
 ## What is not here
 
 - **The editor.** app.clipchamp.com's editing surface, templates' interactive previews, export and every OAuth/account action sit behind sign-in — never crossed. The sign-in card was measured at rest; the email path (the only field) was not entered.
-- **Dark theme.** The site paints one light theme; dark bands inside it are measured as `light.surface.dark`, not a second theme.
+- **Dark theme.** The site paints one light theme; the dark band inside it is a pixel sample (`core.sampled.surfaceDark`), not a second theme.
+- **Three entries were read from the wrong element; they need a recapture.** `content-block-dark` is a heading with a `_DarkBackground` text variant (transparent, 640 x 79), not the dark band; the band's fill is only a pixel sample, kept as `core.sampled.surfaceDark`. `plan-head` is the 52 x 24 `_HeadIcon`, not a header cell with the plan name and price. `feature-tooltip` is a plain table cell (`_CellTooltip`, "Free stock assets") with no tooltip open, so this capture has no tooltip. The capture selectors for the first two are narrowed by edit, not rerun.
 - **Checkout.** The Premium plan's purchase flow was never entered; pricing was read signed-out.
 - **Challenge-blocked passes.** Cloudflare intermittently serves a security check on marketing routes; blocked attempts were retried and only real paints were kept — any route that could not be captured cleanly is absent rather than faked.

@@ -25,6 +25,24 @@ def dim(value, source):
     return tok("dimension", value, source)
 
 
+def padding(value, source):
+    """A padding shorthand as one px length per side: {block, inline} when it is symmetric, else
+    {top, right, bottom, left}. A single length stays one dimension token."""
+    parts = value.split()
+    if len(parts) == 1:
+        return dim(value, source)
+    if len(parts) == 2:
+        top, right, bottom, left = parts[0], parts[1], parts[0], parts[1]
+    elif len(parts) == 3:
+        top, right, bottom, left = parts[0], parts[1], parts[2], parts[1]
+    else:
+        top, right, bottom, left = parts
+    note = f"{source} (computed shorthand {value})"
+    if top == bottom and left == right:
+        return {"block": dim(top, note), "inline": dim(right, note)}
+    return {"top": dim(top, note), "right": dim(right, note), "bottom": dim(bottom, note), "left": dim(left, note)}
+
+
 def font_token(family, weight, size, line, tracking, source):
     body = {
         "fontFamily": family,
@@ -65,7 +83,7 @@ def build():
             "field": font_token(fonts["beausiteApp"], t["authField"]["fontWeight"], t["authField"]["fontSize"], t["authField"]["lineHeight"], "normal", src + " email input on app.super.so/login"),
         },
         "radius": {k: dim(v, src + " radius " + k) for k, v in r.items()},
-        "spacing": {k: dim(v, src + " spacing " + k) for k, v in s.items()},
+        "spacing": {k: padding(v, src + " spacing " + k) for k, v in s.items()},
     }
     light = {
         "page": color(c["page"], src + " body background on super.so --base-warm-gray"),
@@ -109,14 +127,14 @@ def build():
             "bg": color(c["accent"], src + " nav CTA background"),
             "text": color(c["accentOn"], src + " nav CTA text"),
             "radius": dim(r["navCta"], src + " nav CTA radius"),
-            "padding": dim(s["navCtaPadding"], src + " nav CTA padding"),
+            "padding": padding(s["navCtaPadding"], src + " nav CTA padding"),
             "height": dim("42px", src + " nav CTA height"),
         },
         "field": {
             "bg": color(c["appPage"], src + " login field background; marketing has no text field"),
             "text": color(c["appTextMeasured"], src + " login field text"),
             "radius": dim(r["authField"], src + " login field radius"),
-            "padding": dim(s["authFieldPadding"], src + " login field padding"),
+            "padding": padding(s["authFieldPadding"], src + " login field padding"),
             "height": dim("44px", src + " login field height"),
         },
     }
@@ -144,14 +162,14 @@ def build():
                 "bg": color(c["appAccent"], src + " Log in button"),
                 "text": color(c["appAccentOn"], src + " Log in button text"),
                 "radius": dim(r["authButton"], src + " Log in radius"),
-                "padding": dim(s["authButtonPadding"], src + " Log in padding"),
+                "padding": padding(s["authButtonPadding"], src + " Log in padding"),
                 "height": dim("44px", src + " Log in height"),
             },
             "field": {
                 "bg": color(c["appPage"], src + " login field"),
                 "text": color(c["appTextMeasured"], src + " login field text"),
                 "radius": dim(r["authField"], src + " login field radius"),
-                "padding": dim(s["authFieldPadding"], src + " login field padding"),
+                "padding": padding(s["authFieldPadding"], src + " login field padding"),
                 "height": dim("44px", src + " login field height"),
             },
         },
@@ -190,9 +208,14 @@ def build():
             {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}},
         ],
     }
-    OUT.write_text(json.dumps(doc, indent=2) + "\n")
-    print(f"wrote {OUT}")
+    return doc
+
+
+def render():
+    """tokens.json's exact text; nothing is written."""
+    return json.dumps(build(), indent=2) + "\n"
 
 
 if __name__ == "__main__":
-    build()
+    OUT.write_text(render())
+    print(f"wrote {OUT}")

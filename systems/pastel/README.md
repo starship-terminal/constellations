@@ -14,7 +14,7 @@ Pastel (usepastel.com) is a visual feedback tool for websites and files. This pa
 | [components/](components/) | Declared missing. Same screenshot failure |
 | [icons/](icons/) | Declared missing. Inline SVGs were not extracted |
 | [icon.png](icon.png) | Site icon, 128 px |
-| [tools/](tools/) | Kit copy used as the capture record |
+| [tools/](tools/) | Kit copy used as the capture record. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 <!-- brief:start -->
 <!-- brief:end -->

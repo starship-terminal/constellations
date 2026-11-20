@@ -29,3 +29,12 @@ class TokensTest(unittest.TestCase):
     def test_accent_is_measured_blue(self):
         doc = json.loads(TOKENS.read_text())
         self.assertEqual(doc["light"]["accent"]["$value"], "#006aff")
+
+
+class Builder(unittest.TestCase):
+    def test_committed_file_matches_builder(self):
+        import sys
+        root = pathlib.Path(__file__).resolve().parent.parent
+        sys.path.insert(0, str(root / "tools"))
+        import build_tokens  # build() returns the tree; only __main__ writes
+        self.assertEqual(json.loads((root / "tokens.json").read_text()), build_tokens.build())

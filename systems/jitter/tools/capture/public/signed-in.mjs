@@ -47,25 +47,40 @@ class Shooter {
   }
 }
 
+// Closes the editor's promo and onboarding dialogs only: a Close/Dismiss
+// button inside a [role="dialog"], never a blind click on any "x" or Close
+// control on the page (edited in the 2026-11 audit; not run since).
 async function dismissEditorChrome(p) {
   await closePromo(p);
-  for (const label of ['Close', 'Dismiss']) {
-    const b = p.getByRole('button', { name: new RegExp(`^${label}$`, 'i') });
-    if (await b.count()) {
-      const n = await b.count();
-      for (let i = 0; i < Math.min(n, 4); i++) {
-        await b.nth(i).click({ timeout: 1500 }).catch(() => {});
-      }
-    }
+  const b = p.locator('[role="dialog"] button, [role="alertdialog"] button')
+    .filter({ hasText: /^(Close|Dismiss)$/i });
+  const n = await b.count();
+  for (let i = 0; i < Math.min(n, 4); i++) {
+    await b.nth(i).click({ timeout: 1500 }).catch(() => {});
   }
-  await p.evaluate(() => {
-    const close = [...document.querySelectorAll('button,[role="button"]')].filter((el) => {
-      const t = (el.innerText || el.getAttribute('aria-label') || '').trim();
-      return t === '×' || t === 'x' || t === 'X' || t.toLowerCase() === 'close';
-    });
-    close.slice(0, 4).forEach((el) => el.click());
-  }).catch(() => {});
+  const x = p.locator('[role="dialog"] button[aria-label="Close" i], [role="alertdialog"] button[aria-label="Close" i]');
+  const m = await x.count();
+  for (let i = 0; i < Math.min(m, 4); i++) {
+    await x.nth(i).click({ timeout: 1500 }).catch(() => {});
+  }
   await wait(p, 400);
+}
+
+// The editor states open an existing scratch file the owner names, never
+// "Create new file": that click added a file to the live account on every
+// run and nothing deleted it. Without JITTER_SCRATCH_FILE (the file's
+// /file/... path) the editor states are a recorded boundary.
+async function openScratchFile(p) {
+  const path = process.env.JITTER_SCRATCH_FILE;
+  if (!path) { log('BOUNDARY editor: set JITTER_SCRATCH_FILE to an existing scratch file; no file is created'); return false; }
+  // a failed navigation throws; a link that lands anywhere but the editor
+  // (a sign-in redirect, a stale id) is a boundary, never shot as the editor
+  await p.goto(new URL(path, p.url()).toString(), { waitUntil: 'domcontentloaded' });
+  await wait(p, 4000);
+  const editor = await p.locator('canvas').first().isVisible().catch(() => false)
+    && await p.getByRole('button', { name: /^(Animate|Design)$/i }).first().isVisible().catch(() => false);
+  if (!/\/file\//.test(p.url()) || !editor) { log('BOUNDARY editor: JITTER_SCRATCH_FILE did not open the editor (now at', p.url().split('?')[0] + ')'); return false; }
+  return true;
 }
 
 async function hrefStarting(page, prefix) {
@@ -162,11 +177,7 @@ const desktop = {
   editor: {
     url: '/files/', wait: 2200,
     run: async (p, S) => {
-      const create = p.getByText('Create new file', { exact: true });
-      if (await create.count()) {
-        await create.click({ timeout: 5000 });
-        await wait(p, 4000);
-      }
+      if (!(await openScratchFile(p))) return;
       await assertFree(p, 'editor');
       await S.view('promo');
       await dismissEditorChrome(p);
@@ -195,11 +206,7 @@ const mobile = {
   editor: {
     url: '/files/', wait: 2200,
     run: async (p, S) => {
-      const create = p.getByText('Create new file', { exact: true });
-      if (await create.count()) {
-        await create.click({ timeout: 5000 });
-        await wait(p, 4000);
-      }
+      if (!(await openScratchFile(p))) return;
       await dismissEditorChrome(p);
       await S.view('default');
     },
@@ -230,7 +237,7 @@ for (const { k, mob } of runs) {
   const ctx = await chromium.launchPersistentContext(PROFILE, {
     headless: true,
     ...contextOpts(mob),
-    args: ['--disable-blink-features=AutomationControlled'],
+    args: [] /* no AutomationControlled flag: removed in the 2026-11 audit (D7) */,
   });
   await patch(ctx);
   const p = ctx.pages()[0] || await ctx.newPage();

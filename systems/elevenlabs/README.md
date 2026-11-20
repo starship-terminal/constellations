@@ -110,6 +110,8 @@ Nothing was signed into, created, submitted or paid for: the auth cards were mea
 - **Pressed equals hover on the ink pills.** The measured pills take the same #44403b step on hover and pressed — the pressed states were CDP-forced, so any mousedown-only styling a script adds is invisible here.
 - **The mega-menu auto-closes.** It dismisses a few seconds after opening; flyout-child readings re-opened it with the Products trigger first, so hover/focus values are real but the panel is ephemeral by design.
 - **The promo strips are live.** The V4 bar on home and the $1-credits countdown on product pages carry real countdown timers — the captured values are point-in-time.
+- **Readings to recapture.** `feature-row` is the whole pricing page body (1440 x 5508), kept from the first run after the re-run missed it; `voice-card` is an FAQ row; `menu-link`'s default and pressed states caught a same-href link far down the page, so `core.color.neutral.muted` says so in its source. components.md marks the three entries.
+- **One screenshot was taken past a server-side action.** `home-light-playground-play.png` was shot after the capture pressed the playground's Play, which asks the server to generate speech. `public.mjs` no longer presses it (edited, not run); the shot is kept as evidence.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens or the raw files.
 
 ## Fonts

@@ -32,10 +32,10 @@ def load_env(keys=ENV_KEYS, env_file=None):
     """Copy the named keys from the repo's gitignored .env into os.environ; variables already set
     win. Returns the keys it set. An entry point that needs a secret calls this with just the keys
     it reads (server/chat.py: load_env(("ANTHROPIC_API_KEY", "DS_CHAT_MODEL"))). Nothing loads
-    .env on import."""
+    .env on import, and a call whose keys are all set already never opens it."""
     env = Path(env_file) if env_file else Path(__file__).resolve().parents[2] / ".env"
-    wanted, done = set(keys), []
-    if not env.is_file():
+    wanted, done = {k for k in keys if k not in os.environ}, []
+    if not wanted or not env.is_file():
         return done
     for line in env.read_text().splitlines():
         line = line.strip()
@@ -64,8 +64,9 @@ KINDS = {
     "favicons": (".png", "image/"),
 }
 
-# The favicon "remote" is Google's faviconV2 endpoint for the source host;
-# the mirrored file is what that URL returned.
+# Google's faviconV2 endpoint for the source host: where mirror_media.py and
+# fetch_icon.py download a favicon, host-side. Never emitted to a browser
+# (catalog.py's favicon pair has no remote), so browsing tells Google nothing.
 FAVICON_API = ("https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON"
                "&fallback_opts=TYPE,SIZE,URL&size=128&url=")
 

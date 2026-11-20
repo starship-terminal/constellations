@@ -92,15 +92,6 @@ async function readPage(page) {
   });
 }
 
-async function forceState(cdp, page, selector, index, states) {
-  const handle = await page.locator(selector).nth(index).elementHandle();
-  if (!handle) return null;
-  const node = await cdp.send('DOM.describeNode', { objectId: (await handle.evaluateHandle((el) => el))._objectId }).catch(() => null);
-  // Fallback: query via DOM.getDocument is slower; use CSS.forcePseudoState with backend node from Runtime.
-  const obj = await cdp.send('DOM.getDocument');
-  return null;
-}
-
 const browser = await chromium.launch({ headless: true });
 const readings = { readAt: new Date().toISOString().slice(0, 10), pages: {} };
 
@@ -156,7 +147,6 @@ for (const spec of PAGES) {
 {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', colorScheme: 'dark' });
   const page = await ctx.newPage();
-  const cdp = await ctx.newCDPSession(page);
   await page.goto('https://memotron.app/', { waitUntil: 'domcontentloaded', timeout: 45000 });
   await page.waitForTimeout(2000);
   const states = {};

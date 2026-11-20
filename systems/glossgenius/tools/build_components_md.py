@@ -80,6 +80,9 @@ def norm(r, g, b, a=None):
     return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
 
 
+COLOUR = re.compile(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)|rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)")
+
+
 def colour(c, setname="light", tokens=True):
     """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)' — the token
     label is resolved inside the component's own surface set."""
@@ -89,9 +92,12 @@ def colour(c, setname="light", tokens=True):
         tok = BY_COLOR.get(setname, {}).get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
-    c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
-               lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
-    return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+    # One pass over both forms: a second pass would re-read the rgba() a color(srgb) became and label it twice.
+    def sub(m):
+        if m.group(1) is not None:
+            return label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4)))
+        return label(norm(*m.group(5, 6, 7), m.group(8)))
+    return COLOUR.sub(sub, c)
 
 
 def sides(t, r, b, l):

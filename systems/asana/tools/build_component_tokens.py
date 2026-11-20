@@ -170,7 +170,8 @@ def tstyle(comp, state, desc):
         "fontSize": s["fontSize"],
         "lineHeight": s["lineHeight"],
         "fontWeight": int(s["fontWeight"]),
-        "letterSpacing": "0em" if s.get("letterSpacing") in (None, "normal") else s["letterSpacing"],
+        # computed "normal" is no tracking; DTCG wants a px or rem dimension, so 0px, not 0em
+        "letterSpacing": "0px" if s.get("letterSpacing") in (None, "normal") else s["letterSpacing"],
     }, f"computed type of {comp} {state} (raw/components-computed.json); {desc}"
 
 

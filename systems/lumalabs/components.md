@@ -44,19 +44,12 @@ Screenshots are named `{page}-{theme}-{state}.png`. Inner pages are light. The h
 | Prompt filled | home | sample text typed, then deleted; Submit was not clicked | [home-dark-prompt-filled](screenshots/home-dark-prompt-filled.png) |
 | Yearly interval | pricing | the Yearly button, a local toggle | [pricing-light-yearly](screenshots/pricing-light-yearly.png) |
 | Phone nav | home at 390 | the menu button, a local toggle; Sign In was not followed | [mobile-home-dark-nav](screenshots/mobile-home-dark-nav.png) |
-| Quiz | science lesson | reached by letting the lesson play about three minutes; no option chosen | [lesson-science-light-quiz](screenshots/lesson-science-light-quiz.png) |
-| Chapters panel | math and history lessons | the chapters button | [lesson-math-light-chapters](screenshots/lesson-math-light-chapters.png), [lesson-history-light-chapters](screenshots/lesson-history-light-chapters.png) |
-| Show more | Math Curriculum | the Show 14 more button | [academy-math-light-show-more](screenshots/academy-math-light-show-more.png) |
-| Folded sidebar | Homework home | the sidebar's collapse button | [home-light-sidebar-folded](screenshots/home-light-sidebar-folded.png) |
-| Story preview | Atlas | a story card pressed (opens a video preview) | [atlas-light-story-preview](screenshots/atlas-light-story-preview.png) |
-| Story page | Atlas | Explore in the preview (opens the published story) | [atlas-light-story](screenshots/atlas-light-story.png), [mobile-atlas-light-story](screenshots/mobile-atlas-light-story.png) |
-| Video Settings popover | Atlas story | hovering Generate Video; nothing in it pressed | [atlas-light-story-video-settings](screenshots/atlas-light-story-video-settings.png) |
 
 ## Shared values
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 7 components were given a real keyboard focus. 7 draw a ring: `nav-product` (1px auto #005fcc, offset 4px), `nav-signin` (1px auto #005fcc, offset 4px), `hero-cta` (1px auto #005fcc, offset 4px), `idea-chip` (1px auto #005fcc, offset 4px), `price-cta` (1px auto #005fcc, offset 4px), `api-cta` (1px auto #005fcc, offset 4px), `api-docs` (1px auto #005fcc, offset 4px). The other 0 draw none, so a keyboard user sees no change: . The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.
+**Focus.** 7 components were given a real keyboard focus. 7 draw a ring: `nav-product` (1px auto #005fcc, offset 4px), `nav-signin` (1px auto #005fcc, offset 4px), `hero-cta` (1px auto #005fcc, offset 4px), `idea-chip` (1px auto #005fcc, offset 4px), `price-cta` (1px auto #005fcc, offset 4px), `api-cta` (1px auto #005fcc, offset 4px), `api-docs` (1px auto #005fcc, offset 4px).
 
 **Pressed.** Pressed on Sign In, Try for free, Start Now and Use the API was a forced :active:hover so the link was not followed. Monthly, Yearly and the news filter are local toggles.
 
@@ -66,21 +59,17 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|
 | 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, -webkit-backdrop-filter, all, backdrop-filter, background-color, border-color, box-shadow, color, content-visibility, display, fill, filter, opacity, outline-color, overlay, pointer-events, rotate, scale, stroke, text-decoration-color, transform, translate | api-cta, api-docs, api-tab, ent-field, ent-submit, footer-link, hero-cta, idea-chip and more |
 
-**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).
-
-| Page | 1440 | 1920 | 1024 | 390 |
-|---|---|---|---|---|
+**Layout grid.** Not captured: `tools/capture/layout.mjs` was not run, so there is no `raw/layout.json`.
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Plan card](#plan-card) | 1440 x 18434.06 | 1px solid transparent | 3.35544e+07px | #000000 `light.surface.inverted` | none | 0 |
 | [Prompt field](#prompt-field) | 510 x 75.56 | - | - | transparent | none | 0 |
 | [Sign In](#sign-in) | 69.41 x 32 | 1px solid transparent | 3.35544e+07px | #ffffff `light.surface.page` | none | 0px 12px |
 | [Try for free](#try-for-free) | 155.39 x 48 | 1px solid transparent | 3.35544e+07px | #ffffff `light.surface.page` | none | 0px 32px |
 | [News card](#news-card) | 253.52 x 58.8 | - | - | transparent | none | 0 |
-| [Enterprise field](#enterprise-field) | 400 x 36 | 1px solid oklch(0.75 0 0) | 6px | - | transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 4px 10px |
+| [Enterprise field](#enterprise-field) | 400 x 36 | 1px solid oklch(0.75 0 0) | 6px | transparent | rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 4px 10px |
 
 ## Components
 
@@ -89,7 +78,7 @@ Values that apply across entries, from the measurement files.
 The header shared by the public pages: a wordmark, uppercase nav labels, and a Sign In pill. Sign In was measured and never followed.
 
 #### Nav link
-The PRODUCT nav link. It points at /app, a marketing route, not the signed-in app. Uppercase Graphik label. Read as `nav-product` on the Homework home page.
+The PRODUCT nav link. It points at /app, a marketing route, not the signed-in app. Uppercase Graphik label. Read as `nav-product` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -99,7 +88,7 @@ The PRODUCT nav link. It points at /app, a marketing route, not the signed-in ap
 ![Nav link default](components/crops/nav-product-default.png) ![Nav link hover](components/crops/nav-product-hover.png) ![Nav link focus-visible](components/crops/nav-product-focus-visible.png)
 
 #### Sign In
-The header Sign In pill. It links to app.lumalabs.ai, which redirects to the sign-up host. Measured, never followed. Read as `nav-signin` on the Homework home page.
+The header Sign In pill. It links to app.lumalabs.ai, which redirects to the sign-up host. Measured, never followed. Read as `nav-signin` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -110,7 +99,7 @@ The header Sign In pill. It links to app.lumalabs.ai, which redirects to the sig
 ![Sign In default](components/crops/nav-signin-default.png) ![Sign In hover](components/crops/nav-signin-hover.png) ![Sign In focus-visible](components/crops/nav-signin-focus-visible.png) ![Sign In pressed](components/crops/nav-signin-pressed.png)
 
 #### Footer link
-A footer text link. Read as `footer-link` on the Homework home page.
+A footer text link. Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -124,14 +113,14 @@ A footer text link. Read as `footer-link` on the Homework home page.
 The dark video hero, the Try for free pill, and the prompt composer. The prompt was filled and cleared. Submit was not clicked.
 
 #### Hero heading
-The home hero heading. Read as `hero-h1` on the Homework home page.
+The home hero heading. Read as `hero-h1` on the home page.
 
 **Values (default).** size 576 x 124.78; background transparent; text __graphik_7126cf 52/62.4 500, #ffffff `light.surface.page`.
 
 ![Hero heading default](components/crops/hero-h1-default.png)
 
 #### Try for free
-The hero pill. Links to the app host. Measured, never followed. Following it is a sign-in. Read as `hero-cta` on the Homework home page.
+The hero pill. Links to the app host. Measured, never followed. Following it is a sign-in. Read as `hero-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -143,7 +132,7 @@ The hero pill. Links to the app host. Measured, never followed. Following it is 
 ![Try for free default](components/crops/hero-cta-default.png) ![Try for free hover](components/crops/hero-cta-hover.png) ![Try for free focus-visible](components/crops/hero-cta-focus-visible.png) ![Try for free pressed](components/crops/hero-cta-pressed.png)
 
 #### Prompt field
-The home prompt. Sample text is typed and deleted. Submit is never pressed. Read as `prompt` on the Homework home page.
+The home prompt. Sample text is typed and deleted. Submit is never pressed. Read as `prompt` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -152,7 +141,7 @@ The home prompt. Sample text is typed and deleted. Submit is never pressed. Read
 ![Prompt field default](components/crops/prompt-default.png) ![Prompt field focused](components/crops/prompt-focused.png) ![Prompt field filled](components/crops/prompt-filled.png)
 
 #### Submit prompt
-The prompt submit control. Measured at rest and hover only. Never clicked, so no generation is started. Read as `prompt-submit` on the Homework home page.
+The prompt submit control. Measured at rest and hover only. Never clicked, so no generation is started. Read as `prompt-submit` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -162,7 +151,7 @@ The prompt submit control. Measured at rest and hover only. Never clicked, so no
 ![Submit prompt default](components/crops/prompt-submit-default.png) ![Submit prompt hover](components/crops/prompt-submit-hover.png)
 
 #### Idea chip
-A suggested-prompt chip. A local control. It was not used to submit a prompt. Read as `idea-chip` on the Homework home page.
+A suggested-prompt chip. A local control. It was not used to submit a prompt. Read as `idea-chip` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -219,9 +208,9 @@ A plan CTA. Measured, never followed. Following it is a sign-in and a checkout. 
 #### Plan card
 The Plus plan card. Cropped from the node whose text starts with Plus and whose box is card-sized. Read as `price-card` on the pricing page.
 
-**Values (default).** size 1440 x 18434.06; background #ffffff `light.surface.page`; text __graphik_7126cf 14/14 500, #000000 `light.surface.inverted`; icon 80 x 18, #000000 `light.surface.inverted`.
+The computed values in the raw reading are the page `body`'s, not the plan card's: the capture's target was `body`, and only the crop was taken from the Plus card. They are left out here. Recapture needed (the pk-k recapture tracking issue, 2026-11 audit).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Plan card default](components/crops/price-card-default.png)
 
 #### FAQ row
 A pricing FAQ button. A local toggle. Nothing is submitted. Read as `faq` on the pricing page.
@@ -255,14 +244,14 @@ An about FAQ button. A local toggle. Read as `about-faq` on the about page.
 A light page with Use the API, Explore docs, and a model tab. Use the API was never followed.
 
 #### API heading
-Build with Luma APIs. Read as `api-h1` on the api page.
+Build with Luma APIs. Read as `api-h1` on the API page.
 
 **Values (default).** size 464.42 x 62.39; background transparent; text __graphik_7126cf 52/62.4 500, #000000 `light.surface.inverted`.
 
 ![API heading default](components/crops/api-h1-default.png)
 
 #### Use the API
-The API CTA. Measured, never followed. Keys and billing sit behind sign-in. Read as `api-cta` on the api page.
+The API CTA. Measured, never followed. Keys and billing sit behind sign-in. Read as `api-cta` on the API page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -274,7 +263,7 @@ The API CTA. Measured, never followed. Keys and billing sit behind sign-in. Read
 ![Use the API default](components/crops/api-cta-default.png) ![Use the API hover](components/crops/api-cta-hover.png) ![Use the API focus-visible](components/crops/api-cta-focus-visible.png) ![Use the API pressed](components/crops/api-cta-pressed.png)
 
 #### Model tab
-A model switch on the API page. A local toggle. Read as `api-tab` on the api page.
+A model switch on the API page. A local toggle. Read as `api-tab` on the API page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -284,7 +273,7 @@ A model switch on the API page. A local toggle. Read as `api-tab` on the api pag
 ![Model tab default](components/crops/api-tab-default.png) ![Model tab hover](components/crops/api-tab-hover.png) ![Model tab pressed](components/crops/api-tab-pressed.png)
 
 #### Explore docs
-The docs link. Measured, never followed from this page. Docs were captured as their own route. Read as `api-docs` on the api page.
+The docs link. Measured, never followed from this page. Docs were captured as their own route. Read as `api-docs` on the API page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -299,14 +288,14 @@ The docs link. Measured, never followed from this page. Docs were captured as th
 A dark cinematic page for Ray3.2.
 
 #### Ray heading
-The Ray3.2 page heading on the dark field. Read as `ray-h1` on the ray page.
+The Ray3.2 page heading on the dark field. Read as `ray-h1` on the Ray page.
 
 **Values (default).** size 767.06 x 62.39; background transparent; text __graphik_7126cf 52/62.4 500, #ffffff `light.surface.page`.
 
 ![Ray heading default](components/crops/ray-h1-default.png)
 
 #### Ray FAQ
-A Ray FAQ button. A local toggle. Read as `ray-faq` on the ray page.
+A Ray FAQ button. A local toggle. Read as `ray-faq` on the Ray page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -321,14 +310,14 @@ A Ray FAQ button. A local toggle. Read as `ray-faq` on the ray page.
 A light index with category filters and article cards. Subscribe was not clicked.
 
 #### News heading
-The news index heading. Read as `news-h1` on the Insights page.
+The news index heading. Read as `news-h1` on the news page.
 
 **Values (default).** size 127.92 x 62.39; background transparent; text __graphik_7126cf 52/62.4 500, #000000 `light.surface.inverted`.
 
 ![News heading default](components/crops/news-h1-default.png)
 
 #### News filter
-A news category filter. A local toggle. Subscribe was not clicked. Read as `news-filter` on the Insights page.
+A news category filter. A local toggle. Subscribe was not clicked. Read as `news-filter` on the news page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -338,7 +327,7 @@ A news category filter. A local toggle. Subscribe was not clicked. Read as `news
 ![News filter default](components/crops/news-filter-default.png) ![News filter hover](components/crops/news-filter-hover.png) ![News filter pressed](components/crops/news-filter-pressed.png)
 
 #### News card
-A published news card. A public article link. Read as `news-card` on the Insights page.
+A published news card. A public article link. Read as `news-card` on the news page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -382,7 +371,7 @@ The enterprise form submit. Measured at rest and hover. Never clicked, so no sal
 The home at 390: Sign In and a menu button that opens the nav. Sign In was not followed.
 
 #### Phone menu
-The mobile navigation toggle at 390px. A local control. Sign In inside it is not followed. Read as `m-menu` on the Homework home page.
+The mobile navigation toggle at 390px. A local control. Sign In inside it is not followed. Read as `m-menu` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -391,14 +380,14 @@ The mobile navigation toggle at 390px. A local control. Sign In inside it is not
 ![Phone menu default](components/crops/m-menu-default.png) ![Phone menu hover](components/crops/m-menu-hover.png) ![Phone menu pressed](components/crops/m-menu-pressed.png) ![Phone menu opened](components/crops/m-menu-opened.png)
 
 #### Phone heading
-The home heading at 390px. Read as `m-h1` on the Homework home page.
+The home heading at 390px. Read as `m-h1` on the home page.
 
 **Values (default).** size 390 x 76.78; background transparent; text __graphik_7126cf 32/38.4 500, #ffffff `light.surface.page`.
 
 ![Phone heading default](components/crops/m-h1-default.png)
 
 #### Phone Sign In
-Sign In at 390px. Measured, never followed. Read as `m-signin` on the Homework home page.
+Sign In at 390px. Measured, never followed. Read as `m-signin` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|

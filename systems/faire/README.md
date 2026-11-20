@@ -95,6 +95,7 @@ Nothing was signed into, registered, bought or submitted: the application and au
 
 ## What to distrust
 
+- **`component.field.borderWidth` 1px has no reading.** The apply text fields measure `borderTopWidth: 0px` and their `fs-form-field` box records no border, so the 1px was typed at capture time; its source says Reconstruction. `component.checkbox.radius` 2px is the painted `fs-checkbox__box` around the input (the input itself measures 0px). Every other component value is read from [raw/components-computed.json](raw/components-computed.json).
 - **The marketplace is not in this package.** Search results, product detail, cart, checkout and every signed-in surface are behind the sign-up dialog; the only post-auth UI captured is the dialogs themselves. Treat the marketplace's own components as unknown.
 - **Cloudflare ate some states.** Category/suppliers/brand routes intermittently return a Turnstile challenge to a fresh headless client. Components affected carry `recaptureMissed`/`missing` in the JSON and are marked in [components.md](components.md)'s Gaps — their remaining states are earlier-run readings, never fabricated.
 - **One theme only.** The site paints light everywhere signed out; `tokens.json` ships no dark set. `.fs-mode-on-surface` inverse roles are real but scoped, under `light.color.onSurface.*`.
@@ -174,3 +175,7 @@ RAW=<scratch> node tools/capture/public/public.mjs   # screenshots -> <scratch>
 ```
 
 Category/suppliers/brand routes are intermittently challenged by Cloudflare: measure.mjs preserves prior readings on a blocked run, so recaptures should be re-tried route by route until the challenge clears; the challenge is waited out on a fresh context, never solved.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

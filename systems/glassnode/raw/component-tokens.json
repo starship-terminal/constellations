@@ -2817,14 +2817,6 @@
           "source": "computed backgroundColor of res-post-card default (raw/components-computed.json)",
           "description": "A research article card's fill."
         }
-      },
-      "tokenization": {
-        "tokNavInk": {
-          "value": "#b8b8b5",
-          "type": "color",
-          "source": "computed color of tok-nav-item default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
-          "description": "The registry nav item ink on the painted dark surface."
-        }
       }
     }
   },
@@ -3940,6 +3932,16 @@
           "profile": "tokenizationDark",
           "type": "color",
           "description": "The declared `--warn-soft` (rgba(242, 184, 75, 0.13)) — the registry's painted dark default."
+        }
+      }
+    },
+    "measured": {
+      "tokenization": {
+        "tokNavInk": {
+          "value": "#b8b8b5",
+          "type": "color",
+          "source": "computed color of tok-nav-item default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+          "description": "The registry nav item ink on the painted dark surface."
         }
       }
     }

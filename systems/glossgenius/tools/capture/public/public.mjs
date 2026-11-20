@@ -188,23 +188,10 @@ async function selectService(p, S, shotName) {
 // read-only date-picker step (/book). A public navigation — the calendar and
 // time slots that follow are captured, never submitted.
 async function bookStep(p, S) {
-  const t = p.locator('button, a').filter({ hasText: /book \d+ service/i }).filter({ visible: true }).first();
-  if (!(await t.count())) { log('  ! no BOOK button'); return; }
-  await clickEl(t);
-  await wait(p, 5000);
-  if (!/\/book/.test(p.url())) { log('  ! BOOK click did not reach /book:', p.url()); return; }
-  // The shots that follow are /book, not /services: record the route the
-  // flow actually reached (query/fragment stripped — the kit's URL allow-list
-  // means no params are expected, but never log them regardless).
-  S.requested.sanitizedSourceUrl = p.url().split('?')[0].split('#')[0];
-  await S.view('book-calendar');
-  // A day cell shows the time-slot list — read-only browsing, never booked.
-  const day = p.locator('button, [role="button"], td, div').filter({ hasText: /^\s*2[0-9]\s*$/ }).filter({ visible: true }).first();
-  if (await day.count()) {
-    await clickEl(day, 3000);
-    await wait(p, 2000);
-    await S.view('book-slots');
-  }
+  // Booking flow: a boundary, not a step. Pressing "BOOK n SERVICE" on a real business's booking site
+  // starts a booking for it, and a day cell opens its live time slots; the capture stops at the bar.
+  // The committed book-calendar and book-slots shots were taken past that step (README, What to distrust).
+  log('  book-step: boundary, not entered');
 }
 
 const desktop = {

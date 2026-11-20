@@ -48,7 +48,9 @@ const L = [];
 const W = (s = '') => L.push(s);
 W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
-W(`Computed styles read from cosmos.so on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the home page, /prices, /contact-us and the public login.cosmos.so auth card — with no consent banner exists (generic overlay-hiding stayed as defence-in-depth) — and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+// The routes come from the readings themselves, never typed in (a sibling's copy named another site's pages).
+const ROUTES = [...new Set(Object.values(J.components).map((c) => c.url).filter(Boolean).map((u) => { try { const x = new URL(u); return x.host + x.pathname; } catch { return u; } }))].sort();
+W(`Computed styles read from cosmos.so on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across ${ROUTES.map((r) => '`' + r + '`').join(', ')}, with generic overlay-hiding in place — and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
@@ -100,7 +102,7 @@ if (J._meta.backdrop) {
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('cosmos.so serves its Webflow sheets cross-origin from cdn.prod.website-files.com, so the readable CSSOM holds only the inline styles; this list covers the transition rules the page itself exposes, and the per-state Transition rows above are the computed values the page paints.');
+W('The transition rules each page exposes in its readable stylesheets, by page; the per-state Transition rows above are the computed values the page paints.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

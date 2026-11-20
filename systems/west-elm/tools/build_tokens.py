@@ -19,7 +19,7 @@ DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
 
 def color(value):
     value = value.strip().lower()
-    match = re.fullmatch(r"#([0-9a-f]{6})", value)
+    match = re.fullmatch(r"#([0-9a-f]{6}|[0-9a-f]{8})", value)
     if match:
         return "#" + match.group(1)
     match = re.fullmatch(
@@ -30,9 +30,9 @@ def color(value):
         raise ValueError("not a colour: " + value)
     red, green, blue, alpha = match.groups()
     alpha = float(alpha) if alpha is not None else 1
-    if alpha >= 1:
-        return "#%02x%02x%02x" % (int(red), int(green), int(blue))
-    return "rgba(%d, %d, %d, %g)" % (int(red), int(green), int(blue), alpha)
+    hexed = "#%02x%02x%02x" % (int(red), int(green), int(blue))
+    # Translucent colours as #rrggbbaa: tools/catalog.py and the contrast check read only hex.
+    return hexed if alpha >= 1 else hexed + "%02x" % round(alpha * 255)
 
 
 def leaf(type_, value, source, description=None):
@@ -349,8 +349,8 @@ def check(tokens):
             value = node["$value"]
             if isinstance(value, str) and value.startswith("{"):
                 return
-            if type_ == "color":
-                color(value)
+            if type_ == "color" and color(value) != value:
+                raise ValueError(f"{path}: colour {value!r} is not lower-case #rrggbb(aa)")
             if type_ == "dimension" and not DIM.fullmatch(str(value)):
                 raise ValueError(f"{path}: dimension {value!r}")
             return

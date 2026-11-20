@@ -47,7 +47,7 @@ The 19 components of the library's checklist ([docs/DESIGN-SYSTEM.md](../../docs
 | Component | Entries | States captured |
 |---|---|---|
 | Button | [Plan CTA button](#plan-cta-button), [Explore MCP button](#explore-mcp-button), [Copy button](#copy-button) | default, hover, focus-visible, pressed |
-| Icon button | [Promo card Close button](#promo-card-close-button), [Coach close X](#coach-close-x) | default, hover, focus-visible, pressed |
+| Icon button | [Promo card Close button](#promo-card-close-button), [Coach close X](#coach-close-x) | default, hover, pressed |
 | Link | not captured: the rail's nav links and the promo's Explore MCP were measured inside their parents, not as standalone entries | - |
 | Text field | [Research box](#research-box), [Research prompt field](#research-prompt-field), [Search field](#search-field), [Search box (results page)](#search-box-results-page) | default, focus-visible, focused, filled |
 | Text area | [Research box, field active](#research-box-field-active), [Research box (mobile)](#research-box-mobile) | focused, filled, default |
@@ -70,7 +70,7 @@ The 19 components of the library's checklist ([docs/DESIGN-SYSTEM.md](../../docs
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 11 components were given a real keyboard focus. 8 show a change: `research-chip` (ring shadow rgba(1, 17, 88, 0.24) 0px 0px 0px 2px), `plan-cta` (1px auto #005fcc, offset 0px), `mcp-card-cta` (1px auto #005fcc, offset 1px), `styles-card` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(111, 113, 121, 0.5) 0px 0px 0px 3px, transparent 0px 0px 0px 0px), `entity-tab` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, rgba(111, 113, 121, 0.4) 0px 0px 0px 2px, transparent 0px 0px 0px 0px), `entity-tab-active` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, rgba(111, 113, 121, 0.4) 0px 0px 0px 2px, transparent 0px 0px 0px 0px), `entity-copy` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(111, 113, 121, 0.5) 0px 0px 0px 3px, transparent 0px 0px 0px 0px), `styles-chip` (1px auto rgba(111, 113, 121, 0.5), offset 0px). The other 3 draw nothing new (the research input and the result card among them): `research-input`, `result-card`, `mcp-card-close`. The two hosts focus differently: on refero.design the browser's own `auto` outline (1px #005fcc) appears on CTAs and links, plus the research chips' custom `rgba(1, 17, 88, 0.24)` ring shadow; on styles.refero.design the controls draw their own 2-3px ring shadow in `rgba(111, 113, 121, 0.4-0.5)` (the --ring colour at half alpha).
+**Focus.** 10 components were given a real keyboard focus. 8 show a change: `research-chip` (ring shadow rgba(1, 17, 88, 0.24) 0px 0px 0px 2px), `plan-cta` (1px auto #005fcc, offset 0px), `mcp-card-cta` (1px auto #005fcc, offset 1px), `styles-card` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(111, 113, 121, 0.5) 0px 0px 0px 3px, transparent 0px 0px 0px 0px), `entity-tab` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, rgba(111, 113, 121, 0.4) 0px 0px 0px 2px, transparent 0px 0px 0px 0px), `entity-tab-active` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ffffff 0px 0px 0px 0px, rgba(111, 113, 121, 0.4) 0px 0px 0px 2px, transparent 0px 0px 0px 0px), `entity-copy` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(111, 113, 121, 0.5) 0px 0px 0px 3px, transparent 0px 0px 0px 0px), `styles-chip` (1px auto rgba(111, 113, 121, 0.5), offset 0px). The other 2 draw nothing new (the research input and the result card among them): `research-input`, `result-card`. Focus could not be captured on 1 more (keyboard focus never landed on them, so their readings are left out): `mcp-card-close`. The two hosts focus differently: on refero.design the browser's own `auto` outline (1px #005fcc) appears on CTAs and links, plus the research chips' custom `rgba(1, 17, 88, 0.24)` ring shadow; on styles.refero.design the controls draw their own 2-3px ring shadow in `rgba(111, 113, 121, 0.4-0.5)` (the --ring colour at half alpha).
 
 **Pressed.** Pressed was forced with DevTools, so it is the :active styles only: the research chips and entity tabs go from muted to ink on press exactly as on hover, the MCP card's Close fills #ddddea, and the promo card's plain link takes the browser's default :active red (an artefact of the forced state, not a design colour).
 
@@ -317,10 +317,10 @@ Dismisses the card (a styled div, not a button). Measured, never pressed: closin
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 87.53 x 48; padding 0px 16px; border 1px solid rgba(12, 26, 105, 0.14); radius 8px; background transparent; text Base-Variable 16/24 600, #000000; transition all 0.2s ease |
+| default | size 87.53 x 48; padding 0px 16px; border 1px solid rgba(12, 26, 105, 0.14); radius 8px; background transparent; text Base-Variable 16/24 600, #000000; transition all 0.2s ease |
 | hover, pressed | border 1px solid #dddfea `gray.solid.300`; background #dddfea `gray.solid.300` |
 
-![Promo card Close button default](components/crops/mcp-card-close-default.png) ![Promo card Close button hover](components/crops/mcp-card-close-hover.png) ![Promo card Close button focus-visible](components/crops/mcp-card-close-focus-visible.png) ![Promo card Close button pressed](components/crops/mcp-card-close-pressed.png)
+![Promo card Close button default](components/crops/mcp-card-close-default.png) ![Promo card Close button hover](components/crops/mcp-card-close-hover.png) ![Promo card Close button pressed](components/crops/mcp-card-close-pressed.png)
 
 #### Research-mode coach box
 The "Meet new research mode" coach a fresh profile shows once over the research input. Read as `coach-box` on the refero.design home page.

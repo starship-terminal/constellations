@@ -211,7 +211,7 @@ for (const { k, mob } of runs) {
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US', colorScheme: spec.dark ? 'dark' : 'light' });
   await ctx.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // no navigator.webdriver mask: removed in the 2026-11 audit (D7), not run since
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
   // The app shell reads front-theme-preference from localStorage and falls

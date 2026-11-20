@@ -125,7 +125,7 @@ a.link {{ color: var(--text-link); font-weight: 500; }}
     <div class="chip"><i style="background:var(--background-auth-panel)"></i><span>auth panel</span></div>
     <div class="chip"><i style="background:var(--background-app-action)"></i><span>app action</span></div>
     <div class="chip"><i style="background:var(--color-theme)"></i><span>theme-color</span></div>
-    <div class="chip"><i style="background:var(--focus-outline)"></i><span>focus</span></div>
+    <div class="chip"><i style="background:var(--focus-outline)"></i><span>focus (Chromium's default ring, not Overflow's)</span></div>
   </div>
 
   <h2>Type</h2>
@@ -139,7 +139,7 @@ a.link {{ color: var(--text-link); font-weight: 500; }}
     <button class="btn-s">Required only</button>
     <input class="field" placeholder="Your email" aria-label="Your email">
   </div>
-  <p class="note">Primary hover lifts 2px and does not change colour. Secondary hover fills #e8e8ea. Focus-visible on the header primary button is a 1px #005fcc outline, offset 1px.</p>
+  <p class="note">Primary hover lifts 2px and does not change colour. Secondary hover fills #e8e8ea. Focus-visible on the header primary button is a 1px #005fcc outline, offset 1px, with outline-style auto: that is Chromium's default focus ring, drawn by the browser because Overflow sets no focus colour. Do not copy it as a brand colour.</p>
 
   <h2>Plan card</h2>
   <div class="card">

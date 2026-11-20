@@ -170,7 +170,7 @@
     "h2": {
      "type": "dimension",
      "value": "24px",
-     "source": "computed fontSize of section-title default (raw/components-computed.json)",
+     "source": "computed fontSize of section-title default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-16 recapture did not find section-title)",
      "description": "Section headings, 24px at 28.8px."
     },
     "sub": {

@@ -56,6 +56,8 @@ SRC_ROOT = "Measured. :root in https://risecalendar.com/_next/static/css/ec71784
 SRC_COMPUTED = "Measured. getComputedStyle on the live public page, 2026-11-19."
 SRC_UTILITY = "Measured. Tailwind utility in the same stylesheet, confirmed by a computed style."
 SRC_DERIVED = "Derived. 1rem is 16px on the measured root, so the utility rem converts to this px length."
+# A value no file in raw/ holds: typed in from the capture session (docs/EVIDENCE.md, Reconstruction).
+SRC_HAND = "Reconstruction. Entered by hand at capture time; no file in raw/ holds this reading."
 
 
 def hex_of(rgb):
@@ -203,9 +205,9 @@ def core():
         },
         "motion": {
             "duration": {
-                "fast": duration("150ms", SRC_UTILITY + " .transition-all duration is 0.15s."),
-                "enter": duration("150ms", SRC_UTILITY + " data-state=open animate-in is 0.15s. No open element was on the public pages."),
-                "dialog": duration("300ms", SRC_UTILITY + " data-state=open duration-300 is 0.3s. Declared, not shown on a public page."),
+                "fast": duration("150ms", SRC_HAND + " .transition-all duration is 0.15s."),
+                "enter": duration("150ms", SRC_HAND + " data-state=open animate-in is 0.15s. No open element was on the public pages."),
+                "dialog": duration("300ms", SRC_HAND + " data-state=open duration-300 is 0.3s. Declared, not shown on a public page."),
             },
             "easing": {
                 "standard": cubic(
@@ -217,13 +219,13 @@ def core():
         "size": {
             "button-sm": dim("34px", SRC_COMPUTED + " Pricing Get Started and Upgrade."),
             "button-lg": dim("46px", SRC_COMPUTED + " Comparison Get started, text-lg px-6 py-2."),
-            "switch-track": dim("32px", SRC_COMPUTED + " Annual-billing track width. Height is 16px."),
-            "switch-thumb": dim("12px", SRC_COMPUTED + " Switch thumb width and height."),
+            "switch-track": dim("32px", SRC_COMPUTED + " Annual-billing track width. Height is 16px. raw/switch.json and raw/switch-on.json, w 32."),
+            "switch-thumb": dim("12px", SRC_COMPUTED + " Switch thumb width and height. raw/switch.json and raw/switch-on.json, w 12, h 12."),
             "header": dim("80px", SRC_COMPUTED + " Sticky header, including 28px padding-block."),
             "logo": dim("76px", SRC_COMPUTED + " Wordmark SVG width. Height is 24px."),
             "content": dim("768px", SRC_UTILITY + " .max-w-screen-md, the article column."),
             "hero": dim("1024px", SRC_UTILITY + " .max-w-screen-lg, the comparison hero."),
-            "nav": dim("1280px", SRC_UTILITY + " .max-w-screen-xl, the header row."),
+            "nav": dim("1280px", SRC_HAND + " .max-w-screen-xl, the header row."),
             "card": dim("480px", SRC_COMPUTED + " Pricing card width at 1440px."),
         },
         "border": {
@@ -252,7 +254,7 @@ def light():
             "sidebar": color("{color.sidebar}", source + " Declared. No sidebar is on the public pages."),
             "primary": color("{color.primary}", source),
             "primary-hover": color("rgba(113, 97, 236, 0.8)", SRC_COMPUTED + " Upgrade hovered. .hover:bg-primary/80."),
-            "primary-soft": color("rgba(113, 97, 236, 0.1)", SRC_UTILITY + " .bg-primary/10 on the Free for personal use chip."),
+            "primary-soft": color("rgba(113, 97, 236, 0.1)", SRC_HAND + " .bg-primary/10 on the Free for personal use chip."),
             "white": color("{color.system-white}", source),
             "switch-off": color("rgba(108, 111, 125, 0.6)", SRC_COMPUTED + " .bg-offset-dark/60 on the billing switch, off."),
         },
@@ -267,9 +269,8 @@ def light():
         },
         "border": {
             "default": color("{color.border}", SRC_COMPUTED + " Header rule, badges, outline button, Teams card."),
-            "quiet": color("rgba(214, 217, 228, 0.5)", SRC_COMPUTED + " Solo card, .border-border/50."),
-            "image": color("rgba(30, 42, 41, 0.05)", SRC_COMPUTED + " Article images, .border-foreground/5."),
-            "hairline": color("rgb(229, 231, 235)", SRC_COMPUTED + " The unset border colour on elements with border-width 0 (Tailwind gray-200). Not a painted edge."),
+            "quiet": color("rgba(214, 217, 228, 0.5)", SRC_HAND + " Solo card, .border-border/50."),
+            "image": color("rgba(30, 42, 41, 0.05)", SRC_HAND + " Article images, .border-foreground/5."),
         },
         "component": {
             "button-primary-bg": color("{color.primary}", SRC_COMPUTED + " Upgrade default."),
@@ -298,10 +299,14 @@ def build():
             {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
         ],
     }
-    text = json.dumps(doc, indent=2) + "\n"
+    return doc
+
+
+def write():
+    text = json.dumps(build(), indent=2) + "\n"
     (HERE / "tokens.json").write_text(text)
     print("tokens.json", len(text.encode()), "bytes")
 
 
 if __name__ == "__main__":
-    build()
+    write()

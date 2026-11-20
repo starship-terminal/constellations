@@ -473,20 +473,21 @@ Page: home. Selector: `.mockup-workbook__toolbar-button`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 24 x 24 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 4px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Unica77 18px/24px 400 | = | = | = |
-| Letter spacing | 0.18px | = | = | = |
-| Colour | #262626 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 16 x 16, colour #262626 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 24 x 24 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 4px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Unica77 18px/24px 400 | = | - | = |
+| Letter spacing | 0.18px | = | - | = |
+| Colour | #262626 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | default | = | - | = |
+| Icon | 16 x 16, colour #262626 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `wb-toolbar-button-default.png`, `wb-toolbar-button-hover.png`, `wb-toolbar-button-focus-visible.png`, `wb-toolbar-button-pressed.png`.
 
@@ -498,23 +499,24 @@ Page: home. Selector: `.mockup-workbook__sheet-tab`. States: default, hover, foc
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 92.63 x 32 | = | = | = |
-| Padding | 0px 8px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | T: 1px solid #d4d4d4; R: none; B: none; L: 1px solid #d4d4d4 | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | #fafafa | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Unica77 11px/14px 400 | = | = | = |
-| Letter spacing | 0.18px | = | = | = |
-| Colour | #737373 | = | = | = |
-| Text node | span.mockup-workbook__sheet-name: Unica77 11px/14px 400, #737373, ls 0.18px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 11 x 11, colour #737373 | = | = | = |
-| Painted layers | div.mockup-workbook__sheet-tab 92.6x32.0 bg #fafafa border T:1px solid #d4d4d4 / L:1px solid #d4d4d4 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 92.63 x 32 | = | - | = |
+| Padding | 0px 8px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | T: 1px solid #d4d4d4; R: none; B: none; L: 1px solid #d4d4d4 | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | #fafafa | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Unica77 11px/14px 400 | = | - | = |
+| Letter spacing | 0.18px | = | - | = |
+| Colour | #737373 | = | - | = |
+| Text node | span.mockup-workbook__sheet-name: Unica77 11px/14px 400, #737373, ls 0.18px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | default | = | - | = |
+| Icon | 11 x 11, colour #737373 | = | - | = |
+| Painted layers | div.mockup-workbook__sheet-tab 92.6x32.0 bg #fafafa border T:1px solid #d4d4d4 / L:1px solid #d4d4d4 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `wb-sheet-tab-default.png`, `wb-sheet-tab-hover.png`, `wb-sheet-tab-focus-visible.png`, `wb-sheet-tab-pressed.png`.
 
@@ -889,19 +891,20 @@ Page: signin. Selector: `.SignIn__Footer`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 300 x 16 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | neue-haas-unica 12px/16px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #737373 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | default | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 300 x 16 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | neue-haas-unica 12px/16px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #737373 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | default | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `signin-footer-default.png`, `signin-footer-hover.png`, `signin-footer-focus-visible.png`, `signin-footer-pressed.png`.
 
@@ -1454,20 +1457,21 @@ Page: mobile. Selector: `label.header__mobile-nav-toggle`. States: default, hove
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 40 x 40 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Unica77 18px/24px 400 | = | = | = | = |
-| Letter spacing | -0.09px | = | = | = | = |
-| Colour | #000000 | = | = | = | = |
-| Transition | none | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | span.header__hamburger-line 16.0x1.5 bg #000000; span.header__hamburger-line 16.0x1.5 bg #000000 | = | = | = | span.header__hamburger-line 12.4x12.4 bg #000000; span.header__hamburger-line 12.4x12.4 bg #000000 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
+| Size (w x h) | 40 x 40 | = | - | = | = |
+| Padding | 0px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Unica77 18px/24px 400 | = | - | = | = |
+| Letter spacing | -0.09px | = | - | = | = |
+| Colour | #000000 | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Painted layers | span.header__hamburger-line 16.0x1.5 bg #000000; span.header__hamburger-line 16.0x1.5 bg #000000 | = | - | = | span.header__hamburger-line 12.4x12.4 bg #000000; span.header__hamburger-line 12.4x12.4 bg #000000 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `m-hamburger-default.png`, `m-hamburger-hover.png`, `m-hamburger-focus-visible.png`, `m-hamburger-pressed.png`, `m-hamburger-opened.png`.
 

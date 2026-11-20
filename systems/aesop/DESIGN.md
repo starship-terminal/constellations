@@ -166,6 +166,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - The capture is the US storefront; other regions (different assortment, promos, footer copy) were not visited.
 - The ADD TO CART bar was caught mid-hydration labelled "Loading …" — the resting label state was not captured.
 - The sign-up modal's remote fragment never rendered in headless; the dialog was measured as an empty shell.

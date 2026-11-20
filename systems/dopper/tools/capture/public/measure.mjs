@@ -29,7 +29,7 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 // page key -> url; shop pages live on the storefront host.
 const URLS = {
-  home: BASE + '/', mission: BASE + '/en/mission/story', 'product-insulated': BASE + '/en/products/insulated', blog: BASE + '/en/blog/just-refill',
+  home: BASE + '/',
   shop: SHOP + '/', category: SHOP + '/bottles', pdp: SHOP + '/dopper-original-pacific-blue',
   cart: SHOP + '/checkout/cart/', login: SHOP + '/customer/account/login/', mobile: BASE + '/', 'mobile-category': SHOP + '/bottles',
 };
@@ -65,8 +65,8 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close' } = {
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, URLS[key], { wait, promo });
-  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close().catch(() => {}); await ctx.close().catch(() => {}); return false; }
+  const cleared = await open(page, URLS[key], { wait, promo });  // false: the bot check did not clear (lib.mjs)
+  if (!cleared || (await blocked())) { log('  BLOCKED', key); failedPages.add(key); await page.close().catch(() => {}); await ctx.close().catch(() => {}); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }
@@ -166,8 +166,11 @@ async function measure(key, state, target, opts = {}) {
 
 async function S(key, target, list, meta = {}, opts = {}) {
   const prev = out.components[key];
-  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
+  const keep = prev && !prev.missing && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
+  // An entry flagged missing (misidentified) holds no readings: drop any states it still carries so
+  // a later miss cannot bring them back as live readings under recaptureMissed.
+  if (prev && prev.missing) { out.components[key].states = {}; delete out.components[key].note; }
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
@@ -210,7 +213,11 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          // close it again with the same control so it cannot hold focus or cover the next reading
+          undo = async () => { await page.keyboard.press('Escape'); if ((await loc.getAttribute('aria-expanded').catch(() => null)) === 'true' || (await loc.evaluate((el) => !!el.closest('details[open]')).catch(() => false))) await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(400); };
+        }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -318,7 +325,7 @@ const menuScope = `(() => {
     for (const e of root.querySelectorAll('h1,h2,h3,h4,p,div,span')) {
       const t = e.innerText || '';
       if (!/range of reusable|everyone can just refill/i.test(t) || !e.getBoundingClientRect().height) continue;
-      if (root === nav.shadowRoot || inOverlay(e)) heads.push(e);
+      if ((nav && root === nav.shadowRoot) || inOverlay(e)) heads.push(e);
     }
   }
   return heads;
@@ -529,7 +536,6 @@ async function home() {
   await S('content-card', q('[data-m-mark="hcard"]').filter({ visible: true }).first(), ['default'], { group: g2, title: 'Content card', desc: 'A home split card (copy + CTA beside a photo tile).', sel: 'home content card' });
   // Footer (last block on the page).
   await S('footer', q('footer').filter({ visible: true }).last(), ['default'], { group: G.footer, title: 'Footer', desc: 'The sand footer: newsletter band, "Just refill" columns, social icons, certification and payment logos.', sel: 'footer' });
-  const nl = await domFind(page, /Enter your (name|email)|newsletter|stay up to date/i, { sel: 'input, form, section', tag: 'nl', leaf: false });
   const emailIn = q('input[type="email"], input[placeholder*="email" i], input[name*="email" i]').filter({ visible: true }).first();
   await S('newsletter-input', emailIn, ['default', 'focused'], { group: G.footer, title: 'Newsletter input', desc: 'The email field in the footer newsletter band; focused, never submitted.', sel: 'footer email input' });
   save();
@@ -642,8 +648,6 @@ async function login() {
   await S('create-button', create, B4, { group: g, title: 'Create account', desc: 'The darkBlue pill in the New Customers card; a link, never followed.', sel: 'create account' });
   save();
 }
-
-async function footerMobileCleanup() {}
 
 async function mobile() {
   if (!(await newPage('mobile', { mobile: true, wait: 9000 }))) return;

@@ -16,7 +16,7 @@ The preview browser loaded the pages and computed styles were read from them. It
 | [components/](components/) | crops/ holds a note. No element PNGs |
 | [icons/](icons/) | 9 inline SVGs from the homepage, plus INDEX.tsv |
 | [raw/](raw/) | measurements.md and tokens-source.json |
-| [tools/](tools/) | Kit copy. The public builders were not adapted, because tokens.json was written from the live readings |
+| [tools/](tools/) | The token test and the generic capture helpers copied from the kit. tokens.json, components.md and style-guide.html were written from the live readings, not by a builder; the unadapted kit builders were removed in the 2026-11 audit |
 
 <!-- brief:start -->
 <!-- brief:end -->
@@ -119,7 +119,7 @@ Saol (heading), Simplon Norm (body), and Simplon Mono (labels) are served from c
 
 ## Rebuild
 
-Tokens were written from the readings, not from `tools/build_tokens.py`. That script is still the kit's Claude mapping and will not rebuild this file. Regenerate [DESIGN.md](DESIGN.md) from the repo root:
+Tokens were written by hand from the readings; there is no token builder. Regenerate [DESIGN.md](DESIGN.md) from the repo root:
 
 ```bash
 python3 tools/catalog.py design-md prose

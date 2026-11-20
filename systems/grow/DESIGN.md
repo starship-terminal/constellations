@@ -31,8 +31,8 @@ colors:
   button-primary-bgHover: "#185abc"
   button-primary-bgPressed: "#185abc"
   button-primary-fg: "#ffffff"
-  banner-bg: "#ffffff"
-  banner-link: "#3186ff"
+  banner-bg: "rgba(0, 0, 0, 0)"
+  banner-link: "#ffffff"
   tab-bar-bg: "#ffffff"
   tab-item-fg: "#3c4043"
   tab-item-bgHover: "#f8f9fa"
@@ -48,7 +48,6 @@ colors:
   component-card-bg: "#ffffff"
   component-header-bg: "#ffffff"
   component-footer-bg: "#eff2f7"
-  component-banner-bg: "#ffffff"
   component-megaMenu-bg: "#ffffff"
 typography:
   display-1:
@@ -74,6 +73,7 @@ typography:
     fontSize: "28px"
     fontWeight: 400
     lineHeight: "36px"
+    letterSpacing: "0px"
   stat:
     fontFamily: "Google Sans Flex"
     fontSize: "48px"
@@ -91,6 +91,7 @@ typography:
     fontSize: "14px"
     fontWeight: 400
     lineHeight: "21px"
+    letterSpacing: "0px"
   eyebrow:
     fontFamily: "Google Sans Flex"
     fontSize: "14px"
@@ -126,7 +127,7 @@ spacing:
   nav-x: "12px"
   tab-x: "8px"
   tab-y: "7px"
-  page-x: "0px"
+  page-x: "72px"
 components:
   button:
     backgroundColor: "{colors.component-button-bg}"
@@ -150,12 +151,11 @@ components:
   footer:
     backgroundColor: "{colors.component-footer-bg}"
     height: "837px"
-  banner:
-    backgroundColor: "{colors.component-banner-bg}"
-    height: "25px"
   megaMenu:
     backgroundColor: "{colors.component-megaMenu-bg}"
     height: "623px"
+  banner:
+    height: "25px"
 ---
 
 # Grow with Google
@@ -191,7 +191,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Layout
 
-Spacing from `core.space`: `button-x` 16px, `button-y` 12px, `nav-x` 12px, `tab-x` 8px, `tab-y` 7px, `page-x` 0px.
+Spacing from `core.space`: `button-x` 16px, `button-y` 12px, `nav-x` 12px, `tab-x` 8px, `tab-y` 7px, `page-x` 72px.
 
 ## Elevation & Depth
 
@@ -231,6 +231,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The APAC shots differ by design.** `/intl/ALL_sg/` ships a different promo and fewer sections; it is a variant surface, not a drift in the tokens.
 - **Pressed states** are DevTools-forced pseudo-classes; the `outline: auto` ring Chrome draws on a forced :active is an artifact, not a page style.
 - **Reduced motion is only partially honoured**: the probe saw some elements keep animating under prefers-reduced-motion (`raw/motion.json`, "partial").
+- **The promo banner's fill was not measured.** `promo-banner` read the transparent paragraph inside the bar, not the ancestor that paints it, so `banner.bg` is `rgba(0, 0, 0, 0)` and the bar's colour is not recorded; it needs a recapture. Its white copy (`banner.link`) and geometry are real readings.
 - **Screenshot colours** are 256-colour PNGs; read exact values from tokens.json or the raw files.
 
 ### Do and don't (from README.md)

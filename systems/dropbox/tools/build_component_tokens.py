@@ -199,9 +199,18 @@ for key, comp, state, desc in [
     ("menu-item", "m-nav-item", "default", "A mobile-menu row size."),
 ]:
     v = ts(comp, state, "fontSize")
-    if v and v not in {str(x.get("value", "")) for x in sizes.values()}:
-        sizes["measured-" + key] = {"type": "dimension", "value": v,
-                                    "source": f"computed fontSize of {comp} {state} (raw/components-computed.json)",
+    if not v:
+        continue
+    # The ramp's leaves are var leaves: compare against what each resolves to (a
+    # comparison against "value" never matched, so every reading read as outside).
+    step = next((k for k, x in sizes.items() if not k.startswith("measured-")
+                 and str(resolved(x.get("resolve", "light"), x["var"]) if "var" in x else x.get("value")) == v), None)
+    src = f"computed fontSize of {comp} {state} (raw/components-computed.json)"
+    if step:
+        sizes["measured-" + key] = {"type": "dimension", "value": "{font.size." + step + "}", "source": src,
+                                    "description": desc + f" Measured; it equals the declared {step} step."}
+    else:
+        sizes["measured-" + key] = {"type": "dimension", "value": v, "source": src,
                                     "description": desc + " Measured — outside the declared ramp."}
 
 leading = SPEC["core"].setdefault("font", {}).setdefault("lineHeight", {})
@@ -353,9 +362,29 @@ for root, pass_ in ((SPEC["light"], "light"), (SPEC["dark"], "dark")):
 # --------------------------------------------------- declared box shadows
 # --dig-utilities__boxshadow__* resolve to real shadow stacks per theme.
 def parse_shadow(s):
-    layers = re.findall(r"(rgba?\([\d.,\s]+\)|#[0-9a-fA-F]{3,8})\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)\s*(-?\d+(?:\.\d+)?px)?\s*(inset)?", s or "")
-    return [{"color": norm_color(a), "offsetX": x, "offsetY": y, "blur": bl,
-             "spread": sp or "0px", "inset": bool(i)} for a, x, y, bl, sp, i in layers]
+    """Every layer of a resolved shadow stack; a layer it cannot read stops the build
+    instead of being dropped (findall used to skip it silently)."""
+    if not s or s.strip() == "none":
+        return []
+    out, depth, cur, parts = [], 0, "", []
+    for ch in s:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == "," and depth == 0:
+            parts.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    parts.append(cur.strip())
+    for part in parts:
+        m = re.fullmatch(r"(inset\s+)?(rgba?\([\d.,\s]+\)|#[0-9a-fA-F]{3,8})\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)"
+                         r"\s+(-?\d+(?:\.\d+)?px)(?:\s+(-?\d+(?:\.\d+)?px))?(\s+inset)?", part)
+        if not m:
+            raise SystemExit(f"shadow layer not understood: {part!r}")
+        i1, a, x, y, bl, sp, i2 = m.groups()
+        out.append({"color": norm_color(a), "offsetX": x, "offsetY": y, "blur": bl,
+                    "spread": sp or "0px", "inset": bool(i1 or i2)})
+    return out
 
 
 for root, pass_ in ((SPEC["light"], "light"), (SPEC["dark"], "dark")):
