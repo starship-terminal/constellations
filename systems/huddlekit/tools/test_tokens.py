@@ -66,12 +66,30 @@ class TokensTest(unittest.TestCase):
         self.assertIn("ui-monospace", core["font.family.mono"])
 
     def test_component_geometry(self):
-        comp = T["core"].get("component")
-        self.assertIsNotNone(comp, "no component tokens")
-        names = {n for n, _ in token_checks.tokens_of(comp)}
-        # geometry emitted only when measure.mjs has run; check the shape it takes
-        for n in names:
-            self.assertRegex(n, r"^[a-zA-Z]+\.")
+        """Every measured component leaf equals the raw reading it cites."""
+        import re
+        C = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+        comp = T["core"]["component"]
+        checked = 0
+        for n, t in token_checks.tokens_of(comp):
+            m = re.match(r"measured (\S+) (\S+) on ", t["$extensions"]["source"])
+            self.assertIsNotNone(m, n)
+            st = C[m.group(1)]["states"][m.group(2)]
+            v = t["$value"]
+            if n.endswith(".height") or n.endswith(".width"):
+                raw = st["rect"]["h" if n.endswith(".height") else "w"]
+                self.assertEqual(v, f"{raw:g}px", n)
+            elif n.endswith(".radius"):
+                raw = st["style"]["borderTopLeftRadius"]
+                self.assertEqual(v, "9999px" if float(raw[:-2]) >= 9999 else raw, n)
+            elif n.endswith(".size"):
+                self.assertEqual(v, st["style"]["fontSize"], n)
+            elif n.endswith(".tracking"):
+                self.assertEqual(v, st["style"]["letterSpacing"], n)
+            else:
+                continue
+            checked += 1
+        self.assertGreaterEqual(checked, 15)
 
 
 if __name__ == "__main__":

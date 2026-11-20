@@ -238,8 +238,9 @@ for n in sorted(declared):
 
 # ------------------------------------------------- measured component tokens
 C_PATH = RAW / "components-computed.json"
-if C_PATH.exists():
-    C = json.loads(C_PATH.read_text()).get("components", {})
+# Required: without it every measured token would drop silently.
+if True:
+    C = json.loads(C_PATH.read_text())["components"]
 
     def geom(comp, state, field, path, label):
         st = C.get(comp, {}).get("states", {}).get(state, {})
