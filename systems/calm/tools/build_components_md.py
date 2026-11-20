@@ -198,6 +198,18 @@ def fmt(d):
     return "; ".join(f"{k} {d[k]}" for k in ORDER if k in d).replace("|", "/")
 
 
+CHALLENGE = re.compile(r"press ?& ?hold|confirm you are a human|verify you are human|px-captcha", re.I)
+
+
+def bot_check(c):
+    """A component recorded as blocked, or whose reading is a bot-challenge page rather than the product."""
+    if c.get("blocked"):
+        return True
+    st = (c.get("states") or {}).get("default") or {}
+    layers = " ".join(str(p.get("node", "")) for p in st.get("paint") or [])
+    return bool(CHALLENGE.search(str(st.get("text", ""))) or CHALLENGE.search(layers))
+
+
 def child_layers(c):
     st = next((s for s in c["states"].values() if "style" in s), None)
     if not st or not st.get("paint"):
@@ -439,6 +451,9 @@ for g in groups:
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
+            continue
+        if bot_check(c):
+            W("Not captured: the page served a PerimeterX bot check (\"Press & Hold to confirm you are a human\") instead of this view, so the reading is the challenge container, not the product. It is left out here and needs a recapture.")
             continue
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
