@@ -45,7 +45,7 @@
      "value": "#86868b",
      "type": "color",
      "source": "computed color of hero-sub default (raw/components-computed.json)",
-     "description": "#86868b — the hero lede's muted grey."
+     "description": "#86868b — the muted body grey, read on the first paragraph after the hero h1 (a section paragraph, \"Set reminders...\"; the hero has no lede)."
     }
    },
    "paper": {
@@ -353,7 +353,7 @@
      "type": "dimension",
      "value": "20px",
      "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
-     "description": "The hero lede, 20px."
+     "description": "The 20px section body paragraph, read on the first paragraph after the hero h1 (\"Set reminders...\"; the hero has no lede)."
     },
     "body": {
      "type": "dimension",
@@ -823,8 +823,8 @@
    "width": {
     "type": "dimension",
     "value": "556px",
-    "source": "computed width of menu-panel default (raw/components-computed.json)",
-    "description": "The open nav dropdown, 556px."
+    "source": "computed width of menu-panel default (raw/components-computed.json); read from the wrong element (the closed Company panel, opacity 0, not the open dropdown); recapture needed",
+    "description": "The width of a nav dropdown panel, 556px. Read from the wrong element: the closed Company panel (opacity 0), not the open dropdown; recapture needed."
    }
   },
   "footer": {

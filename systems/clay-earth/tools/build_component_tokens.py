@@ -68,7 +68,7 @@ CORE = [
     ("gray.500", "signin-toggle", "default", "color",
      "#48494a — the app surface's body/text grey."),
     ("gray.400", "hero-sub", "default", "color",
-     "#86868b — the hero lede's muted grey."),
+     "#86868b — the muted body grey, read on the first paragraph after the hero h1 (a section paragraph, \"Set reminders...\"; the hero has no lede)."),
     ("paper.0", "cta", "default", "backgroundColor",
      "#fdfcfa — the hero CTA's warm off-white fill."),
     ("paper.50", "pricing-ground", "default", "backgroundColor",
@@ -358,44 +358,70 @@ for comp, state, key, prop, desc in [
     except KeyError:
         pass
 
-# Recorded shadows: the hero CTA's white glow, the popular card's orange
-# ring and the nav pill's layered glass shadow.
+# Shadows and the ring gradient are parsed from the readings they cite, never typed in.
+def need(v, what):
+    if v in (None, ""):
+        raise SystemExit("build_component_tokens: raw/components-computed.json has no " + what)
+    return v
+
+
+def shadow_layers(v, keep_inset=True):
+    layers = []
+    for part in re.split(r",\s*(?![^()]*\))", v):
+        m = re.fullmatch(r"(rgba?\([^)]*\))\s+(-?[\d.]+px)\s+(-?[\d.]+px)\s+(-?[\d.]+px)\s+(-?[\d.]+px)(\s+inset)?", part.strip())
+        if not m:
+            raise SystemExit("build_component_tokens: cannot read box-shadow layer %r" % part)
+        if m.group(6) and not keep_inset:
+            continue
+        layer = {"offsetX": m.group(2), "offsetY": m.group(3), "blur": m.group(4), "spread": m.group(5), "color": norm_color(m.group(1))}
+        if m.group(6):
+            layer["inset"] = True
+        layers.append(layer)
+    return layers
+
+
+def gradient_stops(v):
+    m = re.fullmatch(r"linear-gradient\((-?[\d.]+)deg,\s*(.*)\)", v.strip())
+    if not m:
+        raise SystemExit("build_component_tokens: cannot read gradient %r" % v)
+    stops = []
+    for part in re.split(r",\s*(?![^()]*\))", m.group(2)):
+        s = re.fullmatch(r"(rgba?\([^)]*\))\s+([\d.]+)%", part.strip())
+        if not s:
+            raise SystemExit("build_component_tokens: cannot read gradient stop %r" % part)
+        pos = round(float(s.group(2)) / 100, 4)
+        stops.append({"color": norm_color(s.group(1)), "position": int(pos) if pos == int(pos) else pos})
+    return float(m.group(1)), stops
+
+
 SPEC["dark"]["shadow"] = {
     "ctaGlow": {
         "type": "shadow",
-        "value": [{"offsetX": "0px", "offsetY": "0px", "blur": "4px", "spread": "1px",
-                   "color": "rgba(255, 255, 255, 0.98)"}],
+        "value": shadow_layers(need(stprop("cta", "default", "boxShadow"), "boxShadow of cta default")),
         "source": "computed boxShadow of cta default (raw/components-computed.json)",
         "description": "The near-white glow under the hero CTA."},
     "navPill": {
         "type": "shadow",
-        "value": [{"offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "0.5px",
-                   "color": "rgba(0, 0, 0, 0.06)"},
-                  {"offsetX": "0px", "offsetY": "2px", "blur": "4px", "spread": "-2px",
-                   "color": "rgba(0, 0, 0, 0.1)"},
-                  {"offsetX": "0px", "offsetY": "8px", "blur": "16px", "spread": "-8px",
-                   "color": "rgba(0, 0, 0, 0.06)"}],
+        "value": shadow_layers(need(stprop("header", "default", "paint.0.shadow"), "paint.0.shadow of header default"), keep_inset=False),
         "source": "computed paint.0.shadow of header default (raw/components-computed.json)",
         "description": "The nav pill's layered glass shadow (hairline ring + two soft drops; the inset sheen layers are omitted)."},
 }
 SPEC["light"]["shadow"] = {
     "popularRing": {
         "type": "shadow",
-        "value": [{"offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "3px",
-                   "color": "rgba(251, 114, 50, 0.24)"}],
+        "value": shadow_layers(need(stprop("plan-card-popular", "default", "boxShadow"), "boxShadow of plan-card-popular default")),
         "source": "computed boxShadow of plan-card-popular default (raw/components-computed.json)",
         "description": "The orange glow ring around the popular plan card."},
 }
 
-# The CTA's rainbow ring: a 225deg linear-gradient painted 54px proud of the
-# hero CTA (and 48px proud of the bottom CTA) on ::before.
+# The CTA's rainbow ring: a linear-gradient painted 54px proud of the hero CTA (and 48px proud of the
+# bottom CTA) on ::before.
 grad = SPEC["core"].setdefault("gradient", {})
+_angle, _stops = gradient_stops(need(stprop("cta", "default", "paint.1.bgImage"), "paint.1.bgImage of cta default"))
 grad["ctaRing"] = {
     "type": "gradient",
-    "angle": 225,
-    "value": [{"color": "#32c5ff", "position": 0},
-              {"color": "#b620e0", "position": 0.51},
-              {"color": "#f7b500", "position": 1}],
+    "angle": int(_angle) if _angle == int(_angle) else _angle,
+    "value": _stops,
     "source": "computed paint.1.bgImage of cta default (raw/components-computed.json)",
     "description": "The blue-violet-amber ring gradient painted proud of the hero and bottom CTAs."}
 grad["filterWash"] = {
@@ -423,6 +449,10 @@ grad["drawerSheen"] = {
 # ------------------------------------------------------------------ component
 
 comp = SPEC["component"]
+# Components the capture read from the wrong element (README, What to distrust): a token citing one
+# says so in its source.
+WRONG_ELEMENT = {"menu-panel": "the closed Company panel, opacity 0, not the open dropdown"}
+
 for key, cname, state, prop, desc in [
     ("control.heightCta", "cta", "default", "height", "The hero CTA's 54px pill."),
     ("control.heightCtaBottom", "cta-bottom", "default", "height", "The bottom CTA's 52px pill."),
@@ -448,7 +478,7 @@ for key, cname, state, prop, desc in [
     ("card.radiusDrawer", "m-menu-open", "default", "paint.0.radius", "Mobile drawer corners, 12px."),
     ("nav.height", "header", "default", "height", "The nav pill at 1440px, 48px."),
     ("nav.width", "header", "default", "width", "The nav pill's width, 388px."),
-    ("menuPanel.width", "menu-panel", "default", "width", "The open nav dropdown, 556px."),
+    ("menuPanel.width", "menu-panel", "default", "width", "The width of a nav dropdown panel, 556px. Read from the wrong element: the closed Company panel (opacity 0), not the open dropdown; recapture needed."),
     ("footer.height", "footer", "default", "height", "The footer block at 1440px, 335px."),
     ("drawer.height", "m-menu-open", "default", "height", "The mobile drawer at 390px, 762px."),
     ("planCard.height", "plan-card", "default", "height", "The plan card's inner height, 196px."),
@@ -461,9 +491,10 @@ for key, cname, state, prop, desc in [
         parts = key.split(".")
         for p in parts[:-1]:
             node = node.setdefault(p, {})
-        node[parts[-1]] = {"type": "dimension", "value": v,
-                           "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
-                           "description": desc}
+        src = f"computed {prop} of {cname} {state} (raw/components-computed.json)"
+        if cname in WRONG_ELEMENT:
+            src += "; read from the wrong element (%s); recapture needed" % WRONG_ELEMENT[cname]
+        node[parts[-1]] = {"type": "dimension", "value": v, "source": src, "description": desc}
     except KeyError:
         pass
 
@@ -498,7 +529,7 @@ for key, cname, desc in [
     ("size.h1", "pricing-h1", "Page headings on the light routes, 48px VerlagCondensed."),
     ("size.h2", "section-title", "Section headings in the light bands, 48px/900 VerlagCondensed."),
     ("size.signin", "signin-title", "The sign-in card's 32px headline."),
-    ("size.sub", "hero-sub", "The hero lede, 20px."),
+    ("size.sub", "hero-sub", "The 20px section body paragraph, read on the first paragraph after the hero h1 (\"Set reminders...\"; the hero has no lede)."),
     ("size.body", "filter-button", "Body-size controls and copy, 18-20px (filter pills set 20px)."),
     ("size.planLabel", "plan-name", "Plan eyebrows and menu links, 14px."),
     ("size.nav", "nav-item", "Nav labels — 12px at weight 700."),
