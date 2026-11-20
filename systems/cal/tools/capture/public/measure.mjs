@@ -340,12 +340,10 @@ async function booking() {
   await S('bk-calendar', q('button[data-testid="day"]').first().locator('xpath=ancestor::div[contains(@class,"grid-cols-7")][1]'), ['default'], { group: g, title: 'Calendar grid', desc: 'The month grid (grid-cols-7) holding the day buttons.', sel: 'button[data-testid=day] grid ancestor' });
   await S('bk-day', q('button[data-testid="day"]:not([disabled])').filter({ hasText: /^\s*1[3-9]\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Day button', desc: 'A bookable day in the month grid; clicking it is a local toggle that shows that day\'s slots.', sel: 'button[data-testid=day]' });
   await S('bk-day-today', q('button[data-testid="day"]').filter({ hasText: /Today/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Today cell', desc: 'The today cell in the month grid (its "Today" label is sr-only; the date number paints).', sel: 'button[data-testid=day] Today' });
-  await S('bk-slot', q('button, a').filter({ hasText: /^\s*\d{1,2}:\d{2}(am|pm)\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Time slot', desc: 'An available time slot; clicking it opens the guest details form (captured, never filled or confirmed).', sel: 'time slot' });
-  // Open the details form once, then measure the form pieces inside it.
-  try {
-    const slot = q('button, a').filter({ hasText: /^\s*\d{1,2}:\d{2}(am|pm)\s*$/i }).filter({ visible: true }).first();
-    if (await slot.count()) { await slot.click({ timeout: 5000 }).catch(() => slot.evaluate((el) => el.click())); await page.waitForTimeout(2500); }
-  } catch (e) { log('  ! slot open failed', String(e.message).split('\n')[0]); }
+  await S('bk-slot', q('button, a').filter({ hasText: /^\s*\d{1,2}:\d{2}(am|pm)\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Time slot', desc: 'An available time slot; measured, never clicked (a selected slot can be held).', sel: 'time slot' });
+  // Booking slot: recorded as a boundary, not clicked. Selecting a slot on a real
+  // person's booking page can hold it, so the details form below is no longer
+  // opened; its specs record missing until an owned demo page is captured.
   await S('bk-form', q('form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Details form', desc: 'The guest details form a slot opens: name/email/notes fields and the confirm action. Measured, never filled or submitted.', sel: 'form' }, { noScroll: true, noReset: true });
   await S('bk-field', q('form input[type="text"], form input[type="email"], form input').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Form field', desc: 'A text field in the details form; focused by a click, never typed into or submitted.', sel: 'form input' }, { noReset: true });
   await S('bk-confirm', q('button[type="submit"], form button').filter({ hasText: /confirm|schedule|book/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Confirm button', desc: 'The booking confirm action; measured only — a real press would create a booking, so it was never clicked (pressed is a CDP-forced state).', sel: 'form confirm button' }, { noReset: true });

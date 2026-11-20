@@ -120,17 +120,22 @@ def _oklab(L, a, b, alpha):
 
 
 def _lab(L, a, b, alpha):
+    """CIE Lab (D50, as CSS Color 4 defines lab()) -> sRGB, Bradford-adapted to D65."""
+    k, eps = 24389 / 27, 216 / 24389
     fy = (L + 16) / 116
-    fx = fy + a / 500
-    fz = fy - b / 200
-    d = 6 / 29
-    finv = lambda t: t ** 3 if t > d else 3 * d * d * (t - 4 / 29)
-    X = 0.95047 * finv(fx)
-    Y = fy ** 3 if fy > d else L / 903.3
-    Z = 1.08883 * finv(fz)
-    r = 3.2404542 * X - 1.5371385 * Y - 0.4985314 * Z
-    g = -0.9692660 * X + 1.8760108 * Y + 0.0415560 * Z
-    bb = 0.0556434 * X - 0.2040259 * Y + 1.0572252 * Z
+    fx, fz = fy + a / 500, fy - b / 200
+    x = fx ** 3 if fx ** 3 > eps else (116 * fx - 16) / k
+    y = fy ** 3 if L > k * eps else L / k
+    z = fz ** 3 if fz ** 3 > eps else (116 * fz - 16) / k
+    X, Y, Z = x * 0.3457 / 0.3585, y, z * (1 - 0.3457 - 0.3585) / 0.3585  # D50 white
+    M1 = [[0.9554734527042182, -0.023098536874261423, 0.0632593086610217],
+          [-0.028369706963208136, 1.0099954580058226, 0.021041398966943008],
+          [0.012314001688319899, -0.020507696433477912, 1.3303659366080753]]  # Bradford D50 -> D65
+    X, Y, Z = (sum(M1[i][j] * v for j, v in enumerate((X, Y, Z))) for i in range(3))
+    M2 = [[3.2409699419045226, -1.537383177570094, -0.4986107602930034],
+          [-0.9692436362808796, 1.8759675015077202, 0.04155505740717559],
+          [0.05563007969699366, -0.20397695888897652, 1.0569715142428786]]  # XYZ D65 -> linear sRGB
+    r, g, bb = (sum(M2[i][j] * v for j, v in enumerate((X, Y, Z))) for i in range(3))
     return _hx(_gam(r) * 255, _gam(g) * 255, _gam(bb) * 255, alpha)
 
 
@@ -163,7 +168,8 @@ def norm_color(v):
     if m:
         L, ch, h, al = m.groups()
         al = float(al[:-1]) / 100 if al and al.endswith("%") else (float(al) if al else 1)
-        return _oklab(float(L), float(ch) * math.cos(math.radians(float(h))), float(ch) * math.sin(math.radians(float(h))), al)
+        L = float(L) / 100 if "%" in m.group(0).split(" ")[0] else float(L)  # oklch(50% ...) is L 0.5
+        return _oklab(L, float(ch) * math.cos(math.radians(float(h))), float(ch) * math.sin(math.radians(float(h))), al)
     m = re.fullmatch(r"lab\(\s*([\d.]+)%?\s+(-?[\d.e]+)\s+(-?[\d.e]+)(?:\s*/\s*([\d.]+%?))?\s*\)", v)
     if m:
         L, a, b, al = m.groups()
