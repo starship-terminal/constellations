@@ -10,25 +10,35 @@ import pathlib
 RAW = pathlib.Path(__file__).resolve().parent.parent / "raw"
 readings = json.loads((RAW / "readings.json").read_text())
 # tools/capture/crops.mjs read every control with the pointer away first, then the signup hover.
-# The homepage pass in readings.json read its rest styles with the pointer still on the signup
-# control (run.mjs hovered it just before), so where a crop reading exists it is the default.
+# The old homepage pass read its rest styles with the pointer still on the signup control, so the
+# crop reading repairs its defaults (default_row below); a pass marked readAtRest is not repaired.
 CROPS = json.loads((RAW / "crops-measured.json").read_text())
 home = readings["home"]
 CROP_SRC = "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json"
-components = {}
-for name, row in home["components"].items():
-    if row.get("missing"):
-        continue
+
+
+def default_row(name, row, home, crops):
+    """The control's default. The old capture (2026-11-19) read the homepage's rest styles with the
+    pointer still on the signup control, so its crop pass is the default there. A capture from the
+    current run.mjs reads them at rest and marks the pass `readAtRest`; its readings are kept whole,
+    so a recapture without a crop pass never mixes fresh readings with the old crop defaults."""
     default = {
         **row,
         "page": "home",
         "source": "computed style on %s at %spx, Wayback 20250219221151 https://www.modyfi.com/" % (row.get("sel"), home.get("innerWidth")),
     }
-    rest = CROPS.get(f"{name}-default")
+    rest = None if home.get("readAtRest") else crops.get(f"{name}-default")
     if rest:
         default.update({k: v for k, v in rest.items() if k != "text"})
         default["source"] = f"{CROP_SRC} ({name}-default); other fields from the homepage pass"
-    components[name] = {"states": {"default": default}}
+    return default
+
+
+components = {}
+for name, row in home["components"].items():
+    if row.get("missing"):
+        continue
+    components[name] = {"states": {"default": default_row(name, row, home, CROPS)}}
 
 # Hover: a state run.mjs saved in readings.json, else the crop pass's hover reading.
 states = home.get("states") or {}

@@ -46,6 +46,17 @@ class Contract(unittest.TestCase):
         self.assertEqual((HERE / "raw" / "components-computed.json").read_text(), build_from_readings.COMPONENTS_TEXT)
         self.assertEqual((HERE / "raw" / "css-vars.json").read_text(), build_from_readings.VARS_TEXT)
 
+    def test_crop_repair_only_for_the_old_capture(self):
+        row = {"sel": "a.x", "backgroundColor": "rgb(1, 1, 1)", "color": "rgb(2, 2, 2)"}
+        crops = {"signup-button-default": {"backgroundColor": "rgb(9, 9, 9)", "text": "Sign up"}}
+        old = build_from_readings.default_row("signup-button", row, {"innerWidth": 1440}, crops)
+        self.assertEqual(old["backgroundColor"], "rgb(9, 9, 9)")
+        self.assertIn("crops-measured.json", old["source"])
+        self.assertNotIn("text", old)
+        fresh = build_from_readings.default_row("signup-button", row, {"innerWidth": 1440, "readAtRest": True}, crops)
+        self.assertEqual(fresh["backgroundColor"], "rgb(1, 1, 1)")
+        self.assertNotIn("crops-measured.json", fresh["source"])
+
     def test_signup_default_is_at_rest(self):
         # The homepage pass read the signup control under the pointer; the crop pass read it at rest.
         states = json.loads(build_from_readings.COMPONENTS_TEXT)["components"]["signup-button"]["states"]
