@@ -8,13 +8,23 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, DOCS, AUTH, launch, open, hideConsent, styleOf, crop, centre, RAW } from './lib.mjs';
+import { datePrior } from '../merge-dates.mjs';
 
 const OUT = path.join(RAW, 'components-computed.json');
 fs.mkdirSync(RAW, { recursive: true });
 // Start from the committed readings so a run that fails part-way never drops a component it did
 // not reach (measure-gated.mjs adds its entries to the same file).
+// Dates: every state carries its own `read` date, and kept states keep theirs
+// (merge-dates.mjs). _meta.captured keeps the earlier date until this run reads
+// something, so a rerun that fails throughout never redates old readings;
+// _meta.lastAttempt is the date of this run.
 const prior = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
-const out = { _meta: { ...prior._meta, captured: new Date().toLocaleDateString('en-CA'), product: 'Lemon Squeezy', route: 'public-web' }, components: { ...prior.components } };
+const RUN = new Date().toLocaleDateString('en-CA');
+const priorCaptured = prior._meta && prior._meta.captured;
+const out = {
+  _meta: { ...prior._meta, captured: priorCaptured || RUN, lastAttempt: RUN, product: 'Lemon Squeezy', route: 'public-web' },
+  components: datePrior({ ...prior.components }, priorCaptured),
+};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 
@@ -75,7 +85,8 @@ async function measure(key, state, loc, opts = {}) {
       try { file = await crop(page, loc, `${key}-${state}`, opts.pad ?? 12); }
       catch (e) { s.cropError = String(e.message || e).slice(0, 140); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, read: RUN };
+    out._meta.captured = RUN; // a reading succeeded in this run
     log('  ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h), s.style.backgroundColor, s.style.color);
   } catch (e) {
     failState(key, state, e);
@@ -89,7 +100,7 @@ function failState(key, state, e) {
   const states = out.components[key].states;
   const prior = states[state];
   const msg = String(e.message || e).slice(0, 200);
-  states[state] = prior && !prior.error ? { ...prior, recaptureError: msg } : { error: msg };
+  states[state] = prior && !prior.error ? { ...prior, recaptureError: msg, recaptureRun: RUN } : { error: msg, read: RUN };
 }
 
 function comp(key, meta) {
