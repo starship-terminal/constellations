@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pattern Brands style guide</title>
+<style>
+/*CORE*/
+:root { color-scheme: light; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font-family: var(--font-family-display); font-size: 16px; line-height: 1.3; }
+main { max-width: 736px; margin: 0 auto; padding: 40px 20px 80px; }
+h1 { font-weight: 400; font-size: 48px; line-height: 52.8px; margin: 0 0 8px; }
+h2 { font-weight: 400; font-size: 28.8px; line-height: 31.68px; margin: 40px 0 12px; }
+p.lede { max-width: 42em; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.swatch { border: 1px solid #eee; }
+.swatch i { display: block; height: 64px; }
+.swatch span { display: block; padding: 8px; font-family: Cadiz, Arial, sans-serif; font-size: 12px; }
+.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 12px 20px; color: var(--text-onAccent); background: var(--action-primary); border-radius: 24px; text-decoration: none; overflow: hidden; }
+.btn:hover { background: var(--action-primaryHover); }
+.pill { display: inline-flex; align-items: center; justify-content: center; min-width: 200px; height: 37px; padding: 8px 24px; color: #fff; background: var(--action-primary); border-radius: 1600px; text-decoration: none; }
+.card { width: 240px; }
+.card .img { height: 120px; background: #d7e2ea; }
+.card p { margin: 8px 0; }
+.visit { color: var(--text-link); text-decoration: underline; }
+footer.demo { margin-top: 32px; background: var(--background-inverse); color: var(--text-onAccent); font-family: Cadiz, Arial, sans-serif; font-size: 14px; line-height: 18.2px; padding: 24px; }
+.word { color: var(--text-accentWord); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; font-weight: 400; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pattern Brands</h1>
+  <p class="lede">Public site, one light theme. Values come from <a href="tokens.json">tokens.json</a>. P22 Mackinac Pro and Cadiz are not loaded here, so the page falls back to Georgia and Arial.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+
+  <h2>Type</h2>
+  <p style="font-size:48px;line-height:52.8px;margin:0">Terms of Service</p>
+  <p style="font-size:28.8px;line-height:31.68px">Where thoughtful products meet <span class="word">thoughtful</span> living</p>
+  <p>Explore our family of consumer brands, designed to elevate the home.</p>
+  <p style="font-family:Cadiz, Arial, sans-serif;font-size:14px;line-height:18.2px">Footer link, Cadiz 14 / 18.2</p>
+
+  <h2>Button</h2>
+  <p><a class="btn" href="#button">Contact Us</a></p>
+  <p>Hover swaps the fill for the measured circle green. The live control scales a circle over 700ms. This guide uses the end colour.</p>
+  <p><a class="pill" href="#pill">Go Home</a></p>
+
+  <h2>Brand card</h2>
+  <div class="card">
+    <div class="img"></div>
+    <p style="font-weight:400">ONSEN</p>
+    <p>Modern waffle towels that dry fast, last long, and feel exceptional.</p>
+    <a class="visit" href="#visit">Visit Onsen</a>
+  </div>
+
+  <h2>Footer</h2>
+  <footer class="demo">Contact Us &nbsp; Careers &nbsp; Terms of Service &nbsp; Privacy Policy</footer>
+
+  <h2>Tokens</h2>
+  <table id="tokens"></table>
+</main>
+<script>
+const tokens = /*TOKENS*/null;
+const root = document.documentElement;
+function flat(node, prefix, out) {
+  Object.entries(node || {}).forEach(([k, v]) => {
+    if (k.startsWith("$")) return;
+    const path = prefix ? prefix + "." + k : k;
+    if (v && typeof v === "object" && "$value" in v) out.push([path, v]);
+    else if (v && typeof v === "object") flat(v, path, out);
+  });
+}
+const all = [];
+flat(tokens.core, "core", all);
+flat(tokens.light, "light", all);
+function resolve(value, seen = new Set()) {
+  if (typeof value !== "string") return value;
+  return value.replace(/\{([^{}]+)\}/g, (_, name) => {
+    if (seen.has(name)) return name;
+    seen.add(name);
+    const hit = all.find(([p]) => p === "core." + name || p === "light." + name || p.endsWith("." + name) || p === name);
+    return hit ? resolve(hit[1].$value, seen) : name;
+  });
+}
+const swatchNames = ["light.background.page","light.background.inverse","light.text.primary","light.text.onAccent","light.text.link","light.text.accentWord","light.action.primary","light.action.primaryHover","light.focus.ring"];
+const box = document.getElementById("swatches");
+swatchNames.forEach((name) => {
+  const hit = all.find(([p]) => p === name);
+  if (!hit) return;
+  const value = resolve(hit[1].$value);
+  const el = document.createElement("div");
+  el.className = "swatch";
+  el.innerHTML = `<i style="background:${value}"></i><span>${name}<br>${value}</span>`;
+  box.appendChild(el);
+});
+all.forEach(([path, token]) => {
+  const css = "--" + path.replace(/\./g, "-").replace(/^core-/, "").replace(/^light-/, "");
+  const value = resolve(token.$value);
+  if (typeof value === "string") root.style.setProperty(css, value);
+});
+const table = document.getElementById("tokens");
+all.forEach(([path, token]) => {
+  const tr = document.createElement("tr");
+  const value = typeof token.$value === "string" ? token.$value : JSON.stringify(token.$value);
+  tr.innerHTML = `<td>${path}</td><td>${value}</td><td>${token.$type}</td>`;
+  table.appendChild(tr);
+});
+</script>
+</body>
+</html>

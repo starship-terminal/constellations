@@ -1,0 +1,177 @@
+{
+  "capturedAt": "2026-11-21",
+  "source": "https://www.patternbrands.com/ stylesheets, read from the CSSOM in headless Chromium at 1440x900",
+  "fonts": [
+    {
+      "family": "webflow-icons",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "\"P22 Mackinac Pro\"",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "Cadiz",
+      "weight": "400",
+      "style": "normal"
+    }
+  ],
+  "brand": {
+    "themeColor": [],
+    "colorScheme": "",
+    "mask": ""
+  },
+  "rules": [
+    {
+      "selector": ":root",
+      "properties": {
+        "--text-color--text-primary": "var(--base-color-brand--black)",
+        "--link-color--link-primary": "var(--base-color-brand--blue)",
+        "--background-color--background-primary": "var(--base-color-brand--green)",
+        "--text-color--text-alternate": "var(--base-color-neutral--white)",
+        "--text-color--text-secondary": "var(--base-color-brand--green)",
+        "--background-color--background-success": "var(--base-color-system--success-green)",
+        "--text-color--text-success": "var(--base-color-system--success-green-dark)",
+        "--border-color--border-primary": "var(--base-color-neutral--neutral-lightest)",
+        "--background-color--background-alternate": "var(--base-color-neutral--white)",
+        "--background-color--background-secondary": "var(--base-color-brand--blue)",
+        "--background-color--background-tertiary": "var(--base-color-brand--pink)",
+        "--background-color--background-error": "var(--base-color-system--error-red)",
+        "--text-color--text-error": "var(--base-color-system--error-red-dark)",
+        "--border-color--border-alternate": "var(--base-color-neutral--neutral-darker)",
+        "--background-color--background-warning": "var(--base-color-system--warning-yellow)",
+        "--text-color--text-warning": "var(--base-color-system--warning-yellow-dark)",
+        "--base-color-brand--green": "#084935",
+        "--base-color-brand--blue": "#2d62ff",
+        "--base-color-brand--black": "#1e1e1e",
+        "--base-color-brand--pink-light": "#ffaefe",
+        "--base-color-brand--pink": "#dd23bb",
+        "--base-color-brand--pink-dark": "#3c043b",
+        "--base-color-neutral--black": "#000",
+        "--base-color-neutral--white": "#fff",
+        "--base-color-neutral--neutral-lightest": "#eee",
+        "--base-color-neutral--neutral-lighter": "#ccc",
+        "--base-color-neutral--neutral-light": "#aaa",
+        "--base-color-neutral--neutral": "#666",
+        "--base-color-neutral--neutral-dark": "#444",
+        "--base-color-neutral--neutral-darker": "#222",
+        "--base-color-neutral--neutral-darkest": "#111",
+        "--base-color-system--success-green": "#cef5ca",
+        "--base-color-system--success-green-dark": "#114e0b",
+        "--base-color-system--warning-yellow": "#fcf8d8",
+        "--base-color-system--warning-yellow-dark": "#5e5515",
+        "--base-color-system--error-red": "#f8e4e4",
+        "--base-color-system--error-red-dark": "#3b0b0b",
+        "--base-color-system--focus-state": "#2d62ff",
+        "--border-color--border-secondary": "var(--base-color-brand--blue)",
+        "--link-color--link-secondary": "var(--base-color-neutral--black)",
+        "--link-color--link-alternate": "var(--base-color-neutral--white)"
+      }
+    }
+  ],
+  "resolved": {
+    "--text-color--text-primary": "#1e1e1e",
+    "--link-color--link-primary": "#2d62ff",
+    "--background-color--background-primary": "#084935",
+    "--text-color--text-alternate": "#fff",
+    "--text-color--text-secondary": "#084935",
+    "--background-color--background-success": "#cef5ca",
+    "--text-color--text-success": "#114e0b",
+    "--border-color--border-primary": "#eee",
+    "--background-color--background-alternate": "#fff",
+    "--background-color--background-secondary": "#2d62ff",
+    "--background-color--background-tertiary": "#dd23bb",
+    "--background-color--background-error": "#f8e4e4",
+    "--text-color--text-error": "#3b0b0b",
+    "--border-color--border-alternate": "#222",
+    "--background-color--background-warning": "#fcf8d8",
+    "--text-color--text-warning": "#5e5515",
+    "--base-color-brand--green": "#084935",
+    "--base-color-brand--blue": "#2d62ff",
+    "--base-color-brand--black": "#1e1e1e",
+    "--base-color-brand--pink-light": "#ffaefe",
+    "--base-color-brand--pink": "#dd23bb",
+    "--base-color-brand--pink-dark": "#3c043b",
+    "--base-color-neutral--black": "#000",
+    "--base-color-neutral--white": "#fff",
+    "--base-color-neutral--neutral-lightest": "#eee",
+    "--base-color-neutral--neutral-lighter": "#ccc",
+    "--base-color-neutral--neutral-light": "#aaa",
+    "--base-color-neutral--neutral": "#666",
+    "--base-color-neutral--neutral-dark": "#444",
+    "--base-color-neutral--neutral-darker": "#222",
+    "--base-color-neutral--neutral-darkest": "#111",
+    "--base-color-system--success-green": "#cef5ca",
+    "--base-color-system--success-green-dark": "#114e0b",
+    "--base-color-system--warning-yellow": "#fcf8d8",
+    "--base-color-system--warning-yellow-dark": "#5e5515",
+    "--base-color-system--error-red": "#f8e4e4",
+    "--base-color-system--error-red-dark": "#3b0b0b",
+    "--base-color-system--focus-state": "#2d62ff",
+    "--border-color--border-secondary": "#2d62ff",
+    "--link-color--link-secondary": "#000",
+    "--link-color--link-alternate": "#fff"
+  },
+  "counts": {
+    "colors": [
+      [
+        "rgba(0, 0, 0, 0)",
+        84
+      ],
+      [
+        "rgb(30, 30, 30)",
+        39
+      ],
+      [
+        "rgb(255, 255, 255)",
+        31
+      ],
+      [
+        "rgb(8, 73, 53)",
+        17
+      ],
+      [
+        "rgb(170, 173, 176)",
+        3
+      ]
+    ],
+    "sizes": [
+      [
+        "16px",
+        67
+      ],
+      [
+        "14px",
+        10
+      ],
+      [
+        "28.8px",
+        6
+      ],
+      [
+        "12px",
+        3
+      ],
+      [
+        "32px",
+        1
+      ]
+    ],
+    "radii": [
+      [
+        "0px",
+        84
+      ],
+      [
+        "24px",
+        2
+      ],
+      [
+        "3px",
+        1
+      ]
+    ]
+  }
+}
