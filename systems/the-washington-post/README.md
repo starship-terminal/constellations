@@ -44,7 +44,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | text | #ffffff `dark.text` | #111111 `light.text` |
 | muted | #a1a1a1 `dark.muted` | #595959 `light.muted` |
 | accent | #166dfc `dark.accent` | #166dfc `light.accent` |
-| border | rgba(255, 255, 255, 0.1) `dark.border` | #e9e9e9 `light.border` |
+| border | #ffffff1a `dark.border` | #e9e9e9 `light.border` |
 
 Fonts: `core.font.family.meta` is Franklin, then 2 fallbacks; `core.font.family.headline` is Postoni, then 2 fallbacks; `core.font.family.body` is georgia, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 9 type styles (`core.typography`), 8 radius steps (`core.radius`), 16 spacing steps (`core.space`).
 
