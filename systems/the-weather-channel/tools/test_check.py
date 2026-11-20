@@ -46,5 +46,14 @@ class Check(unittest.TestCase):
         self.assertIn("#1b1b204d", build_tokens.colours_in("rgba(27, 27, 32, 0.3)"))
 
 
+    def test_chain_through_core_resolves_from_core(self):
+        # light.font.shared -> {core.font.shared} -> {font.base} must read core.font.base (Inter),
+        # not the light theme's own font.base override.
+        tree = {"core": {"font": {"base": {"$value": "Inter"}, "shared": {"$value": "{font.base}"}}},
+                "light": {"font": {"base": {"$value": "{font.shared}"}, "shared": {"$value": "{core.font.shared}"}}}}
+        self.assertIsNone(build_tokens.resolve(tree, "light", "core.font.shared", set()))
+        tree["core"]["font"]["base"]["$value"] = "{font.shared}"   # now core loops on itself
+        self.assertIn("cycle", build_tokens.resolve(tree, "light", "core.font.shared", set()))
+
 if __name__ == "__main__":
     unittest.main()

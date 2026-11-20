@@ -103,15 +103,20 @@ def lookup(tree, dotted):
 
 def resolve(tokens, setname, ref, seen):
     """None when the alias reaches a literal, else the reason it does not."""
-    if (setname, ref) in seen:
-        return f"alias cycle at {{{ref}}}"
-    seen = seen | {(setname, ref)}
-    for scope in (tokens.get(setname, {}), tokens.get("core", {}), tokens):
-        tok = lookup(scope, ref)
-        if tok is not None:
-            v = tok["$value"]
-            inner = re.fullmatch(r"\{([^{}]+)\}", v) if isinstance(v, str) else None
-            return resolve(tokens, setname, inner.group(1), seen) if inner else None
+    # Own set, then core, then the root, as tools/catalog.py's Resolver does. The next hop resolves
+    # from the set the token was found in, and loops are tracked by (set, path within it).
+    candidates = [(setname, ref), ("core", ref)]
+    if "." in ref:
+        candidates.append(tuple(ref.split(".", 1)))
+    for found_set, found_path in candidates:
+        tok = lookup(tokens.get(found_set, {}), found_path)
+        if tok is None:
+            continue
+        if (found_set, found_path) in seen:
+            return f"alias cycle at {{{ref}}}"
+        v = tok["$value"]
+        inner = re.fullmatch(r"\{([^{}]+)\}", v) if isinstance(v, str) else None
+        return resolve(tokens, found_set, inner.group(1), seen | {(found_set, found_path)}) if inner else None
     return f"dead alias {{{ref}}}"
 
 

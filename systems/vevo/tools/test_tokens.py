@@ -27,15 +27,27 @@ def flatten(node):
     return {path: tok["$value"] for path, tok in tokens_in(node).items()}
 
 
+
+def has_source(tok):
+    """A source is a non-empty string; null, a number or blank text is not one."""
+    source = (tok.get("$extensions") or {}).get("source")
+    return isinstance(source, str) and bool(source.strip())
+
 class TokenTest(unittest.TestCase):
     def test_every_token_has_a_source(self):
         data = json.loads(TOKENS.read_text())
         missing = [
             path
             for path, tok in tokens_in(data).items()
-            if not str((tok.get("$extensions") or {}).get("source", "")).strip()
+            if not has_source(tok)
         ]
         self.assertEqual(missing, [])
+
+    def test_null_or_blank_source_counts_as_missing(self):
+        for source in (None, "", "   ", 3):
+            with self.subTest(source=source):
+                self.assertFalse(has_source({"$extensions": {"source": source}}))
+        self.assertTrue(has_source({"$extensions": {"source": "Measured: x"}}))
 
     def test_aliases_resolve(self):
         data = json.loads(TOKENS.read_text())
