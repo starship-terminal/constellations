@@ -45,7 +45,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #121212 `light.background.action` |
 | border | #dfdfdf `light.border.stroke` |
 
-Fonts: `core.font.family.cheltenham` is nyt-cheltenham, then 6 fallbacks; `core.font.family.franklin` is nyt-franklin, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 9 type styles (`core.typography`), 5 radius steps (`core.radius`), 7 spacing steps (`core.spacing`).
+Fonts: `core.font.family.cheltenham` is nyt-cheltenham, then 6 fallbacks; `core.font.family.franklin` is nyt-franklin, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 9 type styles (`core.typography`), 6 radius steps (`core.radius`), 7 spacing steps (`core.spacing`).
 
 ### Using components
 
@@ -133,4 +133,4 @@ python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
 ```
 
-`build_tokens.py` checks the painted values. It does not rewrite tokens.json. `build_style_guide.py` rewrites style-guide.html from tokens.json.
+`build_tokens.py` checks tokens.json against raw/: every token has an evidence label, every literal colour is a raw/ reading (or labelled Reconstruction), every alias resolves without a loop, and the painted masthead, ink, accent and login values have not drifted. It does not rewrite tokens.json. `build_style_guide.py` rewrites style-guide.html from tokens.json.

@@ -188,9 +188,9 @@ def build():
             "focus": tok("shadow", RAW["shadows"]["focus"], src + " sign-in email field box-shadow"),
         },
         "motion": {
-            "duration160": dim("0.16s", src + " --dt_static_transition-duration-160"),
-            "duration200": dim("0.2s", src + " --dt_static_transition-duration-200"),
-            "duration80": dim("80ms", src + " --dt_static_transition-duration-80"),
+            "duration160": tok("duration", "160ms", src + " --dt_static_transition-duration-160 0.16s"),
+            "duration200": tok("duration", "200ms", src + " --dt_static_transition-duration-200 0.2s"),
+            "duration80": tok("duration", "80ms", src + " --dt_static_transition-duration-80"),
             "easeDefault": tok("cubicBezier", [0.36, 0.19, 0.29, 1], src + " --dt_static_transition-ease-default"),
         },
     }

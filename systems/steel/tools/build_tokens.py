@@ -113,12 +113,12 @@ def build():
         },
         "motion": {
             "duration": {
-                "default": dim("150ms", src + " --default-transition-duration 0.15s"),
-                "tooltip": dim("125ms", src + " --duration-tooltip"),
-                "press": dim("160ms", src + " --duration-press"),
-                "dropdown": dim("180ms", src + " --duration-dropdown"),
-                "modal": dim("240ms", src + " --duration-modal"),
-                "drawer": dim("380ms", src + " --duration-drawer"),
+                "default": tok("duration", "150ms", src + " --default-transition-duration 0.15s"),
+                "tooltip": tok("duration", "125ms", src + " --duration-tooltip"),
+                "press": tok("duration", "160ms", src + " --duration-press"),
+                "dropdown": tok("duration", "180ms", src + " --duration-dropdown"),
+                "modal": tok("duration", "240ms", src + " --duration-modal"),
+                "drawer": tok("duration", "380ms", src + " --duration-drawer"),
             },
             "easing": {
                 "standard": tok("cubicBezier", [0.4, 0, 0.2, 1], src + " --default-transition-timing-function"),
