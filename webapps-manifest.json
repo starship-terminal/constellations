@@ -1830,7 +1830,7 @@
       "description": "Bespoke AI models, built for your brand",
       "status": "captured",
       "package": "systems/exactly",
-      "notes": "https://exactly.ai/login is 404. The user signed in and landed on https://threads.exactly.ai/onboarding. Product not walked.",
+      "notes": "https://exactly.ai/login is 404. The user signed in and landed on https://threads.exactly.ai/onboarding. Product not walked. Signed-in walk: https://threads.exactly.ai/onboarding was the only shell. Audience choices left blank. Screens in PR 1471 (a133a20c3). Studio, generator, models, credits, billing, and settings were not reached. login-extracted stays not-started until the batch review.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 6
