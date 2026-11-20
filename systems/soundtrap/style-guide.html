@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soundtrap style guide</title>
+<style>
+:root {
+  --font-family-matter: Matter, sans-serif;
+  --space-nano: 4px;
+  --space-tiny: 8px;
+  --space-tiny1: 12px;
+  --space-small: 16px;
+  --space-small1: 20px;
+  --space-medium: 24px;
+  --space-medium1: 28px;
+  --space-medium2: 32px;
+  --space-large: 40px;
+  --space-large1: 48px;
+  --space-large2: 56px;
+  --space-huge: 64px;
+  --space-huge1: 80px;
+  --space-huge2: 96px;
+  --space-huge3: 120px;
+  --radius-pill: 9999px;
+  --radius-control: 8px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --ring: #3c95ff;
+  --motion-colorDuration: 100ms;
+  --motion-colorEasing: cubic-bezier(0, 0, 0.58, 1);
+  --typography-display: 700 80px/1.2 var(--font-family-matter);
+  --typography-display1: 600 37px/1.1081 var(--font-family-matter);
+  --typography-display2: 600 33px/1.1515 var(--font-family-matter);
+  --typography-heading1: 600 29px/1.2069 var(--font-family-matter);
+  --typography-heading2: 600 25px/1.2 var(--font-family-matter);
+  --typography-heading3: 600 21px/1.1905 var(--font-family-matter);
+  --typography-titleLarge: 500 18px/1.2778 var(--font-family-matter);
+  --typography-title: 500 15px/1.3333 var(--font-family-matter);
+  --typography-body: 400 15px/1.2 var(--font-family-matter);
+  --typography-bodySmall: 400 13px/1.3077 var(--font-family-matter);
+  --typography-caption: 400 11px/1.3636 var(--font-family-matter);
+  --typography-labelLarge: 500 15px/1.3333 var(--font-family-matter);
+  --typography-label: 500 13px/1.3077 var(--font-family-matter);
+  --typography-labelSmall: 500 11px/1.3636 var(--font-family-matter);
+  --page: #f2f2f4;
+  --surface: #fdfdfe;
+  --text: #2d2d2d;
+  --muted: #5c5c6d;
+  --accent: #6551ff;
+  --border: #d4d4da;
+  --link: #553fff;
+  --onAccent: #ffffff;
+  --danger: #b4074b;
+  --success: #008744;
+  --warning: #d15e00;
+  --focusRing: #3c95ff;
+  --color-background-base: #f2f2f4;
+  --color-background-highlight: #fbfbfc;
+  --color-background-press: #e2e2e7;
+  --color-background-elevated-base: #fdfdfe;
+  --color-background-elevated-highlight: #f4f4f6;
+  --color-background-elevated-press: #e5e5e9;
+  --color-background-tinted-base: rgba(0, 0, 0, 0.07);
+  --color-background-tinted-highlight: rgba(0, 0, 0, 0.11);
+  --color-background-tinted-press: rgba(0, 0, 0, 0.14);
+  --color-text-base: #2d2d2d;
+  --color-text-subdued: #5c5c6d;
+  --color-text-primary: #553fff;
+  --color-text-spotlight: #a44a00;
+  --color-text-negative: #b4074b;
+  --color-text-positive: #00743a;
+  --color-text-simply-red: #c51c1c;
+  --color-text-maroon: #b03273;
+  --color-text-iron-wine: #7829ff;
+  --color-text-purple-rain: #553fff;
+  --color-text-royal-blue: #086a9b;
+  --color-text-ocean-eyes: #114eff;
+  --color-text-forest: #27705e;
+  --color-text-green-light: #486f19;
+  --color-text-gold-frapp: #825e0c;
+  --color-text-orange-soda: #955413;
+  --color-essential-base: #2d2d2d;
+  --color-essential-subdued: #7f7f92;
+  --color-essential-primary: #6551ff;
+  --color-essential-spotlight: #d15e00;
+  --color-essential-negative: #b4074b;
+  --color-essential-positive: #008744;
+  --color-essential-simply-red: #e54747;
+  --color-essential-maroon: #c73b83;
+  --color-essential-iron-wine: #985cff;
+  --color-essential-purple-rain: #6551ff;
+  --color-essential-royal-blue: #0a88c6;
+  --color-essential-ocean-eyes: #4776ff;
+  --color-essential-forest: #328f78;
+  --color-essential-green-light: #5c8e1f;
+  --color-essential-gold-frapp: #a6780f;
+  --color-essential-orange-soda: #be6b18;
+  --color-decorative-base: #2d2d2d;
+  --color-decorative-subdued: #d4d4da;
+  --status-negativeSurface: #b4074b;
+  --status-positiveSurface: #008744;
+  --status-spotlightSurface: #ff780a;
+  --focus: #3c95ff;
+  --component-heroCta-background: #eeeeee;
+  --component-heroCta-text: #2d2d2d;
+  --component-heroCta-radius: 9999px;
+  --component-heroCta-height: 80px;
+  --component-loginSubmit-background: #6551ff;
+  --component-loginSubmit-text: #ffffff;
+  --component-loginSubmit-radius: 8px;
+  --component-loginSubmit-height: 41px;
+  --component-field-background: rgba(0, 0, 0, 0.07);
+  --component-field-radius: 8px;
+  --component-field-height: 40px;
+  color-scheme: light;
+  --sg-sans: Matter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+[data-mode="dark"] {
+  --page: #16161b;
+  --surface: #1f1f26;
+  --text: #e6e6e6;
+  --muted: #9b9bad;
+  --accent: #6e5bff;
+  --border: #2a2a34;
+  --link: #9183ff;
+  --onAccent: #ffffff;
+  --danger: #e70960;
+  --success: #008844;
+  --warning: #ff780a;
+  --focusRing: #3c95ff;
+  --color-background-base: #16161b;
+  --color-background-highlight: #1e1e24;
+  --color-background-press: #010102;
+  --color-background-elevated-base: #1f1f26;
+  --color-background-elevated-highlight: #25252e;
+  --color-background-elevated-press: #111114;
+  --color-background-tinted-base: rgba(255, 255, 255, 0.08);
+  --color-background-tinted-highlight: rgba(255, 255, 255, 0.1);
+  --color-background-tinted-press: rgba(255, 255, 255, 0.04);
+  --color-text-base: #e6e6e6;
+  --color-text-subdued: #9b9bad;
+  --color-text-primary: #9183ff;
+  --color-text-spotlight: #ff780a;
+  --color-text-negative: #f95998;
+  --color-text-positive: #00aa56;
+  --color-text-simply-red: #ea6c6c;
+  --color-text-maroon: #d773a6;
+  --color-text-iron-wine: #aa79ff;
+  --color-text-purple-rain: #9183ff;
+  --color-text-royal-blue: #54c0f6;
+  --color-text-ocean-eyes: #7a9cff;
+  --color-text-forest: #58c5aa;
+  --color-text-green-light: #9ad84f;
+  --color-text-gold-frapp: #ecb22b;
+  --color-text-orange-soda: #e89a4c;
+  --color-essential-base: #e6e6e6;
+  --color-essential-subdued: #73738d;
+  --color-essential-primary: #6e5bff;
+  --color-essential-spotlight: #ff780a;
+  --color-essential-negative: #e70960;
+  --color-essential-positive: #008844;
+  --color-essential-simply-red: #e85c5c;
+  --color-essential-maroon: #c94187;
+  --color-essential-iron-wine: #9a5fff;
+  --color-essential-purple-rain: #6e5bff;
+  --color-essential-royal-blue: #54c0f6;
+  --color-essential-ocean-eyes: #7a9cff;
+  --color-essential-forest: #58c5aa;
+  --color-essential-green-light: #9ad84f;
+  --color-essential-gold-frapp: #ecb22b;
+  --color-essential-orange-soda: #e89a4c;
+  --color-decorative-base: #e6e6e6;
+  --color-decorative-subdued: #2a2a34;
+  --status-negativeSurface: #b4074b;
+  --status-positiveSurface: #008744;
+  --status-spotlightSurface: #ff780a;
+  --focus: #3c95ff;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/1.4 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { font-size: 32px; margin: 0; }
+button.theme { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 8px 14px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 24px; }
+.sw { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.sw i { display: block; height: 64px; }
+.sw span { display: block; padding: 8px 10px; font-size: 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+.btn { background: var(--accent); color: var(--onAccent); border: 0; border-radius: var(--radius-pill); padding: 11px 16px; font: 500 15px/1.25 var(--sg-sans); }
+.btn.quiet { background: var(--component-heroCta-background); color: var(--component-heroCta-text); }
+.field { background: var(--component-field-background); border-radius: var(--radius-control); height: 40px; padding: 0 16px; border: 1px solid var(--border); color: var(--muted); display: flex; align-items: center; min-width: 240px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; min-width: 180px; }
+h2 { margin-top: 40px; }
+p.note { color: var(--muted); max-width: 70ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Soundtrap</h1>
+  <button class="theme" type="button">Theme</button>
+</header>
+<p class="note">Rendered from tokens.json. Matter is not loaded here, so type falls back to the system sans. The dark set is declared in the stylesheet and was not applied on the public pages captured.</p>
+<section class="swatches" id="swatches"></section>
+<h2>Type</h2>
+<div id="type"></div>
+<h2>Components</h2>
+<div class="row">
+  <button class="btn" type="button">Log in</button>
+  <button class="btn quiet" type="button">Get started for free</button>
+  <div class="field">Enter your email</div>
+</div>
+<div class="row">
+  <div class="card"><strong>Sound Starter</strong><p class="note">Plan card uses the accent fill on pricing.</p></div>
+</div>
+</div>
+<script>
+const T = {"core":{"font":{"family":{"matter":{"v":"Matter, sans-serif","t":"fontFamily","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --font-family and @font-face Matter"}}},"space":{"nano":{"v":"4px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-nano"},"tiny":{"v":"8px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-tiny"},"tiny1":{"v":"12px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-tiny-1"},"small":{"v":"16px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-small"},"small1":{"v":"20px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-small-1"},"medium":{"v":"24px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-medium"},"medium1":{"v":"28px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-medium-1"},"medium2":{"v":"32px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-medium-2"},"large":{"v":"40px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-large"},"large1":{"v":"48px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-large-1"},"large2":{"v":"56px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-large-2"},"huge":{"v":"64px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-huge"},"huge1":{"v":"80px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-huge-1"},"huge2":{"v":"96px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-huge-2"},"huge3":{"v":"120px","t":"dimension","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --space-huge-3"}},"radius":{"pill":{"v":"9999px","t":"dimension","s":"computed border-radius of Get started and Try it free (measure-core 2026-11-21)"},"control":{"v":"8px","t":"dimension","s":"computed border-radius of login email and Log in button"},"sm":{"v":"4px","t":"dimension","s":"derived from stylesheet border-radius .25rem at 16px root"},"md":{"v":"6px","t":"dimension","s":"derived from stylesheet border-radius .375rem at 16px root"},"lg":{"v":"8px","t":"dimension","s":"derived from stylesheet border-radius .5rem at 16px root"}},"ring":{"v":"#3c95ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --focus"},"motion":{"colorDuration":{"v":"100ms","t":"duration","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --transition-colors-time 0.1s"},"colorEasing":{"v":[0,0,0.58,1],"t":"cubicBezier","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --transition-colors-easing ease-out, mapped to the CSS ease-out curve"}},"typography":{"display":{"v":{"fontFamily":"{font.family.matter}","fontSize":"80px","fontWeight":700,"lineHeight":1.2,"letterSpacing":-0.016},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-headline-hero; rem converted at 16px"},"display1":{"v":{"fontFamily":"{font.family.matter}","fontSize":"37px","fontWeight":600,"lineHeight":1.1081,"letterSpacing":-0.0268},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-display-1; rem converted at 16px"},"display2":{"v":{"fontFamily":"{font.family.matter}","fontSize":"33px","fontWeight":600,"lineHeight":1.1515,"letterSpacing":-0.0255},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-display-2; rem converted at 16px"},"heading1":{"v":{"fontFamily":"{font.family.matter}","fontSize":"29px","fontWeight":600,"lineHeight":1.2069,"letterSpacing":0},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-heading-1; rem converted at 16px"},"heading2":{"v":{"fontFamily":"{font.family.matter}","fontSize":"25px","fontWeight":600,"lineHeight":1.2,"letterSpacing":-0.02},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-heading-2; rem converted at 16px"},"heading3":{"v":{"fontFamily":"{font.family.matter}","fontSize":"21px","fontWeight":600,"lineHeight":1.1905,"letterSpacing":-0.02},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-heading-3; rem converted at 16px"},"titleLarge":{"v":{"fontFamily":"{font.family.matter}","fontSize":"18px","fontWeight":500,"lineHeight":1.2778,"letterSpacing":0},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-title-large; rem converted at 16px"},"title":{"v":{"fontFamily":"{font.family.matter}","fontSize":"15px","fontWeight":500,"lineHeight":1.3333,"letterSpacing":0},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-title-standard; rem converted at 16px"},"body":{"v":{"fontFamily":"{font.family.matter}","fontSize":"15px","fontWeight":400,"lineHeight":1.2,"letterSpacing":0},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-body-standard; rem converted at 16px"},"bodySmall":{"v":{"fontFamily":"{font.family.matter}","fontSize":"13px","fontWeight":400,"lineHeight":1.3077,"letterSpacing":0},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-body-small; rem converted at 16px"},"caption":{"v":{"fontFamily":"{font.family.matter}","fontSize":"11px","fontWeight":400,"lineHeight":1.3636,"letterSpacing":0},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-body-xsmall; rem converted at 16px"},"labelLarge":{"v":{"fontFamily":"{font.family.matter}","fontSize":"15px","fontWeight":500,"lineHeight":1.3333,"letterSpacing":0},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-label-large; rem converted at 16px"},"label":{"v":{"fontFamily":"{font.family.matter}","fontSize":"13px","fontWeight":500,"lineHeight":1.3077,"letterSpacing":0},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-label-standard; rem converted at 16px"},"labelSmall":{"v":{"fontFamily":"{font.family.matter}","fontSize":"11px","fontWeight":500,"lineHeight":1.3636,"letterSpacing":0},"t":"typography","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-label-small; rem converted at 16px"}}},"light":{"page":{"v":"#f2f2f4","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-base"},"surface":{"v":"#fdfdfe","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-elevated-base"},"text":{"v":"#2d2d2d","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-base"},"muted":{"v":"#5c5c6d","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-subdued"},"accent":{"v":"#6551ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-primary"},"border":{"v":"#d4d4da","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --decorative-subdued"},"link":{"v":"#553fff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-primary"},"onAccent":{"v":"#ffffff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set .st-primary-set --text-base"},"danger":{"v":"#b4074b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-negative"},"success":{"v":"#008744","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-positive"},"warning":{"v":"#d15e00","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-spotlight"},"focusRing":{"v":"#3c95ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --focus"},"color":{"background":{"base":{"v":"#f2f2f4","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-base"},"highlight":{"v":"#fbfbfc","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-highlight"},"press":{"v":"#e2e2e7","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-press"},"elevated-base":{"v":"#fdfdfe","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-elevated-base"},"elevated-highlight":{"v":"#f4f4f6","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-elevated-highlight"},"elevated-press":{"v":"#e5e5e9","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-elevated-press"},"tinted-base":{"v":"rgba(0, 0, 0, 0.07)","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-tinted-base"},"tinted-highlight":{"v":"rgba(0, 0, 0, 0.11)","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-tinted-highlight"},"tinted-press":{"v":"rgba(0, 0, 0, 0.14)","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --background-tinted-press"}},"text":{"base":{"v":"#2d2d2d","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-base"},"subdued":{"v":"#5c5c6d","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-subdued"},"primary":{"v":"#553fff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-primary"},"spotlight":{"v":"#a44a00","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-spotlight"},"negative":{"v":"#b4074b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-negative"},"positive":{"v":"#00743a","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-positive"},"simply-red":{"v":"#c51c1c","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-simply-red"},"maroon":{"v":"#b03273","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-maroon"},"iron-wine":{"v":"#7829ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-iron-wine"},"purple-rain":{"v":"#553fff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-purple-rain"},"royal-blue":{"v":"#086a9b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-royal-blue"},"ocean-eyes":{"v":"#114eff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-ocean-eyes"},"forest":{"v":"#27705e","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-forest"},"green-light":{"v":"#486f19","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-green-light"},"gold-frapp":{"v":"#825e0c","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-gold-frapp"},"orange-soda":{"v":"#955413","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --text-orange-soda"}},"essential":{"base":{"v":"#2d2d2d","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-base"},"subdued":{"v":"#7f7f92","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-subdued"},"primary":{"v":"#6551ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-primary"},"spotlight":{"v":"#d15e00","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-spotlight"},"negative":{"v":"#b4074b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-negative"},"positive":{"v":"#008744","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-positive"},"simply-red":{"v":"#e54747","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-simply-red"},"maroon":{"v":"#c73b83","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-maroon"},"iron-wine":{"v":"#985cff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-iron-wine"},"purple-rain":{"v":"#6551ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-purple-rain"},"royal-blue":{"v":"#0a88c6","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-royal-blue"},"ocean-eyes":{"v":"#4776ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-ocean-eyes"},"forest":{"v":"#328f78","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-forest"},"green-light":{"v":"#5c8e1f","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-green-light"},"gold-frapp":{"v":"#a6780f","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-gold-frapp"},"orange-soda":{"v":"#be6b18","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --essential-orange-soda"}},"decorative":{"base":{"v":"#2d2d2d","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --decorative-base"},"subdued":{"v":"#d4d4da","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set --decorative-subdued"}}},"status":{"negativeSurface":{"v":"#b4074b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set .st-negative-set --background-base"},"positiveSurface":{"v":"#008744","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set .st-positive-set --background-base"},"spotlightSurface":{"v":"#ff780a","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-light-theme .st-base-set .st-spotlight-set --background-base"}},"focus":{"v":"#3c95ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --focus"},"component":{"heroCta":{"background":{"v":"#eeeeee","t":"color","s":"computed background of Get started for free on /musicmakers, 2026-11-21"},"text":{"v":"#2d2d2d","t":"color","s":"computed color of Get started for free"},"radius":{"v":"9999px","t":"dimension","s":"computed border-radius of Get started for free"},"height":{"v":"80px","t":"dimension","s":"computed height of Get started for free at 1440"}},"loginSubmit":{"background":{"v":"#6551ff","t":"color","s":"computed background of Log in on /login; matches --essential-primary"},"text":{"v":"#ffffff","t":"color","s":"computed color of Log in"},"radius":{"v":"8px","t":"dimension","s":"computed border-radius of Log in"},"height":{"v":"41px","t":"dimension","s":"computed height of Log in"}},"field":{"background":{"v":"rgba(0, 0, 0, 0.07)","t":"color","s":"computed background of login email; matches --background-tinted-base"},"radius":{"v":"8px","t":"dimension","s":"computed border-radius of login email"},"height":{"v":"40px","t":"dimension","s":"computed height of login email"}}}},"dark":{"page":{"v":"#16161b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-base"},"surface":{"v":"#1f1f26","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-elevated-base"},"text":{"v":"#e6e6e6","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-base"},"muted":{"v":"#9b9bad","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-subdued"},"accent":{"v":"#6e5bff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-primary"},"border":{"v":"#2a2a34","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --decorative-subdued"},"link":{"v":"#9183ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-primary"},"onAccent":{"v":"#ffffff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured .st-primary-set --text-base"},"danger":{"v":"#e70960","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-negative"},"success":{"v":"#008844","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-positive"},"warning":{"v":"#ff780a","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-spotlight"},"focusRing":{"v":"#3c95ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --focus"},"color":{"background":{"base":{"v":"#16161b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-base"},"highlight":{"v":"#1e1e24","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-highlight"},"press":{"v":"#010102","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-press"},"elevated-base":{"v":"#1f1f26","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-elevated-base"},"elevated-highlight":{"v":"#25252e","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-elevated-highlight"},"elevated-press":{"v":"#111114","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-elevated-press"},"tinted-base":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-tinted-base"},"tinted-highlight":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-tinted-highlight"},"tinted-press":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --background-tinted-press"}},"text":{"base":{"v":"#e6e6e6","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-base"},"subdued":{"v":"#9b9bad","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-subdued"},"primary":{"v":"#9183ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-primary"},"spotlight":{"v":"#ff780a","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-spotlight"},"negative":{"v":"#f95998","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-negative"},"positive":{"v":"#00aa56","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-positive"},"simply-red":{"v":"#ea6c6c","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-simply-red"},"maroon":{"v":"#d773a6","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-maroon"},"iron-wine":{"v":"#aa79ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-iron-wine"},"purple-rain":{"v":"#9183ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-purple-rain"},"royal-blue":{"v":"#54c0f6","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-royal-blue"},"ocean-eyes":{"v":"#7a9cff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-ocean-eyes"},"forest":{"v":"#58c5aa","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-forest"},"green-light":{"v":"#9ad84f","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-green-light"},"gold-frapp":{"v":"#ecb22b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-gold-frapp"},"orange-soda":{"v":"#e89a4c","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --text-orange-soda"}},"essential":{"base":{"v":"#e6e6e6","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-base"},"subdued":{"v":"#73738d","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-subdued"},"primary":{"v":"#6e5bff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-primary"},"spotlight":{"v":"#ff780a","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-spotlight"},"negative":{"v":"#e70960","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-negative"},"positive":{"v":"#008844","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-positive"},"simply-red":{"v":"#e85c5c","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-simply-red"},"maroon":{"v":"#c94187","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-maroon"},"iron-wine":{"v":"#9a5fff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-iron-wine"},"purple-rain":{"v":"#6e5bff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-purple-rain"},"royal-blue":{"v":"#54c0f6","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-royal-blue"},"ocean-eyes":{"v":"#7a9cff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-ocean-eyes"},"forest":{"v":"#58c5aa","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-forest"},"green-light":{"v":"#9ad84f","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-green-light"},"gold-frapp":{"v":"#ecb22b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-gold-frapp"},"orange-soda":{"v":"#e89a4c","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --essential-orange-soda"}},"decorative":{"base":{"v":"#e6e6e6","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --decorative-base"},"subdued":{"v":"#2a2a34","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured --decorative-subdued"}}},"status":{"negativeSurface":{"v":"#b4074b","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured .st-negative-set --background-base"},"positiveSurface":{"v":"#008744","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured .st-positive-set --background-base"},"spotlightSurface":{"v":"#ff780a","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme .st-dark-theme .st-base-set; declared, not applied on the public pages captured .st-spotlight-set --background-base"}},"focus":{"v":"#3c95ff","t":"color","s":"declared in 2e9a6afac7e3a0d9.css (raw/foundation.json); public pages use .st-light-theme --focus"}}};
+const root = document.documentElement;
+document.querySelector("button.theme").addEventListener("click", () => {
+  root.dataset.mode = root.dataset.mode === "dark" ? "light" : "dark";
+});
+const roles = ["page", "surface", "text", "muted", "accent", "border", "link", "onAccent", "danger", "success", "warning", "focus"];
+const box = document.getElementById("swatches");
+for (const role of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:var(--${role})"></i><span>${role}</span>`;
+  box.appendChild(el);
+}
+const type = document.getElementById("type");
+const typos = (T.core && T.core.typography) || {};
+for (const [name, tok] of Object.entries(typos)) {
+  const v = tok.v;
+  const row = document.createElement("p");
+  row.style.fontSize = v.fontSize;
+  row.style.fontWeight = v.fontWeight;
+  row.style.lineHeight = v.lineHeight;
+  row.textContent = name + "  Music production, made simple.";
+  type.appendChild(row);
+}
+</script>
+</body>
+</html>
