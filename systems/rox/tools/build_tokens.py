@@ -157,10 +157,13 @@ def build(readings: dict | None = None) -> dict:
     core_color["white"] = color("#ffffff", f"{SRC_TOKEN}; --token white")
     core_color["paper"] = color("#fafafa", f"{SRC_HOME}; nav Start now background rgb(250, 250, 250)")
     core_color["field"] = color("#f4f4f3", f"{SRC_CONTACT}; .framer-form-text-input background rgb(244, 244, 243)")
-    core_color["blue"] = color("#0b63e8", f"{SRC_TOKEN}; accent token, not painted on a measured control")
-    core_color["green"] = color("#22c55e", f"{SRC_TOKEN}; status token, not painted on a measured control")
-    core_color["red"] = color("#e5484d", f"{SRC_TOKEN}; status token, not painted on a measured control")
-    core_color["orange"] = color("#f9700a", f"{SRC_TOKEN}; status token, not painted on a measured control")
+    # No file in raw/ holds these four: raw/readings.json keeps no --token-* resolution for them.
+    # They were typed in from the capture session (docs/EVIDENCE.md, Reconstruction).
+    hand = "Reconstruction: entered by hand at capture time; no file in raw/ holds this reading. Capture note: " + SRC_TOKEN
+    core_color["blue"] = color("#0b63e8", f"{hand}; accent token, not painted on a measured control")
+    core_color["green"] = color("#22c55e", f"{hand}; status token, not painted on a measured control")
+    core_color["red"] = color("#e5484d", f"{hand}; status token, not painted on a measured control")
+    core_color["orange"] = color("#f9700a", f"{hand}; status token, not painted on a measured control")
     core_color["nav-muted"] = color("#fafafacc", f"{SRC_HOME}; nav link color rgba(250, 250, 250, 0.8)")
     core_color["action-dark"] = color("#403f3e", f"{SRC_PRICE}; Start for free background rgb(64, 63, 62)")
     core_color["action-muted"] = color("#828282", f"{SRC_PRICE}; dimmed plan button background rgb(130, 130, 130)")
