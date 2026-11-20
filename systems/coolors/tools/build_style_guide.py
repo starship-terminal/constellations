@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json for the Coolors block record.
 
-The kit template draws Claude's app. This package never reached Coolors, so
-the guide renders only the placeholder tokens and says so. Deterministic.
+The tokens are computed-style readings from coolors.co taken in the signed-in
+preview tab (the headless probe met a Cloudflare challenge); the guide says
+which evidence it shows. Deterministic.
 """
 import json
 import pathlib
@@ -89,7 +90,7 @@ small, .sw p {{ display: block; color: var(--light-muted); font-size: 13px; marg
 <body>
 <main>
   <h1>Coolors</h1>
-  <p class="note">This page renders the placeholder tokens in tokens.json. coolors.co answered the public Playwright probe with a Cloudflare managed challenge (HTTP 403, title Just a moment...). No Coolors colour, type or component is on this page.</p>
+  <p class="note">This page renders tokens.json: colours read with getComputedStyle on coolors.co in the signed-in preview tab (each token's source names the element and page). The headless Playwright probe got a Cloudflare managed challenge (HTTP 403, title Just a moment...) and measured nothing, so no value here comes from it.</p>
   <div class="swatches">
     {swatches}
   </div>

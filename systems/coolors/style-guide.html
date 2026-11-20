@@ -43,7 +43,7 @@ small, .sw p { display: block; color: var(--light-muted); font-size: 13px; margi
 <body>
 <main>
   <h1>Coolors</h1>
-  <p class="note">This page renders the placeholder tokens in tokens.json. coolors.co answered the public Playwright probe with a Cloudflare managed challenge (HTTP 403, title Just a moment...). No Coolors colour, type or component is on this page.</p>
+  <p class="note">This page renders tokens.json: colours read with getComputedStyle on coolors.co in the signed-in preview tab (each token's source names the element and page). The headless Playwright probe got a Cloudflare managed challenge (HTTP 403, title Just a moment...) and measured nothing, so no value here comes from it.</p>
   <div class="swatches">
     <div class="sw"><i style="background:var(--core-color-ink)"></i><div><code>core.color.ink</code><small>#0a0a0a</small><p>getComputedStyle(document.body).color and h1 color on https://coolors.co/ at 1169x731, attached preview browser, 2026-11-18. rgb(10, 10, 10).</p></div></div>
 <div class="sw"><i style="background:var(--core-color-page)"></i><div><code>core.color.page</code><small>#ffffff</small><p>getComputedStyle(document.body).backgroundColor and header background on https://coolors.co/, 2026-11-18. rgb(255, 255, 255).</p></div></div>
