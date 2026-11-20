@@ -20,7 +20,7 @@ colors:
   pageSecondary: "#f4f5f9"
   surfaceHover: "#dddde5"
   surfaceActive: "#c3c3cc"
-  raised: "#fff"
+  raised: "#ffffff"
   raisedHover: "#fbfcfd"
   input: "#fbfcfd"
   inverted: "#1e1e2a"
@@ -29,7 +29,7 @@ colors:
   textEmphasis: "#1e1e2a"
   muted: "#535461"
   disabled: "#70707d"
-  textOnAccent: "#fff"
+  textOnAccent: "#ffffff"
   link: "#5266eb"
   accent: "#5266eb"
   accentHover: "#4354c8"
@@ -153,6 +153,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Font files. Arcadia, Arcadia Display, Tiempos Headline, and IBM Plex Mono are named. The files are not in this package.
 - Screenshots are 256-colour. Read colours from the tokens, not from the PNGs.
 - `--spacing` is 1px. The control scale steps by 4. Both are declared.
+- [components.md](components.md) is written by hand from the measured crops and [raw/components-computed.json](raw/components-computed.json). `tools/build_components_md.py` only checks that every crop it links exists, so a recapture does not update its values: compare them with the raw readings after one.
 
 ### Do and don't (from README.md)
 

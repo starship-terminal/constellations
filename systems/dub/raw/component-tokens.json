@@ -18,7 +18,7 @@
     "docs-body": {
      "value": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
      "type": "fontFamily",
-     "source": "computed fontFamily of docs-sidebar default (raw/components-computed.json)",
+     "source": "computed fontFamily of docs-sidebar default (raw/components-computed.json); docs-sidebar was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
      "description": "Inter on the Mintlify docs surface (served from /_mintlify/assets/fonts/inter/)."
     },
     "auth": {
@@ -197,7 +197,7 @@
     "price-tight": {
      "value": "-0.28px",
      "type": "dimension",
-     "source": "computed letterSpacing of plan-price default (raw/components-computed.json)",
+     "source": "computed letterSpacing of plan-price default (raw/components-computed.json); plan-price: read from the wrong element (the selector caught the price row's wrapper, whose first text is \"/month\", not the price figure); recapture needed",
      "description": "The -0.28px tracking on price text."
     }
    },
@@ -455,7 +455,7 @@
     "white-10": {
      "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
      "type": "color",
-     "source": "painted layer under dk-docs-sidebar default (raw/components-computed.json)",
+     "source": "painted layer under dk-docs-sidebar default (raw/components-computed.json); dk-docs-sidebar was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
      "description": "The 10% white divider line inside the dark docs sidebar."
     }
    }
@@ -552,7 +552,7 @@
    "sidebar": {
     "value": "0.1s",
     "type": "duration",
-    "source": "computed transitionDuration of docs-sidebar default (raw/components-computed.json)",
+    "source": "computed transitionDuration of docs-sidebar default (raw/components-computed.json); docs-sidebar was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
     "description": "The 100ms docs sidebar transform transition."
    },
    "menu-button": {
@@ -639,7 +639,7 @@
    "docs-sidebar": {
     "value": "288px",
     "type": "dimension",
-    "source": "computed width of docs-sidebar default (raw/components-computed.json)",
+    "source": "computed width of docs-sidebar default (raw/components-computed.json); docs-sidebar was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
     "description": "The 288px docs sidebar."
    },
    "docs-search-width": {
@@ -1856,8 +1856,8 @@
    "width": {
     "type": "dimension",
     "value": "318.656px",
-    "source": "computed width of nav-dropdown default (raw/components-computed.json)",
-    "description": "The mega-menu panel width (~319px)."
+    "source": "computed width of nav-dropdown default (raw/components-computed.json); nav-dropdown: read from the wrong element (the selector caught one card inside the Product mega-menu, not the panel); recapture needed",
+    "description": "Width of one card inside the Product mega-menu (~319px), not of the panel."
    }
   },
   "mobile-nav-item": {

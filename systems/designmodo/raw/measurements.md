@@ -545,22 +545,23 @@ Page: app. Selector: `+ Create`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 122 x 40 | = | = | = |
-| Padding | 0px 13px | = | = | = |
-| Gap | 13px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 6px | = | = | = |
-| Background | #27ae60 | #239b58 | = | #239b58 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Fira Sans 14px/normal 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | all 0.15s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #ffffff | = | = | = |
-| Painted layers | div.sc-hUVTwQ.bzWBtu 122.0x40.0 bg #27ae60 r 6px | div.sc-hUVTwQ.bzWBtu 122.0x40.0 bg #239b58 r 6px | = | div.sc-hUVTwQ.bzWBtu 122.0x40.0 bg #239b58 r 6px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 122 x 40 | = | - | = |
+| Padding | 0px 13px | = | - | = |
+| Gap | 13px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 6px | = | - | = |
+| Background | #27ae60 | #239b58 | - | #239b58 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Fira Sans 14px/normal 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | all 0.15s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 16 x 16, colour #ffffff | = | - | = |
+| Painted layers | div.sc-hUVTwQ.bzWBtu 122.0x40.0 bg #27ae60 r 6px | div.sc-hUVTwQ.bzWBtu 122.0x40.0 bg #239b58 r 6px | - | div.sc-hUVTwQ.bzWBtu 122.0x40.0 bg #239b58 r 6px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `create-split-default.png`, `create-split-hover.png`, `create-split-focus-visible.png`, `create-split-pressed.png`.
 
@@ -599,19 +600,20 @@ Page: app. Selector: `Templates nav`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 69 x 21 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Fira Sans 14px/21px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #2198ed | = | = | = |
-| Transition | none | = | = | = |
-| Ancestor paint | 1 up div.sc-tDzRk.dsBttE bg #d9efff outline 2px solid #2198ed @ 0 | 1 up div.sc-tDzRk.dsBttE bg #d9efff | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 69 x 21 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Fira Sans 14px/21px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #2198ed | = | - | = |
+| Transition | none | = | - | = |
+| Ancestor paint | 1 up div.sc-tDzRk.dsBttE bg #d9efff outline 2px solid #2198ed @ 0 | 1 up div.sc-tDzRk.dsBttE bg #d9efff | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `side-templates-default.png`, `side-templates-hover.png`, `side-templates-focus-visible.png`, `side-templates-pressed.png`.
 
@@ -649,21 +651,22 @@ Page: app. Selector: `Industry filter`. States: default, hover, focus-visible, p
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 61.97 x 15 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 7px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Fira Sans 13px/normal 400 | = | = | = |
-| Letter spacing | -0.13px | = | = | = |
-| Colour | #585d63 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 8 x 5, colour #585d63 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 61.97 x 15 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 7px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Fira Sans 13px/normal 400 | = | - | = |
+| Letter spacing | -0.13px | = | - | = |
+| Colour | #585d63 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 8 x 5, colour #585d63 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `filter-industry-default.png`, `filter-industry-hover.png`, `filter-industry-focus-visible.png`, `filter-industry-pressed.png`.
 
@@ -675,22 +678,23 @@ Page: app. Selector: `Create Blank Template`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 266 x 592 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Fira Sans 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #2d3a41 | = | = | = |
-| Text node | div.sc-fRUzah.dIrkte: Fira Sans 13px/19.5px 500, #788994 | = | = | = |
-| Transition | all 0.2s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #788994 | = | = | = |
-| Painted layers | div.sc-hBxvHn.emdIll 266.0x532.0 bg #f4f6f7 border T:1px solid #1b1b1b @ 0.1 / R:1px solid #1b1b1b @ 0.1 / B:1px solid #1b1b1b @ 0.1 / L:1px solid #1b1b1b @ 0.1 r 10px outline 2px solid #000000 @ 0 offset 0px | div.sc-hBxvHn.emdIll 266.0x532.0 bg #f4f6f7 border T:1px solid #1b1b1b @ 0.1 / R:1px solid #1b1b1b @ 0.1 / B:1px solid #1b1b1b @ 0.1 / L:1px solid #1b1b1b @ 0.1 r 10px outline 2px solid #2198ed offset 0px | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 266 x 592 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Fira Sans 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #2d3a41 | = | - | = |
+| Text node | div.sc-fRUzah.dIrkte: Fira Sans 13px/19.5px 500, #788994 | = | - | = |
+| Transition | all 0.2s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 24 x 24, colour #788994 | = | - | = |
+| Painted layers | div.sc-hBxvHn.emdIll 266.0x532.0 bg #f4f6f7 border T:1px solid #1b1b1b @ 0.1 / R:1px solid #1b1b1b @ 0.1 / B:1px solid #1b1b1b @ 0.1 / L:1px solid #1b1b1b @ 0.1 r 10px outline 2px solid #000000 @ 0 offset 0px | div.sc-hBxvHn.emdIll 266.0x532.0 bg #f4f6f7 border T:1px solid #1b1b1b @ 0.1 / R:1px solid #1b1b1b @ 0.1 / B:1px solid #1b1b1b @ 0.1 / L:1px solid #1b1b1b @ 0.1 r 10px outline 2px solid #2198ed offset 0px | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `create-blank-hover.png`, `create-blank-focus-visible.png`, `create-blank-pressed.png`.
 
@@ -702,22 +706,23 @@ Page: app. Selector: `Generate with AI`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 266 x 592 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Fira Sans 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #2d3a41 | = | = | = |
-| Text node | div.sc-jiPWxV.koeunR: Fira Sans 13px/19.5px 500, #405eff | = | = | = |
-| Transition | all 0.2s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 20 x 20, colour #405eff | = | = | = |
-| Painted layers | div.sc-kjGiqv.kEmqZX 266.0x532.0 image linear-gradient(135deg, #f0f4ff 0%, #e6ebff 100%) border T:1px solid #1b1b1b @ 0.1 / R:1px solid #1b1b1b @ 0.1 / B:1px solid #1b1b1b @ 0.1 / L:1px solid #1b1b1b @ 0.1 r 10px outline 2px solid #000000 @ 0 offset 0px | div.sc-kjGiqv.kEmqZX 266.0x532.0 image linear-gradient(135deg, #f0f4ff 0%, #e6ebff 100%) border T:1px solid #1b1b1b @ 0.1 / R:1px solid #1b1b1b @ 0.1 / B:1px solid #1b1b1b @ 0.1 / L:1px solid #1b1b1b @ 0.1 r 10px outline 2px solid #405eff offset 0px | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 266 x 592 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Fira Sans 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #2d3a41 | = | - | = |
+| Text node | div.sc-jiPWxV.koeunR: Fira Sans 13px/19.5px 500, #405eff | = | - | = |
+| Transition | all 0.2s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 20 x 20, colour #405eff | = | - | = |
+| Painted layers | div.sc-kjGiqv.kEmqZX 266.0x532.0 image linear-gradient(135deg, #f0f4ff 0%, #e6ebff 100%) border T:1px solid #1b1b1b @ 0.1 / R:1px solid #1b1b1b @ 0.1 / B:1px solid #1b1b1b @ 0.1 / L:1px solid #1b1b1b @ 0.1 r 10px outline 2px solid #000000 @ 0 offset 0px | div.sc-kjGiqv.kEmqZX 266.0x532.0 image linear-gradient(135deg, #f0f4ff 0%, #e6ebff 100%) border T:1px solid #1b1b1b @ 0.1 / R:1px solid #1b1b1b @ 0.1 / B:1px solid #1b1b1b @ 0.1 / L:1px solid #1b1b1b @ 0.1 r 10px outline 2px solid #405eff offset 0px | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `genai-card-default.png`, `genai-card-hover.png`, `genai-card-focus-visible.png`, `genai-card-pressed.png`.
 
@@ -812,20 +817,21 @@ Page: pricing. Selector: `Yearly Monthly`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 193 x 30 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | InterVariable 16px/30px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #101d24 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | span::before.qmark.description 260pxx93px bg #111111 r 8px; span::after.qmark.description 26pxx7px image url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.; span.element 30.0x16.0 bg #101d24 r 10px; span::after.element 10pxx10px bg #ffffff r 50% | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 193 x 30 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | InterVariable 16px/30px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #101d24 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | span::before.qmark.description 260pxx93px bg #111111 r 8px; span::after.qmark.description 26pxx7px image url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.; span.element 30.0x16.0 bg #101d24 r 10px; span::after.element 10pxx10px bg #ffffff r 50% | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-focus-visible.png`, `billing-toggle-pressed.png`.
 

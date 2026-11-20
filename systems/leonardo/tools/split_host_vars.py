@@ -7,9 +7,16 @@ declarations already saved on each rule (file starts with the host name) and
 rewrites the flat resolved passes so a shared name keeps one chosen host.
 
 No live recapture. A value is copied from a declaration, never invented.
-A declaration that is still a var() and has no saved literal on that host
-stays unresolved and is listed, so the token builder can keep the old
-resolved reading and mark it stale.
+A shared name whose saved reading is a resolved var() and that no other
+host declared as a different literal keeps the saved reading.
+
+Run once, on a css-vars.json straight from vars.mjs. It rewrites that file
+in place, so its own output is not a valid input: on a second run the flat
+passes already hold the restored literals, the "saved" reading matches the
+other host, and replaced names flip back (--font-weight-bold 700 -> 600).
+It therefore refuses a file that already carries hostPick. The committed
+raw/css-vars.json was split once on 2026-11-18. A fresh vars.mjs capture
+records resolvedByHost itself and does not need this step.
 """
 import json
 import pathlib
@@ -114,6 +121,11 @@ def host_literals(name, declared):
 def main():
     path = RAW / "css-vars.json"
     data = json.loads(path.read_text())
+    if "hostPick" in data:
+        raise SystemExit(
+            f"{path} was already split (it carries hostPick). Its resolved passes are this "
+            "script's output, so a rerun would flip replaced names back. Recapture with "
+            "tools/capture/vars.mjs instead.")
     rules = []
     for key in ("theme", "app", "skins", "vendor", "utility", "tailwind"):
         rules.extend(data.get(key) or [])
@@ -128,10 +140,9 @@ def main():
     # The flat passes keep the saved computed reading. A shared name is
     # replaced only when another host saved a different literal, so the
     # published value is that host's declaration, not a guessed colour.
-    # A var()-only collision has no saved literal to restore, so it stays
-    # stale rather than being invented.
+    # A var()-only collision has no saved literal to restore, so the saved
+    # computed reading is kept.
     replaced = []
-    left_stale = []
     for pass_name in PASSES:
         flat = resolved.setdefault(pass_name, {})
         for name, saved in list(flat.items()):
@@ -155,7 +166,7 @@ def main():
                 # The saved reading is a computed value (a var() resolved on
                 # the shared page) and no other host stored a different
                 # literal. Keep it, and name the host that declared the name.
-                # It is not marked stale: there is no second literal to restore.
+                # There is no second literal to restore.
                 host = next((h for h in ("app", "marketing", "docs") if h in owners), owners[0])
                 flat[name] = {**saved, "host": host}
                 continue
@@ -168,21 +179,18 @@ def main():
     data["hostPick"] = {
         "order": list(PICK),
         "replaced": [{"pass": p, "name": n, "host": h, "literal": lit, "was": was} for p, n, h, lit, was in replaced if p == "plain"],
-        "stale": [{"pass": p, "name": n, "hosts": hs, "saved": was} for p, n, hs, was in left_stale if p == "plain"],
         "note": (
             "resolvedByHost holds each host's saved literals. resolved keeps "
             "the computed probe reading, and replaces a shared name only when "
             "the chosen host (app, then marketing, then docs) saved a different "
-            "literal. A shared name with no per-host literal stays stale."
+            "literal. A shared name with no per-host literal keeps the computed reading."
         ),
     }
     path.write_text(json.dumps(data, indent=1) + "\n")
     print("declared", {h: len(declared[h]) for h in HOSTS})
-    print("replaced", len({n for _, n, _, _, _ in replaced}), "stale", len({n for _, n, _, _ in left_stale}))
+    print("replaced", len({n for _, n, _, _, _ in replaced}))
     for row in data["hostPick"]["replaced"]:
         print(" replaced", row["name"], row["was"], "->", row["literal"], "from", row["host"])
-    for row in data["hostPick"]["stale"]:
-        print(" stale", row["name"], row["saved"], "hosts", row["hosts"])
     print("published bold", resolved["plain"].get("--font-weight-bold"))
     print("published background", resolved["plain"].get("--background"))
 
