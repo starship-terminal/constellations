@@ -123,6 +123,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read exact colours from the tokens or `raw/`, not from the pixels.
 - **Display type is computed, not a `:root` custom property.** Means Web is the computed face of the home hero (64px/400, line-height 76.8px, letter-spacing -1.2px). `--copy-jumbo-size` is 80px and is not what the home hero paints.
 
+- **Viewport-relative custom properties in [raw/css-vars.json](raw/css-vars.json) were resolved at 1280 x 720, not 1440 x 900.** Their notes say 1440 x 900, but the probe page had Playwright's default viewport. `--display-text-size` (`4.5vw`) reads 57.59px where 1440 gives 64.8px, the five heading sizes are low by the same 11%, and `--nav-height`, a calc on `100vw`, is low too. No token is built from them. `tools/capture/vars.mjs` now gives the probe the 1440 x 900 viewport; the values need a recapture.
+
 ### Do and don't (from README.md)
 
 1. **Do spend yellow on the trial.** `#ffe01b` marks Start Free Trial, with caviar type and a 1px caviar stroke. See [nav-trial](components/crops/nav-trial-default.png) and [hero-cta](components/crops/hero-cta-default.png).
