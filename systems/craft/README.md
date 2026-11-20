@@ -96,6 +96,8 @@ A Next.js app on Tailwind v4 with a shadcn-style semantic layer on `:root`: `--c
 
 ## Boundaries
 
+- **The TEAM plan card was read from the wrong element; it needs a recapture.** `team-card` caught the first element carrying `.shadow-block`, the 1400 x 1546 pricing section, so its size, crop and values in [components.md](components.md) describe that section. `core.shadow.block` is that utility's real computed shadow, read on the section; its source says so. The selector now asks for the TEAM card (edited, not rerun).
+- `core.border.hairline.width` (1px) was entered by hand: `--border` declares only the colour.
 - There is no auth surface on www.craft.do: Log in links out to docs.craft.do and was never followed; Try Craft Free and the platform buttons lead to /download and were never used.
 - Prices render in the served region's currency (SGD) — regional, not a universal figure.
 - The billing toggle was flipped for one screenshot and flipped back; nothing was purchased.

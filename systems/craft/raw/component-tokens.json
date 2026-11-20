@@ -715,7 +715,7 @@
     "description": "Declared 32px."
    },
    "full": {
-    "value": "33554400px",
+    "value": "9999px",
     "type": "dimension",
     "source": "computed borderTopLeftRadius of try-cta default (raw/components-computed.json)",
     "description": "rounded-full computes to the CSS maximum — every pill control (CTAs, the billing toggle, platform buttons)."
@@ -732,7 +732,7 @@
     "width": {
      "value": "1px",
      "type": "dimension",
-     "source": "declared --border pairs with a 1px width in the shadcn convention",
+     "source": "Reconstruction: entered by hand at capture time; --border declares only the colour and no raw reading holds this width (the shadcn convention pairs it with 1px)",
      "description": "The 9% ink hairline width."
     }
    }
@@ -774,8 +774,8 @@
      }
     ],
     "type": "shadow",
-    "source": "computed boxShadow of team-card default (raw/components-computed.json)",
-    "description": "The .shadow-block card elevation on plan cards."
+    "source": "computed boxShadow of team-card default (raw/components-computed.json); read on the first element carrying .shadow-block, the 1400 x 1546 pricing section, not the TEAM card",
+    "description": "The .shadow-block utility's elevation. The capture read it on the pricing section, not on a card, so where cards paint it needs a recapture."
    },
    "drop": {
     "drop-sm": {
@@ -1144,7 +1144,7 @@
   },
   "nav-link-size": {
    "value": "16px",
-   "type": "fontSize",
+   "type": "dimension",
    "source": "computed fontSize of nav-link default (raw/components-computed.json)",
    "description": "Nav link 16px."
   },
