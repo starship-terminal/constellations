@@ -316,6 +316,10 @@ const GROUPS = {
   mobile: { page: 'home', mobile: true, specs: MOBILE },
 };
 
+// The group that owns each spec key's bare name: the first group listing it.
+const KEY_OWNER = {};
+for (const [gk, gg] of Object.entries(GROUPS)) for (const sp of gg.specs) KEY_OWNER[sp.key] ??= gk;
+
 // ---------- runner ----------
 
 const b = await chromium.launch();
@@ -356,14 +360,12 @@ for (const [key, g] of Object.entries(GROUPS)) {
   }).catch(() => []);
 
   for (let spec of g.specs) {
-    // One key per page: a key another page already holds a reading for gets
-    // this group's prefix (meditation-hero-h1), so the 16 hero-h1 pages no
-    // longer overwrite one another and the bare key stays the first page's.
-    // Start a full recapture from an empty file so the first page is home.
-    // (Edited in the 2026-11 audit; not run since.)
-    const held = out.components[spec.key];
-    const ckey = held && held.page && held.page !== g.page ? `${key}-${spec.key}` : spec.key;
-    spec = { ...spec, key: ckey };
+    // One key per page, fixed by GROUPS order: a spec key listed by several
+    // groups belongs to the FIRST group that lists it (home's hero-h1, the
+    // /login auth-card) and every other group writes it under its own prefix
+    // (meditation-hero-h1), whatever an earlier run saved. (2026-11 audit;
+    // not run since.)
+    if (KEY_OWNER[spec.key] !== key) spec = { ...spec, key: `${key}-${spec.key}` };
     const comp = out.components[spec.key] ??= {};
     comp.group = spec.group;
     comp.title = spec.title;
