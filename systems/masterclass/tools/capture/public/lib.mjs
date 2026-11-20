@@ -44,9 +44,7 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  });
+  // Automation is not hidden (no webdriver mask): a bot check is recorded as a boundary, not bypassed.
   return { browser, context };
 }
 

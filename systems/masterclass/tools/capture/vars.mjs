@@ -23,7 +23,7 @@ const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({
   viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US',
 });
-await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+// Automation is not hidden (no webdriver mask): a bot check is recorded as a boundary, not bypassed.
 const bodies = new Map();
 const inline = [];
 for (const route of ROUTES) {
