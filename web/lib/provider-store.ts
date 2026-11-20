@@ -109,7 +109,8 @@ const MOVED = "The saved provider file was replaced while this request used it. 
 
 const inside = (child: string, parent: string): boolean => {
   const rel = path.relative(parent, child);
-  return rel === "" || (!rel.startsWith("..") && !path.isAbsolute(rel));
+  // Outside only through a ".." segment: a child named "..cfg" is inside.
+  return rel === "" || (rel !== ".." && !rel.startsWith(`..${path.sep}`) && !path.isAbsolute(rel));
 };
 
 /** `p` with its nearest existing ancestor replaced by that ancestor's real

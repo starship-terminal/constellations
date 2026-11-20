@@ -50,6 +50,10 @@
       "expect": "error"
     },
     {
+      "value": "<REPO>/..provider-config",
+      "expect": "error"
+    },
+    {
       "value": "<LINK>/cfg",
       "expect": "error"
     },
