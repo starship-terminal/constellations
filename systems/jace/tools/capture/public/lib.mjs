@@ -92,7 +92,9 @@ export async function closePromo(page) {
 
 export async function open(page, url, { wait = 2500, promo = 'close' } = {}) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
-  await clearChallenge(page);
+  // a challenge page that never clears is a boundary, never measured as the
+  // product (2026-11 audit, finding 20-4; not run since)
+  if (!(await clearChallenge(page))) throw new Error(`BLOCKED ${url}: the challenge page never cleared`);
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
 }

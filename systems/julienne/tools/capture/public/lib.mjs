@@ -114,8 +114,10 @@ export async function setTheme(page, theme) {
 }
 
 export async function open(page, url, { wait = 2200, promo = 'close', theme = 'light' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });  // a failed navigation throws (2026-11 audit)
+  // a challenge page that never clears is a boundary, never measured as the
+  // product (2026-11 audit, finding 20-4; not run since)
+  if (!(await clearChallenge(page))) throw new Error(`BLOCKED ${url}: the challenge page never cleared`);
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
   if (theme) await setTheme(page, theme);
