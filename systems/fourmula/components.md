@@ -20,7 +20,7 @@ Screenshots are named `{page}-{theme}-{state}.png` where the theme is the painte
 | Privacy policy | `/privacy-policy` | [default](screenshots/privacy-light-default.png), [full](screenshots/privacy-light-full.png) |
 | Terms of service | `/terms-of-service` | [default](screenshots/terms-dark-default.png), [default](screenshots/terms-light-default.png), [full](screenshots/terms-light-full.png) |
 | App start | `app.fourmula.ai/start` | [default](screenshots/start-dark-default.png), [menu](screenshots/start-dark-menu.png) |
-| App sign-in | `app.fourmula.ai/auth` | [default](screenshots/auth-dark-default.png), [signup](screenshots/auth-dark-signup.png) |
+| App sign-in | `app.fourmula.ai/auth` | [default](screenshots/auth-dark-default.png), [forgot](screenshots/auth-dark-forgot.png), [signup](screenshots/auth-dark-signup.png) |
 | Create-PDP generator | `app.fourmula.ai/project/create-pdp` | [default](screenshots/create-pdp-dark-default.png), [menu](screenshots/create-pdp-dark-menu.png), [pdp-dialog](screenshots/create-pdp-dark-pdp-dialog.png), [recommendations](screenshots/create-pdp-dark-recommendations.png) |
 | Home, phone | `/` | [default](screenshots/mobile-home-dark-default.png), [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu](screenshots/mobile-home-light-menu.png) |
 | App start, phone | `app.fourmula.ai/start` | [default](screenshots/mobile-start-dark-default.png) |
