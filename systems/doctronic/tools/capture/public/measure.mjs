@@ -271,7 +271,7 @@ async function home() {
   // footers inside sections.
   const pageFooter = await prefer(q('footer').last(), q(M('footer')).last());
   await S('footer', pageFooter, ['default'], { group: h, title: 'Footer', desc: 'The deep page footer: link columns, legal row and the "Made in" note.', sel: 'last footer' });
-  await S('footer-social-icon', await prefer(pageFooter.locator('a').filter({ hasText: /privacy|terms/i }).first(), pageFooter.locator('a').first()), B4, { group: h, title: 'Footer social icon link', desc: 'An aria-labelled icon link in the footer\'s social row (e.g. "Doctronic on Instagram"). Measured, never followed.', sel: 'footer a' });
+  await S('footer-social-icon', await prefer(pageFooter.locator('a').filter({ hasText: / on (instagram|x|twitter|linkedin|facebook|tiktok|youtube)\b/i }).first(), pageFooter.locator('a').first()), B4, { group: h, title: 'Footer social icon link', desc: 'An aria-labelled icon link in the footer\'s social row (e.g. "Doctronic on Instagram"). Measured, never followed.', sel: 'footer a' });
   await S('footer-legal-link', await domFind(page, /privacy policy|terms of service/i, { sel: 'footer a, footer button, footer [role="link"]', tag: 'm-fll' }), B4, { group: h, title: 'Footer legal link', desc: 'Privacy Policy / Terms of Service in the legal row. Measured, never followed.', sel: 'footer legal link' });
   await S('footer-legal', await prefer(q(M('legal')).first(), q(M('legalText')).first()), ['default'], { group: h, title: 'Legal line', sel: M('legal') });
 }
