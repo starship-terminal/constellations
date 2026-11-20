@@ -43,5 +43,21 @@ class Tokens(unittest.TestCase):
         self.assertEqual(missing, [])
 
 
+
+class Build(unittest.TestCase):
+    def test_committed_tokens_match_build(self):
+        import sys
+        sys.path.insert(0, str(HERE / "tools" / "build"))
+        import build_tokens  # build() returns the tree; only write() touches tokens.json
+        self.assertEqual(TOKENS, json.loads(json.dumps(build_tokens.build(), ensure_ascii=False)))
+
+    def test_foundation_without_a_raw_file_is_not_measured(self):
+        # No raw/foundation.json was kept, so the scales say Reconstruction.
+        self.assertEqual(TOKENS["core"]["space"]["sp400"]["$extensions"]["evidence"], "Reconstruction")
+
+    def test_easings_are_dtcg_numbers(self):
+        for name, tok in TOKENS["core"]["motion"]["easing"].items():
+            self.assertEqual(len(tok["$value"]), 4, name)
+
 if __name__ == "__main__":
     unittest.main()

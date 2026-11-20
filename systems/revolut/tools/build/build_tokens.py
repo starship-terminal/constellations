@@ -8,9 +8,11 @@ Sources, read on 2026-11-19 from the live pages (T3 preview, computed style):
   raw/dark-colors.json    the same names resolved on
                           https://www.revolut.com/our-pricing-plans/ with
                           html[data-theme=dark]
-  raw/foundation.json     type, radius, space, size, shadow, motion and focus
-                          resolved on :root of https://www.revolut.com/
-                          (these names do not change between the two themes)
+  foundation()            type, radius, space, size, shadow, motion and focus,
+                          resolved on :root of https://www.revolut.com/ and typed
+                          in here: no raw/foundation.json was kept, so these and
+                          the painted-chrome values are labelled Reconstruction
+                          unless raw/ holds the same value
 
 The marketing site and the signed-out SSO wall both ship Revolut UI (`--rui-*`).
 A token is the computed value, never a guessed one. Empty computed values
@@ -234,8 +236,10 @@ def foundation():
         "shadow": "cubic-bezier(0.4, 0.3, 0.8, 0.6)",
         "toast": "cubic-bezier(0.175, 0.885, 0.21, 1.65)",
     }
+    # DTCG cubicBezier is four numbers, not the CSS function text.
     motion_easing = {
-        name: tok(value, "cubicBezier", ROOT_PAGE + " --rui-easing-" + name)
+        name: tok([float(x) for x in re.fullmatch(r"cubic-bezier\(([^)]*)\)", value).group(1).split(",")],
+                  "cubicBezier", ROOT_PAGE + " --rui-easing-" + name + " " + value)
         for name, value in easing.items()
     }
     return {
@@ -336,10 +340,58 @@ def build():
             },
         },
     }
-    text = json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
+    relabel_unread(doc)
+    return doc
+
+
+# raw/ holds only the --rui-color-* dumps. A Measured token whose value raw/ does not hold (as hex or
+# rgb()) was typed in from the capture session: the foundation scales, the focus outlines and most
+# painted-chrome values. Its evidence becomes Reconstruction (docs/EVIDENCE.md).
+RAW_TEXT = re.sub(r"\s+", "", "".join(f.read_text().lower() for f in sorted(RAW.glob("*.json"))))
+HAND = "Entered by hand at capture time; raw/ holds no reading of this value. Capture note: "
+
+
+def in_raw(value):
+    v = str(value).strip().lower()
+    if " " in v and "," not in v and not v.startswith(("#", "rgb")):
+        # a compound such as "2px solid #234fa680": every part must be in raw/
+        return all(in_raw(part) for part in v.split() if part not in ("solid", "dashed", "dotted", "inset"))
+    forms = {v.replace(" ", "")}
+    m = re.fullmatch(r"#([0-9a-f]{6})([0-9a-f]{2})?", v)
+    if m:
+        r, g, b = (int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4))
+        # the dumps write rgb() with commas or spaces ("rgb(35 79 166/0.5)", spaces stripped here)
+        forms |= {f"rgb({r},{g},{b})", f"rgba({r},{g},{b},", f"rgb({r}{g}{b}", f"rgba({r}{g}{b}"}
+    m = re.fullmatch(r"(\d*\.?\d+)px", v)
+    if m:
+        forms.add(f"{float(m.group(1)) / 16:g}rem")
+    return any(f in RAW_TEXT for f in forms)
+
+
+def relabel_unread(doc):
+    def walk(node):
+        for k, v in node.items():
+            if k.startswith("$") or not isinstance(v, dict):
+                continue
+            if "$value" in v:
+                yield v
+            else:
+                yield from walk(v)
+    for setname in ("core", "light", "dark"):
+        for tok_ in walk(doc[setname]):
+            ext, value = tok_["$extensions"], tok_["$value"]
+            if ext.get("evidence") != "Measured" or (isinstance(value, str) and value.startswith("{")):
+                continue
+            if not isinstance(value, (str, int, float)) or not in_raw(value):
+                ext["evidence"] = "Reconstruction"
+                ext["source"] = HAND + ext["source"]
+
+
+def write():
+    text = json.dumps(build(), indent=2, ensure_ascii=False) + "\n"
     (HERE / "tokens.json").write_text(text)
     print(f"wrote tokens.json ({text.count(chr(10))} lines)")
 
 
 if __name__ == "__main__":
-    build()
+    write()
