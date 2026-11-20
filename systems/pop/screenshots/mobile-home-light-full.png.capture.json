@@ -1,0 +1,13 @@
+{
+  "cssViewport": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2
+  },
+  "stitchedFrom": "tiles",
+  "png": {
+    "width": 780,
+    "height": 26588
+  },
+  "note": "Stitched from full-page tiles. CSS viewport measured 390x844 at 2x before the stitch."
+}

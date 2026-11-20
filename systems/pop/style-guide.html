@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pop Site style guide</title>
+<meta name="description" content="Pop Site public marketing tokens, rendered from tokens.json. One light theme. Values measured on pop.site on 2026-11-21.">
+<style>
+:root {
+  --color-blue-500: #3b82f6;
+  --color-blue-400: #478eff;
+  --color-blue-sky: #00a8f5;
+  --color-blue-ink: #00276b;
+  --color-ink-900: #171717;
+  --color-ink-700: #545454;
+  --color-ink-500: #6e6e73;
+  --color-ink-400: #474d50;
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #fdfdfd;
+  --color-neutral-100: #fafafc;
+  --color-neutral-200: #e3e3e3;
+  --color-neutral-300: #dedede;
+  --color-neutral-400: #d2d2d7;
+  --color-neutral-500: #bdbdbd;
+  --color-yellow: #ffed90;
+  --color-black: #000000;
+  --color-scrim: rgba(34, 34, 34, 0.102);
+  --color-focus: #005fcc;
+  --color-go-home: #3b82f6;
+  --color-on-accent: #ffffff;
+  --font-sans: Satoshi, sans-serif;
+  --font-text: Inter, sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
+  --typography-display: 500 69px/62.1px Satoshi, sans-serif, var(--sg-sans);
+  --typography-body: 500 21px/29.4px Satoshi, sans-serif, var(--sg-sans);
+  --typography-label: 500 15px/19.5px Satoshi, sans-serif, var(--sg-sans);
+  --typography-button: 500 15px/19.5px Satoshi, sans-serif, var(--sg-sans);
+  --typography-caption: 400 13px/15.6px Satoshi, sans-serif, var(--sg-sans);
+  --typography-question: 500 18px/25.2px Inter, sans-serif, var(--sg-sans);
+  --typography-card-title: 600 16px/22.4px Inter, sans-serif, var(--sg-sans);
+  --typography-field: 500 15px/18px Satoshi, sans-serif, var(--sg-sans);
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-pill: 26px;
+  --radius-go-home: 16px;
+  --radius-full: 9999px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --size-control: 40px;
+  --size-checkbox: 16px;
+  --size-logo: 24px;
+  --page: var(--color-neutral-0);
+  --surface: var(--color-neutral-100);
+  --text: var(--color-ink-900);
+  --muted: var(--color-ink-700);
+  --accent: var(--color-blue-500);
+  --border: var(--color-ink-500);
+  --focus: var(--color-focus);
+  --component-button-radius: 26px;
+  --component-button-height: 40px;
+  --component-button-pad-x: 24px;
+  --component-button-pad-y: 16px;
+  --component-field-height: 40px;
+  --sg-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/1.45 var(--sg-sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: var(--typography-display); letter-spacing: -3.92px; margin: 0 0 8px; }
+h2 { font: 500 21px/1.3 var(--sg-sans); margin: 40px 0 12px; }
+p { color: var(--muted); max-width: 68ch; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border-radius: 10px; border: 1px solid var(--border); }
+.sw span { display: block; font-size: 12px; margin-top: 6px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+.btn { display: inline-flex; align-items: center; height: var(--component-button-height); padding: 0 var(--component-button-pad-x); border-radius: var(--component-button-radius); background: linear-gradient(110deg, var(--color-blue-sky), var(--color-blue-500)); color: var(--color-on-accent); font: var(--typography-button); letter-spacing: -0.45px; }
+.suffix { display: inline-flex; align-items: center; height: 40px; padding: 0 20px 0 12px; border-radius: 0 9999px 9999px 0; background: var(--surface); color: var(--text); font: var(--typography-button); letter-spacing: -0.45px; }
+.link { color: var(--text); font: var(--typography-label); letter-spacing: -0.45px; }
+.cap { font: var(--typography-caption); letter-spacing: -0.39px; }
+code { font: 12px/1.4 ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Pop Site</h1>
+<p>Public marketing surface, one light theme. Satoshi is not loaded here, so type falls back to the system sans. Take values from tokens.json.</p>
+<h2>Colour</h2>
+<div class="swatches">
+  <div class="sw"><i style="background:var(--page)"></i><span>page</span></div>
+  <div class="sw"><i style="background:var(--surface)"></i><span>surface</span></div>
+  <div class="sw"><i style="background:var(--text)"></i><span>text</span></div>
+  <div class="sw"><i style="background:var(--muted)"></i><span>muted</span></div>
+  <div class="sw"><i style="background:var(--accent)"></i><span>accent</span></div>
+  <div class="sw"><i style="background:linear-gradient(110deg,var(--color-blue-sky),var(--color-blue-500))"></i><span>claim gradient</span></div>
+  <div class="sw"><i style="background:var(--focus)"></i><span>focus</span></div>
+</div>
+<h2>Type</h2>
+<p style="font:var(--typography-display);letter-spacing:-3.92px;color:var(--text)">Free to create and share.</p>
+<p style="font:var(--typography-body);letter-spacing:-0.63px">Used by 10K+ people in over 50 countries.</p>
+<p class="link">Pricing</p>
+<p class="cap">Terms</p>
+<h2>Controls</h2>
+<div class="row">
+  <span class="suffix">.pop.site</span>
+  <span class="btn">Claim your site</span>
+</div>
+<p>The claim button is a gradient from <code>#00a8f5</code> to <code>#3b82f6</code> at 110 degrees, radius 26px, height 40px. The suffix chip is <code>#fafafc</code>.</p>
+</div>
+</body>
+</html>
