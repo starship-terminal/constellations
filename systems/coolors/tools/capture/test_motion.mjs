@@ -400,7 +400,7 @@ test('motion-probe finds its package folder when the path has a space', { skip: 
   const pkg = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'motion-')), 'my pkg');
   const cap = path.join(pkg, 'tools', 'capture');
   fs.mkdirSync(cap, { recursive: true });
-  for (const f of ['motion-probe.mjs', 'motion.mjs', 'safe-url.mjs']) fs.copyFileSync(path.join(here, f), path.join(cap, f));
+  for (const f of ['motion-probe.mjs', 'motion.mjs', 'safe-url.mjs', 'no-query.mjs']) fs.copyFileSync(path.join(here, f), path.join(cap, f));
   fs.writeFileSync(path.join(pkg, 'page.html'), FIXTURE);
   execFileSync(process.execPath, [path.join(cap, 'motion-probe.mjs'), '--urls', 'file://' + path.join(pkg, 'page.html').replace(/ /g, '%20')], { env: { ...process.env, PLAYWRIGHT: PW }, timeout: 120000, stdio: 'pipe' });
   assert.ok(fs.existsSync(path.join(pkg, 'raw', 'motion.json')));

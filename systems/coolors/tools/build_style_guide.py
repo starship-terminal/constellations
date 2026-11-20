@@ -50,18 +50,26 @@ def css_val(token):
 
 
 def block(setname):
+    # Keep the set name so aliases such as {core.color.primary.600} resolve.
     return "\n".join(
-        f"  {cssname(n)}: {css_val(t)};"
+        f"  {cssname(setname + '.' + n)}: {css_val(t)};"
         for n, t in flat(T[setname])
     )
 
 
-swatches = []
-for name, token in T["light"].items():
-    swatches.append(
-        f'<div class="sw"><i style="background:{alias(token["$value"]) if str(token["$value"]).startswith("{") else token["$value"]}"></i>'
-        f'<div><b>light.{name}</b><code>{token["$value"]}</code></div></div>'
-    )
+def role_rows(mode):
+    rows = []
+    for name, token in T[mode].items():
+        paint = alias(token["$value"]) if str(token["$value"]).startswith("{") else token["$value"]
+        rows.append(
+            f'<div class="sw" data-role="{name}"><i style="background:{paint}"></i>'
+            f'<div><b>{mode}.{name}</b><code>{token["$value"]}</code></div></div>'
+        )
+    return rows
+
+
+swatches = role_rows("light")
+dark_rows = {name: token for name, token in T["dark"].items()}
 
 ramps = []
 for ramp, stops in T["core"]["color"].items():
@@ -144,12 +152,22 @@ p.note {{ color: var(--light-muted); max-width: 70ch; }}
   {''.join(ramps)}
 </main>
 <script>
+const darkRoles = {json.dumps({name: {"label": f"dark.{name}", "value": token["$value"], "paint": alias(token["$value"]) if str(token["$value"]).startswith("{") else token["$value"]} for name, token in dark_rows.items()})};
+const lightRoles = {json.dumps({name: {"label": f"light.{name}", "value": token["$value"], "paint": alias(token["$value"]) if str(token["$value"]).startswith("{") else token["$value"]} for name, token in T["light"].items()})};
 document.getElementById("theme").addEventListener("click", () => {{
   const html = document.documentElement;
   const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
   html.setAttribute("data-mode", next);
-  document.body.style.background = next === "dark" ? "#0a0a0a" : "";
-  document.body.style.color = next === "dark" ? "#fafafa" : "";
+  document.body.style.background = "";
+  document.body.style.color = "";
+  const roles = next === "dark" ? darkRoles : lightRoles;
+  document.querySelectorAll("[data-role]").forEach((row) => {{
+    const role = roles[row.dataset.role];
+    if (!role) return;
+    row.querySelector("i").style.background = role.paint;
+    row.querySelector("b").textContent = role.label;
+    row.querySelector("code").textContent = role.value;
+  }});
 }});
 </script>
 </body>
