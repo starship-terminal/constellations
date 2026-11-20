@@ -199,15 +199,15 @@
    "warm": {
     "white": {
      "var": "--color-warm-white",
-     "type": "color",
-     "100": {
-      "var": "--color-warm-white-100",
-      "type": "color"
-     },
-     "300": {
-      "var": "--color-warm-white-300",
-      "type": "color"
-     }
+     "type": "color"
+    },
+    "white-100": {
+     "var": "--color-warm-white-100",
+     "type": "color"
+    },
+    "white-300": {
+     "var": "--color-warm-white-300",
+     "type": "color"
     }
    },
    "white": {
@@ -508,55 +508,55 @@
    "s1": {
     "value": "4px",
     "type": "dimension",
-    "source": "derived from the declared --spacing of 4px (0.25rem)",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
     "description": "Step 1 on the 4px base."
    },
    "s2": {
     "value": "8px",
     "type": "dimension",
-    "source": "derived from the declared --spacing of 4px (0.25rem)",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
     "description": "Step 2 on the 4px base."
    },
    "s3": {
     "value": "12px",
     "type": "dimension",
-    "source": "derived from the declared --spacing of 4px (0.25rem)",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
     "description": "Step 3 on the 4px base."
    },
    "s4": {
     "value": "16px",
     "type": "dimension",
-    "source": "derived from the declared --spacing of 4px (0.25rem)",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
     "description": "Step 4 on the 4px base."
    },
    "s5": {
     "value": "24px",
     "type": "dimension",
-    "source": "derived from the declared --spacing of 4px (0.25rem)",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
     "description": "Step 5 on the 4px base."
    },
    "s6": {
     "value": "32px",
     "type": "dimension",
-    "source": "derived from the declared --spacing of 4px (0.25rem)",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
     "description": "Step 6 on the 4px base."
    },
    "s7": {
     "value": "48px",
     "type": "dimension",
-    "source": "derived from the declared --spacing of 4px (0.25rem)",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
     "description": "Step 7 on the 4px base."
    },
    "s8": {
     "value": "64px",
     "type": "dimension",
-    "source": "derived from the declared --spacing of 4px (0.25rem)",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
     "description": "Step 8 on the 4px base."
    },
    "s9": {
     "value": "80px",
     "type": "dimension",
-    "source": "derived from the declared --spacing of 4px (0.25rem)",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
     "description": "Step 9 on the 4px base."
    }
   },
@@ -768,9 +768,10 @@
     "description": "The ink fill on Request demo and the log-in submit."
    },
    "hover": {
-    "var": "--color-blue-400",
+    "var": "--color-blue-200",
     "type": "color",
-    "description": "The next lighter blue step. Hover was also measured on the live pill."
+    "source": "the measured fill of nav-trial hover (#a2d1f1, computed backgroundColor)",
+    "description": "The Start free trial fill on hover, as measured on the live pill."
    }
   },
   "status": {
