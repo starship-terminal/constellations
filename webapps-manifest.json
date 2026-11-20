@@ -793,9 +793,9 @@
       "description": "#1 app for sleep and meditation",
       "status": "captured",
       "package": "systems/calm",
-      "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary). https://www.calm.com/login returned Access to this page has been denied with a blank page and a captcha script. No email field was reached.",
+      "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary). The user signed in. The app opened at the subscription page. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 3
     },
     {
@@ -1830,9 +1830,9 @@
       "description": "Bespoke AI models, built for your brand",
       "status": "captured",
       "package": "systems/exactly",
-      "notes": "https://exactly.ai/login is 404. Log in opens https://threads.exactly.ai/login, which stopped on Cloudflare security verification (403). No email field. Do not retry.",
+      "notes": "https://exactly.ai/login is 404. The user signed in and landed on https://threads.exactly.ai/onboarding. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 6
     },
     {
