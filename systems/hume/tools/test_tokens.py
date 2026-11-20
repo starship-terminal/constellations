@@ -82,6 +82,20 @@ class TokensTest(unittest.TestCase):
                 continue
             checked += 1
         self.assertGreaterEqual(checked, 20)
+        # the measured geometry is pinned by path, so a reading that drops out
+        # of a rebuild fails here instead of passing as "fewer leaves"
+        expected = {
+            "benchmarkTab.radius", "button.cta.height", "button.cta.radius", "contactField.height",
+            "contactField.radius", "contactSubmit.radius", "demoGate.height", "demoGate.radius",
+            "docsCodeBlock.height", "docsSearch.radius", "docsSidebar.width", "docsToc.width",
+            "focus.contactOutline.color", "focus.outline.color", "hero.height", "input.height",
+            "input.radius", "loginCard.height", "loginCard.radius", "loginField.height",
+            "loginField.radius", "loginSubmit.radius", "mobileNav.height", "nav.height",
+            "newsletterButton.radius", "playerCard.height", "playerTransport.radius", "postCard.height",
+            "postCard.radius", "type.articleTitle.size", "type.hero.tracking", "type.linkHover.color",
+            "type.navLinkHover.color",
+        }
+        self.assertEqual({n for n, _ in token_checks.tokens_of(comp)}, expected)
 
     def test_font_stacks_are_measured_verbatim(self):
         C = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
@@ -98,6 +112,27 @@ class TokensTest(unittest.TestCase):
     def test_exotic_palette_literals_are_kept(self):
         core = {n: t["$value"] for n, t in token_checks.tokens_of(T["core"])}
         self.assertIn("#101828", core.values())  # the docs oklch(21% .034 264.665)
+
+
+class PaletteConverterTest(unittest.TestCase):
+    """The palette path itself (exotic() and norm_lit() in the builder), not the
+    committed file: lab() with alpha and the docs' percentage oklch()."""
+
+    def setUp(self):
+        import ast, re as _re
+        src = (pathlib.Path(__file__).resolve().parent / "build_component_tokens.py").read_text()
+        fns = [n for n in ast.parse(src).body if isinstance(n, ast.FunctionDef) and n.name in ("exotic", "norm_lit")]
+        self.ns = {"re": _re}
+        exec(compile(ast.Module(fns, []), "build_component_tokens.py", "exec"), self.ns)
+
+    def test_oklch_percentage_lightness(self):
+        self.assertEqual(self.ns["norm_lit"]("oklch(21% .034 264.665)"), "#101828")
+
+    def test_lab_with_alpha(self):
+        self.assertEqual(self.ns["norm_lit"]("lab(48.7982% 67.6999 48.8037 / 0.5)"), "rgba(220, 38, 38, 0.5)")
+
+    def test_unconvertible_is_dropped(self):
+        self.assertIsNone(self.ns["norm_lit"]("hsl(from red h s l)"))
 
 
 if __name__ == "__main__":
