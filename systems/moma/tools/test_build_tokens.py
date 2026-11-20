@@ -29,6 +29,22 @@ class Tokens(unittest.TestCase):
 
 
 class StyleGuide(unittest.TestCase):
+    def test_hostile_names_and_values_stay_escaped(self):
+        import json
+        with tempfile.TemporaryDirectory() as tmp:
+            pkg = pathlib.Path(tmp) / "pkg"
+            shutil.copytree(ROOT, pkg, ignore=shutil.ignore_patterns("screenshots", "components", "boards", "raw"))
+            doc = json.loads((pkg / "tokens.json").read_text())
+            doc["light"]["color"]['x"<b>&'] = {"$type": "color", "$value": '#000000" onclick="x', "$extensions": {"source": "test"}}
+            doc["core"]["spacing"]["evil"] = {"$type": "dimension", "$value": '1px"><script>', "$extensions": {"source": "test"}}
+            (pkg / "tokens.json").write_text(json.dumps(doc))
+            subprocess.run([sys.executable, str(pkg / "tools" / "build_style_guide.py")], check=True, capture_output=True)
+            html = (pkg / "style-guide.html").read_text()
+            for raw in ('x"<b>&', '" onclick="x', '"><script>'):
+                self.assertNotIn(raw, html)
+            self.assertIn("x&quot;&lt;b&gt;&amp;", html)
+            self.assertIn("#000000&quot; onclick=&quot;x", html)
+
     def test_committed_guide_matches_builder(self):
         with tempfile.TemporaryDirectory() as tmp:
             pkg = pathlib.Path(tmp) / "pkg"
