@@ -18,7 +18,8 @@ import {
   resolveProvider,
   type ListModels,
 } from "./provider-api.ts";
-import { CONFIG_DIR_ENV, loadSaved, providerFile, saveProvider, updateModel } from "./provider-store.ts";
+import { CONFIG_DIR_ENV, configDir, loadSaved, providerFile, saveProvider, updateModel, StoreError } from "./provider-store.ts";
+import { ROOT } from "./repo.ts";
 
 const KEY = "sk-test-0123456789abcdef";
 const KEY2 = "sk-test-rotated-fedcba9876";
@@ -61,6 +62,32 @@ afterEach(() => {
 });
 
 const savedFile = async () => (await loadSaved()) ?? ({} as Record<string, string>);
+
+describe("the config folder", () => {
+  it("resolves every shared case as server/provider_store.py does", async () => {
+    const { cases } = JSON.parse(await fs.readFile(path.join(ROOT, "server", "provider-config-cases.json"), "utf8"));
+    const home = path.join(dir, "home");
+    const savedHome = process.env.HOME;
+    process.env.HOME = home;
+    try {
+      for (const c of cases as { value: string; expect: string }[]) {
+        process.env[CONFIG_DIR_ENV] = c.value.replaceAll("<HOME>", home).replaceAll("<REPO>", ROOT);
+        if (c.expect === "error") {
+          assert.throws(() => configDir(), (e: unknown) => e instanceof StoreError && /absolute path outside the checkout/.test(e.message), c.value);
+          // A refused folder is an error the chat reports, never "nothing saved".
+          process.env.ANTHROPIC_API_KEY = ENV_KEY;
+          const held = await resolveProvider();
+          assert.deepEqual([held.cfg, held.source], [null, "saved"], c.value);
+          delete process.env.ANTHROPIC_API_KEY;
+        } else {
+          assert.equal(configDir(), c.expect.replaceAll("<HOME>", home), c.value);
+        }
+      }
+    } finally {
+      process.env.HOME = savedHome;
+    }
+  });
+});
 
 describe("the key store", () => {
   it("lives under the override folder, outside the checkout, mode 0600 in a 0700 folder", async () => {

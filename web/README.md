@@ -20,7 +20,10 @@ lives in the browser:
 3. The server writes the provider to a one-row SQLite database,
    `$DESIGN_SYSTEMS_CONFIG_DIR/provider.db`, default
    `~/.config/design-systems/provider.db`: outside the checkout, folder mode
-   0700, file mode 0600. Every change is one statement, so SQLite's own locking makes it
+   0700, file mode 0600. The variable must be an absolute path outside the
+   checkout; both servers expand a leading `~/` themselves and refuse a
+   relative path or a folder inside the checkout, which the chat then
+   reports, so they can never end up holding two different keys. Every change is one statement, so SQLite's own locking makes it
    atomic across both servers, and a crashed process never leaves a lock
    behind. A model change applies only while the saved key and endpoint are
    the ones the page was editing. The database uses SQLite's rollback
@@ -81,7 +84,8 @@ These steps are for the owner; nothing in this repo contacts the host.
    (`server/api.py`) must see the same one: either both run as the same user
    with the same `HOME` (then `~/.config/design-systems/` is shared and
    nothing needs setting), or set `DESIGN_SYSTEMS_CONFIG_DIR` to the same
-   absolute path for both, in each unit's environment or the clone's `.env`.
+   absolute path for both, in each unit's environment or the clone's `.env`
+   (`~/...` is fine: the app expands it, though systemd does not).
 2. If the gallery runs from the [Dockerfile](../Dockerfile) image, mount a
    volume at that folder and set `DESIGN_SYSTEMS_CONFIG_DIR` to the mount
    point; otherwise a saved key is lost when the container is recreated.

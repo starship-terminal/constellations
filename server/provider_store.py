@@ -74,9 +74,36 @@ class BadRequest(Exception):
     """A posted provider that cannot be used. The message never quotes it."""
 
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+CONFIG_DIR_HELP = (f"{CONFIG_DIR_ENV} must be an absolute path outside the checkout (a leading ~/ is "
+                   "expanded), for example ~/.config/design-systems.")
+
+
 def config_dir() -> Path:
+    """The folder that holds provider.db. web/lib/provider-store.ts applies the
+    same rules, and server/provider-config-cases.json holds the cases both test
+    suites run, so the gallery and this API always name the same file: a
+    leading ~ or ~/ is the home folder (systemd's Environment= and a .env file
+    do not expand it); a relative path, a ~user path or a path inside the
+    checkout is refused with a StoreError that says how to set it, never
+    resolved against whatever folder the server started in."""
     raw = (os.environ.get(CONFIG_DIR_ENV) or "").strip()
-    return Path(raw).expanduser().resolve() if raw else Path.home() / ".config" / "design-systems"
+    home = Path.home()
+    if not raw:
+        d = home / ".config" / "design-systems"
+    elif raw == "~":
+        d = home
+    elif raw.startswith("~/"):
+        d = home / raw[2:]
+    elif os.path.isabs(raw):
+        d = Path(raw)
+    else:
+        raise StoreError(CONFIG_DIR_HELP)
+    d = Path(os.path.normpath(d))
+    for root in {Path(os.path.normpath(REPO_ROOT)), REPO_ROOT.resolve()}:
+        if d == root or root in d.parents:
+            raise StoreError(CONFIG_DIR_HELP)
+    return d
 
 
 def provider_file() -> Path:

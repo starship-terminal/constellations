@@ -730,6 +730,22 @@ class ProviderKeyTest(TempConfig):
         self.assertEqual((cfg, source), (None, "saved"))
         self.assertTrue(error)
 
+    def test_config_dir_cases_shared_with_the_web_store(self):
+        cases = json.loads((SERVER / "provider-config-cases.json").read_text())["cases"]
+        home = Path(self._tmp.name) / "home"
+        repo = str(SERVER.parent)
+        for case in cases:
+            value = case["value"].replace("<HOME>", str(home)).replace("<REPO>", repo)
+            with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_CONFIG_DIR": value, "HOME": str(home)}):
+                if case["expect"] == "error":
+                    with self.assertRaises(self.store.StoreError, msg=value) as ctx:
+                        self.store.config_dir()
+                    self.assertIn("absolute path outside the checkout", str(ctx.exception))
+                    # A refused folder is an error the chat reports, never "nothing saved".
+                    self.assertEqual(self.store.resolve({"api_key": ENV_KEY})[1:], ("saved", str(ctx.exception)))
+                else:
+                    self.assertEqual(str(self.store.config_dir()), case["expect"].replace("<HOME>", str(home)), value)
+
     def test_delete_is_only_the_provider_route(self):
         handled, h = _send(self.routes, "delete", "/api/mcp")
         self.assertFalse(handled)

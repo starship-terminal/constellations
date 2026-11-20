@@ -20,10 +20,11 @@
 // save only applies while the row still holds the key and endpoint it read
 // (compare and swap), a migration only inserts when no row exists, and an
 // unchecked key only replaces a row that holds the same key.
-import { promises as fs } from "node:fs";
+import { promises as fs, realpathSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import type { DatabaseSync } from "node:sqlite";
+import { ROOT } from "./repo.ts";
 
 export const CONFIG_DIR_ENV = "DESIGN_SYSTEMS_CONFIG_DIR";
 export const FILE_NAME = "provider.db";
@@ -56,9 +57,36 @@ function storeError(message: string, cause: unknown): StoreError {
   return err;
 }
 
+const CONFIG_DIR_HELP = `${CONFIG_DIR_ENV} must be an absolute path outside the checkout (a leading ~/ is expanded), for example ~/.config/design-systems.`;
+
+const inside = (child: string, parent: string): boolean => {
+  const rel = path.relative(parent, child);
+  return rel === "" || (!rel.startsWith("..") && !path.isAbsolute(rel));
+};
+
+/** The folder that holds provider.db. server/provider_store.py applies the
+    same rules, and server/provider-config-cases.json holds the cases both
+    test suites run, so the gallery and the Python API always name the same
+    file: a leading ~ or ~/ is the home folder (systemd's Environment= and
+    a .env file do not expand it); a relative path, a ~user path or a path
+    inside the checkout is refused with a StoreError that says how to set it,
+    never resolved against whatever folder the server started in. */
 export function configDir(): string {
-  const dir = process.env[CONFIG_DIR_ENV];
-  return path.resolve(dir && dir.trim() ? dir : path.join(os.homedir(), ".config", "design-systems"));
+  const raw = (process.env[CONFIG_DIR_ENV] ?? "").trim();
+  const home = os.homedir();
+  let dir: string;
+  if (!raw) dir = path.join(home, ".config", "design-systems");
+  else if (raw === "~") dir = home;
+  else if (raw.startsWith("~/")) dir = path.join(home, raw.slice(2));
+  else if (path.isAbsolute(raw)) dir = raw;
+  else throw new StoreError(CONFIG_DIR_HELP);
+  dir = path.resolve(dir);
+  const roots = [path.resolve(ROOT)];
+  try {
+    roots.push(realpathSync(ROOT));
+  } catch {}
+  if (roots.some((r) => inside(dir, r))) throw new StoreError(CONFIG_DIR_HELP);
+  return dir;
 }
 
 export const providerFile = (): string => path.join(configDir(), FILE_NAME);
