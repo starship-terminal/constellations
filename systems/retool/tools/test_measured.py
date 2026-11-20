@@ -62,5 +62,24 @@ class MeasuredTest(unittest.TestCase):
         self.assertIn("class was set to light", self.tokens["light"]["page"]["$extensions"]["source"])
 
 
+
+class BuildTest(unittest.TestCase):
+    def test_committed_tokens_match_build(self):
+        import sys
+        sys.path.insert(0, str(ROOT / "tools"))
+        import build_tokens  # build() returns the tree; only write() touches tokens.json
+        self.assertEqual(json.loads(TOKENS.read_text()), json.loads(json.dumps(build_tokens.build())))
+
+    def test_unread_values_say_reconstruction(self):
+        import sys
+        sys.path.insert(0, str(ROOT / "tools"))
+        import build_tokens
+        for path, tok in build_tokens.leaves(json.loads(TOKENS.read_text())):
+            value = tok["$value"]
+            if not isinstance(value, (str, int, float)) or (isinstance(value, str) and value.startswith("{")):
+                continue  # aliases and composites carry the evidence of what they name
+            labelled = tok["$extensions"]["source"].startswith("Reconstruction")
+            self.assertEqual(labelled, not build_tokens.in_raw(value), path)
+
 if __name__ == "__main__":
     unittest.main()

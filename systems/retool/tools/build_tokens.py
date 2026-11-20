@@ -7,6 +7,7 @@ source string keeps the rgb reading. Nothing here invents a ramp step.
 """
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -286,8 +287,8 @@ def build():
         },
         "motion": {
             "duration": {
-                "button": dim("300ms", HOME + " Start for free transition-duration 0.3s.", "Marketing button."),
-                "default": dim("150ms", M + " --default-transition-duration 0.15s.", "Default duration."),
+                "button": {"$type": "duration", "$value": "300ms", "$description": "Marketing button.", "$extensions": {"source": HOME + " Start for free transition-duration 0.3s."}},
+                "default": {"$type": "duration", "$value": "150ms", "$description": "Default duration.", "$extensions": {"source": M + " --default-transition-duration 0.15s."}},
             },
             "easing": {
                 "in-out": cubic(
@@ -346,7 +347,7 @@ def build():
         "button-text": color("#e9ebdf", L + " --btn-primary-default-text.", "Primary button text token."),
         "button-hover": color("#2e2f2d", L + " --btn-primary-hover-background. Hover was not held.", "Primary hover."),
         "focus": color("#518dd2", LOGIN + " The live focus ring was read on the login field, not on a light marketing control.", "Focus."),
-        "scrim": color("#00000099", L + " --nav-scrolled-background stayed #000c.", "Scrim."),
+        "scrim": color("#00000099", "Not read after the class swap: the value is the dark set's --surface-lightbox-scrim (#0009). The light source this cited, --nav-scrolled-background (#000c), is the scrolled nav fill, not a scrim.", "Scrim."),
         "footer": color("#151515", L + " --footer-background stayed #151515.", "Footer."),
         "critical": color("#c72844", L + " --input-default-error-stroke.", "Error stroke."),
         "alert": color("#e79295", L + " --alert-default-background.", "Alert fill."),
@@ -362,9 +363,57 @@ def build():
             {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
         ],
     }
-    (ROOT / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-    print(f"wrote tokens.json")
+    relabel_unread(tokens)
+    return tokens
+
+
+# raw/measured.json is the only file in raw/. A token whose value it does not hold (in hex, rgb() or
+# px form) was typed in from the capture session; its source says so (docs/EVIDENCE.md, Reconstruction).
+HAND = "Reconstruction. Entered by hand at capture time; raw/measured.json holds no reading of this value. Capture note: "
+RAW_TEXT = re.sub(r"\s+", "", (ROOT / "raw" / "measured.json").read_text().lower())
+
+
+def in_raw(value):
+    v = str(value).strip().lower()
+    forms = {v.replace(" ", "")}
+    m = re.fullmatch(r"#([0-9a-f]{6})([0-9a-f]{2})?", v)
+    if m:
+        r, g, b = (int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4))
+        forms |= {f"rgb({r},{g},{b})", f"rgba({r},{g},{b},"}
+        if m.group(1)[0::2] == m.group(1)[1::2] and not m.group(2):
+            forms.add("#" + m.group(1)[0::2] + '"')
+    if "," in v and not v.startswith(("#", "rgb")):
+        forms.add('"' + v.split(",")[0].strip().strip("'\"") + '"')  # a font stack: its computed first family
+    m = re.fullmatch(r"(\d*\.?\d+)ms", v)
+    if m:
+        forms.add(f"{float(m.group(1)) / 1000:g}s")
+    return any(f in RAW_TEXT for f in forms)
+
+
+def leaves(node, path=""):
+    for k, v in node.items():
+        if k.startswith("$") or not isinstance(v, dict):
+            continue
+        here = f"{path}.{k}" if path else k
+        if "$value" in v:
+            yield here, v
+        else:
+            yield from leaves(v, here)
+
+
+def relabel_unread(tokens):
+    for _, tok in leaves(tokens):
+        value = tok["$value"]
+        if isinstance(value, str) and value.startswith("{"):
+            continue  # an alias carries the evidence of the token it names
+        if isinstance(value, (str, int, float)) and not in_raw(value):
+            tok["$extensions"]["source"] = HAND + tok["$extensions"]["source"]
+
+
+def write():
+    (ROOT / "tokens.json").write_text(json.dumps(build(), indent=2) + "\n")
+    print("wrote tokens.json")
 
 
 if __name__ == "__main__":
-    build()
+    write()

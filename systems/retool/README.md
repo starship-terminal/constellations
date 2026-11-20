@@ -90,6 +90,8 @@ A class swap on the homepage, removing `dark` and adding `light`, changed `--sur
 
 The light semantic set is not a theme the marketing site published on its own. The page forced dark. Painted controls did not restyle when the class changed.
 
+[raw/measured.json](raw/measured.json) holds no `--raw-*` ramp readings, no login palette and only four light custom properties. The builder labels every token whose value raw/ does not hold "Reconstruction": 48 tokens, most of the `--raw-*` ramps and the login colours among them. They were typed in from the capture session. `light.scrim` was not read after the class swap. It repeats the dark set's `--surface-lightbox-scrim`.
+
 The pill radius token is `9999px`. The computed value was `1.67772e+07px`, which is the browser's full-pill number. Use the token, not that computed number, when drawing.
 
 Docs `--ifm-color-primary` and `--ifm-link-color` computed as empty strings. The blue on the page is `--raw-blue-primary` (`#518dd2`), measured on the marketing submit control and the login focus ring.
