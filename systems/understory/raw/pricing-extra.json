@@ -1,0 +1,34 @@
+{
+  "sw": {
+    "tag": "DIV",
+    "cls": "hero-pricing_content-top",
+    "role": null,
+    "h": 77,
+    "text": "How many bookings do you handle per year? 0 500 1,000 1,500 2,000+ Monthly Yearl",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  "card": {
+    "cls": "plan-card starter",
+    "bg": "rgb(234, 232, 221)",
+    "radius": "15px",
+    "shadow": "none",
+    "bw": "2px",
+    "bc": "rgba(0, 0, 0, 0)",
+    "w": 227
+  },
+  "badge": {
+    "cls": "price-recommended_label is-recommended",
+    "bg": "rgb(2, 44, 18)",
+    "color": "rgb(2, 44, 18)",
+    "radius": "6px 6px 0px 0px",
+    "size": "13.5px"
+  },
+  "prices": [
+    "€0",
+    "€35",
+    "€299",
+    "€71",
+    "€299",
+    "€215"
+  ]
+}

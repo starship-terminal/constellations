@@ -1,0 +1,204 @@
+{
+  "capturedAt": "2026-11-20T23:24:23.592Z",
+  "page": "/",
+  "rows": [
+    {
+      "selector": ":where(.w-popover, .w-modal)",
+      "name": "--w-backdrop-animation",
+      "value": "initial"
+    },
+    {
+      "selector": ":root",
+      "name": "--moss",
+      "value": "#022c12"
+    },
+    {
+      "selector": ":root",
+      "name": "--light-grey",
+      "value": "#f8f6ed"
+    },
+    {
+      "selector": ":root",
+      "name": "--lichen",
+      "value": "#d5dfca"
+    },
+    {
+      "selector": ":root",
+      "name": "--beige",
+      "value": "#ede8d0"
+    },
+    {
+      "selector": ":root",
+      "name": "--citrus",
+      "value": "#f1f97e"
+    },
+    {
+      "selector": ":root",
+      "name": "--light-grey-2",
+      "value": "#dbd8ce"
+    },
+    {
+      "selector": ":root",
+      "name": "--lilac",
+      "value": "#d1bee7"
+    },
+    {
+      "selector": ":root",
+      "name": "--sky-blue",
+      "value": "#cfe8ff"
+    },
+    {
+      "selector": ":root",
+      "name": "--rust",
+      "value": "#933f29"
+    },
+    {
+      "selector": ":root",
+      "name": "--grey",
+      "value": "#f3f3f3"
+    },
+    {
+      "selector": ":root",
+      "name": "--border-radius",
+      "value": ".75rem"
+    },
+    {
+      "selector": ":root",
+      "name": "--white",
+      "value": "white"
+    },
+    {
+      "selector": ":root",
+      "name": "--red",
+      "value": "#7e0c04"
+    },
+    {
+      "selector": ":root",
+      "name": "--dark-blue",
+      "value": "#091329"
+    },
+    {
+      "selector": ":root",
+      "name": "--dark-red",
+      "value": "#380c0f"
+    },
+    {
+      "selector": ":root",
+      "name": "--beige-new",
+      "value": "#eae8dd"
+    },
+    {
+      "selector": ":root",
+      "name": "--dark-moss",
+      "value": "#1d261f"
+    },
+    {
+      "selector": ":root",
+      "name": "--beige-gray",
+      "value": "#d3d1c6"
+    },
+    {
+      "selector": ":root",
+      "name": "--green-100",
+      "value": "#b9c2b2"
+    },
+    {
+      "selector": ":root",
+      "name": "--black",
+      "value": "#000"
+    },
+    {
+      "selector": ":root",
+      "name": "--_confirm-step---step-border",
+      "value": "var(--beige-gray)"
+    },
+    {
+      "selector": ":root",
+      "name": "--_confirm-step---step-ring",
+      "value": "transparent"
+    },
+    {
+      "selector": ":root",
+      "name": "--_confirm-step---step-text",
+      "value": "#6b7d6f"
+    },
+    {
+      "selector": ":root",
+      "name": "--dark-blue-n",
+      "value": "#1a1a26"
+    },
+    {
+      "selector": ":root",
+      "name": "--company-bg",
+      "value": "#390d10"
+    }
+  ],
+  "resolved": {
+    "--w-backdrop-animation": "",
+    "--moss": "#022c12",
+    "--light-grey": "#f8f6ed",
+    "--lichen": "#d5dfca",
+    "--beige": "#ede8d0",
+    "--citrus": "#f1f97e",
+    "--light-grey-2": "#dbd8ce",
+    "--lilac": "#d1bee7",
+    "--sky-blue": "#cfe8ff",
+    "--rust": "#933f29",
+    "--grey": "#f3f3f3",
+    "--border-radius": ".75rem",
+    "--white": "white",
+    "--red": "#7e0c04",
+    "--dark-blue": "#091329",
+    "--dark-red": "#380c0f",
+    "--beige-new": "#eae8dd",
+    "--dark-moss": "#1d261f",
+    "--beige-gray": "#d3d1c6",
+    "--green-100": "#b9c2b2",
+    "--black": "#000",
+    "--_confirm-step---step-border": "#d3d1c6",
+    "--_confirm-step---step-ring": "transparent",
+    "--_confirm-step---step-text": "#6b7d6f",
+    "--dark-blue-n": "#1a1a26",
+    "--company-bg": "#390d10"
+  },
+  "faces": [
+    {
+      "family": "webflow-icons",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "\"National 2 Condensed\"",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "Ppeditorialnew",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "\"National 2 Condensed\"",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "style": "italic"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "style": "normal"
+    },
+    {
+      "family": "\"Testnational 2 Condensed\"",
+      "weight": "800",
+      "style": "normal"
+    }
+  ],
+  "bodyBg": "rgb(246, 244, 232)",
+  "bodyColor": "rgb(2, 44, 18)",
+  "bodyFont": "Inter, Arial, sans-serif"
+}
