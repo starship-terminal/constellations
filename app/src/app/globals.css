@@ -2998,6 +2998,38 @@ select {
     :is(.brand span, .nav-label) {
     transition: opacity 0.18s ease;
   }
+  /* In the rail, New research is a square icon button on the same centre line
+     as the other icons. Its label stays laid out (no wrap) and is faded and
+     clipped, so it never jumps when the rail opens. */
+  :is(.sidebar-collapsed, html[data-sidebar="collapsed"] .app-shell)
+    .sidebar
+    > .new-research {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  :is(.sidebar-collapsed, html[data-sidebar="collapsed"] .app-shell)
+    .sidebar
+    > .new-research
+    svg {
+    flex-shrink: 0;
+  }
+  :is(.sidebar-collapsed, html[data-sidebar="collapsed"] .app-shell)
+    .sidebar
+    > .new-research {
+    transition:
+      width 0.22s ease,
+      margin 0.22s ease,
+      padding 0.22s ease,
+      background 0.15s;
+  }
+  :is(.sidebar-collapsed, html[data-sidebar="collapsed"] .app-shell)
+    .sidebar:not(:hover, :focus-within)
+    > .new-research {
+    width: 40px;
+    margin-left: 2px;
+    padding-left: 9px;
+    padding-right: 9px;
+  }
   :is(.sidebar-collapsed, html[data-sidebar="collapsed"] .app-shell)
     .sidebar:not(:hover, :focus-within) {
     width: var(--sidebar-width);
