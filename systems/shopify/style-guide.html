@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopify style guide</title>
+<style>
+:root {
+  --palette-black: #000;
+  --palette-white: #fff;
+  --palette-shade-10: #f4f4f5;
+  --palette-shade-20: #e4e4e7;
+  --palette-shade-30: #d4d4d8;
+  --palette-shade-40: #a1a1aa;
+  --palette-shade-50: #71717a;
+  --palette-shade-60: #52525b;
+  --palette-shade-70: #3f3f46;
+  --palette-shade-90: #18181b;
+  --font-family-sans: Shopify-Inter,Helvetica,Arial,sans-serif;
+  --font-family-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --typography-display: 330 64px/1.2 var(--font-family-sans);
+  --typography-heading-1: 330 56px/1.2 var(--font-family-sans);
+  --typography-heading-2: 330 44px/1.2 var(--font-family-sans);
+  --typography-heading-3: 330 34px/1.2 var(--font-family-sans);
+  --typography-heading-4: 360 28px/1.2 var(--font-family-sans);
+  --typography-heading-5: 400 24px/1.2 var(--font-family-sans);
+  --typography-body-large: 450 20px/1.2 var(--font-family-sans);
+  --typography-body: 450 16px/1.2 var(--font-family-sans);
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 80px;
+  --space-4xl: 128px;
+  --space-5xl: 160px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --motion-duration-default: 150ms;
+  --motion-easing-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --motion-easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-easing-uc: cubic-bezier(0.22, 1.0, 0.36, 1.0);
+  --size-header: 72px;
+  --background-page: var(--palette-black);
+  --background-surface: var(--palette-shade-10);
+  --background-inverse: var(--palette-white);
+  --text-primary: var(--palette-white);
+  --text-muted: var(--palette-shade-40);
+  --text-on-accent: var(--palette-black);
+  --text-link: var(--palette-white);
+  --border-default: var(--palette-shade-70);
+  --border-strong: var(--palette-white);
+  --action-primary: var(--palette-white);
+  --action-primary-hover: #d4d4d8;
+  --focus-ring: #fff;
+  color-scheme: light;
+  --sg-sans: Shopify-Inter, Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 450 16px/1.4 var(--sg-sans); }
+a.primary { background: var(--action-primary); color: var(--text-on-accent); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-weight: 330; font-size: 44px; letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font-weight: 330; font-size: 28px; margin: 40px 0 12px; }
+p { max-width: 68ch; color: var(--text-muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border: 1px solid var(--border-default); }
+.sw span, code { font: 12px/1.4 var(--sg-mono); color: var(--text-primary); }
+button.primary, a.primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--action-primary); color: var(--text-on-accent);
+  border: 0; border-radius: 999px; padding: 12px 20px; font: 450 16px/1 var(--sg-sans);
+  text-decoration: underline;
+}
+a.quiet { color: var(--text-link); }
+.card { background: var(--background-surface); color: #000; border-radius: var(--radius-xl); padding: 24px; max-width: 320px; }
+.card p { color: #3f3f46; }
+.field { display: block; width: 280px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); padding: 12px 14px; font: inherit; background: var(--background-inverse); color: #000; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Shopify</h1>
+  <p>Public marketing site, light theme only. Values come from tokens.json. Shopify-Inter is proprietary and is not loaded here; the page falls back to Helvetica.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--background-page)"></i><span>page</span></div>
+    <div class="sw"><i style="background:var(--background-surface)"></i><span>surface</span></div>
+    <div class="sw"><i style="background:var(--text-primary)"></i><span>text</span></div>
+    <div class="sw"><i style="background:var(--text-muted)"></i><span>muted</span></div>
+    <div class="sw"><i style="background:var(--action-primary)"></i><span>accent</span></div>
+    <div class="sw"><i style="background:var(--border-default)"></i><span>border</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font-size:var(--typography-display-fontSize);font-weight:330;color:var(--text-primary)">Be the next store</p>
+  <p style="font-size:var(--typography-heading-3-fontSize);font-weight:330;color:var(--text-primary)">Build fast on Shopify</p>
+  <p style="color:var(--text-primary)">Body at 16px, weight 450. Secondary copy uses shade 50.</p>
+
+  <h2>Controls</h2>
+  <div class="row" style="align-items:center">
+    <a class="primary" href="#components">Start for free</a>
+    <a class="quiet" href="#components">Log in</a>
+  </div>
+  <p></p>
+  <input class="field" value="" placeholder="Search themes" readonly>
+
+  <h2>Card</h2>
+  <div class="card">
+    <strong>Basic</strong>
+    <p>A plan card sits on shade 10. Corners follow radius-xl.</p>
+  </div>
+
+  <h2>Space and radius</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td>space-xs</td><td>8px</td></tr>
+    <tr><td>space-sm</td><td>16px</td></tr>
+    <tr><td>space-md</td><td>24px</td></tr>
+    <tr><td>radius-md</td><td>6px</td></tr>
+    <tr><td>radius-xl</td><td>12px</td></tr>
+    <tr><td>header</td><td>72px</td></tr>
+  </table>
+  <p>Dark theme, status colours, and elevation are not captured. See the coverage table in README.md.</p>
+</div>
+</body>
+</html>
