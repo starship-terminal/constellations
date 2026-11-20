@@ -3,6 +3,7 @@
 import json
 import pathlib
 import re
+import sys
 import unittest
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
@@ -37,6 +38,17 @@ class Tokens(unittest.TestCase):
     def test_radius_pill_is_a_length(self):
         self.assertEqual(TOKENS["core"]["radius"]["pill"]["$value"], "999px")
         self.assertEqual(TOKENS["core"]["radius"]["pill"]["$type"], "dimension")
+
+
+class Builder(unittest.TestCase):
+    def test_committed_file_matches_builder(self):
+        sys.path.insert(0, str(HERE / "tools"))
+        import build_tokens  # writes only when run as a script
+        self.assertEqual((HERE / "tokens.json").read_text(), build_tokens.text)
+
+    def test_unread_app_values_are_not_measured(self):
+        for role in ("appHeading", "appControl", "appField"):
+            self.assertTrue(TOKENS["core"]["typography"][role]["$extensions"]["source"].startswith("Reconstruction"), role)
 
 
 if __name__ == "__main__":
