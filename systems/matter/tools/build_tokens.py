@@ -94,6 +94,63 @@ dark = build(SPEC["dark"], "dark")
 if SPEC.get("component"):
     dark["component"] = build(SPEC["component"], "dark")
 
+def tokens_of(tree, prefix=""):
+    for k, v in tree.items():
+        if k.startswith("$"):
+            continue
+        if isinstance(v, dict) and "$value" in v:
+            yield prefix + k, v
+        elif isinstance(v, dict):
+            yield from tokens_of(v, prefix + k + ".")
+
+
+def aliases(v):
+    if isinstance(v, str):
+        return re.findall(r"\{([^{}]+)\}", v)
+    if isinstance(v, dict):
+        return [a for x in v.values() for a in aliases(x)]
+    if isinstance(v, list):
+        return [a for x in v for a in aliases(x)]
+    return []
+
+
+MEMBER = {"fontFamily": "fontFamily", "fontSize": "dimension", "fontWeight": "fontWeight",
+          "lineHeight": "dimension", "letterSpacing": "dimension", "color": "color"}
+
+
+def check_aliases(sets):
+    """The kit's alias pass: every alias resolves in core or its own set, to a token of the type
+    its place needs (a colour that aliases a dimension, or a typography size that aliases a
+    colour, used to pass)."""
+    core_tok = dict(tokens_of(sets["core"]))
+    for name, tree in sets.items():
+        by = dict(core_tok)
+        by.update(dict(tokens_of(tree)))
+        for n, t in tokens_of(tree):
+            v = t["$value"]
+            for a in aliases(v):
+                if a not in by:
+                    raise KeyError(f"{name}.{n}: alias {{{a}}} points at nothing")
+            if isinstance(v, str) and aliases(v) and t["$type"] in ("color", "dimension", "fontFamily", "fontWeight"):
+                if by[aliases(v)[0]]["$type"] != t["$type"]:
+                    raise TypeError(f"{name}.{n}: alias {v} is a {by[aliases(v)[0]]['$type']}, not a {t['$type']}")
+            items = v.items() if isinstance(v, dict) else [(k, x) for layer in v for k, x in layer.items()] if isinstance(v, list) and v and isinstance(v[0], dict) else []
+            for k, m in items:
+                want = MEMBER.get(k)
+                if want and isinstance(m, str) and aliases(m) and by[aliases(m)[0]]["$type"] != want:
+                    raise TypeError(f"{name}.{n}: {k} {m} is a {by[aliases(m)[0]]['$type']}, not a {want}")
+            if t["$type"] == "shadow" and not isinstance(v, str):
+                for layer in v:
+                    for k in ("offsetX", "offsetY", "blur", "spread"):
+                        if not re.fullmatch(r"-?\d*\.?\d+px", str(layer.get(k, ""))):
+                            raise ValueError(f"{name}.{n}: shadow {k} {layer.get(k)!r}")
+            if t["$type"] == "gradient" and not isinstance(v, str):
+                if not all(isinstance(st, dict) and "color" in st and "position" in st for st in v):
+                    raise ValueError(f"{name}.{n}: gradient {v!r} is not a list of colour stops")
+
+
+check_aliases({"core": core, "light": light, "dark": dark})
+
 tokens = {
     "core": core,
     "light": light,
@@ -106,11 +163,13 @@ tokens = {
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+TEXT = json.dumps(tokens, indent=2, ensure_ascii=False) + "\n"
 
 
 def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(TEXT)
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})

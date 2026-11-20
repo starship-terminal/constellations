@@ -117,13 +117,16 @@ for name, value in MARK.items():
     else:
         not_tokenised.append({"name": name, "value": value, "reason": "not mapped"})
 
-# Fill missing typography keys so every composite is complete.
+# A DTCG typography composite needs every member. --mv-typography declares no letter-spacing for
+# some roles; CSS reads that as normal, written here as 0 and said so in the source. Any other
+# missing member fails the build instead of taking a typed default.
 for role, token in core["typography"].items():
-    token["$value"].setdefault("fontFamily", "{font.family.sans}")
-    token["$value"].setdefault("fontWeight", "400")
-    token["$value"].setdefault("fontSize", "16px")
-    token["$value"].setdefault("lineHeight", "1.48")
-    token["$value"].setdefault("letterSpacing", "0")
+    if "letterSpacing" not in token["$value"]:
+        token["$value"]["letterSpacing"] = "0"
+        token["$extensions"]["source"] += "; letter-spacing is not declared for this role, 0 stands for normal"
+    missing = [k for k in ("fontFamily", "fontWeight", "fontSize", "lineHeight") if k not in token["$value"]]
+    if missing:
+        raise SystemExit(f"typography.{role}: {missing} not declared in raw/marketing-root.css")
 
 # App ramps. Light from the unconditioned :root, dark from [data-theme=dark].
 # Stable names (same in both themes) go to core so a theme set does not repeat them.
@@ -199,29 +202,31 @@ dark["app"] = {
     "action": {"$type": "color", "$value": "{color.primaryButtonBackground}", "$extensions": {"source": "alias of --mv-primaryButtonBackground"}},
 }
 
+UNREAD = "Reconstruction: typed from the 2026-11-19 sign-in page; raw/ holds no computed reading of it (raw/app-vars.json has custom properties only). "
+
 # App type, measured on the sign-in heading, field and buttons. One scale; the
 # app does not publish a type ramp the way the marketing site does.
 core["font"]["family"]["inter"] = font_token(
     ["Inter-v3_19", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "sans-serif"],
-    "computed font-family on app.metaview.ai/auth/sign-in body, 2026-11-19; files are /static/font/Inter-*.woff2",
+    "%sComputed font-family on app.metaview.ai/auth/sign-in body; files are /static/font/Inter-*.woff2" % UNREAD,
 )
 core["typography"]["appHeading"] = {
     "$type": "typography",
     "$value": {"fontFamily": "{font.family.inter}", "fontWeight": "600", "fontSize": "22px", "lineHeight": "1.3", "letterSpacing": "0"},
-    "$extensions": {"source": "computed style of the sign-in h1, 2026-11-19"},
+    "$extensions": {"source": UNREAD + "Computed style of the sign-in h1"},
 }
 core["typography"]["appControl"] = {
     "$type": "typography",
     "$value": {"fontFamily": "{font.family.inter}", "fontWeight": "500", "fontSize": "13px", "lineHeight": "18px", "letterSpacing": "0"},
-    "$extensions": {"source": "computed style of the sign-in submit button, 2026-11-19"},
+    "$extensions": {"source": UNREAD + "Computed style of the sign-in submit button"},
 }
 core["typography"]["appField"] = {
     "$type": "typography",
     "$value": {"fontFamily": "{font.family.inter}", "fontWeight": "400", "fontSize": "13px", "lineHeight": "18px", "letterSpacing": "0"},
-    "$extensions": {"source": "computed style of the sign-in email input, 2026-11-19"},
+    "$extensions": {"source": UNREAD + "Computed style of the sign-in email input"},
 }
-core["radius"]["appControl"] = dim_token("8px", "computed border-radius of the sign-in email input and buttons, 2026-11-19")
-core["radius"]["appIconButton"] = dim_token("6px", "computed border-radius of the sign-in theme buttons, 2026-11-19")
+core["radius"]["appControl"] = dim_token("8px", UNREAD + "Computed border-radius of the sign-in email input and buttons")
+core["radius"]["appIconButton"] = dim_token("6px", UNREAD + "Computed border-radius of the sign-in theme buttons")
 
 doc = {
     "$schema": "https://tr.designtokens.org/format/dtcg.schema.json",
@@ -239,5 +244,7 @@ doc = {
 }
 
 text = json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
-(HERE / "tokens.json").write_text(text)
-print(f"tokens.json {len(text)} bytes, marketing names {len(MARK)}, app names {len(light_app)}, notTokenised {len(not_tokenised)}")
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(text)
+    print(f"tokens.json {len(text)} bytes, marketing names {len(MARK)}, app names {len(light_app)}, notTokenised {len(not_tokenised)}")

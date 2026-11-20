@@ -66,7 +66,9 @@ const desktop = {
   // Never press Subscribe. A public article is captured separately.
   words: { url: 'https://words.getmatter.com/', wait: 5000, run: async (p, S) => { await S.view('default'); } },
   article: { url: 'https://words.getmatter.com/p/anu-coolhunt-before-sunrise-why-i', wait: 5000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  docs: { url: 'https://docs.getmatter.com/', wait: 5000, run: async (p, S) => {
+  // docs.getmatter.com paints light, so its files are docs-light-*; the default 'dark' prefix
+  // named them docs-dark-* with a `light` state, which the committed files are not.
+  docs: { url: 'https://docs.getmatter.com/', theme: 'light', wait: 5000, run: async (p, S) => {
     await S.view('default');
     await step('theme', async () => {
       const b = p.getByRole('button', { name: /theme/i }).first();
@@ -74,7 +76,7 @@ const desktop = {
         await b.click();
         await wait(p, 600);
         const light = p.getByRole('menuitem', { name: /^Light$/ }).or(p.getByRole('button', { name: /^Light$/ })).or(p.getByText('Light', { exact: true })).first();
-        if (await light.count()) { await light.click(); await wait(p, 800); await S.view('light'); }
+        if (await light.count()) { await light.click(); await wait(p, 800); await S.view('theme'); }
       }
     });
     await S.full();
@@ -85,7 +87,7 @@ const desktop = {
 const mobile = {
   home: { url: BASE + '/', wait: 5000, run: async (p, S) => { await S.view('default'); await S.full(); } },
   article: { url: 'https://words.getmatter.com/p/anu-coolhunt-before-sunrise-why-i', wait: 5000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  docs: { url: 'https://docs.getmatter.com/', wait: 5000, run: async (p, S) => { await S.view('default'); } },
+  docs: { url: 'https://docs.getmatter.com/', theme: 'light', wait: 5000, run: async (p, S) => { await S.view('default'); } },
   signin: { url: 'https://web.getmatter.com/', theme: 'light', wait: 5000, run: async (p, S) => { await S.view('default'); } },
 };
 

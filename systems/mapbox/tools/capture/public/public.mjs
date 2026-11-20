@@ -15,11 +15,12 @@
 // closed), and the mobile menu. Sign-in, sign-up, account, checkout and
 // contact-form submit are never followed.
 import fs from 'fs';
+import os from 'node:os';
 import path from 'node:path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, chromium, patch, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || path.join(process.env.HOME, '.design-systems', 'mapbox', 'raw-shots');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'mapbox', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

@@ -27,8 +27,10 @@ await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 });
 await page.waitForTimeout(4000);
 await closePromo(page);
 const sheets = await page.evaluate(() => [...document.styleSheets].map((s, i) => {
-  try { return { name: s.href || 'inline-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
-  catch { return { name: s.href || 'sheet-' + i, media: '', css: '', unreadable: true }; }
+  // Sheet names drop the query and fragment, as the kit does (a ?v= or a signed query is not a name).
+  const name = s.href ? s.href.split(/[?#]/)[0] : null;
+  try { return { name: name || 'inline-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
+  catch { return { name: name || 'sheet-' + i, media: '', css: '', unreadable: true }; }
 }));
 await page.close();
 

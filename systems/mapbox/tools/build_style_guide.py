@@ -40,6 +40,7 @@ def slim(node):
 
 
 html = TEMPLATE.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", "")
-html = html.replace("/*TOKENS*/null", json.dumps(slim(T), ensure_ascii=False))
+# "<" as \u003c keeps a value holding "</script>" from ending the inlined script (the kit's escape).
+html = html.replace("/*TOKENS*/null", json.dumps(slim(T), ensure_ascii=False).replace("<", "\\u003c"))
 (HERE / "style-guide.html").write_text(html)
 print("wrote style-guide.html", len(html))

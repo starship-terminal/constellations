@@ -41,18 +41,19 @@ h2 { font: 700 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: upp
 <script>
 const TOK = /*TOKENS*/null;
 const css = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const flat = (node, prefix='') => Object.entries(node||{}).flatMap(([k,v]) => v && v.t ? [[prefix+k, v]] : (v && typeof v === 'object' ? flat(v, prefix+k+'.') : []));
 const roles = document.getElementById('roles');
 for (const [n, t] of flat(TOK.light, '')) {
   if (t.t !== 'color') continue;
-  roles.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:var(${css(n)})"></i><b>${n}</b><span>${t.v}</span></div>`);
+  roles.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:var(${css(n)})"></i><b>${esc(n)}</b><span>${esc(t.v)}</span></div>`);
 }
 const ramps = document.getElementById('ramps');
 for (const [g, grp] of Object.entries((TOK.core && TOK.core.color) || {})) {
-  let html = `<h2>${g}</h2><div class="swatches">`;
+  let html = `<h2>${esc(g)}</h2><div class="swatches">`;
   for (const [n, t] of flat(grp, g + '.')) {
     if (t.t !== 'color') continue;
-    html += `<div class="sw"><i style="background:${t.v}"></i><b>${n}</b><span>${t.v}</span></div>`;
+    html += `<div class="sw"><i style="background:${esc(t.v)}"></i><b>${esc(n)}</b><span>${esc(t.v)}</span></div>`;
   }
   ramps.insertAdjacentHTML('beforeend', html + '</div>');
 }

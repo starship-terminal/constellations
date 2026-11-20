@@ -139,8 +139,10 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
 }
 
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  // A failed navigation or a bot check that never clears is not the product: throw, as the kit's
+  // open() does, rather than measure the interstitial into raw/.
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+  if (!(await clearChallenge(page))) throw new Error('challenge did not clear: ' + url);
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
 }

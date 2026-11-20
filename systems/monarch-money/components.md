@@ -167,7 +167,7 @@ The disabled-looking submit at rest (half orange). Not pressed. No credentials w
 |---|---|---|---|
 | default | fill rgba(255, 105, 45, 0.5); ink #ffffff `surface`; radius 8px; 16px/500 Oracle; height 40px | at rest | [crop](components/crops/signin-submit-default.png) |
 | hover | same as default | mouse hover | [crop](components/crops/signin-submit-hover.png) |
-| focus-visible | same as default | focus failed | [crop](components/crops/signin-submit-focus-visible.png) |
+| focus-visible | not captured: keyboard focus did not reach the element |  |  |
 
 ## Stay signed in
 
