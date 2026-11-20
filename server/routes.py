@@ -400,6 +400,15 @@ def _provider_save(handler, chat, store) -> None:
             return
         if key:
             cfg = store.to_cfg(s, key)
+            # A migration that cannot be saved is not worth a provider call.
+            if s["migrate"]:
+                try:
+                    already = store.load()
+                except store.StoreError:
+                    already = None
+                if already:
+                    _reply(handler, 200, {"ok": False, "saved": False, "existing": True, "error": _EXISTING})
+                    return
             # The network call stays outside the lock; the write happens under it.
             r = _list_models(chat, store, cfg)
             if not r["ok"]:
