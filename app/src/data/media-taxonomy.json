@@ -1199,8 +1199,8 @@
     },
     {
       "referenceId": "systems:getfernand",
-      "media": 226,
-      "assignedMedia": 226
+      "media": 225,
+      "assignedMedia": 225
     },
     {
       "referenceId": "systems:github-ios",
@@ -1209,27 +1209,27 @@
     },
     {
       "referenceId": "systems:gladia",
-      "media": 201,
+      "media": 199,
       "assignedMedia": 32
     },
     {
       "referenceId": "systems:glassnode",
-      "media": 230,
+      "media": 228,
       "assignedMedia": 45
     },
     {
       "referenceId": "systems:glorify",
-      "media": 269,
-      "assignedMedia": 269
+      "media": 253,
+      "assignedMedia": 253
     },
     {
       "referenceId": "systems:glossgenius",
-      "media": 248,
+      "media": 247,
       "assignedMedia": 33
     },
     {
       "referenceId": "systems:gofundme",
-      "media": 194,
+      "media": 193,
       "assignedMedia": 63
     },
     {
@@ -1239,8 +1239,8 @@
     },
     {
       "referenceId": "systems:grammarly",
-      "media": 193,
-      "assignedMedia": 193
+      "media": 192,
+      "assignedMedia": 192
     },
     {
       "referenceId": "systems:grok",
@@ -1259,7 +1259,7 @@
     },
     {
       "referenceId": "systems:grow",
-      "media": 144,
+      "media": 143,
       "assignedMedia": 46
     },
     {
@@ -1274,8 +1274,8 @@
     },
     {
       "referenceId": "systems:hbomax",
-      "media": 88,
-      "assignedMedia": 21
+      "media": 80,
+      "assignedMedia": 18
     },
     {
       "referenceId": "systems:headspace",
@@ -1299,8 +1299,8 @@
     },
     {
       "referenceId": "systems:homerun",
-      "media": 211,
-      "assignedMedia": 211
+      "media": 209,
+      "assignedMedia": 209
     },
     {
       "referenceId": "systems:httpie",
@@ -1454,8 +1454,8 @@
     },
     {
       "referenceId": "systems:manychat",
-      "media": 77,
-      "assignedMedia": 18
+      "media": 74,
+      "assignedMedia": 17
     },
     {
       "referenceId": "systems:metabase",
@@ -1614,7 +1614,7 @@
     },
     {
       "referenceId": "systems:ifttt",
-      "media": 148,
+      "media": 147,
       "assignedMedia": 51
     },
     {
@@ -223241,22 +223241,6 @@
     },
     {
       "referenceId": "systems:getfernand",
-      "mediaId": "systems/getfernand/components/crops/wpg-tab-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/getfernand/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:getfernand",
       "mediaId": "systems/getfernand/components/crops/wpg-tab-hover.png",
       "terms": [
         {
@@ -225986,17 +225970,6 @@
     },
     {
       "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/bill-monthly-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/bill-monthly-hover.png",
       "terms": [
         {
@@ -226031,17 +226004,6 @@
     {
       "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/bill-yearly-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/bill-yearly-focus-visible.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -226295,17 +226257,6 @@
     {
       "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/ed-craft-style-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/ed-craft-style-focus-visible.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -226647,39 +226598,7 @@
     },
     {
       "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/ed-tab-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/ed-tab-layers-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/ed-tab-layers-focus-visible.png",
       "terms": [
         {
           "termId": "web-ui-elements:tabs",
@@ -227232,17 +227151,6 @@
     },
     {
       "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/learn-cat-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/learn-cat-hover.png",
       "terms": [
         {
@@ -227337,17 +227245,6 @@
     {
       "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/login-forgot-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/login-forgot-focus-visible.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -227468,17 +227365,6 @@
     },
     {
       "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/login-signup-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/login-signup-hover.png",
       "terms": [
         {
@@ -227523,17 +227409,6 @@
     },
     {
       "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/login-submit-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/login-submit-hover.png",
       "terms": [
         {
@@ -227568,17 +227443,6 @@
     {
       "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/m-burger-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/m-burger-focus-visible.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -227753,17 +227617,6 @@
     },
     {
       "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/mk-tag-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/mk-tag-hover.png",
       "terms": [
         {
@@ -227819,17 +227672,6 @@
     },
     {
       "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/nav-cta-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/nav-cta-hover.png",
       "terms": [
         {
@@ -227853,17 +227695,6 @@
     {
       "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/nav-features-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/nav-features-focus-visible.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -228061,17 +227892,6 @@
     },
     {
       "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/ob-own-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/ob-own-hover.png",
       "terms": [
         {
@@ -228095,17 +227915,6 @@
     {
       "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/ob-ph-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/ob-ph-focus-visible.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -228375,17 +228184,6 @@
     {
       "referenceId": "systems:glorify",
       "mediaId": "systems/glorify/components/crops/reg-submit-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/glorify/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:glorify",
-      "mediaId": "systems/glorify/components/crops/reg-submit-focus-visible.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -231562,17 +231360,6 @@
     {
       "referenceId": "systems:grammarly",
       "mediaId": "systems/grammarly/components/crops/form-submit-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:grammarly",
-      "mediaId": "systems/grammarly/components/crops/form-submit-focus-visible.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -241843,17 +241630,6 @@
     },
     {
       "referenceId": "systems:hbomax",
-      "mediaId": "systems/hbomax/components/crops/browse-rail-card-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:hbomax",
       "mediaId": "systems/hbomax/components/crops/browse-rail-card-hover.png",
       "terms": [
         {
@@ -241877,17 +241653,6 @@
     {
       "referenceId": "systems:hbomax",
       "mediaId": "systems/hbomax/components/crops/faq-item-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:faq",
-          "rule": "ux-faq",
-          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:hbomax",
-      "mediaId": "systems/hbomax/components/crops/faq-item-focus-visible.png",
       "terms": [
         {
           "termId": "web-ux-patterns:faq",
@@ -241965,17 +241730,6 @@
     {
       "referenceId": "systems:hbomax",
       "mediaId": "systems/hbomax/components/crops/rail-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:hbomax",
-      "mediaId": "systems/hbomax/components/crops/rail-card-focus-visible.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -246130,22 +245884,6 @@
     },
     {
       "referenceId": "systems:homerun",
-      "mediaId": "systems/homerun/components/crops/careers-all-jobs-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:gt-walsheim",
-          "rule": "font-primary",
-          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
-        },
-        {
-          "termId": "web-fonts:gt-america",
-          "rule": "font-primary",
-          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:homerun",
       "mediaId": "systems/homerun/components/crops/careers-all-jobs-hover.png",
       "terms": [
         {
@@ -246406,27 +246144,6 @@
       "referenceId": "systems:homerun",
       "mediaId": "systems/homerun/components/crops/careers-logo-default.png",
       "terms": [
-        {
-          "termId": "web-fonts:gt-walsheim",
-          "rule": "font-primary",
-          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
-        },
-        {
-          "termId": "web-fonts:gt-america",
-          "rule": "font-primary",
-          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:homerun",
-      "mediaId": "systems/homerun/components/crops/careers-share-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:share",
-          "rule": "ux-share",
-          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
-        },
         {
           "termId": "web-fonts:gt-walsheim",
           "rule": "font-primary",
@@ -284237,22 +283954,6 @@
     {
       "referenceId": "systems:manychat",
       "mediaId": "systems/manychat/components/crops/billing-toggle-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:manychat",
-      "mediaId": "systems/manychat/components/crops/billing-toggle-focus-visible.png",
       "terms": [
         {
           "termId": "web-ui-elements:switch-toggle",
