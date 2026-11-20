@@ -4,7 +4,7 @@
  * Does not type credentials, does not submit, does not follow Google SSO.
  */
 import { createRequire } from "node:module";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { screenshotWithMetadata } from "../screenshot.mjs";
@@ -68,6 +68,9 @@ for (const spec of PAGES) {
     console.log(`  ! ${spec.name}: page is ${fullHeight}px tall, capturing the first ${capped}px only (boundary)`);
   }
   const full = join(SHOTS, `${spec.name}-light-full`);
+  // Clear this shot's tiles (and their .capture.json sidecars) from an earlier run first, so a page
+  // that now needs fewer tiles, or fits one PNG, leaves no stale part for quantize.py to stitch.
+  for (const old of readdirSync(SHOTS).filter((n) => n.startsWith(`${spec.name}-light-full.part`))) unlinkSync(join(SHOTS, old));
   if (capped <= chunk) await screenshotWithMetadata(page, { path: `${full}.png`, fullPage: true }, requested);
   else for (let i = 0, y = 0; y < capped; i++, y += chunk) {
     await screenshotWithMetadata(page, { path: `${full}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: requested.viewport.width, height: Math.min(chunk, capped - y) } }, requested);
