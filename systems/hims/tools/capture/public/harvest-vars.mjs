@@ -14,6 +14,8 @@ await open(page, BASE + '/', { wait: 2000 });
 await hideConsent(page);
 
 const data = await page.evaluate(() => {
+  // A url() can carry a signed asset URL: record it as url(…), as the kit and the sibling forks do.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/gi, 'url(…)') : v);
   const names = new Set();
   const declared = [];
   const walk = (list, context) => {
@@ -25,7 +27,7 @@ const data = await page.evaluate(() => {
           const n = r.style[i];
           if (n.startsWith('--')) {
             names.add(n);
-            props[n] = r.style.getPropertyValue(n).trim();
+            props[n] = noUrl(r.style.getPropertyValue(n).trim());
           }
         }
         if (Object.keys(props).length) declared.push({ selector: r.selectorText, context, properties: props });
@@ -45,7 +47,7 @@ const data = await page.evaluate(() => {
   const resolved = {};
   for (const n of names) {
     const v = cs.getPropertyValue(n).trim();
-    if (v) resolved[n] = v;
+    if (v) resolved[n] = noUrl(v);
   }
   const fonts = [];
   for (const f of document.fonts) fonts.push({ family: f.family, weight: String(f.weight), style: f.style, status: f.status });
