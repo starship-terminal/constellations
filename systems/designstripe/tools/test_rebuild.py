@@ -59,6 +59,23 @@ class RebuildTest(unittest.TestCase):
         body = self.built["core"]["font"]["size"]["measured"]["body"]["$extensions"]["source"]
         self.assertIn("read from the wrong element; recapture needed", body)
 
+    def test_flags_follow_the_readings(self):
+        """On a temp copy: a recaptured post-para (a real paragraph) clears its flag, and a kept
+        reading whose date measure.mjs recorded is reported with that date."""
+        root = pathlib.Path(self.tmp.name) / "recaptured"
+        shutil.copytree(self.root / "tools", root / "tools")
+        shutil.copytree(self.root / "raw", root / "raw")
+        path = root / "raw" / "components-computed.json"
+        J = json.loads(path.read_text())
+        J["components"]["post-para"]["states"]["default"]["text"] = "A body paragraph " * 8
+        J["components"]["hero-h1"]["states"]["default"].update({"read": "2026-11-10", "rerunOn": "2026-11-14"})
+        path.write_text(json.dumps(J))
+        subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, check=True, capture_output=True)
+        spec = json.loads((root / "raw" / "component-tokens.json").read_text())
+        self.assertNotIn("wrong element", spec["core"]["font"]["size"]["measured"]["body"]["source"])
+        black = spec["light"]["text"]["black"]["source"]
+        self.assertIn("the 2026-11-14 re-read failed (rerunError) and the earlier reading was kept, read 2026-11-10", black)
+
     def test_builder_has_no_pasted_twice_loop_body(self):
         src = (PKG / "tools" / "build_component_tokens.py").read_text()
         self.assertEqual(src.count('raw = st(comp, state)["fontSize"]'), 1)

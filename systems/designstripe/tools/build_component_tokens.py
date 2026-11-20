@@ -667,8 +667,20 @@ for name, cname, state, prop, ty_, desc in [
 # the latest run's: post-para's selector caught a subtitle (the README's Known
 # gaps), and a state kept after a failed re-read (rerunError) is an earlier
 # run's reading republished under the component's new date.
-WRONG_ELEMENT = {"post-para": "the one-line article subtitle, not a body paragraph"}
-KEPT = {(k, sn) for k, c in C.items() for sn, v in c.get("states", {}).items() if v.get("rerunError")}
+# post-para is flagged only while its reading is the short subtitle (the fixed
+# selector asks for more than 80 characters), so a good recapture clears it.
+WRONG_ELEMENT = {k: what for k, what, bad in [
+    ("post-para", "the one-line article subtitle, not a body paragraph",
+     lambda c: len((c["states"]["default"].get("text") or "").strip()) <= 80),
+] if k in C and bad(C[k])}
+KEPT = {(k, sn): v for k, c in C.items() for sn, v in c.get("states", {}).items() if v.get("rerunError")}
+
+
+def kept_note(k, sn):
+    v = KEPT[(k, sn)]
+    when = f"read {v['read']}" if v.get("read") else "its own date unrecorded"
+    failed = v.get("rerunOn") or C[k]["run"]
+    return f"{k} {sn} is a kept reading: the {failed} re-read failed (rerunError) and the earlier reading was kept, {when}"
 
 
 def note_readings(node):
@@ -680,8 +692,7 @@ def note_readings(node):
                     node["source"] = src = src + f"; {k} caught {what} (read from the wrong element; recapture needed)"
             for k, sn in sorted(KEPT):
                 if re.search(rf"(?<![\w-]){re.escape(k)} {re.escape(sn)}(?![\w-])", src) and f"{k} {sn} is a kept reading" not in src:
-                    node["source"] = src = (src + f"; {k} {sn} is a kept reading: the {C[k]['run']} re-read failed (rerunError)"
-                                            " and the earlier reading was kept, its own date unrecorded")
+                    node["source"] = src = src + "; " + kept_note(k, sn)
         for v in node.values():
             note_readings(v)
 
