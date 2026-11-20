@@ -117,6 +117,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Resting anchors read `#0000ee`.** Undecorated `a` elements compute the UA link colour at rest and `#ff0000` under forced `:active`; the styled text nodes inside them are the truthful colours.
 - **Photography is content.** The hero media and product renders are Elementor's artwork and only appear inside screenshots and crops; carousels keep moving, so two captures of the same view can differ.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ### Do and don't (from README.md)
 

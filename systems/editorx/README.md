@@ -116,6 +116,7 @@ Nothing was signed into, created, submitted or paid for: the Log In / Start Crea
 - **Unstyled containers read fallback fonts.** Thunderbolt leaves wrappers at Arial/Times; the text nodes inside carry Madefor. Type tokens cite the text-node readings (`textStyle`), not the wrapper's.
 - **`logo` is the wrong element.** Its selector's `nav a` fallback matched the "Pricing" nav link first, so the `logo` entry in components.md holds that link's values, not the wordmark's. No token reads it. The selector is fixed in `measure.mjs` (edited, not run); the entry needs a recapture.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

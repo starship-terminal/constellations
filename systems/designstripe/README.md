@@ -98,6 +98,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 - `post-para`: the first visible article `<p>` was the one-line subtitle ("Plus tips to achieve it"), not a body paragraph. `core.font.size.measured.body` cites it and says so. `tools/capture/public/measure.mjs` now asks for a paragraph of more than 80 characters (edited, not run); recapture needed.
 - `hero-h1` and `feature-acc` default: the 2026-11-14 re-read timed out, and the capture kept the earlier reading beside the `rerunError` under the new run date; the reading's own date was not recorded. The tokens read from them (`light.text.black`, `light.text.on-dark`, `core.motion.control`) say so.
 - `feature-acc` opened is recorded `via: held open by an earlier toggle`, but nothing was toggled: the first accordion row is expanded at rest, so its opened reading repeats the default. The capture script now records that (edited, not run).
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Health
 
