@@ -105,9 +105,15 @@ def meas(comp, prop, state="default", colour=False, cap=None, src=None, **kw):
         v = float(v[:-1]) / 100
     elif str(v).endswith("px"):
         v = rounded(v, cap) if cap else px(v)
-    d = {"value": v, "source": src or f"computed {prop} of {comp} {state} (raw/components-computed.json)"}
+    d = {"value": v, "source": (src or f"computed {prop} of {comp} {state} (raw/components-computed.json)") + stale(comp)}
     d.update(kw)
     return d
+
+
+def stale(comp):
+    """A component flagged recaptureMissed kept an earlier run's readings; a token built from one says so."""
+    m = C[comp].get("recaptureMissed")
+    return "; stale: kept from an earlier run (the %s recapture did not find %s)" % (m, comp) if m else ""
 
 
 def measrect(comp, prop="w", state="default", src=None, **kw):
@@ -550,9 +556,10 @@ COMP["mobile"] = {
     "menu-button": meas("m-menu-button", "width", type="dimension", description="Mobile menu toggle size."),
 }
 
-(RAW / "component-tokens.json").write_text(json.dumps(S, indent=1) + "\n")
+# Refuse before writing: a failed build must not leave a half-built spec for build_tokens.py to read.
 if missing:
     sys.exit(f"var leaves that never resolved: {missing}")
+(RAW / "component-tokens.json").write_text(json.dumps(S, indent=1) + "\n")
 
 
 def count(node):
