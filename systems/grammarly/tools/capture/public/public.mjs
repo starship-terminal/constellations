@@ -107,31 +107,15 @@ const desktop = {
   'ai-agents': { path: '/ai-agents', run: async (p, S) => { await S.view('default'); await S.full(); } },
   'grammar-check': { path: '/grammar-check', run: async (p, S) => {
     await S.view('default');
-    await step('filled', async () => {
-      const ed = p.locator('[contenteditable="true"], textarea').filter({ visible: true }).first();
-      await ed.click({ timeout: 5000 });
-      await p.keyboard.type('Me and him goes to the store every friday for buy milk and egg.', { delay: 12 });
-      await wait(p, 6000); // the checker analyses, underlines and fills the Suggestions panel
-      await S.view('filled');
-      await p.keyboard.press('ControlOrMeta+a');
-      await p.keyboard.press('Backspace');
-      await wait(p, 800);
-    });
+    // checker: recorded as a boundary, not used. Typed text is sent to Grammarly's
+    // server checker for analysis, so no filled state is shot; the editor is at rest.
     await S.full();
   } },
   'plagiarism-checker': { path: '/plagiarism-checker', run: async (p, S) => { await S.view('default'); await S.full(); } },
   'paraphrasing-tool': { path: '/paraphrasing-tool', run: async (p, S) => {
     await S.view('default');
-    await step('filled', async () => {
-      const ed = p.locator('[contenteditable="true"], textarea').filter({ visible: true }).first();
-      await ed.click({ timeout: 5000 });
-      await p.keyboard.type('Good writing makes ideas easy to follow.', { delay: 12 });
-      await wait(p, 5000);
-      await S.view('filled');
-      await p.keyboard.press('ControlOrMeta+a');
-      await p.keyboard.press('Backspace');
-      await wait(p, 800);
-    });
+    // paraphraser: recorded as a boundary, not used. Typed text goes to the server
+    // for rewriting, so no filled state is shot; the editor is at rest.
     await S.full();
   } },
   'ai-detector': { path: '/ai-detector', run: async (p, S) => { await S.view('default'); await S.full(); } },
