@@ -64,18 +64,36 @@ def raw_colours():
     return seen
 
 
+def resolve(data, setname, value, depth=0):
+    """The literal an alias chain ends at (own set, then core, then root), or None if it breaks."""
+    m = re.fullmatch(r"\{([^{}]+)\}", value) if isinstance(value, str) else None
+    if not m:
+        return value
+    if depth > 20:
+        return None
+    for scope in (data.get(setname, {}), data.get("core", {}), data):
+        target = lookup(scope, m.group(1))
+        if isinstance(target, dict) and "$value" in target:
+            return resolve(data, setname, target["$value"], depth + 1)
+    return None
+
+
 def problems(data, seen):
-    """Tokens with no source, and Measured colours no raw/ file holds."""
+    """Tokens with no source, and Measured colours, direct or through an alias, no raw/ file holds."""
     out = []
     for name in ("core", "light", "dark"):
         for path, token in walk(data.get(name, {})):
             source = token.get("$extensions", {}).get("source")
             if not source:
                 out.append(f"{name}.{path}: no source")
-            value = token["$value"]
-            if (token["$type"] == "color" and isinstance(value, str) and value.startswith("#")
-                    and str(source).startswith("Measured") and value.lower()[:7] not in seen):
-                out.append(f"{name}.{path}: Measured {value} is in no raw/ reading")
+            if token["$type"] != "color" or not str(source).startswith("Measured"):
+                continue
+            value = resolve(data, name, token["$value"])
+            if value is None:
+                out.append(f"{name}.{path}: alias {token['$value']} does not resolve")
+            elif isinstance(value, str) and value.startswith("#") and value.lower()[:7] not in seen:
+                via = f" (through {token['$value']})" if value != token["$value"] else ""
+                out.append(f"{name}.{path}: Measured {value}{via} is in no raw/ reading")
     return out
 
 
