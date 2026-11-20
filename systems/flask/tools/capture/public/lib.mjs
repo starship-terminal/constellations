@@ -133,10 +133,17 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
 }
 
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });  // a failed navigation throws (2026-11 audit)
-  // a challenge page that never clears is a boundary, never measured as the
-  // product (2026-11 audit, finding 20-4; not run since)
-  if (!(await clearChallenge(page))) throw new Error(`BLOCKED ${url}: the challenge page never cleared`);
+  // A failed load or a challenge page that never clears is a boundary,
+  // never measured as the product: open() logs BLOCKED, leaves the tab on
+  // about:blank (so every lookup that follows finds nothing and keeps the
+  // saved readings) and returns false, without stopping the rest of the run
+  // (2026-11 audit, finding 20-4; not run since).
+  const loaded = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).then(() => true, (e) => { console.log(`BLOCKED ${url}: ${String(e.message).split('\n')[0]}`); return false; });
+  if (!loaded || !(await clearChallenge(page))) {
+    if (loaded) console.log(`BLOCKED ${url}: the challenge page never cleared`);
+    await page.goto('about:blank').catch(() => {});
+    return false;
+  }
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
 }

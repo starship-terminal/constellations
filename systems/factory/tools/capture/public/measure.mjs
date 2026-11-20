@@ -558,11 +558,20 @@ async function docs() {
   await S('docs-card', q('a, div').filter({ hasText: /QUICKSTART GUIDE|Ship Code Faster|Start with a surface/i }).filter({ visible: true }).last(), ['default', 'hover'], { group: g, title: 'Docs link card', desc: 'A docs path card (QUICKSTART GUIDE / "Ship Code Faster"); measured, never followed.', sel: 'docs path card' });
   // Whole-surface dark: the same components re-read after the theme selector
   // switches the page to data-theme="dark".
+  // The dark pass runs only when the switch really painted dark, and every
+  // dark reading re-checks the root attribute first: a failed switch never
+  // saves light styles as dark readings (2026-11 audit, 17-5; not run since).
   const before = { dark: async () => setDocsTheme('Dark') };
-  await S('docs-h1-dk', q('h1').filter({ visible: true }).first(), ['dark'], { group: g, title: 'Docs headline (dark)', desc: 'The docs masthead re-measured after the theme selector switched the page to dark.', sel: 'docs h1, dark theme' }, { noScroll: true, before });
-  await S('docs-sidebar-dk', q('aside, nav').filter({ hasText: /Start Here|Documentation/ }).filter({ visible: true }).first(), ['dark'], { group: g, title: 'Docs sidebar (dark)', desc: 'The sidebar re-measured in dark.', sel: 'docs sidebar, dark theme' }, { noScroll: true, before: { dark: async () => 'still dark from the previous toggle' } });
-  await S('docs-code-dk', q('pre, [data-rehype-pretty-code-figure], figure').filter({ visible: true }).first(), ['dark'], { group: g, title: 'Code block (dark)', desc: 'The code block re-measured in dark (the --shiki-dark palette).', sel: 'docs pre, dark theme' }, { noScroll: true, before: { dark: async () => 'still dark' } });
-  await S('docs-nav-link-dk', q('aside a, nav a').filter({ hasText: /Available Models/i }).filter({ visible: true }).first(), ['dark', 'hover'], { group: g, title: 'Docs nav link (dark)', desc: 'A sidebar link re-measured in dark; measured, never followed.', sel: 'docs sidebar a, dark theme' }, { noScroll: true });
+  const isDark = async () => (await page.evaluate(() => document.documentElement.getAttribute('data-theme')).catch(() => null)) === 'dark';
+  let darkOk = await before.dark().then(() => true, (e) => { log('  docs dark pass skipped:', e.message); return false; });
+  if (darkOk && !(await isDark())) { log('  docs page left dark; remaining dark readings skipped'); darkOk = false; }
+  if (darkOk) await S('docs-h1-dk', q('h1').filter({ visible: true }).first(), ['dark'], { group: g, title: 'Docs headline (dark)', desc: 'The docs masthead re-measured after the theme selector switched the page to dark.', sel: 'docs h1, dark theme' }, { noScroll: true, before });
+  if (darkOk && !(await isDark())) { log('  docs page left dark; remaining dark readings skipped'); darkOk = false; }
+  if (darkOk) await S('docs-sidebar-dk', q('aside, nav').filter({ hasText: /Start Here|Documentation/ }).filter({ visible: true }).first(), ['dark'], { group: g, title: 'Docs sidebar (dark)', desc: 'The sidebar re-measured in dark.', sel: 'docs sidebar, dark theme' }, { noScroll: true, before: { dark: async () => 'still dark from the previous toggle' } });
+  if (darkOk && !(await isDark())) { log('  docs page left dark; remaining dark readings skipped'); darkOk = false; }
+  if (darkOk) await S('docs-code-dk', q('pre, [data-rehype-pretty-code-figure], figure').filter({ visible: true }).first(), ['dark'], { group: g, title: 'Code block (dark)', desc: 'The code block re-measured in dark (the --shiki-dark palette).', sel: 'docs pre, dark theme' }, { noScroll: true, before: { dark: async () => 'still dark' } });
+  if (darkOk && !(await isDark())) { log('  docs page left dark; remaining dark readings skipped'); darkOk = false; }
+  if (darkOk) await S('docs-nav-link-dk', q('aside a, nav a').filter({ hasText: /Available Models/i }).filter({ visible: true }).first(), ['dark', 'hover'], { group: g, title: 'Docs nav link (dark)', desc: 'A sidebar link re-measured in dark; measured, never followed.', sel: 'docs sidebar a, dark theme' }, { noScroll: true });
   save();
 }
 
