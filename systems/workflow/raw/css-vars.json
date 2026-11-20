@@ -1,0 +1,4692 @@
+{
+ "captured": "2026-11-21",
+ "source": "https://www.workflow.design/ stylesheets, read live in headless Chromium. Cross-origin sheets that the CSSOM could read.",
+ "theme": "light only. No data-theme or .dark switch was found on the marketing pages.",
+ "rules": [
+  {
+   "selector": ":where(.w-popover, .w-modal)",
+   "context": [],
+   "href": "https://cdn.prod.website-files.com/65d3a3d06680835353585bbc/css/workflowdesign.webflow.shared.7c8519164.min.css",
+   "properties": {
+    "--w-backdrop-animation": "initial"
+   }
+  },
+  {
+   "selector": ":root",
+   "context": [],
+   "href": "https://cdn.prod.website-files.com/65d3a3d06680835353585bbc/css/workflowdesign.webflow.67d476d2311995427a7876bf.577007f59.opt.min.css",
+   "properties": {
+    "--color--surface--default": "var(--color--base--white)",
+    "--type--body": "Inter,Arial,sans-serif",
+    "--color--text--default": "var(--color--base--black)",
+    "--type--display": "\"Crimson Pro\",\"Times New Roman\",sans-serif",
+    "--color--surface--invert": "var(--color--base--black)",
+    "--color--text--weak": "#1a1a1aa6",
+    "--space--xs": "12px",
+    "--color--base--black": "#1a1a1a",
+    "--color--border--default": "#1a1a1a1f",
+    "--radius--medium": "8px",
+    "--color--base--black-50": "#1a1a1a80",
+    "--color--base--white": "white",
+    "--legacy--hover": "#353532",
+    "--color--surface--secondary": "#f3f3f3",
+    "--color--base--black-80": "#1a1a1acc",
+    "--color--base--black-10": "#1a1a1a1a",
+    "--radius--full": "9999px",
+    "--radius--small": "4px",
+    "--legacy--secondary": "#555",
+    "--legacy--light-text": "#e3e3e3",
+    "--legacy--tertiary": "#797979",
+    "--radius--large": "12px",
+    "--color--text--disabled": "#1a1a1a4d",
+    "--color--base--black-30": "#1a1a1a4d",
+    "--color--surface--strong": "#ececec",
+    "--color--surface--medium": "#f6f6f6",
+    "--color--shadow--comment": "#1a1a1a14",
+    "--color--icon--weak": "var(--color--text--weak)",
+    "--color--success--text": "#547e69",
+    "--color--text--invert": "#f6f6f6",
+    "--color--border--weak": "#1a1a1a0f",
+    "--color--icon--default": "#1a1a1ae6",
+    "--color--surface--light": "#f9f9f9",
+    "--success--border-active<deleted|variable-b58fd7fc-be69-cc70-a2c3-ce5f32b318c1>": "#74a486",
+    "--color--error--border": "#d99ba4",
+    "--color--error--text": "#923d56",
+    "--color--surface--invert-medium": "#1a1a1acc",
+    "--color--icon--invert": "#f6f6f6e6",
+    "--color--success--surface-medium": "#e9f6ee",
+    "--space--4xl": "80px",
+    "--space--lg": "32px",
+    "--space--md": "24px",
+    "--space--3xs": "4px",
+    "--space--5xl": "112px",
+    "--space--2xl": "48px",
+    "--space--2xs": "8px",
+    "--space--sm": "16px",
+    "--color--surface--page": "#f6f4f0",
+    "--space--xl": "40px",
+    "--space--3xl": "72px",
+    "--space--6xl": "144px",
+    "--color--success--border": "#9dbfad",
+    "--color--base--black-70": "#1a1a1ab3",
+    "--legacy--error-bg": "#ff002e08",
+    "--legacy--error-highlight": "#ff002e0d",
+    "--legacy--surface-strong": "var(--color--surface--strong)",
+    "--color--surface--invert-strong": "#1a1a1a80",
+    "--color--text--invert-weak": "#f6f6f6a6",
+    "--color--border--active": "#1a1a1acc",
+    "--color--border--hover": "#1a1a1a33",
+    "--color--icon--hover": "#1a1a1a",
+    "--color--icon--invert-hover": "#f6f6f6",
+    "--color--error--surface": "#faebed",
+    "--color--error--surface-hover": "#f6dbe0",
+    "--color--error--surface-active": "#f1c8ce",
+    "--color--error--text-hover": "#8a3853",
+    "--color--error--border-hover": "#ce6878",
+    "--color--error--icon": "#923d56",
+    "--color--error--icon-hover": "#9e4a5d",
+    "--color--success--surface": "#f1fcf6",
+    "--color--success--surface-strong": "#c4e6d5",
+    "--color--success--text-weak": "#60886f",
+    "--color--success--icon": "#547e69",
+    "--color--success--icon-weak": "var(--color--success--icon)",
+    "--color--success--border-weak": "#74a486",
+    "--color--overlay--70": "#000000b3",
+    "--color--overlay--50": "#00000080",
+    "--color--overlay--30": "#0000004d",
+    "--color--shadow--comment-dark": "#1a1a1a21",
+    "--legacy--comment-shadow-1": "var(--color--shadow--comment)",
+    "--legacy--comment-shadow-2": "var(--color--shadow--comment)",
+    "--legacy--comment-shadow-3": "var(--color--shadow--comment)",
+    "--legacy--comment-shadow-4": "var(--color--shadow--comment)",
+    "--legacy--comment-shadow-5": "var(--color--shadow--comment)"
+   }
+  },
+  {
+   "selector": "*, ::before, ::after, ::backdrop",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b))))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-translate-z": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-scale-z": "1",
+    "--tw-rotate-x": "initial",
+    "--tw-rotate-y": "initial",
+    "--tw-rotate-z": "initial",
+    "--tw-skew-x": "initial",
+    "--tw-skew-y": "initial",
+    "--tw-space-y-reverse": "0",
+    "--tw-space-x-reverse": "0",
+    "--tw-divide-x-reverse": "0",
+    "--tw-border-style": "solid",
+    "--tw-divide-y-reverse": "0",
+    "--tw-gradient-position": "initial",
+    "--tw-gradient-from": "#0000",
+    "--tw-gradient-via": "#0000",
+    "--tw-gradient-to": "#0000",
+    "--tw-gradient-stops": "initial",
+    "--tw-gradient-via-stops": "initial",
+    "--tw-gradient-from-position": "0%",
+    "--tw-gradient-via-position": "50%",
+    "--tw-gradient-to-position": "100%",
+    "--tw-leading": "initial",
+    "--tw-font-weight": "initial",
+    "--tw-tracking": "initial",
+    "--tw-ordinal": "initial",
+    "--tw-slashed-zero": "initial",
+    "--tw-numeric-figure": "initial",
+    "--tw-numeric-spacing": "initial",
+    "--tw-numeric-fraction": "initial",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-color": "initial",
+    "--tw-shadow-alpha": "100%",
+    "--tw-inset-shadow": "0 0 #0000",
+    "--tw-inset-shadow-color": "initial",
+    "--tw-inset-shadow-alpha": "100%",
+    "--tw-ring-color": "initial",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-inset-ring-color": "initial",
+    "--tw-inset-ring-shadow": "0 0 #0000",
+    "--tw-ring-inset": "initial",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-outline-style": "solid",
+    "--tw-blur": "initial",
+    "--tw-brightness": "initial",
+    "--tw-contrast": "initial",
+    "--tw-grayscale": "initial",
+    "--tw-hue-rotate": "initial",
+    "--tw-invert": "initial",
+    "--tw-opacity": "initial",
+    "--tw-saturate": "initial",
+    "--tw-sepia": "initial",
+    "--tw-drop-shadow": "initial",
+    "--tw-drop-shadow-color": "initial",
+    "--tw-drop-shadow-alpha": "100%",
+    "--tw-drop-shadow-size": "initial",
+    "--tw-backdrop-blur": "initial",
+    "--tw-backdrop-brightness": "initial",
+    "--tw-backdrop-contrast": "initial",
+    "--tw-backdrop-grayscale": "initial",
+    "--tw-backdrop-hue-rotate": "initial",
+    "--tw-backdrop-invert": "initial",
+    "--tw-backdrop-opacity": "initial",
+    "--tw-backdrop-saturate": "initial",
+    "--tw-backdrop-sepia": "initial",
+    "--tw-duration": "initial",
+    "--tw-ease": "initial",
+    "--tw-content": "\"\""
+   }
+  },
+  {
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--font-sans": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "--font-serif": "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+    "--font-mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "--color-red-50": "oklch(97.1% .013 17.38)",
+    "--color-red-200": "oklch(88.5% .062 18.334)",
+    "--color-red-300": "oklch(80.8% .114 19.571)",
+    "--color-red-400": "oklch(70.4% .191 22.216)",
+    "--color-red-500": "oklch(63.7% .237 25.331)",
+    "--color-red-600": "oklch(57.7% .245 27.325)",
+    "--color-red-700": "oklch(50.5% .213 27.518)",
+    "--color-red-800": "oklch(44.4% .177 26.899)",
+    "--color-orange-300": "oklch(83.7% .128 66.29)",
+    "--color-orange-400": "oklch(75% .183 55.934)",
+    "--color-orange-600": "oklch(64.6% .222 41.116)",
+    "--color-orange-700": "oklch(55.3% .195 38.402)",
+    "--color-amber-50": "oklch(98.7% .022 95.277)",
+    "--color-amber-200": "oklch(92.4% .12 95.746)",
+    "--color-amber-300": "oklch(87.9% .169 91.605)",
+    "--color-amber-400": "oklch(82.8% .189 84.429)",
+    "--color-amber-500": "oklch(76.9% .188 70.08)",
+    "--color-amber-600": "oklch(66.6% .179 58.318)",
+    "--color-amber-700": "oklch(55.5% .163 48.998)",
+    "--color-amber-800": "oklch(47.3% .137 46.201)",
+    "--color-amber-900": "oklch(41.4% .112 45.904)",
+    "--color-amber-950": "oklch(27.9% .077 45.635)",
+    "--color-yellow-400": "oklch(85.2% .199 91.936)",
+    "--color-yellow-700": "oklch(55.4% .135 66.442)",
+    "--color-lime-600": "oklch(64.8% .2 131.684)",
+    "--color-lime-700": "oklch(53.2% .157 131.589)",
+    "--color-green-200": "oklch(92.5% .084 155.995)",
+    "--color-green-300": "oklch(87.1% .15 154.449)",
+    "--color-green-400": "oklch(79.2% .209 151.711)",
+    "--color-green-500": "oklch(72.3% .219 149.579)",
+    "--color-green-600": "oklch(62.7% .194 149.214)",
+    "--color-green-700": "oklch(52.7% .154 150.069)",
+    "--color-green-800": "oklch(44.8% .119 151.328)",
+    "--color-emerald-300": "oklch(84.5% .143 164.978)",
+    "--color-emerald-500": "oklch(69.6% .17 162.48)",
+    "--color-emerald-600": "oklch(59.6% .145 163.225)",
+    "--color-emerald-700": "oklch(50.8% .118 165.612)",
+    "--color-teal-300": "oklch(85.5% .138 181.071)",
+    "--color-teal-600": "oklch(60% .118 184.704)",
+    "--color-teal-700": "oklch(51.1% .096 186.391)",
+    "--color-cyan-200": "oklch(91.7% .08 205.041)",
+    "--color-cyan-300": "oklch(86.5% .127 207.078)",
+    "--color-cyan-400": "oklch(78.9% .154 211.53)",
+    "--color-cyan-500": "oklch(71.5% .143 215.221)",
+    "--color-cyan-600": "oklch(60.9% .126 221.723)",
+    "--color-cyan-700": "oklch(52% .105 223.128)",
+    "--color-cyan-900": "oklch(39.8% .07 227.392)",
+    "--color-sky-300": "oklch(82.8% .111 230.318)",
+    "--color-sky-500": "oklch(68.5% .169 237.323)",
+    "--color-sky-600": "oklch(58.8% .158 241.966)",
+    "--color-sky-700": "oklch(50% .134 242.749)",
+    "--color-blue-400": "oklch(70.7% .165 254.624)",
+    "--color-blue-600": "oklch(54.6% .245 262.881)",
+    "--color-indigo-300": "oklch(78.5% .115 274.713)",
+    "--color-indigo-600": "oklch(51.1% .262 276.966)",
+    "--color-indigo-700": "oklch(45.7% .24 277.023)",
+    "--color-violet-300": "oklch(81.1% .111 293.571)",
+    "--color-violet-600": "oklch(54.1% .281 293.009)",
+    "--color-violet-700": "oklch(49.1% .27 292.581)",
+    "--color-purple-300": "oklch(82.7% .119 306.383)",
+    "--color-purple-400": "oklch(71.4% .203 305.504)",
+    "--color-purple-600": "oklch(55.8% .288 302.321)",
+    "--color-purple-700": "oklch(49.6% .265 301.924)",
+    "--color-fuchsia-300": "oklch(83.3% .145 321.434)",
+    "--color-fuchsia-400": "oklch(74% .238 322.16)",
+    "--color-fuchsia-600": "oklch(59.1% .293 322.896)",
+    "--color-fuchsia-700": "oklch(51.8% .253 323.949)",
+    "--color-pink-300": "oklch(82.3% .12 346.018)",
+    "--color-pink-600": "oklch(59.2% .249 .584)",
+    "--color-pink-700": "oklch(52.5% .223 3.958)",
+    "--color-rose-300": "oklch(81% .117 11.638)",
+    "--color-rose-500": "oklch(64.5% .246 16.439)",
+    "--color-rose-600": "oklch(58.6% .253 17.585)",
+    "--color-rose-700": "oklch(51.4% .222 16.935)",
+    "--color-slate-950": "oklch(12.9% .042 264.695)",
+    "--color-gray-500": "oklch(55.1% .027 264.364)",
+    "--color-gray-700": "oklch(37.3% .034 259.733)",
+    "--color-zinc-300": "oklch(87.1% .006 286.286)",
+    "--color-zinc-600": "oklch(44.2% .017 285.786)",
+    "--color-zinc-700": "oklch(37% .013 285.805)",
+    "--color-neutral-50": "oklch(98.5% 0 0)",
+    "--color-neutral-100": "oklch(97% 0 0)",
+    "--color-neutral-200": "oklch(92.2% 0 0)",
+    "--color-neutral-300": "oklch(87% 0 0)",
+    "--color-neutral-500": "oklch(55.6% 0 0)",
+    "--color-neutral-600": "oklch(43.9% 0 0)",
+    "--color-neutral-800": "oklch(26.9% 0 0)",
+    "--color-neutral-900": "oklch(20.5% 0 0)",
+    "--color-neutral-950": "oklch(14.5% 0 0)",
+    "--color-stone-900": "oklch(21.6% .006 56.043)",
+    "--color-black": "#000",
+    "--color-white": "#fff",
+    "--spacing": ".25rem",
+    "--container-xs": "20rem",
+    "--container-sm": "24rem",
+    "--container-md": "28rem",
+    "--container-lg": "32rem",
+    "--container-xl": "36rem",
+    "--container-2xl": "42rem",
+    "--container-3xl": "48rem",
+    "--container-4xl": "56rem",
+    "--container-5xl": "64rem",
+    "--container-6xl": "72rem",
+    "--text-xs": ".75rem",
+    "--text-xs--line-height": "calc(1 / .75)",
+    "--text-sm": ".875rem",
+    "--text-sm--line-height": "calc(1.25 / .875)",
+    "--text-base": "1rem",
+    "--text-base--line-height": "calc(1.5 / 1)",
+    "--text-lg": "1.125rem",
+    "--text-lg--line-height": "calc(1.75 / 1.125)",
+    "--text-xl": "1.25rem",
+    "--text-xl--line-height": "calc(1.75 / 1.25)",
+    "--text-2xl": "1.5rem",
+    "--text-2xl--line-height": "calc(2 / 1.5)",
+    "--text-3xl": "1.875rem",
+    "--text-3xl--line-height": "calc(2.25 / 1.875)",
+    "--text-5xl": "3rem",
+    "--text-5xl--line-height": "1",
+    "--font-weight-normal": "400",
+    "--font-weight-medium": "500",
+    "--font-weight-semibold": "600",
+    "--font-weight-bold": "700",
+    "--font-weight-extrabold": "800",
+    "--tracking-tight": "-.025em",
+    "--tracking-normal": "0em",
+    "--tracking-wide": ".025em",
+    "--leading-tight": "1.25",
+    "--leading-snug": "1.375",
+    "--leading-normal": "1.5",
+    "--leading-relaxed": "1.625",
+    "--radius-xs": ".125rem",
+    "--radius-sm": ".25rem",
+    "--radius-md": ".375rem",
+    "--radius-lg": ".5rem",
+    "--radius-xl": ".75rem",
+    "--radius-2xl": "1rem",
+    "--radius-3xl": "1.5rem",
+    "--ease-in": "cubic-bezier(.4, 0, 1, 1)",
+    "--ease-out": "cubic-bezier(0, 0, .2, 1)",
+    "--animate-spin": "spin 1s linear infinite",
+    "--animate-pulse": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "--blur-sm": "8px",
+    "--aspect-video": "16 / 9",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+    "--default-font-family": "var(--font-sans)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--color-primary-heading": "var(--null)",
+    "--color-user-primary": "var(--null)",
+    "--color-user-complimentary": "var(--null)",
+    "--color-on-primary": "var(--null)",
+    "--font-heading": "var(--null)",
+    "--font-body": "var(--null)",
+    "--font-heading-weight": "var(--null)",
+    "--font-body-weight": "var(--null)",
+    "--color-ok": "var(--color-ok-value)",
+    "--color-ok-bg": "var(--color-ok-bg-value)",
+    "--color-ok-fg": "var(--color-ok-fg-value)",
+    "--color-warn": "var(--color-warn-value)",
+    "--color-warn-bg": "var(--color-warn-bg-value)",
+    "--color-warn-fg": "var(--color-warn-fg-value)",
+    "--color-danger": "var(--color-danger-value)",
+    "--color-danger-bg": "var(--color-danger-bg-value)",
+    "--color-danger-fg": "var(--color-danger-fg-value)",
+    "--color-info": "var(--color-info-value)",
+    "--color-info-bg": "var(--color-info-bg-value)",
+    "--color-info-fg": "var(--color-info-fg-value)",
+    "--color-canvas": "var(--color-canvas-value)",
+    "--color-canvas-subtle": "var(--color-canvas-subtle-value)",
+    "--color-canvas-muted": "var(--color-canvas-muted-value)",
+    "--color-surface": "var(--color-surface-value)",
+    "--color-surface-raised": "var(--color-surface-raised-value)",
+    "--color-surface-overlay": "var(--color-surface-overlay-value)",
+    "--color-fg": "var(--color-fg-value)",
+    "--color-fg-secondary": "var(--color-fg-secondary-value)",
+    "--color-fg-muted": "var(--color-fg-muted-value)",
+    "--color-fg-inverted": "var(--color-fg-inverted-value)",
+    "--color-line": "var(--color-line-value)",
+    "--color-line-muted": "var(--color-line-muted-value)",
+    "--color-line-subtle": "var(--color-line-subtle-value)",
+    "--radius-card": ".75rem",
+    "--max-width-container": "93rem",
+    "--color-panel": "var(--null)",
+    "--color-fill": "var(--null)",
+    "--color-card": "var(--null)",
+    "--color-fill-mine": "var(--null)",
+    "--color-fill-inner": "var(--null)",
+    "--color-fill-inset": "var(--null)",
+    "--color-ink": "var(--null)",
+    "--color-ink-2": "var(--null)",
+    "--color-ink-3": "var(--null)",
+    "--color-hairline": "var(--null)",
+    "--color-hover": "var(--null)",
+    "--color-ink-faint": "var(--null)",
+    "--color-brand": "var(--null)",
+    "--color-on-brand": "var(--null)",
+    "--color-ai-tile": "var(--null)",
+    "--color-ai-tile-icon": "var(--null)",
+    "--color-citation": "var(--null)",
+    "--color-citation-text": "var(--null)",
+    "--color-brand-text": "var(--null)",
+    "--radius-field": "12px",
+    "--radius-button": "8px",
+    "--radius-row": "10px",
+    "--ease-fd-out": "cubic-bezier(.22, 1, .36, 1)",
+    "--ease-fd-in": "cubic-bezier(.4, 0, 1, 1)"
+   }
+  },
+  {
+   "selector": "input:where([type=\"text\"]), input:where(:not([type])), input:where([type=\"email\"]), input:where([type=\"url\"]), input:where([type=\"password\"]), input:where([type=\"number\"]), input:where([type=\"date\"]), input:where([type=\"datetime-local\"]), input:where([type=\"month\"]), input:where([type=\"search\"]), input:where([type=\"tel\"]), input:where([type=\"time\"]), input:where([type=\"week\"]), select:where([multiple]), textarea, select",
+   "context": [
+    "@layer base"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 0 #0000"
+   }
+  },
+  {
+   "selector": ":is(input:where([type=\"text\"]), input:where(:not([type])), input:where([type=\"email\"]), input:where([type=\"url\"]), input:where([type=\"password\"]), input:where([type=\"number\"]), input:where([type=\"date\"]), input:where([type=\"datetime-local\"]), input:where([type=\"month\"]), input:where([type=\"search\"]), input:where([type=\"tel\"]), input:where([type=\"time\"]), input:where([type=\"week\"]), select:where([multiple]), textarea, select):focus",
+   "context": [
+    "@layer base"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-inset": "var(--tw-empty, )",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "oklch(54.6% .245 262.881)",
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   }
+  },
+  {
+   "selector": "input:where([type=\"checkbox\"]), input:where([type=\"radio\"])",
+   "context": [
+    "@layer base"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 0 #0000"
+   }
+  },
+  {
+   "selector": "input:where([type=\"checkbox\"]):focus, input:where([type=\"radio\"]):focus",
+   "context": [
+    "@layer base"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-inset": "var(--tw-empty, )",
+    "--tw-ring-offset-width": "2px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "oklch(54.6% .245 262.881)",
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   }
+  },
+  {
+   "selector": ".prose",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-prose-body": "oklch(37.3% .034 259.733)",
+    "--tw-prose-headings": "oklch(21% .034 264.665)",
+    "--tw-prose-lead": "oklch(44.6% .03 256.802)",
+    "--tw-prose-links": "oklch(21% .034 264.665)",
+    "--tw-prose-bold": "oklch(21% .034 264.665)",
+    "--tw-prose-counters": "oklch(55.1% .027 264.364)",
+    "--tw-prose-bullets": "oklch(87.2% .01 258.338)",
+    "--tw-prose-hr": "oklch(92.8% .006 264.531)",
+    "--tw-prose-quotes": "oklch(21% .034 264.665)",
+    "--tw-prose-quote-borders": "oklch(92.8% .006 264.531)",
+    "--tw-prose-captions": "oklch(55.1% .027 264.364)",
+    "--tw-prose-kbd": "oklch(21% .034 264.665)",
+    "--tw-prose-kbd-shadows": "oklab(21% -.00316127 -.0338527/.1)",
+    "--tw-prose-code": "oklch(21% .034 264.665)",
+    "--tw-prose-pre-code": "oklch(92.8% .006 264.531)",
+    "--tw-prose-pre-bg": "oklch(27.8% .033 256.848)",
+    "--tw-prose-th-borders": "oklch(87.2% .01 258.338)",
+    "--tw-prose-td-borders": "oklch(92.8% .006 264.531)",
+    "--tw-prose-invert-body": "oklch(87.2% .01 258.338)",
+    "--tw-prose-invert-headings": "#fff",
+    "--tw-prose-invert-lead": "oklch(70.7% .022 261.325)",
+    "--tw-prose-invert-links": "#fff",
+    "--tw-prose-invert-bold": "#fff",
+    "--tw-prose-invert-counters": "oklch(70.7% .022 261.325)",
+    "--tw-prose-invert-bullets": "oklch(44.6% .03 256.802)",
+    "--tw-prose-invert-hr": "oklch(37.3% .034 259.733)",
+    "--tw-prose-invert-quotes": "oklch(96.7% .003 264.542)",
+    "--tw-prose-invert-quote-borders": "oklch(37.3% .034 259.733)",
+    "--tw-prose-invert-captions": "oklch(70.7% .022 261.325)",
+    "--tw-prose-invert-kbd": "#fff",
+    "--tw-prose-invert-kbd-shadows": "#ffffff1a",
+    "--tw-prose-invert-code": "#fff",
+    "--tw-prose-invert-pre-code": "oklch(87.2% .01 258.338)",
+    "--tw-prose-invert-pre-bg": "#00000080",
+    "--tw-prose-invert-th-borders": "oklch(44.6% .03 256.802)",
+    "--tw-prose-invert-td-borders": "oklch(37.3% .034 259.733)"
+   }
+  },
+  {
+   "selector": ".-translate-x-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-translate-x": "calc(calc(1 / 2 * 100%) * -1)"
+   }
+  },
+  {
+   "selector": ".-translate-y-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-translate-y": "calc(calc(1 / 2 * 100%) * -1)"
+   }
+  },
+  {
+   "selector": ".scale-80",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "80%",
+    "--tw-scale-y": "80%",
+    "--tw-scale-z": "80%"
+   }
+  },
+  {
+   "selector": ".scale-95",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "95%",
+    "--tw-scale-y": "95%",
+    "--tw-scale-z": "95%"
+   }
+  },
+  {
+   "selector": ".scale-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   }
+  },
+  {
+   "selector": ":where(.space-y-1 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   }
+  },
+  {
+   "selector": ":where(.space-y-1\\.5 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   }
+  },
+  {
+   "selector": ":where(.space-y-2 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   }
+  },
+  {
+   "selector": ":where(.space-y-2\\.5 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   }
+  },
+  {
+   "selector": ":where(.space-y-3 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   }
+  },
+  {
+   "selector": ":where(.space-y-8\\.5 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   }
+  },
+  {
+   "selector": ":where(.space-x-6 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   }
+  },
+  {
+   "selector": ":where(.divide-x > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-divide-x-reverse": "0"
+   }
+  },
+  {
+   "selector": ":where(.divide-y > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-divide-y-reverse": "0"
+   }
+  },
+  {
+   "selector": ".border-dashed",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-border-style": "dashed"
+   }
+  },
+  {
+   "selector": ".border-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-border-style": "none"
+   }
+  },
+  {
+   "selector": ".bg-linear-to-b",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   }
+  },
+  {
+   "selector": ".bg-linear-to-b",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   }
+  },
+  {
+   "selector": ".bg-gradient-to-b",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   }
+  },
+  {
+   "selector": ".bg-gradient-to-t",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to top in oklab"
+   }
+  },
+  {
+   "selector": ".from-amber-500\\/7",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#f99c0012"
+   }
+  },
+  {
+   "selector": ".from-amber-500\\/7",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-amber-500) 7%, transparent)"
+   }
+  },
+  {
+   "selector": ".from-amber-500\\/7",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".from-canvas",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "var(--color-canvas)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".from-cyan-500\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#00b7d70d"
+   }
+  },
+  {
+   "selector": ".from-cyan-500\\/5",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-cyan-500) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".from-cyan-500\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".from-green-500\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#00c7580d"
+   }
+  },
+  {
+   "selector": ".from-green-500\\/5",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-green-500) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".from-green-500\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".from-neutral-50\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#fafafa0d"
+   }
+  },
+  {
+   "selector": ".from-neutral-50\\/5",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-neutral-50) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".from-neutral-50\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".from-red-500\\/4",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#fb2c360a"
+   }
+  },
+  {
+   "selector": ".from-red-500\\/4",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-red-500) 4%, transparent)"
+   }
+  },
+  {
+   "selector": ".from-red-500\\/4",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".from-slate-950",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "var(--color-slate-950)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".via-amber-500\\/7",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "#f99c0012"
+   }
+  },
+  {
+   "selector": ".via-amber-500\\/7",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-amber-500) 7%, transparent)"
+   }
+  },
+  {
+   "selector": ".via-amber-500\\/7",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   }
+  },
+  {
+   "selector": ".via-green-500\\/7",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "#00c75812"
+   }
+  },
+  {
+   "selector": ".via-green-500\\/7",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-green-500) 7%, transparent)"
+   }
+  },
+  {
+   "selector": ".via-green-500\\/7",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   }
+  },
+  {
+   "selector": ".via-neutral-50\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "#fafafa0d"
+   }
+  },
+  {
+   "selector": ".via-neutral-50\\/5",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-neutral-50) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".via-neutral-50\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   }
+  },
+  {
+   "selector": ".via-red-500\\/4",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "#fb2c360a"
+   }
+  },
+  {
+   "selector": ".via-red-500\\/4",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-red-500) 4%, transparent)"
+   }
+  },
+  {
+   "selector": ".via-red-500\\/4",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   }
+  },
+  {
+   "selector": ".via-violet-600",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "var(--color-violet-600)",
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   }
+  },
+  {
+   "selector": ".to-amber-500\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#f99c001a"
+   }
+  },
+  {
+   "selector": ".to-amber-500\\/10",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-amber-500) 10%, transparent)"
+   }
+  },
+  {
+   "selector": ".to-amber-500\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".to-cyan-500\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#00b7d71a"
+   }
+  },
+  {
+   "selector": ".to-cyan-500\\/10",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-cyan-500) 10%, transparent)"
+   }
+  },
+  {
+   "selector": ".to-cyan-500\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".to-fuchsia-400",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "var(--color-fuchsia-400)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".to-green-500\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#00c7581a"
+   }
+  },
+  {
+   "selector": ".to-green-500\\/10",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-green-500) 10%, transparent)"
+   }
+  },
+  {
+   "selector": ".to-green-500\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".to-neutral-300\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#d4d4d40d"
+   }
+  },
+  {
+   "selector": ".to-neutral-300\\/5",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-neutral-300) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".to-neutral-300\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".to-red-500\\/8",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#fb2c3614"
+   }
+  },
+  {
+   "selector": ".to-red-500\\/8",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-red-500) 8%, transparent)"
+   }
+  },
+  {
+   "selector": ".to-red-500\\/8",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".to-transparent",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "transparent",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".leading-4",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "calc(var(--spacing) * 4)"
+   }
+  },
+  {
+   "selector": ".leading-5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "calc(var(--spacing) * 5)"
+   }
+  },
+  {
+   "selector": ".leading-6",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "calc(var(--spacing) * 6)"
+   }
+  },
+  {
+   "selector": ".leading-7",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "calc(var(--spacing) * 7)"
+   }
+  },
+  {
+   "selector": ".leading-9",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "calc(var(--spacing) * 9)"
+   }
+  },
+  {
+   "selector": ".leading-\\[0\\.92\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": ".92"
+   }
+  },
+  {
+   "selector": ".leading-\\[1\\.3\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "1.3"
+   }
+  },
+  {
+   "selector": ".leading-\\[1\\.4\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "1.4"
+   }
+  },
+  {
+   "selector": ".leading-\\[1\\.6\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "1.6"
+   }
+  },
+  {
+   "selector": ".leading-\\[1\\.7\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "1.7"
+   }
+  },
+  {
+   "selector": ".leading-\\[1\\.25\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "1.25"
+   }
+  },
+  {
+   "selector": ".leading-\\[1\\.45\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "1.45"
+   }
+  },
+  {
+   "selector": ".leading-\\[1\\.55\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "1.55"
+   }
+  },
+  {
+   "selector": ".leading-\\[18px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "18px"
+   }
+  },
+  {
+   "selector": ".leading-\\[inherit\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "inherit"
+   }
+  },
+  {
+   "selector": ".leading-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "1"
+   }
+  },
+  {
+   "selector": ".leading-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "var(--leading-normal)"
+   }
+  },
+  {
+   "selector": ".leading-relaxed",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "var(--leading-relaxed)"
+   }
+  },
+  {
+   "selector": ".leading-snug",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "var(--leading-snug)"
+   }
+  },
+  {
+   "selector": ".font-bold",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-bold)"
+   }
+  },
+  {
+   "selector": ".font-extrabold",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-extrabold)"
+   }
+  },
+  {
+   "selector": ".font-medium",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   }
+  },
+  {
+   "selector": ".font-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-normal)"
+   }
+  },
+  {
+   "selector": ".font-semibold",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-semibold)"
+   }
+  },
+  {
+   "selector": ".tracking-\\[-0\\.025em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-tracking": "-.025em"
+   }
+  },
+  {
+   "selector": ".tracking-\\[\\.02em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-tracking": ".02em"
+   }
+  },
+  {
+   "selector": ".tracking-\\[0\\.2em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-tracking": ".2em"
+   }
+  },
+  {
+   "selector": ".tracking-\\[0\\.06em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-tracking": ".06em"
+   }
+  },
+  {
+   "selector": ".tracking-\\[0\\.08em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-tracking": ".08em"
+   }
+  },
+  {
+   "selector": ".tracking-\\[0\\.14em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-tracking": ".14em"
+   }
+  },
+  {
+   "selector": ".tracking-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-tracking": "var(--tracking-normal)"
+   }
+  },
+  {
+   "selector": ".tracking-tight",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-tracking": "var(--tracking-tight)"
+   }
+  },
+  {
+   "selector": ".tracking-wide",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-tracking": "var(--tracking-wide)"
+   }
+  },
+  {
+   "selector": ".ordinal",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ordinal": "ordinal"
+   }
+  },
+  {
+   "selector": ".tabular-nums",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-numeric-spacing": "tabular-nums"
+   }
+  },
+  {
+   "selector": ".shadow",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+   }
+  },
+  {
+   "selector": ".shadow-2xl",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 25px 50px -12px var(--tw-shadow-color,#00000040)"
+   }
+  },
+  {
+   "selector": ".shadow-\\[0_0_0_2px_var\\(--color-fill\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 0 0 2px var(--tw-shadow-color,var(--color-fill))"
+   }
+  },
+  {
+   "selector": ".shadow-\\[0_0_0_2px_var\\(--color-panel\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 0 0 2px var(--tw-shadow-color,var(--color-panel))"
+   }
+  },
+  {
+   "selector": ".shadow-\\[inset_0_-1px_0_var\\(--color-hairline\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "inset 0 -1px 0 var(--tw-shadow-color,var(--color-hairline))"
+   }
+  },
+  {
+   "selector": ".shadow-\\[var\\(--focus-ring\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "var(--focus-ring)"
+   }
+  },
+  {
+   "selector": ".shadow-lg",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 10px 15px -3px var(--tw-shadow-color,#0000001a), 0 4px 6px -4px var(--tw-shadow-color,#0000001a)"
+   }
+  },
+  {
+   "selector": ".shadow-md",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 4px 6px -1px var(--tw-shadow-color,#0000001a), 0 2px 4px -2px var(--tw-shadow-color,#0000001a)"
+   }
+  },
+  {
+   "selector": ".shadow-ring",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "var(--fd-shadow-ring)"
+   }
+  },
+  {
+   "selector": ".shadow-sm",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+   }
+  },
+  {
+   "selector": ".shadow-xs",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 1px 2px 0 var(--tw-shadow-color,#0000000d)"
+   }
+  },
+  {
+   "selector": ".ring",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   }
+  },
+  {
+   "selector": ".ring-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   }
+  },
+  {
+   "selector": ".ring-1",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   }
+  },
+  {
+   "selector": ".ring-2",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   }
+  },
+  {
+   "selector": ".shadow-black\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "#0000000d"
+   }
+  },
+  {
+   "selector": ".shadow-black\\/5",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "color-mix(in oklab, color-mix(in oklab, var(--color-black) 5%, transparent) var(--tw-shadow-alpha), transparent)"
+   }
+  },
+  {
+   "selector": ".shadow-black\\/20",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "#0003"
+   }
+  },
+  {
+   "selector": ".shadow-black\\/20",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "color-mix(in oklab, color-mix(in oklab, var(--color-black) 20%, transparent) var(--tw-shadow-alpha), transparent)"
+   }
+  },
+  {
+   "selector": ".shadow-black\\/\\[0\\.03\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "#00000008"
+   }
+  },
+  {
+   "selector": ".shadow-black\\/\\[0\\.03\\]",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "color-mix(in oklab, color-mix(in oklab, var(--color-black) 3%, transparent) var(--tw-shadow-alpha), transparent)"
+   }
+  },
+  {
+   "selector": ".shadow-fg\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "var(--color-fg)"
+   }
+  },
+  {
+   "selector": ".shadow-fg\\/5",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "color-mix(in oklab, color-mix(in oklab, var(--color-fg) 5%, transparent) var(--tw-shadow-alpha), transparent)"
+   }
+  },
+  {
+   "selector": ".shadow-stone-900\\/3",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "#1c191708"
+   }
+  },
+  {
+   "selector": ".shadow-stone-900\\/3",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "color-mix(in oklab, color-mix(in oklab, var(--color-stone-900) 3%, transparent) var(--tw-shadow-alpha), transparent)"
+   }
+  },
+  {
+   "selector": ".ring-black\\/5",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "#0000000d"
+   }
+  },
+  {
+   "selector": ".ring-black\\/5",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-black) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".ring-fg",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-fg)"
+   }
+  },
+  {
+   "selector": ".ring-line",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-line)"
+   }
+  },
+  {
+   "selector": ".ring-line-muted",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-line-muted)"
+   }
+  },
+  {
+   "selector": ".ring-transparent",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "transparent"
+   }
+  },
+  {
+   "selector": ".ring-user-primary\\/15",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".ring-user-primary\\/15",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-user-primary) 15%, transparent)"
+   }
+  },
+  {
+   "selector": ".ring-offset-2",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-offset-width": "2px",
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)"
+   }
+  },
+  {
+   "selector": ".blur",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-blur": "blur(8px)"
+   }
+  },
+  {
+   "selector": ".grayscale",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-grayscale": "grayscale(100%)"
+   }
+  },
+  {
+   "selector": ".sepia",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-sepia": "sepia(100%)"
+   }
+  },
+  {
+   "selector": ".backdrop-blur-\\[1px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-backdrop-blur": "blur(1px)"
+   }
+  },
+  {
+   "selector": ".backdrop-blur-sm",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-sm))"
+   }
+  },
+  {
+   "selector": ".duration-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": ".1s"
+   }
+  },
+  {
+   "selector": ".duration-150",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": ".15s"
+   }
+  },
+  {
+   "selector": ".duration-200",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": ".2s"
+   }
+  },
+  {
+   "selector": ".duration-300",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": ".3s"
+   }
+  },
+  {
+   "selector": ".duration-350",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": ".35s"
+   }
+  },
+  {
+   "selector": ".duration-\\[var\\(--dur-fast\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": "var(--dur-fast)"
+   }
+  },
+  {
+   "selector": ".duration-\\[var\\(--dur-normal\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": "var(--dur-normal)"
+   }
+  },
+  {
+   "selector": ".duration-\\[var\\(--dur-slow\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": "var(--dur-slow)"
+   }
+  },
+  {
+   "selector": ".ease-\\[cubic-bezier\\(0\\.34\\,1\\.56\\,0\\.64\\,1\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ease": "cubic-bezier(.34,1.56,.64,1)"
+   }
+  },
+  {
+   "selector": ".ease-fd-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ease": "var(--ease-fd-out)"
+   }
+  },
+  {
+   "selector": ".ease-in",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ease": "var(--ease-in)"
+   }
+  },
+  {
+   "selector": ".ease-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ease": "var(--ease-out)"
+   }
+  },
+  {
+   "selector": ".prose-neutral",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-prose-body": "oklch(37.1% 0 0)",
+    "--tw-prose-headings": "oklch(20.5% 0 0)",
+    "--tw-prose-lead": "oklch(43.9% 0 0)",
+    "--tw-prose-links": "oklch(20.5% 0 0)",
+    "--tw-prose-bold": "oklch(20.5% 0 0)",
+    "--tw-prose-counters": "oklch(55.6% 0 0)",
+    "--tw-prose-bullets": "oklch(87% 0 0)",
+    "--tw-prose-hr": "oklch(92.2% 0 0)",
+    "--tw-prose-quotes": "oklch(20.5% 0 0)",
+    "--tw-prose-quote-borders": "oklch(92.2% 0 0)",
+    "--tw-prose-captions": "oklch(55.6% 0 0)",
+    "--tw-prose-kbd": "oklch(20.5% 0 0)",
+    "--tw-prose-kbd-shadows": "oklab(20.5% 0 0/.1)",
+    "--tw-prose-code": "oklch(20.5% 0 0)",
+    "--tw-prose-pre-code": "oklch(92.2% 0 0)",
+    "--tw-prose-pre-bg": "oklch(26.9% 0 0)",
+    "--tw-prose-th-borders": "oklch(87% 0 0)",
+    "--tw-prose-td-borders": "oklch(92.2% 0 0)",
+    "--tw-prose-invert-body": "oklch(87% 0 0)",
+    "--tw-prose-invert-headings": "#fff",
+    "--tw-prose-invert-lead": "oklch(70.8% 0 0)",
+    "--tw-prose-invert-links": "#fff",
+    "--tw-prose-invert-bold": "#fff",
+    "--tw-prose-invert-counters": "oklch(70.8% 0 0)",
+    "--tw-prose-invert-bullets": "oklch(43.9% 0 0)",
+    "--tw-prose-invert-hr": "oklch(37.1% 0 0)",
+    "--tw-prose-invert-quotes": "oklch(97% 0 0)",
+    "--tw-prose-invert-quote-borders": "oklch(37.1% 0 0)",
+    "--tw-prose-invert-captions": "oklch(70.8% 0 0)",
+    "--tw-prose-invert-kbd": "#fff",
+    "--tw-prose-invert-kbd-shadows": "#ffffff1a",
+    "--tw-prose-invert-code": "#fff",
+    "--tw-prose-invert-pre-code": "oklch(87% 0 0)",
+    "--tw-prose-invert-pre-bg": "#00000080",
+    "--tw-prose-invert-th-borders": "oklch(43.9% 0 0)",
+    "--tw-prose-invert-td-borders": "oklch(37.1% 0 0)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-panel": "var(--color-canvas-value)",
+    "--color-card": "var(--color-surface-value)",
+    "--color-fill": "var(--color-canvas-muted-value)",
+    "--color-fill-mine": "var(--color-fg-value)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-fill-mine": "color-mix(in oklab, var(--color-fg-value) 9%, var(--color-canvas-value))"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-fill-inner": "var(--color-fg-value)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-fill-inner": "color-mix(in oklab, var(--color-fg-value) 8%, var(--color-canvas-value))"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-fill-inset": "var(--color-fg-value)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-fill-inset": "color-mix(in oklab, var(--color-fg-value) 6%, var(--color-canvas-value))"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-ink": "var(--color-fg-value)",
+    "--color-ink-2": "var(--color-fg-secondary-value)",
+    "--color-ink-3": "var(--color-fg-muted-value)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-ink-3": "color-mix(in oklab, var(--color-fg-muted-value) 75%, var(--color-canvas-value))"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-ink-faint": "var(--color-fg-muted-value)",
+    "--color-hairline": "var(--color-line-value)",
+    "--color-divider": "var(--color-line-muted-value)",
+    "--color-hover": "var(--color-canvas-muted-value)",
+    "--fd-shadow-ring": "0 0 0 1px var(--color-line-value)",
+    "--fd-shadow-ring-focus": "0 0 0 1px var(--color-fg-value)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--fd-shadow-ring-focus": "0 0 0 1px color-mix(in oklab, var(--color-fg-value) 28%, transparent)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--fd-shadow-panel": "none",
+    "--color-brand": "var(--color-user-primary)",
+    "--color-on-brand": "var(--color-on-primary)",
+    "--color-brand-text": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-brand-text": "color-mix(in oklab, var(--color-user-primary) 80%, var(--color-fg-value))"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-ai-tile": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-ai-tile": "color-mix(in oklab, var(--color-user-primary) 22%, var(--color-canvas-muted-value))"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-ai-tile-icon": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-ai-tile-icon": "color-mix(in oklab, var(--color-user-primary) 70%, var(--color-fg-value))"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-citation": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-citation": "color-mix(in oklab, var(--color-user-primary) 18%, var(--color-canvas-muted-value))"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-citation-text": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-citation-text": "color-mix(in oklab, var(--color-user-primary) 70%, var(--color-fg-value))"
+   }
+  },
+  {
+   "selector": ".support-theme",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--font-ui": "var(--font-body)"
+   }
+  },
+  {
+   "selector": ".outline-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-outline-style": "none"
+   }
+  },
+  {
+   "selector": ".\\[--color-user-primary-fg\\:var\\(--color-user-primary-fg-light\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-user-primary-fg": "var(--color-user-primary-fg-light)"
+   }
+  },
+  {
+   "selector": ".\\[--docs-sticky-top\\:4\\.0625rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--docs-sticky-top": "4.0625rem"
+   }
+  },
+  {
+   "selector": ".\\[--docs-sticky-top\\:6\\.875rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--docs-sticky-top": "6.875rem"
+   }
+  },
+  {
+   "selector": ".\\[--editor-padding-inline\\:12px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--editor-padding-inline": "12px"
+   }
+  },
+  {
+   "selector": ".\\[--input-focus-border\\:var\\(--border-strong\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--input-focus-border": "var(--border-strong)"
+   }
+  },
+  {
+   "selector": ".\\[--input-focus-ring\\:var\\(--shadow-inset\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--input-focus-ring": "var(--shadow-inset)"
+   }
+  },
+  {
+   "selector": ".\\[--rail-offset\\:0rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--rail-offset": "0rem"
+   }
+  },
+  {
+   "selector": ".\\[--rail-offset\\:2rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--rail-offset": "2rem"
+   }
+  },
+  {
+   "selector": ".\\[--wave-delay\\:140ms\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--wave-delay": ".14s"
+   }
+  },
+  {
+   "selector": ".\\[--wave-delay\\:280ms\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--wave-delay": ".28s"
+   }
+  },
+  {
+   "selector": ".ring-inset",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-inset": "inset"
+   }
+  },
+  {
+   "selector": ".group-hover\\:translate-x-1:is(:where(.group):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * 1)"
+   }
+  },
+  {
+   "selector": ".group-hover\\/card\\:translate-x-0\\.5:is(:where(.group\\/card):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * .5)"
+   }
+  },
+  {
+   "selector": ".group-hover\\/reaction\\:scale-125:is(:where(.group\\/reaction):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "125%",
+    "--tw-scale-y": "125%",
+    "--tw-scale-z": "125%"
+   }
+  },
+  {
+   "selector": ".group-hover\\/reaction\\:grayscale-0:is(:where(.group\\/reaction):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-grayscale": "grayscale(0%)"
+   }
+  },
+  {
+   "selector": ".group-active\\/reaction\\:scale-90:is(:where(.group\\/reaction):active *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "90%",
+    "--tw-scale-y": "90%",
+    "--tw-scale-z": "90%"
+   }
+  },
+  {
+   "selector": ".group-active\\/reaction\\:duration-100:is(:where(.group\\/reaction):active *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": ".1s"
+   }
+  },
+  {
+   "selector": ".focus-within\\:shadow-\\[var\\(--focus-ring\\)\\]:focus-within",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "var(--focus-ring)"
+   }
+  },
+  {
+   "selector": ".focus-within\\:ring-2:focus-within",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   }
+  },
+  {
+   "selector": ".focus-within\\:ring-user-primary\\/40:focus-within",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".focus-within\\:ring-user-primary\\/40:focus-within",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-user-primary) 40%, transparent)"
+   }
+  },
+  {
+   "selector": ".hover\\:-translate-y-0\\.5:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * -.5)"
+   }
+  },
+  {
+   "selector": ".hover\\:scale-110:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "110%",
+    "--tw-scale-y": "110%",
+    "--tw-scale-z": "110%"
+   }
+  },
+  {
+   "selector": ".hover\\:scale-115:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "115%",
+    "--tw-scale-y": "115%",
+    "--tw-scale-z": "115%"
+   }
+  },
+  {
+   "selector": ".hover\\:shadow-sm:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+   }
+  },
+  {
+   "selector": ".hover\\:shadow-black\\/5:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "#0000000d"
+   }
+  },
+  {
+   "selector": ".hover\\:shadow-black\\/5:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "color-mix(in oklab, color-mix(in oklab, var(--color-black) 5%, transparent) var(--tw-shadow-alpha), transparent)"
+   }
+  },
+  {
+   "selector": ".hover\\:ring-\\(--color-user-primary\\):hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".hover\\:ring-line:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-line)"
+   }
+  },
+  {
+   "selector": ".hover\\:brightness-95:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-brightness": "brightness(95%)"
+   }
+  },
+  {
+   "selector": ".focus\\:border-none:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-border-style": "none"
+   }
+  },
+  {
+   "selector": ".focus\\:ring-0:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   }
+  },
+  {
+   "selector": ".focus\\:ring-2:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   }
+  },
+  {
+   "selector": ".focus\\:ring-user-primary:focus, .focus\\:ring-user-primary\\/30:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".focus\\:ring-user-primary\\/30:focus",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-user-primary) 30%, transparent)"
+   }
+  },
+  {
+   "selector": ".focus\\:ring-white\\/50:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "#ffffff80"
+   }
+  },
+  {
+   "selector": ".focus\\:ring-white\\/50:focus",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-white) 50%, transparent)"
+   }
+  },
+  {
+   "selector": ".focus\\:outline-none:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-outline-style": "none"
+   }
+  },
+  {
+   "selector": ".focus\\:ring-inset:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-inset": "inset"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-2:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-fg\\/20:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-fg)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-fg\\/20:focus-visible",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-fg) 20%, transparent)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-fg\\/25:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-fg)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-fg\\/25:focus-visible",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-fg) 25%, transparent)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-user-primary\\/30:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-user-primary\\/30:focus-visible",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-user-primary) 30%, transparent)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-user-primary\\/40:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-user-primary\\/40:focus-visible",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-user-primary) 40%, transparent)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-offset-1:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-offset-width": "1px",
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-offset-2:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-offset-width": "2px",
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:ring-offset-canvas:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-offset-color": "var(--color-canvas)"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:outline-none:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-outline-style": "none"
+   }
+  },
+  {
+   "selector": ".focus-visible\\:outline-solid:focus-visible",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-outline-style": "solid"
+   }
+  },
+  {
+   "selector": ".active\\:translate-y-px:active",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-translate-y": "1px"
+   }
+  },
+  {
+   "selector": ".active\\:scale-95:active",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "95%",
+    "--tw-scale-y": "95%",
+    "--tw-scale-z": "95%"
+   }
+  },
+  {
+   "selector": ".active\\:scale-96:active",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "96%",
+    "--tw-scale-y": "96%",
+    "--tw-scale-z": "96%"
+   }
+  },
+  {
+   "selector": ".not-disabled\\:active\\:scale-90:not(:disabled):active",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "90%",
+    "--tw-scale-y": "90%",
+    "--tw-scale-z": "90%"
+   }
+  },
+  {
+   "selector": ".enabled\\:active\\:scale-96:enabled:active",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "96%",
+    "--tw-scale-y": "96%",
+    "--tw-scale-z": "96%"
+   }
+  },
+  {
+   "selector": ".aria-\\[invalid\\=true\\]\\:ring-danger[aria-invalid=\"true\"]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-danger)"
+   }
+  },
+  {
+   "selector": ".data-\\[state\\=checked\\]\\:translate-x-4[data-state=\"checked\"]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * 4)"
+   }
+  },
+  {
+   "selector": ".data-\\[state\\=closed\\]\\:animate-out[data-state=\"closed\"]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-exit-opacity": "initial",
+    "--tw-exit-scale": "initial",
+    "--tw-exit-rotate": "initial",
+    "--tw-exit-translate-x": "initial",
+    "--tw-exit-translate-y": "initial"
+   }
+  },
+  {
+   "selector": ".data-\\[state\\=closed\\]\\:fade-out-0[data-state=\"closed\"]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-exit-opacity": "0"
+   }
+  },
+  {
+   "selector": ".data-\\[state\\=open\\]\\:animate-in[data-state=\"open\"]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-enter-opacity": "initial",
+    "--tw-enter-scale": "initial",
+    "--tw-enter-rotate": "initial",
+    "--tw-enter-translate-x": "initial",
+    "--tw-enter-translate-y": "initial"
+   }
+  },
+  {
+   "selector": ".data-\\[state\\=open\\]\\:fade-in-0[data-state=\"open\"]",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-enter-opacity": "0"
+   }
+  },
+  {
+   "selector": ".motion-reduce\\:hover\\:scale-100:hover",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-reduced-motion: reduce)",
+    "@media (hover: hover)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   }
+  },
+  {
+   "selector": ".motion-reduce\\:active\\:scale-100:active, .motion-reduce\\:not-disabled\\:active\\:scale-100:not(:disabled):active, .motion-reduce\\:enabled\\:active\\:scale-100:enabled:active",
+   "context": [
+    "@layer utilities",
+    "@media (prefers-reduced-motion: reduce)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   }
+  },
+  {
+   "selector": ".xl\\:\\[--reference-rail-clear\\:5\\.5rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 80rem)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--reference-rail-clear": "5.5rem"
+   }
+  },
+  {
+   "selector": ".xl\\:\\[--reference-rail-extend\\:4rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 80rem)"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--reference-rail-extend": "4rem"
+   }
+  },
+  {
+   "selector": ".rtl\\:-scale-x-100:where(:is(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)), [dir=\"rtl\"], [dir=\"rtl\"] *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-scale-x": "calc(100% * -1)"
+   }
+  },
+  {
+   "selector": ".dark\\:from-amber-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#f99c0005"
+   }
+  },
+  {
+   "selector": ".dark\\:from-amber-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-amber-500) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:from-amber-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:from-cyan-500\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#00b7d70d"
+   }
+  },
+  {
+   "selector": ".dark\\:from-cyan-500\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-cyan-500) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:from-cyan-500\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:from-green-500\\/10:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#00c7581a"
+   }
+  },
+  {
+   "selector": ".dark\\:from-green-500\\/10:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-green-500) 10%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:from-green-500\\/10:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:from-neutral-600\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#5252520d"
+   }
+  },
+  {
+   "selector": ".dark\\:from-neutral-600\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-neutral-600) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:from-neutral-600\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:from-red-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#fb2c3605"
+   }
+  },
+  {
+   "selector": ".dark\\:from-red-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-red-500) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:from-red-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:via-amber-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "#f99c0005"
+   }
+  },
+  {
+   "selector": ".dark\\:via-amber-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-amber-500) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:via-amber-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   }
+  },
+  {
+   "selector": ".dark\\:via-neutral-600\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "#5252520d"
+   }
+  },
+  {
+   "selector": ".dark\\:via-neutral-600\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-neutral-600) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:via-neutral-600\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   }
+  },
+  {
+   "selector": ".dark\\:via-red-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "#fb2c3605"
+   }
+  },
+  {
+   "selector": ".dark\\:via-red-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-red-500) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:via-red-500\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   }
+  },
+  {
+   "selector": ".dark\\:to-amber-500\\/3:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#f99c0008"
+   }
+  },
+  {
+   "selector": ".dark\\:to-amber-500\\/3:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-amber-500) 3%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:to-amber-500\\/3:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:to-cyan-500\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#00b7d70d"
+   }
+  },
+  {
+   "selector": ".dark\\:to-cyan-500\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-cyan-500) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:to-cyan-500\\/5:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:to-green-500\\/10:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#00c7581a"
+   }
+  },
+  {
+   "selector": ".dark\\:to-green-500\\/10:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-green-500) 10%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:to-green-500\\/10:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:to-neutral-600\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#52525205"
+   }
+  },
+  {
+   "selector": ".dark\\:to-neutral-600\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-neutral-600) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:to-neutral-600\\/2:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:to-red-500\\/3:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "#fb2c3608"
+   }
+  },
+  {
+   "selector": ".dark\\:to-red-500\\/3:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-red-500) 3%, transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:to-red-500\\/3:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".dark\\:shadow-black\\/50:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "#00000080"
+   }
+  },
+  {
+   "selector": ".dark\\:shadow-black\\/50:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-shadow-color": "color-mix(in oklab, color-mix(in oklab, var(--color-black) 50%, transparent) var(--tw-shadow-alpha), transparent)"
+   }
+  },
+  {
+   "selector": ".dark\\:invert:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-invert": "invert(100%)"
+   }
+  },
+  {
+   "selector": ".dark\\:\\[--color-user-primary-fg\\:color-mix\\(in_oklab\\,var\\(--color-user-primary\\)_55\\%\\,white\\)\\]:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-user-primary-fg": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".dark\\:\\[--color-user-primary-fg\\:color-mix\\(in_oklab\\,var\\(--color-user-primary\\)_55\\%\\,white\\)\\]:where(.dark, .dark *)",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-user-primary-fg": "color-mix(in oklab,var(--color-user-primary) 55%,white)"
+   }
+  },
+  {
+   "selector": ".\\[\\&_\\.ferndesk-content\\]\\:leading-normal\\! .ferndesk-content",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "var(--leading-normal)"
+   }
+  },
+  {
+   "selector": ".\\[\\&_\\.ferndesk-content\\]\\:\\[--color-fg-secondary\\:var\\(--color-ink\\)\\] .ferndesk-content",
+   "context": [
+    "@layer utilities"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--color-fg-secondary": "var(--color-ink)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-prose-body": "oklch(37.3% .034 259.733)",
+    "--tw-prose-headings": "oklch(21% .034 264.665)",
+    "--tw-prose-lead": "oklch(44.6% .03 256.802)",
+    "--tw-prose-links": "oklch(21% .034 264.665)",
+    "--tw-prose-bold": "oklch(21% .034 264.665)",
+    "--tw-prose-counters": "oklch(55.1% .027 264.364)",
+    "--tw-prose-bullets": "oklch(87.2% .01 258.338)",
+    "--tw-prose-hr": "oklch(92.8% .006 264.531)",
+    "--tw-prose-quotes": "oklch(21% .034 264.665)",
+    "--tw-prose-quote-borders": "oklch(92.8% .006 264.531)",
+    "--tw-prose-captions": "oklch(55.1% .027 264.364)",
+    "--tw-prose-kbd": "oklch(21% .034 264.665)",
+    "--tw-prose-kbd-shadows": "oklab(21% -.00316127 -.0338527/.1)",
+    "--tw-prose-code": "oklch(21% .034 264.665)",
+    "--tw-prose-pre-code": "oklch(92.8% .006 264.531)",
+    "--tw-prose-pre-bg": "oklch(27.8% .033 256.848)",
+    "--tw-prose-th-borders": "oklch(87.2% .01 258.338)",
+    "--tw-prose-td-borders": "oklch(92.8% .006 264.531)",
+    "--tw-prose-invert-body": "oklch(87.2% .01 258.338)",
+    "--tw-prose-invert-headings": "#fff",
+    "--tw-prose-invert-lead": "oklch(70.7% .022 261.325)",
+    "--tw-prose-invert-links": "#fff",
+    "--tw-prose-invert-bold": "#fff",
+    "--tw-prose-invert-counters": "oklch(70.7% .022 261.325)",
+    "--tw-prose-invert-bullets": "oklch(44.6% .03 256.802)",
+    "--tw-prose-invert-hr": "oklch(37.3% .034 259.733)",
+    "--tw-prose-invert-quotes": "oklch(96.7% .003 264.542)",
+    "--tw-prose-invert-quote-borders": "oklch(37.3% .034 259.733)",
+    "--tw-prose-invert-captions": "oklch(70.7% .022 261.325)",
+    "--tw-prose-invert-kbd": "#fff",
+    "--tw-prose-invert-kbd-shadows": "#ffffff1a",
+    "--tw-prose-invert-code": "#fff",
+    "--tw-prose-invert-pre-code": "oklch(87.2% .01 258.338)",
+    "--tw-prose-invert-pre-bg": "#00000080",
+    "--tw-prose-invert-th-borders": "oklch(44.6% .03 256.802)",
+    "--tw-prose-invert-td-borders": "oklch(37.3% .034 259.733)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-prose-body": "var(--tw-prose-invert-body)",
+    "--tw-prose-headings": "var(--tw-prose-invert-headings)",
+    "--tw-prose-lead": "var(--tw-prose-invert-lead)",
+    "--tw-prose-links": "var(--tw-prose-invert-links)",
+    "--tw-prose-bold": "var(--tw-prose-invert-bold)",
+    "--tw-prose-counters": "var(--tw-prose-invert-counters)",
+    "--tw-prose-bullets": "var(--tw-prose-invert-bullets)",
+    "--tw-prose-hr": "var(--tw-prose-invert-hr)",
+    "--tw-prose-quotes": "var(--tw-prose-invert-quotes)",
+    "--tw-prose-quote-borders": "var(--tw-prose-invert-quote-borders)",
+    "--tw-prose-captions": "var(--tw-prose-invert-captions)",
+    "--tw-prose-kbd": "var(--tw-prose-invert-kbd)",
+    "--tw-prose-kbd-shadows": "var(--tw-prose-invert-kbd-shadows)",
+    "--tw-prose-code": "var(--tw-prose-invert-code)",
+    "--tw-prose-pre-code": "var(--tw-prose-invert-pre-code)",
+    "--tw-prose-pre-bg": "var(--tw-prose-invert-pre-bg)",
+    "--tw-prose-th-borders": "var(--tw-prose-invert-th-borders)",
+    "--tw-prose-td-borders": "var(--tw-prose-invert-td-borders)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-prose-pre-bg": "transparent",
+    "--tw-prose-pre-code": "inherit",
+    "--tw-prose-code": "inherit",
+    "--tw-prose-invert-pre-bg": "transparent",
+    "--tw-prose-invert-pre-code": "inherit",
+    "--tw-prose-invert-code": "inherit"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .step-item-title[data-title-style=\"paragraph\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "var(--leading-relaxed)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .code-block.with-filename",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-border-style": "none"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .code-block-filename",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-semibold)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .code-surface-scroll",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": ".2s"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .code-surface-line-numbers",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-leading": "var(--leading-normal)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .code-copy-btn",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-border-style": "none"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .code-expand-btn",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .multi-code-panel",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-outline-style": "none"
+   }
+  },
+  {
+   "selector": ".ferndesk-content :not(pre) > code",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content-fragment :not(pre) > code",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content figure img, .ferndesk-content figure video",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)",
+    "--tw-ring-color": "#0000000d"
+   }
+  },
+  {
+   "selector": ".ferndesk-content figure img, .ferndesk-content figure video",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-black) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ":is(.ferndesk-content figure img, .ferndesk-content figure video):where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "#ffffff0d"
+   }
+  },
+  {
+   "selector": ":is(.ferndesk-content figure img, .ferndesk-content figure video):where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-white) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]",
+   "context": [
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-cyan-500) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-cyan-500) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]",
+   "context": [
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-amber-500) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-amber-500) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-amber-500) 3%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]",
+   "context": [
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-green-500) 3%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-via": "#00c75808"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-green-500) 3%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)",
+    "--tw-gradient-to": "#00c75808"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-green-500) 3%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]",
+   "context": [
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-red-500) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-red-500) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-red-500) 3%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .ferndesk-button",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .details .details-summary-text",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .card-block",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": ".2s"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .ferndesk-file-card",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)",
+    "--tw-ring-color": "transparent",
+    "--tw-duration": ".2s"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .ferndesk-file-card:hover",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "var(--color-user-primary)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .ferndesk-file-name",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .ferndesk-file-action",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-duration": ".2s"
+   }
+  },
+  {
+   "selector": ".ferndesk-content",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-prose-body": "var(--color-fg-secondary)",
+    "--tw-prose-headings": "var(--color-fg)",
+    "--tw-prose-links": "var(--color-fg)",
+    "--tw-prose-bold": "var(--color-fg)",
+    "--tw-prose-counters": "var(--color-fg-muted)",
+    "--tw-prose-bullets": "var(--color-fg-muted)",
+    "--tw-prose-quotes": "var(--color-fg-secondary)",
+    "--tw-prose-code": "var(--color-fg)",
+    "--tw-prose-hr": "var(--color-line)",
+    "--tw-prose-th-borders": "var(--color-line)",
+    "--tw-prose-td-borders": "var(--color-line)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-cyan-500) 5%, transparent)",
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-cyan-500) 10%, transparent)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#00b7d70d"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-to": "#00b7d70d"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"info\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-amber-500) 7%, transparent)",
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-amber-500) 7%, transparent)",
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-amber-500) 10%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#f99c0005"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-via": "#f99c0005"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)",
+    "--tw-gradient-to": "#f99c0008"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"warning\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-green-500) 5%, transparent)",
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-green-500) 7%, transparent)",
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-green-500) 10%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#00c7581a"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-green-500) 10%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-to": "#00c7581a"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-green-500) 10%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"success\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]",
+   "context": [
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-neutral-50) 5%, transparent)",
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-neutral-50) 5%, transparent)",
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-neutral-300) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#5252520d"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-neutral-600) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-via": "#5252520d"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-neutral-600) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)",
+    "--tw-gradient-to": "#52525205"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-neutral-600) 2%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"tip\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-red-500) 4%, transparent)",
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-red-500) 4%, transparent)",
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-red-500) 8%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-from": "#fb2c3605"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    "--tw-gradient-via": "#fb2c3605"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)",
+    "--tw-gradient-to": "#fb2c3608"
+   }
+  },
+  {
+   "selector": ".ferndesk-content .callout[data-type=\"error\"]:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   }
+  },
+  {
+   "selector": ".ferndesk-content figure",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content figure img",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)",
+    "--tw-ring-color": "#0000000d"
+   }
+  },
+  {
+   "selector": ".ferndesk-content figure img",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-black) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ".ferndesk-content figure img:where(.dark, .dark *)",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "#ffffff0d"
+   }
+  },
+  {
+   "selector": ".ferndesk-content figure img:where(.dark, .dark *)",
+   "context": [
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-white) 5%, transparent)"
+   }
+  },
+  {
+   "selector": ":root",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--lightningcss-light": "initial",
+    "--lightningcss-dark": "",
+    "--color-canvas-value": "#fff",
+    "--color-canvas-subtle-value": "#fcfcfb",
+    "--color-canvas-muted-value": "#f5f5f4",
+    "--color-surface-value": "#fff",
+    "--color-surface-raised-value": "#f5f5f5",
+    "--color-surface-overlay-value": "#fff",
+    "--color-fg-value": "#1c1917",
+    "--color-fg-secondary-value": "#57534e",
+    "--color-fg-muted-value": "#78716c",
+    "--color-fg-inverted-value": "#fff",
+    "--cm-keyword": "#cf222e",
+    "--cm-string": "#0a3069",
+    "--cm-number": "#0550ae",
+    "--cm-comment": "#6e7781",
+    "--cm-property": "#0550ae",
+    "--cm-variable": "#953800",
+    "--cm-type": "#953800",
+    "--cm-punctuation": "#24292f",
+    "--cm-invalid": "#cf222e",
+    "--cm-selection": "#54aeff47",
+    "--cm-tooltip-shadow": "0 8px 24px #0000001f",
+    "--color-ok-value": "#1f6b45",
+    "--color-ok-bg-value": "#e2f3e9",
+    "--color-ok-fg-value": "#175236",
+    "--color-warn-value": "#d9a441",
+    "--color-warn-bg-value": "#fbf1dc",
+    "--color-warn-fg-value": "#8a6217",
+    "--color-danger-value": "#d8392f",
+    "--color-danger-bg-value": "#fce5e2",
+    "--color-danger-fg-value": "#a8261f",
+    "--color-info-value": "#3f7bff",
+    "--color-info-bg-value": "#e4ecff",
+    "--color-info-fg-value": "#2857c2",
+    "--color-line-value": "#e7e5e4",
+    "--color-line-muted-value": "#eeeceb",
+    "--color-line-subtle-value": "#f5f5f4",
+    "--font-mono": "\"JetBrains Mono\", monospace"
+   }
+  },
+  {
+   "selector": ".dark",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--lightningcss-light": "",
+    "--lightningcss-dark": "initial",
+    "--color-canvas-value": "#0d0d0d",
+    "--color-canvas-subtle-value": "#101010",
+    "--color-canvas-muted-value": "#1a1a1a",
+    "--color-surface-value": "#131313",
+    "--color-surface-raised-value": "#1a1a1a",
+    "--color-surface-overlay-value": "#292929",
+    "--color-fg-value": "#e5e5e5",
+    "--color-fg-secondary-value": "#a3a3a3",
+    "--color-fg-muted-value": "#7d7d7d",
+    "--color-fg-inverted-value": "#0f0f0f",
+    "--cm-keyword": "#ff7b72",
+    "--cm-string": "#a5d6ff",
+    "--cm-number": "#79c0ff",
+    "--cm-comment": "#8b949e",
+    "--cm-property": "#79c0ff",
+    "--cm-variable": "#ffa657",
+    "--cm-type": "#ffa657",
+    "--cm-punctuation": "#c9d1d9",
+    "--cm-invalid": "#ff7b72",
+    "--cm-selection": "#388bfd59",
+    "--cm-tooltip-shadow": "0 8px 24px #00000080",
+    "--color-ok-value": "#34a06a",
+    "--color-ok-bg-value": "#2a8a5a2e",
+    "--color-ok-fg-value": "#a8dcc0",
+    "--color-warn-value": "#d9a441",
+    "--color-warn-bg-value": "#d9a44129",
+    "--color-warn-fg-value": "#f0c46a",
+    "--color-danger-value": "#e4574d",
+    "--color-danger-bg-value": "#d8392f29",
+    "--color-danger-fg-value": "#f49a93",
+    "--color-info-value": "#6b97ff",
+    "--color-info-bg-value": "#3f7bff29",
+    "--color-info-fg-value": "#8fb0ff",
+    "--color-line-value": "#2b2b2b",
+    "--color-line-muted-value": "#212121",
+    "--color-line-subtle-value": "#2b2b2b44"
+   }
+  },
+  {
+   "selector": ":root",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/app.zrg0NaeV.css",
+   "properties": {
+    "--fd-tooltip-bg": "var(--color-fg)",
+    "--fd-tooltip-fg": "var(--color-canvas)",
+    "--fd-tooltip-border": "transparent",
+    "--fd-tooltip-radius": "6px",
+    "--fd-tooltip-shadow": "0 6px 16px #00000029",
+    "--fd-tooltip-link": "var(--color-canvas-muted)"
+   }
+  },
+  {
+   "selector": ".chat-ref-link",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/3.ReFbfqbk.css",
+   "properties": {
+    "--citation-ink": "var(--color-fg-secondary,var(--color-fg-3))",
+    "--citation-fill": "color-mix(in oklab, var(--color-fg) 8%, transparent)",
+    "--citation-fill-active": "color-mix(in oklab, var(--color-fg) 14%, transparent)"
+   }
+  },
+  {
+   "selector": ".chat-citation-card",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/3.ReFbfqbk.css",
+   "properties": {
+    "--citation-card-shadow": "0 0 0 1px oklch(0% 0 0/.08), 0 1px 2px -1px oklch(0% 0 0/.08), 0 2px 4px 0 oklch(0% 0 0/.06)"
+   }
+  },
+  {
+   "selector": ":where(.dark) .chat-citation-card",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/3.ReFbfqbk.css",
+   "properties": {
+    "--citation-card-shadow": "0 0 0 1px oklch(100% 0 0/.1)"
+   }
+  },
+  {
+   "selector": ".reference-type.svelte-9ljxo6",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/DocsApiTypePage.D_v8-R1w.css",
+   "properties": {
+    "--rail-top": "calc(var(--docs-sticky-top,4rem) + 1.5rem)",
+    "--rail-max": "calc(100dvh - var(--rail-top) - 6rem)"
+   }
+  },
+  {
+   "selector": ".reference-operation.svelte-1xnx41z",
+   "context": [],
+   "href": "https://www.workflow.design/_ferndesk/immutable/assets/DocsApiOperationPage.DiWKK_Gs.css",
+   "properties": {
+    "--rail-top": "calc(var(--docs-sticky-top,4rem) + 1.5rem)",
+    "--rail-max": "calc(100dvh - var(--rail-top) - 1.5rem - var(--reference-rail-clear,0px))",
+    "--rail-min": "calc(var(--rail-max) + var(--rail-offset,0rem))",
+    "--rail-extend": "var(--reference-rail-extend,0px)",
+    "--rail-extend-height": "calc(100% + var(--rail-extend))",
+    "--rail-extend-margin": "calc(-1 * var(--rail-extend))"
+   }
+  }
+ ],
+ "fontFaces": [
+  {
+   "family": "webflow-icons",
+   "weight": "400",
+   "style": "normal",
+   "href": "https://cdn.prod.website-files.com/65d3a3d06680835353585bbc/css/workflowdesign.webflow.shared.7c8519164.min.css"
+  },
+  {
+   "family": "\"Crimson Pro Italic\"",
+   "weight": "200 900",
+   "style": "italic",
+   "href": "https://cdn.prod.website-files.com/65d3a3d06680835353585bbc/css/workflowdesign.webflow.shared.7c8519164.min.css"
+  },
+  {
+   "family": "\"Crimson Pro\"",
+   "weight": "200 900",
+   "style": "normal",
+   "href": "https://cdn.prod.website-files.com/65d3a3d06680835353585bbc/css/workflowdesign.webflow.shared.7c8519164.min.css"
+  },
+  {
+   "family": "\"Inter Italic\"",
+   "weight": "100 900",
+   "style": "italic",
+   "href": "https://cdn.prod.website-files.com/65d3a3d06680835353585bbc/css/workflowdesign.webflow.shared.7c8519164.min.css"
+  },
+  {
+   "family": "Inter",
+   "weight": "100 900",
+   "style": "normal",
+   "href": "https://cdn.prod.website-files.com/65d3a3d06680835353585bbc/css/workflowdesign.webflow.shared.7c8519164.min.css"
+  }
+ ],
+ "resolved": {
+  "--w-backdrop-animation": "",
+  "--color--surface--default": "white",
+  "--type--body": "Inter,Arial,sans-serif",
+  "--color--text--default": "#1a1a1a",
+  "--type--display": "\"Crimson Pro\",\"Times New Roman\",sans-serif",
+  "--color--surface--invert": "#1a1a1a",
+  "--color--text--weak": "#1a1a1aa6",
+  "--space--xs": "12px",
+  "--color--base--black": "#1a1a1a",
+  "--color--border--default": "#1a1a1a1f",
+  "--radius--medium": "8px",
+  "--color--base--black-50": "#1a1a1a80",
+  "--color--base--white": "white",
+  "--legacy--hover": "#353532",
+  "--color--surface--secondary": "#f3f3f3",
+  "--color--base--black-80": "#1a1a1acc",
+  "--color--base--black-10": "#1a1a1a1a",
+  "--radius--full": "9999px",
+  "--radius--small": "4px",
+  "--legacy--secondary": "#555",
+  "--legacy--light-text": "#e3e3e3",
+  "--legacy--tertiary": "#797979",
+  "--radius--large": "12px",
+  "--color--text--disabled": "#1a1a1a4d",
+  "--color--base--black-30": "#1a1a1a4d",
+  "--color--surface--strong": "#ececec",
+  "--color--surface--medium": "#f6f6f6",
+  "--color--shadow--comment": "#1a1a1a14",
+  "--color--icon--weak": "#1a1a1aa6",
+  "--color--success--text": "#547e69",
+  "--color--text--invert": "#f6f6f6",
+  "--color--border--weak": "#1a1a1a0f",
+  "--color--icon--default": "#1a1a1ae6",
+  "--color--surface--light": "#f9f9f9",
+  "--color--error--border": "#d99ba4",
+  "--color--error--text": "#923d56",
+  "--color--surface--invert-medium": "#1a1a1acc",
+  "--color--icon--invert": "#f6f6f6e6",
+  "--color--success--surface-medium": "#e9f6ee",
+  "--space--4xl": "80px",
+  "--space--lg": "32px",
+  "--space--md": "24px",
+  "--space--3xs": "4px",
+  "--space--5xl": "112px",
+  "--space--2xl": "48px",
+  "--space--2xs": "8px",
+  "--space--sm": "16px",
+  "--color--surface--page": "#f6f4f0",
+  "--space--xl": "40px",
+  "--space--3xl": "72px",
+  "--space--6xl": "144px",
+  "--color--success--border": "#9dbfad",
+  "--color--base--black-70": "#1a1a1ab3",
+  "--legacy--error-bg": "#ff002e08",
+  "--legacy--error-highlight": "#ff002e0d",
+  "--legacy--surface-strong": "#ececec",
+  "--color--surface--invert-strong": "#1a1a1a80",
+  "--color--text--invert-weak": "#f6f6f6a6",
+  "--color--border--active": "#1a1a1acc",
+  "--color--border--hover": "#1a1a1a33",
+  "--color--icon--hover": "#1a1a1a",
+  "--color--icon--invert-hover": "#f6f6f6",
+  "--color--error--surface": "#faebed",
+  "--color--error--surface-hover": "#f6dbe0",
+  "--color--error--surface-active": "#f1c8ce",
+  "--color--error--text-hover": "#8a3853",
+  "--color--error--border-hover": "#ce6878",
+  "--color--error--icon": "#923d56",
+  "--color--error--icon-hover": "#9e4a5d",
+  "--color--success--surface": "#f1fcf6",
+  "--color--success--surface-strong": "#c4e6d5",
+  "--color--success--text-weak": "#60886f",
+  "--color--success--icon": "#547e69",
+  "--color--success--icon-weak": "#547e69",
+  "--color--success--border-weak": "#74a486",
+  "--color--overlay--70": "#000000b3",
+  "--color--overlay--50": "#00000080",
+  "--color--overlay--30": "#0000004d",
+  "--color--shadow--comment-dark": "#1a1a1a21",
+  "--legacy--comment-shadow-1": "#1a1a1a14",
+  "--legacy--comment-shadow-2": "#1a1a1a14",
+  "--legacy--comment-shadow-3": "#1a1a1a14",
+  "--legacy--comment-shadow-4": "#1a1a1a14",
+  "--legacy--comment-shadow-5": "#1a1a1a14"
+ },
+ "resolvedFrom": "getComputedStyle(document.documentElement) on https://www.workflow.design/ 2026-11-21"
+}
