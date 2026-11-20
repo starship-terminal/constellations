@@ -13,13 +13,14 @@ Usage:
 """
 import argparse
 import json
-import os
 import re
-import subprocess
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import catalog  # noqa: E402
+
 OUT = ROOT / "docs" / "GATED.md"
 
 GATE = re.compile(
@@ -54,57 +55,16 @@ def gate_lines(entry):
 
 
 def gated_matches_base(systems, current: str) -> bool:
-    """True when GitHub is merging a pull request that only adds catalog
-    rows, and the committed roll-up still matches the base catalog.
+    """True when GitHub is checking a pull request and the committed roll-up is
+    the exact render of the packages it names, leaving out only packages this
+    pull request adds or main gained after the branch started.
 
-    A capture pull request cannot rewrite this file for the merge commit.
-    Editing or removing an existing row still fails the check."""
-    base_ref = os.environ.get("GITHUB_BASE_REF")
-    if not base_ref:
-        return False
-    try:
-        raw = subprocess.run(
-            ["git", "show", f"origin/{base_ref}:catalog.json"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout
-        base = json.loads(raw)
-    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-        return False
-    base_rows = {s.get("slug"): s for s in base.get("systems") or []}
+    Rendering the named packages from the merge's own catalog, never trusting
+    the branch's copy, means a hand edit, a stale row, a wrong count or a
+    removed package still listed fails (tools/catalog.py lagging_subset)."""
     head_rows = {s.get("slug"): s for s in systems}
-    if not base_rows:
-        return False
-    if any(slug in base_rows and head_rows[slug] != base_rows[slug]
-           for slug in head_rows):
-        return False
-    # This pull request regenerated the roll-up, then main gained another
-    # capture. Compare the committed file to the branch blob. Re-rendering
-    # needs every package's gaps, and the merge tree has the later files.
-    sha = os.environ.get("GITHUB_HEAD_SHA") if base_ref else None
-    if sha:
-        try:
-            branch_text = subprocess.run(
-                ["git", "show", f"{sha}:docs/GATED.md"],
-                cwd=ROOT, check=True, capture_output=True, text=True,
-            ).stdout
-            raw = subprocess.run(
-                ["git", "show", f"{sha}:catalog.json"],
-                cwd=ROOT, check=True, capture_output=True, text=True,
-            ).stdout
-            branch_rows = {s.get("slug"): s for s in json.loads(raw).get("systems") or []}
-        except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-            branch_text = None
-            branch_rows = None
-        if (branch_text is not None and current == branch_text
-                and branch_rows and set(branch_rows) < set(head_rows)
-                and all(head_rows.get(slug) == row
-                        for slug, row in branch_rows.items())):
-            return True
-    if current == render(base["systems"]):
-        return True
-    # The roll-up may lag packages already merged to the base. It is still
-    # current when it is exactly the render of the packages it names.
-    return gated_is_prior_render(systems, current)
+    kept = catalog.lagging_subset(slugs_in_gated(current), head_rows, ROOT)
+    return kept is not None and current == render(kept)
 
 
 def slugs_in_gated(text: str) -> set[str]:
@@ -115,16 +75,6 @@ def slugs_in_gated(text: str) -> set[str]:
     if marker in text:
         open_slugs = set(re.findall(r"`([^`]+)`", text.split(marker, 1)[1]))
     return linked | open_slugs
-
-
-def gated_is_prior_render(systems, current: str) -> bool:
-    """True when the file renders an unchanged subset of this catalog."""
-    named = slugs_in_gated(current)
-    slugs = {s.get("slug") for s in systems}
-    if not named or not named <= slugs:
-        return False
-    kept = [s for s in systems if s.get("slug") in named]
-    return current == render(kept)
 
 
 def render(systems):

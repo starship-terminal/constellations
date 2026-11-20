@@ -103,6 +103,26 @@ class SharedList(unittest.TestCase):
                     self.assertIn("LEAK", res.stderr)
                     self.assertNotIn("Jane", res.stderr)
 
+    def test_unsnap_refuses_a_missing_snapshot_and_a_label_that_is_a_path(self):
+        with tempfile.TemporaryDirectory() as d:
+            redact = Path(d) / "r.json"
+            redact.write_text(json.dumps({"replace": [["Jane Doe", "gi", "A User"]]}))
+            out = Path(d) / "out"
+            for body, why in [("not a snapshot", "no SNAPSTART"),
+                              ("SNAPSTART" + json.dumps({"label": "Jane Doe/../x", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
+                              ("SNAPSTART" + json.dumps({"label": "../escaped", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
+                              ("SNAPSTART" + json.dumps({"label": "a/b", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
+                              ("SNAPSTART" + json.dumps({"label": "..", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name")]:
+                snap = Path(d) / "snap.txt"
+                snap.write_text(body)
+                res = subprocess.run([sys.executable, str(SIGNED_IN / "unsnap.py"), str(snap), str(out)],
+                                     capture_output=True, text=True, env={**os.environ, "SNAP_REDACT": str(redact)})
+                self.assertNotEqual(res.returncode, 0, body)
+                self.assertIn(why, res.stderr, body)
+                self.assertNotIn("Traceback", res.stderr)
+                self.assertNotIn("Jane", res.stderr)   # a refused label is never echoed
+            self.assertFalse((Path(d) / "escaped.html").exists())
+
     def test_unsnap_finds_an_accented_name_in_the_metadata(self):
         with tempfile.TemporaryDirectory() as d:
             redact = Path(d) / "r.json"

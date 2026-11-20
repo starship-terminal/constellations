@@ -54,8 +54,9 @@ What is not finished in this library. Newest first.
 
 ## 2026-10-10
 
-- [x] **No GitHub remote.** Pushed to the private `c-wenlong/designs` (renamed from `design-systems`) on 2026-10-10.
-  It must stay private ([RIGHTS.md](RIGHTS.md)).
+- [x] **No GitHub remote.** Pushed to `c-wenlong/designs` (renamed from `design-systems`) on 2026-10-10.
+  It now lives at `starship-terminal/constellations`, which is public as of 2026-11-20; the
+  rights position in [RIGHTS.md](RIGHTS.md) is pending the owner's decision.
 - [ ] **The owner's work design system was not copied.** It is that employer's own product
   system, not a capture of another product, so it was left out on purpose. Add it if wanted.
 - [ ] **`ai-engineering/README.md` does not list `design/design-systems`.** That repo had
@@ -64,6 +65,6 @@ What is not finished in this library. Newest first.
   `docs/design/reference/`. Keep both, or replace self-learn's copy with a pointer here.
 - [x] **DESIGN.md tier.** Done on 2026-10-11 as clones rather than a vendored copy:
   awesome-design-md and four other references sit under `example/`, gitignored, with
-  [example/README.md](https://github.com/c-wenlong/designs/blob/main/example/README.md) as the pointer index. They are unverified and
+  [example/README.md](https://github.com/starship-terminal/constellations/blob/main/example/README.md) as the pointer index. They are unverified and
   never a source of values.
 - [ ] **Hevy package gaps** (added 2026-10-10): checked and updated under 2026-10-24 above.
