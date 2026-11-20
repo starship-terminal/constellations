@@ -558,18 +558,11 @@ for key, comp, state, prop, group, prefer, desc in [
 ]:
     try:
         if prop == "_body-bg":
-            raw = "#ffffff"
-            src = "the public surfaces paint a white field (screenshots/*-light-*.png; --background resolves #ffffff)"
-        else:
-            raw = st(comp, state)[prop]
-            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-        put_sem(sem, group, key, semcolor(raw, src, desc, prefer=prefer))
-    except KeyError:
-        pass
-    try:
-        if prop == "_body-bg":
-            raw = "#ffffff"
-            src = "the public surfaces paint a white field (screenshots/*-light-*.png; --background resolves #ffffff)"
+            # No measured element reports the page field; read the declared
+            # --background the pages paint, not a screenshot pixel.
+            raw = R["--background"]
+            src = ("declared --background (raw/css-vars.json resolved.light); no computed reading of the page field "
+                   "(seen in screenshots/*-light-*.png)")
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
@@ -597,14 +590,6 @@ for key, comp, state, desc in [
                       src + (f"; matches declared {alias[1]}" if alias else ""), desc)
     except KeyError:
         pass
-    try:
-        raw = st(comp, state)["fontSize"]
-        src = f"computed fontSize of {comp} {state} (raw/components-computed.json)"
-        alias = size_alias.get(raw)
-        ty.setdefault("measured", {})[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
-                      src + (f"; matches declared {alias[1]}" if alias else ""), desc)
-    except KeyError:
-        pass
 
 # ------------------------------------------------------------------ shape
 
@@ -616,19 +601,6 @@ for key, comp, state, prop, desc in [
     ("tile", "ast-tile-hero", "default", "borderTopLeftRadius", "The 8px asset-tile radius."),
     ("pill", "waitlist-btn", "default", "borderTopLeftRadius", "The full-pill (calc(infinity * 1px)) waitlist CTA."),
 ]:
-    try:
-        v = st(comp, state)[prop]
-        src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-        mnum = re.match(r"[\d.eE+-]+", v)
-        if mnum and float(mnum.group(0)) > 9999 and "px" in v:
-            v = "calc(infinity * 1px)"
-        dkey = {v_: k_ for k_, v_ in R.items() if k_.startswith("--radius-")}.get(v)
-        if dkey:
-            radii[key] = lit(f"{{radius.{dkey[len('--radius-'):]}}}", "dimension", src + f"; matches declared {dkey}", desc)
-        else:
-            radii[key] = lit(v, "dimension" if re.fullmatch(r"[0-9.]+(px|rem)", v or "") else "other", src, desc)
-    except (KeyError, AttributeError):
-        pass
     try:
         v = st(comp, state)[prop]
         src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
@@ -690,12 +662,31 @@ for name, cname, state, prop, ty_, desc in [
                          ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
     except KeyError:
         pass
-    try:
-        v = rc(cname, state, prop)
-        comp[name] = lit(("%g" % v) + "px" if isinstance(v, (int, float)) else str(v) + "px",
-                         ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
-    except KeyError:
-        pass
+
+# Readings a token must not pass off as the component it is named for, or as
+# the latest run's: post-para's selector caught a subtitle (the README's Known
+# gaps), and a state kept after a failed re-read (rerunError) is an earlier
+# run's reading republished under the component's new date.
+WRONG_ELEMENT = {"post-para": "the one-line article subtitle, not a body paragraph"}
+KEPT = {(k, sn) for k, c in C.items() for sn, v in c.get("states", {}).items() if v.get("rerunError")}
+
+
+def note_readings(node):
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            for k, what in WRONG_ELEMENT.items():
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and "read from the wrong element" not in src:
+                    node["source"] = src = src + f"; {k} caught {what} (read from the wrong element; recapture needed)"
+            for k, sn in sorted(KEPT):
+                if re.search(rf"(?<![\w-]){re.escape(k)} {re.escape(sn)}(?![\w-])", src) and f"{k} {sn} is a kept reading" not in src:
+                    node["source"] = src = (src + f"; {k} {sn} is a kept reading: the {C[k]['run']} re-read failed (rerunError)"
+                                            " and the earlier reading was kept, its own date unrecorded")
+        for v in node.values():
+            note_readings(v)
+
+
+note_readings(SPEC)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})
