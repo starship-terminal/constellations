@@ -93,7 +93,7 @@ The pricing page shows dollar amounts. Those are prices, not colour or type toke
 
 Geist Variable and Geist are commercial faces. The tokens name them. The style guide falls back to Arial.
 
-[tokens.json](tokens.json) and [style-guide.html](style-guide.html) are maintained by hand, and no builder in this package reproduces them. The capture read the page into the files in [raw/](raw) and typed the tokens from those readings. The builders under [tools/](tools) (`build_tokens.py`, `build_style_guide.py`, `style-guide.template.html`, `motion.py`) are the kit's copies of another product's example and were never adapted: `build_tokens.py` needs `raw/css-vars.json` and `raw/component-tokens.json`, and `build_style_guide.py` needs an `icons/` folder, and this package has neither. `tools/test_build_tokens.py` checks the tokens against the readings, and checks that every colour the style guide declares is a token value. A change to a value goes into both files by hand, or waits for a recapture through the kit's pipeline.
+[tokens.json](tokens.json) and [style-guide.html](style-guide.html) are maintained by hand, and no builder in this package reproduces them. The capture read the page into the files in [raw/](raw) and typed the tokens from those readings. The package has no token or style-guide builder: the kit's copies of another product's example (`build_tokens.py`, `build_style_guide.py`, `style-guide.template.html`, `motion.py`) were never adapted, could not run on these readings, and were deleted on 2026-11-21. `tools/test_build_tokens.py` checks the tokens against the readings, and checks that every colour the style guide declares is a token value. A change to a value goes into both files by hand, or waits for a recapture through the kit's pipeline.
 
 ## Fonts
 
@@ -143,4 +143,4 @@ python3 tools/package_tests.py relume
 python3 tools/catalog.py design-md relume
 ```
 
-The kit under [tools/](tools/) is the copied starting point. This capture measured the live page in the preview browser and in headless Chrome, and did not run the kit's Playwright pipeline to rebuild tokens. [tokens.json](tokens.json) is written by hand from the readings in [raw/](raw). `tools/build_tokens.py` is the copied kit builder and cannot run here: it reads `raw/css-vars.json` and `raw/component-tokens.json`, which this package does not have. The package test checks the tokens against the readings, and every token, aliases included, carries a source.
+The capture scripts under [tools/capture/](tools/capture/) are the kit's copied starting point. This capture measured the live page in the preview browser and in headless Chrome, and did not run the kit's Playwright pipeline to rebuild tokens. [tokens.json](tokens.json) is written by hand from the readings in [raw/](raw), and there is no builder to rerun. The package test checks the tokens against the readings, and every token, aliases included, carries a source.
