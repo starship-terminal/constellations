@@ -1,0 +1,33 @@
+{
+  "source": "headless Chromium via Playwright, 2026-11-21",
+  "file": "docs-migrating-light.png",
+  "capturedAt": "2026-11-20T19:21:38.969Z",
+  "sanitizedSourceUrl": "https://docs.getmocha.com/getting-started/migrating",
+  "status": 200,
+  "theme": "light",
+  "state": "default",
+  "width": 1440,
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "meta": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "themeClass": [
+      "light"
+    ],
+    "colorScheme": "light",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 1382,
+    "title": "Migrating older apps - Mocha"
+  }
+}

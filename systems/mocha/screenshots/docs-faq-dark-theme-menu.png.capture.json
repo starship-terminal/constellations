@@ -1,5 +1,33 @@
 {
-  "source": "headless Chromium via Playwright, 2026-11-19",
+  "source": "headless Chromium via Playwright, 2026-11-21",
   "file": "docs-faq-dark-theme-menu.png",
-  "note": "interaction screenshot; viewport 1440x900 dpr 2 unless the name starts with mobile (390x844 dpr 2)"
+  "capturedAt": "2026-11-20T19:22:46.432Z",
+  "sanitizedSourceUrl": "https://docs.getmocha.com/getting-started/faq",
+  "status": 200,
+  "theme": "dark",
+  "state": "theme-menu",
+  "width": 1440,
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "meta": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "themeClass": [
+      "dark"
+    ],
+    "colorScheme": "dark",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 1917,
+    "title": "FAQ - Mocha"
+  }
 }

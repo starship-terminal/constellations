@@ -1,0 +1,31 @@
+{
+  "source": "headless Chromium via Playwright, 2026-11-21",
+  "file": "shutdown-studio-light.png",
+  "capturedAt": "2026-11-20T19:22:58.693Z",
+  "sanitizedSourceUrl": "https://studio.mocha.app/",
+  "status": 410,
+  "theme": "light",
+  "state": "default",
+  "width": 1440,
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "meta": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "themeClass": [],
+    "colorScheme": "light",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 900,
+    "title": "This app is no longer available"
+  }
+}

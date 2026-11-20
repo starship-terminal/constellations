@@ -1,20 +1,31 @@
 {
-  "source": "headless Chromium via Playwright, 2026-11-19",
-  "file": "mobile-shutdown-light.png",
+  "source": "headless Chromium via Playwright, 2026-11-21",
+  "file": "mobile-shutdown-app-light.png",
+  "capturedAt": "2026-11-20T19:23:01.896Z",
+  "sanitizedSourceUrl": "https://app.mocha.app/",
+  "status": 410,
+  "theme": "light",
+  "state": "default",
+  "width": 390,
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
   "meta": {
-    "name": "mobile-shutdown-light",
-    "url": "https://app.mocha.app/",
-    "title": "This app is no longer available",
-    "status": 410,
     "innerWidth": 390,
     "innerHeight": 844,
-    "dpr": 2,
+    "devicePixelRatio": 2,
+    "themeClass": [],
+    "colorScheme": "light",
     "visualViewport": {
-      "w": 390,
-      "h": 844,
+      "width": 390,
+      "height": 844,
       "scale": 1
     },
-    "theme": "",
-    "capturedAt": "2026-11-18T16:36:22.503Z"
+    "scrollHeight": 844,
+    "title": "This app is no longer available"
   }
 }

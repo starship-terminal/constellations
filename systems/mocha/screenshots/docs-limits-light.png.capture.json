@@ -1,0 +1,33 @@
+{
+  "source": "headless Chromium via Playwright, 2026-11-21",
+  "file": "docs-limits-light.png",
+  "capturedAt": "2026-11-20T19:22:22.126Z",
+  "sanitizedSourceUrl": "https://docs.getmocha.com/billing/limits",
+  "status": 200,
+  "theme": "light",
+  "state": "default",
+  "width": 1440,
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "meta": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "themeClass": [
+      "light"
+    ],
+    "colorScheme": "light",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 3233,
+    "title": "Credit and App Size Limits - Mocha"
+  }
+}

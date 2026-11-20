@@ -30,7 +30,9 @@ The billing page is the same shell. It describes subscriptions. No payment form 
 
 ## Shutdown
 
-app.mocha.app, login.mocha.app, auth.mocha.app, dashboard.mocha.app, studio.mocha.app, and build.mocha.app all return the same 410 page. It is one column, centred, on `#f7f5f1`, with the black wordmark, a 68px heading, a muted sentence, and one pill link. The link points at `https://getmocha.com/blog/mocha-shutdown`, which does not resolve.
+app.mocha.app, login.mocha.app, auth.mocha.app, dashboard.mocha.app, studio.mocha.app, build.mocha.app, and vidsync.mocha.app all return the same 410 page. Rechecked 2026-11-21. It is one column, centred, on `#f7f5f1`, with the black wordmark, a 68px heading, a muted sentence, and one pill link. The link points at `https://getmocha.com/blog/mocha-shutdown`, which does not resolve. login.mocha.app is the same page. It is not a sign-in form.
+
+![login.mocha.app, 1440](screenshots/shutdown-login-light.png)
 
 ![Shutdown, 1440](screenshots/shutdown-light.png)
 
@@ -38,4 +40,6 @@ app.mocha.app, login.mocha.app, auth.mocha.app, dashboard.mocha.app, studio.moch
 
 ## What was not entered
 
-getmocha.com has no A record. Sign-in, signup, the builder, and billing checkout are gone with the product. The search dialog was opened and closed with nothing typed. The theme menu was opened and closed. One FAQ row was opened. No form was submitted.
+getmocha.com has no A record. Confirmed again on 2026-11-21: `/` and `/login` do not resolve. Sign-in, signup, the builder, and billing checkout are gone with the product. The search dialog was opened and closed with nothing typed. The theme menu was opened and closed. One FAQ row was opened. The phone nav sheet was opened. No form was submitted. The page list is [site-tree.md](site-tree.md).
+
+![Phone nav, 390](screenshots/mobile-docs-welcome-light-menu.png)

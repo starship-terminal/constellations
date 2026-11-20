@@ -1,22 +1,33 @@
 {
-  "source": "headless Chromium via Playwright, 2026-11-19",
+  "source": "headless Chromium via Playwright, 2026-11-21",
   "file": "mobile-docs-welcome-light.png",
+  "capturedAt": "2026-11-20T19:22:48.569Z",
+  "sanitizedSourceUrl": "https://docs.getmocha.com/welcome",
+  "status": 200,
+  "theme": "light",
+  "state": "default",
+  "width": 390,
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
   "meta": {
-    "name": "mobile-docs-welcome-light",
-    "url": "https://docs.getmocha.com/welcome",
-    "title": "Welcome - Mocha",
-    "status": 200,
     "innerWidth": 390,
     "innerHeight": 844,
-    "dpr": 2,
+    "devicePixelRatio": 2,
+    "themeClass": [
+      "light"
+    ],
+    "colorScheme": "light",
     "visualViewport": {
-      "w": 390,
-      "h": 844,
+      "width": 390,
+      "height": 844,
       "scale": 1
     },
-    "theme": "light",
-    "capturedAt": "2026-11-18T16:36:20.749Z",
-    "fullPage": true,
-    "scrollHeight": 3054
+    "scrollHeight": 3054,
+    "title": "Welcome - Mocha"
   }
 }

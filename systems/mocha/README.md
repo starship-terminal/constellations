@@ -16,8 +16,10 @@ Mocha (getmocha.com) was an AI app builder. On this date the apex has no DNS A r
 | [components/](components/) | Element crops. |
 | [icons/](icons/) | Twelve stroke icons from the docs sprite, with [INDEX.tsv](icons/INDEX.tsv). |
 | [screenshots/](screenshots/) | Quantised page shots, desktop and phone, light and dark. |
-| [raw/](raw/) | `css-vars.json`, `components-computed.json`, `motion.json`. |
+| [raw/](raw/) | `css-vars.json`, `components-computed.json`, `motion.json`, plus [css-vars-2026-11-21.json](raw/css-vars-2026-11-21.json) and [site-readings-2026-11-21.json](raw/site-readings-2026-11-21.json). |
 | [tools/](tools/) | Capture scripts and builders. |
+| [site-tree.md](site-tree.md) | Which control opens which page. Mapped 2026-11-21 from the welcome page, the docs index, and the product hosts. |
+| [login-review.json](login-review.json) | The public walk. There is no signed-in surface. |
 
 ## Brief
 
@@ -82,7 +84,7 @@ docs.getmocha.com declares RGB triplets on `:root`: `--primary` (81 58 6), `--pr
 
 Component colours were read with `getComputedStyle` on `/getting-started/faq` (the Go to Mocha face, search, current sidebar link, FAQ summary, shutdown callout, theme menu, search dialog) and on the 410 page at app.mocha.app. Screenshots were taken in headless Chromium at 1440×900 and 390×844, device pixel ratio 2, then quantised to 256 colours. Motion was read with `tools/capture/motion-probe.mjs` on `/welcome`, the FAQ, and the 410 page.
 
-The T3 preview browser opened docs.getmocha.com and app.mocha.app and could read the DOM. It did not produce screenshot frames (`The browser is not producing screenshot frames`). The shots in this package are from the same URLs in headless Chromium, which did not hit a Cloudflare challenge.
+A second pass on 2026-11-21 opened `https://getmocha.com/` first. Chromium reported `net::ERR_NAME_NOT_RESOLVED`. `https://getmocha.com/login` failed the same way. `dig` returned no A or AAAA record. The product hosts that do resolve (`app`, `login`, `auth`, `dashboard`, `studio`, `build` on mocha.app, plus vidsync.mocha.app) still return the 410 page. docs.getmocha.com still serves the same 35 pages. Custom properties on `/welcome` matched the 2026-11-19 reading (`--primary` 81 58 6, `--background-light` 249 247 239, `--background-dark` 26 26 26, the gray ramp). Those values were not rewritten. The new shots are in [screenshots/](screenshots/). The map is [site-tree.md](site-tree.md). The walk is [login-review.json](login-review.json).
 
 ## What to distrust
 
@@ -116,8 +118,10 @@ Docs body is Inter, then system-ui. `--font-paper-mono` names Paper Mono, then u
 | Destructive confirmation | Not present |
 | Search | The dialog was opened empty. [screenshots/docs-faq-light-search.png](screenshots/docs-faq-light-search.png) |
 | Light and dark, 1440 and 390 | Captured for docs. The 410 page is light only, at both widths |
-| Marketing home, pricing, blog | Not captured. getmocha.com has no A record |
-| Signed-in builder | Not captured. Every product host returns 410. Signup is closed |
+| Marketing home, pricing, blog | Not captured. Rechecked 2026-11-21: getmocha.com still has no A record |
+| Docs tree | Captured 2026-11-21. All 35 sitemap pages, light. Welcome, getting started, FAQ, auth, billing, account, and troubleshooting also in dark. See [site-tree.md](site-tree.md) |
+| Phone nav | Captured. [screenshots/mobile-docs-welcome-light-menu.png](screenshots/mobile-docs-welcome-light-menu.png) |
+| Signed-in builder | Not present. Every product host returns 410. No sign-in form. See [login-review.json](login-review.json) |
 
 ## Do and don't
 
