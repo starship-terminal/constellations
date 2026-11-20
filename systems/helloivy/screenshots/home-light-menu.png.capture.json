@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T04:10:00.000Z",
+  "screenshot": "home-light-menu.png",
+  "note": "Viewport shot of the open menu overlay, taken during the site-tree probe at 1440x900, dpr 1, before the package shooter. The later shooter click landed on the icon's active dot and did not reopen the list.",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "dimensionCheck": {
+    "status": "pass"
+  },
+  "visualReview": {
+    "status": "accepted",
+    "note": "Full overlay visible: 01 HOME through 05 BLOG, close X, trial pill."
+  }
+}
