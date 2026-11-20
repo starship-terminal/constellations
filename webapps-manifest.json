@@ -5871,9 +5871,9 @@
       "description": "Home to all your lists",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://app.superlist.com/ Continue in browser then Sign in with Google opened the inbox. Product not walked.",
+      "notes": "https://app.superlist.com/inbox showed Let's get started. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 18
     },
     {
