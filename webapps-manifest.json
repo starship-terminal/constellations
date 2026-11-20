@@ -3729,9 +3729,9 @@
       "description": "Track, budget, plan, and do more with your money",
       "status": "pending",
       "package": null,
-      "notes": "https://app.monarch.com/login asks for a password. Password not submitted. Cookie banner not accepted.",
+      "notes": "https://app.monarch.com/login asks for a password. Password not submitted. Cookie banner not accepted. Public walk 2026-11-21: https://www.monarchmoney.com/ redirects to https://www.monarch.com/. The header Features button opened a mega menu to tracking, budgeting, and planning. For Couples, For Professionals, Pricing, and Download are pages. Phone Open menu repeated those destinations. Homepage tabs swap a panel. Calculators, directory, glossary, blog, company, and legal pages loaded publicly. Partnerships is a Qualtrics survey and was not opened. Cookie Preferences reopens Osano. Accept, Reject, and Save were not clicked. Sign in stops at https://app.monarch.com/login. Sign up stops at signup or the onboarding quiz. Both were not entered. No form was submitted. Public package in PR 1539 at 199b34e2a562. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 11
     },
     {
