@@ -57,56 +57,56 @@ export function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
         href="/library"
       >
         <Grid2X2 size={20} />
-        Gallery
+        <span className="nav-label">Gallery</span>
       </Link>
       <Link
         className={`nav-link ${path === "/library" && platform === "web" ? "active" : ""}`}
         href="/library?platform=web"
       >
         <Monitor size={20} />
-        Web apps
+        <span className="nav-label">Web apps</span>
       </Link>
       <Link
         className={`nav-link ${path === "/library" && platform === "mobile" ? "active" : ""}`}
         href="/library?platform=mobile"
       >
         <Smartphone size={20} />
-        iOS apps
+        <span className="nav-label">iOS apps</span>
       </Link>
       <Link
         className={`nav-link ${path === "/library" && platform === "desktop" ? "active" : ""}`}
         href="/library?platform=desktop"
       >
         <Laptop size={20} />
-        Desktop apps
+        <span className="nav-label">Desktop apps</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/styles") ? "active" : ""}`}
         href="/styles"
       >
         <Palette size={20} />
-        Styles
+        <span className="nav-label">Styles</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/collections") ? "active" : ""}`}
         href="/collections"
       >
         <Bookmark size={20} />
-        Bookmarks
+        <span className="nav-label">Bookmarks</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/docs") ? "active" : ""}`}
         href="/docs"
       >
         <BookOpen size={20} />
-        Documents
+        <span className="nav-label">Documents</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/scorecard") ? "active" : ""}`}
         href="/scorecard"
       >
         <BarChart3 size={20} />
-        Scorecard
+        <span className="nav-label">Scorecard</span>
       </Link>
     </nav>
   );
@@ -285,7 +285,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         </Link>
         <Link href="/" className="new-research">
           <Plus size={22} />
-          New research
+          <span className="nav-label">New research</span>
         </Link>
         <Suspense fallback={null}>
           <CatalogNavigation onNavigate={() => setMobile(false)} />
@@ -385,7 +385,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             href="/settings"
           >
             <Settings size={18} />
-            Settings
+            <span className="nav-label">Settings</span>
           </Link>
         </div>
       </aside>
