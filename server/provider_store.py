@@ -31,8 +31,10 @@ import json
 import os
 import re
 import shutil
+import socket
 import tempfile
 import time
+import uuid
 from pathlib import Path
 
 CONFIG_DIR_ENV = "DESIGN_SYSTEMS_CONFIG_DIR"
@@ -102,41 +104,110 @@ def save(cfg: dict) -> None:
 
 
 LOCK_NAME = "provider.lock"
+OWNER = "owner"
 LOCK_WAIT = 5.0
 LOCK_STALE = 30.0
+CLAIM_KEEP = 24 * 3600.0
+
+
+def _lock_identity(lock: Path):
+    """(id, owner, age) of the lock folder, None when it is gone. The id is the
+    holder's token, or before it has written one, the folder's mtime."""
+    try:
+        st = lock.stat()
+    except OSError:
+        return None
+    owner = None
+    try:
+        o = json.loads((lock / OWNER).read_text())
+        if isinstance(o, dict) and isinstance(o.get("token"), str):
+            owner = o
+    except (OSError, ValueError):
+        pass
+    # Whole milliseconds, as the web store names a missing owner, so both
+    # servers race for the same claim folder.
+    ident = owner["token"] if owner else f"none-{st.st_mtime_ns // 1_000_000}"
+    return ident, owner, time.time() - st.st_mtime
+
+
+def _alive(pid: int) -> bool:
+    try:
+        os.kill(pid, 0)
+        return True
+    except PermissionError:
+        return True
+    except OSError:
+        return False
+
+
+def _stale(owner, age: float) -> bool:
+    """A crashed holder's lock: its holder ran on this host and that process is
+    gone, or (another host or container, where the pid means nothing here)
+    it is older than 30 s."""
+    if owner and owner.get("host") == socket.gethostname() and isinstance(owner.get("pid"), int):
+        return not _alive(owner["pid"])
+    return age > LOCK_STALE
 
 
 @contextlib.contextmanager
 def locked():
     """Hold the store's lock: a folder beside provider.json that mkdir creates
     atomically, the same one web/lib/provider-store.ts takes, so saves,
-    replacements and removals from either server never interleave. A lock
-    older than 30 s is a crashed holder's and is broken."""
+    replacements and removals from either server never interleave.
+
+    The holder writes its token, pid and host into the folder and removes it
+    only while its own token is there. A crashed holder's lock is broken by
+    exactly one waiter: each must first create a claim folder named after that
+    holder's token, which mkdir lets only one of them do, and the winner
+    removes the lock only if it still holds that token. Claim folders are
+    swept after a day."""
     folder = config_dir()
     folder.mkdir(parents=True, exist_ok=True, mode=0o700)
     lock = folder / LOCK_NAME
+    token = uuid.uuid4().hex
     start = time.monotonic()
     while True:
         try:
             lock.mkdir(mode=0o700)
+            try:
+                (lock / OWNER).write_text(json.dumps(
+                    {"token": token, "pid": os.getpid(), "host": socket.gethostname()}))
+            except OSError:
+                shutil.rmtree(lock, ignore_errors=True)
+                raise StoreError("The provider store cannot be locked.") from None
             break
         except FileExistsError:
-            try:
-                age = time.time() - lock.stat().st_mtime
-            except OSError:
-                age = 0.0
-            if age > LOCK_STALE:
-                shutil.rmtree(lock, ignore_errors=True)
-                continue
-            if time.monotonic() - start > LOCK_WAIT:
-                raise StoreError("The provider store is busy; try again.") from None
-            time.sleep(0.05)
+            pass
         except OSError:
             raise StoreError("The provider store cannot be locked.") from None
+        held = _lock_identity(lock)
+        if held and _stale(held[1], held[2]):
+            claim = folder / (LOCK_NAME + ".claim-" + re.sub(r"[^A-Za-z0-9.-]", "_", held[0]))
+            try:
+                claim.mkdir(mode=0o700)
+                won = True
+            except OSError:
+                won = False
+            if won:
+                again = _lock_identity(lock)
+                if again and again[0] == held[0]:
+                    shutil.rmtree(lock, ignore_errors=True)
+                continue
+        if time.monotonic() - start > LOCK_WAIT:
+            raise StoreError("The provider store is busy; try again.")
+        time.sleep(0.05)
     try:
         yield
     finally:
-        shutil.rmtree(lock, ignore_errors=True)
+        mine = _lock_identity(lock)
+        if mine and mine[0] == token:
+            shutil.rmtree(lock, ignore_errors=True)
+        for p in folder.glob(LOCK_NAME + ".claim-*"):
+            try:
+                if time.time() - p.stat().st_mtime > CLAIM_KEEP:
+                    shutil.rmtree(p, ignore_errors=True)
+            except OSError:
+                pass
 
 
 def remove() -> bool:

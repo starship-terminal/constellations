@@ -649,11 +649,44 @@ class ProviderKeyTest(TempConfig):
         t.join(5)
         self.assertEqual(order, ["released", "delete"])
         self.assertFalse((self.config / self.store.LOCK_NAME).exists())
+        # A lock with no owner file (another host's, say) breaks once it is 30 s old.
         lock = self.config / self.store.LOCK_NAME
         lock.mkdir()
         os.utime(lock, (time.time() - 60, time.time() - 60))
         h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
         self.assertEqual(h.json()["ok"], True)
+
+    def test_a_crashed_holders_lock_is_broken_once_and_a_live_one_never(self):
+        import socket
+        import threading
+        import time
+        lock = self.config / self.store.LOCK_NAME
+        lock.mkdir(parents=True)
+        (lock / "owner").write_text(json.dumps({"token": "dead-holder", "pid": 999999,
+                                                "host": socket.gethostname()}))
+        inside, most = [0], [0]
+
+        def work():
+            with self.store.locked():
+                inside[0] += 1
+                most[0] = max(most[0], inside[0])
+                time.sleep(0.04)
+                inside[0] -= 1
+        threads = [threading.Thread(target=work) for _ in range(3)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join(10)
+        self.assertEqual(most[0], 1)
+        self.assertFalse(lock.exists())
+        lock.mkdir()
+        (lock / "owner").write_text(json.dumps({"token": "live-holder", "pid": os.getpid(),
+                                                "host": socket.gethostname()}))
+        self.store.LOCK_WAIT = 0.3
+        with self.assertRaises(self.store.StoreError):
+            with self.store.locked():
+                pass
+        self.assertEqual(json.loads((lock / "owner").read_text())["token"], "live-holder")
 
     def test_delete_is_only_the_provider_route(self):
         handled, h = _send(self.routes, "delete", "/api/mcp")
