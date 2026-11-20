@@ -125,4 +125,6 @@ python3 tools/build_style_guide.py
 python3 tools/build_components_md.py
 ```
 
+components.md is written by hand from raw/readings.json at capture time; `build_components_md.py` only checks that it exists, so a recapture must update it by hand. `build_tokens.py` does not rebuild tokens.json either: it checks the hand-written file against raw/readings.json (sources, literal colours, aliases).
+
 Run from `systems/spatial-chat`. `python3 tools/catalog.py design-md spatial-chat` from the repo root rewrites DESIGN.md.

@@ -1,0 +1,48 @@
+"""build_tokens.py's checks: the committed file passes, and each kind of broken file is refused."""
+import copy
+import json
+import pathlib
+import sys
+import unittest
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import build_tokens  # noqa: E402
+
+HERE = pathlib.Path(__file__).resolve().parent.parent
+TOKENS = json.loads((HERE / "tokens.json").read_text())
+READINGS = json.loads((HERE / "raw" / "readings.json").read_text())
+SRC = {"source": "Measured. test fixture"}
+
+
+class Check(unittest.TestCase):
+    def test_committed_tokens_pass(self):
+        self.assertEqual(build_tokens.problems(TOKENS, READINGS), [])
+
+    def broken(self, **leaf):
+        t = copy.deepcopy(TOKENS)
+        t["core"]["palette"]["zz-test"] = dict({"$type": "color", "$extensions": SRC}, **leaf)
+        return build_tokens.problems(t, READINGS)
+
+    def test_colour_not_in_readings_is_refused(self):
+        self.assertTrue(any("in no reading" in p for p in self.broken(**{"$value": "#123457"})))
+
+    def test_reading_colour_is_accepted(self):
+        self.assertEqual(self.broken(**{"$value": "#5727E7"}), [])
+
+    def test_dead_alias_is_refused(self):
+        self.assertTrue(any("dead alias" in p for p in self.broken(**{"$value": "{palette.nope}"})))
+
+    def test_self_alias_is_refused(self):
+        self.assertTrue(any("cycle" in p for p in self.broken(**{"$value": "{palette.zz-test}"})))
+
+    def test_unlabelled_source_is_refused(self):
+        t = copy.deepcopy(TOKENS)
+        t["core"]["palette"]["zz-test"] = {"$value": "#5727e7", "$type": "color", "$extensions": {"source": "guessed"}}
+        self.assertTrue(any("not Measured or Derived" in p for p in build_tokens.problems(t, READINGS)))
+
+    def test_rgba_alpha_rounds_half_up(self):
+        self.assertIn("#1b1b204d", build_tokens.colours_in("rgba(27, 27, 32, 0.3)"))
+
+
+if __name__ == "__main__":
+    unittest.main()
