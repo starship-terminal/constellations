@@ -1,22 +1,119 @@
 #!/usr/bin/env python3
-"""Check that tokens.json still matches the captured readings.
+"""Check The New York Times' hand-written tokens.json against the captured readings.
 
-The New York Times package writes tokens.json by hand from
-raw/computed.json and raw/tokens-resolved.json. This script does not
-rebuild those files. It fails when a painted value drifts.
+The package writes tokens.json by hand from raw/computed.json and raw/tokens-resolved.json. This
+script does not rebuild it. It refuses a token file that:
+  - has a token with no source or with an evidence label docs/EVIDENCE.md does not use
+    ("Declared", this package's word for a declared custom property, is accepted too);
+  - has a literal colour that no raw/ file holds (hex, rgb() or rgba(), compared as lower-case
+    #rrggbb or #rrggbbaa), unless the token is labelled Reconstruction;
+  - has an alias ({a.b}), at any depth of a value, that does not resolve in its own set, then
+    core, then the root, or that loops;
+  - has drifted from the painted masthead, ink, accent and login readings it was written from.
 """
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+LABELS = {"Measured", "Derived", "Sampled", "Observed", "Reconstruction", "Not captured", "Declared"}
 
 
-def main() -> int:
-    tokens = json.loads((ROOT / "tokens.json").read_text())
-    computed = json.loads((ROOT / "raw" / "computed.json").read_text())
+def walk(node, path=""):
+    if isinstance(node, dict) and "$value" in node:
+        yield path, node
+        return
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if not k.startswith("$"):
+                yield from walk(v, f"{path}.{k}" if path else k)
+
+
+def norm(h):
+    h = h.lower().lstrip("#")
+    if len(h) in (3, 4):
+        h = "".join(c * 2 for c in h)
+    if len(h) == 8 and h.endswith("ff"):
+        h = h[:6]
+    return "#" + h
+
+
+def raw_colours(raw_texts):
+    seen = set()
+    for text in raw_texts:
+        for m in re.finditer(r"#([0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3,4})\b", text):
+            seen.add(norm(m.group(1)))
+        for m in re.finditer(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+))?\s*\)", text):
+            h = "#%02x%02x%02x" % tuple(int(x) for x in m.groups()[:3])
+            if m.group(4) is not None and float(m.group(4)) < 1:
+                h += "%02x" % int(float(m.group(4)) * 255 + 0.5)
+            seen.add(h)
+    return seen
+
+
+def strings(value):
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, dict):
+        for v in value.values():
+            yield from strings(v)
+    elif isinstance(value, list):
+        for v in value:
+            yield from strings(v)
+
+
+def lookup(tree, dotted):
+    node = tree
+    for part in dotted.split("."):
+        if not isinstance(node, dict) or part not in node:
+            return None
+        node = node[part]
+    return node if isinstance(node, dict) and "$value" in node else None
+
+
+def follow(tokens, setname, ref, chain):
+    if ref in chain:
+        return f"alias cycle at {{{ref}}}"
+    for scope in (tokens.get(setname, {}), tokens.get("core", {}), tokens):
+        tok = lookup(scope, ref)
+        if tok is not None:
+            for text in strings(tok["$value"]):
+                for nxt in re.findall(r"\{([^{}]+)\}", text):
+                    err = follow(tokens, setname, nxt, chain | {ref})
+                    if err:
+                        return err
+            return None
+    return f"dead alias {{{ref}}}"
+
+
+def problems(tokens, raw_texts):
+    seen = raw_colours(raw_texts)
+    out = []
+    for path, tok in walk(tokens):
+        source = (tok.get("$extensions") or {}).get("source")
+        label = source.get("evidence") if isinstance(source, dict) else None
+        if not source:
+            out.append(f"{path}: no source")
+        elif label not in LABELS:
+            out.append(f"{path}: evidence label {label!r} is not one docs/EVIDENCE.md uses")
+        setname = path.split(".", 1)[0]
+        leaf = path.split(".", 1)[1] if "." in path else path
+        for text in strings(tok["$value"]):
+            for ref in re.findall(r"\{([^{}]+)\}", text):
+                err = follow(tokens, setname, ref, {leaf})
+                if err:
+                    out.append(f"{path}: {err}")
+        v = tok["$value"]
+        if (tok.get("$type") == "color" and isinstance(v, str) and not v.startswith("{")
+                and label != "Reconstruction" and norm(v) not in seen):
+            out.append(f"{path}: {v} is in no raw/ reading")
+    return out
+
+
+def drift(tokens, computed):
     checks = {
         "core.color.ink": (tokens["core"]["color"]["ink"]["$value"], "#121212"),
         "core.color.masthead": (tokens["core"]["color"]["masthead"]["$value"], "#567b95"),
@@ -25,11 +122,18 @@ def main() -> int:
         "login continue": (computed["login"]["continue"]["backgroundColor"], "rgb(18, 18, 18)"),
         "login radius": (computed["login"]["continue"]["borderRadius"], "3px"),
     }
-    bad = [name for name, (got, want) in checks.items() if got != want]
+    return [f"drift: {name}" for name, (got, want) in checks.items() if got != want]
+
+
+def main() -> int:
+    tokens = json.loads((ROOT / "tokens.json").read_text())
+    computed = json.loads((ROOT / "raw" / "computed.json").read_text())
+    raw_texts = [p.read_text() for p in sorted((ROOT / "raw").glob("*.json"))]
+    bad = problems(tokens, raw_texts) + drift(tokens, computed)
     if bad:
-        print("drift: " + ", ".join(bad), file=sys.stderr)
+        print("\n".join(bad), file=sys.stderr)
         return 1
-    print("tokens match the captured readings")
+    print(f"{sum(1 for _ in walk(tokens))} tokens checked against raw/")
     return 0
 
 

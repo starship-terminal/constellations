@@ -133,4 +133,4 @@ python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
 ```
 
-`build_tokens.py` checks the painted values. It does not rewrite tokens.json. `build_style_guide.py` rewrites style-guide.html from tokens.json.
+`build_tokens.py` checks tokens.json against raw/: every token has an evidence label, every literal colour is a raw/ reading (or labelled Reconstruction), every alias resolves without a loop, and the painted masthead, ink, accent and login values have not drifted. It does not rewrite tokens.json. `build_style_guide.py` rewrites style-guide.html from tokens.json.
