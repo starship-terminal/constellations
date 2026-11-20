@@ -3,12 +3,11 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs
 //
-// designmodo.com's public surface (home, /discover/*, /search/*, /<expert>,
-// /<expert>/chat) is a Next.js app that declares a shadcn/Radix-style token
-// layer — ~390 custom properties: the --<family>-1..12 colour scales,
-// --sand-*/--silk-* neutrals, --background/--foreground/--card/--popover/
-// --primary/--accent/--fg-* semantic roles and --mind-*/--person-*
-// designmodo-specific roles. Its styles
+// The sheets are read from one signed-out load of the Postcards app shell
+// (/postcards/app/folder/templates). designmodo.com declares almost no token
+// layer: the 2026-11 run found 24 names, the Font Awesome --fa-* font
+// variables and keyframe helpers on :root plus the code editor widget's
+// --color-* syntax palette (.w-tc-editor, light and dark). Its styles
 // arrive as linked CSS bundles plus inline <style> blocks. External bodies
 // are read from the network responses, inline <style> blocks through the
 // CSSOM, then re-parsed in the page with a constructed CSSStyleSheet — the
@@ -17,14 +16,13 @@
 // rules are kept too.
 //
 // Each name is resolved in a probe document that carries the real sheets,
-// once plain and once with a `dark` class (the app shell is dark-only and
-// does not bind it), computed the way the browser computes it: colours come
+// once plain and once with a `dark` class (the site paints one light theme
+// and does not bind it), computed the way the browser computes it: colours come
 // back as sRGB hex, lengths as px at 1440 x 900.
 //
 // Bins:
 //   theme     design-token-looking names wherever they are declared —
-//             here the Radix-style family scales plus the shadcn and
-//             designmodo semantic names
+//             here only the editor widget's --color-* syntax palette
 //   app       any other custom property the site's own sheets declare
 //   vendor    embedded widget/framework vars (--chakra-*, consent widgets)
 //   utility   a one-off `[--x:value]` arbitrary-property utility class

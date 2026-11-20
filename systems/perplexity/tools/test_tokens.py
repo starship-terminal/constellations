@@ -8,10 +8,6 @@ TOKENS = json.loads((ROOT / "tokens.json").read_text())
 READINGS = json.loads((ROOT / "raw" / "named-vars.json").read_text())
 
 
-def color(node):
-    return node["$value"]
-
-
 class TokensTest(unittest.TestCase):
     def test_themes_match_readings(self):
         pairs = [
@@ -27,8 +23,8 @@ class TokensTest(unittest.TestCase):
             for part in path:
                 node = node[part]
             raw = READINGS[reading]["vals"][css]
-            self.assertTrue(raw.startswith("#") or raw.startswith("rgb"))
-            self.assertEqual(node["$value"], color(node))
+            self.assertRegex(raw, r"^#[0-9a-f]{6}([0-9a-f]{2})?$", f"{reading} {css}")
+            self.assertEqual(node["$value"], raw, f"{theme}.{'.'.join(path)} against {reading} {css}")
             self.assertIn(css, node["$extensions"]["source"])
 
     def test_radius_and_type_come_from_the_light_root(self):

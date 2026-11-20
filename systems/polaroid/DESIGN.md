@@ -12,11 +12,11 @@ colors:
   neutral: "#ffffff"
   surface: "#e9e9e9"
   on-surface: "#151515"
-  on-surface-variant: "#e9e9e9"
+  on-surface-variant: "#151515"
   outline: "#151515"
   page: "#ffffff"
   text: "#151515"
-  muted: "#e9e9e9"
+  muted: "#151515"
   accent: "#151515"
   on-accent: "#ffffff"
   border: "#151515"
@@ -111,7 +111,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 - **neutral (#ffffff):** `light.page`
 - **surface (#e9e9e9):** `light.surface`
 - **on-surface (#151515):** `light.text`
-- **on-surface-variant (#e9e9e9):** `light.muted`
+- **on-surface-variant (#151515):** `light.muted`
 - **outline (#151515):** `light.border`
 
 ## Typography
@@ -160,7 +160,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-`light.muted` is `#e9e9e9`, the same grey as `light.surface` (`--color-grey-200`). No separate muted text colour was computed. The catalog requires a muted swatch, so the grey fill is reused. Do not treat it as secondary text.
+`light.muted` is `#151515`, the computed colour of the email field label. Polaroid sets its secondary text (the field label, the header nav) in the same ink as body text, so the muted role equals `light.text`. The grey `--color-grey-200` (`#e9e9e9`) is `light.surface`, a fill; it is not a text colour.
 
 The outline button's hover is a declared rule (black fill, white label), not a live hover. A synthetic mouseover did not change the fill, and Playwright's hover was intercepted by the nav.
 

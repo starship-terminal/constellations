@@ -232,22 +232,23 @@ Page: home. Selector: `Compact button`. States: default, hover, focus-visible, p
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 64 x 36 | = | = | = |
-| Padding | 8px 12px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | 1px solid #e5e5e5 | = | = | = |
-| Radius | 26px | = | = | = |
-| Background | #e5e5e5 @ 0.3 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | roobert 14px/20px 400 | = | = | = |
-| Letter spacing | -0.091px | = | = | = |
-| Colour | #161617 | = | = | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #161617 | = | = | = |
-| Painted layers | button.flex.w-fit 64.0x36.0 bg #e5e5e5 @ 0.3 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 26px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 64 x 36 | = | - | = |
+| Padding | 8px 12px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | 1px solid #e5e5e5 | = | - | = |
+| Radius | 26px | = | - | = |
+| Background | #e5e5e5 @ 0.3 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | roobert 14px/20px 400 | = | - | = |
+| Letter spacing | -0.091px | = | - | = |
+| Colour | #161617 | = | - | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 16 x 16, colour #161617 | = | - | = |
+| Painted layers | button.flex.w-fit 64.0x36.0 bg #e5e5e5 @ 0.3 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 26px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `feed-compact-default.png`, `feed-compact-hover.png`, `feed-compact-focus-visible.png`, `feed-compact-pressed.png`.
 
@@ -311,19 +312,20 @@ Page: home. Selector: `data-post-headline`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 536 x 48 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | roobert 16px/24px 600 | = | = | = |
-| Letter spacing | -0.12px | = | = | = |
-| Colour | #161617 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 536 x 48 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | roobert 16px/24px 600 | = | - | = |
+| Letter spacing | -0.12px | = | - | = |
+| Colour | #161617 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `post-headline-default.png`, `post-headline-hover.png`, `post-headline-focus-visible.png`, `post-headline-pressed.png`.
 
@@ -358,24 +360,25 @@ Page: home. Selector: `vote button`. States: default, hover, focus-visible, pres
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32 x 24 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 3.35544e+07px 26px 26px 3.35544e+07px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | = | = | = |
-| Outline | none | = | = | = |
-| Font | roobert 14px/20px 500 | = | = | = |
-| Letter spacing | -0.091px | = | = | = |
-| Colour | #161617 @ 0.7 | #161617 | = | #161617 |
-| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 12 x 12, colour #161617 @ 0.7 | 12 x 12, colour #161617 | = | 12 x 12, colour #161617 |
-| ::after | 77.8594px x 42px, absolute, bg #000000 @ 0, radius 0px | = | = | = |
-| Painted layers | button.group/button.inline-flex 32.0x24.0 r 3.35544e+07px 26px 26px 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span.relative.flex 32.0x24.0 bg #1c66eb @ 0.05 border T:1px solid #1c66eb @ 0.2 / R:1px solid #1c66eb @ 0.2 / B:1px solid #1c66eb @ 0.2 / L:1px solid #1c66eb @ 0.2 r 3.35544e+07px | = | = | = |
-| Ancestor paint | 1 up div.group/button-group.flex bg #fdfdff | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 32 x 24 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 3.35544e+07px 26px 26px 3.35544e+07px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | = | - | = |
+| Outline | none | = | - | = |
+| Font | roobert 14px/20px 500 | = | - | = |
+| Letter spacing | -0.091px | = | - | = |
+| Colour | #161617 @ 0.7 | #161617 | - | #161617 |
+| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 12 x 12, colour #161617 @ 0.7 | 12 x 12, colour #161617 | - | 12 x 12, colour #161617 |
+| ::after | 77.8594px x 42px, absolute, bg #000000 @ 0, radius 0px | = | - | = |
+| Painted layers | button.group/button.inline-flex 32.0x24.0 r 3.35544e+07px 26px 26px 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span.relative.flex 32.0x24.0 bg #1c66eb @ 0.05 border T:1px solid #1c66eb @ 0.2 / R:1px solid #1c66eb @ 0.2 / B:1px solid #1c66eb @ 0.2 / L:1px solid #1c66eb @ 0.2 r 3.35544e+07px | = | - | = |
+| Ancestor paint | 1 up div.group/button-group.flex bg #fdfdff | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `post-vote-default.png`, `post-vote-hover.png`, `post-vote-focus-visible.png`, `post-vote-pressed.png`.
 
@@ -387,21 +390,22 @@ Page: home. Selector: `comment link`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | 1px solid #000000 @ 0.08 | = | = | = |
-| Radius | 26px | = | = | = |
-| Background | transparent | #e5e5e5 @ 0.5 | = | #e5e5e5 @ 0.5 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | roobert 14px/20px 500 | = | = | = |
-| Letter spacing | -0.091px | = | = | = |
-| Colour | #161617 | = | = | = |
-| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #161617 @ 0.7 | = | = | = |
-| Painted layers | a.group/button.inline-flex 32.0x32.0 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 26px | a.group/button.inline-flex 32.0x32.0 bg #e5e5e5 @ 0.5 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 26px | = | a.group/button.inline-flex 32.0x32.0 bg #e5e5e5 @ 0.5 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 26px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 32 x 32 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | 1px solid #000000 @ 0.08 | = | - | = |
+| Radius | 26px | = | - | = |
+| Background | transparent | #e5e5e5 @ 0.5 | - | #e5e5e5 @ 0.5 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | roobert 14px/20px 500 | = | - | = |
+| Letter spacing | -0.091px | = | - | = |
+| Colour | #161617 | = | - | = |
+| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 16 x 16, colour #161617 @ 0.7 | = | - | = |
+| Painted layers | a.group/button.inline-flex 32.0x32.0 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 26px | a.group/button.inline-flex 32.0x32.0 bg #e5e5e5 @ 0.5 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 26px | - | a.group/button.inline-flex 32.0x32.0 bg #e5e5e5 @ 0.5 border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 26px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `post-comment-default.png`, `post-comment-hover.png`, `post-comment-focus-visible.png`, `post-comment-pressed.png`.
 
@@ -413,21 +417,22 @@ Page: home. Selector: `source avatar`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 24 x 24 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | roobert 14px/14px 400 | = | = | = |
-| Letter spacing | -0.091px | = | = | = |
-| Colour | #161617 | = | = | = |
-| Text node | span.flex.size-full: roobert 12px/16px 400, #161617 @ 0.7, ls -0.06px | = | = | = |
-| Transition | color, text-decoration-color, opacity 0.15s ease-out | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | span.group/avatar.flex 24.0x24.0 r 3.35544e+07px shadow #fdfdff 0px 0px 0px 1.5px; span.flex.size-full 24.0x24.0 bg #f0f0f5 r 3.35544e+07px; span.pointer-events-none.absolute 24.0x24.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.08 0px 0px 0px 1px inset, #000000 @ 0.12 0px 2px 4px 0px inset | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 24 x 24 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | roobert 14px/14px 400 | = | - | = |
+| Letter spacing | -0.091px | = | - | = |
+| Colour | #161617 | = | - | = |
+| Text node | span.flex.size-full: roobert 12px/16px 400, #161617 @ 0.7, ls -0.06px | = | - | = |
+| Transition | color, text-decoration-color, opacity 0.15s ease-out | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | span.group/avatar.flex 24.0x24.0 r 3.35544e+07px shadow #fdfdff 0px 0px 0px 1.5px; span.flex.size-full 24.0x24.0 bg #f0f0f5 r 3.35544e+07px; span.pointer-events-none.absolute 24.0x24.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.08 0px 0px 0px 1px inset, #000000 @ 0.12 0px 2px 4px 0px inset | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `post-avatars-default.png`, `post-avatars-hover.png`, `post-avatars-focus-visible.png`, `post-avatars-pressed.png`.
 
@@ -439,19 +444,20 @@ Page: home. Selector: `sources meta link`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 87 x 16 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 2px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | roobert 14px/20px 600 | = | = | = |
-| Letter spacing | -0.091px | = | = | = |
-| Colour | #161617 @ 0.7 | = | = | = |
-| Transition | color, text-decoration-color, opacity 0.15s ease-out | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 87 x 16 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 2px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | roobert 14px/20px 600 | = | - | = |
+| Letter spacing | -0.091px | = | - | = |
+| Colour | #161617 @ 0.7 | = | - | = |
+| Transition | color, text-decoration-color, opacity 0.15s ease-out | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `post-sources-default.png`, `post-sources-hover.png`, `post-sources-focus-visible.png`, `post-sources-pressed.png`.
 

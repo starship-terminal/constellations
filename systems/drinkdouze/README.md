@@ -59,7 +59,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 14.82:1 pass | 16.56:1 pass | 2.20:1 fail | 2.46:1 fail |
 
-2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.component.field.text.focus.bordertop` #301816; `light.component.field.text.focus.boxshadow` inset 0px 0px 0px 1px #301816; `light.component.field.search.focus.bordertop` #301816; `light.component.field.search.focus.boxshadow` inset 0px 0px 0px 1px #301816.
+2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.component.button.hero.focus.outline` #005fcc; `light.component.field.text.focus.bordertop` #301816; `light.component.field.text.focus.boxshadow` inset 0px 0px 0px 1px #301816; `light.component.button.flavor.focus.outline` #005fcc.
 
 <!-- brief:end -->
 

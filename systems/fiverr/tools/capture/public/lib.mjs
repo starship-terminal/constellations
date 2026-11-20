@@ -3,7 +3,6 @@
 // Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
 // directory has no node_modules.
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
@@ -26,9 +25,6 @@ export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');
-const SLUG = path.basename(REF);
-const SCRATCH = path.join(os.homedir(), '.design-systems', SLUG);
-const PX_COOKIES = path.join(SCRATCH, 'px-cookies.json');
 
 // fiverr.com is a React app styled with atomic hashed classes (_1xeo152 …) —
 // its :root carries ~1,290 custom properties all named by content hash (a
@@ -37,58 +33,33 @@ const PX_COOKIES = path.join(SCRATCH, 'px-cookies.json');
 // `dark` class on FORM.search-form (a dark variant inside the light page —
 // a component skin, not a theme toggle). The Macan brand face is
 // self-hosted (woff2 via @font-face in the served sheets). Every fresh
-// client meets PerimeterX first: a full-page "It needs a human touch"
-// challenge whose PRESS & HOLD button lives inside a nested about:blank
-// verification iframe. clearChallenge() drives the hold the way a visitor
-// would — a slow approach, then an ~11s press with small jitters — and the
-// clearance cookies it wins (_px3/_pxvid/_pxde …) are saved to the scratch
-// dir and injected into later contexts. Real Chrome runs headed (PX scores
-// the browser; bundled headless was challenged on sight, real Chrome under
-// Xvfb passed the hold); HEADLESS=1 forces bundled headless, CHANNEL=<name>
-// picks another channel. Specs select by role, aria-label or text — the
-// class names are hashed.
+// client may meet PerimeterX first: a full-page "It needs a human touch"
+// challenge with a PRESS & HOLD widget. Bot check: recorded as a boundary,
+// not bypassed. clearChallenge() only waits for the real document; a page
+// still challenged is logged as blocked and left out. Specs select by role,
+// aria-label or text — the class names are hashed.
 export const M = (name) => `[class*="${name}"]`;
 
-// The per-context patches every page gets: the webdriver mask, plus a record of
-// the real devicePixelRatio before app code runs — a page's scripts can make
-// window.devicePixelRatio read 1 while the renderer still paints at the
-// context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
-// __captureDPR keeps the launch-time value for the screenshot sidecar.
+// The per-context patch every page gets: a record of the real devicePixelRatio
+// before app code runs — a page's scripts can make window.devicePixelRatio read
+// 1 while the renderer still paints at the context's deviceScaleFactor (a
+// 780x1688 PNG from a 390x844 viewport). __captureDPR keeps the launch-time
+// value for the screenshot sidecar. Automation is not hidden: no webdriver mask.
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }
 
-// Inject the PerimeterX clearance cookies a previous solve left behind.
-// Harmless when absent or stale — the page just challenges again.
-export async function seedPx(context) {
-  try {
-    const cookies = JSON.parse(fs.readFileSync(PX_COOKIES, 'utf8'));
-    if (Array.isArray(cookies) && cookies.length) await context.addCookies(cookies);
-  } catch { /* no saved session */ }
-}
-
-// Persist the context's cookies so the next context (or run) starts cleared.
-export async function savePx(context) {
-  try {
-    fs.mkdirSync(SCRATCH, { recursive: true });
-    const cookies = await context.cookies(BASE);
-    fs.writeFileSync(PX_COOKIES, JSON.stringify(cookies));
-  } catch { /* best effort */ }
-}
-
-// Launch options shared by every context. HEADFUL (default when Chrome and a
-// display exist — PerimeterX cleared real headed Chrome after the press&hold,
-// while bundled headless Chromium drew the challenge on sight) picks the
-// channel and headless flag; HEADLESS=1 forces bundled headless Chromium.
+// Launch options shared by every context. CHANNEL picks the browser channel
+// (default chrome); HEADLESS=1 forces bundled headless Chromium. No flag hides
+// automation from the site.
 const HAVE_DISPLAY = !!process.env.DISPLAY;
 const CHANNEL = process.env.CHANNEL || 'chrome';
 const HEADFUL = process.env.HEADLESS ? false : HAVE_DISPLAY && CHANNEL === 'chrome';
 export async function launchBrowser() {
   try {
-    return await chromium.launch(CHANNEL ? { channel: CHANNEL, headless: !HEADFUL, args: ['--disable-blink-features=AutomationControlled'] } : { headless: !HEADFUL });
+    return await chromium.launch(CHANNEL ? { channel: CHANNEL, headless: !HEADFUL } : { headless: !HEADFUL });
   } catch {
     return await chromium.launch({ headless: true });
   }
@@ -99,7 +70,6 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
   await patch(context);
-  await seedPx(context);
   return { browser, context };
 }
 
@@ -115,104 +85,20 @@ export async function isChallenged(page) {
     || /performing security verification|verify you are human|verifying you are human|checking your browser|unusual activity from your computer network|not a robot|you have been blocked|unable to access|just a moment/i.test(s.body);
 }
 
-// Finds the PRESS & HOLD target inside PerimeterX's nested verification
-// iframe (an about:blank frame titled "Human verification challenge") and
-// holds it the way a visitor does: a stepped approach, an ~11s press with
-// small jitters, release. Returns true when the real document arrives.
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-async function pressAndHold(page) {
-  for (const f of page.frames()) {
-    if (f === page.mainFrame()) continue;
-    let found;
-    try {
-      found = await f.evaluate(() => {
-        const re = /press\s*&?\s*hold/i;
-        for (const el of document.querySelectorAll('div,button,span')) {
-          const t = (el.innerText || '').trim();
-          if (!re.test(t)) continue;
-          const r = el.getBoundingClientRect();
-          if (r.width > 50 && r.height > 20) return { x: r.x, y: r.y, w: r.width, h: r.height };
-        }
-        return null;
-      });
-    } catch { continue; }
-    if (!found) continue;
-    // Prefer the widget's real button (role="button", aria-label="Press &
-    // Hold") — the outer container matches the same text but is wider. The
-    // element sits inside nested about:blank iframes, so read the box through
-    // a locator, which resolves to main-frame viewport coordinates however
-    // deep the nest is.
-    const target = f.locator('[role="button"][aria-label*="Press" i]');
-    let fbox = await target.boundingBox().catch(() => null);
-    if (!fbox) {
-      await f.evaluate(() => {
-        const re = /press\s*&?\s*hold/i;
-        for (const el of document.querySelectorAll('div,button,span')) {
-          const t = (el.innerText || '').trim();
-          if (!re.test(t)) continue;
-          const r = el.getBoundingClientRect();
-          if (r.width > 50 && r.height > 20) { el.setAttribute('data-px-hold', '1'); return true; }
-        }
-        return false;
-      }).catch(() => false);
-      fbox = await f.locator('[data-px-hold]').boundingBox().catch(() => null);
-    }
-    if (!fbox) continue;
-    const cx = fbox.x + fbox.width / 2, cy = fbox.y + fbox.height / 2;
-    let x = 300 + Math.random() * 200, y = 200 + Math.random() * 150;
-    await page.mouse.move(x, y);
-    for (let i = 0; i < 24; i++) {
-      x += (cx - x) / (24 - i) + (Math.random() * 3 - 1.5);
-      y += (cy - y) / (24 - i) + (Math.random() * 3 - 1.5);
-      await page.mouse.move(x, y);
-      await sleep(18 + Math.random() * 22);
-    }
-    await page.mouse.move(cx, cy);
-    await sleep(350);
-    await page.mouse.down();
-    const t0 = Date.now();
-    while (Date.now() - t0 < 16000) {
-      await page.mouse.move(cx + (Math.random() * 2.4 - 1.2), cy + (Math.random() * 2.4 - 1.2));
-      await sleep(90 + Math.random() * 90);
-      if (!(await isChallenged(page))) break;
-    }
-    await page.mouse.up();
-    await sleep(3000);
-    if (!(await isChallenged(page))) return true;
-    // A mouse hold PX declines may still pass on the keyboard path: the
-    // button is focusable (tabindex=0), so hold Space the same way.
-    await target.focus().catch(() => {});
-    await page.keyboard.down(' ');
-    const t1 = Date.now();
-    while (Date.now() - t1 < 16000) {
-      await sleep(150);
-      if (!(await isChallenged(page))) break;
-    }
-    await page.keyboard.up(' ');
-    await sleep(3000);
-    return true;
-  }
-  return false;
-}
-
 // Waits out a bot interstitial and reports whether the real document
-// arrived. fiverr.com runs PerimeterX: the "It needs a human touch" page
-// gates every fresh client, and the PRESS & HOLD widget mounts in a nested
-// iframe. The hold is driven automatically (never answered by hand); the
-// clearance cookies it yields are saved for later contexts.
+// arrived. fiverr.com runs PerimeterX: the "It needs a human touch" page can
+// gate a fresh client. Bot check: recorded as a boundary, not bypassed. The
+// challenge is never pressed, held or answered, and no clearance cookie is
+// saved or replayed; a page that stays challenged returns false and the
+// caller logs it as blocked.
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 export async function clearChallenge(page, { tries = 3, settle = 9000 } = {}) {
   for (let i = 0; i < tries; i++) {
     if (!(await isChallenged(page))) {
       const ok = await page.evaluate(() => ((document.body && document.body.innerText) || '').trim().length > 40).catch(() => false);
       if (ok) return true;
     }
-    const held = await pressAndHold(page).catch(() => false);
-    if (held) {
-      await sleep(2500);
-      if (!(await isChallenged(page))) { await savePx(page.context()); return true; }
-    } else {
-      await sleep(settle / tries);
-    }
+    await sleep(settle / tries);
   }
   return !(await isChallenged(page));
 }
@@ -276,11 +162,14 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }
 
+// Returns false when the navigation failed or a bot check is still up, so a
+// caller never measures an error page or a challenge as the product.
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  const loaded = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).then(() => true, (e) => { console.log('  goto failed', url, String(e).split('\n')[0]); return false; });
+  const clear = loaded && await clearChallenge(page);
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return clear;
 }
 
 // Computed style properties recorded for every component and state.
