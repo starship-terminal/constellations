@@ -4,6 +4,7 @@
 // Sign-in, register and checkout redirect to / and were never submitted.
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { safeUrl } from '../safe-url.mjs';
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
@@ -70,7 +71,7 @@ export async function open(page, url, { wait = 2500 } = {}) {
   const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForTimeout(wait);
   const hidden = await hideConsent(page);
-  return { status: resp ? resp.status() : 0, final: page.url(), hidden };
+  return { status: resp ? resp.status() : 0, final: safeUrl(page.url()), hidden };
 }
 
 export async function styleOf(locator) {
