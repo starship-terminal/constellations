@@ -77,6 +77,8 @@ The homepage is a Framer page and uses Apris for the title. Pricing, product pag
 
 The viewport was 1169px wide, not 1440. Phone width was not measured. Hover and pressed button colours are declared tokens, not a hovered element. The login email field already had a blue border before focus, so that border is not a focus ring. Plan cards computed `box-shadow: none` even though `--shadow-*` is declared. Screenshots were not taken: the preview pane returned no frames. [icon.png](icon.png) is the site favicon, also named as the catalog cover because a cover path is required. It is not a page capture. The style guide falls back to Noto Sans because Roobert PRO and Apris are not loaded.
 
+[raw/pricing-root-vars.json](raw/pricing-root-vars.json) excludes `--tw-*` and `--wcds-*` names. The 16 tokens sourced to a `--tw-*` name (font weights, the `font.size` steps, `motion.duration.fast` and the two easings) have no reading behind them, so their sources say Reconstruction. `--wcds-*` is the cookie-consent banner's own design system, not Miro's. `radius.sm`, `md`, `lg` and `xl`, `space.100`, `200` and `300`, and `motion.duration.cookie` (the OneTrust button) were read from that banner. They are marked as read from the wrong element and need a recapture from Miro's own controls.
+
 ## Fonts
 
 Roobert PRO and Apris are proprietary and are not in this package. Tokens name the stacks that computed: `roobertPROLocal` on pricing, `"Roobert PRO"` on auth, Apris on the homepage title, Noto Sans on buttons and body. The style guide loads Noto Sans from Google Fonts as the fallback.

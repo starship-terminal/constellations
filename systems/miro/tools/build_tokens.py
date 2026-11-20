@@ -17,6 +17,12 @@ COMP = json.loads((RAW / "components-computed.json").read_text())
 
 SRC_VAR = "Measured. getComputedStyle(document.documentElement) on https://miro.com/pricing/, 2026-11-18, viewport 1169x731."
 SRC_COMP = "Measured. Computed style on a live element, T3 preview browser, 2026-11-18."
+# raw/pricing-root-vars.json excludes --tw-* and --wcds-* by design, so no file in raw/ holds those
+# readings: they were typed in from the capture session (docs/EVIDENCE.md, Reconstruction).
+SRC_TW = ("Reconstruction. Entered by hand at capture time; no file in raw/ holds this reading "
+          "(raw/pricing-root-vars.json excludes --tw-* Tailwind names). Capture note:")
+SRC_WCDS = ("Reconstruction. Read from the wrong element: --wcds-* names belong to the cookie-consent banner's "
+            "design system, not Miro's, and raw/pricing-root-vars.json excludes them; recapture needed. Capture note:")
 
 
 def color(value):
@@ -132,40 +138,40 @@ doc = {
                     SRC_COMP + " h1 on https://miro.com/."),
             },
             "weight": {
-                "regular": token("400", "fontWeight", SRC_VAR + " --tw-font-weight-regular."),
-                "medium": token("500", "fontWeight", SRC_VAR + " --tw-font-weight-medium."),
-                "semibold": token("600", "fontWeight", SRC_VAR + " --tw-font-weight-semibold."),
-                "bold": token("700", "fontWeight", SRC_VAR + " --tw-font-weight-bold."),
+                "regular": token("400", "fontWeight", SRC_TW + " --tw-font-weight-regular."),
+                "medium": token("500", "fontWeight", SRC_TW + " --tw-font-weight-medium."),
+                "semibold": token("600", "fontWeight", SRC_TW + " --tw-font-weight-semibold."),
+                "bold": token("700", "fontWeight", SRC_TW + " --tw-font-weight-bold."),
             },
             "size": {
-                "xs": dim("0.75rem", SRC_VAR + " --tw-text-xs."),
-                "sm": dim("0.875rem", SRC_VAR + " --tw-text-sm."),
-                "base": dim("1rem", SRC_VAR + " --tw-text-base."),
-                "lg": dim("1.125rem", SRC_VAR + " --tw-text-lg."),
-                "xl": dim("1.25rem", SRC_VAR + " --tw-text-xl."),
-                "2xl": dim("1.5rem", SRC_VAR + " --tw-text-2xl."),
-                "3xl": dim("1.875rem", SRC_VAR + " --tw-text-3xl."),
-                "4xl": dim("2.25rem", SRC_VAR + " --tw-text-4xl."),
-                "5xl": dim("3rem", SRC_VAR + " --tw-text-5xl."),
+                "xs": dim("0.75rem", SRC_TW + " --tw-text-xs."),
+                "sm": dim("0.875rem", SRC_TW + " --tw-text-sm."),
+                "base": dim("1rem", SRC_TW + " --tw-text-base."),
+                "lg": dim("1.125rem", SRC_TW + " --tw-text-lg."),
+                "xl": dim("1.25rem", SRC_TW + " --tw-text-xl."),
+                "2xl": dim("1.5rem", SRC_TW + " --tw-text-2xl."),
+                "3xl": dim("1.875rem", SRC_TW + " --tw-text-3xl."),
+                "4xl": dim("2.25rem", SRC_TW + " --tw-text-4xl."),
+                "5xl": dim("3rem", SRC_TW + " --tw-text-5xl."),
                 "display": dim("48px", SRC_COMP + " pricing h1 font-size."),
                 "authTitle": dim("44px", SRC_COMP + " login h1 font-size."),
                 "plan": dim("32px", SRC_COMP + " pricing plan title font-size."),
             },
         },
         "radius": {
-            "sm": dim("0.25rem", SRC_VAR + " --wcds-border-radius-sm."),
-            "md": dim("0.5rem", SRC_VAR + " --wcds-border-radius."),
+            "sm": dim("0.25rem", SRC_WCDS + " --wcds-border-radius-sm."),
+            "md": dim("0.5rem", SRC_WCDS + " --wcds-border-radius."),
             "control": dim("8px", SRC_COMP + " pricing primary button border-radius."),
-            "lg": dim("0.75rem", SRC_VAR + " --wcds-border-radius-lg."),
+            "lg": dim("0.75rem", SRC_WCDS + " --wcds-border-radius-lg."),
             "card": dim("12px", SRC_COMP + " login card border-radius."),
-            "xl": dim("1rem", SRC_VAR + " --wcds-border-radius-xl."),
+            "xl": dim("1rem", SRC_WCDS + " --wcds-border-radius-xl."),
             "plan": dim("20px", SRC_COMP + " pricing plan card border-radius."),
             "pill": dim("40px", SRC_COMP + " pricing billing toggle border-radius."),
         },
         "space": {
-            "100": dim("0.5rem", SRC_VAR + " --wcds-space-100."),
-            "200": dim("1rem", SRC_VAR + " --wcds-space-200."),
-            "300": dim("1.5rem", SRC_VAR + " --wcds-space-300."),
+            "100": dim("0.5rem", SRC_WCDS + " --wcds-space-100."),
+            "200": dim("1rem", SRC_WCDS + " --wcds-space-200."),
+            "300": dim("1.5rem", SRC_WCDS + " --wcds-space-300."),
             "nav": dim("8px", SRC_COMP + " pricing nav item padding-block."),
             "card": dim("24px", SRC_COMP + " pricing plan card padding."),
             "auth": dim("48px", SRC_COMP + " login card padding."),
@@ -178,12 +184,12 @@ doc = {
         },
         "motion": {
             "duration": {
-                "fast": token("150ms", "duration", SRC_VAR + " --tw-default-transition-duration, .15s."),
-                "cookie": token("250ms", "duration", SRC_COMP + " OneTrust Accept All Cookies transition 0.25s."),
+                "fast": token("150ms", "duration", SRC_TW + " --tw-default-transition-duration, .15s."),
+                "cookie": token("250ms", "duration", "Reconstruction. Read from the wrong element: the OneTrust Accept All Cookies button is the consent banner, not Miro; no file in raw/ holds it; recapture needed. Capture note: transition 0.25s."),
             },
             "easing": {
-                "standard": token([0.4, 0, 0.2, 1], "cubicBezier", SRC_VAR + " --tw-ease-in-out."),
-                "out": token([0, 0, 0.2, 1], "cubicBezier", SRC_VAR + " --tw-ease-out."),
+                "standard": token([0.4, 0, 0.2, 1], "cubicBezier", SRC_TW + " --tw-ease-in-out."),
+                "out": token([0, 0, 0.2, 1], "cubicBezier", SRC_TW + " --tw-ease-out."),
             },
         },
     },
@@ -229,5 +235,6 @@ doc = {
 
 # Drop transparent from the colour ramp: DTCG colour with alpha 0 is fine, but
 # DESIGN.md colour export wants opaque roles. Keep it; catalog resolves hex and oklch.
-(HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
-print("wrote", HERE / "tokens.json")
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
+    print("wrote", HERE / "tokens.json")
