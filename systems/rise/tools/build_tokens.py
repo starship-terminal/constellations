@@ -219,8 +219,8 @@ def core():
         "size": {
             "button-sm": dim("34px", SRC_COMPUTED + " Pricing Get Started and Upgrade."),
             "button-lg": dim("46px", SRC_COMPUTED + " Comparison Get started, text-lg px-6 py-2."),
-            "switch-track": dim("32px", SRC_HAND + " Annual-billing track width. Height is 16px."),
-            "switch-thumb": dim("12px", SRC_HAND + " Switch thumb width and height."),
+            "switch-track": dim("32px", SRC_COMPUTED + " Annual-billing track width. Height is 16px. raw/switch.json and raw/switch-on.json, w 32."),
+            "switch-thumb": dim("12px", SRC_COMPUTED + " Switch thumb width and height. raw/switch.json and raw/switch-on.json, w 12, h 12."),
             "header": dim("80px", SRC_COMPUTED + " Sticky header, including 28px padding-block."),
             "logo": dim("76px", SRC_COMPUTED + " Wordmark SVG width. Height is 24px."),
             "content": dim("768px", SRC_UTILITY + " .max-w-screen-md, the article column."),

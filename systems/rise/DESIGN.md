@@ -256,7 +256,7 @@ There is no dark theme. Do not invent one from the 404 page. A first computed re
 
 Screenshots are full colour. Read values from the tokens, not from the images.
 
-Nine values have no reading in [raw/](raw): the three motion durations, the switch track and thumb sizes, the 1280px nav width, `background.primary-soft`, `border.quiet` and `border.image`. They were typed in at capture time, and their sources say Reconstruction. The builder holds the `:root` triplets as literals: they agree with [raw/readings.md](raw/readings.md), but a recapture does not update them. [components.md](components.md) is written from text in `tools/build_components_md.py` in the same way.
+Seven values have no reading in [raw/](raw): the three motion durations, the 1280px nav width, `background.primary-soft`, `border.quiet` and `border.image`. They were typed in at capture time, and their sources say Reconstruction. The builder holds the `:root` triplets as literals: they agree with [raw/readings.md](raw/readings.md), but a recapture does not update them. [components.md](components.md) is written from text in `tools/build_components_md.py` in the same way.
 
 ### Do and don't (from README.md)
 
