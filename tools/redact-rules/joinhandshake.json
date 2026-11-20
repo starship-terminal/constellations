@@ -4,10 +4,21 @@
   "ocr": {
     "emails": true,
     "email_allow": [
-      "@jo[il]l?nhandshake\\.com(\\.[A-Za-z]+)?\\.?$",
-      "@jo[il]l?nhandshake\\.col?\\.?$",
-      "@handshake\\.(com|ai|edu)$",
-      "@example\\.(com|org)$"
+      "@joilnhandshake\\.co$",
+      "@joilnhandshake\\.col$",
+      "@joinhandshake\\.co$",
+      "@joinhandshake\\.col$",
+      "@jollnhandshake\\.co$",
+      "@jollnhandshake\\.col$",
+      "@jolnhandshake\\.co$",
+      "@jolnhandshake\\.col$",
+      "@handshake\\.ai$",
+      "@handshake\\.com$",
+      "@handshake\\.edu$",
+      "@example\\.com$",
+      "@example\\.org$",
+      "@joinhandshake\\.com$",
+      "@joinhandshake\\.com\\.we$"
     ]
   }
 }

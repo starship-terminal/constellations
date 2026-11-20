@@ -48,7 +48,11 @@ const sheets = [...blocks.values()].sort((a, b) => b.bytes - a.bytes || a.name.l
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
 const browser = await chromium.launch();
+// The inlined sheets name fonts and images by absolute url(); setContent would fetch them from the
+// product's CDN. Only data: URLs load, so the run stays on disk as the header says.
+const offline = (p) => p.route('**/*', (r) => (r.request().url().startsWith('data:') ? r.continue() : r.abort()));
 const page = await browser.newPage();
+await offline(page);
 await page.setContent('<!doctype html><html><head></head><body></body></html>');
 const result = await page.evaluate((sheets) => {
   // A custom property can hold a url() with a signed or per-account query: record it as url(…).
@@ -108,6 +112,7 @@ const result = await page.evaluate((sheets) => {
 // Claude still forces on some components). The viewport is 1440 x 900, so a clamp() with vw resolves
 // to its 1440-wide value.
 const page2 = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+await offline(page2);
 // PRODUCT (adapt): the root attributes and frame the product's own pages carry (Claude's below), so
 // every theme- and density-scoped declaration applies to the probes.
 const shell = (mode, density) => '<!doctype html><html class="cds-root" lang="en-US" data-theme="claude" data-color-version="v2" data-mode="' + mode + '" data-density="' + density + '" data-font="anthropic"><head>'

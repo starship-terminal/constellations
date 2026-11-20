@@ -1,5 +1,5 @@
 # Features
-A private library of design styles captured from real products, made of evidence-labelled `systems/` packages and a lower-confidence refero snapshot, browsed through two Next.js apps and read by coding agents over MCP and the `ds` CLI.
+A library of design styles captured from real products, made of evidence-labelled `systems/` packages and a lower-confidence refero snapshot, browsed through two Next.js apps and read by coding agents over MCP and the `ds` CLI.
 
 Status describes implementation in this checkout, not a live QA pass or release guarantee. Command placeholders such as `<slug>` must be replaced; bracketed arguments are optional.
 
@@ -11,7 +11,7 @@ Status describes implementation in this checkout, not a live QA pass or release 
 - **DESIGN.md export**: hand a DESIGN.md-reading tool a generated one-theme export of any package, regenerated from its tokens and README. Status: implemented. Surface: CLI. Entry point: `make design-md` (`tools/catalog.py design-md`), `systems/<slug>/DESIGN.md`. Tests: `tools/test_catalog.py`.
 - **DESIGN.md lint**: lint every package's DESIGN.md with Google's pinned linter through `npx` in a temp dir. Status: implemented. Surface: CLI. Entry point: `make lint-design-md`. Tests: `tools/test_catalog.py`.
 - **Package app icons**: see each product's 128 px icon on gallery cards and the README catalog table, and fetch or refresh it from the product's site. Status: implemented. Surface: CLI. Entry point: `python3 tools/fetch_icon.py <slug>` (`--host`, `--url`, `--all`). Tests: `tools/test_fetch_icon.py`.
-- **Gated-surface queue**: read the generated list of surfaces captures skipped behind sign-in, account, checkout or submission, and fail when it is stale. Status: implemented. Surface: CLI. Entry point: `python3 tools/gated.py [--check]`, `docs/GATED.md`. Tests: none.
+- **Gated-surface queue**: read the generated list of surfaces captures skipped behind sign-in, account, checkout or submission, and fail when it is stale. Status: implemented. Surface: CLI. Entry point: `python3 tools/gated.py [--check]`, `docs/GATED.md`. Tests: `tools/test_gated.py`.
 
 ## Library CLI (make and tools/catalog.py)
 - **Target list**: list documented make targets with a one-line description. Status: implemented. Surface: CLI. Entry point: `make help`. Tests: none.
@@ -103,7 +103,7 @@ Status describes implementation in this checkout, not a live QA pass or release 
 - **Redeploy button**: on the self-hosted docs site, trigger a redeploy from the footer and see when it last deployed. Status: implemented. Surface: web. Entry point: `docs/assets/redeploy.js`, `GET|POST /api/redeploy` (`scripts/deploy_trigger.py`). Tests: `tools/test_deploy_trigger.py`.
 
 ## Deployment
-- **Home-server deployment**: pull the private checkout and invoke the host-owned `~/services/design-systems/bin/deploy.sh`, directly or through a systemd user job; the external script determines the deployment steps. Status: implemented. Surface: job. Entry point: `scripts/redeploy.sh`, `scripts/deploy_trigger.py`. Tests: `tools/test_deploy_trigger.py`.
+- **Home-server deployment**: pull the checkout and invoke the host-owned `~/services/design-systems/bin/deploy.sh`, directly or through a systemd user job; the external script determines the deployment steps. Status: implemented. Surface: job. Entry point: `scripts/redeploy.sh`, `scripts/deploy_trigger.py`. Tests: `tools/test_deploy_trigger.py`.
 - **Studio private deployment**: stage, activate, install or update the Studio app as a private systemd user service. Status: implemented. Surface: job. Entry point: `scripts/studio-deploy.sh stage|activate|install|update`, `app/docs/DEPLOYMENT.md`. Tests: none.
 
 ## CI checks

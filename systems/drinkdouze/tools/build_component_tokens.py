@@ -391,25 +391,38 @@ for key, c, state, desc in [
     grp["radius"] = meas(c, state, "borderTopLeftRadius", "dimension", f"{desc} Corner radius.") or grp.get("radius")
     grp["font-size"] = meas_text(c, state, "fontSize", "dimension", f"{desc} Label size.") or grp.get("font-size")
     grp["font-weight"] = meas_text(c, state, "fontWeight", "fontWeight", f"{desc} Label weight.") or grp.get("font-weight")
-    for stt, leaf in [("hover", "hover"), ("focus", "focus")]:
-        if have(c, stt):
-            ss = st(c, stt)
-            grp[leaf] = {}
-            # Outline readings only export when an outline really paints —
-            # computed outlineColor/Width keep their non-none defaults under
-            # outlineStyle:none, so gating on the colour alone invents rings.
-            props = [("backgroundColor", "color", "fill"), ("color", "color", "ink"),
-                     ("borderTopColor", "color", "border"), ("borderTopWidth", "dimension", "border width")]
-            if (ss.get("outlineStyle") or "none") != "none":
-                props += [("outlineColor", "color", "outline"), ("outlineWidth", "dimension", "outline width")]
-            props += [("boxShadow", "shadow", "shadow")]
-            for prop, ty, d in props:
-                m = meas(c, stt, prop, ty, f"{desc} {d}, {stt}.",
-                         shadow_layers if ty == "shadow" else None)
-                if m:
-                    grp[leaf][prop.replace("Color", "").replace("Width", "-width").lower() or prop] = m
-            if not grp[leaf]:
-                del grp[leaf]
+    # The capture records the keyboard state as "focus-visible" (a real
+    # Shift+Tab, Tab focus); a listed state that is absent stops the build
+    # instead of silently dropping its tokens.
+    for stt, leaf in [("hover", "hover"), ("focus-visible", "focus")]:
+        if not have(c, stt):
+            raise SystemExit(f"{c}: state {stt!r} missing from raw/components-computed.json")
+        if (C[c]["states"][stt].get("via") or "") == "focus failed":
+            continue  # a failed keyboard focus is not a focus reading
+        ss = st(c, stt)
+        grp[leaf] = {}
+        # Outline readings only export when an outline really paints —
+        # computed outlineColor/Width keep their non-none defaults under
+        # outlineStyle:none, so gating on the colour alone invents rings.
+        props = [("backgroundColor", "color", "fill"), ("color", "color", "ink"),
+                 ("borderTopColor", "color", "border"), ("borderTopWidth", "dimension", "border width")]
+        ostyle = ss.get("outlineStyle") or "none"
+        if ostyle != "none":
+            ring = ("outline (style auto: the browser's own focus ring)"
+                    if ostyle == "auto" else "outline")
+            props += [("outlineColor", "color", ring), ("outlineWidth", "dimension", "outline width")]
+        props += [("boxShadow", "shadow", "shadow")]
+        for prop, ty, d in props:
+            # The focus group carries the ring, plus any fill, ink or border that
+            # changes from the default reading; an unchanged one is not a focus token.
+            if leaf == "focus" and not prop.startswith(("outline", "boxShadow")) and ss.get(prop) == s.get(prop):
+                continue
+            m = meas(c, stt, prop, ty, f"{desc} {d}, {stt}.",
+                     shadow_layers if ty == "shadow" else None)
+            if m:
+                grp[leaf][prop.replace("Color", "").replace("Width", "-width").lower() or prop] = m
+        if not grp[leaf]:
+            del grp[leaf]
 
 # -- nav / header ---------------------------------------------------------
 for key, c, desc in [

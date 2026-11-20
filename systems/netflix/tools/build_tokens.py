@@ -38,8 +38,26 @@ def duration(value: str, note: str) -> dict:
     return {"$type": "duration", "$value": value, **src(note)}
 
 
-def cubic(value: str, note: str) -> dict:
+def cubic(value: list, note: str) -> dict:
     return {"$type": "cubicBezier", "$value": value, **src(note)}
+
+
+def by_hand(token: dict, note: str) -> dict:
+    """A value typed in at capture time with no reading in raw/ behind it (docs/EVIDENCE.md: Reconstruction)."""
+    token["$extensions"]["source"] = {"evidence": "Reconstruction", "capture": CAPTURE,
+                                      "note": note + ". Entered by hand at capture time; no file in raw/ holds this reading."}
+    return token
+
+
+def bezier(value: str) -> list:
+    """cubic-bezier(0.4,0,0.68,0.06) as the DTCG list [0.4, 0, 0.68, 0.06]."""
+    m = re.fullmatch(r"cubic-bezier\(([^)]*)\)", value.replace(" ", ""))
+    if not m:
+        raise SystemExit(f"not a cubic-bezier: {value!r}")
+    nums = [float(x) for x in m.group(1).split(",")]
+    if len(nums) != 4:
+        raise SystemExit(f"cubic-bezier needs four numbers: {value!r}")
+    return [int(x) if x == int(x) else x for x in nums]
 
 
 def number(value, note: str) -> dict:
@@ -91,7 +109,8 @@ def rem_to_px(value: str) -> str | None:
     return ("%g" % round(px, 3)) + "px"
 
 
-def main() -> None:
+def build() -> dict:
+    """The token document, built in memory from raw/; main() writes it."""
     hawkins = json.loads((RAW / "hawkins-vars.json").read_text())["vars"]
     computed = json.loads((RAW / "computed.json").read_text())
 
@@ -184,7 +203,7 @@ def main() -> None:
             "tile": dim("8px", "computed border-radius on [data-uia=top-10-element-1]"),
             "card": dim("16px", "computed border-radius on .e1g1vhz91"),
             "link": dim("2px", "computed border-radius on the footer link"),
-            "none": dim("0px", "computed border-radius on the FAQ item"),
+            "none": by_hand(dim("0px", "computed border-radius on the FAQ item"), "border-radius on the FAQ item"),
         },
         "spacing": {
             "2": dim("2px", "computed gap on the field wrapper .hcw-ltr-iqcdef-cache-7y4fmk"),
@@ -197,16 +216,16 @@ def main() -> None:
                 "accordion": duration(h("--hcw--local-design--Accordion-HeadlineDuration"), "--hcw--local-design--Accordion-HeadlineDuration"),
             },
             "easing": {
-                "button": cubic("[0.4, 0, 0.68, 0.06]", "--hcw--local-design--Button-Easing"),
-                "hover": cubic("[0.32, 0.94, 0.6, 1]", "--hcw--local-design--Button-EasingHovered"),
+                "button": cubic(bezier(h("--hcw--local-design--Button-Easing")), "--hcw--local-design--Button-Easing"),
+                "hover": cubic(bezier(h("--hcw--local-design--Button-EasingHovered")), "--hcw--local-design--Button-EasingHovered"),
             },
         },
     }
     # Spacing is only lengths that were read. Drop the mistaken 4 step and write the real scale.
     core["spacing"] = {
-        "2": dim("2px", "computed gap on .hcw-ltr-iqcdef-cache-7y4fmk"),
+        "2": by_hand(dim("2px", "computed gap on .hcw-ltr-iqcdef-cache-7y4fmk"), "gap on .hcw-ltr-iqcdef-cache-7y4fmk"),
         "4": dim("4px", "computed padding-top difference is not used. 4px is the vertical padding of the Sign In link (4px 16px)."),
-        "6": dim("6px", "computed padding on the language select, 6px 36px 6px 34px"),
+        "6": by_hand(dim("6px", "computed padding on the language select, 6px 36px 6px 34px"), "padding on the language select, 6px 36px 6px 34px"),
         "8": dim("8px", "computed margin-left on Get Started"),
         "12": dim("12px", "computed padding-block on Get Started, 12px 24px"),
         "16": dim("16px", "computed padding-inline on the email input, 24px 16px 8px"),
@@ -294,15 +313,22 @@ def main() -> None:
             ]
         },
     }
-    # silence unused
+    # computed.json is read by eye for the literals above; the test pins those that it holds.
     _ = computed
     check(doc)
+    return doc
+
+
+def main() -> None:
+    doc = build()
     (HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
     print("wrote", HERE / "tokens.json")
 
 
 def check(doc: dict) -> None:
-    """Refuse an alias that points at nothing and a dimension that is not one length."""
+    """Refuse an alias that points at nothing (also inside a typography or shadow value), a token
+    with no evidence label, a dimension that is not one length and a cubicBezier that is not four
+    numbers. Raises SystemExit, so it still runs under python -O."""
     flat: dict[str, dict] = {}
 
     def walk(node, path):
@@ -315,21 +341,35 @@ def check(doc: dict) -> None:
                     continue
                 walk(v, path + [k])
 
+    def strings(value):
+        if isinstance(value, str):
+            yield value
+        elif isinstance(value, dict):
+            for v in value.values():
+                yield from strings(v)
+        elif isinstance(value, list):
+            for v in value:
+                yield from strings(v)
+
     for group in ("core", "dark"):
         walk(doc[group], [group])
     alias = re.compile(r"\{([a-zA-Z0-9_.-]+)\}")
     for path, token in flat.items():
         value = token["$value"]
-        if isinstance(value, str):
-            for ref in alias.findall(value):
-                target = path.split(".")[0] + "." + ref if not ref.startswith(("core.", "dark.")) else ref
+        for text in strings(value):
+            for ref in alias.findall(text):
                 # aliases in this file are same-set ({color.red}) or cross via the set prefix omitted
                 candidates = [ref, path.split(".")[0] + "." + ref, "core." + ref, "dark." + ref]
                 if not any(c in flat for c in candidates):
                     raise SystemExit(f"dangling alias {path} -> {ref}")
+        if not (token.get("$extensions", {}).get("source") or {}).get("evidence"):
+            raise SystemExit(f"no source evidence on {path}")
         if token.get("$type") == "dimension" and isinstance(value, str) and not value.startswith("{"):
             if not re.fullmatch(r"-?\d+(\.\d+)?(px|rem|em)", value):
                 raise SystemExit(f"bad dimension {path}: {value}")
+        if token.get("$type") == "cubicBezier":
+            if not (isinstance(value, list) and len(value) == 4 and all(isinstance(x, (int, float)) and not isinstance(x, bool) for x in value)):
+                raise SystemExit(f"cubicBezier {path} is not four numbers: {value!r}")
     print("check ok", len(flat), "tokens")
 
 

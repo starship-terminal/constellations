@@ -11,8 +11,9 @@ finds anything the rectangles missed, using the same detection patterns as `tool
     python3 tools/redact_images.py check systems/manus --patterns ~/.design-systems/cleanup-redact.json
     python3 tools/redact_images.py lines systems/manus/screenshots/home-dark.png   # author a rules file
 
-`check` never lets a rules file switch a detector off (its ocr.emails or ocr.net), and an email_allow
-entry must match a whole part of an address (see email_allowed). `check` reads every image file under the package that git does not ignore (any folder, every frame;
+`check` never lets a rules file switch a detector off (its ocr.emails or ocr.net). A rules file's
+email_allow entry is one exact address or one @domain, never a pattern, and never a free-mail domain
+(see allow_entry_text); `check` and `apply` refuse a file holding anything else. `check` reads every image file under the package that git does not ignore (any folder, every frame;
 a file of an image type it cannot read fails the check), and the package's own rules file, tools/redact-rules/<slug>.json, when one exists (its ocr
 block: email_allow, wrap_ignore) and prints which file it loaded; `--rules` names another one instead.
 `apply` never guesses: it edits files, so its `--rules` stays required.
@@ -82,7 +83,7 @@ import numpy as np
 from PIL import Image, ImageFilter, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog import IMAGE_EXT, read_json_object, read_redaction, redaction_patterns, tool_env  # noqa: E402
+from catalog import IMAGE_EXT, input_error, read_json_object, read_redaction, redaction_patterns, tool_env  # noqa: E402
 
 Image.MAX_IMAGE_PIXELS = None
 warnings.simplefilter("ignore", Image.DecompressionBombWarning)
@@ -488,6 +489,66 @@ def rules_text_leaks(rules):
         if _phone_shaped(s):
             out.append(f"{path}: a phone-number-shaped string")
     return out
+# Mailbox domains anyone can sign up at: an allow entry may name one address there, never the domain.
+FREE_MAIL = ("gmail.com", "googlemail.com", "yahoo.com", "yahoo.co.jp", "yahoo.co.uk", "ymail.com",
+             "outlook.com", "hotmail.com", "live.com", "msn.com", "icloud.com", "me.com", "mac.com",
+             "proton.me", "protonmail.com", "pm.me", "mail.com", "email.com", "aol.com", "gmx.com", "gmx.de",
+             "gmx.net", "web.de", "yandex.com", "yandex.ru", "mail.ru", "qq.com", "163.com", "126.com",
+             "zoho.com", "fastmail.com", "hey.com", "tutanota.com", "naver.com", "agentmail.to")
+# The reserved .example top-level domain (RFC 2606) can never hold a real mailbox, so an address
+# there is a placeholder wherever it shows; no rules file needs to list it.
+EXAMPLE_TLD = re.compile(r"\.example$", re.I)
+REGEX_META = re.compile(r"[.^$*+?{}\[\]\\|()]")
+# ASCII only: a Unicode letter can fold to a different ASCII one under the matcher's re.I (a dotless
+# i matches i), so a domain spelled with one could name a free-mail domain without looking like it.
+ALLOW_TEXT = re.compile(r"[A-Za-z0-9_.+-]*@[A-Za-z0-9_.-]+")
+
+
+def allow_entry_text(entry):
+    """(plain text, None) for a package rules file's email_allow entry, or (None, why it is refused).
+    An entry is one exact address (`^support@vendor\\.com$`) or one `@domain` suffix
+    (`@vendor\\.com$`): optional ^ and $ (or a trailing \\b) anchors are dropped and \\. \\- \\+
+    unescaped, and nothing else regex-like may remain, so validation never has to read a pattern.
+    A suffix may not name a free-mail domain. The owner's private patterns file is not held to this."""
+    if not isinstance(entry, str) or not entry:
+        return None, "is empty or not a string"
+    core = entry[1:] if entry.startswith("^") else entry
+    for end in ("$", "\\b"):
+        if core.endswith(end) and not core.endswith("\\" + end):
+            core = core[:-len(end)]
+            break
+    if REGEX_META.search(re.sub(r"\\[.+-]", "", core)):
+        return None, "is a regex pattern: list exact addresses, one per entry, or one @domain"
+    text = re.sub(r"\\([.+-])", r"\1", core)
+    if not ALLOW_TEXT.fullmatch(text):
+        return None, "is not one address or one @domain in plain ASCII: list exact addresses, one per entry"
+    domain = text.partition("@")[2].lower()
+    if text.startswith("@") and any(domain == d or domain.endswith("." + d) for d in FREE_MAIL):
+        return None, f"allows every address at the free-mail domain {domain}: list exact addresses, one per entry"
+    return text, None
+
+
+def allow_entry_problem(entry):
+    """Why allow_entry_text refuses an entry, or None."""
+    return allow_entry_text(entry)[1]
+
+
+def package_allow(rules_file, entries):
+    """A package rules file's email_allow as the regexes email_allowed reads: each entry's plain text,
+    escaped, so an address matches exactly and an @domain matches the address's whole domain, both
+    case-insensitively. Stops with one error line naming every refused entry."""
+    if not isinstance(entries, list):
+        input_error(f"{rules_file}: ocr.email_allow must be a list of entries")
+    out, bad = [], []
+    for e in entries:
+        text, why = allow_entry_text(e)
+        if why:
+            bad.append(f"{json.dumps(e)} {why}")
+        else:
+            out.append(re.escape(text))
+    if bad:
+        input_error(f"{rules_file}: ocr.email_allow " + "; ".join(bad))
+    return out
 
 
 def find_private(words, patterns, emails, email_allow):
@@ -508,7 +569,7 @@ def find_private(words, patterns, emails, email_allow):
         hits = [m.span() for p in rx for m in p.finditer(text)]
         if emails:
             hits += [m.span() for m in EMAIL.finditer(text)
-                     if not email_allowed(m.group(), email_allow)]
+                     if not email_allowed(m.group(), email_allow) and not EXAMPLE_TLD.search(m.group().rstrip("."))]
         for s, e in hits:
             for a, b, box in spans:
                 if a < e and b > s:
@@ -543,8 +604,9 @@ def cmd_apply(args):
     pkg = Path(args.package)
     rules = read_json_object(args.rules, "rules file")
     ocr_cfg = dict(rules.get("ocr", {}))
+    allow = package_allow(args.rules, ocr_cfg.get("email_allow", []))
     patterns = load_patterns(args.patterns) if args.patterns else []
-    ocr_cfg["email_allow"] = ocr_cfg.get("email_allow", []) + load_email_allow(args.patterns)
+    ocr_cfg["email_allow"] = allow + load_email_allow(args.patterns)
     global_keep = [re.compile(k, re.I) for k in ocr_cfg.get("keep", [])]
     only = args.only
     deleted, edited, flagged = set(), 0, []
@@ -620,6 +682,7 @@ def cmd_check(args):
     if rules_file:
         rules = read_json_object(rules_file, "rules file")
         cfg = dict(rules.get("ocr", {}))
+        cfg["email_allow"] = package_allow(rules_file, cfg.get("email_allow", []))
         print(f"rules: {rules_file if args.rules else 'tools/redact-rules/' + rules_file.name}"
               + ("" if args.rules else " (loaded for this package)"), flush=True)
         # The rules file is committed too: it may describe what it hides, never hold it.

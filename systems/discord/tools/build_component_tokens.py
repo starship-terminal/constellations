@@ -588,6 +588,11 @@ for group in ("background", "text", "action", "border", "surface", "foreground")
     for root in (SPEC["light"], SPEC["dark"]):
         _demote_leaf_group(root, group)
 
+def layer(comp, state, where, node):
+    """The background of the first painted layer (paint or ancestors) whose node starts with `node`."""
+    return next(n["bg"] for n in C[comp]["states"][state].get(where) or [] if n.get("bg") and n.get("node", "").startswith(node))
+
+
 # ---- marketing light roles (measured on /, /download, /nitro and the
 # .theme-light marketing chrome inside the app pages)
 sem = SPEC["light"]
@@ -611,13 +616,16 @@ for key, comp, state, prop, group, prefer, desc in [
 ]:
     try:
         if prop == "_mktpage":
+            # No measured element reports the page field (every /download and /nitro
+            # reading is transparent over it), so this is a screenshot sample.
             raw = "#ffffff"
-            src = "the painted field of /download and /nitro (screenshots/download-default.png, nitro-default.png)"
+            src = ("sampled, not measured: the white field of /download and /nitro read off "
+                   "screenshots/download-default.png and nitro-default.png; no computed reading of the page field")
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         put_sem(sem, group, key, semcolor(raw, src, desc, prefer=prefer, dest=group + "." + key))
-    except KeyError:
+    except (KeyError, StopIteration):
         pass
 
 # ---- app dark roles (measured on /servers, /servers/<slug>, /login,
@@ -660,23 +668,28 @@ for key, comp, state, prop, group, prefer, desc in [
      "The 2px #6aa8f4 focus-visible ring on app controls (2px offset)."),
 ]:
     try:
+        # Paint layers are picked by the element that paints them, never by the colour
+        # they are expected to have, and a missing layer drops the role (no typed fallback).
         if prop == "_apppage":
-            raw = "#121214"
-            src = "the painted field of the app surfaces (screenshots/servers-default.png); matches declared --background-base-lowest"
+            # No measured element reports the app page field; the declared base the
+            # app paints it with is read instead of a screenshot pixel.
+            raw = D["--background-base-lowest"]
+            src = ("declared --background-base-lowest (raw/css-vars.json resolved.dark); no computed reading "
+                   "of the app page field (seen in screenshots/servers-default.png)")
         elif prop == "_cardbody":
-            raw = next((n["bg"] for n in C[comp]["states"][state].get("paint") or [] if n.get("bg") and "32, 32, 36" in n["bg"]), "rgb(32, 32, 36)")
-            src = f"painted card-body layer inside {comp} {state} (raw/components-computed.json)"
+            raw = layer(comp, state, "paint", "article.guildItemContainer")
+            src = f"painted article.guildItemContainer card body inside {comp} {state} (raw/components-computed.json)"
         elif prop == "_fieldfill":
-            raw = next((n["bg"] for n in C[comp]["states"][state].get("ancestors") or [] if n.get("bg")), "oklab(0 0 0 / 0.121569)")
-            src = f"painted field layer over {comp} {state} (raw/components-computed.json)"
+            raw = layer(comp, state, "ancestors", "div.wrapper_")
+            src = f"painted div.wrapper field layer over {comp} {state} (raw/components-computed.json)"
         elif prop == "_online":
-            raw = next((n["bg"] for n in C["sc-card"]["states"]["default"].get("paint") or [] if n.get("bg") and "181" in n["bg"]), "rgb(67, 181, 129)")
-            src = "painted presence dot inside sc-card default (raw/components-computed.json)"
+            raw = layer("sc-card", "default", "paint", "div.dotOnline")
+            src = "painted div.dotOnline presence dot inside sc-card default (raw/components-computed.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         put_sem(sem2, group, key, semcolor(raw, src, desc, theme="dark", prefer=prefer, dest=group + "." + key))
-    except KeyError:
+    except (KeyError, StopIteration):
         pass
 
 # ------------------------------------------------------------- type ramp

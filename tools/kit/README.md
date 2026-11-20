@@ -54,8 +54,9 @@ The public, signed-in render and Electron routes use
 configured viewport, actual `innerWidth` / `innerHeight`, visual viewport
 (including scale and offsets), actual device pixel ratio, safe root theme
 classes/attributes, document size and PNG dimensions. The helper does not read
-the page URL; a caller may explicitly supply `sanitizedSourceUrl` after removing
-credentials, signed query parameters and banned personal data.
+the page URL; a caller may supply `sanitizedSourceUrl`, which the helper records
+in `safeUrl` form (origin and route words, no query, fragment or ids) whatever
+it is given.
 
 The existing commands and arguments stay the same. Copy the whole capture tree
 as shown above: [`render.mjs`](capture/signed-in/render.mjs),

@@ -11,9 +11,9 @@ design-systems
 </p>
 
 <p align="center">
-  <a href="https://github.com/c-wenlong/designs/actions/workflows/check.yml"><img src="https://github.com/c-wenlong/designs/actions/workflows/check.yml/badge.svg" alt="Check"></a>
+  <a href="https://github.com/starship-terminal/constellations/actions/workflows/check.yml"><img src="https://github.com/starship-terminal/constellations/actions/workflows/check.yml/badge.svg" alt="Check"></a>
   <img src="https://img.shields.io/badge/tools-stdlib--only-brightgreen.svg" alt="stdlib only">
-  <img src="https://img.shields.io/badge/repo-private-red.svg" alt="Private repo">
+  <img src="https://img.shields.io/badge/repo-public-blue.svg" alt="Public repo">
 </p>
 
 <p align="center">
@@ -35,7 +35,7 @@ one place instead of in whichever project first needed them.
 
 It holds two stores of styles at two confidence levels:
 
-- [systems/](systems): the packages, one per product (50 today), measured
+- [systems/](systems): the packages, one per product, measured
   from real captures. Every value carries an evidence label saying where it
   came from. These are the only values to design from.
 - [refero/](refero): a snapshot of [styles.refero.design](https://styles.refero.design)
@@ -48,8 +48,9 @@ produced all of it, so a fix goes through the builders rather than a hand
 edit. The library is read three ways: by a person through the gallery app
 (`make dev`), by a script or agent through [catalog.json](catalog.json) and
 the read-only MCP server, and by a terminal through the `ds` CLI. The repo
-(`c-wenlong/designs`) stays private; [docs/RIGHTS.md](docs/RIGHTS.md) says
-why.
+(`starship-terminal/constellations`) is public on GitHub; the rights
+position in [docs/RIGHTS.md](docs/RIGHTS.md) is pending the owner's
+decision.
 
 ```
 $ python3 tools/catalog.py find dark chat
@@ -87,7 +88,7 @@ one line each with its status, surface, entry point and tests.
 
 | Area | What you get |
 | --- | --- |
-| **Packages** | 50 products under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
+| **Packages** | One package per product under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
 | **Evidence** | Every token says where it came from: a measured CSS read, a reconstruction, or a reviewer's call ([docs/EVIDENCE.md](docs/EVIDENCE.md)) |
 | **Gallery** | One card per package with cover, icon, colour roles and fonts; per-package pages running Screenshots, Brief, Colors, Type, Spacing, Shape, Components, Icons, Health and Files (sections a package has nothing for are hidden); search over names, uses, tags and themes |
 | **Refero** | 1,342 styles labelled by product type and design style, browsed beside the packages but never trusted over them |
@@ -108,7 +109,7 @@ the builders that ask for them (see `make setup`).
 
 ```bash
 brew install git-lfs && git lfs install   # once per machine, before the clone
-git clone git@github.com:c-wenlong/designs.git design-systems
+git clone git@github.com:starship-terminal/constellations.git design-systems
 cd design-systems
 make setup                                # .venv with the site builder's and capture tools' deps
 cp .env.example .env                      # fill in what you use; .env is gitignored
@@ -123,6 +124,7 @@ cp .env.example .env                      # fill in what you use; .env is gitign
 | `DS_CHAT_MODEL` | Optional: the model the gallery chat calls when the browser has none saved |
 | `DESIGN_SYSTEMS_REPO` | Optional: this checkout's path, when the app cannot find it by itself |
 | `DESIGN_SYSTEMS_MEDIA`, `DESIGN_SYSTEMS_MEDIA_BASE` | Optional: where mirrored refero media lives, and the base URL for catalog media absent from the local mirror |
+| `DESIGN_SYSTEMS_ALLOWED_HOSTS` | Optional: extra Host names (`name` or `name:port`, comma-separated) the Python `/api/` server (`server/api.py`) answers to; loopback, IP literals and `*.ts.net` already pass |
 
 ## Quick start
 
@@ -798,7 +800,10 @@ flowchart LR
   ([scripts/redeploy.sh](scripts/redeploy.sh),
   [scripts/deploy_trigger.py](scripts/deploy_trigger.py)) serves the app and
   the `/api/` routes behind nginx, with the refero media mirror at
-  `~/services/design-systems/media/`.
+  `~/services/design-systems/media/`. The root [Dockerfile](Dockerfile)
+  exists because the home-server launcher, which lives outside this repo,
+  will not create an app without one; its header comment says how
+  the launcher mounts the checkout and the build.
 - **The agent layer is read-only.** [server/library.py](server/library.py)
   holds the tool specs once; `chat.py` maps them onto the Anthropic and
   OpenAI wire shapes, `routes.py` serves `/api/*`, `mcp.py` speaks JSON-RPC
@@ -835,7 +840,7 @@ flowchart LR
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
-| [docs/RIGHTS.md](docs/RIGHTS.md) | Why this repo stays private, and what is not ours |
+| [docs/RIGHTS.md](docs/RIGHTS.md) | What is not ours, and the rights position (pending the owner's decision now that the repo is public) |
 | [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [AGENTS.md](AGENTS.md) | Instructions for coding agents working here |
 
@@ -867,9 +872,9 @@ CI runs three workflows:
 
 | Workflow | What it gates |
 | --- | --- |
-| [check.yml](.github/workflows/check.yml) | `make check` on every push to `main` and every pull request |
-| [app.yml](.github/workflows/app.yml) | Format check, media taxonomy check, typecheck, tests and a production build for `app/` when `app/**`, `systems/**`, `catalog.json`, `refero/catalog.json` or `tools/catalog.py` changes |
-| [web.yml](.github/workflows/web.yml) | Typecheck and a production build for `web/` when `web/**`, `tools/catalog.py` or `catalog.json` changes |
+| [check.yml](.github/workflows/check.yml) | On every push to `main` and every pull request, two jobs: `check` runs `make check` then `make test`; `docs` runs `make docs` and fails if `site/gallery` exists |
+| [app.yml](.github/workflows/app.yml) | Format check, media taxonomy and float-parity checks, typecheck, tests and a production build for `app/` when `app/**`, `systems/**`, `catalog.json`, `refero/catalog.json` or `tools/catalog.py` changes |
+| [web.yml](.github/workflows/web.yml) | Typecheck, the gallery unit tests (`pnpm --dir web test`) and a production build for `web/` when `web/**`, `tools/catalog.py` or `catalog.json` changes |
 
 Rules that bite: Brief, Health, `DESIGN.md`, `web/data/`,
 `docs/scorecard/` and `site/` are regenerated, never hand-edited; every
@@ -887,7 +892,7 @@ including the pre-commit checks.
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
-| [docs/RIGHTS.md](docs/RIGHTS.md) | Why this repo stays private, and what is not ours |
+| [docs/RIGHTS.md](docs/RIGHTS.md) | What is not ours, and the rights position (pending the owner's decision now that the repo is public) |
 | [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [docs/TODO.md](docs/TODO.md) | Open work, newest first |
 | [refero/README.md](refero/README.md) | The refero snapshot: layout, provenance, refresh and the media mirror |
@@ -895,10 +900,11 @@ including the pre-commit checks.
 | [app/README.md](app/README.md) | The research app: running it, provider keys, its boundaries |
 | [AGENTS.md](AGENTS.md) | The brief for coding agents working here, or reading the library from another project |
 
-## Private
+## Visibility
 
-This repository stays private and is not pushed anywhere but
-`c-wenlong/designs`. The captures include signed-in pages and products' own
-artwork; [docs/RIGHTS.md](docs/RIGHTS.md) says what may leave the repo and
-what may not. Borrow structure and proportions from a package; never ship a
+This repository is public on GitHub at
+[starship-terminal/constellations](https://github.com/starship-terminal/constellations),
+so anyone can read it. The captures include signed-in pages and products' own
+artwork; the rights position in [docs/RIGHTS.md](docs/RIGHTS.md) is pending
+the owner's decision. Borrow structure and proportions from a package; never ship a
 product's logo, icons, illustrations or brand colours.
