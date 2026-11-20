@@ -30,8 +30,9 @@ export const RAW = path.join(REF, 'raw');
 export const M = (name) => `[class*="${name}"]`;
 
 export async function patch(context) {
+  // bot check: recorded as a boundary, not bypassed. navigator.webdriver is
+  // left as the browser reports it; an earlier version masked it.
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }
@@ -87,9 +88,11 @@ export async function closePromo(page) {
   return true;
 }
 
+// Navigation errors throw, and a challenge page that never clears throws, so
+// a timed-out or blocked page is never measured and saved as the product.
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+  if (!(await clearChallenge(page))) throw new Error(`bot check did not clear on ${url}: recorded as a boundary, not bypassed`);
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
 }
