@@ -53,6 +53,12 @@ class CheckTest(unittest.TestCase):
         with self.assertRaisesRegex(build_tokens.CheckError, "in no raw/ reading"):
             build_tokens.check_against_raw(doc)
 
+    def test_a_literal_font_inside_a_typography_value_is_checked(self):
+        doc = copy.deepcopy(DOC)
+        doc["core"]["typography"]["body"]["$value"]["fontFamily"] = "Unrecorded Example Font"
+        with self.assertRaisesRegex(build_tokens.CheckError, "font stack"):
+            build_tokens.check_against_raw(doc)
+
     def test_the_field_line_height_is_not_labelled_measured(self):
         # 23px rounds a 22.8576px reading that raw/ does not hold
         doc = copy.deepcopy(DOC)

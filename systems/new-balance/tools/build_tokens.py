@@ -80,7 +80,8 @@ def check_against_raw(doc=None):
             if not str(token.get("$extensions", {}).get("source", "")).startswith("Measured"):
                 continue
             value = token["$value"]
-            for item in (value.values() if isinstance(value, dict) else [value]):
+            members = value.items() if isinstance(value, dict) else [(None, value)]
+            for member, item in members:
                 item = str(item)
                 if item.startswith("{"):
                     continue
@@ -88,7 +89,7 @@ def check_against_raw(doc=None):
                     raise CheckError(f"{group}.{path}: Measured colour {item} is in no raw/ reading")
                 if re.fullmatch(r"-?\d+(?:\.\d+)?px", item) and item not in lengths:
                     raise CheckError(f"{group}.{path}: Measured length {item} is in no raw/ reading")
-                if token["$type"] == "fontFamily" and item not in text:
+                if (token["$type"] == "fontFamily" or member == "fontFamily") and item not in text:
                     raise CheckError(f"{group}.{path}: Measured font stack is in no raw/ reading")
     return doc
 
