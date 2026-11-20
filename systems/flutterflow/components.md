@@ -9,7 +9,7 @@ How to read an entry:
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 15/24 510, #1a1a1a`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
 - The site ships two generations of its marketing skin: home's `.composer`/`.pbtn`/`.pg-*` modules and the `ff-*` layer every other page carries. The Home (earlier skin) group holds the first; the rest is ff-*.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (159 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (158 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 

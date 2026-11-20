@@ -13,7 +13,7 @@ Frame.io is worth a capture because the whole public site is painted in one dark
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the chrome, plan cards and forms on the dark surface. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (52, 131 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the dark chrome and mega-menus, the hero grammar, the pricing grid, the contact form, the sign-in card, mobile, motion and focus. |
-| [components/crops/](components/crops) | 127 element crops at 2x, named `{component}-{state}.png`. |
+| [components/crops/](components/crops) | 126 element crops at 2x, named `{component}-{state}.png`. |
 | [screenshots/](screenshots) | 50 quantised `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages bounded at eight chunks; `mobile-*` shots at 390 x 844 @2x; `home-dark-menu-*` the three mega-menus open; `mobile-home-dark-drawer` the nav overlay; `welcome-light-*` the separate light sign-in surface. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — resolved custom properties plus @font-face), `motion.json` (the reduced-motion probe), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
@@ -53,7 +53,7 @@ Fonts: `core.font.family.gothic` is FrameGothic, then 1 fallback; `core.font.fam
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 127 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 126 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
