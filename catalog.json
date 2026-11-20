@@ -11455,7 +11455,7 @@
         "swatches": {
           "light": {
             "page": "core.color.neutral.paper",
-            "surface": "core.color.neutral.hover-wash",
+            "surface": "core.color.neutral.paper",
             "text": "core.color.neutral.ink",
             "muted": "core.color.neutral.muted",
             "accent": "core.color.brand.accent",

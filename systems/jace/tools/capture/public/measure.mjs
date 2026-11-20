@@ -5,7 +5,8 @@
 // Pages: home pricing blog docs contact signin signup mobile.
 // The sales form, app.jace.ai/signin and /signup are boundaries: fields may
 // be focused, sample text is typed then deleted, and nothing is submitted.
-// Signup Continue and Continue to signup are clicked to open the OAuth card.
+// Signup Continue is measured at rest and never clicked: it opens a privacy notice whose
+// Continue to signup acknowledges it (a consent choice), so the privacy and OAuth cards are a boundary.
 // Google, Outlook and SSO buttons are measured, never pressed.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -278,24 +279,9 @@ async function signup() {
   if (!(await newPage('signup'))) return;
   const g = G.signup;
   await S('signup-title', q('h1').first(), ['default'], { group: g, title: 'Signup title', desc: 'The first signup headline (Join +10,000). Boundary: no OAuth.', sel: 'h1' }, { noScroll: true });
-  await S('signup-continue', q('button').filter({ hasText: /^Continue$/ }).first(), B4, { group: g, title: 'Signup Continue', desc: 'The landing Continue control. Clicked once later to open the privacy card; states here are measured first.', sel: 'button Continue' }, { noScroll: true });
-  const cont = q('button').filter({ hasText: /^Continue$/ }).first();
-  if (await cont.count()) {
-    await cont.click().catch(() => {});
-    await page.waitForTimeout(800);
-  }
-  await S('signup-privacy-title', q('h1, h2').filter({ hasText: /privacy/i }).first(), ['default'], { group: g, title: 'Privacy title', desc: 'The privacy notice after Continue. Not a cookie banner.', sel: 'privacy heading' }, { noScroll: true });
-  await S('signup-privacy-continue', q('button').filter({ hasText: /Continue to signup/i }).first(), B4, { group: g, title: 'Continue to signup', desc: 'Advances to the OAuth card. Google and Outlook are not pressed.', sel: 'button Continue to signup' }, { noScroll: true });
-  const next = q('button').filter({ hasText: /Continue to signup/i }).first();
-  if (await next.count()) {
-    await next.click().catch(() => {});
-    await page.waitForTimeout(800);
-  }
-  await S('signup-oauth-title', q('h1').first(), ['default'], { group: g, title: 'Signup OAuth title', desc: 'Sign up with your work email. There is no email field: Google and Outlook only.', sel: 'h1' }, { noScroll: true });
-  await S('signup-google', q('button').filter({ hasText: /Continue with Google/ }).first(), B4, { group: g, title: 'Signup Google', desc: 'Continue with Google on signup. Measured, never pressed.', sel: 'button Continue with Google' }, { noScroll: true });
-  await S('signup-outlook', q('button').filter({ hasText: /Continue with Outlook/ }).first(), ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Signup Outlook', desc: 'Continue with Outlook on signup. Measured, never pressed.', sel: 'button Continue with Outlook' }, { noScroll: true });
-  await S('signup-email', q('input[type="email"], input[name="email"], input[placeholder*="email" i]').first(), ['default'], { group: g, title: 'Signup email field', desc: 'Expected email field. Missing on this product: OAuth only.', sel: 'input email' }, { noScroll: true });
-  save();
+  await S('signup-continue', q('button').filter({ hasText: /^Continue$/ }).first(), B4, { group: g, title: 'Signup Continue', desc: 'The landing Continue control; measured, never clicked (it opens a privacy notice).', sel: 'button Continue' }, { noScroll: true });
+  // Consent boundary: Continue opens a privacy notice whose "Continue to signup" acknowledges it.
+  // Neither is clicked, so the privacy and OAuth cards are not measured.
 }
 
 async function mobile() {

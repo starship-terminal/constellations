@@ -39,6 +39,8 @@ def alias(v):
 
 def css_val(name, t):
     v, ty = t["$value"], t["$type"]
+    if ty in ("transition", "animation"):
+        return None   # composites with no single CSS value; the Motion section reads them from the token tree
     if ty == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
     if ty == "shadow":
@@ -61,7 +63,8 @@ def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
+    rows = ((n, css_val(n, t)) for n, t in flat(T[setname]))
+    return "\n".join(f"  {cssname(n)}: {v};" for n, v in rows if v is not None)
 
 
 # The sets that share :root (core + light) must not land on the same custom

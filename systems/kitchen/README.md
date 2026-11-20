@@ -111,6 +111,8 @@ The workspace was captured from a persistent Chromium profile after email signup
 
 Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json). The promo bar is a campaign strip (Black Friday, code BF20 on this capture date) and will change. Graphik is a commercial face and is not in this package. The 128 px icon is the 32 px favicon scaled up. Hover and pressed on marketing links often share the resting colour. The workspace empty states are a new free account; they are not a designed "zero data" marketing mock. Theme customisation is behind Upgrade.
 
+Seven marketing values were typed in by hand from `main.css` at capture time and no file in raw/ holds them, so tokens.json labels them Reconstruction: `light.background.page` `#ffffff`, `light.background.sand` `#f8f6f4`, `light.text.secondary` `#707070`, `light.text.promo-gold` `#ffdc4d`, `light.border.stroke` `#e5e5e5`, `light.border.field` `#dcdcdc`, and `core.font.weight.black` 900 (Graphik Black is declared in `@font-face`; no element paints it).
+
 ## Fonts
 
 Graphik (Regular, Medium, Semibold, Bold, Black, plus italics) is served from `/assets/site/fonts/` on the marketing site. It is commercial and is not committed. Marketing tokens fall back to Helvetica Neue, Arial, sans-serif. The workspace uses the system UI stack (`-apple-system`, system-ui, Segoe UI, Roboto).

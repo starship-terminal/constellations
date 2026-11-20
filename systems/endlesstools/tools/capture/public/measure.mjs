@@ -3,7 +3,8 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: home login privacy mobile.
+// Pages: home login legal mobile (`legal` measures /legal/privacy_policy and
+// records its components under page `privacy`; `privacy` is accepted as an alias).
 // Writes raw/components-computed.json (merged) and one crop per component and
 // state into components/crops/; raw/measurements.md is built by
 // build-measurements.mjs.
@@ -322,7 +323,7 @@ async function home() {
   await S('editor-shot', q(`${SEC}="hero_workspace"] div:has(> video), ${SEC}="hero_workspace"] video`).filter({ visible: true }).first(), ['default'], { group: s, title: 'Product shot', desc: 'The embedded product-workspace image/video in the "One workspace" band (marketing content, not the app).', sel: 'workspace section media' });
   const pr = G.pricing;
   await S('billing-yearly', q('button').filter({ hasText: /Yearly/i }).filter({ visible: true }).first(), B4, { group: pr, title: 'Billing toggle, yearly', desc: 'The Yearly option of the billing toggle (selected by default — the chosen option renders disabled).', sel: 'button "Yearly"' });
-  await S('billing-monthly', q('button').filter({ hasText: /^\s*Monthly\s*$/i }).filter({ visible: true }).first(), B4, { group: pr, title: 'Billing toggle, monthly', desc: 'The Monthly option; toggled for the monthly screenshot state, never checked out.', sel: 'button "Monthly"' });
+  await S('billing-monthly', q('button').filter({ hasText: /^\s*Monthly\s*$/i }).filter({ visible: true }).first(), B4, { group: pr, title: 'Billing toggle, monthly', desc: 'The Monthly option, read as the page left it (public.mjs pressed it only for the home-dark-monthly screenshot); never checked out.', sel: 'button "Monthly"' });
   await S('save-pill', q('button span, span').filter({ hasText: /Save 17%/i }).filter({ visible: true }).first(), ['default'], { group: pr, title: 'Save badge', desc: 'The pink "Save 17%" pill inside the Yearly option.', sel: '"Save 17%" badge' });
   await S('plan-card', q('div.rounded-\\[33px\\]').filter({ visible: true }).first(), ['default', 'hover'], { group: pr, title: 'Plan card', desc: 'A pricing plan card: 33px radius, #121212 fill, 1px #222 ring, hover lifts to #1D1D1D.', sel: 'div.rounded-[33px]' });
   await S('plan-chip', q('div').filter({ hasText: /^\s*FREE\s*$/ }).filter({ visible: true }).first(), ['default'], { group: pr, title: 'Plan chip', desc: 'The FREE plan chip — a dark pill on the card header.', sel: '"FREE" chip' });
@@ -357,8 +358,9 @@ async function login() {
   await sheetsFor('login');
   await chrome('login');
   const g = G.auth;
-  const card = await markPainted('input, h1', 'm-login', { minW: 250, minH: 200 }).catch(() => null);
-  await S('login-card', card || q('main, [class*="card" i], form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Login card', desc: 'The centred 450px login card: a 5%-white fill at a 20px radius on the #0a0a0a field; never filled or submitted.', sel: 'login card' });
+  // markPainted returns the __none__ locator on a miss (S records it missing), never null.
+  const card = await markPainted('input, h1', 'm-login', { minW: 250, minH: 200 });
+  await S('login-card', card, ['default'], { group: g, title: 'Login card', desc: 'The centred 450px login card: a 5%-white fill at a 20px radius on the #0a0a0a field; never filled or submitted.', sel: 'login card' });
   await S('login-logo', q('svg').filter({ visible: true }).first(), ['default'], { group: g, title: 'Login logo', desc: 'The dot-grid Endless Tools mark above the card title (inline SVG, currentColor).', sel: 'login svg mark' });
   await S('login-title', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Login title', desc: '"Welcome to Endless Tools!" plus the sign-in-or-create lede.', sel: 'login h1' });
   await S('login-field', q('input[type="email"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'The email input (secondary fill, grey-2 border); sample text was typed and deleted, nothing sent.', sel: 'input[type=email]' });
@@ -401,13 +403,23 @@ async function mobile() {
 }
 
 run = new Date().toISOString().slice(0, 10);
+{
+  // A page argument that matches no page fails before anything is rewritten:
+  // a misspelt one used to run nothing yet stamp _meta.read with today's date.
+  const known = ['home', 'login', 'legal', 'privacy', 'mobile'];
+  const unknown = process.argv.slice(2).filter((p) => !known.includes(p));
+  if (unknown.length) {
+    console.error(`unknown page argument(s): ${unknown.join(', ')} — known pages: ${known.join(', ')}`);
+    process.exit(1);
+  }
+}
 out._meta.read = run;
 out._meta.viewport = '1440 x 900 (mobile group 390 x 844); every captured surface paints dark only';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
-const pages = process.argv.slice(2);
 const plan = { home, login, legal, mobile };
+const pages = process.argv.slice(2).map((p) => (p === 'privacy' ? 'legal' : p));
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 try {
   for (const k of order) await plan[k]();

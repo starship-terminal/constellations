@@ -10,7 +10,7 @@ const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({
   viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US',
 });
-await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+// navigator.webdriver is left as the browser reports it: automation is not hidden (2026-11 audit).
 const page = await context.newPage();
 
 async function hide() {

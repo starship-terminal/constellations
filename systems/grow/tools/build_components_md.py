@@ -38,8 +38,6 @@ BY_COLOR = {}
 for n, t in flat(T["core"]["color"]["palette"], "color.palette."):
     if t["$type"] == "color":
         BY_COLOR.setdefault(t["$value"], n)
-# The measured semantic roles too — a measured colour lands on its role token
-# when it matches one (the palette names win the shared values).
 
 
 def norm(r, g, b, a=None):
@@ -81,6 +79,18 @@ def num(x):
 def font(fz, lh, fw, f):
     lh = lh.replace("px", "") if lh != "normal" else "normal"
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
+
+
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (via "focus failed") or where the element took focus
+    but did not match :focus-visible. Its style is the element at rest, so it is left out of every
+    table and tally and listed as "focus could not be captured" (the kit's rule, PR 932)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
 
 
 def props(v):
@@ -151,7 +161,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -175,12 +185,21 @@ def state_rows(c):
     return rows, states
 
 
+def covers(layer, st):
+    try:
+        w, h = (float(x) for x in layer["size"].split("x"))
+    except (KeyError, ValueError):
+        return False
+    rw, rh = st["rect"]["w"], st["rect"]["h"]
+    return rw > 0 and rh > 0 and w * h >= 0.9 * rw * rh
+
+
 def fmt(d):
     return "; ".join(f"{k} {d[k]}" for k in ORDER if k in d).replace("|", "/")
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -310,17 +329,44 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+RING = re.compile(r"(rgba?\([^)]*\))\s+0px\s+0px\s+0px\s+([\d.]+px)")
+
+
+def clear(c):
+    return c.strip() == "transparent" or bool(re.fullmatch(r"rgba\([^)]*,\s*0\)", c.strip()))
+
+
+foc, unfocused, clear_outline = [], [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if st and focus_not_captured(st):
+        unfocused.append(f"`{k}`")
+    if not st or not measured(st):
         continue
     s = st["style"]
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
-with_ring = [f"`{k}` ({r})" for k, r in foc if r]
-without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. Glue's ring is a 2px box-shadow in the declared glue-blue-600 (rgb(26, 115, 232)) offset 1px — the outline is set transparent beside it: {', '.join(with_ring)}. The rest draw the same shadow ring without the transparent outline: {', '.join(without)}.")
+    ring = RING.fullmatch((s.get("boxShadow") or "none").strip())
+    outlined = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    if outlined and clear(s["outlineColor"]):
+        clear_outline.append(f"`{k}`")
+        outlined = False
+    if ring:
+        kind = f"a {ring.group(2)} box-shadow ring in {colour(ring.group(1))}"
+    elif outlined:
+        kind = f"a {s['outlineWidth']} {s['outlineStyle']} outline in {colour(s['outlineColor'])} (offset {s['outlineOffset']})"
+    else:
+        kind = None
+    foc.append((k, kind))
+kinds = {}
+for k, kind in foc:
+    kinds.setdefault(kind, []).append(f"`{k}`")
+parts = [f"{len(v)} draw {kind}: {', '.join(v)}." for kind, v in kinds.items() if kind]
+if kinds.get(None):
+    parts.append(f"{len(kinds[None])} draw no ring, so a keyboard user sees no change: {', '.join(kinds[None])}.")
+if clear_outline:
+    parts.append(f"{len(clear_outline)} also set a transparent outline, which draws nothing: {', '.join(clear_outline)}.")
+if unfocused:
+    parts.append(f"Focus could not be captured on {len(unfocused)} more (keyboard focus never landed, so their readings are left out): {', '.join(unfocused)}.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. Glue's ring is a box-shadow, not an outline. " + " ".join(parts))
 W()
 W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover) — nothing a real press would submit or open was ever pressed. A pressed filled button keeps the hover's #185abc fill and deepens the elevation (0 1px 2px / 0 2px 6px rgba(60,64,67)); pressed text links keep the faint brand wash (rgba(26,115,232,0.1)); the 5px `outline: auto` Chrome draws on forced :active is the forced-state artifact, not a page style.")
 W()
@@ -331,7 +377,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -386,12 +432,15 @@ for k in ["promo-banner", "video-teaser", "card", "card-link", "mega-panel", "ta
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
+    # Borrow the look from a painted child only when it covers (nearly) the whole root box, so a
+    # CTA or badge inside a transparent card never stands in for the card.
+    big = [x for x in st.get("paint") or [] if x.get("bg") and x.get("radius") and covers(x, st)]
+    if ("radius" not in p or p["background"] == "transparent") and big:
+        p0 = big[0]
         p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
