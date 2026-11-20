@@ -144,6 +144,10 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 The home hero is a public demo of Maia, not the signed-in scenario editor. Plan prices move with the credit slider; the captured annual view shows $0, $9, $16, $29 and Custom at 10,000 credits/mo. Templates search was typed and cleared, not submitted. Sign-in and register fields were focused and not submitted. Satoshi files are not in this package. Screenshots are 256-colour PNGs. Read colours from the tokens.
 
+The `pressed` reading of Talk to sales (`cta-secondary` in [raw/components-computed.json](raw/components-computed.json)) equals its default. The 2026-11-18 script left the marker of the first pressed control (Try it free) in place, so DevTools forced that element again and the Talk to sales reading is the control at rest. Treat its pressed row in [components.md](components.md) as not captured. The script now clears the marker; the reading needs a recapture.
+
+`tools/build_tokens.py` reads the colour ramps from [raw/css-vars.json](raw/css-vars.json), but types the other values (radii, sizes, the sign-in gradient, the search shadow) by hand from the same readings. They match raw today; after a recapture, check them against the new readings. The two layout widths are the capture viewports, labelled Reconstruction.
+
 ### Do and don't (from README.md)
 
 - **Do paint a white page and purple type.** Neutral 900 (`#342237`) for headlines, brand 600 (`#8f4bd2`) for the filled action. [screenshots/home-light-default.png](screenshots/home-light-default.png)

@@ -86,6 +86,6 @@ for (const url of pages) {
 }
 const fonts = await page.evaluate(() => [...document.fonts].slice(0, 40).map((f) => ({ family: f.family, weight: f.weight, status: f.status })));
 await browser.close();
-const out = { captured: '2026-11-18', product: 'Make', pages: perPage, fonts };
+const out = { captured: new Date().toLocaleDateString('en-CA'), product: 'Make', pages: perPage, fonts };
 fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
 console.log('wrote raw/css-vars.json');
