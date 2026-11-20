@@ -5905,9 +5905,9 @@
       "description": "Automate Sales and CRM Busywork",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://app.tango.us/sign-in Continue with Google returned to the Tango app. Product not walked.",
+      "notes": "https://app.tango.us/sign-in showed Sign in to Tango. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 18
     },
     {
