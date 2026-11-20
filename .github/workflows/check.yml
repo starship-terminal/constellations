@@ -109,4 +109,4 @@ jobs:
         run: pip install -r requirements.txt -r tools/requirements-capture.txt
       - name: Run the kit's browser tests
         # -v so the log shows each test ran rather than skipped.
-        run: cd tools && python -m unittest -v test_kit_privacy.SnapshotInABrowser test_kit_capture.MeasureArgs
+        run: cd tools && python -m unittest -v test_kit_privacy.SnapshotInABrowser test_kit_capture.MeasureArgs test_kit_capture.IconPaint
