@@ -40,7 +40,36 @@ class RebuildTest(unittest.TestCase):
         text = (self.copy / "components.md").read_text()
         for k in failed:
             with self.subTest(component=k):
-                self.assertNotIn(f"{k}-focus-visible.png", text)
+                self.assertNotIn(f"crops/{k}-focus-visible.png", text)
+
+
+class OtherMarkersTest(unittest.TestCase):
+    """A focus-visible state marked skipped, or with focus.matches false, is left out the same way.
+    Each case marks one captured focus-visible state on a temporary copy and rebuilds."""
+
+    def rebuild_with(self, mark):
+        import json
+        with tempfile.TemporaryDirectory() as tmp:
+            copy = pathlib.Path(tmp) / "pkg"
+            shutil.copytree(PKG, copy, ignore=shutil.ignore_patterns("__pycache__"))
+            raw_path = copy / "raw" / "components-computed.json"
+            data = json.loads(raw_path.read_text())
+            key = next(k for k, c in data["components"].items()
+                       if "style" in (c.get("states", {}).get("focus-visible") or {})
+                       and (c["states"]["focus-visible"].get("via") != "focus failed")
+                       and c["states"]["focus-visible"].get("crop"))
+            mark(data["components"][key]["states"]["focus-visible"])
+            raw_path.write_text(json.dumps(data))
+            subprocess.run([sys.executable, str(copy / "tools" / "build_components_md.py")], check=True, capture_output=True, cwd=copy)
+            return key, (copy / "components.md").read_text()
+
+    def test_skipped_state_is_left_out(self):
+        key, text = self.rebuild_with(lambda s: s.__setitem__("skipped", "focus could not be captured"))
+        self.assertNotIn(f"crops/{key}-focus-visible.png", text)
+
+    def test_focus_not_matching_is_left_out(self):
+        key, text = self.rebuild_with(lambda s: s.__setitem__("focus", {"matches": False}))
+        self.assertNotIn(f"crops/{key}-focus-visible.png", text)
 
 
 if __name__ == "__main__":
