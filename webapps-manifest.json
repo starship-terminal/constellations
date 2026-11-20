@@ -4511,9 +4511,9 @@
       "description": "Organize your creative files",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.playbook.com/sign-in Continue with email opened account creation asking for a name and optional password. Password not submitted. Google and Apple also offered. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 14
     },
     {
@@ -4528,9 +4528,9 @@
       "description": "Official Site: Consoles, Games, Accessories ",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.playstation.com/en-sg/login/ is a 404. Sign In search did not open an account form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 14
     },
     {
@@ -4545,9 +4545,9 @@
       "description": "Your own private corner of the web to spend quality time with great articles",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://getpocket.com/home says Pocket is being phased out. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 14
     },
     {
@@ -4562,9 +4562,9 @@
       "description": "Monetize your software with ease",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Sign in on https://polar.sh/ sent a 6-character verification code. Code not entered. Google and GitHub also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 14
     },
     {
@@ -4579,9 +4579,9 @@
       "description": "Official Polaroid Store",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.polaroid.com/en_sg/account/login emailed a login link. Link not opened.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 14
     },
     {
@@ -4596,9 +4596,9 @@
       "description": "Free Personal Site Builder",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Log In opens https://app.pop.site/?signin with email and password, or Google. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 14
     },
     {
@@ -4613,9 +4613,9 @@
       "description": "Your forever space for everything you are",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Log in on https://portrait.so/ Sign in with email sent a confirmation code. Code not entered. Wallet also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 14
     },
     {
@@ -4630,9 +4630,9 @@
       "description": "Learn with the best online language tutors on app & web",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://preply.com/en/login stopped before a usable form. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 14
     },
     {
@@ -4647,9 +4647,9 @@
       "description": "Watch movies, TV shows, sports, and live TV",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Sign In opens Amazon at https://www.amazon.sg/ap/signin with email or mobile and a password field. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 14
     },
     {
@@ -4664,9 +4664,9 @@
       "description": "The best new products in tech",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://producthunt.com/login stopped on a Cloudflare security check. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 14
     },
     {
@@ -4681,9 +4681,9 @@
       "description": "Interior Design Project Management Software",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.programa.design/login asks for email and password, or Google, Trimble, or Xero. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 14
     },
     {
@@ -4698,9 +4698,9 @@
       "description": "Promova helps you learn languages with ease!",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://promova.com/sign-up rendered no email form, only footer legal text.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 14
     },
     {
@@ -4715,9 +4715,9 @@
       "description": "Truly Custom Haircare and Skincare",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://prose.com/signin said the capture inbox was an unknown email. Consultation signup not opened. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 14
     },
     {
@@ -4732,9 +4732,9 @@
       "description": "Background & Visual Studio for Designers",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://pryzm.design/login is 404. https://pryzm.design/signin asks for email and password, or Google. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 14
     },
     {
@@ -4749,9 +4749,9 @@
       "description": "Learning tools, flashcards, and textbook solutions",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://quizlet.com/login asked to press and hold to confirm a human. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 14
     },
     {
@@ -4766,9 +4766,9 @@
       "description": "Low Fee NFT Marketplace",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://rarible.com/ login is missing. https://og.rarible.com/login offers Connect wallet only. Wallet not connected.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 14
     },
     {
@@ -4783,9 +4783,9 @@
       "description": "Digital asset manager for modern teams",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://raster.app/sign-in Email link sent a magic link. Link not opened. Google also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 14
     },
     {
@@ -4800,9 +4800,9 @@
       "description": "Escape the everyday and immerse yourself in nature",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.raus.life/ has a newsletter signup and no account sign-in. Cookie banner set to necessary only.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 14
     },
     {
@@ -4817,9 +4817,9 @@
       "description": "Smart Scheduling App for Teams",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.reclaim.ai/login offers Google, Microsoft, Dropbox, and SSO. No email field.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 14
     },
     {
@@ -4834,9 +4834,9 @@
       "description": " Social music network",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://record.club/login stopped on a Cloudflare security check. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 14
     },
     {
