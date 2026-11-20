@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapbox style guide</title>
+<style>
+:root {
+  --color-blue-5: #eff7ff;
+  --color-blue-10: #cbe4ff;
+  --color-blue-20: #98caff;
+  --color-blue-30: #64afff;
+  --color-blue-40: #3195ff;
+  --color-blue-50: #007afc;
+  --color-blue-60: #0062ca;
+  --color-blue-70: #004997;
+  --color-blue-80: #013165;
+  --color-blue-90: #001832;
+  --color-gray-5: #f7f9fc;
+  --color-gray-10: #eceff5;
+  --color-gray-20: #d5dae2;
+  --color-gray-30: #bbc2ce;
+  --color-gray-40: #a0aaba;
+  --color-gray-50: #8b96aa;
+  --color-gray-60: #566171;
+  --color-gray-70: #333943;
+  --color-gray-80: #23262d;
+  --color-gray-90: #15171b;
+  --color-green-5: #e9faf1;
+  --color-green-10: #c9f2dd;
+  --color-green-20: #93e4bb;
+  --color-green-30: #5cd79a;
+  --color-green-40: #2fc078;
+  --color-green-50: #228a56;
+  --color-green-60: #1b6e45;
+  --color-green-70: #145334;
+  --color-green-80: #0e3722;
+  --color-green-90: #071c11;
+  --color-orange-5: #fff5ea;
+  --color-orange-10: #ffe6cb;
+  --color-orange-20: #ffcd98;
+  --color-orange-30: #ffb464;
+  --color-orange-40: #ff9b31;
+  --color-orange-50: #fc8200;
+  --color-orange-60: #ca6800;
+  --color-orange-70: #974e00;
+  --color-orange-80: #653400;
+  --color-orange-90: #321a00;
+  --color-purple-5: #f9f2ff;
+  --color-purple-10: #ebd7fd;
+  --color-purple-20: #d5b1fb;
+  --color-purple-30: #b887f3;
+  --color-purple-40: #9c67e7;
+  --color-purple-50: #7539d7;
+  --color-purple-60: #5a29b8;
+  --color-purple-70: #421c9a;
+  --color-purple-80: #2e127c;
+  --color-purple-90: #1f0a67;
+  --color-red-5: #fcefed;
+  --color-red-10: #fcd6d1;
+  --color-red-20: #f9ada3;
+  --color-red-30: #f78475;
+  --color-red-40: #f45b47;
+  --color-red-50: #f13219;
+  --color-red-60: #c9220c;
+  --color-red-70: #961a09;
+  --color-red-80: #641106;
+  --color-red-90: #320903;
+  --color-yellow-5: #fffced;
+  --color-yellow-10: #fff7d3;
+  --color-yellow-20: #ffefa7;
+  --color-yellow-30: #fee67a;
+  --color-yellow-40: #fede4e;
+  --color-yellow-50: #fed622;
+  --color-yellow-60: #e5bc01;
+  --color-yellow-70: #ac8d01;
+  --color-yellow-80: #735e01;
+  --color-yellow-90: #392f00;
+  --color-primary-5: #eff7ff;
+  --color-primary-10: #cbe4ff;
+  --color-primary-20: #98caff;
+  --color-primary-30: #64afff;
+  --color-primary-40: #3195ff;
+  --color-primary-50: #007afc;
+  --color-primary-60: #0062ca;
+  --color-primary-70: #004997;
+  --color-primary-80: #013165;
+  --color-primary-90: #001832;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-ink: #0e1012;
+  --font-family-ui: Cera pro, Trebuchet MS, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-body: 1rem;
+  --font-size-xsmall: 0.875rem;
+  --font-size-small: 1rem;
+  --font-size-regular: 1.125rem;
+  --font-size-medium: 1.25rem;
+  --font-size-large: 1.375rem;
+  --font-size-navbar: 0.9375rem;
+  --font-size-h1: 4.25rem;
+  --font-size-h2: 3.5rem;
+  --font-size-h3: 2.875rem;
+  --font-size-h4: 2.25rem;
+  --font-size-h5: 1.75rem;
+  --font-size-h6: 1.5rem;
+  --font-lineHeight-body: 1.6;
+  --font-lineHeight-h1: 1.2;
+  --font-lineHeight-h2: 1.25;
+  --space-huge: 4rem;
+  --space-large: 2.5rem;
+  --space-medium: 2.25rem;
+  --space-small: 2rem;
+  --space-tiny: 1rem;
+  --space-xlarge: 3rem;
+  --space-xsmall: 1.5rem;
+  --space-xxlarge: 3.5rem;
+  --space-xxsmall: 1.25rem;
+  --radius-large: 1.5rem;
+  --radius-medium: 1rem;
+  --radius-small: 0.75rem;
+  --radius-tiny: 0.25rem;
+  --radius-xsmall: 0.5rem;
+  --radius-xxsmall: 0.375rem;
+  --icon-large: 3.5rem;
+  --icon-medium: 3rem;
+  --icon-small: 2.5rem;
+  --icon-tiny: 1rem;
+  --icon-xlarge: 4rem;
+  --icon-xsmall: 2rem;
+  --icon-xxsmall: 1.5rem;
+  --layout-large: 60rem;
+  --layout-medium: 48rem;
+  --layout-small: 40rem;
+  --layout-xlarge: 72rem;
+  --layout-xsmall: 32rem;
+  --layout-xxlarge: 84rem;
+  --layout-xxsmall: 24rem;
+  --typography-body: var(--font-weight-regular) var(--font-size-body)/1.6 var(--font-family-ui);
+  --typography-heading: var(--font-weight-bold) var(--font-size-h1)/1.2 var(--font-family-ui);
+  --page: var(--color-white);
+  --surface: var(--color-gray-5);
+  --surface-raised: var(--color-gray-10);
+  --text-primary: var(--color-ink);
+  --text-secondary: #333943;
+  --text-muted: #566171;
+  --text-disabled: #8b96aa;
+  --text-on-accent: #ffffff;
+  --text-link: var(--color-blue-50);
+  --border-default: #d5dae2;
+  --border-strong: #bbc2ce;
+  --border-input: #e3e6e8;
+  --border-focus: var(--color-blue-50);
+  --accent-default: var(--color-blue-50);
+  --accent-hover: var(--color-blue-40);
+  --accent-soft: var(--color-blue-5);
+  --status-success: var(--color-green-50);
+  --status-warning: var(--color-orange-50);
+  --status-danger: var(--color-red-50);
+  --status-info: var(--color-blue-50);
+  --nav-text: #1c1f24;
+  --nav-muted: #566171;
+  --nav-menu: #1c1f24;
+  --component-button-bg: var(--accent-default);
+  --component-button-text: var(--text-on-accent);
+  --component-button-radius: 100px;
+  --component-button-height: 52px;
+  --component-button-padding: 21px;
+  --component-button-stroke-bg: #ffffff;
+  --component-button-stroke-text: #1c1f24;
+  --component-button-stroke-border: var(--border-strong);
+  --component-button-stroke-radius: 100px;
+  --component-field-radius: 0.5rem;
+  --component-field-height: 44px;
+  --component-field-border: var(--border-input);
+  --component-field-focus: var(--border-focus);
+  --component-menu-link-radius: 6px;
+  --component-nav-height: 63px;
+  --sg-sans: "Cera pro", "Trebuchet MS", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text-primary); font: 400 16px/1.6 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-size: 2.25rem; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 8px; }
+h2 { font-size: 1.5rem; margin: 40px 0 12px; }
+p { color: var(--text-secondary); max-width: 70ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border-radius: 8px; box-shadow: inset 0 0 0 1px #d5dae2; }
+.sw b, .sw span { display: block; font-size: 12px; }
+.sw span { color: var(--text-muted); }
+.btn { display: inline-flex; align-items: center; height: var(--component-button-height); padding: 0 21px; border-radius: var(--component-button-radius); background: var(--component-button-bg); color: var(--component-button-text); border: 1px solid var(--component-button-bg); text-decoration: none; font-size: 18px; }
+.btn.stroke { background: var(--component-button-stroke-bg); color: var(--component-button-stroke-text); border-color: var(--component-button-stroke-border); height: 38px; padding: 0 16px; font-size: 15px; }
+.field { height: var(--component-field-height); width: 280px; border-radius: var(--component-field-radius); border: 1px solid var(--component-field-border); padding: 0 12px; font: inherit; color: var(--text-secondary); }
+.field:focus { outline: none; border-color: var(--component-field-focus); }
+.card { background: var(--surface); border-radius: var(--radius-medium); padding: 24px; max-width: 360px; }
+code { font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Mapbox, measured</h1>
+<p>Public marketing site, light theme only, read from mapbox.com on 2026-11-21. Cera Pro is Mapbox's licensed face and is not loaded here. The fallback is Trebuchet MS, which is the stack the site itself declares.</p>
+<h2>Colour</h2>
+<div class="row" id="roles"></div>
+<h2>Blue ramp</h2>
+<div class="row" id="blue"></div>
+<h2>Gray ramp</h2>
+<div class="row" id="gray"></div>
+<h2>Controls</h2>
+<p><a class="btn" href="#components">Get started for free</a> <a class="btn stroke" href="#components">Get started</a></p>
+<p><input class="field" placeholder="How can we help you?" aria-label="Example field"></p>
+<div class="card"><b>Pay as you go</b><p>Surface #f7f9fc behind ink #0e1012. Accent stays on the pill.</p></div>
+</div>
+<script>
+const roles = [
+  ["page", "--page"], ["surface", "--surface"], ["text", "--text-primary"],
+  ["muted", "--text-muted"], ["accent", "--accent-default"], ["border", "--border-default"]
+];
+const root = getComputedStyle(document.documentElement);
+function swatch(name, prop) {
+  const v = root.getPropertyValue(prop).trim();
+  return `<div class="sw"><i style="background:${v}"></i><b>${name}</b><span>${v}</span></div>`;
+}
+document.getElementById("roles").innerHTML = roles.map(([n,p]) => swatch(n,p)).join("");
+function ramp(id, prefix) {
+  const steps = ["5","10","20","30","40","50","60","70","80","90"];
+  document.getElementById(id).innerHTML = steps.map(s => swatch(s, prefix+s)).join("");
+}
+ramp("blue", "--color-blue-");
+ramp("gray", "--color-gray-");
+</script>
+</body>
+</html>

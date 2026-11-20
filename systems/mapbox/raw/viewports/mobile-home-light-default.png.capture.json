@@ -1,0 +1,22 @@
+{
+  "screenshot": "mobile-home-light-default.png",
+  "capturedAt": "2026-11-20T20:54:33.534Z",
+  "sanitizedSourceUrl": "https://www.mapbox.com/",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 390,
+    "height": 844,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0,
+    "pageLeft": 0,
+    "pageTop": 0
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "dimensionCheck": "pass"
+}
