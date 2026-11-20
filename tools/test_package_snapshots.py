@@ -39,6 +39,23 @@ SIGNED = [
     "https://app.example.test/x?auth=abc",
 ]
 PLAIN = ["https://example.test/page?unit=7", "https://example.test/a?tokenizer=1&sigma=2"]
+# A stand-in clone for the whole-copy pass: a signed URL in a data- attribute and an inline
+# style, plain attributes that must stay, and an inlined stylesheet the page pass must clean.
+WHOLE_COPY_NODES = [["img", {"data-src": "https://x/p.png?crop=(0,0)&token=abc", "alt": "a;b",
+                             # cutSigned stops at ;name: so it would keep this token; only
+                             # cutSignedUrl, the attribute cleaner, removes it.
+                             "data-srcset": "https://x/p?options=a;b:c&token=abc"}],
+                    ["div", {"style": "color:#fff;background:url(https://x/i.png?sig=1)",
+                             "data-unit": "https://example.test/page?unit=7"}]]
+WHOLE_COPY_STYLE = ".x{background:url(https://x/bg.png?X-Amz-Signature=abc)}"
+WHOLE_COPY_WANT = {
+    "attrs": [{"data-src": "https://x/p.png", "alt": "a;b", "data-srcset": "https://x/p"},
+              {"style": "color:#fff;background:url(https://x/i.png)",
+               "data-unit": "https://example.test/page?unit=7"}],
+    "html": '<!doctype html>\n<img data-src="https://x/p.png" alt="a;b" data-srcset="https://x/p">'
+            '<div style="color:#fff;background:url(https://x/i.png)" data-unit="https://example.test/page?unit=7">'
+            '<style>.x{background:url(https://x/bg.png)}</style>',
+}
 
 
 def folder(label):
@@ -155,6 +172,32 @@ console.log(JSON.stringify(out));
         assert len(url) == 1, f"{label} has no single cutSignedUrl line"
         return sig.group(0), cut[0].strip() + "\n" + url[0].strip()
 
+    @staticmethod
+    def whole_copy_pass(src, label):
+        """A copy's attribute pass over the clone and its pass over the serialised page."""
+        attrs = [l.strip() for l in src.splitlines()
+                 if "clone.querySelectorAll('*').forEach" in l and "cutSignedUrl" in l]
+        page = [l.strip() for l in src.splitlines() if re.search(r"\bhtml = cutSigned\(", l)]
+        assert len(attrs) == 1 and len(page) == 1, f"{label} has no single attribute pass and page pass"
+        return attrs[0], page[0]
+
+    def run_whole_copy_pass(self, slug):
+        src = (folder(slug) / "snapshot.js").read_text()
+        sig, cut = self.cut_signed_js(src, slug)
+        attrs, page = self.whole_copy_pass(src, slug)
+        js = sig + "\n" + cut + """
+const nodes = %s.map(([tag, attrs]) => ({
+  tag, attributes: Object.entries(attrs).map(([name, value]) => ({ name, value })),
+  setAttribute(k, v) { this.attributes.find((a) => a.name === k).value = v; } }));
+const clone = { querySelectorAll: () => nodes,
+  get outerHTML() { return nodes.map((n) => '<' + n.tag + n.attributes.map((a) => ' ' + a.name + '="' + a.value + '"').join('') + '>').join('') + '<style>%s</style>'; } };
+""" % (json.dumps(WHOLE_COPY_NODES), WHOLE_COPY_STYLE) + attrs + "\n" + page.replace("let html", "var html") + """
+console.log(JSON.stringify({ attrs: nodes.map((n) => Object.fromEntries(n.attributes.map((a) => [a.name, a.value]))), html }));
+"""
+        res = subprocess.run(["node", "-e", js], capture_output=True, text=True)
+        self.assertEqual(res.returncode, 0, (slug, res.stderr))
+        return json.loads(res.stdout)
+
     def test_snapshot_js_cut_signed_matches_the_kit(self):
         # #401 stopped a package copy's query at ( and ;, which kept &token= after ?crop=(0,0), an
         # &amp; or a ;-separated query; Sentry's older copy ran from a colour's # into a later
@@ -166,10 +209,12 @@ console.log(JSON.stringify(out));
         # inlined stylesheet reached the copy and unsnap.py refused it (coursera, manus, chatgpt,
         # notebooklm, duolingo and brilliant had no other pass). Every copy runs the kit's whole-copy
         # pass: every attribute, then the serialised page.
+        # Run each distinct copy's two passes on a stand-in clone instead of matching their text.
         for slug in PACKAGES:
-            src = (folder(slug) / "snapshot.js").read_text()
-            self.assertIn("for (const a of [...n.attributes]) { const v = (a.name === 'style' ? cutSigned : cutSignedUrl)(a.value); if (v !== a.value) n.setAttribute(a.name, v); }", src, slug)
-            self.assertRegex(src, r"\bhtml = cutSigned\('<!doctype html>\\n' \+ clone\.outerHTML\);", slug)
+            self.whole_copy_pass((folder(slug) / "snapshot.js").read_text(), slug)
+        if shutil.which("node"):
+            for slug in distinct("snapshot.js"):
+                self.assertEqual(self.run_whole_copy_pass(slug), WHOLE_COPY_WANT, slug)
         cases = {
             'color:#fff;background:url(https://x/p.png?sig=1)': 'color:#fff;background:url(https://x/p.png)',
             'a{color:#fff}b{background:url(https://x/p.png?sig=1)}': 'a{color:#fff}b{background:url(https://x/p.png)}',

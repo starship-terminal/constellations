@@ -63,7 +63,7 @@ refero-dump: ## Rewrite refero/.dump/ (the text dump git merges) from refero/ref
 refero-db: ## Rebuild refero/refero.db from refero/.dump/ (after merging the dump), then rewrite the dump canonically
 	@$(PYTHON) tools/refero/dump.py load
 
-test: ## Run the tools' tests, then every package's own tests (systems/*/tools/test_*.py)
+test: ## Run the tools' tests, then every package's own tests (every test_*.py and test_*.mjs under systems/<slug>/)
 	@$(PYTHON) -m unittest discover -s tools -p 'test_*.py'
 	@$(PYTHON) tools/package_tests.py
 
