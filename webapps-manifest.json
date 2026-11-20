@@ -2714,9 +2714,9 @@
       "description": "Bringing you closer to the people and things you love",
       "status": "pending",
       "package": null,
-      "notes": "https://www.instagram.com/accounts/login/ asks for mobile number, username, or email, plus a password, or Facebook. No code was sent.",
+      "notes": "https://www.instagram.com/accounts/login/ asks for mobile number, username, or email, plus a password, or Facebook. No code was sent. Public walk 2026-11-21: the homepage is a login wall. Locations, one country page, Popular, Instagram Lite, the official profile, and the 404 loaded. Light and dark were painted. Sign-in, signup, password reset, Facebook, and Meta Verified stop at a credential wall and were not entered. A bio links dialog was left out. No form was submitted. Public package in PR 1520 at fe4316ad8. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 8
     },
     {
@@ -3088,9 +3088,9 @@
       "description": "Manage your professional identity",
       "status": "pending",
       "package": null,
-      "notes": "https://www.linkedin.com/login/ asks for email and password, or Sign in with Apple. Password not submitted.",
+      "notes": "https://www.linkedin.com/login/ asks for email and password, or Sign in with Apple. Password not submitted. Public walk 2026-11-21: homepage loaded signed out. Top Content, Learning, Jobs, Games, topic chips, product chips, and game cards opened public pages. People, Sign in, Join now, Sign in with email, and Post a job stop at the login or signup wall and were not entered. The jobs listing opened a sign-in dialog on its own. The phone homepage is covered by Google and Agree & Join sheets. Those were not dismissed or submitted. No form was submitted. Public package in PR 1519 at 5f15dc263. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 10
     },
     {
