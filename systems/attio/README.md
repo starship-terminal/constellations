@@ -2,7 +2,9 @@
 
 Captured on 31 October 2026 from [Attio](https://attio.com) and its signed-in web app using the visible Codex in-app browser. The owner completed sign-in and authorized onboarding. Attio automatically provisioned a 14-day Pro trial during basic setup; these captures do not establish free-tier availability. No purchase, invitation, mailbox connection or record creation was submitted.
 
-The package separates public marketing illustrations from interactive application evidence. It contains 37 accepted screenshots, including onboarding, light/dark company tables, filter/sort/view dialogs, record overview/actions, empty Notes and an unsubmitted create form. The theme preference was restored to **System**, rendering dark; the temporary viewport override was reset.
+A later pass on 21 November 2026 used the T3 in-app preview, default profile. The session was signed out. Sign in, `https://app.attio.com/login`, and `https://app.attio.com/` all opened the login wall at `https://app.attio.com/onboarding/welcome`. That walk added eight screenshots, [site-tree.md](site-tree.md), and [login-review.json](login-review.json). It did not rebuild tokens. `catalog.json` is unchanged.
+
+The package separates public marketing illustrations from interactive application evidence. It contains 45 accepted screenshots, including the October onboarding and company views plus the November public pages and the signed-out login wall. The October theme preference was restored to **System**, rendering dark; the temporary viewport override was reset.
 
 | File | Contents |
 |---|---|
@@ -17,6 +19,8 @@ The package separates public marketing illustrations from interactive applicatio
 | [screenshots/](screenshots) | Accepted screenshots converted to genuine 256-colour PNG |
 | [raw/](raw) | Computed-style readings, manifests, crop bounds and usage counts; no page copies |
 | [tools/](tools) | Deterministic token/guide builders and read-only capture reader |
+| [site-tree.md](site-tree.md) | Controls on the marketing home and the login wall, and where each one goes |
+| [login-review.json](login-review.json) | The 21 November 2026 walk: the session was signed out, so nav, settings, and create were not reached |
 
 ## Brief
 
@@ -135,7 +139,8 @@ Captured, partial means the linked state is evidenced but the stated gaps remain
 | Onboarding | Captured | [capture](screenshots/onboarding-workspace-details.png) Profile, workspace, country, description, proposed objects, mailbox skip, call-intelligence choice, referral and completion. |
 | Principles, voice and component guidance | Not captured |  No official design-system or voice guide verified; do not infer product guidance. |
 | Assets and font rights | Captured, partial | [capture](screenshots/companies-light-scoped.png) Inter identified by computed CSS; proprietary fonts/icons not bundled. Official identification icon only. |
-| Themes and widths | Captured, partial | [capture](screenshots/landing-mobile.png) Public 1440/390; app desktop1386 light/dark and narrow390 dark. Light mobile and full state parity not captured. |
+| Themes and widths | Captured, partial | [capture](screenshots/landing-mobile.png) Public 1440/390; app desktop1386 light/dark and narrow390 dark. Light mobile and full state parity not captured. A 21 November 2026 pass remeasured public desktop at 1440 by 900 and phone at 390 by 844. |
+| Signed-in shell, 21 November 2026 | Not captured | [login-review.json](login-review.json) The default preview profile was signed out. The login wall is [login-wall-desktop-2026-11-21.png](screenshots/login-wall-desktop-2026-11-21.png). |
 
 ## Do and don't
 

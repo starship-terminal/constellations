@@ -1,0 +1,72 @@
+{
+  "slug": "attio",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "T3 in-app preview, default profile. Sign in, https://app.attio.com/login, and https://app.attio.com/ all opened https://app.attio.com/onboarding/welcome. That page is a login wall: Sign in with Google, an empty work-email field, and Continue. No password, code, Google consent, or onboarding field was used. No robot check appeared.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+      },
+      "png": {"pixelWidth": 2880, "pixelHeight": 1800}
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 390, "height": 844, "scale": 1}
+      },
+      "png": {"pixelWidth": 780, "pixelHeight": 1688}
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Sign in with Google", "page": "https://app.attio.com/onboarding/welcome", "reached": false, "reason": "Google consent was not clicked"},
+      {"label": "Work email field", "page": "https://app.attio.com/onboarding/welcome", "reached": false, "reason": "left blank"},
+      {"label": "Continue", "page": "https://app.attio.com/onboarding/welcome", "reached": false, "reason": "would submit the email"},
+      {"label": "privacy policy", "href": "https://attio.com/legal/privacy", "reached": false},
+      {"label": "Open Intercom Messenger", "reached": false, "reason": "chat widget was not opened"}
+    ],
+    "settings": [],
+    "create": {
+      "items": [],
+      "reached": false,
+      "reason": "the login wall offers no create control"
+    }
+  },
+  "screens": [
+    {"name": "Marketing home, public, light, 1440", "file": "screenshots/landing-desktop-2026-11-21.png"},
+    {"name": "Platform menu open, public, 1440", "file": "screenshots/landing-platform-menu-2026-11-21.png"},
+    {"name": "Pricing, public, light, 1440", "file": "screenshots/pricing-desktop-2026-11-21.png"},
+    {"name": "Customers, public, light, 1440", "file": "screenshots/customers-desktop-2026-11-21.png"},
+    {"name": "Login wall, signed out, dark, 1440", "file": "screenshots/login-wall-desktop-2026-11-21.png"},
+    {"name": "Login wall, signed out, dark, 390", "file": "screenshots/login-wall-phone-2026-11-21.png"},
+    {"name": "Marketing home, public, light, 390", "file": "screenshots/landing-phone-2026-11-21.png"},
+    {"name": "Mobile menu open, public, 390", "file": "screenshots/landing-phone-menu-2026-11-21.png"}
+  ],
+  "gaps": [
+    "The session was signed out. Post-auth pages, settings, and create were not reachable.",
+    "Last known state said https://app.attio.com/login opened a signed-in onboarding page. On 2026-11-21 that URL redirected to the same login wall with origin=/login.",
+    "Resources on desktop was expanded in the DOM and display:none, so it has no screenshot. Its links are in site-tree.md.",
+    "Cookie Continue and Reject were not clicked. The banner was hidden in the page for the home shots.",
+    "Public theme switch was not found. The marketing site painted light. The login wall painted dark.",
+    "App light theme, focus-visible, hover, and pressed states were not captured on this pass."
+  ],
+  "not_submitted": [
+    "Sign in with Google",
+    "Continue on the email field",
+    "Send me a demo",
+    "Subscribe",
+    "Cookie Continue",
+    "Cookie Reject",
+    "Talk to sales",
+    "Start for free",
+    "profile, birthday, plan, survey, and onboarding fields"
+  ]
+}
