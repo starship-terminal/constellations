@@ -28,6 +28,8 @@ def flat(tree, path=""):
 
 
 class RebuildTest(unittest.TestCase):
+    MOTION_FROM = "mkt-nav-link"  # the reading core.motion.control is built from
+
     @classmethod
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
@@ -98,12 +100,22 @@ class RebuildTest(unittest.TestCase):
             self.assertEqual(self.resolve(self.built[theme]["docs"]["focus"]["$value"]), self.B.css_color(ring))
 
     def test_transition_pairs_each_property_with_its_timing(self):
-        sty = self.C["mkt-nav-link"]["states"]["default"]["style"]
-        props = [p.strip() for p in sty["transitionProperty"].split(",")]
-        items = re.split(r",\s*(?![^()]*\))", self.core["motion.control"]["$value"])
-        self.assertEqual([i.split()[0] for i in items], props)
-        for i in items:
-            self.assertEqual(i.split(" ", 1)[1], f"{sty['transitionDuration']} {sty['transitionTimingFunction']}")
+        t = self.B.transition
+        # one timing for several properties: it repeats to every property
+        self.assertEqual(t({"transitionProperty": "color, background-color", "transitionDuration": "0.15s",
+                            "transitionTimingFunction": "ease-out"}),
+                         "color 0.15s ease-out, background-color 0.15s ease-out")
+        # per-property timings pair by index
+        self.assertEqual(t({"transitionProperty": "opacity, transform", "transitionDuration": "0.1s, 0.3s",
+                            "transitionTimingFunction": "linear, cubic-bezier(0.2, 0, 0, 1)"}),
+                         "opacity 0.1s linear, transform 0.3s cubic-bezier(0.2, 0, 0, 1)")
+        # shorter timing lists repeat from the start, as CSS repeats them
+        self.assertEqual(t({"transitionProperty": "a, b, c", "transitionDuration": "1s, 2s",
+                            "transitionTimingFunction": "ease"}),
+                         "a 1s ease, b 2s ease, c 1s ease")
+        # and the committed token is that pairing of its own reading
+        comp = self.MOTION_FROM
+        self.assertEqual(self.core["motion.control"]["$value"], t(self.C[comp]["states"]["default"]["style"]))
 
     def test_font_sizes_are_dimensions(self):
         for path, leaf in flat(self.built["core"]["font"]["size"]):
@@ -144,6 +156,14 @@ class RebuildTest(unittest.TestCase):
             md = (root / "components.md").read_text()
             block = md.split(f"Read as `{k}`", 1)[1].split("\n#### ", 1)[0]
             self.assertIn("Focus not capturable", block)
+
+    def test_docs_cite_only_existing_tokens(self):
+        names = set()
+        for theme in ("core", "light", "dark"):
+            names |= {f"{theme}.{n}" for n, _ in flat(self.built[theme])}
+        for doc in ("patterns.md", "components.md"):
+            for m in set(re.findall(r"`((?:core|light|dark)\.[A-Za-z0-9._-]+)`", (PKG / doc).read_text())):
+                self.assertTrue(m in names or any(n.startswith(m + ".") for n in names), f"{doc} cites {m}")
 
 
 if __name__ == "__main__":
