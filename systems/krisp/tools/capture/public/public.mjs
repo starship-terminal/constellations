@@ -106,7 +106,6 @@ const mobile = {
 };
 
 async function mask(context) {
-  await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
 }
 
 const b = await chromium.launch({ headless: true });
