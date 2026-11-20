@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On Marathon style guide</title>
+<meta name="description" content="On Marathon archive design tokens, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+/*DARK*/
+  --sg-sans: Inter, "Inter Fallback", system-ui, sans-serif;
+  --sg-display: graphik, Inter, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 17.6px/1.5 var(--sg-sans); color: var(--text, #0b0b0b); background: var(--page, #fff); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 48px/1 var(--sg-display); letter-spacing: -0.03em; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #717171); margin: 48px 0 12px; }
+.lead, .note { color: var(--muted, #717171); max-width: 62ch; }
+.note { font-size: 14px; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85em; }
+.banner { background: var(--accent, #d7fd51); color: var(--accentText, #21240c); text-align: center; font: 500 13.2px/1.33 var(--sg-sans); padding: 13px 18px; }
+.mock { border: 1px solid var(--border, #e1e1e1); border-radius: 16px; overflow: hidden; background: #f7f7f7; margin-top: 16px; }
+.bar { display: flex; align-items: center; gap: 22px; height: 56px; padding: 0 24px; background: #fff; border-bottom: 1px solid var(--border, #e1e1e1); font: 500 15.4px/1 var(--sg-sans); }
+.bar .sp { flex: 1; }
+.bar a { color: var(--link, #717171); text-decoration: none; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 13px; border-radius: 9999px; background: var(--button, #0b0b0b); color: var(--onAccent, #fff); font: 500 15.4px/1 var(--sg-sans); }
+.hero { padding: 64px 40px; text-align: center; }
+.hero h3 { font: 500 48px/1 var(--sg-display); letter-spacing: -0.03em; margin: 0 0 16px; }
+.hero p { color: var(--muted, #717171); max-width: 46ch; margin: 0 auto; }
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 8px 24px 24px; }
+.plan { border-radius: 17.6px; padding: 28px; background: #fff; min-height: 160px; }
+.plan.pro { background: var(--accent, #d7fd51); }
+.plan b { display: block; font-size: 22px; margin-bottom: 8px; }
+.badge { display: inline-block; background: var(--button, #0b0b0b); color: #fff; border-radius: 9999px; font: 500 12px/1 var(--sg-sans); padding: 4px 8px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border, #e1e1e1); }
+.sw span { display: block; font-size: 12px; margin-top: 4px; }
+.sw code { color: var(--muted, #717171); }
+</style>
+</head>
+<body>
+<div class="banner">You're looking at the Marathon archive.</div>
+<main>
+  <h1>On Marathon</h1>
+  <p class="lead">Public archive of onmarathon.com, captured 2026-11-21. One painted light theme. Values come from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><span>page <code>--page</code></span></div>
+    <div class="sw"><i style="background:var(--text)"></i><span>text <code>--text</code></span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><span>muted <code>--muted</code></span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><span>accent <code>--accent</code></span></div>
+    <div class="sw"><i style="background:var(--button)"></i><span>button <code>--button</code></span></div>
+    <div class="sw"><i style="background:var(--border)"></i><span>border <code>--border</code></span></div>
+    <div class="sw"><i style="background:var(--destructive)"></i><span>destructive <code>--destructive</code></span></div>
+    <div class="sw"><i style="background:var(--focus)"></i><span>focus <code>--focus</code></span></div>
+  </div>
+  <h2>Shell</h2>
+  <div class="mock">
+    <div class="bar">
+      <b>Marathon</b>
+      <a>Product</a>
+      <a>For Agencies</a>
+      <a>Pricing</a>
+      <span class="sp"></span>
+      <a>Sign In</a>
+      <span class="btn">Get Started</span>
+    </div>
+    <div class="hero">
+      <h3>Thanks for everything.</h3>
+      <p>A quiet page, a lime banner, one black pill.</p>
+    </div>
+    <div class="plans">
+      <div class="plan"><b>Free</b> White card, 17.6px radius.</div>
+      <div class="plan pro"><b>Pro</b> <span class="badge">Popular</span> Lime card, same radius.</div>
+    </div>
+  </div>
+  <p class="note">The dark class in the site CSS is recorded on each colour token as darkProbe. This page does not paint it. No public control switches the theme.</p>
+</main>
+<script>const TOKENS = /*TOKENS*/null;</script>
+</body>
+</html>

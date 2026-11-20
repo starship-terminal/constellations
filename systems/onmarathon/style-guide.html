@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On Marathon style guide</title>
+<meta name="description" content="On Marathon archive design tokens, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-lime: #d7fd51;
+  --color-limeHover: #c8ee3a;
+  --color-ink: #0b0b0b;
+  --color-inkMuted: #717171;
+  --color-page: #ffffff;
+  --color-surface: #ffffff;
+  --color-muted: #f2f2f2;
+  --color-border: #e1e1e1;
+  --color-destructive: #d40924;
+  --color-onAccent: #21240c;
+  --color-white: #ffffff;
+  --color-buttonHover: #404040;
+  --color-focus: #005fcc;
+  --font-sans: Inter, "Inter Fallback", system-ui, sans-serif;
+  --font-display: graphik, "graphik Fallback", Inter, "Inter Fallback", system-ui, sans-serif;
+  --typography-display: 500 81.4px/1 var(--font-display);
+  --typography-body: 400 17.6px/1.5 var(--font-sans);
+  --typography-label: 500 15.4px/1.43 var(--font-sans);
+  --typography-caption: 500 13.2px/1.33 var(--font-sans);
+  --radius-md: 17.6px;
+  --radius-pill: 9999px;
+  --space-2: 8.8px;
+  --space-3: 13.2px;
+  --space-4: 17.6px;
+  --space-5: 22px;
+  --space-6: 26.4px;
+  --space-10: 44px;
+  --motion-duration: 150ms;
+  --motion-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --page: var(--color-page);
+  --surface: var(--color-surface);
+  --text: var(--color-ink);
+  --muted: var(--color-inkMuted);
+  --accent: var(--color-lime);
+  --accentText: var(--color-onAccent);
+  --onAccent: var(--color-white);
+  --border: var(--color-border);
+  --link: var(--color-inkMuted);
+  --destructive: var(--color-destructive);
+  --focus: var(--color-focus);
+  --button: var(--color-ink);
+  --buttonHover: var(--color-buttonHover);
+  --component-button-height: 39.594px;
+  --component-button-radius: 9999px;
+  --component-button-paddingX: 13.2px;
+  --component-banner-height: 43.969px;
+  --component-header-height: 56px;
+  --component-nav-fontSize: 15.4px;
+  --component-plan-radius: 17.6px;
+  --component-plan-padding: 44px;
+  --component-menuButton-size: 39.594px;
+  --component-focus-width: 1px;
+  --component-focus-offset: 1px;
+
+  --sg-sans: Inter, "Inter Fallback", system-ui, sans-serif;
+  --sg-display: graphik, Inter, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 17.6px/1.5 var(--sg-sans); color: var(--text, #0b0b0b); background: var(--page, #fff); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 48px/1 var(--sg-display); letter-spacing: -0.03em; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #717171); margin: 48px 0 12px; }
+.lead, .note { color: var(--muted, #717171); max-width: 62ch; }
+.note { font-size: 14px; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85em; }
+.banner { background: var(--accent, #d7fd51); color: var(--accentText, #21240c); text-align: center; font: 500 13.2px/1.33 var(--sg-sans); padding: 13px 18px; }
+.mock { border: 1px solid var(--border, #e1e1e1); border-radius: 16px; overflow: hidden; background: #f7f7f7; margin-top: 16px; }
+.bar { display: flex; align-items: center; gap: 22px; height: 56px; padding: 0 24px; background: #fff; border-bottom: 1px solid var(--border, #e1e1e1); font: 500 15.4px/1 var(--sg-sans); }
+.bar .sp { flex: 1; }
+.bar a { color: var(--link, #717171); text-decoration: none; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 13px; border-radius: 9999px; background: var(--button, #0b0b0b); color: var(--onAccent, #fff); font: 500 15.4px/1 var(--sg-sans); }
+.hero { padding: 64px 40px; text-align: center; }
+.hero h3 { font: 500 48px/1 var(--sg-display); letter-spacing: -0.03em; margin: 0 0 16px; }
+.hero p { color: var(--muted, #717171); max-width: 46ch; margin: 0 auto; }
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 8px 24px 24px; }
+.plan { border-radius: 17.6px; padding: 28px; background: #fff; min-height: 160px; }
+.plan.pro { background: var(--accent, #d7fd51); }
+.plan b { display: block; font-size: 22px; margin-bottom: 8px; }
+.badge { display: inline-block; background: var(--button, #0b0b0b); color: #fff; border-radius: 9999px; font: 500 12px/1 var(--sg-sans); padding: 4px 8px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border, #e1e1e1); }
+.sw span { display: block; font-size: 12px; margin-top: 4px; }
+.sw code { color: var(--muted, #717171); }
+</style>
+</head>
+<body>
+<div class="banner">You're looking at the Marathon archive.</div>
+<main>
+  <h1>On Marathon</h1>
+  <p class="lead">Public archive of onmarathon.com, captured 2026-11-21. One painted light theme. Values come from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><span>page <code>--page</code></span></div>
+    <div class="sw"><i style="background:var(--text)"></i><span>text <code>--text</code></span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><span>muted <code>--muted</code></span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><span>accent <code>--accent</code></span></div>
+    <div class="sw"><i style="background:var(--button)"></i><span>button <code>--button</code></span></div>
+    <div class="sw"><i style="background:var(--border)"></i><span>border <code>--border</code></span></div>
+    <div class="sw"><i style="background:var(--destructive)"></i><span>destructive <code>--destructive</code></span></div>
+    <div class="sw"><i style="background:var(--focus)"></i><span>focus <code>--focus</code></span></div>
+  </div>
+  <h2>Shell</h2>
+  <div class="mock">
+    <div class="bar">
+      <b>Marathon</b>
+      <a>Product</a>
+      <a>For Agencies</a>
+      <a>Pricing</a>
+      <span class="sp"></span>
+      <a>Sign In</a>
+      <span class="btn">Get Started</span>
+    </div>
+    <div class="hero">
+      <h3>Thanks for everything.</h3>
+      <p>A quiet page, a lime banner, one black pill.</p>
+    </div>
+    <div class="plans">
+      <div class="plan"><b>Free</b> White card, 17.6px radius.</div>
+      <div class="plan pro"><b>Pro</b> <span class="badge">Popular</span> Lime card, same radius.</div>
+    </div>
+  </div>
+  <p class="note">The dark class in the site CSS is recorded on each colour token as darkProbe. This page does not paint it. No public control switches the theme.</p>
+</main>
+<script>const TOKENS = {"core":{"color":{"lime":{"v":"#d7fd51","t":"color","s":"Measured. css-var --primary on html.light, resolved #d7fd51"},"limeHover":{"v":"#c8ee3a","t":"color","s":"Measured. css-var --primary-hover on html.light, resolved #c8ee3a"},"ink":{"v":"#0b0b0b","t":"color","s":"Measured. css-var --foreground on html.light, resolved oklch(0.15 0 0)"},"inkMuted":{"v":"#717171","t":"color","s":"Measured. css-var --muted-foreground on html.light, resolved oklch(0.55 0 0)"},"page":{"v":"#ffffff","t":"color","s":"Measured. css-var --background on html.light, resolved oklch(1 0 0)"},"surface":{"v":"#ffffff","t":"color","s":"Measured. css-var --card on html.light, resolved oklch(1 0 0)"},"muted":{"v":"#f2f2f2","t":"color","s":"Measured. css-var --muted on html.light, resolved oklch(0.96 0 0)"},"border":{"v":"#e1e1e1","t":"color","s":"Measured. css-var --border on html.light, resolved oklch(0.91 0 0)"},"destructive":{"v":"#d40924","t":"color","s":"Measured. css-var --destructive on html.light, resolved oklch(0.55 0.22 25)"},"onAccent":{"v":"#21240c","t":"color","s":"Measured. css-var --primary-foreground on html.light, resolved oklch(0.25 0.04 115)"},"white":{"v":"#ffffff","t":"color","s":"Measured. Get Started text color oklch(1 0 0) and the Free card background rgb(255, 255, 255)."},"buttonHover":{"v":"#404040","t":"color","s":"Measured. Get Started hover background rgb(64, 64, 64), class hover:bg-neutral-700."},"focus":{"v":"#005fcc","t":"color","s":"Measured. Keyboard focus outline on desktop links and buttons, rgb(0, 95, 204). Browser auto ring, not a site token."}},"font":{"sans":{"v":"Inter, \"Inter Fallback\", system-ui, sans-serif","t":"fontFamily","s":"Measured. Computed font-family on the nav link. --font-inter declares Inter, Inter Fallback."},"display":{"v":"graphik, \"graphik Fallback\", Inter, \"Inter Fallback\", system-ui, sans-serif","t":"fontFamily","s":"Measured. Computed font-family on the homepage h1. @font-face graphik weights 400 and 500."}},"typography":{"display":{"v":{"fontFamily":"{font.display}","fontSize":"81.4px","fontWeight":500,"lineHeight":1},"t":"typography","s":"Measured. Homepage h1: 81.4px / 81.4px, weight 500, graphik."},"body":{"v":{"fontFamily":"{font.sans}","fontSize":"17.6px","fontWeight":400,"lineHeight":1.5},"t":"typography","s":"Measured. Plan card body: 17.6px / 26.4px, weight 400, Inter. 17.6px is 1rem at the 110% root."},"label":{"v":{"fontFamily":"{font.sans}","fontSize":"15.4px","fontWeight":500,"lineHeight":1.43},"t":"typography","s":"Measured. Nav link and Get Started: 15.4px / 22px, weight 500."},"caption":{"v":{"fontFamily":"{font.sans}","fontSize":"13.2px","fontWeight":500,"lineHeight":1.33},"t":"typography","s":"Measured. Archive banner: 13.2px / 17.6px, weight 500."}},"radius":{"md":{"v":"17.6px","t":"dimension","s":"Derived. --radius is 1rem; computed on the plan card as 17.6px (html font-size 110%)."},"pill":{"v":"9999px","t":"dimension","s":"Measured. Get Started, billing toggle, badge and menu button border-radius."}},"space":{"2":{"v":"8.8px","t":"dimension","s":"Measured. Billing toggle vertical padding and badge horizontal padding. 0.5rem at 17.6px root."},"3":{"v":"13.2px","t":"dimension","s":"Measured. Archive banner padding and Get Started horizontal padding. 0.75rem."},"4":{"v":"17.6px","t":"dimension","s":"Measured. Phone menu vertical padding. 1rem."},"5":{"v":"22px","t":"dimension","s":"Measured. Billing toggle horizontal padding."},"6":{"v":"26.4px","t":"dimension","s":"Measured. Phone menu horizontal padding. 1.5rem."},"10":{"v":"44px","t":"dimension","s":"Measured. Plan card padding on all sides. 2.5rem."}},"motion":{"duration":{"v":"150ms","t":"duration","s":"Measured. Nav link, Get Started and banner transition-duration 0.15s."},"easing":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":"Measured. transition-timing-function cubic-bezier(0.4, 0, 0.2, 1) on nav links and buttons."}}},"light":{"page":{"v":"{color.page}","t":"color","s":"Alias of color.page. html.light --background."},"surface":{"v":"{color.surface}","t":"color","s":"Alias of color.surface. html.light --card. The Free plan card paints rgb(255, 255, 255), the same value."},"text":{"v":"{color.ink}","t":"color","s":"Alias of color.ink. html.light --foreground. Measured on the h1 and the wordmark."},"muted":{"v":"{color.inkMuted}","t":"color","s":"Alias of color.inkMuted. html.light --muted-foreground. Measured on the resting nav link."},"accent":{"v":"{color.lime}","t":"color","s":"Alias of color.lime. Painted on the archive banner and the Pro plan card as rgb(215, 253, 81). The CSS name is --primary."},"accentText":{"v":"{color.onAccent}","t":"color","s":"Alias of color.onAccent. html.light --primary-foreground. The banner text uses this."},"onAccent":{"v":"{color.white}","t":"color","s":"Measured. Get Started label is oklch(1 0 0) on the ink button."},"border":{"v":"{color.border}","t":"color","s":"Alias of color.border. html.light --border. Declared. No captured control paints a 1px border in this colour."},"link":{"v":"{color.inkMuted}","t":"color","s":"Measured. Resting nav and footer links use --muted-foreground. Hover moves them to --foreground."},"destructive":{"v":"{color.destructive}","t":"color","s":"Declared as --destructive on :root and .light. Not painted on any captured public control."},"focus":{"v":"{color.focus}","t":"color","s":"Measured. Desktop keyboard focus outline rgb(0, 95, 204), 1px auto, offset 1px."},"button":{"v":"{color.ink}","t":"color","s":"Measured. Get Started and Return Home background oklch(0.15 0 0), the same value as --foreground."},"buttonHover":{"v":"{color.buttonHover}","t":"color","s":"Measured. Get Started hover background rgb(64, 64, 64)."},"component":{"button":{"height":{"v":"39.594px","t":"dimension","s":"Measured. Get Started height 39.5938px at 1440."},"radius":{"v":"9999px","t":"dimension","s":"Measured. Get Started border-radius."},"paddingX":{"v":"13.2px","t":"dimension","s":"Measured. Get Started horizontal padding."}},"banner":{"height":{"v":"43.969px","t":"dimension","s":"Measured. Archive banner height 43.9688px at 1440."}},"header":{"height":{"v":"56px","t":"dimension","s":"Observed. Header row class is h-[56px]. Not read as a custom property."}},"nav":{"fontSize":{"v":"15.4px","t":"dimension","s":"Measured. Nav link font-size."}},"plan":{"radius":{"v":"17.6px","t":"dimension","s":"Derived. --radius is 1rem; computed on the plan card as 17.6px (html font-size 110%)."},"padding":{"v":"44px","t":"dimension","s":"Measured. Plan card padding 44px."}},"menuButton":{"size":{"v":"39.594px","t":"dimension","s":"Measured. Open menu button 39.5938px square at 390."}},"focus":{"width":{"v":"1px","t":"dimension","s":"Measured. focus-visible outline-width on desktop links."},"offset":{"v":"1px","t":"dimension","s":"Measured. focus-visible outline-offset on desktop links. The phone menu button's ring offset was not recorded."}}}},"dark":{}};</script>
+</body>
+</html>
