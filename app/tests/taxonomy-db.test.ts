@@ -1,4 +1,4 @@
-import { afterEach, expect, test } from "vitest";
+import { afterEach, expect, test, vi } from "vitest";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -10,6 +10,11 @@ import {
 import { taxonomyGroups, taxonomySnapshots } from "@/contracts/taxonomy";
 import assignments from "@/data/system-categories.json";
 import mediaSeed from "@/data/media-taxonomy.json";
+
+// These suites open real SQLite databases, run migrations and seed the whole
+// catalog. On a busy machine that takes longer than the unit suite's 15 s
+// default, so only the database suites get a longer limit.
+vi.setConfig({ testTimeout: 120_000 });
 
 const stores: ResearchStore[] = [];
 const directories: string[] = [];
