@@ -1,0 +1,83 @@
+{
+  "captured": "2026-11-21",
+  "product": "SoundCloud",
+  "url": "https://soundcloud.com/",
+  "method": "Playwright computed styles on the live public pages, desktop 1440x900 at devicePixelRatio 1. Screenshots are evidence of layout. Values below were read from getComputedStyle, not from the quantised PNGs.",
+  "themes": {
+    "player": "The signed-out desktop player is dark. body background rgb(18, 18, 18), color rgb(255, 255, 255). No public theme switch. The auth iframe query includes theme=dark.",
+    "mobile": "https://soundcloud.com/ at 390x844 redirects to https://m.soundcloud.com/. That shell is light: text rgb(18, 18, 18) on a white page, black pills.",
+    "help": "https://help.soundcloud.com/hc/en-us is a light Zendesk page with an orange header."
+  },
+  "pages": {
+    "discover": {
+      "url": "https://soundcloud.com/discover",
+      "inner": [1440, 900, 1],
+      "body": {
+        "backgroundColor": "rgb(18, 18, 18)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "Söhne, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px"
+      },
+      "h1": {"text": "Discover Tracks and Playlists", "fontSize": "28px", "fontWeight": "600", "lineHeight": "36px", "color": "rgb(255, 255, 255)", "fontFamily": "Söhne"},
+      "h2": {"text": "Artists to watch out for", "fontSize": "22px", "fontWeight": "600", "lineHeight": "28px", "color": "rgb(255, 255, 255)", "fontFamily": "Söhne"},
+      "signIn": {"height": 32, "padding": "6px 12px", "backgroundColor": "rgb(18, 18, 18)", "color": "rgb(255, 255, 255)", "borderRadius": "9999px", "fontSize": "14px", "fontWeight": "600", "fontFamily": "Söhne"},
+      "signInHover": {"color": "rgba(255, 255, 255, 0.4)", "backgroundColor": "rgb(18, 18, 18)"},
+      "createAccount": {"height": 32, "padding": "6px 12px", "backgroundColor": "rgb(255, 255, 255)", "color": "rgb(18, 18, 18)", "borderRadius": "9999px", "fontSize": "14px", "fontWeight": "600"},
+      "createAccountHover": {"color": "rgba(18, 18, 18, 0.4)", "backgroundColor": "rgb(255, 255, 255)"},
+      "createAccountFocus": {"boxShadow": "rgb(4, 77, 210) 0px 0px 0px 2px inset"},
+      "search": {"width": 440, "height": 36, "backgroundColor": "rgb(48, 48, 48)", "color": "rgb(255, 255, 255)", "borderRadius": "3px", "border": "1px transparent", "padding": "8px 40px 8px 16px", "fontSize": "14px", "caretColor": "rgb(255, 85, 0)"},
+      "searchFocus": {"borderColor": "rgba(153, 153, 153, 0.77)"},
+      "link": {"color": "rgb(105, 159, 255)"},
+      "muted": {"color": "rgb(153, 153, 153)"},
+      "colourFrequency": [
+        ["rgb(255, 255, 255)", 173],
+        ["rgb(18, 18, 18)", 114],
+        ["rgb(105, 159, 255)", 84],
+        ["rgb(153, 153, 153)", 66],
+        ["rgb(85, 85, 85)", 32],
+        ["rgb(48, 48, 48)", 15]
+      ]
+    },
+    "homeHero": {
+      "url": "https://soundcloud.com/",
+      "h2": {"text": "DISCOVER. GET DISCOVERED.", "fontSize": "65px", "fontWeight": "800", "lineHeight": "55.25px", "letterSpacing": "-1.3px", "color": "rgb(255, 255, 255)", "fontFamily": "Söhne"}
+    },
+    "company": {
+      "url": "https://soundcloud.com/company/home/",
+      "body": {"backgroundColor": "rgb(0, 0, 0)", "color": "rgb(26, 27, 31)", "fontFamily": "Inter, sans-serif", "fontSize": "16px", "lineHeight": "28px"}
+    },
+    "help": {
+      "url": "https://help.soundcloud.com/hc/en-us",
+      "body": {"color": "rgb(18, 18, 18)", "fontFamily": "Inter, -apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif", "fontSize": "16px", "lineHeight": "24px"},
+      "h1": {"fontSize": "52px", "fontWeight": "600", "lineHeight": "71.5px", "color": "rgb(18, 18, 18)"},
+      "accentCount": ["rgb(255, 85, 0)", 14],
+      "search": {"height": 53, "backgroundColor": "rgb(255, 255, 255)", "border": "1px rgb(226, 232, 240)", "borderRadius": "32px", "fontSize": "18px"}
+    },
+    "checkout": {
+      "url": "https://checkout.soundcloud.com/artist",
+      "h1": {"fontSize": "86px", "fontWeight": "800", "color": "rgb(255, 255, 255)", "fontFamily": "Inter"},
+      "bodyFont": "Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif",
+      "linkBlue": "rgb(4, 77, 210)"
+    },
+    "mobile": {
+      "url": "https://m.soundcloud.com/",
+      "viewport": [390, 844, 2],
+      "body": {"color": "rgb(18, 18, 18)", "fontFamily": "Söhne", "fontSize": "14px"},
+      "h1": {"fontSize": "36px", "fontWeight": "700", "lineHeight": "45px", "color": "rgb(255, 255, 255)"},
+      "listenInApp": {"height": 40, "backgroundColor": "rgb(18, 18, 18)", "color": "rgb(255, 255, 255)", "borderRadius": "4px", "fontSize": "14px", "fontWeight": "400"},
+      "createFree": {"height": 48, "backgroundColor": "rgb(18, 18, 18)", "color": "rgb(255, 255, 255)", "borderRadius": "4px"},
+      "tab": {"height": 50, "fontWeight": "500", "color": "rgb(18, 18, 18)"}
+    }
+  },
+  "notCaptured": [
+    "Pressed state: a click either navigates or opens a wall, so no pressed colour was held.",
+    "Disabled control: none was shown on the public pages measured.",
+    "Loading spinner colour: the mobile home showed a spinner before tracks arrived; its colour was not read.",
+    "Error colour: the known web-auth probe failed before this capture and was not repeated. No error colour was on screen.",
+    "Motion durations and easings: not read from stylesheets. The player declares almost no custom properties.",
+    "Light theme of the desktop player: no switch exists while signed out.",
+    "Checkbox, radio, switch, text area, select, toast, table: not present on the public pages opened."
+  ]
+}
