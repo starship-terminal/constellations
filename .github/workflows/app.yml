@@ -41,11 +41,6 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   app:
-    # Audit fix branches (audit2/*) are not tested one by one: each fix is
-    # reviewed on its own pull request and then lands in a train branch
-    # (audit2/train-*), whose single run here is the gate. Skipping them keeps
-    # hundreds of small pull requests from filling the account's Actions queue.
-    if: github.event_name != 'pull_request' || !startsWith(github.head_ref, 'audit2/') || startsWith(github.head_ref, 'audit2/train-')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
