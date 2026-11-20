@@ -47,9 +47,39 @@ if not DECL["dark"]:
     DECL["dark"] = {n: v for n, v in DECL["light"].items() if n.startswith("--dark-")}
 
 
+def oklab_srgb(v):
+    """oklab()/oklch() (L as a number or a percentage, optional / alpha) -> #rrggbb or rgba(); None otherwise.
+    The kit's conversion (OKLab -> linear sRGB -> gamma, clamped)."""
+    import math
+    m = re.fullmatch(r"ok(lab|lch)\(\s*([-\d.e]+)(%?)\s+([-\d.e]+)\s+([-\d.e]+|none)(?:deg)?\s*(?:/\s*([\d.]+)(%?))?\s*\)", v.strip().lower())
+    if not m:
+        return None
+    kind, L, pct, x, y, a, apct = m.groups()
+    L = float(L) / 100 if pct else float(L)
+    if kind == "lch":
+        c, h = float(x), 0.0 if y == "none" else math.radians(float(y))
+        A, B = c * math.cos(h), c * math.sin(h)
+    else:
+        A, B = float(x), float(y)
+    l_ = (L + 0.3963377774 * A + 0.2158037573 * B) ** 3
+    m_ = (L - 0.1055613458 * A - 0.0638541728 * B) ** 3
+    s_ = (L - 0.0894841775 * A - 1.2914855480 * B) ** 3
+    lin = [4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_,
+           -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_,
+           -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_]
+    rgb = [round(min(1, max(0, 12.92 * c_ if c_ <= 0.0031308 else 1.055 * c_ ** (1 / 2.4) - 0.055)) * 255) for c_ in lin]
+    alpha = 1 if a is None else (float(a) / 100 if apct else float(a))
+    if alpha >= 1:
+        return "#%02x%02x%02x" % tuple(rgb)
+    return "rgba(%d, %d, %d, %g)" % (rgb[0], rgb[1], rgb[2], round(alpha, 3))
+
+
 def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla(), "R G B" channels -> #rrggbb or rgba(r, g, b, a)."""
+    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla(), oklab(), oklch(), "R G B" channels -> #rrggbb or rgba(r, g, b, a)."""
     v = v.strip().lower()
+    ok = oklab_srgb(v)
+    if ok:
+        return ok
     m = re.fullmatch(r"(\d+)\s+(\d+)\s+(\d+)", v)
     if m:  # channel triplets ("0 230 6") that rgb(var(--x) / a) composites
         return "#%02x%02x%02x" % (int(m.group(1)), int(m.group(2)), int(m.group(3)))

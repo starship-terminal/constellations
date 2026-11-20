@@ -68,8 +68,38 @@ def ts(comp, state, prop):
         return None
 
 
+def oklab_srgb(v):
+    """oklab()/oklch() (L as a number or a percentage, optional / alpha) -> #rrggbb or rgba(); None otherwise.
+    The kit's conversion (OKLab -> linear sRGB -> gamma, clamped)."""
+    import math
+    m = re.fullmatch(r"ok(lab|lch)\(\s*([-\d.e]+)(%?)\s+([-\d.e]+)\s+([-\d.e]+|none)(?:deg)?\s*(?:/\s*([\d.]+)(%?))?\s*\)", v.strip().lower())
+    if not m:
+        return None
+    kind, L, pct, x, y, a, apct = m.groups()
+    L = float(L) / 100 if pct else float(L)
+    if kind == "lch":
+        c, h = float(x), 0.0 if y == "none" else math.radians(float(y))
+        A, B = c * math.cos(h), c * math.sin(h)
+    else:
+        A, B = float(x), float(y)
+    l_ = (L + 0.3963377774 * A + 0.2158037573 * B) ** 3
+    m_ = (L - 0.1055613458 * A - 0.0638541728 * B) ** 3
+    s_ = (L - 0.0894841775 * A - 1.2914855480 * B) ** 3
+    lin = [4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_,
+           -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_,
+           -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_]
+    rgb = [round(min(1, max(0, 12.92 * c_ if c_ <= 0.0031308 else 1.055 * c_ ** (1 / 2.4) - 0.055)) * 255) for c_ in lin]
+    alpha = 1 if a is None else (float(a) / 100 if apct else float(a))
+    if alpha >= 1:
+        return "#%02x%02x%02x" % tuple(rgb)
+    return "rgba(%d, %d, %d, %g)" % (rgb[0], rgb[1], rgb[2], round(alpha, 3))
+
+
 def norm_color(v):
     v = (v or "").strip()
+    ok = oklab_srgb(v)
+    if ok:
+        return ok
     m = re.fullmatch(r"#([0-9a-fA-F]{3,8})", v)
     if m:
         h = m.group(1).lower()
@@ -94,6 +124,9 @@ def have(comp, state, prop=None):
 
 
 def lit(value, ty, src, desc):
+    if ty == "color" and oklab_srgb(str(value)):
+        # Converted to sRGB; the source keeps the authored CSS Color 4 form.
+        src += "; computed as %s, written as sRGB" % str(value).strip()
     return {"value": norm_color(value) if ty == "color" else value, "type": ty, "source": src, "description": desc}
 
 # ------------------------------------------------------------------- fonts
@@ -183,19 +216,32 @@ for key, n, group, desc in [
 
 # A few measured tones are the Curater-namespace roles the vars name;
 # alias them instead of duplicating literals.
-for key, comp, prop, alias, desc in [
-    ("secondary-text", "login-btn", "color", "{color.curater.gray-medium}",
+def alias_value(alias):
+    """The resolved value of a {color.curater.*} alias, from raw/css-vars.json."""
+    name = "--Curater-" + alias.strip("{}").split(".")[-1]
+    v = (V.get("resolved", {}).get("light") or {}).get(name)
+    v = v.get("value") if isinstance(v, dict) else v
+    return norm_color(v) if v else None
+
+
+for key, comp, state, prop, alias, desc in [
+    ("secondary-text", "login-btn", "default", "color", "{color.curater.gray-medium}",
      "The #7c7c7c 'Log in or sign up' label — Curater gray-medium."),
-    ("label", "curated-label", "color", "{color.curater.gray-light}",
+    ("label", "curated-label", "default", "color", "{color.curater.gray-light}",
      "The #afafaf 'Curated by' micro-label — Curater gray-light."),
-    ("hover-fill", "signin-btn", "backgroundColor", "{color.curater.background}",
+    ("hover-fill", "signin-btn", "hover", "backgroundColor", "{color.curater.background}",
      "The #f2f2f2 hover/active fill — Curater background."),
 ]:
-    if have(comp, "default", prop):
-        sem.setdefault("text" if "text" in key or key == "label" else "background", {})[key] = {
-            "value": alias, "type": "color",
-            "source": f"computed {prop} of {comp} default equals {alias} (raw/components-computed.json + raw/css-vars.json)",
-            "description": desc}
+    if not have(comp, state, prop):
+        continue
+    reading = norm_color(st(comp, state)[prop])
+    # Emit the alias only when the reading really equals its target; the source names the state read.
+    if reading != alias_value(alias):
+        continue
+    sem.setdefault("text" if "text" in key or key == "label" else "background", {})[key] = {
+        "value": alias, "type": "color",
+        "source": f"computed {prop} of {comp} {state} equals {alias} (raw/components-computed.json + raw/css-vars.json)",
+        "description": desc}
 
 # ------------------------------------------------------------- type ramp
 
