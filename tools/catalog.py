@@ -88,6 +88,54 @@ def load_catalog() -> dict:
     return json.loads((ROOT / "catalog.json").read_text())
 
 
+# ---------------------------------------------------------------- generated files on a pull request
+
+
+def _catalog_at(ref: str, root: Path) -> dict | None:
+    try:
+        raw = subprocess.run(["git", "show", f"{ref}:catalog.json"], cwd=root, check=True,
+                             capture_output=True, text=True).stdout
+        found = json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return None
+    rows = {s["slug"]: s for s in found.get("systems") or [] if isinstance(s, dict) and isinstance(s.get("slug"), str)}
+    return rows or None
+
+
+def pull_request_catalogs(root: Path | None = None) -> tuple[dict, dict] | None:
+    """(base rows, branch rows), each keyed by slug, when GitHub is checking a pull
+    request: the base branch's catalog and the pull request head's. None outside a pull
+    request or when either cannot be read, and the caller then demands an exact match.
+    The Check and Research app workflows fetch both refs."""
+    base_ref, head = os.environ.get("GITHUB_BASE_REF"), os.environ.get("GITHUB_HEAD_SHA")
+    if not base_ref or not head:
+        return None
+    base = _catalog_at(f"origin/{base_ref}", root or ROOT)
+    branch = _catalog_at(head, root or ROOT)
+    return (base, branch) if base and branch else None
+
+
+def lagging_subset(named: set, head_rows: dict, root: Path | None = None) -> list[dict] | None:
+    """The catalog rows a generated file may be derived from on a pull request, or None.
+
+    GitHub checks the merge result, which can hold packages the file never saw: the ones
+    this pull request adds, and the ones main gained after the branch started. The file
+    may leave those out and nothing else. So `named`, the packages the committed file
+    covers, must sit inside the merge's catalog (a removed package still listed fails)
+    and hold every package that is on the base, on the branch and in the merge. The
+    caller then derives the file from the returned rows, in catalog order, and demands
+    an exact match, so a hand edit, a stale row or a wrong total still fails."""
+    catalogs = pull_request_catalogs(root)
+    if catalogs is None or not named:
+        return None
+    base, branch = catalogs
+    if not named <= set(head_rows):
+        return None
+    if (set(head_rows) & set(base) & set(branch)) - named:
+        return None
+    return [row for slug, row in head_rows.items() if slug in named]
+
+
 # ---------------------------------------------------------------- tokens
 
 

@@ -71,7 +71,13 @@ def main(src, outdir):
     if text.startswith('"'):
         text = json.JSONDecoder().raw_decode(text)[0]
     m = re.search(r"SNAPSTART(.*?)SNAPMETA(.*)SNAPEND", text, re.S)
+    if not m:
+        sys.exit(f"{src}: no SNAPSTART...SNAPMETA...SNAPEND snapshot in it (paste the whole string __snap returned)")
     meta, page = json.loads(m.group(1)), m.group(2)
+    # The label names the two files written; anything but a plain name (a / or ..) could write elsewhere.
+    if not isinstance(meta.get("label"), str) or not re.fullmatch(r"[\w.-]+", meta["label"]) or meta["label"].strip(".") == "":
+        # the value is not printed: a label can hold the very text the redaction file exists to keep out
+        sys.exit("the snapshot label is not a plain name (letters, digits, _ . -); rename it in the paste")
     # The page title is usually the conversation or document name, so it is not kept.
     meta.pop("title", None)
     leaks = leaks_in(page + json.dumps(meta, ensure_ascii=False), redact)   # an accented name stays as written

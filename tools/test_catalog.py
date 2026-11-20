@@ -945,6 +945,22 @@ class ReferoBuildTest(unittest.TestCase):
     """build_refero emits refero/index.json plus one refero/style/<slug>.json per
     style, from a refero/ tree built in a temporary repository."""
 
+    MEDIA_BASE = "https://media.example.test"
+
+    def setUp(self):
+        # media_base() reads DESIGN_SYSTEMS_MEDIA_BASE, loading it from the repo's .env
+        # into os.environ for the rest of the process. Pin it, and keep the .env out.
+        patches = [mock.patch.dict(catalog.os.environ, {"DESIGN_SYSTEMS_MEDIA_BASE": self.MEDIA_BASE}),
+                   mock.patch.object(catalog.refero_media, "load_env", lambda *a, **k: None)]
+        for patch in patches:
+            patch.start()
+            self.addCleanup(patch.stop)
+
+    def test_the_index_and_styles_carry_the_configured_media_base(self):
+        index, styles = self.build([("alpha", self.ALPHA, {})])
+        self.assertEqual(index["mediaBase"], self.MEDIA_BASE)
+        self.assertEqual(styles["alpha"]["mediaBase"], self.MEDIA_BASE)
+
     def make(self, root, slug, meta, ds, docs=True):
         folder = root / "refero" / slug
         folder.mkdir(parents=True)
