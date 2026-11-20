@@ -75,14 +75,36 @@ def check(doc):
             raise CheckError("light and dark keys differ")
 
 
+GEOMETRY = {"h", "w", "height", "width", "top", "left", "right", "bottom", "x", "y", "vw", "vh", "scrollH"}
+
+
 def raw_values():
-    """The colours (#rrggbb), px lengths and durations raw/ holds."""
-    text = "\n".join(p.read_text() for p in sorted((PKG / "raw").glob("*.json")))
-    colours = {"#%02x%02x%02x" % tuple(int(x) for x in m) for m in re.findall(r"rgba?\((\d+),\s*(\d+),\s*(\d+)", text)}
-    for h in re.findall(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b", text):
-        colours.add("#" + (h if len(h) == 6 else "".join(c * 2 for c in h)).lower())
-    lengths = set(re.findall(r"-?\d+(?:\.\d+)?px", text)) | {f"{n}px" for n in re.findall(r'": (\d+)[,}\s]', text)}
-    times = set(re.findall(r"\d*\.?\d+m?s\b", text))
+    """The colours (#rrggbb, or #rrggbbaa when the alpha is below 1), px lengths and durations raw/
+    holds, parsed from the readings: a bare number counts as a px length only under a geometry key."""
+    colours, lengths, times = set(), set(), set()
+
+    def visit(node, key=None):
+        if isinstance(node, dict):
+            for k, v in node.items():
+                visit(v, k)
+        elif isinstance(node, list):
+            for v in node:
+                visit(v, key)
+        elif isinstance(node, (int, float)) and not isinstance(node, bool):
+            if key in GEOMETRY:
+                lengths.add(f"{node:g}px")
+        elif isinstance(node, str):
+            for m in re.finditer(r"rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)", node):
+                rgb = "#%02x%02x%02x" % tuple(int(m.group(i)) for i in (1, 2, 3))
+                alpha = m.group(4)
+                colours.add(rgb if alpha is None or float(alpha) >= 1 else rgb + "%02x" % round(float(alpha) * 255))
+            for h in re.findall(r"#([0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b", node):
+                colours.add("#" + (h if len(h) != 3 else "".join(c * 2 for c in h)).lower())
+            lengths.update(re.findall(r"(?<![\w.])-?\d+(?:\.\d+)?px\b", node))
+            times.update(re.findall(r"(?<![\w.])\d*\.?\d+m?s\b", node))
+
+    for path in sorted((PKG / "raw").glob("*.json")):
+        visit(json.loads(path.read_text()))
     return colours, lengths, times
 
 
@@ -97,7 +119,7 @@ def check_against_raw(doc):
             value = token["$value"]
             for item in (value.values() if isinstance(value, dict) else [value]):
                 item = str(item)
-                if re.fullmatch(r"#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?", item) and item[:7].lower() not in colours:
+                if re.fullmatch(r"#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?", item) and item.lower() not in colours:
                     raise CheckError(f"{where}: Measured colour {item} is in no raw/ reading")
                 if re.fullmatch(r"-?\d+(\.\d+)?px", item) and item not in lengths:
                     raise CheckError(f"{where}: Measured length {item} is in no raw/ reading")

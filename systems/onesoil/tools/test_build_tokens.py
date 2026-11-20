@@ -50,6 +50,22 @@ class CheckTest(unittest.TestCase):
         with self.assertRaisesRegex(build_tokens.CheckError, "in no raw/ reading"):
             build_tokens.check_against_raw(doc)
 
+    def test_a_count_is_not_a_measured_length(self):
+        # "svgs": 31 in raw/pages.json is an icon count, not a 31px reading
+        _, lengths, _ = build_tokens.raw_values()
+        self.assertNotIn("31px", lengths)
+        doc = copy.deepcopy(DOC)
+        doc["core"]["typography"]["lead"]["$extensions"]["source"]["evidence"] = "Measured"
+        with self.assertRaisesRegex(build_tokens.CheckError, "31px"):
+            build_tokens.check_against_raw(doc)
+
+    def test_a_colour_with_another_alpha_fails(self):
+        doc = copy.deepcopy(DOC)
+        self.assertEqual(doc["core"]["color"]["border-subtle"]["$value"], "#6D635133")
+        doc["core"]["color"]["border-subtle"]["$value"] = "#6D635101"
+        with self.assertRaisesRegex(build_tokens.CheckError, "#6D635101"):
+            build_tokens.check_against_raw(doc)
+
     def test_the_check_still_runs_under_python_O(self):
         code = ("import sys, build_tokens\n"
                 "doc = {'core': {'c': {'$type': 'color', '$value': '#fff', '$extensions': {}}}}\n"
