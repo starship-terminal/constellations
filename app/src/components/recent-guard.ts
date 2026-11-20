@@ -1,16 +1,24 @@
-/** Remembers when something last ran, so a burst of triggers runs it once. */
-export function createRecentGuard(
-  windowMs: number,
-  now: () => number = Date.now,
-) {
-  let last = -Infinity;
+/**
+ * Tracks fetches that are still running, so triggers that arrive together
+ * (focus plus visibilitychange) can join one fetch, while a trigger that
+ * arrives after it settled starts a new one.
+ */
+export function createInFlightGuard() {
+  let running = 0;
   return {
-    mark() {
-      last = now();
+    /** Call when a fetch starts; call the returned function when it settles. */
+    start() {
+      running++;
+      let ended = false;
+      return () => {
+        if (!ended) {
+          ended = true;
+          running--;
+        }
+      };
     },
-    /** True when `mark` was called less than `windowMs` ago. */
-    fresh() {
-      return now() - last < windowMs;
+    busy() {
+      return running > 0;
     },
   };
 }
