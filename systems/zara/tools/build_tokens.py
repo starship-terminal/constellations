@@ -22,8 +22,40 @@ SRC_ROOT = RAW["source"]["root"]
 SRC_EL = RAW["source"]["elements"]
 
 
+def to_hex(value: str) -> str:
+    """A CSS colour as #rrggbb, or #rrggbbaa when translucent; refuses anything else.
+    tools/catalog.py and the contrast check read only hex, so hsla()/rgba() were skipped."""
+    v = value.strip().lower()
+    m = re.fullmatch(r"#([0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})", v)
+    if m:
+        h = m.group(1)
+        h = "".join(c * 2 for c in h) if len(h) in (3, 4) else h
+        return "#" + (h[:6] if h[6:] == "ff" else h)
+    m = re.fullmatch(r"(rgba?|hsla?)\((.*)\)", v)
+    if not m:
+        raise SystemExit(f"not a colour: {value!r}")
+    fn, parts = m.group(1), [x for x in re.split(r"[\s,/]+", m.group(2).strip()) if x]
+    if len(parts) not in (3, 4):
+        raise SystemExit(f"not a colour: {value!r}")
+    pct = lambda x, scale: float(x[:-1]) / 100 * scale if x.endswith("%") else float(x)
+    a = pct(parts[3], 1) if len(parts) == 4 else 1.0
+    if fn.startswith("rgb"):
+        r, g, b = (pct(x, 255) for x in parts[:3])
+    else:
+        hh, ss, ll = float(parts[0]) % 360 / 30, pct(parts[1], 1), pct(parts[2], 1)
+        f = lambda n: ll - ss * min(ll, 1 - ll) * max(-1, min((n + hh) % 12 - 3, 9 - (n + hh) % 12, 1))
+        r, g, b = (f(n) * 255 for n in (0, 8, 4))
+    out = "#" + "".join("%02x" % max(0, min(255, round(c))) for c in (r, g, b))
+    return out if a >= 1 else out + "%02x" % round(a * 255)
+
+
 def color(value: str, source: str) -> dict:
-    return {"$type": "color", "$value": value, "$extensions": {"source": source}}
+    if value.startswith("{"):
+        return {"$type": "color", "$value": value, "$extensions": {"source": source}}
+    hexed = to_hex(value)
+    if hexed != value.strip().lower():
+        source = f"{source} (declared {value.strip()}, written as hex)"
+    return {"$type": "color", "$value": hexed, "$extensions": {"source": source}}
 
 
 def dim(value: str, source: str) -> dict:
@@ -234,6 +266,46 @@ def light() -> dict:
     }
 
 
+def walk(node, path=""):
+    for key, value in node.items():
+        if key.startswith("$") or not isinstance(value, dict):
+            continue
+        if "$value" in value:
+            yield path + key, value
+        else:
+            yield from walk(value, path + key + ".")
+
+
+def aliases(value):
+    if isinstance(value, str):
+        return re.findall(r"\{([^{}]+)\}", value)
+    if isinstance(value, dict):
+        return [a for v in value.values() for a in aliases(v)]
+    return []
+
+
+def check(doc: dict) -> None:
+    """Refuse a token with no source, a colour that is not hex, a dimension that is not one px or
+    rem length, and an alias that does not resolve in its own set or in core (the Resolver's order)."""
+    core_names = dict(walk(doc["core"]))
+    for set_name in ("core", "light"):
+        names = {**core_names, **dict(walk(doc[set_name]))}
+        for path, token in walk(doc[set_name]):
+            where = f"{set_name}.{path}"
+            if not token.get("$extensions", {}).get("source"):
+                raise SystemExit(f"{where}: no source")
+            for a in aliases(token["$value"]):
+                if a not in names:
+                    raise SystemExit(f"{where}: alias {{{a}}} points at nothing")
+            value = token["$value"]
+            if isinstance(value, str) and value.startswith("{"):
+                continue
+            if token["$type"] == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", value):
+                raise SystemExit(f"{where}: colour {value!r} is not hex")
+            if token["$type"] == "dimension" and not re.fullmatch(r"-?\d*\.?\d+(px|rem)", value):
+                raise SystemExit(f"{where}: dimension {value!r}")
+
+
 def build() -> dict:
     doc = {
         "$schema": "https://tr.designtokens.org/format/",
@@ -241,9 +313,15 @@ def build() -> dict:
         "light": light(),
         "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
     }
-    (HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
-    print("tokens.json written")
+    check(doc)
+    return doc
+
+
+def render() -> str:
+    """tokens.json's exact text; nothing is written."""
+    return json.dumps(build(), indent=2) + "\n"
 
 
 if __name__ == "__main__":
-    build()
+    (HERE / "tokens.json").write_text(render())
+    print("tokens.json written")
