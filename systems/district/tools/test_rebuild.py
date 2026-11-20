@@ -58,6 +58,26 @@ class RebuildTest(unittest.TestCase):
         self.assertTrue(ink["source"].startswith("computed color of dk-nav default"), ink["source"])
         self.assertEqual(self.C["dk-nav"]["states"]["default"]["style"]["color"], "rgb(247, 247, 247)")
 
+    def test_page_field_and_dark_ink_follow_their_inputs(self):
+        """Change the declaration and the reading on a temp copy: a builder that typed the old
+        constants back would still pass the label checks above, not this one."""
+        root = pathlib.Path(self.tmp.name) / "moved"
+        shutil.copytree(self.root / "tools", root / "tools")
+        shutil.copytree(self.root / "raw", root / "raw")
+        vp = root / "raw" / "css-vars.json"
+        V = json.loads(vp.read_text())
+        V["resolved"]["light"]["--color-background-primary"] = {"raw": "#fafafa", "kind": "color", "value": "#fafafa"}
+        vp.write_text(json.dumps(V))
+        cp = root / "raw" / "components-computed.json"
+        J = json.loads(cp.read_text())
+        J["components"]["dk-nav"]["states"]["default"]["style"]["color"] = "rgb(240, 241, 242)"
+        cp.write_text(json.dumps(J))
+        subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, check=True, capture_output=True)
+        spec = json.loads((root / "raw" / "component-tokens.json").read_text())
+        # it aliases the declaration it read; the old typed #ffffff would not match #fafafa
+        self.assertEqual(spec["light"]["background"]["page"]["value"], "{color.background.primary}")
+        self.assertEqual(spec["dark"]["text"]["ink"]["value"].lower(), "#f0f1f2")
+
     def test_wrong_element_reading_is_flagged(self):
         src = self.built["core"]["font"]["size"]["measured"]["display"]["$extensions"]["source"]
         self.assertIn("read from the wrong element; recapture needed", src)

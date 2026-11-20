@@ -115,7 +115,8 @@ const setTheme = async (p, t) => {
   await wait(p, 1200);
   const dark = await p.evaluate(() => {
     const [r, g, b, a = 1] = (getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g) || []).map(Number);
-    return a > 0 && (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 < 0.25;
+    // opaque only: a translucent body shows the page behind it
+    return a === 1 && (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 < 0.25;
   });
   if (dark !== (t === 'dark')) throw new Error('setTheme ' + t + ' did not paint: body background is ' + (dark ? 'dark' : 'light'));
 };

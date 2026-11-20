@@ -257,18 +257,20 @@ async function onScreen(sel) {
     document.querySelectorAll('[data-m-onscreen]').forEach((n) => n.removeAttribute('data-m-onscreen'));
     const el = [...document.querySelectorAll(s)].find((e) => {
       const r = e.getBoundingClientRect();
-      return r.width > 0 && r.height > 0 && r.left >= 0 && r.right <= innerWidth;
+      const shown = e.checkVisibility ? e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }) : true;
+      return shown && r.width > 0 && r.height > 0 && r.left >= 0 && r.right <= innerWidth && r.bottom > 0 && r.top < innerHeight;
     });
     if (el) el.setAttribute('data-m-onscreen', '1');
   }, sel);
   return q('[data-m-onscreen]');
 }
 
-// Whether the page paints dark: a dark, opaque body background. Checking the
-// attribute the script itself just set would always pass.
+// Whether the page paints dark: a dark, fully opaque body background (a
+// translucent one shows the page behind it). Checking the attribute the
+// script itself just set would always pass.
 const paintsDark = () => page.evaluate(() => {
   const [r, g, b, a = 1] = (getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g) || []).map(Number);
-  return a > 0 && (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 < 0.25;
+  return a === 1 && (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 < 0.25;
 }).catch(() => false);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 // Elements inside scroll-driven reveals flicker in and out of :visible while
