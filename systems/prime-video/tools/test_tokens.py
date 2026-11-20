@@ -1,4 +1,7 @@
-"""The Prime Video tokens match the computed readings."""
+"""The Prime Video tokens match the computed readings in raw/computed.json.
+
+tokens.json has no builder; this test compares its roles with the readings.
+"""
 
 import json
 import unittest
@@ -32,7 +35,8 @@ class TokensMatchReadings(unittest.TestCase):
         wall = RAW["pages"]["signupWall"]
         self.assertEqual(TOKENS["light"]["background"]["action"]["$value"], hex_of(wall["continue"]["backgroundColor"]))
         self.assertEqual(TOKENS["light"]["text"]["primary"]["$value"], hex_of(wall["body"]["color"]))
-        self.assertEqual(TOKENS["light"]["border"]["stroke"]["$value"], hex_of("rgb(213, 217, 217)"))
+        card_border = wall["card"]["border"]  # "1px solid rgb(213, 217, 217)": the .a-box card
+        self.assertEqual(TOKENS["light"]["border"]["stroke"]["$value"], hex_of(card_border[card_border.index("rgb("):]))
         self.assertEqual(TOKENS["core"]["radius"]["pill"]["$value"], wall["continue"]["borderRadius"])
 
     def test_spacing_scale_comes_from_custom_properties(self):
