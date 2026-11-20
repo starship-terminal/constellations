@@ -6874,9 +6874,9 @@
       "description": "Weather forecast",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.windy.com/login Continue with Google signed in and opened the map. Product not walked.",
+      "notes": "https://www.windy.com/ showed a Login control. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 20
     },
     {
