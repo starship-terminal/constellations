@@ -105,6 +105,7 @@ Nothing was bought, added to bag, joined, subscribed, searched or signed into. T
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One theme only.** The `dark` probe resolves to the same `:root` values — nothing paints dark. `tokens.json` ships no dark set.
 - **Var names are build hashes.** `--1fot7dv` and friends will change on the next site deploy; treat the aliases in `tokens.json` as the stable names and the hash names as provenance.
 - **Roles are verified, not declared.** Every `light` role pairs a var with the component that was measured wearing it; the site itself declares no semantic names. The declared error/sale/purple palette members (`--1mii22u`, `--1xvrmqx`, `--1ffq8ns`) appear in no component reading, so they stay under `core.color` — claiming `status.*` or `accent.*` roles for them would be an inference, not a measurement. Likewise `core.measured.anchor-inherit` is the wrapper anchor's unused inherited `#0000ee`, not the product-link colour (the link text is `text.primary`).

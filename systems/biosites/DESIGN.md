@@ -150,6 +150,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** Every captured route paints light; no dark variant is declared anywhere, so the semantic set is emitted under `light` and the `dark` set is empty.
 - **Every token is a measurement.** The stylesheets declare no design-token custom properties; `core.color.*` names the distinct computed values found across components and each `light.*` leaf's `$extensions.source` says which component/state it was read from. There is no variable layer to cross-check against.
 - **`light.link` is muted, not an accent.** Nav and footer links carry their own computed colour (black on the nav pills, `#6a6a6a` in the footer hub, `#9c9c9c` on claim legal); there is no coloured link style on the public surface.
