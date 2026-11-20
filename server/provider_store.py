@@ -38,6 +38,7 @@ import contextlib
 import os
 import re
 import sqlite3
+from urllib.parse import quote, unquote
 from pathlib import Path
 
 CONFIG_DIR_ENV = "DESIGN_SYSTEMS_CONFIG_DIR"
@@ -261,11 +262,25 @@ def remove() -> bool:
         return True
 
 
+URL_KEY = "Put the API key in the API key field only, not in the base URL, models URL, label or model."
+
+
+def _carries(value: str, key: str) -> bool:
+    """Whether `value` holds `key`, as typed or percent-encoded."""
+    if not value or len(key) < 4:
+        return False
+    return key in value or key in unquote(value) or quote(key, safe="") in value
+
+
 def public(cfg: dict | None) -> dict | None:
-    """The fields of a provider that may leave the server."""
+    """The fields of a provider that may leave the server, each passed through
+    redact() with the provider's own key: parsing already refuses a key in any
+    of them, and this guards anything saved some other way."""
     if not cfg:
         return None
-    return {k: cfg[k] for k in PUBLIC_FIELDS if isinstance(cfg.get(k), str) and cfg[k]}
+    key = cfg.get("api_key")
+    keys = (key, quote(key, safe="")) if isinstance(key, str) and key else ()
+    return {k: redact(cfg[k], *keys) for k in PUBLIC_FIELDS if isinstance(cfg.get(k), str) and cfg[k]}
 
 
 def redact(text: str, *keys: str | None) -> str:
@@ -300,6 +315,9 @@ def parse(body) -> dict:
         raise BadRequest("Key header must be a header name.")
     if len(s["model"]) > 160 or len(s["name"]) > 80:
         raise BadRequest("Model or label is too long.")
+    # The URLs are shown back on the page; a key inside one would be too.
+    if s["api_key"] and any(_carries(s[k], s["api_key"]) for k in ("base_url", "models_url", "name", "model")):
+        raise BadRequest(URL_KEY)
     s["api"] = api
     s["base_url"] = (s["base_url"] or DEFAULT_BASE_URL[api]).rstrip("/")
     s["key_header"] = s["key_header"].lower()

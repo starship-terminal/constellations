@@ -746,6 +746,25 @@ class ProviderKeyTest(TempConfig):
                 else:
                     self.assertEqual(str(self.store.config_dir()), case["expect"].replace("<HOME>", str(home)), value)
 
+    def test_a_key_in_a_url_field_is_refused_without_quoting_it(self):
+        from urllib.parse import quote
+        for extra in ({"base_url": f"https://models.example/v1?key={KEY}"},
+                      {"models_url": f"https://models.example/v1/models?key={quote(KEY, safe='')}"},
+                      {"name": f"mine {KEY}"}):
+            for path in ("/api/provider", "/api/provider/test"):
+                h = self.call("post", path, {**GOOD, **extra, "api_key": KEY})
+                self.assertEqual(h.status, 400, (path, extra))
+                self.assertIn("API key field only", h.json()["error"])
+        self.assertEqual(self.models_calls(), [])
+        self.assertIsNone(self.store.load())
+        self.assert_no_key()
+
+    def test_a_key_saved_inside_a_url_is_redacted_from_the_public_fields(self):
+        self.store.save_provider({**GOOD, "base_url": f"https://models.example/v1?key={KEY}", "api_key": KEY}, "replace")
+        got = self.call("get", "/api/provider").json()
+        self.assertEqual(got["provider"]["base_url"], "https://models.example/v1?key=[redacted]")
+        self.assert_no_key()
+
     def test_delete_is_only_the_provider_route(self):
         handled, h = _send(self.routes, "delete", "/api/mcp")
         self.assertFalse(handled)

@@ -269,10 +269,16 @@ export async function removeSaved(): Promise<boolean> {
 }
 
 /** The fields of a provider that may leave the server. */
-export function publicView(cfg: PublicProvider | null | undefined): PublicProvider | null {
+/** The fields of a provider that may leave the server, each passed through
+    redact() with the provider's own key: parsing already refuses a key in
+    any of them, and this guards anything saved some other way. */
+export function publicView(cfg: (PublicProvider & { api_key?: string }) | null | undefined): PublicProvider | null {
   if (!cfg) return null;
   const out: PublicProvider = {};
-  for (const k of PUBLIC_FIELDS) if (typeof cfg[k] === "string" && cfg[k]) out[k] = cfg[k];
+  for (const k of PUBLIC_FIELDS) {
+    const v = cfg[k];
+    if (typeof v === "string" && v) out[k] = redact(v, cfg.api_key, cfg.api_key ? encodeURIComponent(cfg.api_key) : null);
+  }
   return out;
 }
 

@@ -334,6 +334,32 @@ describe("recovery and key bytes", () => {
   });
 });
 
+describe("a key in a URL field", () => {
+  it("is refused at parse on save and test, without quoting it", async () => {
+    for (const extra of [
+      { base_url: `https://models.example/v1?key=${KEY}` },
+      { models_url: `https://models.example/v1/models?key=${encodeURIComponent(KEY)}` },
+      { name: `mine ${KEY}` },
+    ]) {
+      for (const handler of [handleSave, handleTest]) {
+        const r = await handler({ ...GOOD, ...extra, api_key: KEY }, okModels);
+        assert.equal(r.status, 400, JSON.stringify(extra));
+        assert.match(String(r.body.error), /API key field only/);
+        assert.ok(!everything(r.body).includes(KEY));
+      }
+    }
+    assert.deepEqual(calls, []);
+    assert.equal(await loadSaved(), null);
+  });
+
+  it("is redacted from the public fields if it was saved some other way", async () => {
+    await saveProvider({ ...GOOD, base_url: `https://models.example/v1?key=${KEY}`, api_key: KEY }, "replace");
+    const got = await handleGet();
+    assert.equal((got.body.provider as Record<string, string>).base_url, "https://models.example/v1?key=[redacted]");
+    assert.ok(!everything(got.body, await providerState()).includes(KEY));
+  });
+});
+
 describe("testing a key", () => {
   it("tests a typed key against the typed endpoint", async () => {
     const r = await handleTest({ ...GOOD, api_key: KEY }, okModels);
