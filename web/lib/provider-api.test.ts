@@ -18,7 +18,7 @@ import {
   resolveProvider,
   type ListModels,
 } from "./provider-api.ts";
-import { CONFIG_DIR_ENV, LOCK_NAME, providerFile, withLock } from "./provider-store.ts";
+import { CONFIG_DIR_ENV, loadSaved, providerFile, saveProvider, updateModel } from "./provider-store.ts";
 
 const KEY = "sk-test-0123456789abcdef";
 const KEY2 = "sk-test-rotated-fedcba9876";
@@ -60,18 +60,19 @@ afterEach(() => {
   rmSync(dir, { recursive: true, force: true });
 });
 
-const savedFile = async () => JSON.parse(await fs.readFile(providerFile(), "utf8"));
+const savedFile = async () => (await loadSaved()) ?? ({} as Record<string, string>);
 
 describe("the key store", () => {
   it("lives under the override folder, outside the checkout, mode 0600 in a 0700 folder", async () => {
     const r = await handleSave({ ...GOOD, api_key: KEY }, okModels);
     assert.equal(r.status, 200);
-    assert.equal(providerFile(), path.join(dir, "config", "provider.json"));
+    assert.equal(providerFile(), path.join(dir, "config", "provider.db"));
     assert.equal((await fs.stat(providerFile())).mode & 0o777, 0o600);
     assert.equal((await fs.stat(path.join(dir, "config"))).mode & 0o777, 0o700);
     assert.equal((await savedFile()).api_key, KEY);
-    // No temporary file is left beside it.
-    assert.deepEqual(await fs.readdir(path.join(dir, "config")), ["provider.json"]);
+    // SQLite's side files get the database file's mode.
+    for (const f of await fs.readdir(path.join(dir, "config")))
+      assert.equal((await fs.stat(path.join(dir, "config", f))).mode & 0o777, 0o600, f);
   });
 });
 
@@ -99,7 +100,7 @@ describe("saving a key", () => {
     assert.equal(r.body.ok, false);
     assert.equal(r.body.saved, false);
     assert.match(String(r.body.error), /HTTP 401 for key \[redacted\]/);
-    await assert.rejects(fs.stat(providerFile()));
+    assert.equal(await loadSaved(), null);
     assert.ok(!everything(r.body).includes(KEY));
   });
 
@@ -208,60 +209,28 @@ describe("review fixes", () => {
     assert.equal(env.body.ok, true);
   });
 
-  it("serialises store writes through the lock", async () => {
+  it("a model-only save never writes back a key that changed or went away", async () => {
     await handleSave({ ...GOOD, api_key: KEY }, okModels);
-    const order: string[] = [];
-    // Hold the lock while a model-only save and a removal queue behind it.
-    const held = withLock(async () => {
-      order.push("held");
-      await new Promise((r) => setTimeout(r, 120));
-      order.push("released");
-    });
-    await new Promise((r) => setTimeout(r, 10));
-    const save = handleSave({ ...GOOD, model: "m9" }, okModels).then(() => order.push("save"));
-    await held;
-    await save;
-    const remove = await handleRemove();
-    assert.deepEqual(order, ["held", "released", "save"]);
-    assert.equal(remove.body.removed, true);
-    await assert.rejects(fs.stat(path.join(dir, "config", LOCK_NAME)));
+    const seen = (await loadSaved())!;
+    // Another request replaces the key after this one read it.
+    await saveProvider({ ...seen, api_key: KEY2 }, "replace");
+    assert.equal(await updateModel(seen, "m9", ""), false);
+    assert.deepEqual([(await savedFile()).api_key, (await savedFile()).model], [KEY2, GOOD.model]);
+    // Or removes it.
+    const now = (await loadSaved())!;
+    await handleRemove();
+    assert.equal(await updateModel(now, "m9", ""), false);
+    assert.equal(await loadSaved(), null);
   });
 
-  it("breaks a crashed holder's lock exactly once, and never a live one", async () => {
-    const lock = path.join(dir, "config", LOCK_NAME);
-    await fs.mkdir(lock, { recursive: true });
-    // A holder on this host whose process is gone.
-    await fs.writeFile(path.join(lock, "owner"), JSON.stringify({ token: "dead-holder", pid: 999999, host: os.hostname() }));
-    let inside = 0;
-    let most = 0;
-    const work = () =>
-      withLock(async () => {
-        inside++;
-        most = Math.max(most, inside);
-        await new Promise((r) => setTimeout(r, 40));
-        inside--;
-      });
-    await Promise.all([work(), work(), work()]);
-    assert.equal(most, 1, "no two holders at once");
-    await assert.rejects(fs.stat(lock));
-    // A lock whose holder is alive (this process) is waited on, not broken.
-    await fs.mkdir(lock);
-    await fs.writeFile(path.join(lock, "owner"), JSON.stringify({ token: "live-holder", pid: process.pid, host: os.hostname() }));
-    const t0 = Date.now();
-    await assert.rejects(withLock(async () => {}), /busy/);
-    assert.ok(Date.now() - t0 >= 4900);
-    assert.equal(JSON.parse(await fs.readFile(path.join(lock, "owner"), "utf8")).token, "live-holder");
-  });
-
-  it("leaves no temporary copy of the key when a write fails", async () => {
-    await fs.mkdir(path.join(dir, "config"), { recursive: true });
-    // provider.json as a folder: the rename onto it fails after the temp file is written.
-    await fs.mkdir(providerFile());
-    await fs.writeFile(path.join(providerFile(), "x"), "");
-    const r = await handleSave({ ...GOOD, api_key: KEY }, okModels);
-    assert.equal(r.status, 500);
-    const left = await fs.readdir(path.join(dir, "config"));
-    assert.ok(left.every((f) => !f.endsWith(".tmp")), left.join(","));
+  it("decides and writes in one statement for each save mode", async () => {
+    const a = { ...GOOD, api_key: KEY };
+    assert.equal(await saveProvider(a, "create"), true);
+    assert.equal(await saveProvider({ ...a, api_key: KEY2 }, "create"), false);
+    assert.equal(await saveProvider({ ...a, api_key: KEY2 }, "same-key"), false);
+    assert.equal(await saveProvider({ ...a, model: "m5" }, "same-key"), true);
+    assert.equal(await saveProvider({ ...a, api_key: KEY2 }, "replace"), true);
+    assert.equal((await savedFile()).api_key, KEY2);
   });
 });
 
@@ -325,7 +294,7 @@ describe("precedence", () => {
     assert.equal((await providerState()).envAvailable, true);
     const removed = await handleRemove();
     assert.deepEqual([removed.body.removed, removed.body.source], [true, "env"]);
-    await assert.rejects(fs.stat(providerFile()));
+    assert.equal(await loadSaved(), null);
     assert.equal((await resolveProvider()).cfg?.api_key, ENV_KEY);
     assert.equal((await handleRemove()).body.removed, false);
   });
@@ -333,10 +302,10 @@ describe("precedence", () => {
   it("reports a broken saved file instead of falling back to env", async () => {
     process.env.ANTHROPIC_API_KEY = ENV_KEY;
     await fs.mkdir(path.join(dir, "config"), { recursive: true });
-    await fs.writeFile(providerFile(), `{"api_key": "${KEY}", "model": `);
+    await fs.writeFile(providerFile(), `not a database, key ${KEY} `.repeat(200));
     const s = await providerState();
     assert.deepEqual([s.source, s.configured], ["saved", false]);
-    assert.match(String(s.error), /not valid JSON/);
+    assert.match(String(s.error), /cannot be (read|used)/);
     const held = await resolveProvider();
     assert.equal(held.cfg, null);
     assert.ok(held.error);

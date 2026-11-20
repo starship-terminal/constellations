@@ -35,7 +35,7 @@ browsing gets the same routes from the Next.js app.
                              from before keys moved server-side) is refused.
 
 The library is read-only. The one thing written is the saved provider, in
-$DESIGN_SYSTEMS_CONFIG_DIR/provider.json (default ~/.config/design-systems/),
+$DESIGN_SYSTEMS_CONFIG_DIR/provider.db (default ~/.config/design-systems/),
 outside the checkout; provider_store.py has the rules. No answer and no log
 line carries a key.
 """
@@ -409,47 +409,43 @@ def _provider_save(handler, chat, store) -> None:
                 if already:
                     _reply(handler, 200, {"ok": False, "saved": False, "existing": True, "error": _EXISTING})
                     return
-            # The network call stays outside the lock; the write happens under it.
             r = _list_models(chat, store, cfg)
             if not r["ok"]:
                 _reply(handler, 200, {**r, "saved": False})
                 return
-            with store.locked():
-                try:
-                    saved = store.load()
-                except store.StoreError:
-                    saved = None
-                if s["migrate"] and saved:
+            # One statement decides and writes, so a concurrent save or removal
+            # on either server cannot slip in between: a migration only fills
+            # an empty slot, and a key the provider could not check only
+            # replaces itself.
+            mode = "create" if s["migrate"] else "replace" if r["verified"] else "same-key"
+            if not store.save_provider(cfg, mode):
+                if s["migrate"]:
                     _reply(handler, 200, {"ok": False, "saved": False, "existing": True, "error": _EXISTING})
-                    return
-                if not r["verified"] and saved and saved.get("api_key") != key:
+                else:
                     _reply(handler, 200, {"ok": False, "saved": False, "error": _UNCHECKED})
-                    return
-                store.save(cfg)
+                return
             _reply(handler, 200, {"ok": True, "saved": True, "verified": r["verified"],
                                   "models": r.get("models", []), **store.state(_env_cfg(chat))})
             return
         if s["migrate"]:
             _reply(handler, 400, {"ok": False, "error": "nothing to move: no key was sent"})
             return
-        with store.locked():
-            try:
-                saved = store.load()
-            except store.StoreError as e:
-                _reply(handler, 400, {"ok": False, "error": f"{e} Remove it and save a key again."})
-                return
-            if not saved:
-                _reply(handler, 400, {"ok": False, "error": "enter an API key to save"})
-                return
-            if not store.same_endpoint(saved, s):
-                _reply(handler, 400, {"ok": False, "error": "changing the endpoint needs the API key again"})
-                return
-            saved["model"] = s["model"]
-            if s["name"]:
-                saved["name"] = s["name"]
-            else:
-                saved.pop("name", None)
-            store.save(saved)
+        try:
+            saved = store.load()
+        except store.StoreError as e:
+            _reply(handler, 400, {"ok": False, "error": f"{e} Remove it and save a key again."})
+            return
+        if not saved:
+            _reply(handler, 400, {"ok": False, "error": "enter an API key to save"})
+            return
+        if not store.same_endpoint(saved, s):
+            _reply(handler, 400, {"ok": False, "error": "changing the endpoint needs the API key again"})
+            return
+        # Applies only while the row still holds the key and endpoint just read,
+        # so it never writes back a key another request removed or replaced.
+        if not store.update_model(saved, s["model"], s["name"]):
+            _reply(handler, 409, {"ok": False, "error": "the saved provider changed meanwhile; reload and try again"})
+            return
         _reply(handler, 200, {"ok": True, "saved": True, **store.state(_env_cfg(chat))})
     except store.BadRequest as e:
         _reply(handler, 400, {"ok": False, "error": str(e)})
@@ -472,8 +468,7 @@ def handle_delete(handler) -> bool:
     chat = _load("chat")
     store = _load("provider_store")
     try:
-        with store.locked():
-            removed = store.remove()
+        removed = store.remove()
     except store.StoreError as e:
         _reply(handler, 500, {"ok": False, "error": str(e)})
         return True

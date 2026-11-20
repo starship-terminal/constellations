@@ -36,7 +36,7 @@ must be listed in DESIGN_SYSTEMS_ALLOWED_HOSTS (comma-separated, `name` or
 The repo clone's root .env is loaded the same way the refero tools load it,
 so ANTHROPIC_API_KEY on the host gives every browser on the tailnet a working
 chat with no per-browser setup. A key saved through a Settings page is kept
-by provider_store.py in $DESIGN_SYSTEMS_CONFIG_DIR/provider.json (default
+by provider_store.py in $DESIGN_SYSTEMS_CONFIG_DIR/provider.db (default
 ~/.config/design-systems/ of the user this unit runs as), outside the clone,
 and takes precedence over ANTHROPIC_API_KEY until it is removed. The gallery's
 unit reads and writes the same file, so both must run with the same

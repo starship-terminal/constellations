@@ -377,7 +377,7 @@ class ChatRouteTest(TempConfig):
         self.assertNotIn("run", [c[0] for c in self.chat.calls])
 
     def test_saved_provider_is_used(self):
-        _store().save(self.provider)
+        _store().save_provider(self.provider, "replace")
         self.chat.env_cfg = {"api": "anthropic", "model": "env", "api_key": "env-k"}
         handled, h = _post(self.routes, "/api/chat", {"messages": [], "provider": {"model": "ignored"}})
         self.assertEqual(h.status, 200)
@@ -476,7 +476,7 @@ class ProviderKeyTest(TempConfig):
             self.assertNotIn(k, text)
 
     def saved(self):
-        return json.loads((self.config / "provider.json").read_text())
+        return self.store.load() or {}
 
     def models_calls(self):
         return [c[1] for c in self.chat.calls if c[0] == "list_models"]
@@ -485,11 +485,12 @@ class ProviderKeyTest(TempConfig):
         h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
         self.assertEqual((h.status, h.json()["ok"], h.json()["source"]), (200, True, "saved"))
         self.assertEqual([c["api_key"] for c in self.models_calls()], [KEY])
-        f = self.config / "provider.json"
-        self.assertEqual(f.stat().st_mode & 0o777, 0o600)
+        f = self.config / "provider.db"
         self.assertEqual(self.config.stat().st_mode & 0o777, 0o700)
         self.assertEqual(self.saved()["api_key"], KEY)
-        self.assertEqual(sorted(p.name for p in self.config.iterdir()), ["provider.json"])
+        # SQLite's side files get the database file's mode.
+        for p in self.config.iterdir():
+            self.assertEqual(p.stat().st_mode & 0o777, 0o600, p.name)
         self.assertFalse(str(f).startswith(str(SERVER.parent)))
         self.assert_no_key()
 
@@ -507,7 +508,7 @@ class ProviderKeyTest(TempConfig):
         h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
         self.assertEqual((h.status, h.json()["ok"], h.json()["saved"]), (200, False, False))
         self.assertIn("[redacted]", h.json()["error"])
-        self.assertFalse((self.config / "provider.json").exists())
+        self.assertIsNone(self.store.load())
         self.assert_no_key()
 
     def test_rotation_keeps_the_old_key_until_the_new_one_passes(self):
@@ -575,11 +576,11 @@ class ProviderKeyTest(TempConfig):
     def test_a_broken_saved_file_is_reported_not_replaced_by_env(self):
         self.chat.env_cfg = {"api": "anthropic", "api_key": ENV_KEY, "model": "env"}
         self.config.mkdir(parents=True)
-        (self.config / "provider.json").write_text('{"api_key": "%s", "model": ' % KEY)
+        (self.config / "provider.db").write_text(("not a database, key %s " % KEY) * 200)
         state = self.call("get", "/api/provider").json()
         self.assertEqual((state["source"], state["configured"]), ("saved", False))
         h = self.call("post", "/api/chat", {"messages": []})
-        self.assertIn("not valid JSON", h.json()["error"])
+        self.assertRegex(h.json()["error"], "cannot be (read|used)")
         self.assertNotIn("run", [c[0] for c in self.chat.calls])
         self.assert_no_key()
 
@@ -636,57 +637,40 @@ class ProviderKeyTest(TempConfig):
         self.assertTrue(self.store.same_endpoint({"api": "anthropic"}, {"api": "anthropic", "key_header": "x-api-key"}))
         self.assertFalse(self.store.same_endpoint({"api": "openai"}, {"api": "openai", "key_header": "x-api-key"}))
 
-    def test_the_lock_serialises_writers_and_breaks_a_stale_one(self):
-        import threading
-        import time
+    def test_a_model_only_save_never_writes_back_a_changed_or_removed_key(self):
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
-        order = []
-        with self.store.locked():
-            t = threading.Thread(target=lambda: (self.call("delete", "/api/provider"), order.append("delete")))
-            t.start()
-            time.sleep(0.2)
-            order.append("released")
-        t.join(5)
-        self.assertEqual(order, ["released", "delete"])
-        self.assertFalse((self.config / self.store.LOCK_NAME).exists())
-        # A lock with no owner file (another host's, say) breaks once it is 30 s old.
-        lock = self.config / self.store.LOCK_NAME
-        lock.mkdir()
-        os.utime(lock, (time.time() - 60, time.time() - 60))
-        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
-        self.assertEqual(h.json()["ok"], True)
+        seen = self.store.load()
+        self.store.save_provider({**seen, "api_key": KEY2}, "replace")
+        self.assertFalse(self.store.update_model(seen, "m9", ""))
+        self.assertEqual((self.saved()["api_key"], self.saved()["model"]), (KEY2, GOOD["model"]))
+        now = self.store.load()
+        self.store.remove()
+        self.assertFalse(self.store.update_model(now, "m9", ""))
+        self.assertIsNone(self.store.load())
 
-    def test_a_crashed_holders_lock_is_broken_once_and_a_live_one_never(self):
-        import socket
-        import threading
-        import time
-        lock = self.config / self.store.LOCK_NAME
-        lock.mkdir(parents=True)
-        (lock / "owner").write_text(json.dumps({"token": "dead-holder", "pid": 999999,
-                                                "host": socket.gethostname()}))
-        inside, most = [0], [0]
+    def test_each_save_mode_decides_and_writes_in_one_statement(self):
+        a = {**GOOD, "api_key": KEY}
+        self.assertTrue(self.store.save_provider(a, "create"))
+        self.assertFalse(self.store.save_provider({**a, "api_key": KEY2}, "create"))
+        self.assertFalse(self.store.save_provider({**a, "api_key": KEY2}, "same-key"))
+        self.assertTrue(self.store.save_provider({**a, "model": "m5"}, "same-key"))
+        self.assertTrue(self.store.save_provider({**a, "api_key": KEY2}, "replace"))
+        self.assertEqual(self.saved()["api_key"], KEY2)
 
-        def work():
-            with self.store.locked():
-                inside[0] += 1
-                most[0] = max(most[0], inside[0])
-                time.sleep(0.04)
-                inside[0] -= 1
-        threads = [threading.Thread(target=work) for _ in range(3)]
-        for t in threads:
-            t.start()
-        for t in threads:
-            t.join(10)
-        self.assertEqual(most[0], 1)
-        self.assertFalse(lock.exists())
-        lock.mkdir()
-        (lock / "owner").write_text(json.dumps({"token": "live-holder", "pid": os.getpid(),
-                                                "host": socket.gethostname()}))
-        self.store.LOCK_WAIT = 0.3
-        with self.assertRaises(self.store.StoreError):
-            with self.store.locked():
-                pass
-        self.assertEqual(json.loads((lock / "owner").read_text())["token"], "live-holder")
+    def test_the_web_store_reads_what_python_wrote(self):
+        # Both servers share the file: the schema and columns must match.
+        import shutil
+        import subprocess
+        if not shutil.which("node"):
+            self.skipTest("Node.js is required")
+        self.store.save_provider({**GOOD, "api_key": KEY}, "replace")
+        script = ("import('" + str(SERVER.parent / "web" / "lib" / "provider-store.ts") + "')"
+                  ".then(async m => { const p = await m.loadSaved(); console.log(JSON.stringify(m.publicView(p))); })")
+        out = subprocess.run(["node", "--disable-warning=ExperimentalWarning", "-e", script],
+                             capture_output=True, text=True,
+                             env={**os.environ, "DESIGN_SYSTEMS_CONFIG_DIR": str(self.config)})
+        self.assertEqual(out.returncode, 0, out.stderr)
+        self.assertEqual(json.loads(out.stdout.strip().splitlines()[-1]), GOOD)
 
     def test_delete_is_only_the_provider_route(self):
         handled, h = _send(self.routes, "delete", "/api/mcp")
