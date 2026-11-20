@@ -5310,9 +5310,9 @@
       "description": "Whole Body Health Starts in the Gut",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://seed.com/login email step then showed a password field, or Google or Facebook. Password not submitted.",
+      "notes": "Email probe: https://seed.com/login email step then showed a password field, or Google or Facebook. Password not submitted. Public walk 2026-11-21: Shop, Science, and Learn are hover menus. Phone Open menu opens the Shop panel. Sign in is an email overlay and a wall. Cart is an empty dialog. Country is a CAD/USD listbox, opened and not changed. Quizzes, newsletters, waitlists, and partner forms were not submitted. Google and Facebook were not clicked. No email was typed. No form was submitted. Signed-in account was not captured. Public package refresh in PR 1579 at de3204f9377c. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 16
     },
     {
@@ -5429,9 +5429,9 @@
       "description": "Online Classes for Creatives",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.skillshare.com/en/login email step opened Auth0 with email and password, or Google, Facebook, or Apple. Password not submitted.",
+      "notes": "Email probe: https://www.skillshare.com/en/login email step opened Auth0 with email and password, or Google, Facebook, or Apple. Password not submitted. Public walk 2026-11-21: header Browse opens a category menu. Sign In stops at https://auth.skillshare.com/u/login. Sign Up stops at https://auth.skillshare.com/u/signup. /en/login stays on-site with an empty email field. Phone hamburger opens a drawer. Search for a public word opens /en/search. Class pages hit a Cloudflare challenge and were not invented. Google, Facebook, and Apple were not clicked. No email was typed. No form was submitted. Signed-in learning was not captured. Public package refresh in PR 1577 at 45505d47874a. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 16
     },
     {
@@ -5514,9 +5514,9 @@
       "description": "World-leading speaker & headphone calibration software",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.sonarworks.com/account/login shows email and password, or Facebook, Google, or Apple. Password not submitted.",
+      "notes": "Email probe: https://www.sonarworks.com/account/login shows email and password, or Facebook, Google, or Apple. Password not submitted. Public walk 2026-11-21: Company is a hover menu. Product tabs open a secondary bar. Phone Menu opens #mobile-navigation. Pricing redirects to /black-friday. Log in stops at /account/login. Store home and an empty cart were captured. Cookie and popup scripts were removed, never clicked. Facebook, Google, and Apple were not clicked. No email was typed. No form was submitted. Support host returned a Cloudflare challenge. Signed-in account was not captured. Public package refresh in PR 1575 at a366a857c45d. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 16
     },
     {
