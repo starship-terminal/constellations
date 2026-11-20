@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Pixso style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --text: #000000;
+    --muted: #647084;
+    --button: #202125;
+    --on-button: #ffffff;
+    --brand: #336fff;
+    --field: #f7f7f9;
+    --border: #edf0f4;
+    --font: Figtree, Arial, "Helvetica Neue", sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/24px var(--font); }
+  main { max-width: 960px; margin: 0 auto; padding: 32px; }
+  h1 { font-size: 40px; line-height: 46px; font-weight: 600; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--border); border-radius: 8px; padding: 10px; }
+  .swatch i { display: block; height: 48px; border-radius: 6px; border: 1px solid var(--border); }
+  code { display: block; margin-top: 8px; font-size: 12px; }
+  .btn { display: inline-block; background: var(--button); color: var(--on-button); border-radius: 7px; padding: 6px 15px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .brand { display: inline-block; background: var(--brand); color: white; border-radius: 7px; padding: 6px 15px; margin-left: 8px; }
+  input { background: var(--field); border: 1px solid rgba(0,0,0,.1); border-radius: 6px; height: 40px; padding: 0 16px; font: 14px var(--font); }
+  .note { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pixso public site</h1>
+  <p class="note">Rendered from tokens.json. One light theme. Values were read from pixso.net CSS on 2026-11-21.</p>
+  <p><a class="btn" href="#">Get started</a><span class="brand">Brand</span></p>
+  <p><input placeholder="Enter your name" readonly></p>
+  <p class="t" style="font-size:60px;font-weight:700;line-height:66px">display 60px / 66px</p><p class="t" style="font-size:40px;font-weight:600;line-height:46px">heading 40px / 46px</p><p class="t" style="font-size:16px;font-weight:400;line-height:24px">body 16px / 24px</p><p class="t" style="font-size:14px;font-weight:500;line-height:20px">label 14px / 20px</p><p class="t" style="font-size:14px;font-weight:400;line-height:20px">caption 14px / 20px</p>
+  <h2>Light roles</h2>
+  <div class="swatches"><div class="swatch"><i style="background:#ffffff"></i><code>light.background.page</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#f7f7f9"></i><code>light.background.surface</code><span>#f7f7f9</span></div>
+<div class="swatch"><i style="background:#202125"></i><code>light.background.button</code><span>#202125</span></div>
+<div class="swatch"><i style="background:#336fff"></i><code>light.background.brand</code><span>#336fff</span></div>
+<div class="swatch"><i style="background:#000000"></i><code>light.text.primary</code><span>#000000</span></div>
+<div class="swatch"><i style="background:#1e2330"></i><code>light.text.ink</code><span>#1e2330</span></div>
+<div class="swatch"><i style="background:#647084"></i><code>light.text.muted</code><span>#647084</span></div>
+<div class="swatch"><i style="background:#ffffff"></i><code>light.text.onButton</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#336fff"></i><code>light.text.link</code><span>#336fff</span></div>
+<div class="swatch"><i style="background:#edf0f4"></i><code>light.border.default</code><span>#edf0f4</span></div>
+<div class="swatch"><i style="background:rgba(16, 24, 40, 0.12)"></i><code>light.border.rule</code><span>rgba(16, 24, 40, 0.12)</span></div>
+<div class="swatch"><i style="background:rgba(0, 0, 0, 0.1)"></i><code>light.border.field</code><span>rgba(0, 0, 0, 0.1)</span></div>
+<div class="swatch"><i style="background:#1f61ff"></i><code>light.border.focus</code><span>#1f61ff</span></div>
+<div class="swatch"><i style="background:#28a745"></i><code>light.status.success</code><span>#28a745</span></div>
+<div class="swatch"><i style="background:#ffc107"></i><code>light.status.warning</code><span>#ffc107</span></div>
+<div class="swatch"><i style="background:#dc3545"></i><code>light.status.danger</code><span>#dc3545</span></div>
+<div class="swatch"><i style="background:#17a2b8"></i><code>light.status.info</code><span>#17a2b8</span></div></div>
+</main>
+</body>
+</html>
