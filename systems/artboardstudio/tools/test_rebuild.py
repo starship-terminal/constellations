@@ -41,13 +41,13 @@ class RebuildTest(unittest.TestCase):
         for out in OUTPUTS:
             with self.subTest(out=out):
                 self.assertTrue((self.copy / out).exists(), f"{out} was not rebuilt")
-                self.assertEqual((self.copy / out).read_text(), (PKG / out).read_text())
+                self.assertEqual((self.copy / out).read_bytes(), (PKG / out).read_bytes())
 
     @unittest.skipUnless(NODE, "node is not installed")
     def test_measurements_match_committed(self):
         out = "raw/measurements.md"
         self.assertTrue((self.copy / out).exists(), f"{out} was not rebuilt")
-        self.assertEqual((self.copy / out).read_text(), (PKG / out).read_text())
+        self.assertEqual((self.copy / out).read_bytes(), (PKG / out).read_bytes())
 
     def test_table_rows_have_as_many_cells_as_their_header(self):
         # A pipe inside a value (a Relume "<deleted|...>" variable name, say) would split its cell.
