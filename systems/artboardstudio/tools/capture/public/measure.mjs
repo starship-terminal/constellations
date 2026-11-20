@@ -239,7 +239,11 @@ async function home() {
   const tab = q('.tab-button.w-tab-link').first();
   await S('tab', tab, B4, { group: h, title: 'Category tab', desc: 'A mockup-category tab (Most Popular is the selected one).', sel: '.tab-button.w-tab-link' });
   await S('tab-selected', q('.tab-button.w-tab-link.w--current').first(), ['default'], { group: h, title: 'Tab, selected', sel: '.w-tab-link.w--current' });
-  await S('tab-switched', q('.tab-button.w-tab-link:not(.w--current)').filter({ visible: true }).first(), ['selected'], { group: h, title: 'Tab, switched', desc: 'A tab after its own toggle; the selection moves locally.', sel: '.w-tab-link' }, { after: { selected: async () => { await page.waitForTimeout(800); } } });
+  // Pin the tab before its toggle: once selected it gains .w--current, and a live
+  // :not(.w--current) locator would re-resolve to another, unselected tab.
+  await q('.tab-button.w-tab-link:not(.w--current)').filter({ visible: true }).first()
+    .evaluate((el) => el.setAttribute('data-m-pick', 'tab'), null, { timeout: 5000 }).catch(() => {});
+  await S('tab-switched', q('[data-m-pick="tab"]'), ['selected'], { group: h, title: 'Tab, switched', desc: 'A tab after its own toggle; the selection moves locally.', sel: '.w-tab-link' }, { after: { selected: async () => { await page.waitForTimeout(800); } } });
   await S('section-title', q('h2, .heading-2').filter({ hasText: /Mockups$/ }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', sel: 'h2 mockup section' });
   const card = q('.div-block-19.w-dyn-item, .w-dyn-item:has(img)').filter({ visible: true }).first();
   await S('mockup-card', card, ['default', 'hover'], { group: h, title: 'Mockup card', desc: 'A mockup preview tile link.', sel: '.div-block-19.w-dyn-item' });

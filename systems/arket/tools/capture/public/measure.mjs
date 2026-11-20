@@ -288,7 +288,8 @@ async function clothing() {
   if (!(await newPage('clothing', { wait: 9000 }))) return;
   const g = G.plp;
   await S('plp-title', q('h1').first(), ['default'], { group: g, title: 'Category title', desc: '"Women\'s clothes" h1.', sel: 'h1' }, { noScroll: true });
-  await S('breadcrumb', q('nav, ol').filter({ hasText: /Women.*Clothing|Clothing.*Women/s }).first(), ['default'], { group: g, title: 'Breadcrumb', desc: 'The ARKET / Women / Clothing trail.', sel: 'breadcrumb' }, { noScroll: true });
+  // the breadcrumb itself: a bare nav/ol match caught the main category nav
+  await S('breadcrumb', q('nav[aria-label*="breadcrumb" i], [class*="breadcrumb" i]').filter({ hasText: /Women.*Clothing|Clothing.*Women/s }).first(), ['default'], { group: g, title: 'Breadcrumb', desc: 'The ARKET / Women / Clothing trail.', sel: 'breadcrumb' }, { noScroll: true });
   await S('read-more', q('button').filter({ hasText: /^Read more/ }).first(), B4, { group: g, title: 'Read more button', desc: 'The category intro expander; a local toggle, measured closed.', sel: 'button:has-text("Read more")' }, { noScroll: true });
   await S('filter-button', q('button').filter({ hasText: /^Filter$/ }).first(), B4, { group: g, title: 'Filter button', desc: 'Opens the filter panel. Measured, never applied.', sel: 'button:has-text("Filter")' });
   const filterBtn = q('button').filter({ hasText: /^Filter$/ }).filter({ visible: true }).first();
@@ -328,7 +329,8 @@ async function service() {
   const acc = q('main button[aria-expanded], main summary, main details summary').filter({ hasText: /\w{5,}/ }).filter({ visible: true }).first();
   await S('service-accordion', acc, B4, { group: g, title: 'Service accordion', desc: 'A help-topic disclosure row.', sel: 'main disclosure' });
   await S('service-accordion-open', acc, ['opened'], { group: g, title: 'Service accordion, open', desc: 'The same row after its own toggle.', sel: 'main disclosure' }, { cropLoc: acc.locator('xpath=ancestor::*[self::details or self::section or self::div][1]') });
-  await S('service-link', q('main a').filter({ hasText: /\w{4,}/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Service link', sel: 'main a' });
+  // its own key: 'service-link' is the home page's Customer service link
+  await S('service-page-link', q('main a').filter({ hasText: /\w{4,}/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Service link', sel: 'main a' });
   save();
 }
 
@@ -337,7 +339,8 @@ async function account() {
   const g = G.account;
   await S('gate-title', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Gate title', desc: 'The Login/Signup gate heading.', sel: 'h1/h2' });
   await S('gate-field', q('input[type="email"], input').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Email field', desc: 'The sign-in email input; focused only, nothing typed or sent.', sel: 'account input' });
-  await S('gate-continue', q('button').filter({ hasText: /\w+/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Continue button', desc: 'The gate\'s primary action. Measured, never pressed — no sign-in was attempted.', sel: 'account button' });
+  // the gate's own Continue: the first labelled button was "with Google"
+  await S('gate-continue', q('button').filter({ hasText: /^\s*continue\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Continue button', desc: 'The gate\'s primary action. Measured, never pressed — no sign-in was attempted.', sel: 'account button' });
   save();
 }
 

@@ -89,7 +89,7 @@
    "horizon-dark": {
     "var": "--color-horizon-dark-3",
     "type": "color",
-    "source": "measured color of nav-menu-item and text-link (#c74100 = rgb(199,65,0))",
+    "source": "measured color of text-link (#c74100 = rgb(199,65,0))",
     "description": "#c74100, the dark orange of text links on light surfaces"
    },
    "content": {
@@ -480,7 +480,7 @@
   "text-muted": { "var": "--color-content-muted", "type": "color", "source": "the muted grey on light surfaces" },
   "accent": { "var": "--color-brand-accent", "type": "color", "source": "submit / plan-cta / cta-orange fills", "description": "the burnt-orange CTA fill" },
   "accent-brand": { "var": "--color-brand", "type": "color", "source": "the #fc5200 signal orange: field focus border, volume-pill-on, article dots, --color-ring" },
-  "text-link": { "var": "--color-horizon-dark-3", "type": "color", "source": "measured color of text-link / nav-menu-item (#c74100)" },
+  "text-link": { "var": "--color-horizon-dark-3", "type": "color", "source": "measured color of text-link (#c74100)" },
   "border": { "var": "--color-border-default", "type": "color", "source": "the light hairline" },
   "focus": { "value": "#ff7b3c", "type": "color", "source": "measured focus ring on logo/nav-cta (2px)" },
   "focus-alt": { "value": "#99c8ff", "type": "color", "source": "measured focus ring on footer-link / pagination / segments (1px and 5px)" }

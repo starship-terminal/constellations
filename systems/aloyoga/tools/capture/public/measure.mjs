@@ -292,7 +292,11 @@ async function pdp() {
   await S('pdp-title', q('h1').first(), ['default'], { group: g, title: 'Product title', sel: 'h1' }, { noScroll: true });
   await S('pdp-price', q('[class*="price" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Product price', sel: '[class*="price"]' }, { noScroll: true });
   await S('pdp-swatch', q('label.option-Color, [class*="option-Color" i], label[class*="swatch" i]').filter({ visible: true }).first(), B4, { group: g, title: 'PDP swatch', sel: 'button.swatch' });
-  await S('pdp-swatch-picked', q('label.option-Color:not(.active), [class*="option-Color" i]:not(.active)').filter({ visible: true }).first(), ['opened'], { group: g, title: 'PDP swatch, picked', desc: 'A colour swatch after its own toggle; never an add-to-bag.', sel: 'button.swatch' });
+  // Pin the swatch before its toggle: once clicked it gains .active, and a live
+  // :not(.active) locator would re-resolve to the next unpicked swatch.
+  await q('label.option-Color:not(.active), [class*="option-Color" i]:not(.active)').filter({ visible: true }).first()
+    .evaluate((el) => el.setAttribute('data-m-pick', 'swatch'), null, { timeout: 5000 }).catch(() => {});
+  await S('pdp-swatch-picked', q('[data-m-pick="swatch"]'), ['opened'], { group: g, title: 'PDP swatch, picked', desc: 'A colour swatch after its own toggle; never an add-to-bag.', sel: 'button.swatch' });
   const size = q('button.button-size-selector__button:not(.out-of-stock)').filter({ visible: true }).first();
   await S('size-button', size, B4, { group: g, title: 'Size button', sel: 'size option button' });
   const add = q('button.product__buy--button, button').filter({ hasText: /add to bag/i }).filter({ visible: true }).first();

@@ -109,6 +109,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **The focus ring is mostly the browser's.** Most controls show the default 1px `#005fcc` auto outline; the menu button shows the site's own 2px `#4d65ff` ring, recorded as `light.focus-ring`.
 - **Scheme classes are washes, not themes.** `.color-scheme-2..10` swap the same five slots for different sections; the site does not bind a dark theme.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
+- **`tab-switched` is not the tab that was selected.** The `:not(.w--current)` locator re-resolved after the toggle, so the `selected` reading is another, still unselected tab. Needs a recapture; the script now pins the tab before the toggle (not run since).
 
 ## Fonts
 

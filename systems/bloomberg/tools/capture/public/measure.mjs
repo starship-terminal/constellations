@@ -396,7 +396,8 @@ async function subscriptions() {
   if (!(await newPage('subscriptions', { wait: 10000 }))) return;
   await sheetsFor('subscriptions');
   const g = G.subscriptions;
-  await S('offer-header', q('header, [class*="offers-page-header"], [class*="header" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Offers header', sel: 'header' }, { noScroll: true });
+  // the offers page's own header: header/[class*=header] caught the corporate utility bar
+  await S('offer-header', q('[class*="offers-page-header"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Offers header', sel: 'header' }, { noScroll: true });
   await S('offer-hero', q('[class*="offers-header-block"]').first(), ['default'], { group: g, title: 'Offer hero', desc: 'The lead WordPress offer block ("Get context beyond the headlines").', sel: '[class*="offers-header-block"]' });
   await S('offer-price', q('[class*="offers-header-block-price"], [class*="price" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Offer price', sel: '[class*="price"]' });
   await S('offer-cta', q('[class*="wp-ga-button"], .wp-block-button a, a.wp-element-button').filter({ hasText: /Continue|Choose|Subscribe/i }).first(), B4, { group: g, title: 'Offer CTA', desc: 'The offer’s own action; links to checkout, measured, never followed.', sel: 'a.wp-ga-button' });
