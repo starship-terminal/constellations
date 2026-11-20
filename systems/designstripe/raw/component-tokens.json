@@ -143,7 +143,7 @@
           "body": {
             "value": "14px",
             "type": "fontSize",
-            "source": "computed fontSize of post-para default (raw/components-computed.json)",
+            "source": "computed fontSize of post-para default (raw/components-computed.json); post-para caught the one-line article subtitle, not a body paragraph (read from the wrong element; recapture needed)",
             "description": "The 14px mono body and subcopy."
           },
           "ui": {
@@ -229,7 +229,7 @@
       "control": {
         "value": "all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
         "type": "other",
-        "source": "computed transition of feature-acc default (raw/components-computed.json)",
+        "source": "computed transition of feature-acc default (raw/components-computed.json); feature-acc default is a kept reading: the 2026-11-14 re-read failed (rerunError) and the earlier reading was kept, its own date unrecorded",
         "description": "The measured accordion/control transition (all 0.15s)."
       }
     },
@@ -489,7 +489,7 @@
       "page": {
         "value": "{background.default}",
         "type": "color",
-        "source": "the public surfaces paint a white field (screenshots/*-light-*.png; --background resolves #ffffff); matches declared --background",
+        "source": "declared --background (raw/css-vars.json resolved.light); no computed reading of the page field (seen in screenshots/*-light-*.png); matches declared --background",
         "description": "The white field the whole public surface paints."
       },
       "card": {
@@ -737,7 +737,7 @@
       "black": {
         "value": "#000000",
         "type": "color",
-        "source": "computed color of hero-h1 default (raw/components-computed.json)",
+        "source": "computed color of hero-h1 default (raw/components-computed.json); hero-h1 default is a kept reading: the 2026-11-14 re-read failed (rerunError) and the earlier reading was kept, its own date unrecorded",
         "description": "Pure black body/hero text on the marketing surface (matches --black)."
       },
       "muted": {
@@ -749,7 +749,7 @@
       "on-dark": {
         "value": "{white}",
         "type": "color",
-        "source": "computed color of feature-acc default (raw/components-computed.json); matches declared --white",
+        "source": "computed color of feature-acc default (raw/components-computed.json); matches declared --white; feature-acc default is a kept reading: the 2026-11-14 re-read failed (rerunError) and the earlier reading was kept, its own date unrecorded",
         "description": "White text inside the dark feature panel and footer (matches --white)."
       },
       "link": {

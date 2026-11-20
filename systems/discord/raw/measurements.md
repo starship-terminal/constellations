@@ -68,22 +68,23 @@ Page: home. Selector: `nav Discover`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 117 x 39.2 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ABC Ginto Normal 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.menu-title: Abcgintodiscord 16px/19.2px 500, #ffffff | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 16 x 16, colour #ffffff | = | = | = |
-| Painted layers | div.nav_dd_content-wr.isnew 0.0x0.0 bg #5865f2 r 40px | div.nav_dd_trigger.w-dropdown-toggle 117.0x39.2 bg #5865f2 r 12px; div.nav_dd_content-wr.isnew 203.0x167.2 bg #5865f2 r 40px | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 117 x 39.2 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 16px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ABC Ginto Normal 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.menu-title: Abcgintodiscord 16px/19.2px 500, #ffffff | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 16 x 16, colour #ffffff | = | - | = |
+| Painted layers | div.nav_dd_content-wr.isnew 0.0x0.0 bg #5865f2 r 40px | div.nav_dd_trigger.w-dropdown-toggle 117.0x39.2 bg #5865f2 r 12px; div.nav_dd_content-wr.isnew 203.0x167.2 bg #5865f2 r 40px | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `mk-nav-drop-default.png`, `mk-nav-drop-hover.png`, `mk-nav-drop-focus-visible.png`, `mk-nav-drop-pressed.png`.
 
