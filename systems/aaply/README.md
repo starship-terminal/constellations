@@ -106,7 +106,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **Hover-measured values are sparse.** Tilda applies most hovers through `--t396-*hover*` custom properties on the element, many of which read as unchanged at the atom level; the real swaps that were measured (the nav Sign up pill inverting to lime, link grey fades) are in the state rows.
 - **Prices are split across atoms.** A plan price is a `$` atom plus a `.1 /month` numeral atom; the price tokens cite the numeral atom.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
-- **`m-burger` was read from the wrong element.** Its selector fell back to the logo image (x=63, coral, no icon), so the Hamburger entry in components.md is the logo, not the menu button. Needs a recapture; the script no longer falls back to any image atom (not run since). `core.color.coral` now cites only `social-icon` and the logo link, which hold the same value.
+- **`m-burger` was read from the wrong element.** Its selector fell back to the logo image (x=63, coral, no icon), so the Hamburger entry in components.md is the logo, not the menu button. Needs a recapture; the script no longer falls back to any image atom (not run since). `core.palette.coral` now cites only `social-icon` and the logo link, which hold the same value.
 
 ## Fonts
 
