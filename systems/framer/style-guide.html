@@ -345,10 +345,12 @@ const motionVal = (t) => {
   }
   // framer.com paints one theme: the dark set is the palette, resolved under
   // the body's .dark scope.
-  for (const [setname, label] of [['dark', 'the dark roles — the only theme the site ships']]) {
+  // The auth set is the light /login shell's own readings, painted under
+  // its .auth scope.
+  for (const [setname, label, scope] of [['dark', 'the dark roles — the only theme the site ships', ' dark'], ['auth', 'auth — the light /login shell', ' auth']]) {
     const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
     if (!roles.length) continue;
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
     for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }
