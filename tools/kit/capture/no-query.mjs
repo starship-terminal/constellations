@@ -6,12 +6,13 @@
 // leaked). The text is split into delimited spans, and a span loses everything from the point where a
 // query could start to its end:
 //   - a URL-valued field (the quoted or unquoted body of url( ), or a quoted value of a src, href,
-//     srcset, poster, action, data or xlink:href attribute selector) is parsed with new URL; its search
-//     is dropped, and its hash when the hash carries = or &. A value new URL cannot parse is cut at its
-//     first ?.
+//     srcset, poster, action, data or xlink:href attribute selector) holds a URL, so everything from its
+//     first ? goes (a field needs no = after it), and from its # when the fragment carries = or &.
 //   - any other quoted text, and the text outside quotes and url( ) (the whole value), is free text: it
 //     is cut from the first ? that has an = after it before the span ends, or from a # whose name runs
 //     into = or &, whatever comes before it.
+// "?", "=", "#" and "&" are matched in every spelling the formats allow (CSS escapes, HTML character
+// references, percent-encoding), so "/avatar\3f token=…" or "&#63;" is a query like "?"; see spell().
 // A data: URL (bare, quoted or in url( )) is left alone, = padding and all; quoted, it ends at a list's
 // ", " (srcset="data:… 1x, /b.png?sig=… 2x" still cuts the second URL), and only where data: opens
 // a value: at its start or after a space, a quote, a bracket, a comma or = ("/x/data:a.png" is a path).
@@ -21,12 +22,13 @@
 // that tail; prose with a ? followed later by an = loses its tail ("What? a=b" keeps
 // "What"); a bare image-set() or srcset in free text loses everything after its first query, closing
 // bracket included; a quoted srcset keeps only its first URL; an unquoted attribute selector
-// (img[src=/a?sig=1]) loses its closing ].
+// (img[src=/a?sig=1]) loses its closing ]; a percent-encoded %3f, a literal in a URL path, is cut as a
+// query; a literal backslash followed by 3f (CSS "\\3f") is cut too; and "&amp;#63;…=" loses its tail
+// to the fragment rule (its literal # runs into an =).
 
 const FIELD = /(?:\[\s*(?:src|href|srcset|poster|action|data|xlink:href)\s*[~|^$*]?=\s*)$/i;
 const DATA = /^\s*data:/i;
 const DATA_OPENS = (before) => !before || /[\s"'(,=]/.test(before);   // data: here starts a data: URL
-const BASE = 'https://x.invalid/';
 
 // Splits a value into outer text, quoted strings, url( ) bodies and bare data: tokens.
 function scan(s) {
@@ -69,29 +71,54 @@ function scan(s) {
   return out;
 }
 
-// A URL-valued field: its search goes, and its hash when that carries a parameter.
+// Every spelling of "?", "=" and "#" the recorded formats allow, since a query written with escapes is
+// still a query once the CSS or the HTML is read: the plain character, a CSS escape (\? or \3f with 1 to
+// 6 hex digits, any case, and its optional single trailing space), an HTML character reference (&#63;,
+// &#x3f; with any leading zeros, or the named one) and percent-encoding (%3f, strictly a literal in a
+// path, cut anyway: fail closed). Doubly encoded forms are not these characters in any one layer and
+// stay as they are: "%253f" is "%3f" after one decode, and "&amp;#63;" is "&#63;".
+const SP = '(?:\\r\\n|[ \\t\\n\\r\\f])?';   // a hex escape's optional trailing whitespace
+const spell = (ch, hex, dec, named) => {
+  const lit = '\\' + ch;   // the character itself, escaped for the pattern
+  return new RegExp([lit, `\\\\0{0,4}${hex}${SP}`, `\\\\${lit}`, `&#0*${dec};`, `&#x0*${hex};`, `&${named};`, `%${hex}`].join('|'), 'i');
+};
+const Q = spell('?', '3f', 63, 'quest');
+const E = spell('=', '3d', 61, 'equals');
+const H = spell('#', '23', 35, 'num');
+const AMP = /&(?!#|[a-z]+;)|&amp;|&#0*38;|&#x0*26;|\\0{0,4}26(?:\r\n|[ \t\n\r\f])?|\\&|%26/i;
+const at = (re, text, i) => { const m = re.exec(text.slice(i)); return m && m.index === 0 ? m[0].length : 0; };
+const firstAt = (re, text) => { const m = re.exec(text); return m ? m.index : -1; };
+
+// A fragment carries a parameter when, before the next space or quote, its name runs into an "=" or an
+// "&" in any spelling.
+const fragmentParams = (frag) => { const word = frag.match(/^[^\s"']*/)[0]; return E.test(word) || AMP.test(word); };
+
+// A URL-valued field: everything from its first "?" in any spelling goes (a field holds a URL, so that is
+// its query), and its fragment when the fragment carries a parameter.
 function cutField(v) {
   if (DATA.test(v)) return v;
-  let u;
-  try { u = new URL(v.trim(), BASE); } catch { u = null; }
-  if (!u) { const q = v.indexOf('?'); return q < 0 ? v : v.slice(0, q); }
-  const h = v.indexOf('#');
-  const q = v.indexOf('?');
-  let at = -1;
-  if (u.search && q >= 0) at = q;
-  if (/[=&]/.test(u.hash) && h >= 0 && (at < 0 || h < at)) at = h;
-  return at < 0 ? v : v.slice(0, at);
+  const q = firstAt(Q, v);
+  let h = -1;
+  for (let i = 0; i < v.length && (q < 0 || i < q); i++) {
+    const n = at(H, v, i);
+    if (n && fragmentParams(v.slice(i + n))) { h = i; break; }
+  }
+  const cut = h >= 0 ? h : q;
+  return cut < 0 ? v : v.slice(0, cut);
 }
 
-// The first point in free text a query could start: a ? with an = after it in `rest` (the text from
-// there to the end of the span), or a # whose name runs into = or &. data: tokens are skipped.
+// The first point in free text a query could start: a "?" (any spelling) with an "=" (any spelling)
+// after it in `rest` (the text from there to the end of the span), or a "#" whose name runs into "=" or
+// "&". data: tokens are skipped.
 function freeCut(text, restAfter = '') {
   const skip = [...text.matchAll(/(?<=^|[\s"'(,=])data:\S*/gi)].map((m) => [m.index, m.index + m[0].length]);
   const inData = (i) => skip.some(([a, b]) => i >= a && i < b);
   for (let i = 0; i < text.length; i++) {
     if (inData(i)) continue;
-    if (text[i] === '?' && (text.slice(i + 1) + restAfter).includes('=')) return i;
-    if (text[i] === '#' && /^#[^\s#?=&"']*[=&]/.test(text.slice(i))) return i;
+    const q = at(Q, text, i);
+    if (q && E.test(text.slice(i + q) + restAfter)) return i;
+    const h = at(H, text, i);
+    if (h && fragmentParams(text.slice(i + h))) return i;
   }
   return -1;
 }
