@@ -36,7 +36,7 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   // Masked as a matter of course; ableton.com renders to headless Chromium
   // either way, but the bot check is cheap insurance.
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   });
   return { browser, context };
 }

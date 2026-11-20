@@ -101,6 +101,7 @@ Nothing was sent, downloaded, signed into or trialled. The public marketing surf
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** `.dark` exists in the stylesheet but only re-declares `--foreground` and the two `--shadow-wysiwyg-*` vars; nothing on the captured routes sets it, so no dark set is emitted.
 - **RGB triplets.** `--color-*` values are stored as `r,g,b` strings for `<alpha-value>` utilities; tokens carry the converted hex.
 - **`component.*` tokens are measured**, not site variables.

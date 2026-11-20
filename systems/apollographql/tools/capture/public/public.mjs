@@ -130,7 +130,7 @@ for (const { k, mob } of runs) {
   const spec = (mob ? mobile : desktop)[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-${spec.theme || 'dark'}`, vw, vh, dpr);
@@ -157,7 +157,7 @@ for (const { k, mob } of runs) {
 }
 {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   const p = await ctx.newPage();
   for (const [name, spec] of Object.entries(opportunistic)) {
     if (pageArg.length && !pageArg.includes(name)) continue;

@@ -37,7 +37,7 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   // Masked as a matter of course; aaply.app's Tilda pages render without a
   // challenge either way, but the app host (go.aaply.app) is bot-sensitive.
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   });
   return { browser, context };
 }

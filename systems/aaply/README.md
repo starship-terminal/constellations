@@ -101,6 +101,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The app is absent.** go.aaply.app returned "Not found" on every route, so nothing in this package describes the product's own screens, flows or states — only the marketing site that links to it. The footer reads ©2024 and the app host looks retired or down; treat the product's live state as unknown.
 - **The billing segment's held state** paints its lime fill on a sibling shape, not the text atom — the segments measure transparent in both positions; the lime chip is visible in the screenshots.
 - **Hover-measured values are sparse.** Tilda applies most hovers through `--t396-*hover*` custom properties on the element, many of which read as unchanged at the atom level; the real swaps that were measured (the nav Sign up pill inverting to lime, link grey fades) are in the state rows.

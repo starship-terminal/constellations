@@ -190,6 +190,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The product page and the account are absent.** PDP URLs 403 for this client and /en-ww/account/ stops at the gate; no PDP, checkout, filled cart or signed-in screen is in this package — only the signed-out storefront that links to them.
 - **The root landing is the women landing.** `/en-ww/` was blocked at capture time; every shell, dialog and footer reading is labelled `/en-ww/women/` in the raw JSON.
 - **The focus ring is the browser's.** Every control shows the same 1px `auto` `#005fcc` outline on keyboard focus — arket.com declares no `:focus-visible` style of its own. `light.focus-ring` records it labelled as such.

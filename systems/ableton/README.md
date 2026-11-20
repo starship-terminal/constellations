@@ -97,6 +97,7 @@ The cookie overlay (`#biscuits-overlay`) is hidden by CSS for the clean captures
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients and photography band slightly; read exact colours from tokens.json or the raw files.
 - **Hero cells carry video.** Two captures of the same page can differ in the frame shown.
 - **The `main` rect in `raw/layout.json` is the whole page column** (Ableton wraps content in a single `<main>`), so "content x 0, 1440 wide" does not mean text spans 1440: the 1200px text column sits inside it.
