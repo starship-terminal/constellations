@@ -15,10 +15,13 @@
 // "Start reading" splash button; every "Get a demo" email capture and the sign-in form
 // are shot and measured, never submitted.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, APP_BASE, DOCS_BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour originals stay outside the repo (quantize.py writes screenshots/ from them).
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'equals', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

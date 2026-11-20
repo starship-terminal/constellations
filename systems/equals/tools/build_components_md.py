@@ -440,7 +440,8 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
+        # a skipped record (newer captures) has no style; an older one kept the element at rest
+        failed = [s for s, v in c["states"].items() if v.get("skipped") or v.get("via") == "focus failed"]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
