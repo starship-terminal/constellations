@@ -489,7 +489,7 @@ Page: home. Selector: `.mockup-workbook__toolbar-button`. States: default, hover
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `wb-toolbar-button-default.png`, `wb-toolbar-button-hover.png`, `wb-toolbar-button-focus-visible.png`, `wb-toolbar-button-pressed.png`.
+Crops: `wb-toolbar-button-default.png`, `wb-toolbar-button-hover.png`, `wb-toolbar-button-pressed.png`.
 
 #### wb-sheet-tab
 
@@ -518,7 +518,7 @@ Page: home. Selector: `.mockup-workbook__sheet-tab`. States: default, hover, foc
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `wb-sheet-tab-default.png`, `wb-sheet-tab-hover.png`, `wb-sheet-tab-focus-visible.png`, `wb-sheet-tab-pressed.png`.
+Crops: `wb-sheet-tab-default.png`, `wb-sheet-tab-hover.png`, `wb-sheet-tab-pressed.png`.
 
 #### wb-cell
 
@@ -906,7 +906,7 @@ Page: signin. Selector: `.SignIn__Footer`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `signin-footer-default.png`, `signin-footer-hover.png`, `signin-footer-focus-visible.png`, `signin-footer-pressed.png`.
+Crops: `signin-footer-default.png`, `signin-footer-hover.png`, `signin-footer-pressed.png`.
 
 ### Docs (docs.equals.com) (light)
 
@@ -1473,7 +1473,7 @@ Page: mobile. Selector: `label.header__mobile-nav-toggle`. States: default, hove
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `m-hamburger-default.png`, `m-hamburger-hover.png`, `m-hamburger-focus-visible.png`, `m-hamburger-pressed.png`, `m-hamburger-opened.png`.
+Crops: `m-hamburger-default.png`, `m-hamburger-hover.png`, `m-hamburger-pressed.png`, `m-hamburger-opened.png`.
 
 #### m-drawer
 

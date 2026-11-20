@@ -678,7 +678,7 @@ Page: showcase. Selector: `showcase category chip`. States: default, hover, focu
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `showcase-chip-default.png`, `showcase-chip-hover.png`, `showcase-chip-focus-visible.png`, `showcase-chip-pressed.png`.
+Crops: `showcase-chip-default.png`, `showcase-chip-hover.png`, `showcase-chip-pressed.png`.
 
 #### showcase-card
 
@@ -756,7 +756,7 @@ Page: showcase. Selector: `card Read more`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `read-more-default.png`, `read-more-hover.png`, `read-more-focus-visible.png`, `read-more-pressed.png`.
+Crops: `read-more-default.png`, `read-more-hover.png`, `read-more-pressed.png`.
 
 #### brand-h1
 
@@ -1210,7 +1210,7 @@ Page: help-center. Selector: `help "Search…" field container`. States: default
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `help-search-default.png`, `help-search-hover.png`, `help-search-focus-visible.png`, `help-search-pressed.png`.
+Crops: `help-search-default.png`, `help-search-hover.png`, `help-search-pressed.png`.
 
 #### help-search-input
 

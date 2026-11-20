@@ -228,7 +228,7 @@ Page: home. Selector: `.header__menu`. States: default, hover, focus-visible, pr
 | Opacity | - | 0.64 | = | 0.64 | 0.64 |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `menu-pill-default.png`, `menu-pill-hover.png`, `menu-pill-focus-visible.png`, `menu-pill-pressed.png`, `menu-pill-opened.png`.
+Crops: `menu-pill-default.png`, `menu-pill-hover.png`, `menu-pill-pressed.png`, `menu-pill-opened.png`.
 
 #### theme-toggle
 
@@ -256,7 +256,7 @@ Page: home. Selector: `[data-theme-toggle]`. States: default, hover, focus-visib
 | How | at rest | mouse hover | - |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
-Crops: `theme-toggle-default.png`, `theme-toggle-hover.png`, `theme-toggle-focus-visible.png`.
+Crops: `theme-toggle-default.png`, `theme-toggle-hover.png`.
 
 #### prc-counter
 
@@ -1475,7 +1475,7 @@ Page: create-pdp. Selector: `header "Start generation" button`. States: default,
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `pdp-start-header-default.png`, `pdp-start-header-hover.png`, `pdp-start-header-focus-visible.png`, `pdp-start-header-pressed.png`.
+Crops: `pdp-start-header-default.png`, `pdp-start-header-hover.png`, `pdp-start-header-pressed.png`.
 
 #### pdp-dash-link
 
@@ -1814,7 +1814,7 @@ Page: create-pdp. Selector: `footer "Start generation" button (painted copy)`. S
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `pdp-start-bottom-default.png`, `pdp-start-bottom-hover.png`, `pdp-start-bottom-focus-visible.png`, `pdp-start-bottom-pressed.png`.
+Crops: `pdp-start-bottom-default.png`, `pdp-start-bottom-hover.png`, `pdp-start-bottom-pressed.png`.
 
 #### pdp-format-group
 
@@ -1953,7 +1953,7 @@ Page: mobile. Selector: `mobile .header__menu`. States: default, hover, focus-vi
 | Opacity | - | 0.64 | = | 0.64 | 0.64 |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `m-menu-pill-default.png`, `m-menu-pill-hover.png`, `m-menu-pill-focus-visible.png`, `m-menu-pill-pressed.png`, `m-menu-pill-opened.png`.
+Crops: `m-menu-pill-default.png`, `m-menu-pill-hover.png`, `m-menu-pill-pressed.png`, `m-menu-pill-opened.png`.
 
 #### m-nav-overlay
 

@@ -319,7 +319,7 @@ Page: home. Selector: `Watch the Video`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `watch-video-default.png`, `watch-video-hover.png`, `watch-video-focus-visible.png`, `watch-video-pressed.png`.
+Crops: `watch-video-default.png`, `watch-video-hover.png`, `watch-video-pressed.png`.
 
 #### feature-h2
 
@@ -567,7 +567,7 @@ Page: home. Selector: `Testimonials__Panel`. States: default, hover, focus-visib
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `tweet-card-default.png`, `tweet-card-hover.png`, `tweet-card-focus-visible.png`, `tweet-card-pressed.png`.
+Crops: `tweet-card-default.png`, `tweet-card-hover.png`, `tweet-card-pressed.png`.
 
 ### Blog
 

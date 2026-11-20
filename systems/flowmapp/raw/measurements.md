@@ -115,7 +115,7 @@ Page: home. Selector: `nav Features trigger`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | the Features flyout was already open |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `nav-features-default.png`, `nav-features-hover.png`, `nav-features-focus-visible.png`, `nav-features-pressed.png`, `nav-features-opened.png`.
+Crops: `nav-features-default.png`, `nav-features-hover.png`, `nav-features-pressed.png`, `nav-features-opened.png`.
 
 #### nav-pop-item
 
@@ -636,7 +636,7 @@ Page: pricing. Selector: `.faq__q-wrap`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | clicked the FAQ row to expand its answer |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `faq-q-default.png`, `faq-q-hover.png`, `faq-q-focus-visible.png`, `faq-q-pressed.png`, `faq-q-opened.png`.
+Crops: `faq-q-default.png`, `faq-q-hover.png`, `faq-q-pressed.png`, `faq-q-opened.png`.
 
 #### faq-a
 
@@ -999,7 +999,7 @@ Page: login. Selector: `signin submit button`. States: default, hover, focus-vis
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | typed sample text into both fields so the submit enabled — still never clicked |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `login-submit-default.png`, `login-submit-hover.png`, `login-submit-focus-visible.png`, `login-submit-pressed.png`, `login-submit-enabled.png`.
+Crops: `login-submit-default.png`, `login-submit-hover.png`, `login-submit-pressed.png`, `login-submit-enabled.png`.
 
 #### login-google
 
@@ -1335,7 +1335,7 @@ Page: restore. Selector: `restore submit button`. States: default, hover, focus-
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `restore-send-default.png`, `restore-send-hover.png`, `restore-send-focus-visible.png`, `restore-send-pressed.png`.
+Crops: `restore-send-default.png`, `restore-send-hover.png`, `restore-send-pressed.png`.
 
 #### restore-back
 

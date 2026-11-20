@@ -191,7 +191,7 @@ Page: set-women. Selector: `ff-logo-global`. States: default, hover, focus-visib
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `logo-default.png`, `logo-hover.png`, `logo-focus-visible.png`, `logo-pressed.png`.
+Crops: `logo-default.png`, `logo-hover.png`, `logo-pressed.png`.
 
 #### nav-link
 
@@ -964,7 +964,7 @@ Page: pdp. Selector: `CarouselArrowSmall`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `pdp-arrow-default.png`, `pdp-arrow-focus-visible.png`, `pdp-arrow-pressed.png`.
+Crops: `pdp-arrow-default.png`, `pdp-arrow-pressed.png`.
 
 #### pdp-brand
 
@@ -1065,7 +1065,7 @@ Page: pdp. Selector: `ScaledSizeSelector`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `size-selector-default.png`, `size-selector-hover.png`, `size-selector-focus-visible.png`, `size-selector-pressed.png`.
+Crops: `size-selector-default.png`, `size-selector-hover.png`, `size-selector-pressed.png`.
 
 #### add-to-bag
 
@@ -1607,7 +1607,7 @@ Page: home. Selector: `departments dropdown`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `m-dept-menu-default.png`, `m-dept-menu-hover.png`, `m-dept-menu-focus-visible.png`, `m-dept-menu-pressed.png`.
+Crops: `m-dept-menu-default.png`, `m-dept-menu-hover.png`, `m-dept-menu-pressed.png`.
 
 #### m-search
 

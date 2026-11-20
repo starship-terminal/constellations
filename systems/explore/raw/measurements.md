@@ -814,7 +814,7 @@ Page: discover. Selector: `a.pill "All"`. States: default, hover, focus-visible,
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `pill-default.png`, `pill-hover.png`, `pill-focus-visible.png`, `pill-pressed.png`.
+Crops: `pill-default.png`, `pill-hover.png`, `pill-pressed.png`.
 
 #### pill-idle
 
@@ -840,7 +840,7 @@ Page: discover. Selector: `a.pill "Animation"`. States: default, hover, focus-vi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `pill-idle-default.png`, `pill-idle-hover.png`, `pill-idle-focus-visible.png`, `pill-idle-pressed.png`.
+Crops: `pill-idle-default.png`, `pill-idle-hover.png`, `pill-idle-pressed.png`.
 
 #### post-card
 
