@@ -1090,21 +1090,22 @@ Page: artist. Selector: `player Back`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 256px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | 2px solid #000000 @ 0 offset 0px | = | = | = |
-| Font | Inter 13px/18.5718px 550 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #706e73 | = | = | = |
-| Transition | background-color, border-color, outline-color, color, fill, stroke, opacity, box-shadow, transform 0.2s ease | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Icon | 24 x 24, colour #706e73 | = | = | = |
-| Painted layers | button.chakra-button.css-n97h1w 32.0x32.0 r 256px outline 2px solid #000000 @ 0 offset 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 32 x 32 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 256px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | 2px solid #000000 @ 0 offset 0px | = | - | = |
+| Font | Inter 13px/18.5718px 550 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #706e73 | = | - | = |
+| Transition | background-color, border-color, outline-color, color, fill, stroke, opacity, box-shadow, transform 0.2s ease | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Icon | 24 x 24, colour #706e73 | = | - | = |
+| Painted layers | button.chakra-button.css-n97h1w 32.0x32.0 r 256px outline 2px solid #000000 @ 0 offset 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `player-prev-default.png`, `player-prev-hover.png`, `player-prev-focus-visible.png`, `player-prev-pressed.png`.
 
@@ -1349,20 +1350,21 @@ Page: offers. Selector: `ul.toggle-premiumtab`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 180 x 40 | = | = | = |
-| Padding | 4px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 256px | = | = | = |
-| Background | #29282d | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #fdfcfe | = | = | = |
-| Text node | span: Inter 14px/20px 600, #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.toggle-container 180.0x40.0 bg #29282d r 256px; li::after 90pxx32px bg #f8f8f9 r 256px; li::after 82pxx32px bg #f8f8f9 r 256px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 180 x 40 | = | - | = |
+| Padding | 4px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 256px | = | - | = |
+| Background | #29282d | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #fdfcfe | = | - | = |
+| Text node | span: Inter 14px/20px 600, #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.toggle-container 180.0x40.0 bg #29282d r 256px; li::after 90pxx32px bg #f8f8f9 r 256px; li::after 82pxx32px bg #f8f8f9 r 256px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-focus-visible.png`, `billing-toggle-pressed.png`.
 
@@ -1582,19 +1584,20 @@ Page: mobile. Selector: `.burger-menu`. States: default, hover, focus-visible, p
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 25 x 25 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Inter 16px/normal 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #fdfcfe | = | = | = | = |
-| Transition | none | = | = | = | = |
-| Painted layers | span.burger-line 25.0x3.0 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; span.burger-line 25.0x3.0 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; span.burger-line 25.0x3.0 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; ul.nav.burger-menu-content 0.0x0.0 bg #0f0d13 | = | = | = | span.burger-line 19.8x19.8 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; span.burger-line 25.0x3.0 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; span.burger-line 19.8x19.8 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; ul.nav.burger-menu-content 390.0x844.0 bg #0f0d13 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
+| Size (w x h) | 25 x 25 | = | - | = | = |
+| Padding | 0px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Inter 16px/normal 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #fdfcfe | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Painted layers | span.burger-line 25.0x3.0 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; span.burger-line 25.0x3.0 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; span.burger-line 25.0x3.0 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; ul.nav.burger-menu-content 0.0x0.0 bg #0f0d13 | = | - | = | span.burger-line 19.8x19.8 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; span.burger-line 25.0x3.0 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; span.burger-line 19.8x19.8 bg #f8f8f9 shadow #000000 @ 0.1 0px 4px 8px 0px, #000000 @ 0.1 0px 0px 4px 0px; ul.nav.burger-menu-content 390.0x844.0 bg #0f0d13 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 | Text node | - | = | = | = | a.nav-main-link.backstage-header-link: Inter 20px/normal 600, #fdfcfe |
 
 Crops: `m-hamburger-default.png`, `m-hamburger-hover.png`, `m-hamburger-focus-visible.png`, `m-hamburger-pressed.png`, `m-hamburger-opened.png`.
@@ -1942,22 +1945,23 @@ Page: signup. Selector: `signup submit`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 512 x 48 | = | = | = |
-| Padding | 12px 24px | = | = | = |
-| Gap | 4px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 16px | = | = | = |
-| Background | #2e2c30 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | 2px solid #000000 @ 0 offset 0px | = | = | = |
-| Font | Inter 15px/22.5px 550 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #706e73 | = | = | = |
-| Text node | span: Inter 15px/22.5px 550, #706e73 | = | = | = |
-| Transition | background-color, border-color, outline-color, color, fill, stroke, opacity, box-shadow, transform 0.2s ease | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Painted layers | button.chakra-button.css-19vbpfx 512.0x48.0 bg #2e2c30 r 16px outline 2px solid #000000 @ 0 offset 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 512 x 48 | = | - | = |
+| Padding | 12px 24px | = | - | = |
+| Gap | 4px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 16px | = | - | = |
+| Background | #2e2c30 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | 2px solid #000000 @ 0 offset 0px | = | - | = |
+| Font | Inter 15px/22.5px 550 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #706e73 | = | - | = |
+| Text node | span: Inter 15px/22.5px 550, #706e73 | = | - | = |
+| Transition | background-color, border-color, outline-color, color, fill, stroke, opacity, box-shadow, transform 0.2s ease | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Painted layers | button.chakra-button.css-19vbpfx 512.0x48.0 bg #2e2c30 r 16px outline 2px solid #000000 @ 0 offset 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `signup-cta-default.png`, `signup-cta-hover.png`, `signup-cta-focus-visible.png`, `signup-cta-pressed.png`.
 

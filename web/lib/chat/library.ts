@@ -11,7 +11,7 @@ import { promises as fs, realpathSync } from "node:fs";
 import path from "node:path";
 // The checkout comes from the one resolver every server route uses, so
 // DESIGN_SYSTEMS_REPO points the tools at the same tree as /media/ and docs.
-import { ROOT } from "@/lib/repo";
+import { ROOT } from "../repo.ts";
 
 export { ROOT };
 
@@ -74,10 +74,10 @@ const inside = (target: string, dir: string): boolean => {
   return rel === "" || (!rel.startsWith("..") && !path.isAbsolute(rel));
 };
 const asInt = (v: unknown): number => {
-  // Mirrors int(): floats truncate, non-numeric raises (-> ToolError via call()).
+  // Mirrors int(): floats truncate, non-numeric raises a ToolError the caller reads.
   if (typeof v === "number" && Number.isFinite(v)) return Math.trunc(v);
   const n = Number(String(v).trim());
-  if (!Number.isFinite(n)) throw new TypeError(`invalid int: ${String(v)}`);
+  if (!Number.isFinite(n)) throw new ToolError(`invalid int: ${String(v).slice(0, 80)}`);
   return Math.trunc(n);
 };
 
@@ -976,8 +976,13 @@ export async function call(name: string, args: Obj | null): Promise<Obj> {
   try {
     result = await spec.fn(clean);
   } catch (e) {
+    // Argument checks throw ToolError with text written for the caller.
+    // Anything else (a filesystem error names an absolute path, a JSON.parse
+    // of a server file quotes its content) is logged here and reaches the
+    // caller, and through the chat a third-party model, only as its type.
     if (e instanceof ToolError) throw e;
-    throw new ToolError(`${name} failed: ${e instanceof Error ? e.message : String(e)}`);
+    console.error(`library: ${name}:`, e);
+    throw new ToolError(`${name} failed (${e instanceof Error ? e.name : typeof e})`);
   }
   if ("_image" in result) return result;
   const size = jsonSize(result);

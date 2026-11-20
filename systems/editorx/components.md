@@ -83,6 +83,8 @@ Child layers that carry the look: span 62.5x56 border 4px solid transparent; div
 #### Logo
 The Wix Studio wordmark anchor. Read as `logo` on the home page.
 
+**Wrong element.** The `nav a` fallback in the selector matched first, so these are the "Pricing" nav link's values, not the Wix Studio wordmark's. The selector is fixed in tools/capture/public/measure.mjs; the entry needs a recapture.
+
 **Values (default).** size 83.95 x 56; padding 0px 15px; background transparent; text Madefor-Display 16/normal 400, #000000 `color.neutral.ink`; layers ::after rgba(0, 0, 0, 0) 0px none 1.
 
 ![Logo default](components/crops/logo-default.png)

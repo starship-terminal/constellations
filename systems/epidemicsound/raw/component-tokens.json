@@ -334,37 +334,37 @@
         "measured": {
           "button-s": {
             "value": "{font.size.subheading.s}",
-            "type": "fontSize",
+            "type": "dimension",
             "source": "computed fontSize of btn-signup default (raw/components-computed.json); matches declared --es-subheading-s-font-size",
             "description": "The 14px es-text-button-s header button label."
           },
           "h1-genre": {
             "value": "{font.size.heading.m}",
-            "type": "fontSize",
+            "type": "dimension",
             "source": "computed fontSize of genre-h1 default (raw/components-computed.json); matches declared --es-heading-m-font-size",
             "description": "The 40px es-heading-m genre page heading."
           },
           "h1-pricing": {
             "value": "{font.size.heading.xl}",
-            "type": "fontSize",
+            "type": "dimension",
             "source": "computed fontSize of pr-h1 default (raw/components-computed.json); matches declared --es-heading-xl-font-size",
             "description": "The 64px es-heading-xl pricing heading."
           },
           "h1-home": {
             "value": "{font.size.heading.2xl}",
-            "type": "fontSize",
+            "type": "dimension",
             "source": "computed fontSize of hero-h1 default (raw/components-computed.json); matches declared --es-heading-2xl-font-size",
             "description": "The home hero display heading size."
           },
           "plan-name": {
             "value": "{font.size.heading.2xs}",
-            "type": "fontSize",
+            "type": "dimension",
             "source": "computed fontSize of plan-name default (raw/components-computed.json); matches declared --es-heading-2xs-font-size",
             "description": "The 20px es-subheading-l plan name."
           },
           "kc-h1": {
             "value": "{font.size.heading.l}",
-            "type": "fontSize",
+            "type": "dimension",
             "source": "computed fontSize of kc-h1 default (raw/components-computed.json); matches declared --es-heading-l-font-size",
             "description": "The Keycloak login heading size."
           }
@@ -1589,7 +1589,7 @@
       "page": {
         "value": "{color.background.base}",
         "type": "color",
-        "source": "the #f1f0eb field the page paints (screenshots and body computed styles); matches declared color.background.base",
+        "source": "computed body fill among the ancestors of header default (raw/components-computed.json); matches declared color.background.base",
         "description": "The ecru field every marketing page paints (alternative-light)."
       }
     },
@@ -2339,20 +2339,28 @@
       "canvas": {
         "value": "{color.background.base}",
         "type": "color",
-        "source": "the #121418 field the page paints (screenshots and body computed styles); matches declared color.background.base",
+        "source": "computed body fill among the ancestors of c-header default (raw/components-computed.json); matches declared color.background.base",
         "description": "The #121418 dark canvas every catalog page and the account forms paint."
       },
       "surface": {
         "value": "{color.background.surface}",
         "type": "color",
-        "source": "the rgba(207, 214, 229, 0.08) field the page paints (screenshots and body computed styles); declared as color.background.surface",
+        "source": "computed backgroundColor of sfx-row hover (raw/components-computed.json); declared as color.background.surface",
         "description": "The rgba(207,214,229,.08) surface tint — cards, hover fills, the want-more strip edges."
       },
       "upsell": {
         "value": "{color.action.accent.default}",
         "type": "color",
-        "source": "painted banner fill inside wantmore default (raw/components-computed.json); matches declared color.action.accent.default",
+        "source": "painted banner fill (the largest painted layer) inside wantmore default (raw/components-computed.json); matches declared color.action.accent.default",
         "description": "The #ff82c2 pink 'Want more music?' card inside the dark catalog."
+      }
+    },
+    "text": {
+      "text": {
+        "value": "{color.action.primary.default}",
+        "type": "color",
+        "source": "computed first text node colour of track-row default (raw/components-computed.json); matches declared color.action.primary.default",
+        "description": "The #fff primary text (genre h1 prints dark on its pink banner, so the row text carries this)."
       }
     },
     "action": {
@@ -2383,7 +2391,7 @@
       "liked": {
         "value": "{color.action.accent.default}",
         "type": "color",
-        "source": "the #ff82c2 field the page paints (screenshots and body computed styles); matches declared color.action.accent.default",
+        "source": "entered by hand at capture time, not measured: no liked-state icon was measured (the value equals the genre banner's pink); recapture needed; matches declared color.action.accent.default",
         "description": "The #ff82c2 liked state — icon-liked and the pink accent."
       }
     },
@@ -2397,7 +2405,7 @@
       "divider": {
         "value": "{color.action.accent.disabled}",
         "type": "color",
-        "source": "the rgba(207, 214, 229, 0.16) field the page paints (screenshots and body computed styles); matches declared color.action.accent.disabled",
+        "source": "entered by hand at capture time, not measured: no measured border paints it (rgba(207,214,229,.16) appears only as icon-button pressed fills); recapture needed; matches declared color.action.accent.disabled",
         "description": "The rgba(207,214,229,.16) hairline divider on dark."
       }
     }
@@ -3381,5 +3389,10 @@
         }
       }
     }
-  }
+  },
+  "_gaps": [
+    "light.text.muted: no section-h2 default _paint-muted reading",
+    "dark.text.muted: no track-row default _paint-muted reading",
+    "motion.control: c-signup default has no transition"
+  ]
 }

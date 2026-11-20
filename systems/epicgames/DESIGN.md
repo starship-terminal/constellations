@@ -271,3 +271,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 6. **Do treat focus as a border.** Fields and buttons draw the `#fff` `color.border.focus-default` border rather than an outline ring. See [search-field](components/crops/search-field-focused.png).
 7. **Don't style the signed-in store from this package.** Library, account, billing, cart and checkout were never reached; the public storefront, the sign-in dialog and the support centre are the evidence.
 8. **Don't fabricate a light theme or a purchase.** Every public surface painted dark; no light variant was seen, and Get/Add-to-Cart was measured, never pressed.
+
+### What to distrust (from README.md)
+
+- **Three entries read the wrong element.** `m-hamburger` is the "Epic Ecosystem Dropdown" button, not the mobile menu button; `h-chat` is the "Back to top" button, not the chat launcher; `w-tile` read a different carousel tile in each state, so only its default row describes one tile. Recapture needed for all three; no token cites their non-default states.
+- **Nine focus-visible states are uncaptured, not ringless.** Keyboard focus did not reach `nav-signin`, `nav-download`, `nav-distribute`, `nav-locale` (inside the `<egs-navigation>` shadow root, which the focus test did not look into), `m-hamburger`, `h-chat`, `hero-cta`, `card-wishlist` and `p-subnav`. Their rows are left out of components.md and listed as Skipped in raw/measurements.md; the capture script now checks `:focus` inside shadow roots (edited, not re-run).
+- **Four planned tokens have no reading** and are listed under `_gaps` in raw/component-tokens.json: the free badge and the support tile paint no fill of their own, no mobile drawer component was measured, and the game card's transition computes as 0s.

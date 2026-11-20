@@ -8,9 +8,12 @@ this file is the program-level glue, not a replacement.
 ## The queue
 
 [webapps-manifest.json](../webapps-manifest.json) on `main` is the
-source of truth: 418 catalog domains, `batch` 1–20 per app, ~20 per
-batch. Batch 1 is done (`status: "captured"`, `package:
-"systems/<slug>"`). Work the next `pending` batch in order. When a PR
+source of truth: 418 catalog domains, `batch` 1–21 per app, ~20 per
+batch. As of 2026-11-20 no row is `pending`: 414 are `captured`
+(`package: "systems/<slug>"`) and 4 are `uncapturable`. A row counts as
+captured when a package for that product exists, even when the package's
+catalog `url` is another host (`lu.ma` is `systems/luma`). Check
+[catalog.json](../catalog.json) before capturing a `pending` row. When a PR
 merges, set `status: "captured"` + `package` in the same commit as the
 last merge train (one manifest PR per batch is fine).
 
@@ -87,29 +90,41 @@ the last screenshot, from the navigation that is actually on screen.
    `python3 tools/refero/coverage.py` when check flags it stale; all
    binaries are LFS.
 6. **Rubric review before done** — `python3 tools/grade.py --write
-   --review <slug>=<grades.json> --method "<how>"`; every non-`yes`
-   criterion gets a written justification (AGENTS.md rule).
-7. One PR per app (`gh pr create`); catalog `capture` block carries
-   `pr`, `durationMin`/`durationNote`, `route`, `model`, `date`.
+   --review <slug>=<grades.json> --method "<how>"`; every criterion
+   that cannot grade `meets` gets a written justification (AGENTS.md
+   rule).
+7. One PR per app (`gh pr create`); the catalog `capture` block carries
+   the fields in [CAPTURE.md](CAPTURE.md) step 7: `harness`, `model`,
+   `route` and `durationMin` (required; `tools/catalog.py` checks them),
+   plus `version` and `pr`.
 8. Greptile will review: fix valid comments in the package's own
    builders, reply `in_reply_to` on every comment, resolve every
    thread via GraphQL `resolveReviewThread`. Then merge
    `origin/main` (`--theirs` for catalog.json/README.md/AGENTS.md/
-   scorecard/refero-coverage/media-taxonomy; re-append your package's
-   catalog entry + category keys; bump AGENTS "the packages (N)" to
-   the real `systems/` dir count), regenerate, re-check, push.
-9. Merge when every thread is resolved (`gh pr merge --squash`), then
+   refero-coverage/media-taxonomy; re-append your package's
+   catalog entry + category keys), regenerate, re-check, push.
+   Never resolve `scorecard/` by taking one side: rerun `make grade`
+   after merging main. When both sides added a snapshot under the same
+   name (`scorecard/audits/<date>-N.json`), keep main's file at that
+   name (`git checkout --theirs <path>`) and save your side's copy
+   under the next free number (`git show :2:<path> >
+   scorecard/audits/<date>-<next>.json`), so no snapshot is dropped,
+   then rerun `make grade`.
+9. Merge when every check is green and every thread is resolved
+   (`gh pr merge --squash`); a red check blocks the merge. Then
    **clean up**: `git worktree remove`, delete `~/.design-systems/<slug>`,
    delete the merged branch.
 
 ## Running on the Linux homeserver
 
 The whole public pipeline runs headless on `ssh home` (Ubuntu 24.04,
-`~/designs` clone). Deel was captured, built, OCR-scanned, committed
+from a clone of this repo; the deploy trigger's default clone is
+`~/dev/constellations`, `DESIGNS_REPO` in
+[deploy_trigger.py](../scripts/deploy_trigger.py)). Deel was captured, built, OCR-scanned, committed
 and PR'd there end-to-end — the Mac only needs to be involved when you
 want to eyeball an image locally.
 
-- **Worktree:** `GIT_LFS_SKIP_SMUDGE=1 git -C ~/designs worktree add
+- **Worktree:** `GIT_LFS_SKIP_SMUDGE=1 git -C <clone> worktree add
   ~/ds-<slug> -b capture-<slug> origin/main`. The skip matters: a
   plain checkout tries to fetch every package's LFS images and stalls.
   New captures produce their own LFS objects, nothing else is needed.
@@ -159,8 +174,9 @@ want to eyeball an image locally.
 - GitHub's `mergeable` lags: after each squash merge, sibling PRs go
   CONFLICTING on the shared generated files. Budget one
   merge-main+regen cycle per PR; the procedure above is mechanical.
-- CI (check/app/build/web jobs) fails fast on a repo billing issue —
-  known, not a code failure; local `make check` is the gate.
+- CI is the gate. The Check workflow runs on every pull request, and
+  Web and Research app run when their paths change; a red check blocks
+  the merge. Run `make check` locally before pushing.
 - Parallelism: one worktree per app + background subagents works;
   transcripts die on session churn but worktrees survive on disk.
 - Scratch dirs can fill the disk (an unbounded tiler once wrote

@@ -37,6 +37,7 @@ grow.google is worth a capture because it is a clean read of Google's **glue** m
 - **The APAC shots differ by design.** `/intl/ALL_sg/` ships a different promo and fewer sections; it is a variant surface, not a drift in the tokens.
 - **Pressed states** are DevTools-forced pseudo-classes; the `outline: auto` ring Chrome draws on a forced :active is an artifact, not a page style.
 - **Reduced motion is only partially honoured**: the probe saw some elements keep animating under prefers-reduced-motion (`raw/motion.json`, "partial").
+- **The promo banner's fill was not measured.** `promo-banner` read the transparent paragraph inside the bar, not the ancestor that paints it, so `banner.bg` is `rgba(0, 0, 0, 0)` and the bar's colour is not recorded; it needs a recapture. Its white copy (`banner.link`) and geometry are real readings.
 - **Screenshot colours** are 256-colour PNGs; read exact values from tokens.json or the raw files.
 
 ## Do and don't

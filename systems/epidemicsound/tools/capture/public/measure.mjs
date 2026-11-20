@@ -136,6 +136,14 @@ async function measure(key, state, target, opts = {}) {
   const c = out.components[key];
   try {
     const s = await styleOf(loc);
+    if (state !== 'default' && s.rect && s.rect.w === 0 && s.rect.h === 0) {
+      // The element left the layout in this state (track rows swap the cover
+      // button out on hover): a 0x0 box is not this state's look, so record
+      // the miss instead of a reading.
+      c.states[state] = { skipped: 'the element has a 0x0 box in this state (it left the layout)', via: opts.via, run, page: current, url: c.url };
+      log('  -', key, state, 'skipped: 0x0');
+      return;
+    }
     let file;
     if (opts.crop !== false) {
       try {
@@ -353,7 +361,9 @@ async function pricing() {
   await S('pr-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing headline', desc: '"Our subscriptions" — the es-heading-xl display heading over the plan columns.', sel: 'h1' }, { noScroll: true });
   await S('billing-switch', q('input[role="switch"]').filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Billing switch', desc: 'The Monthly/Yearly billing switch above the plans — a local toggle; the opened state is the toggled position after clicking it, never checked out.', sel: 'input[role=switch]' }, { noScroll: true, allowLink: true });
   await S('plan-name', q('h2').filter({ hasText: /^\s*Creator\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan name', desc: 'The "Creator" plan heading (es-subheading-l) over a plan column.', sel: 'plan h2 Creator' });
-  await S('plan-price', q('main, section, div').filter({ hasText: /\/month|per month|US\$|\$\s?\d+/ }).filter({ visible: true }).last(), ['default'], { group: g, title: 'Plan price line', desc: 'The price line inside a plan column.', sel: 'price text' });
+  // The smallest element whose own text is a price, not the last of a
+  // `main, section, div` union (that read an empty 688x384 div at y 6525).
+  await S('plan-price', q('span, p, div').filter({ hasText: /^\s*(US)?\$\s?\d[\d.,]*\s*(\/\s*month|per month)?\s*$/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price line', desc: 'The price line inside a plan column.', sel: 'price text' });
   await S('plan-cta', q('a, button').filter({ hasText: /^\s*Get 30 days free\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'The primary "Get 30 days free" button inside a plan column — starts a trial; measured never followed.', sel: 'Get 30 days free (._primary_ ._m_)' });
   await S('compare-h2', q('h2').filter({ hasText: /compare plans/i }).filter({ visible: true }).last(), ['default'], { group: g, title: 'Compare plans heading', desc: 'The "Compare plans" heading over the feature matrix; a hidden copy precedes it in the DOM, so the painted one is the last match.', sel: 'h2 Compare plans' });
   save();
@@ -372,7 +382,7 @@ async function genre() {
   await S('genre-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: c, title: 'Genre heading', desc: '"Pop music" — es-heading-m, black on the pink banner.', sel: 'h1' }, { noScroll: true });
   await S('track-list', q('ul[class*="TrackList_trackList"]').filter({ visible: true }).first(), ['default'], { group: c, title: 'Track list', desc: 'The genre page track list (ul.TrackList); rows virtualise as it scrolls.', sel: 'ul[class*=TrackList_trackList]' });
   await S('track-row', q('li[class*="TrackRow_trackRow"]').filter({ visible: true }).first(), ['default', 'hover'], { group: c, title: 'Track row', desc: 'A 56px track row: album-cover play button, title, artist, duration, BPM, genre/mood tags; hover reveals row actions.', sel: 'li[class*=TrackRow_trackRow]' });
-  await S('track-play', q('button[aria-label="Play"]').filter({ visible: true }).first(), B4, { group: c, title: 'Track play button', desc: "A row's album-cover play button; measured, never pressed (signed-out playback is gated anyway). On row hover the cover button is swapped out of the layout entirely — its hover-state box is a real 0x0, not a missed selector.", sel: 'button[aria-label=Play]' });
+  await S('track-play', q('button[aria-label="Play"]').filter({ visible: true }).first(), B4, { group: c, title: 'Track play button', desc: "A row's album-cover play button; measured, never pressed (signed-out playback is gated anyway). On row hover the cover button leaves the layout, so its hover state is recorded as skipped, not as a reading.", sel: 'button[aria-label=Play]' });
   await S('track-like', q('button[aria-label="Like"]').filter({ visible: true }).first(), B4, { group: c, title: 'Like button', desc: "A row's heart icon button; measured, never toggled (needs an account).", sel: 'button[aria-label=Like]' });
   await S('track-similar', q('button[aria-label="Find similar"]').filter({ visible: true }).first(), B4, { group: c, title: 'Find similar button', desc: "A row's Find-similar icon button; measured, never followed.", sel: 'button[aria-label="Find similar"]' });
   await S('track-add', q('button[aria-label="Add to playlist"]').filter({ visible: true }).first(), B4, { group: c, title: 'Add to playlist button', desc: "A row's Add-to-playlist icon button; measured, never toggled (needs an account).", sel: 'button[aria-label="Add to playlist"]' });
@@ -394,7 +404,7 @@ async function sfx() {
   const g = G.sfx;
   await S('sfx-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'SFX category heading', desc: 'The sound-effects category page heading on the dark theme.', sel: 'h1' }, { noScroll: true });
   await S('sfx-row', q('li[class*="TrackRow_trackRow"], [class*="TrackRow_trackRow"]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'SFX track row', desc: 'An SFX track row (name, category tags, duration).', sel: 'track row' });
-  await S('sfx-play', q('button[aria-label="Play"]').filter({ visible: true }).first(), B4, { group: g, title: 'SFX play button', desc: "An SFX row's play button; measured, never pressed. As on the genre list, row hover swaps the cover button out — the hover-state box is a real 0x0.", sel: 'button[aria-label=Play]' });
+  await S('sfx-play', q('button[aria-label="Play"]').filter({ visible: true }).first(), B4, { group: g, title: 'SFX play button', desc: "An SFX row's play button; measured, never pressed. As on the genre list, row hover swaps the cover button out, so its hover state is recorded as skipped.", sel: 'button[aria-label=Play]' });
   await S('sfx-category-card', q('a[class*="scrollingText"][href*="/sound-effects/categories/"]').filter({ visible: true }).first(), B4, { group: g, title: 'SFX subcategory link', desc: 'A subcategory link inside a row\'s categories column (e.g. "Suburban" under Ambience) — this page has no large category card, the in-row text link is the real subcategory surface; measured, never followed.', sel: 'a[class*=scrollingText]' });
   save();
 }
@@ -422,7 +432,8 @@ async function signup() {
   const g = G.login;
   await S('su-card', q('.form-card, form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup card', desc: 'The Keycloak registration card; measured at rest only.', sel: '.form-card' }, { noScroll: true });
   await S('su-field', q('input[type="email"], input[type="text"], input.input-field').filter({ visible: true }).first(), FIELD, { group: g, title: 'Signup field', desc: 'A registration form input; focused and typed into then cleared — never submitted.', sel: 'signup input' }, { noScroll: true, fillText: 'name@example.com' });
-  await S('su-submit', q('button[type="submit"], input[type="submit"], a.button').filter({ hasText: /create|continue|sign up/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Signup submit', desc: "The registration form's submit action; its states were measured but it was never clicked — nothing was submitted.", sel: 'signup submit' }, { noScroll: true });
+  // Not `a.button`: it caught the "Continue with Google" link first.
+  await S('su-submit', q('button[type="submit"], input[type="submit"]').filter({ hasText: /create|continue|sign up/i }).filter({ hasNotText: /google|apple|facebook/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Signup submit', desc: "The registration form's submit action; its states were measured but it was never clicked — nothing was submitted.", sel: 'signup submit' }, { noScroll: true });
   save();
 }
 

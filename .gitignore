@@ -27,8 +27,12 @@ systems/duolingo/tools/capture/css-stats.md
 /web/data/
 docs/scorecard/
 /.venv
-# Local secrets (API keys, R2 credentials); see .env.example.
-.env
+# Local secrets (API keys, R2 credentials); see .env.example. `.env*` also
+# covers web/.env.local and app/.env.local, which Next loads.
+.env*
+!.env.example
+*.key
+secrets/
 __pycache__/
 systems/*/raw/*.partial.json
 

@@ -130,6 +130,9 @@ export function categorySeedGaps(
   return problems;
 }
 
+/** The category filter for references that carry no category term. */
+export const UNCATEGORISED = "uncategorised";
+
 /** Old deep links remain usable; new links carry namespaced database term IDs. */
 export function matchesCategory(
   item: {
@@ -140,6 +143,7 @@ export function matchesCategory(
   query: string,
 ): boolean {
   if (!query) return true;
+  if (query === UNCATEGORISED) return !item.categoryIds?.length;
   const labels =
     (Object.hasOwn(legacyCategoryLabels, query)
       ? legacyCategoryLabels[query]
@@ -151,5 +155,17 @@ export function matchesCategory(
     return item.categoryIds.some((id) =>
       targets.includes(categorySlug(id.split(":").at(-1) || id)),
     );
-  return categoryGroup(item.category) === categoryGroup(query);
+  if (categoryGroup(item.category) === categoryGroup(query)) return true;
+  // An item with only a catalog category (a package the seed never curated)
+  // also matches the one term its old link names. Switching platform
+  // rewrites such a link, `finance` say, to that term's ID. A link naming
+  // several labels stays a link, so it never needs this.
+  const own = Object.hasOwn(legacyCategoryLabels, item.category)
+    ? legacyCategoryLabels[item.category]
+    : undefined;
+  return (
+    query.includes(":") &&
+    typeof own === "string" &&
+    targets.includes(categorySlug(own))
+  );
 }

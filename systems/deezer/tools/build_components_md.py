@@ -59,6 +59,15 @@ def colour(c, tokens=True):
     return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
 
 
+def _alpha(c):
+    """The alpha of the first colour in c: 0 for transparent or an rgba()/color() with alpha 0."""
+    c = str(c)
+    if "transparent" in c:
+        return 0.0
+    m = re.search(r"rgba\([^)]*?,\s*([\d.]+)\)", c) or re.search(r"color\([^)]*/\s*([\d.]+)\)", c)
+    return float(m.group(1)) if m else 1.0
+
+
 def sides(t, r, b, l):
     if t == r == b == l:
         return t
@@ -327,11 +336,12 @@ for k, c in C.items():
         continue
     s = st["style"]
     base = next((v["style"] for v in c["states"].values() if "style" in v), s)
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and _alpha(s["outlineColor"]) > 0
     # A ring painted on a child layer instead of the wrapper: offer buttons
     # draw 1px dotted outlines on their inner anchor while the wrapper's own
-    # outline stays none. Those states must count as ringed too.
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
+    # outline stays none. Those states must count as ringed too. A transparent
+    # outline (`2px solid rgba(0, 0, 0, 0)`) paints nothing and is no ring.
+    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline") and _alpha(n["outline"]) > 0), None)
     shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]

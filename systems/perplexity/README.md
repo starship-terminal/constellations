@@ -15,7 +15,7 @@ Public signed-out surfaces of Perplexity (perplexity.ai), captured on 19 Novembe
 | [icons/](icons/) | Index of the site mark |
 | [screenshots/](screenshots/) | Viewport captures, 13 files |
 | [raw/](raw/) | Computed custom properties and component readings |
-| [tools/](tools/) | The kit copy and test_tokens.py |
+| [tools/](tools/) | test_tokens.py and the generic capture helpers copied from the kit (the unadapted kit builders and route folders were removed in the 2026-11 audit) |
 
 <!-- brief:start -->
 ## Brief

@@ -28,6 +28,12 @@ describe("host", () => {
     assert.equal(host("http://sub.acme.example"), "sub.acme.example");
   });
 
+  it("drops a query or fragment that has no path before it", () => {
+    assert.equal(host("https://acme.example?ref=x"), "acme.example");
+    assert.equal(host("https://www.acme.example#top"), "acme.example");
+    assert.equal(host("acme.example/pricing"), "acme.example");
+  });
+
   it("is empty for null", () => {
     assert.equal(host(null), "");
   });
@@ -60,6 +66,10 @@ describe("faviconFor", () => {
   it("asks gstatic for the quoted https host", () => {
     const url = faviconFor("https://www.acme.example/x");
     assert.ok(url?.includes("url=https%3A%2F%2Facme.example&size=128"));
+  });
+
+  it("asks for the host alone when the source has a query and no path", () => {
+    assert.ok(faviconFor("https://acme.example?ref=x")?.includes("url=https%3A%2F%2Facme.example&size=128"));
   });
 
   it("is null without a source", () => {

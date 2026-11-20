@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build tokens.json from raw/readings.json. Measured values only."""
 import json
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent
@@ -45,56 +46,39 @@ def text(family, size, line, weight, source=SRC):
     }
 
 
-GRAY_LIGHT = {
-    "00": "rgb(255 255 255)",
-    "25": "rgb(248 249 251)",
-    "50": "rgb(248 250 252)",
-    "100": "rgb(241 245 249)",
-    "200": "rgb(226 232 240)",
-    "300": "rgb(203 213 225)",
-    "400": "rgb(148 163 184)",
-    "500": "rgb(100 116 139)",
-    "600": "rgb(71 85 105)",
-    "700": "rgb(51 65 85)",
-    "800": "rgb(30 41 59)",
-    "900": "rgb(15 23 42)",
-    "1k": "rgb(13 13 13)",
-}
-GRAY_DARK = {
-    "00": "rgb(23 23 23)",
-    "25": "rgb(30 30 30)",
-    "50": "rgb(38 38 38)",
-    "100": "rgb(51 51 51)",
-    "200": "rgb(64 64 64)",
-    "300": "rgb(82 82 82)",
-    "400": "rgb(115 115 115)",
-    "500": "rgb(138 138 138)",
-    "600": "rgb(163 163 163)",
-    "700": "rgb(212 212 212)",
-    "800": "rgb(229 229 229)",
-    "900": "rgb(245 245 245)",
-    "1k": "rgb(250 250 250)",
-}
+def hex_of(value):
+    """'255 255 255', 'rgb(0 170 69)', 'rgb(0, 0, 0)' or '#219653' as lower-case hex."""
+    if value.startswith("#"):
+        return value.lower()
+    nums = re.findall(r"[\d.]+", value)
+    if len(nums) != 3:
+        raise SystemExit(f"not an opaque rgb triplet: {value!r}")
+    return "#" + "".join(f"{round(float(n)):02x}" for n in nums)
 
-PALETTE = {
-    "green": "rgb(0 170 69)",
-    "green-00": "rgb(227 245 234)",
-    "green-100": "rgb(111 207 151)",
-    "green-200": "rgb(82 192 120)",
-    "green-500": "rgb(30 135 75)",
-    "green-800": "rgb(1 83 0)",
-    "mark-stroke": "#219653",
-    "red": "rgb(235 87 87)",
-    "red-00": "rgb(255 234 234)",
-    "red-200": "rgb(244 121 116)",
-    "red-600": "rgb(194 13 13)",
-    "orange": "rgb(249 115 22)",
-    "blue": "rgb(47 128 237)",
-    "blue-figma": "rgb(27 134 255)",
-    "white": "rgb(255 255 255)",
-    "ink": "rgb(0 0 0)",
-}
 
+def ramp(theme):
+    """The --gray-* steps the stylesheet declares for one theme, from raw/readings.json."""
+    table = RAW["rootTokens"][theme]
+    return {k[len("--gray-"):]: hex_of(v) for k, v in table.items() if k.startswith("--gray-")}
+
+
+GRAY_LIGHT = ramp("light")
+GRAY_DARK = ramp("darkDeclared")
+
+# Token name -> the palette rule's name in raw/readings.json paletteRules.
+PALETTE_KEYS = {
+    "green": "green", "green-00": "green-00", "green-100": "green-100", "green-200": "green-200",
+    "green-500": "green-500", "green-800": "green-800", "mark-stroke": "mark-stroke",
+    "red": "red", "red-00": "red-00", "red-200": "red-200", "red-600": "red-600",
+    "orange": "orange", "blue": "blue-400", "blue-figma": "blue-figmaBlue",
+}
+PALETTE = {name: hex_of(RAW["paletteRules"][key]) for name, key in PALETTE_KEYS.items()}
+PALETTE["white"] = hex_of(RAW["computed"]["buttonPrimary"]["color"])
+PALETTE["ink"] = hex_of(RAW["computed"]["body"]["color"])
+
+PALETTE_SRC = "Declared in the Peerlist stylesheet's palette rules (raw/readings.json paletteRules), 2026-11-18."
+HAND = "Reconstruction: entered by hand at capture time; raw/readings.json holds no reading for it."
+HAND_PART = " Reconstruction for %s: entered by hand at capture time; raw/readings.json holds no reading for it."
 SHEET = "Declared in the Peerlist stylesheet, 2026-11-18. Not observed painted, because html stayed class light."
 
 
@@ -103,55 +87,58 @@ def gray_group(table, source):
 
 
 def semantic(theme):
-    page = "{color.gray.00}" if theme == "light" else "{color.gray.00}"
+    """Light aliases the painted light ramp; dark aliases the ramp declared on .dark."""
+    light = theme == "light"
+    gray = "color.gray" if light else "color.gray-dark"
+    src = SRC if light else SHEET
+    focus = RAW["rootTokens"]["light" if light else "darkDeclared"]["--shadow-focus"]
+    focus = re.sub(r"rgb\([^)]*\)", lambda m: hex_of(m.group(0)), focus)
     return {
-        "page": color(page, SRC if theme == "light" else SHEET),
-        "surface": color("{color.gray.00}", SRC if theme == "light" else SHEET),
-        "surface-muted": color("{color.gray.25}", SRC if theme == "light" else SHEET),
-        "text": color("{color.ink}" if theme == "light" else "{color.gray.1k}", SRC if theme == "light" else SHEET),
-        "text-strong": color("{color.gray.1k}", SRC if theme == "light" else SHEET),
-        "muted": color("{color.gray.700}" if theme == "light" else "{color.gray.500}", SRC if theme == "light" else SHEET),
-        "placeholder": color("{color.gray.300}", SRC if theme == "light" else SHEET),
+        "page": color("{%s.00}" % gray, src),
+        "surface": color("{%s.00}" % gray, src),
+        "surface-muted": color("{%s.25}" % gray, src),
+        "text": color("{color.ink}" if light else "{%s.1k}" % gray, src),
+        "text-strong": color("{%s.1k}" % gray, src),
+        "muted": color("{%s.700}" % gray if light else "{%s.500}" % gray, src),
+        "placeholder": color("{%s.300}" % gray, src),
         "accent": color("{color.green}", SRC),
         "accent-border": color("{color.green-500}", SRC),
         "on-accent": color("{color.white}", SRC),
-        "action": color("{color.gray.900}", SRC if theme == "light" else SHEET),
-        "on-action": color("{color.white}" if theme == "light" else "{color.gray.00}", SRC if theme == "light" else SHEET),
-        "border": color("{color.gray.200}" if theme == "light" else "{color.gray.100}", SRC if theme == "light" else SHEET),
-        "field-border": color("{color.gray.300}", SRC),
+        "action": color("{%s.900}" % gray, src),
+        "on-action": color("{color.white}" if light else "{%s.00}" % gray, src),
+        "border": color("{%s.200}" % gray if light else "{%s.100}" % gray, src),
+        "field-border": color("{%s.300}" % gray, src),
         "danger": color("{color.red}", SRC),
-        "focus": shadow(
-            "0px 0px 0px 4px #e1e4e880" if theme == "light" else "0px 0px 0px 4px rgb(38 38 38)",
-            SRC if theme == "light" else SHEET,
-        ),
+        "focus": shadow(focus, src),
     }
 
 
 core = {
     "color": {
         "gray": gray_group(GRAY_LIGHT, SRC + " :root custom properties, resolved on the light root."),
+        "gray-dark": gray_group(GRAY_DARK, SHEET + " The .dark rule's --gray-* custom properties, which the dark set aliases."),
         "green": color(PALETTE["green"], SRC + " .bg-green rule."),
-        "green-00": color(PALETTE["green-00"]),
-        "green-100": color(PALETTE["green-100"]),
-        "green-200": color(PALETTE["green-200"]),
+        "green-00": color(PALETTE["green-00"], PALETTE_SRC),
+        "green-100": color(PALETTE["green-100"], PALETTE_SRC),
+        "green-200": color(PALETTE["green-200"], PALETTE_SRC),
         "green-500": color(PALETTE["green-500"], SRC + " Create Profile border."),
-        "green-800": color(PALETTE["green-800"]),
+        "green-800": color(PALETTE["green-800"], PALETTE_SRC),
         "mark-stroke": color(PALETTE["mark-stroke"], "Inline logo SVG fill #219653."),
         "red": color(PALETTE["red"], SRC + " .bg-red / .text-red rule."),
-        "red-00": color(PALETTE["red-00"]),
-        "red-200": color(PALETTE["red-200"]),
-        "red-600": color(PALETTE["red-600"]),
-        "orange": color(PALETTE["orange"]),
-        "blue": color(PALETTE["blue"]),
-        "blue-figma": color(PALETTE["blue-figma"]),
-        "white": color(PALETTE["white"]),
+        "red-00": color(PALETTE["red-00"], PALETTE_SRC),
+        "red-200": color(PALETTE["red-200"], PALETTE_SRC),
+        "red-600": color(PALETTE["red-600"], PALETTE_SRC),
+        "orange": color(PALETTE["orange"], PALETTE_SRC),
+        "blue": color(PALETTE["blue"], PALETTE_SRC + " Rule blue-400."),
+        "blue-figma": color(PALETTE["blue-figma"], PALETTE_SRC + " Rule blue-figmaBlue."),
+        "white": color(PALETTE["white"], SRC + " Create Profile text colour."),
         "ink": color(PALETTE["ink"], SRC + " body color."),
     },
     "font": {
         "family": {
             "ui": font("Geist, sans-serif", SRC + " body font-family."),
-            "display": font("instrument, sans-serif", SRC + " h1 font-family."),
-            "mono": font("Geist Mono, ui-monospace, monospace", "Declared --font-geist-mono. Not measured on a visible control."),
+            "display": font("instrument, sans-serif", SRC + " h1 font-family, read as `instrument, instrument Fallback`; the generated Fallback face is written as sans-serif."),
+            "mono": font("Geist Mono, ui-monospace, monospace", "Declared --font-geist-mono, read as `Geist Mono, Geist Mono Fallback`; the generated Fallback face is written as ui-monospace, monospace. Not measured on a visible control."),
         }
     },
     "typography": {
@@ -162,9 +149,9 @@ core = {
         "subhead": text("{font.family.ui}", "18px", "28px", "400", SRC + " Home subhead, text-gray-700."),
         "ui": text("{font.family.ui}", "14px", "20px", "500", SRC + " Nav link."),
         "label": text("{font.family.ui}", "14px", "20px", "600", SRC + " Auth label and buttons."),
-        "field": text("{font.family.ui}", "14px", "20px", "400", SRC + " Login email input."),
-        "username": text("{font.family.ui}", "20px", "28px", "400", SRC + " Home username input."),
-        "fine": text("{font.family.ui}", "12px", "16px", "600", SRC + " Forgot password link."),
+        "field": text("{font.family.ui}", "14px", "20px", "400", SRC + " Login email input, size and line height." + HAND_PART % "fontWeight 400"),
+        "username": text("{font.family.ui}", "20px", "28px", "400", SRC + " Home username input, size and line height." + HAND_PART % "fontWeight 400"),
+        "fine": text("{font.family.ui}", "12px", "16px", "600", SRC + " Forgot password link, size and weight." + HAND_PART % "lineHeight 16px"),
         "app-title": text("{font.family.ui}", "16px", "22px", "600", SRC + " Jobs, Scroll, Launchpad h1."),
     },
     "radius": {
@@ -178,7 +165,7 @@ core = {
         "check": dim("4px", SRC + " Search checkbox."),
     },
     "spacing": {
-        "1": dim("4px"),
+        "1": dim("4px", HAND),
         "2": dim("8px", SRC + " Nav link horizontal padding and field padding."),
         "3": dim("12px", SRC + " Username field padding."),
         "4": dim("16px", SRC + " Button horizontal padding and job-row vertical padding."),
@@ -210,22 +197,29 @@ core = {
     },
 }
 
-tokens = {
-    "$schema": "https://design-tokens.github.io/community-group/format/",
-    "core": core,
-    "light": semantic("light"),
-    "dark": semantic("dark"),
-    "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
-        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
-    ],
-    "$extensions": {
-        "source": SRC,
-        "dark": "The .dark custom properties were read from the stylesheet. The live pages stayed on html.light, so dark colours are declared, not painted.",
-        "screenshots": RAW["screenshot"],
-    },
-}
+def build():
+    return {
+        "$schema": "https://design-tokens.github.io/community-group/format/",
+        "core": core,
+        "light": semantic("light"),
+        "dark": semantic("dark"),
+        "$themes": [
+            {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+            {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
+        ],
+        "$extensions": {
+            "source": SRC,
+            "dark": "The .dark custom properties were read from the stylesheet. The live pages stayed on html.light, so dark colours are declared, not painted.",
+            "screenshots": RAW["screenshot"],
+        },
+    }
 
-out = HERE / "tokens.json"
-out.write_text(json.dumps(tokens, indent=2) + "\n")
-print(f"wrote {out}")
+
+def main():
+    out = HERE / "tokens.json"
+    out.write_text(json.dumps(build(), indent=2) + "\n")
+    print(f"wrote {out}")
+
+
+if __name__ == "__main__":
+    main()

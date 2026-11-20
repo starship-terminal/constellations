@@ -53,10 +53,15 @@ def _tool_specs() -> list[dict]:
 def _call(name: str, args: dict) -> dict:
     try:
         result = library.call(name, args or {})
-    except Exception as e:
+    except library.ToolError as e:
         # One malformed call must never end the session: report it as a tool
-        # error and keep the caller's loop alive.
+        # error and keep the caller's loop alive. A ToolError's text is written
+        # for the caller (library.call strips server detail from it).
         return {"content": [{"type": "text", "text": str(e)[:400]}], "isError": True}
+    except Exception as e:  # noqa: BLE001 - the session must outlive any bug
+        # Not a ToolError: a bug. The detail goes to stderr, never the client.
+        print(f"mcp: {name}: {type(e).__name__}: {e}", file=sys.stderr)
+        return {"content": [{"type": "text", "text": f"{name} failed"}], "isError": True}
     if "_image" in result:
         img = result["_image"]
         return {"content": [{"type": "text", "text": json.dumps({"url": img["url"], "name": img["name"]})},

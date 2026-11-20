@@ -172,7 +172,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **`component.*` tokens live on the dark set only** (the painted theme); they are measured heights/radii, not site variables.
 - **Skins are evidence, not themes.** The `.crazy`/`.stealth`/`.premium`/`.high-contrast`/`.barbie`/`.nineties`/`.legacy` blocks are console easter eggs in the shared bundle; binned `skins` in css-vars.json, never tokenised.
 - **No icons.** No standalone SVG set was lifted (declared `layoutGaps`); the icon glyphs visible in crops are Appwrite's artwork.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 
 ### Do and don't (from README.md)
 

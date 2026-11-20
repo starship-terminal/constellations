@@ -132,6 +132,41 @@ class Queue(unittest.TestCase):
         self.assertEqual(run.call_count, 2)
 
 
+class RunErrors(unittest.TestCase):
+    """systemd-run's output names unit files, paths and the user session: it
+    goes to the service log, and the client gets fixed text."""
+
+    def setUp(self):
+        self.trigger = load()
+
+    def run_with(self, **kw):
+        done = subprocess.CompletedProcess([], kw.pop("returncode", 1), stdout="", stderr=kw.pop("stderr", ""))
+        with mock.patch.object(self.trigger.subprocess, "run", return_value=done, **kw), \
+                mock.patch("builtins.print") as log:
+            code, body = self.trigger._run()
+        return code, body, " ".join(str(c) for c in log.call_args_list)
+
+    def test_busy_unit_is_409_with_fixed_text(self):
+        err = "Failed to start transient service unit: Unit designs-manual-redeploy.service already exists."
+        code, body, log = self.run_with(stderr=err)
+        self.assertEqual((code, body), (409, {"error": "a redeploy is already running"}))
+        self.assertIn("already exists", log)
+
+    def test_other_failure_keeps_detail_in_the_log(self):
+        err = "Failed to connect to bus: /run/user/1000/bus: No such file or directory"
+        code, body, log = self.run_with(stderr=err)
+        self.assertEqual(code, 500)
+        self.assertNotIn("/run/user", json.dumps(body))
+        self.assertIn("/run/user/1000/bus", log)
+
+    def test_missing_systemd_run_is_fixed_text(self):
+        with mock.patch.object(self.trigger.subprocess, "run",
+                               side_effect=FileNotFoundError(2, "No such file", "/usr/bin/systemd-run")), \
+                mock.patch("builtins.print"):
+            code, body = self.trigger._run()
+        self.assertEqual((code, body), (500, {"error": "systemd-run unavailable on the host"}))
+
+
 class Command(unittest.TestCase):
     def test_paths_are_arguments_not_script_text(self):
         trigger = load()

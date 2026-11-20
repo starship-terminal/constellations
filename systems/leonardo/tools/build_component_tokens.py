@@ -12,9 +12,10 @@ Leonardo.Ai paints three signed-out surfaces on 2026-11-18:
               alternate, resolved in the probe, not a marketing capture.
 
 Product colour roles (--background, --accent-brand, the purple ramp) do not
-switch with the docs color mode. Docs roles that do switch (--color-bg-page,
---color-text-default, ReadMe syntax) are emitted in both themes. Measured
-geometry hangs off component.
+switch with the docs color mode and were only painted dark: the roles go in
+the dark set, the ramps in core. Docs roles that do switch (--color-bg-page,
+--color-text-default, ReadMe syntax) are emitted in both themes; they are the
+light set's only content. Measured geometry hangs off component.
 """
 import json
 import pathlib
@@ -22,10 +23,9 @@ import pathlib
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
-C = {}
-comp_path = RAW / "components-computed.json"
-if comp_path.exists():
-    C = json.loads(comp_path.read_text()).get("components", {})
+# Required: without it every measured display face and component size would
+# drop out of tokens.json and the build would still succeed.
+C = json.loads((RAW / "components-computed.json").read_text())["components"]
 
 PLAIN = V["resolved"]["plain"]
 LIGHT = V["resolved"]["colorModeLight"]
@@ -58,6 +58,10 @@ def put(tree, parts, leaf):
     used to land on the same node: the base value and the children. build()
     then treated the node as one value and dropped the ramp. A value that
     would collide with children (or with an existing value) moves to "base".
+    When two names land on the same path (--primary-brand and
+    --color-primary-brand once the color- prefix is stripped) the later one
+    replaces the earlier only if both resolve to the same value; otherwise
+    the build stops, so a differing value is never lost silently.
     """
     node = tree
     for p in parts[:-1]:
@@ -70,12 +74,26 @@ def put(tree, parts, leaf):
     key = parts[-1]
     existing = node.get(key)
     if isinstance(existing, dict) and not is_leaf(existing):
+        if "base" in existing:
+            same_value(parts, existing["base"], leaf)
         existing["base"] = leaf
     elif is_leaf(existing):
+        same_value(parts, existing, leaf)
         node[key] = {"base": existing}
         node[key]["base"] = leaf
     else:
         node[key] = leaf
+
+
+def resolved(leaf):
+    if "var" in leaf:
+        return (val(PLAIN, leaf["var"]), val(LIGHT, leaf["var"]), val(DARK, leaf["var"]))
+    return (leaf.get("value"),)
+
+
+def same_value(parts, old, new):
+    if resolved(old) != resolved(new):
+        raise SystemExit(f"{'.'.join(parts)}: {new} would replace {old}, which resolves differently")
 
 
 def slug_parts(name):
@@ -214,8 +232,11 @@ for name in CORE_Z:
         continue
     put(SPEC["core"], ["layout", "z", name.replace("--z-", "")], var(name, "number"))
 
-# Product semantic roles. Same value in both themes: marketing and the app
-# paint one dark canvas, and these names do not switch with docs color mode.
+# Product semantic roles, dark set only. Marketing and the app paint one dark
+# canvas and were measured only there. These names sit on :root and resolve to
+# the same dark values under the docs light color mode, so writing them into
+# the light set would publish a dark page (#0a0a0a) as the light theme's page.
+# The light set holds only the docs roles that really switch (DOCS below).
 PRODUCT = {
     "page": "--background",
     "foreground": "--foreground",
@@ -252,7 +273,6 @@ PRODUCT = {
 for slug, name in PRODUCT.items():
     if name not in PLAIN:
         continue
-    put(SPEC["light"], ["color", *slug.split("-")], var(name))
     put(SPEC["dark"], ["color", *slug.split("-")], var(name))
 
 # Docs roles that actually switch. These are the light theme's only honest source.
@@ -307,23 +327,47 @@ def paint(comp):
     return wrap, "wrapper"
 
 
-def family_of(raw):
-    return (raw or "").split(",")[0].strip().strip('"')
+GENERIC = {"serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui", "ui-sans-serif", "ui-serif", "ui-monospace"}
+
+
+def family_stack(raw):
+    """The measured font-family, minus next/font's metric placeholder faces.
+
+    "leoSans Fallback" is a local() alias next/font generates to size-match a
+    system font while the real face loads; it names no face a designer can use,
+    so it is dropped. Every other family is kept verbatim and in order. When the
+    measured stack ends with no generic family, sans-serif is appended and the
+    source says it was added by hand. Returns (value, note for the source).
+    """
+    fams = [f.strip() for f in (raw or "").split(",") if f.strip()]
+    if not fams:
+        raise SystemExit(f"font-family reading is empty: {raw!r}")
+    kept = [f for f in fams if not f.strip('"').endswith(" Fallback")]
+    note = f"measured {raw!r}"
+    if len(kept) < len(fams):
+        note += "; next/font placeholder face dropped"
+    if kept[-1].strip('"') not in GENERIC:
+        kept.append("sans-serif")
+        note += "; sans-serif is a hand-written fallback, not in the measured stack"
+    return ", ".join(kept), note
 
 
 if style("mkt-h1"):
     paint_style, via = paint("mkt-h1")
     put(SPEC["core"], ["font", "size", "display"], measured(paint_style.get("fontSize"), f"measured mkt-h1 {via} font-size on leonardo.ai/", "dimension"))
     put(SPEC["core"], ["font", "weight", "display"], measured(paint_style.get("fontWeight"), f"measured mkt-h1 {via} font-weight", "fontWeight"))
-    put(SPEC["core"], ["font", "family", "display"], measured(family_of(paint_style.get("fontFamily")) + ", sans-serif", f"measured mkt-h1 {via} font-family", "fontFamily"))
+    fam, note = family_stack(paint_style.get("fontFamily"))
+    put(SPEC["core"], ["font", "family", "display"], measured(fam, f"measured mkt-h1 {via} font-family: {note}", "fontFamily"))
 if style("app-h1"):
     paint_style, via = paint("app-h1")
     put(SPEC["core"], ["font", "size", "app-display"], measured(paint_style.get("fontSize"), f"measured app-h1 {via} font-size on app.leonardo.ai/", "dimension"))
     put(SPEC["core"], ["font", "weight", "app-display"], measured(paint_style.get("fontWeight"), f"measured app-h1 {via} font-weight", "fontWeight"))
-    put(SPEC["core"], ["font", "family", "app-display"], measured(family_of(paint_style.get("fontFamily")) + ", sans-serif", f"measured app-h1 {via} font-family", "fontFamily"))
+    fam, note = family_stack(paint_style.get("fontFamily"))
+    put(SPEC["core"], ["font", "family", "app-display"], measured(fam, f"measured app-h1 {via} font-family: {note}", "fontFamily"))
 if style("api-h1"):
     paint_style, via = paint("api-h1")
-    put(SPEC["core"], ["font", "family", "marketing"], measured(family_of(paint_style.get("fontFamily")) + ", sans-serif", f"measured api-h1 {via} font-family", "fontFamily"))
+    fam, note = family_stack(paint_style.get("fontFamily"))
+    put(SPEC["core"], ["font", "family", "marketing"], measured(fam, f"measured api-h1 {via} font-family: {note}", "fontFamily"))
 if style("app-generate"):
     put(SPEC["component"], ["generate", "height"], measured(rect("app-generate").get("h"), "measured app-generate height", "dimension"))
     put(SPEC["component"], ["generate", "radius"], measured(style("app-generate").get("borderTopLeftRadius"), "measured app-generate radius", "dimension"))
