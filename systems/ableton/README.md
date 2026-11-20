@@ -1,6 +1,6 @@
 # Ableton design reference
 
-A token set and component reference for Ableton's public marketing site, for building a music-product marketing page or account-entry screen in the style of a real music software company. It was read from www.ableton.com on 2026-11-08, signed out, in headless Chromium at 1440 wide and 390 wide: the home page, the product pages (Live, Push, Move, Note, Link), the trial, shop and Packs catalogue, the blog index, the about, help and jobs pages, and the log in / register page. The look is famously restrained: black Futura PT on white, one signature `#0000ff` blue for every action, zero border radius anywhere, and full-bleed photography doing the decorating.
+A token set and component reference for Ableton's public marketing site, for building a music-product marketing page or account-entry screen in the style of a real music software company. It was read from www.ableton.com on 2026-11-21, signed out, in headless Chromium at 1440×900 and 390×844. The site tree is [site-tree.md](site-tree.md). The look is famously restrained: black Futura PT on white, one signature `#0000ff` blue for every action, zero border radius anywhere, and full-bleed photography doing the decorating.
 
 Ableton's own products (Live, Push, Move, Note) are a different world; this package is the marketing and account-entry surface only. Nothing was signed into, bought, downloaded or submitted, and the cookie consent card was captured but never answered.
 
@@ -14,7 +14,8 @@ Ableton's own products (Live, Push, Move, Note) are a different world; this pack
 | [patterns.md](patterns.md) | How the components combine: the shared shell, the teaser-cell marketing page, the product page, catalogue grids, forms and validation, consent handling, and the mobile fold, each with its components, layout and screens. |
 | [components/crops/](components/crops) | 164 element screenshots, `{component}-{state}.png`, at 2x. |
 | [icons/](icons) | 11 SVGs lifted from the pages (the grid-mark logo, the six social buttons, the video and audio play badges, a disclosure chevron), named by role in [icons/INDEX.tsv](icons/INDEX.tsv). Ableton's property, kept for reference only. |
-| [screenshots/](screenshots) | 36 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the same width; `mobile-*` shots are 390 wide. The home page also keeps the cookie-banner and opened-More-menu states. |
+| [site-tree.md](site-tree.md) | Which control on the public site opens which page, menu, dialog, or auth wall. Mapped 2026-11-21 before the screenshots. |
+| [screenshots/](screenshots) | `{page}-light-{state}.png` captures from 2026-11-21. Desktop viewport shots are 1440×900 at 1x; phone shots are 390 CSS px at 2x (780 px wide). `-full` shots are the page at that width, truncated at 8 chunks when the page is unbounded. |
 | [raw/](raw) | The unprocessed readings: every custom property the pages declare (none; `css-vars.json` records that result with the skipped cross-origin sheets), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at four widths (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars are working evidence, not committed (see Rebuild for how `public.mjs` re-takes them). |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild. |
 
@@ -98,6 +99,8 @@ The cookie overlay (`#biscuits-overlay`) is hidden by CSS for the clean captures
 ## What to distrust
 
 - **Screenshots are 256-colour PNGs.** Gradients and photography band slightly; read exact colours from tokens.json or the raw files.
+- **Published contact lines are painted out.** Press, imprint, contact, and privacy shots hide the street, the phone number, and the published mailboxes. The login country's selected option is painted out too: it is the browser's inferred location, not a design choice.
+- **Full pages stop at 8 chunks.** Packs, certified training, and user groups keep growing; their `-full` shots are truncated and the viewport shot is the layout evidence.
 - **Hero cells carry video.** Two captures of the same page can differ in the frame shown.
 - **The `main` rect in `raw/layout.json` is the whole page column** (Ableton wraps content in a single `<main>`), so "content x 0, 1440 wide" does not mean text spans 1440: the 1200px text column sits inside it.
 - **`palette.lime-stripe` is read off a patterned cell**, not a flat fill: the promo card's background alternates lime and pale-blue stripes, and the token is the lime of the brighter band, approximate by eye.
@@ -129,8 +132,8 @@ Futura PT is commercial (Adobe Fonts), so the style guide previews in Nunito San
 | Switch, tabs, toast, tooltip, menu, avatar, table | not present | none exist on the public marketing surface |
 | States | captured | hover, focus-visible (two ring styles), pressed (forced), opened (More panel, feature collapse), focused (fields); disabled, error, loading and selected never appear on public pages |
 | App shell and navigation, the marketing page, catalogue grids, forms, consent, mobile fold | captured | [patterns.md](patterns.md) |
-| Signed-in account area, checkout, downloads | not captured | login/register measured at rest only; no purchase or download was started |
-| Light theme, 1440 and 390 | captured | [screenshots/](screenshots): 14 desktop pages (default + full), mobile home/live/shop |
+| Signed-in account area, checkout, downloads | not captured | login and register are a password wall (`https://www.ableton.com/en/login/`, `https://www.ableton.com/en/register/`). Account, cart, and license registration redirect there. No form was submitted. |
+| Light theme, 1440 and 390 | captured | [screenshots/](screenshots): desktop 1440×900 and phone 390×844, mapped in [site-tree.md](site-tree.md). Phone menu open on home; video dialog and FAQ on Live. |
 | Icons and fonts | captured | [icons/INDEX.tsv](icons/INDEX.tsv); Fonts above |
 
 ## Do and don't
