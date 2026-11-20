@@ -166,7 +166,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs home newsletter mobile
 ```
 
-`public.mjs` re-takes the screenshot set into `~/.design-systems/aboard/raw-shots` (outside the repo); `python3 tools/capture/quantize.py ~/.design-systems/aboard/raw-shots` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the consent-strip hide and the `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `~/.design-systems/aboard/raw-shots` (outside the repo); `python3 tools/capture/quantize.py ~/.design-systems/aboard/raw-shots` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the consent-strip hide (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 
