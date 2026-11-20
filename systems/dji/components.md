@@ -130,7 +130,7 @@ A footer column link; hover measured, never followed. Read as `ft-link` on the h
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 161 x 17; background transparent; text Open Sans 12/16 400, rgba(255, 255, 255, 0.85) |
+| default (same: hover) | size 161 x 17; background transparent; text Open Sans 12/16 400, rgba(255, 255, 255, 0.85) `text.muted` |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.ga-data 161.0x17.0 1px auto #101010 offset 1px |
 | pressed | text Open Sans 12/16 400, #ffffff `common.white` |
 
@@ -240,8 +240,8 @@ The atom-design-v1 primary "Buy Now" button (dji-btn-lg); states measured, never
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 144 x 40; padding 0px 16px; radius 60px; background #ffffff `common.white`; text Open Sans 16/20 400, rgba(0, 0, 0, 0.85) `black.primary`; transition all 0.3s ease |
-| hover, focus-visible | background rgba(255, 255, 255, 0.9) |
-| pressed | background rgba(255, 255, 255, 0.8) |
+| hover, focus-visible | background rgba(255, 255, 255, 0.9) `action.cta-hover` |
+| pressed | background rgba(255, 255, 255, 0.8) `action.cta-pressed` |
 
 ![Atom Buy button default](components/crops/pd-buy-default.png) ![Atom Buy button hover](components/crops/pd-buy-hover.png) ![Atom Buy button focus-visible](components/crops/pd-buy-focus-visible.png) ![Atom Buy button pressed](components/crops/pd-buy-pressed.png)
 
@@ -251,8 +251,8 @@ The secondary "Watch Video" atom button; states measured, never pressed. Read as
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 147.48 x 40; padding 0px 15px; border 1px solid #ffffff `common.white`; radius 60px; background transparent; text Open Sans 16/20 400, #ffffff `common.white`; transition all 0.3s ease |
-| hover, focus-visible | background rgba(255, 255, 255, 0.09) |
-| pressed | background rgba(255, 255, 255, 0.15) |
+| hover, focus-visible | background rgba(255, 255, 255, 0.09) `action.ghost-hover` |
+| pressed | background rgba(255, 255, 255, 0.15) `action.ghost-pressed` |
 
 ![Atom ghost button default](components/crops/pd-watch-default.png) ![Atom ghost button hover](components/crops/pd-watch-hover.png) ![Atom ghost button focus-visible](components/crops/pd-watch-focus-visible.png) ![Atom ghost button pressed](components/crops/pd-watch-pressed.png)
 

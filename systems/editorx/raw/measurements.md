@@ -480,21 +480,22 @@ Page: features. Selector: `feature card box`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 312 x 116.75 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 16px normal | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Arial 10px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.wixui-rich-text__text: madefor-text-bold 18px/25.2px 400, #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.jdJeEr.NYfD3h 312.0x116.8 bg #eeeeee @ 0 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 312 x 116.75 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 16px normal | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Arial 10px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.wixui-rich-text__text: madefor-text-bold 18px/25.2px 400, #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.jdJeEr.NYfD3h 312.0x116.8 bg #eeeeee @ 0 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `feat-card-default.png`, `feat-card-hover.png`, `feat-card-focus-visible.png`, `feat-card-pressed.png`.
 
@@ -918,20 +919,21 @@ Page: templates. Selector: `template card`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 297.75 x 394.8 | = | = | = |
-| Padding | 12px 12px 26px 12px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 2px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Madefor 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.wds-button-core__content.wds_1_338_0-button-core__content: Madefor 16px/24px 530, #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.BejCEe 297.8x394.8 bg #ffffff r 2px; div::before.c6WCwF.PwfXtm 273.75pxx633.594px image linear-gradient(#dfe0ff @ 0, #dfe0ff 50%, #dfe0ff @ 0); div::after.c6WCwF.PwfXtm 273.75pxx633.594px image linear-gradient(#dfe0ff @ 0, #dfe0ff 50%, #dfe0ff @ 0); div.qKpTmT 273.8x316.8 bg #000000 @ 0.8; a.wds-button-core.wds_1_338_0-button-core 102.0x42.0 bg #ffffff r 21px outline 1px solid #000000 @ 0 offset -1px; a.wds-button-core.wds_1_338_0-button-core 102.0x42.0 r 21px outline 1px solid #ffffff @ 0.5 offset -1px | div.BejCEe 297.8x394.8 bg #ffffff r 2px; div::before.c6WCwF.PwfXtm 273.75pxx633.594px image linear-gradient(#dfe0ff @ 0, #dfe0ff 50%, #dfe0ff @ 0); div::after.c6WCwF.PwfXtm 273.75pxx633.594px image linear-gradient(#dfe0ff @ 0, #dfe0ff 50%, #dfe0ff @ 0); div.qKpTmT 273.8x316.8 bg #000000 @ 0.8; a.wds-button-core.wds_1_338_0-button-core 102.0x42.0 bg #ffffff r 21px outline 1px solid #000000 @ 0 offset -1px; a.wds-button-core.wds_1_338_0-button-core 102.0x42.0 bg #e7f0ff r 21px outline 1px solid #000000 @ 0 offset -1px | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 297.75 x 394.8 | = | - | = |
+| Padding | 12px 12px 26px 12px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 2px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Madefor 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.wds-button-core__content.wds_1_338_0-button-core__content: Madefor 16px/24px 530, #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.BejCEe 297.8x394.8 bg #ffffff r 2px; div::before.c6WCwF.PwfXtm 273.75pxx633.594px image linear-gradient(#dfe0ff @ 0, #dfe0ff 50%, #dfe0ff @ 0); div::after.c6WCwF.PwfXtm 273.75pxx633.594px image linear-gradient(#dfe0ff @ 0, #dfe0ff 50%, #dfe0ff @ 0); div.qKpTmT 273.8x316.8 bg #000000 @ 0.8; a.wds-button-core.wds_1_338_0-button-core 102.0x42.0 bg #ffffff r 21px outline 1px solid #000000 @ 0 offset -1px; a.wds-button-core.wds_1_338_0-button-core 102.0x42.0 r 21px outline 1px solid #ffffff @ 0.5 offset -1px | div.BejCEe 297.8x394.8 bg #ffffff r 2px; div::before.c6WCwF.PwfXtm 273.75pxx633.594px image linear-gradient(#dfe0ff @ 0, #dfe0ff 50%, #dfe0ff @ 0); div::after.c6WCwF.PwfXtm 273.75pxx633.594px image linear-gradient(#dfe0ff @ 0, #dfe0ff 50%, #dfe0ff @ 0); div.qKpTmT 273.8x316.8 bg #000000 @ 0.8; a.wds-button-core.wds_1_338_0-button-core 102.0x42.0 bg #ffffff r 21px outline 1px solid #000000 @ 0 offset -1px; a.wds-button-core.wds_1_338_0-button-core 102.0x42.0 bg #e7f0ff r 21px outline 1px solid #000000 @ 0 offset -1px | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `template-card-default.png`, `template-card-hover.png`, `template-card-focus-visible.png`, `template-card-pressed.png`.
 

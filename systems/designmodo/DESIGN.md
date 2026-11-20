@@ -121,6 +121,11 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
 
+### Known gaps (from README.md)
+
+- `light.background.paper` (`#f4f4f4`, the app gallery canvas) was entered by hand at capture time: the recon read the app body background as rgb(244,244,244) but never saved that reading, so no file in `raw/` holds it. Its source says so; a recapture of the `app` page should record the body background and let the builder read it.
+- `tpl-card` was not found by the 2026-11-13 re-run (`recaptureMissed`); `core.component.tpl-card-width` and `-height` are the readings kept from the earlier run and say so in their source.
+
 ### Do and don't (from README.md)
 
 1. **Do keep the two systems separate.** Marketing is InterVariable with dark hero bands and orange/green pill actions; the app is Fira Sans over the `#f4f4f4` canvas with the navy header and blue/slate buttons. See [home-light-default](screenshots/home-light-default.png) and [app-light-default](screenshots/app-light-default.png).

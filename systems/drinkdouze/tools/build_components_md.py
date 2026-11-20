@@ -413,6 +413,14 @@ for k in ["login-card", "product-card", "cart-empty", "testimonial", "pdp-media"
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
+# Capture descs that claim an interaction the S() call never ran (its states
+# are default, hover, focus-visible and pressed only). Corrected here until a
+# recapture writes the fixed descs from tools/capture/public/measure.mjs.
+DESC_FIX = {
+    "variant-swatch-2": "An unchecked block-swatch option (12 Canettes), read at rest, on hover, on keyboard focus and forced pressed; the selected look is the separate swatch-selected entry. Never added to the cart.",
+    "recover-link": "The \"Mot de passe oublié ?\" button, which swaps the card to the recover form in place; measured at rest, on hover, on keyboard focus and forced pressed, never clicked, so the swap is not captured.",
+}
+
 # ------------------------------------------------ entries
 W("## Components")
 groups = [g for g in GROUP_INTRO if any(c.get("group") == g for c in C.values())]
@@ -429,14 +437,15 @@ for g in groups:
             continue
         W()
         W(f"#### {c['title']}")
-        desc = (c.get("desc") or "").strip()
+        desc = DESC_FIX.get(k, c.get("desc") or "").strip()
         if desc and not desc.endswith((".", ")", '"')):
             desc += "."
         where = PAGE_NAME.get(c["page"], c["page"])
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
         W()
         if c.get("missing"):
-            W(c.get("note") or "Not on the page when it was captured.")
+            note = (c.get("note") or "Not on the page when it was captured.").strip()
+            W(note[:1].upper() + note[1:])
             continue
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
