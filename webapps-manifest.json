@@ -5157,9 +5157,9 @@
       "description": "Invoices, Projects & Clients in One Place",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://runey.app/auth shows email and password, or Google. Password not submitted.",
+      "notes": "Email probe: https://runey.app/auth shows email and password, or Google. Password not submitted. Public walk 2026-11-21: header opens Features, FAQ, Pricing, and Updates. Feature tabs, the pricing period toggle, and FAQ questions stay on the page. Phone uses a menu button. Cookie Customize opens Essential and Analytics switches. Log in, Start for free, and the trial stop at https://runey.app/auth. /pricing, /blog, /about, /privacy, /changelog, /features, and /legal redirect there too. Public privacy is /policy. Help topics open /help sections. Google was not clicked. No form was submitted. Dark theme was declared and not painted. Signed-in app was not captured. Public package refresh in PR 1568 at 675119acad3a. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
