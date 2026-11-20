@@ -124,6 +124,14 @@ function comp(key, meta) {
   return c;
 }
 
+// A failed rerun keeps the state's earlier good reading and notes the error on
+// it (recaptureError), as the kit does; only a state with no reading gets {error}.
+function keepOrFail(c, state, e) {
+  const msg = String(e.message || e).slice(0, 200);
+  const prev = c.states[state];
+  c.states[state] = prev && !prev.error ? { ...prev, recaptureError: msg } : { error: msg };
+}
+
 async function measure(key, state, target, opts = {}) {
   const loc = target.filter({ visible: true }).first();
   const c = out.components[key];
@@ -139,7 +147,7 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    keepOrFail(c, state, e);
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -197,7 +205,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
-      out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      keepOrFail(out.components[key], st, e);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
@@ -323,7 +331,8 @@ async function markPlanCard() {
         return;
       }
     }
-    (cta.closest('.price_layout-new') || cta.parentElement).setAttribute('data-m-mark', 'plancard');
+    // no ancestor fits a plan card: leave it unmarked so the spec records a miss
+    // (never the CTA's parent or the layout standing in for the card)
   });
 }
 
@@ -343,7 +352,7 @@ async function markAuthCard() {
         return;
       }
     }
-    fld.closest('form, main, section, div').setAttribute('data-m-mark', 'authcard');
+    // no ancestor holds the OAuth buttons: leave it unmarked so the spec records a miss
   });
 }
 
