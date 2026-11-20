@@ -505,7 +505,7 @@ No standalone SVG icon set was lifted on this pass. The wordmark, tool glyphs an
 
 ### Account, generation and checkout
 
-The signed-in product sits behind https://www.krea.ai/login. This package covers public signed-out pages only. Sign in, Sign up for free, Log in, Continue with Google, Continue with Apple and SSO were measured and never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget) and the pass stopped. No account was created and no OAuth flow was opened.
+A signed-in walk on 2026-11-20 reached https://www.krea.ai/app and the account menu. Settings, create tools, billing and generation were not opened: the preview stopped painting frames after Settings was clicked. The public pass still stands. Sign in, Sign up for free, Log in, Continue with Google, Continue with Apple and SSO were measured and never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget) and that pass stopped. No account was created and no OAuth flow was opened. The signed-in screens are [app-dark-default](screenshots/app-dark-default.png) and [app-dark-account-menu](screenshots/app-dark-account-menu.png).
 
 ### Pages
 
@@ -514,7 +514,7 @@ The signed-in product sits behind https://www.krea.ai/login. This package covers
 - **https://www.krea.ai/pricing.** Get Free, Get Basic, Get Pro and Get Max open account or checkout. They were measured, never followed.
 - **https://www.krea.ai/enterprise.** Book a call is a sales form. It was measured, never followed.
 - **https://www.krea.ai/ and https://www.krea.ai/image.** Generate and the composer submit a generation. They were measured, never clicked.
-- **Train, Node Editor, account settings, billing and API keys.** These sit behind sign-in. They were not opened.
+- **Train, Node Editor, account settings, billing and API keys.** The signed-in icon rail lists them. Settings navigated toward /manage/profile and did not paint. They were not opened.
 - **Claim offer** on the home strip links into a gated signup. It was not followed.
 - **https://www.krea.ai/docs** Get API key, and **https://www.krea.ai/mcp** Add Krea connector, are gated actions. They were not followed.
 - **Other tool routes** (/video, /enhancer, /agent) share the signed-out shell. They were not shot individually.
