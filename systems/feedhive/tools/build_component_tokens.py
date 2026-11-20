@@ -102,6 +102,13 @@ def gradient_stops(body):
         stops[0][1] = 0.0
     if stops[-1][1] is None:
         stops[-1][1] = 1.0
+    # CSS: a position smaller than an earlier one is moved up to it, before
+    # the missing positions are spread
+    top = 0.0
+    for st in stops:
+        if st[1] is not None:
+            st[1] = max(st[1], top)
+            top = st[1]
     i = 0
     while i < len(stops):
         if stops[i][1] is None:

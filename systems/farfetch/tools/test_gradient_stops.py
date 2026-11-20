@@ -26,6 +26,9 @@ class GradientStopsTest(unittest.TestCase):
     def test_missing_positions_spread_between_known_ones(self):
         self.assertEqual([p for _, p in gradient_stops("#000, #111, #222 50%, #333")], [0.0, 0.25, 0.5, 1.0])
 
+    def test_backwards_positions_move_forward_first(self):
+        self.assertEqual([p for _, p in gradient_stops("#000 80%, #111 20%, #222, #fff")], [0.8, 0.8, 0.9, 1.0])
+
     def test_unreadable_stop_raises(self):
         with self.assertRaises(ValueError):
             gradient_stops("#000 10px")
