@@ -4,7 +4,7 @@
 //   PLAYWRIGHT=... node measure.mjs [group ...]
 import fs from 'node:fs';
 import path from 'node:path';
-import { chromium, BASE, UA, UA_MOBILE, open, hideConsent, styleOf, crop, quantize, CROPS, RAW } from './lib.mjs';
+import { chromium, BASE, UA, UA_MOBILE, open, blockedByChallenge, hideConsent, styleOf, crop, quantize, CROPS, RAW } from './lib.mjs';
 
 const OUT = path.join(RAW, 'components-computed.json');
 fs.mkdirSync(RAW, { recursive: true });
@@ -49,18 +49,22 @@ async function kbFocus(loc) {
   await page.waitForTimeout(300);
 }
 
+// Forces :active:hover on the component node itself, found by a marker attribute, as the
+// kit's forcePseudo does. The topmost node at the centre (a label span or an svg) would not
+// carry the component's own :active rule.
 async function pressOn(loc) {
-  const b = await loc.boundingBox();
-  if (!b) return null;
-  await cdp.send('DOM.getDocument', { depth: 0 }).catch(() => {});
-  const { backendNodeId } = await cdp.send('DOM.getNodeForLocation', {
-    x: Math.round(b.x + Math.min(b.width / 2, 40)),
-    y: Math.round(b.y + Math.min(b.height / 2, 16)),
-  });
-  const { nodeIds } = await cdp.send('DOM.pushNodesByBackendIdsToFrontend', { backendNodeIds: [backendNodeId] });
-  await cdp.send('CSS.forcePseudoState', { nodeId: nodeIds[0], forcedPseudoClasses: ['active', 'hover'] });
+  const marked = await loc.evaluate((el) => {
+    document.querySelectorAll('[data-m-force]').forEach((n) => n.removeAttribute('data-m-force'));
+    el.setAttribute('data-m-force', '1');
+    return true;
+  }).catch(() => false);
+  if (!marked) return null;
+  const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
+  const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-force]' });
+  if (!nodeId) return null;
+  await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
   await page.waitForTimeout(250);
-  return nodeIds[0];
+  return nodeId;
 }
 const pressOff = (id) => id == null ? null : cdp.send('CSS.forcePseudoState', { nodeId: id, forcedPseudoClasses: [] }).catch(() => {});
 
@@ -146,8 +150,11 @@ async function measureOne(spec) {
     await el.scrollIntoViewIfNeeded().catch(() => {});
     let nodeId = null;
     try {
-      if (state === 'pressed') nodeId = await pressOn(el);
-      else await DRIVERS[state].fn(el);
+      if (state === 'pressed') {
+        nodeId = await pressOn(el);
+        // No forced :active means no pressed reading: the catch records a failed state and no crop.
+        if (nodeId == null) throw new Error('pressed could not be forced on the component');
+      } else await DRIVERS[state].fn(el);
       const reading = await styleOf(el);
       reading.via = state === 'pressed' ? DRIVERS.pressed.via : DRIVERS[state].via;
       rec.states[state] = reading;
@@ -172,14 +179,22 @@ async function runPage(pageKey, specs, mobile) {
   const ctx = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // Automation is not hidden (no webdriver mask): a bot check is recorded as a boundary, not bypassed.
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
-  await cdp.send('CSS.enable').catch(() => {});
+  // DOM first: Chromium refuses CSS.enable until the DOM agent is on.
   await cdp.send('DOM.enable').catch(() => {});
+  await cdp.send('CSS.enable').catch(() => {});
   const url = URLS[pageKey] || URLS.home;
   log('page', pageKey, url);
   await open(page, url, { wait: 3500 });
+  if (await blockedByChallenge(page)) {
+    // Keep every earlier reading for this page: nothing measured on a challenge is saved.
+    log('  BLOCKED by a bot check; earlier readings kept', pageKey);
+    (out._meta.blocked ??= {})[pageKey] = new Date().toISOString();
+    await ctx.close();
+    return;
+  }
   for (const spec of specs) {
     spec.page = pageKey;
     await measureOne(spec);
