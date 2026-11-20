@@ -78,8 +78,8 @@ async function newPage(key, { mobile = false, wait = 9000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
-  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
+  const loaded = await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
+  if (!loaded || await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }
@@ -192,7 +192,16 @@ async function S(key, target, list, meta = {}, opts = {}) {
     try { cur = new URL(page.url()).hostname; } catch { /* chrome-error:// */ }
     if (!allowed.has(cur)) {
       log('  ! page drifted to', cur || page.url().slice(0, 60), '— reloading', current);
-      await open(page, wantUrl, { wait: 8000 });
+      if (!(await open(page, wantUrl, { wait: 8000 }))) {
+        // a blocked reload measures nothing: earlier states keep their own
+        // provenance and the page counts as failed, so cleanup prunes nothing
+        failedPages.add(current);
+        const has = Object.keys(out.components[key].states || {}).length > 0;
+        log('  ! reload blocked, skipped', key, has ? '(earlier states kept)' : '');
+        if (!has) out.components[key].missing = true;
+        else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
+        return;
+      }
       lazyDone = false;
     }
   }

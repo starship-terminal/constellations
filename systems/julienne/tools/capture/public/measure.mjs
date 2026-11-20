@@ -7,7 +7,11 @@
 // use the header's own Toggle theme control.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, RECIPE, COLLECTION, launch, open, styleOf, crop, setTheme, RAW } from './lib.mjs';
+import { BASE, RECIPE, COLLECTION, launch, open as openPage, styleOf, crop, setTheme, RAW } from './lib.mjs';
+// open() returns false on a blocked load and leaves the tab on about:blank;
+// every reading here runs inside run(), so throwing records it as failed
+// instead of measuring the blank tab as the product (2026-11 audit, 20-4)
+const open = async (page, url, opts) => { if (!(await openPage(page, url, opts))) throw new Error(`BLOCKED ${url}: the page never loaded, nothing measured`); };
 
 const only = (process.argv[2] || '').split(',').filter(Boolean);
 const priorPath = path.join(RAW, 'components-computed.json');

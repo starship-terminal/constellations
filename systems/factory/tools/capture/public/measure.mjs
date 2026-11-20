@@ -63,8 +63,8 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
-  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
+  const loaded = await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
+  if (!loaded || await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }
@@ -564,14 +564,18 @@ async function docs() {
   const before = { dark: async () => setDocsTheme('Dark') };
   const isDark = async () => (await page.evaluate(() => document.documentElement.getAttribute('data-theme')).catch(() => null)) === 'dark';
   let darkOk = await before.dark().then(() => true, (e) => { log('  docs dark pass skipped:', e.message); return false; });
-  if (darkOk && !(await isDark())) { log('  docs page left dark; remaining dark readings skipped'); darkOk = false; }
+  if (darkOk && !(await isDark())) { log('  docs page is no longer dark; remaining dark readings skipped'); darkOk = false; }
   if (darkOk) await S('docs-h1-dk', q('h1').filter({ visible: true }).first(), ['dark'], { group: g, title: 'Docs headline (dark)', desc: 'The docs masthead re-measured after the theme selector switched the page to dark.', sel: 'docs h1, dark theme' }, { noScroll: true, before });
-  if (darkOk && !(await isDark())) { log('  docs page left dark; remaining dark readings skipped'); darkOk = false; }
+  if (darkOk && !(await isDark())) { log('  docs page is no longer dark; remaining dark readings skipped'); darkOk = false; }
   if (darkOk) await S('docs-sidebar-dk', q('aside, nav').filter({ hasText: /Start Here|Documentation/ }).filter({ visible: true }).first(), ['dark'], { group: g, title: 'Docs sidebar (dark)', desc: 'The sidebar re-measured in dark.', sel: 'docs sidebar, dark theme' }, { noScroll: true, before: { dark: async () => 'still dark from the previous toggle' } });
-  if (darkOk && !(await isDark())) { log('  docs page left dark; remaining dark readings skipped'); darkOk = false; }
+  if (darkOk && !(await isDark())) { log('  docs page is no longer dark; remaining dark readings skipped'); darkOk = false; }
   if (darkOk) await S('docs-code-dk', q('pre, [data-rehype-pretty-code-figure], figure').filter({ visible: true }).first(), ['dark'], { group: g, title: 'Code block (dark)', desc: 'The code block re-measured in dark (the --shiki-dark palette).', sel: 'docs pre, dark theme' }, { noScroll: true, before: { dark: async () => 'still dark' } });
-  if (darkOk && !(await isDark())) { log('  docs page left dark; remaining dark readings skipped'); darkOk = false; }
+  if (darkOk && !(await isDark())) { log('  docs page is no longer dark; remaining dark readings skipped'); darkOk = false; }
   if (darkOk) await S('docs-nav-link-dk', q('aside a, nav a').filter({ hasText: /Available Models/i }).filter({ visible: true }).first(), ['dark', 'hover'], { group: g, title: 'Docs nav link (dark)', desc: 'A sidebar link re-measured in dark; measured, never followed.', sel: 'docs sidebar a, dark theme' }, { noScroll: true });
+  // A skipped dark reading keeps its saved entry as it was (styles, page,
+  // run and dates): marking it touched stops the end-of-run cleanup from
+  // pruning it as unmeasured while the docs page still counts as finished.
+  if (!darkOk) for (const k of ['docs-h1-dk', 'docs-sidebar-dk', 'docs-code-dk', 'docs-nav-link-dk']) touched.add(k);
   save();
 }
 

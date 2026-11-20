@@ -148,9 +148,10 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
   // A failed load or a challenge page that never clears is a boundary,
   // never measured as the product: open() logs BLOCKED, leaves the tab on
-  // about:blank (so every lookup that follows finds nothing and keeps the
-  // saved readings) and returns false, without stopping the rest of the run
-  // (2026-11 audit, finding 20-4; not run since).
+  // about:blank and returns false (true once the page loaded), without
+  // stopping the rest of the run. Every caller checks the result and skips
+  // the page or group, or fails the reading, so a blank tab is never saved
+  // as the product (2026-11 audit, finding 20-4; not run since).
   const loaded = await page.goto(url, { waitUntil: 'load', timeout: 90000 }).then(() => true, (e) => { console.log(`BLOCKED ${url}: ${String(e.message).split('\n')[0]}`); return false; });
   if (!loaded || !(await clearChallenge(page))) {
     if (loaded) console.log(`BLOCKED ${url}: the challenge page never cleared`);
@@ -159,6 +160,7 @@ export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
   }
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return true;
 }
 
 // Computed style properties recorded for every component and state.

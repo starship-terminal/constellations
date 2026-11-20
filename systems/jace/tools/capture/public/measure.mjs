@@ -46,7 +46,7 @@ async function newPage(key, { mobile = false, wait = 2000 } = {}) {
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, URLS[key], { wait });
+  if (!(await open(page, URLS[key], { wait }))) { log('  BLOCKED', key); await ctx.close().catch(() => {}); return false; }
   opened.add(key + '|' + view);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);

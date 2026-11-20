@@ -491,7 +491,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
   await cdp.send('CSS.enable');
   const url = URLS[g.page];
   log('open', key, g.mobile ? '(mobile)' : '', url);
-  await open(page, url, { wait: 7000 });
+  if (!(await open(page, url, { wait: 7000 }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   // the readable sheets' transition declarations, for measurements.md
   out._meta.sheets[g.page] = await page.evaluate(() => {
