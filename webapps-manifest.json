@@ -1847,8 +1847,8 @@
       "description": "Whiteboarding tool with hand drawn like experience",
       "status": "captured",
       "package": "systems/excalidraw",
-      "notes": "The free board at https://excalidraw.com/ has no account. Sign in on https://plus.excalidraw.com/ opens https://app.excalidraw.com/sign-up. The user signed in. Product not walked.",
-      "login-extracted": "not-started",
+      "notes": "The free board at https://excalidraw.com/ has no account. Sign in on https://plus.excalidraw.com/ opens https://app.excalidraw.com/sign-up. The user signed in. Product not walked. Signed-in walk: empty Excalidraw+ workspace, account menu, profile danger zone, preferences, and API keys. Screens in PR 1475 (1e3b44f3d). Export, my workspaces, create workspace, phone, and light theme were not reached. Frames stopped. login-extracted stays not-started until the batch review.",
+      "login-extracted": "partial",
       "login-probe": "signed-in",
       "batch": 6
     },
