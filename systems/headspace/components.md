@@ -492,7 +492,7 @@ The hero call-to-action at 390px, measured, never followed. Read as `m-hero-cta`
 
 ## Icons
 
-40 SVGs were lifted from the pages into [icons/](icons), named by role where the markup named them, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. Marketing illustrations, photos and the OneTrust consent SVGs were left out; these are the interface icons. The SVGs are Headspace's property, kept for reference only.
+36 SVGs were lifted from the pages into [icons/](icons), named by role where the markup named them, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. Marketing illustrations, photos and the OneTrust consent SVGs were left out; these are the interface icons. The SVGs are Headspace's property, kept for reference only.
 
 | Icon | Rendered sizes | View box | Style | Seen on | Next to |
 |---|---|---|---|---|---|
@@ -522,17 +522,13 @@ The hero call-to-action at 390px, measured, never followed. Read as `m-hero-cta`
 | [manage-anxiety](icons/manage-anxiety.svg) | 58x58 | 0 0 58 58 | fill | home; app | Manage anxiety |
 | [next-slide](icons/next-slide-0ee54682.svg) | 24x24 | 0 0 21 36 | stroke | org-home | Next slide |
 | [pause](icons/pause.svg) | 27x27 | 0 0 32 32 | fill | content | pause |
-| [process-thoughts](icons/process-thoughts-1b1419e5.svg) | 58x58 | 0 0 60 64 | fill | app | Process thoughts |
 | [icon-23f7f106](icons/icon-23f7f106.svg) | 16x16 | 0 0 16 16 | fill | topic | Breathe in Relaxation Mindful Activity • |
 | [previous-slide](icons/previous-slide-492209bf.svg) | 24x24 | 0 0 22 35 | stroke | org-home | Previous slide |
 | [icon-4bb1fa23](icons/icon-4bb1fa23.svg) | 24x24 | 0 0 24 24 | fill | share | Who can use the sharing feature? / Where can I find the abil |
 | [icon-5b0a2d2e](icons/icon-5b0a2d2e.svg) | 24x24 | 0 0 24 24 | fill | family | Who is eligible to join Headspace Family |
 | [icon-603f8c2d](icons/icon-603f8c2d.svg) | 28x28 | 0 0 24 24 | fill | nav |  |
-| [start-therapy](icons/start-therapy.svg) | 58x58 | 0 0 300 300 | fill | home | Start therapy |
 | [back-to-explore](icons/back-to-explore.svg) | 16x16 | 0 0 24 24 | fill | topic | Back to explore |
-| [mindfulness-for-kids](icons/mindfulness-for-kids.svg) | 58x58 | 0 0 58 58 | fill | app | Mindfulness for kids |
 | [icon-aefbd31f](icons/icon-aefbd31f.svg) | 16x16 | 0 0 18 18 | fill | article |  |
-| [process-thoughts](icons/process-thoughts-b5fac4e3.svg) | 58x58 | 0 0 60 64 | fill | home | Process thoughts |
 | [icon-b9fda43f](icons/icon-b9fda43f.svg) | 16x16 | 0 0 16 16 | fill | topic | Focus Timer: Mt. Fuji Session • 148 min  / Summer Jam Harves |
 | [icon-d2d0a0c6](icons/icon-d2d0a0c6.svg) | 24x24 | 0 0 24 24 | fill | nav |  |
 | [icon-e91dcd85](icons/icon-e91dcd85.svg) | 24x24 | 0 0 24 24 | fill | family | Can I join a Headspace Family Plan if I  / How does payment  |

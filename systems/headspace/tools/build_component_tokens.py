@@ -62,6 +62,19 @@ def norm_color(v):
     return v
 
 
+# Components whose one key was measured on several pages: measure.mjs kept the
+# last page's reading and dropped the rest (fixed in the script, not rerun).
+# Their tokens say which page the value is from.
+OVERWRITTEN = {
+    "hero-h1": "the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
+    "auth-card": "the /signup card (\"Create your account\"): measured under one key on /login and /signup, the /signup reading was kept and the /login one lost; recapture needed",
+}
+
+
+def caveat(comp):
+    return f"; {OVERWRITTEN[comp]}" if comp in OVERWRITTEN else ""
+
+
 def put(bag, key, comp, state, prop, ty, desc, transform=None):
     """Emit a measured leaf when the reading exists."""
     try:
@@ -88,7 +101,7 @@ def put(bag, key, comp, state, prop, ty, desc, transform=None):
         if ty == "color":
             v = norm_color(v)
         bag[key] = {"value": v, "type": ty,
-                    "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
+                    "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)" + caveat(comp),
                     "description": desc}
     except KeyError:
         pass
@@ -119,7 +132,7 @@ def put_paint_node(bag, key, comp, state, needle, desc, ty="color"):
         for n in (c.get("paint") or []):
             if needle in (n.get("node") or "") and n.get("bg"):
                 bag[key] = {"value": norm_color(n["bg"]), "type": ty,
-                            "source": f"computed paint of {n['node']} inside {comp} {state} (raw/components-computed.json)",
+                            "source": f"computed paint of {n['node']} inside {comp} {state} (raw/components-computed.json)" + caveat(comp),
                             "description": desc}
                 return
     except KeyError:
@@ -136,7 +149,7 @@ for key, comp, desc in [
     v = ts(comp, "default", "fontFamily")
     if v:
         fam[key] = {"value": v, "type": "fontFamily",
-                    "source": f"computed fontFamily of {comp} default (raw/components-computed.json)",
+                    "source": f"computed fontFamily of {comp} default (raw/components-computed.json)" + caveat(comp),
                     "description": desc}
 # Apercu Pro Mono if a mono reading exists anywhere (it is in the served @font-face list)
 for comp, state in (("redeem-field", "default"), ("auth-email", "default"), ("checkout-field", "default")):
@@ -167,7 +180,8 @@ weight = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
 for key, comp, state, desc in [
     ("display", "hero-h1", "default", "The headline weight (the family ships 200/400/600/700)."),
     ("body", "prose-body", "default", "Body text weight."),
-    ("bold", "prose-h3", "default", "Card-heading / strong weight."),
+    # keyed by role, not by an assumed weight: the card heading measures 400
+    ("cardHeading", "prose-h3", "default", "The card-heading weight."),
     ("button", "nav-cta", "default", "Button-label weight."),
 ]:
     put(weight, key, comp, state, "text-fontWeight", "number", desc)
@@ -311,7 +325,7 @@ if durs:
                                   "source": "transition/animation duration measured on live components (raw/motion.json)",
                                   "description": "A motion duration the site uses."}
 if eases:
-    top = sorted(set(eases), key=lambda e: -eases.count(e))[0]
+    top = sorted(set(eases), key=lambda e: (-eases.count(e), e))[0]  # a tie goes to the first by name
     bez = re.fullmatch(r"cubic-bezier\(\s*([-\d.]+)\s*,\s*([-\d.]+)\s*,\s*([-\d.]+)\s*,\s*([-\d.]+)\s*\)", top)
     # DTCG cubicBezier values are the four numeric points, not the CSS string.
     mot["easing"] = {"value": [float(x) for x in bez.groups()] if bez else top,
@@ -324,7 +338,8 @@ mot["reduced"] = {"value": behaviour or "not observed",
                   "source": "prefers-reduced-motion probe (raw/motion.json)",
                   "description": "What the site changes under prefers-reduced-motion: reduce, as measured by the probe."}
 
-(RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2) + "\n")
+if __name__ == "__main__":
+  (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2) + "\n")
 n = sum(len(v) for s in SPEC.values() for v in s.values()) if all(isinstance(v, dict) for s in SPEC.values() for v in s.values()) else 0
 count = 0
 def walk(o):
