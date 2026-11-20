@@ -5072,9 +5072,9 @@
       "description": "Commission-free Stock Trading & Investing App",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://robinhood.com/login shows email and password, or Google or Apple. Password not submitted.",
+      "notes": "Email probe: https://robinhood.com/login shows email and password, or Google or Apple. Password not submitted. Public walk 2026-11-21: homepage redirected to the Singapore waitlist. US marketing at /us/en/ opened. What We Offer and Crypto are menus. Log in stops at https://robinhood.com/login. Sign up stops at https://robinhood.com/signup. Google and Apple were not clicked. No password was submitted. No form was filled. Later product URLs returned HTTP 429. Signed-in app was not captured. Local refresh commit 9bb1713ee751 was not pushed because the remote capture-robinhood branch is ahead and includes catalog.json. No new PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
