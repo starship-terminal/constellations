@@ -6364,9 +6364,9 @@
       "description": "The world's most powerful video intelligence platform",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://playground.twelvelabs.io/ Continue with Google signed in and opened onboarding. Onboarding not filled. Product not walked.",
+      "notes": "Email probe: https://playground.twelvelabs.io/ Continue with Google signed in and opened onboarding. Onboarding not filled. Product not walked. Signed-in walk: https://playground.twelvelabs.io/ redirected to https://auth.twelvelabs.io/u/login/identifier (email, Continue, Sign up, Continue with Google). Session was not present. Public home frame in PR 1476 (4e259e77f). Post-auth pages were not reached. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 19
     },
     {
