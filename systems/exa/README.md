@@ -63,7 +63,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | light | 6.48:1 pass | 6.82:1 pass | 5.65:1 pass | 5.74:1 pass |
 | dark | 14.89:1 pass | 14.29:1 pass | 7.28:1 pass | 7.19:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.docs.focus` #5f7cff; `light.docs.focus` #4f4f57; `light.marketing.focus` #101010; `light.signin.field-focus` #1f40ed.
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.docs.focus` rgba(250, 250, 250, 0.09); `light.docs.focus` rgba(9, 9, 11, 0.07); `light.signin.field-focus` #1f40ed.
 
 <!-- brief:end -->
 
@@ -125,6 +125,11 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 - **Screenshots and crops are 256-colour PNGs.** Read colours from tokens.json, never from the images. Desktop shots are 1x; mobile PNGs are 2x renders of the 390 viewport (780 px wide).
 - **Computed `lab()`/`oklab()`/`oklch()` colours were converted** to hex/rgba by the builders (noted in each token's source); the browser painted them, the maths is ours.
 - **exa.ai/ redirects to /docs.** The "home" of the domain is the documentation landing; the marketing pages live at their own paths.
+- **`auth-card` is the wrong element.** It measured the 360 x 98 e-mail form inside the sign-in card, not the card, so no colour is taken from it and `component.auth-card-width` is labelled as read from the wrong element. Needs a recapture; `measure.mjs` now selects the innermost block holding the heading and both buttons (edited, not run).
+- **`pricing-pill` never shows its selected state.** The capture clicked "Chatbots" before the state loop and then read "Coding agents" in every state, so `default` and `opened` are the same unselected pill. Needs a recapture; `measure.mjs` now reads the "Chatbots" pill at rest and after its own click (edited, not run).
+- **`demo-output-tab`, `auth-email-btn`, `docs-tab` and `d-docs-tab` have no focus reading.** Keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md leaves them out and `raw/measurements.md` shows them as Skipped. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
+- **`faq` and `prod-code` are stale entries.** The 2026-11-13 run marked them missing and the script no longer measures them, but its prune could never fire, so they stay in `raw/components-computed.json` and components.md. `measure.mjs` now prunes untouched entries on pages that finished (edited, not run); the next full run drops them.
+- **Some roles are left out on purpose.** A transparent fill is no surface and the browser's own `auto` focus ring is no product colour, so these tokens are not published and `raw/component-tokens.json` lists each under `_gaps` with its reason: `marketing.menu-hover`, `marketing.demo-surface`, `marketing.focus`, `signin.card`, `signin.field`, light and dark `docs.code-bg` and `docs.field`, `core.shadow.widget`, `core.shadow.cta` and `core.motion.control-reduced` (the only reduced-motion reading is an `h1` with no transition). Where the element sits in a painted container the row names (the announcement strip, the docs CTA banner, the sign-in code panel), the token carries the parent's background and says so.
 
 ## Fonts
 

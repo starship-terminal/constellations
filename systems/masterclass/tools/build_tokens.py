@@ -92,10 +92,14 @@ for name in sorted(APPLIED):
     m = re.fullmatch(r"--mc-lh-([a-z-]+)", name)
     if m:
         key = m.group(1).replace("--", "-")
-        core["lineHeight"][key] = leaf(APPLIED[name], "number", name)
+        # A unitless line height is a DTCG number, not the string the variable holds.
+        lh = float(APPLIED[name])
+        core["lineHeight"][key] = leaf(int(lh) if lh.is_integer() else lh, "number", name)
     m = re.fullmatch(r"--mc-bp-([a-z]+)", name)
     if m:
-        core["breakpoint"][m.group(1)] = leaf(APPLIED[name], "dimension", name)
+        # A bare "0" is not a DTCG dimension; it is 0px.
+        value = APPLIED[name].strip()
+        core["breakpoint"][m.group(1)] = leaf("0px" if value == "0" else value, "dimension", name)
 
 # Semantic dark roles, aliases where the value matches a ramp step exactly.
 put_color(dark["color"].setdefault("page", {}), "default", "--mc-color-bg-page-default", "Page ground.")
@@ -149,5 +153,33 @@ def tally(node):
             n += tally(v)
     return n
 
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("tokens.json", tally(tokens), "tokens")
+DIMENSION = re.compile(r"-?\d*\.?\d+(px|rem)")
+COLOR = re.compile(r"#[0-9a-f]{6}([0-9a-f]{2})?|rgba?\([^)]*\)")
+
+
+def check(node, path=""):
+    """The DTCG shape checks the kit's builder runs: every leaf has a source, and its
+    value is the shape its $type says. Raises instead of writing a bad file."""
+    for k, v in node.items():
+        if k.startswith("$") or not isinstance(v, dict):
+            continue
+        here = f"{path}.{k}" if path else k
+        if "$value" not in v:
+            check(v, here)
+            continue
+        value, ty = v["$value"], v["$type"]
+        if not v.get("$extensions", {}).get("source"):
+            raise SystemExit(f"{here}: no source")
+        ok = {"color": lambda: isinstance(value, str) and COLOR.fullmatch(value),
+              "dimension": lambda: isinstance(value, str) and DIMENSION.fullmatch(value),
+              "number": lambda: isinstance(value, (int, float)),
+              "fontFamily": lambda: isinstance(value, str) and value}.get(ty)
+        if ok is None or not ok():
+            raise SystemExit(f"{here}: {ty} {value!r} is not a valid DTCG value")
+
+
+check({"core": core, "dark": dark})
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+    print("tokens.json", tally(tokens), "tokens")

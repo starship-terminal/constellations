@@ -14,7 +14,11 @@ Read on 2026-11-19 from the attached preview tab, signed out:
 The marketing page sets html font-size to 15.436px at that width, so a rem
 there is not 16px. Login uses 16px. Tokens keep the declared rem or hex.
 A computed px check is recorded beside the token when one was read.
-Every token carries $extensions.source.evidence = Measured.
+Every token carries $extensions.source.evidence. A custom property read from
+the two :root dumps is Measured. raw/computed.json keeps only the capture
+metadata, not the element styles, so a value whose source is an element's
+computed style (ELEM) was typed in by hand at capture time and is labelled
+Reconstruction.
 
 Deterministic: same inputs, same bytes.
 """
@@ -29,11 +33,46 @@ M = json.loads((RAW / "marketing-root-vars.json").read_text())
 H = json.loads((RAW / "login-hop-vars.json").read_text())
 
 
+BY_HAND = "Entered by hand at capture time; raw/computed.json does not hold this element's computed style."
+NOT_IN_DUMP = "Entered by hand at capture time from the stylesheet rule; raw/ keeps only the :root custom properties, and this one is not among them."
+
+
 def src(evidence_from, selector, prop, note=None):
-    body = {"evidence": "Measured", "from": evidence_from, "selector": selector, "property": prop}
+    # Measured only when the value is one of the two :root dumps' readings; an element style or a
+    # stylesheet rule (.heading-style-h2, .button) was typed in by hand.
+    dump = {MKT: M, LOGIN: H}.get(evidence_from)
+    reason = BY_HAND if evidence_from == ELEM else (NOT_IN_DUMP if dump is not None and (selector != ":root" or prop not in dump) else None)
+    body = {"evidence": "Reconstruction" if reason else "Measured", "from": evidence_from, "selector": selector, "property": prop}
     if note:
         body["note"] = note
+    if reason:
+        body["note"] = (body.get("note", "") + ". " if note else "") + reason
     return {"$extensions": {"source": body}}
+
+
+def inherit_labels(doc):
+    """An alias of a Reconstruction token is a Reconstruction too: it carries a hand-entered value."""
+    flat = {}
+
+    def walk(node, path):
+        if isinstance(node, dict) and "$value" in node:
+            flat[path] = node
+        elif isinstance(node, dict):
+            for k, v in node.items():
+                if not k.startswith("$"):
+                    walk(v, f"{path}.{k}" if path else k)
+
+    for name in ("core", "light"):
+        walk(doc[name], "")
+    for token in flat.values():
+        v = token["$value"]
+        if isinstance(v, str) and v.startswith("{") and v.endswith("}"):
+            target = flat.get(v[1:-1])
+            body = token["$extensions"]["source"]
+            if target and target["$extensions"]["source"]["evidence"] == "Reconstruction" and body["evidence"] == "Measured":
+                body["evidence"] = "Reconstruction"
+                body["note"] = (body.get("note", "") + ". " if body.get("note") else "") + f"Aliases {v}, which was entered by hand."
+    return doc
 
 
 def color(value, **kw):
@@ -42,6 +81,10 @@ def color(value, **kw):
 
 def dim(value, **kw):
     return {"$type": "dimension", "$value": value, **src(**kw)}
+
+
+def duration(value, **kw):
+    return {"$type": "duration", "$value": value, **src(**kw)}
 
 
 def num(value, type_, **kw):
@@ -269,12 +312,12 @@ def build():
         },
         "motion": {
             "duration": {
-                "100": dim("100ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-1"),
-                "200": dim("200ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-2"),
-                "300": dim("300ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-3", note="computed a.button transition-duration was 0.3s"),
-                "400": dim("0.4s", evidence_from=ELEM, selector=".footer_link--social", prop="transition-duration", note="computed on the marketing footer social link"),
-                "500": dim("500ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-4"),
-                "800": dim("800ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-5"),
+                "100": duration("100ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-1"),
+                "200": duration("200ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-2"),
+                "300": duration("300ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-3", note="computed a.button transition-duration was 0.3s"),
+                "400": duration("400ms", evidence_from=ELEM, selector=".footer_link--social", prop="transition-duration", note="computed 0.4s on the marketing footer social link"),
+                "500": duration("500ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-4"),
+                "800": duration("800ms", evidence_from=LOGIN, selector=":root", prop="--hop-easing-duration-5"),
             },
             "easing": {
                 "productive": num([0.22, 0.61, 0.36, 1], "cubicBezier", evidence_from=LOGIN, selector=":root", prop="--hop-easing-productive", note="declared cubic-bezier(0.22, 0.61, 0.36, 1)"),
@@ -379,7 +422,7 @@ def build():
         "light": light,
         "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
     }
-    return doc
+    return inherit_labels(doc)
 
 
 def check(doc):
@@ -391,8 +434,12 @@ def check(doc):
             if "$type" not in node:
                 problems.append(f"{path} has $value without $type")
             ext = node.get("$extensions", {}).get("source", {})
-            if ext.get("evidence") != "Measured":
-                problems.append(f"{path} missing Measured evidence")
+            if ext.get("evidence") not in ("Measured", "Reconstruction"):
+                problems.append(f"{path} has no evidence label")
+            elif ext.get("evidence") == "Measured" and ext.get("from") == ELEM:
+                problems.append(f"{path} is labelled Measured but cites a computed style raw/ does not hold")
+            if node.get("$type") == "dimension" and str(node["$value"]).endswith(("ms", "s")) and not str(node["$value"]).endswith("rems"):
+                problems.append(f"{path} is a duration typed dimension")
             return
         for k, v in node.items():
             if k.startswith("$"):

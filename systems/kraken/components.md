@@ -18,7 +18,7 @@ Secondary wash. Fill `rgba(133, 91, 251, 0.16)`, text `#7132f5`, radius 12px. Ho
 
 ### Search
 
-Icon button labelled Search in the header. Opening it is a local overlay; the trigger was not separately cropped on this pass. The open state is [home-light-search-open.png](../screenshots/home-light-search-open.png).
+Icon button labelled Search in the header. Opening it is a local overlay; the trigger was not separately cropped on this pass. The open state is [home-light-search-open.png](screenshots/home-light-search-open.png).
 
 ## Type
 
@@ -60,11 +60,11 @@ A text input on /prices, focused and not filled. Crop: [prices-search-default.pn
 
 ### Price table
 
-The home and /prices pages paint a market table: asset, price, 24h change, market cap. Positive change uses the positive solid green; negative uses `#d11d45`. The row itself was not cropped as its own element on this pass. See [prices-light-default.png](../screenshots/prices-light-default.png).
+The home and /prices pages paint a market table: asset, price, 24h change, market cap. Positive change uses the positive solid green; negative uses `#d11d45`. The row itself was not cropped as its own element on this pass. See [prices-light-default.png](screenshots/prices-light-default.png).
 
 ## Mobile
 
-The 390 header is 64px. The hero title wraps to 80px. Crops: [m-header-default.png](components/crops/m-header-default.png), [m-hero-default.png](components/crops/m-hero-default.png). The open nav menu is [mobile-home-light-menu-open.png](../screenshots/mobile-home-light-menu-open.png). The Search button opens a trade overlay instead.
+The 390 header is 64px. The hero title wraps to 80px. Crops: [m-header-default.png](components/crops/m-header-default.png), [m-hero-default.png](components/crops/m-hero-default.png). The open nav menu is [mobile-home-light-menu-open.png](screenshots/mobile-home-light-menu-open.png). The Search button opens a trade overlay instead.
 
 ## Footer
 
@@ -73,7 +73,7 @@ White band, 1440 by 943 on the desktop home, primary text `#101114`. Crop: [foot
 ## Gaps
 
 - Select, checkbox, radio, switch, tooltip, toast, avatar and badge were not mounted as their own controls on the public pages. Status colour is painted as price-change text, not as a badge component.
-- Text area, toast, tooltip, avatar, badge, checkbox, radio, switch and a destructive confirmation do not appear as their own controls signed out. The search overlay is [home-light-search-open.png](../screenshots/home-light-search-open.png). The phone nav menu is [mobile-home-light-menu-open.png](../screenshots/mobile-home-light-menu-open.png).
+- Text area, toast, tooltip, avatar, badge, checkbox, radio, switch and a destructive confirmation do not appear as their own controls signed out. The search overlay is [home-light-search-open.png](screenshots/home-light-search-open.png). The phone nav menu is [mobile-home-light-menu-open.png](screenshots/mobile-home-light-menu-open.png).
 - Disabled, loading and error states were not offered. The sign-up form was not submitted, so validation never appeared.
 - Pressed states are DevTools-forced (`CSS.forcePseudoState`). A script-applied mousedown style, if any, was not captured.
 - The search icon button, market tabs and price row selectors missed on the measurement pass. Those states are in the page screenshots.

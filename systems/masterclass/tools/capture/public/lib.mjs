@@ -44,10 +44,17 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  });
+  // Automation is not hidden (no webdriver mask): a bot check is recorded as a boundary, not bypassed.
   return { browser, context };
+}
+
+// Whether the page is a bot check (Cloudflare and the like) rather than the product. Automation is
+// not hidden, so a rerun can meet one; it is recorded as a boundary and nothing from it is saved.
+export async function blockedByChallenge(page) {
+  const s = await page.evaluate(() => ({ title: document.title, body: (document.body && document.body.innerText || '').slice(0, 400) }))
+    .catch(() => ({ title: '', body: '' }));
+  return /just a moment|attention required|verify you are human/i.test(s.title)
+    || /performing security verification|verify you are human|checking your browser|press ?& ?hold|you have been blocked/i.test(s.body);
 }
 
 export async function open(page, url, { wait = 4000 } = {}) {

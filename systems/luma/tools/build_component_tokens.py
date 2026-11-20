@@ -30,17 +30,44 @@ def var(name, ty="color", **kw):
     return d
 
 
+LAYER = re.compile(
+    r"(rgba?\(\s*[\d.]+,?\s*[\d.]+,?\s*[\d.]+(?:,?\s*[\d.]+)?\)|#[0-9a-fA-F]{3,8})\s+"
+    r"(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?")
+
+
 def shadow_layers(spec):
-    """Parse 'rgba(...) x y blur spread, ...' into DTCG shadow layers."""
+    """Parse 'rgba(...) x y blur spread [inset], ...' (the computed form) into DTCG shadow layers.
+
+    Every top-level layer must parse, and an inset layer keeps inset: true. Before the 2026-11
+    audit the inset top edge of --shadow-modal was written as an outer drop shadow.
+    """
+    parts, depth, cur = [], 0, ""
+    for ch in spec:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == "," and depth == 0:
+            parts.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    if cur.strip():
+        parts.append(cur.strip())
     out = []
-    for m in re.finditer(
-            r"(rgba?\(\s*[\d.]+,?\s*[\d.]+,?\s*[\d.]+(?:,?\s*[\d.]+)?\)|#[0-9a-fA-F]{3,8})\s+"
-            r"(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?", spec):
+    for part in parts:
+        words = part.split()
+        inset = "inset" in words
+        body = " ".join(w for w in words if w != "inset")
+        m = LAYER.fullmatch(body)
+        if not m:
+            raise ValueError(f"shadow layer not understood: {part!r}")
         col, x, y, bl, sp = m.groups()
-        out.append({
+        layer = {
             "color": col, "offsetX": f"{x}px", "offsetY": f"{y}px",
             "blur": f"{bl}px", "spread": f"{sp or 0}px",
-        })
+        }
+        if inset:
+            layer["inset"] = True
+        out.append(layer)
     return out
 
 

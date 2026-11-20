@@ -1267,3 +1267,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 6. **Do read eyebrow–headline–dek–byline as one unit.** Cards compose the same four parts at every size: a small uppercase eyebrow, the headline, a muted dek, BY-line + read-time. See [story-card](components/crops/story-card-default.png).
 7. **Don't style the signed-in product from this package.** Bookmarks, the archive and account flows live behind account.esquire.com, which was never opened; the plan page and premium hub at rest are the evidence. See [nav-signin](components/crops/nav-signin-default.png).
 8. **Don't fabricate a paywall state.** Premium stories gate below the public lede; what the signed-out page paints was captured and the gated remainder is a recorded boundary, not a measured state. See [prem-card](components/crops/prem-card-default.png).
+
+### Known gaps (from README.md)
+
+- `plan-price` (Plan price): the reading is the struck-through list price "$75" (a `line-through` span), not the price the plan charges; the selector took the first short "$" leaf on the card. Needs a recapture; `measure.mjs` now skips struck-through elements (edited, not run). No token cites it.
+- Two committed screenshot sidecars record `https://www.esquire.com/search/?q=suits`, the search the capture ran; no credential or personal data. `public.mjs` now records page URLs without their query (edited, not run); the sidecars are left as captured.

@@ -58,52 +58,33 @@ async function crop(page, el, name, pad = 8) {
   return file;
 }
 
-async function force(page, el, state) {
-  const session = await page.context().newCDPSession(page);
-  const objectId = await el.evaluateHandle((n) => n);
-  // Playwright element handle to CDP node via DOM.describeNode is awkward.
-  // Use CSS.forcePseudoState through the element's backend node.
-  const { node } = await session.send('DOM.describeNode', { objectId: objectId._objectId || (await objectId.evaluateHandle?.()) });
-  return session;
-}
-
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
 const page = await context.newPage();
 const cdp = await context.newCDPSession(page);
 const out = { capturedAt: new Date().toISOString(), components: {} };
 
-async function forcePseudo(el, states) {
-  const handle = await el.elementHandle();
-  if (!handle) return;
-  const node = await cdp.send('DOM.describeNode', { objectId: handle._objectId ? undefined : undefined, backendNodeId: undefined }).catch(() => null);
-  // Resolve via DOM.getDocument + query is unreliable. Use Runtime + DOM.requestNode.
-  const obj = await cdp.send('DOM.requestNode', { objectId: (await handle.evaluateHandle((n) => n))._remoteObject?.objectId });
-}
-
+// Forces pseudo-classes on the element itself, found by a marker attribute (the kit's forcePseudo).
+// Playwright handles expose no CDP object id, so the old describeNode/requestNode route never forced
+// anything. Returns a clear function, or null when forcing failed: the caller then records nothing.
 async function pseudo(el, states) {
-  const handle = await el.elementHandle();
-  const remote = handle._remoteObject || (await page.evaluateHandle((n) => n, handle));
-  // Playwright ElementHandle has a private object id via CDP:
-  const objectId = handle._objectId || remote._objectId;
-  let nodeId;
+  const marked = await el.evaluate((n) => {
+    document.querySelectorAll('[data-m-force]').forEach((m) => m.removeAttribute('data-m-force'));
+    n.setAttribute('data-m-force', '1');
+    return true;
+  }).catch(() => false);
+  if (!marked) return null;
   try {
-    const described = await cdp.send('DOM.describeNode', { objectId });
-    nodeId = described.node.backendNodeId;
+    await cdp.send('DOM.enable');
     await cdp.send('CSS.enable');
+    const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
+    const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-force]' });
+    if (!nodeId) return null;
     await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: states });
+    return async () => { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {}); };
   } catch (e) {
-    // fallback: DOM.requestNode
-    try {
-      const req = await cdp.send('DOM.requestNode', { objectId });
-      await cdp.send('CSS.enable');
-      await cdp.send('CSS.forcePseudoState', { nodeId: req.nodeId, forcedPseudoClasses: states });
-      return async () => { await cdp.send('CSS.forcePseudoState', { nodeId: req.nodeId, forcedPseudoClasses: [] }).catch(() => {}); };
-    } catch (e2) {
-      return null;
-    }
+    return null;
   }
-  return async () => { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {}); };
 }
 
 async function record(name, el, page) {
@@ -124,14 +105,19 @@ await record('cta-primary-hover', cta, page);
 await cta.focus();
 await page.waitForTimeout(150);
 await record('cta-primary-focus', cta, page);
-const clear = await pseudo(cta, ['focus-visible']);
-await page.waitForTimeout(80);
-await record('cta-primary-focus-visible', cta, page);
-if (clear) await clear();
-const clearP = await pseudo(cta, ['active']);
-await page.waitForTimeout(80);
-await record('cta-primary-pressed', cta, page);
-if (clearP) await clearP();
+await cta.evaluate((n) => n.blur());
+const clear = await pseudo(cta, ['focus', 'focus-visible']);
+if (clear) {
+  await page.waitForTimeout(80);
+  await record('cta-primary-focus-visible', cta, page);
+  await clear();
+} else console.log('  cta-primary-focus-visible: forcing failed, not recorded');
+const clearP = await pseudo(cta, ['active', 'hover']);
+if (clearP) {
+  await page.waitForTimeout(80);
+  await record('cta-primary-pressed', cta, page);
+  await clearP();
+} else console.log('  cta-primary-pressed: forcing failed, not recorded');
 
 const login = page.getByRole('link', { name: /^Log in$/ }).nth(1);
 if (await login.count()) {
@@ -239,10 +225,12 @@ if (await submit.count()) {
   await submit.hover();
   await page.waitForTimeout(200);
   await record('button-login-hover', submit, page);
-  const clr = await pseudo(submit, ['active']);
-  await page.waitForTimeout(80);
-  await record('button-login-pressed', submit, page);
-  if (clr) await clr();
+  const clr = await pseudo(submit, ['active', 'hover']);
+  if (clr) {
+    await page.waitForTimeout(80);
+    await record('button-login-pressed', submit, page);
+    await clr();
+  } else console.log('  button-login-pressed: forcing failed, not recorded');
   // disabled? don't submit. record as-is (empty form may already be disabled)
   await record('button-login-rest', submit, page);
 }

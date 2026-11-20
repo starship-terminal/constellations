@@ -164,7 +164,10 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### What to distrust (from README.md)
 
 - **Regional content.** The pricing storefront geo-redirects to `/en-SG/`; plan names, prices (SGD) and copy are as served for Singapore, not the US site.
-- **`color.error` #ff0000** — seen once as the generator canvas's default stroke; the real swatch set is Black/Cobalt/Coral.
+- **No error colour.** The old `color.error` #ff0000 cited `sg-canvas`, which reads rgb(19, 0, 50) and holds no red; it was dropped. The only #ff0000 in raw/ is the logo link's pressed colour, the browser's own active-link red.
+- **Entered by hand, no reading behind them:** `core.font.size.h4` 40px, `core.font.lineHeight.h4` 48px, `core.font.tracking.h4` -0.5px and `core.font.tracking.eyebrow` 0.8px. No captured component reads them; their source says Reconstruction.
+- **`color.focus-green` #089b57** (and `light.color.focus.ring-green`) was read from `assistant` focus-visible, a state recorded where keyboard focus never landed (`via: focus failed`); recapture needed.
+- **Wrong element measured; recapture needed:** `blog-card` read the 184 x 24 "Docusign Moment" text link, not a card; `story-logo` read a 328 x 328 story thumbnail, not a logo tile; `m-menu-open` read the 390 x 77 header nav, not the opened menu.
 - **The assistant-ramp palette** is declared in the sierra.chat agent's own stylesheet (Docusign's "kraken" org theme): real declarations, but a vendor surface — use for the assistant, not the marketing site.
 - **Emotion hashes** in selectors are build-dependent; treat any `css-*` class in raw/ as evidence, not an API.
 - **The `#005fcc` 1px auto outlines** on ecom/generator controls are the browser's default focus ring, not a designed token — the designed ring is the cobalt 2px+2px pair.

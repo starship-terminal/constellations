@@ -117,11 +117,15 @@ def ref(name, ty, desc, **kw):
 
 
 def put(tree, path, leaf):
+    """Place a leaf; a second leaf at the same path stops the build instead of silently replacing
+    the first (two rows naming one token would otherwise lose one reading without a trace)."""
     if leaf is None:
         return
     node = tree
     for k in path[:-1]:
         node = node.setdefault(k, {})
+    if path[-1] in node:
+        raise SystemExit(f"{'.'.join(path)}: two rows write this token; give one of them its own path")
     node[path[-1]] = leaf
 
 

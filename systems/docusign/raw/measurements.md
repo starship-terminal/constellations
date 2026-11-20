@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.gauth.com on 2026-11-13 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from docusign.com (the marketing site, the signature generator, the ecom storefront and the account.docusign.com sign-in card) on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -596,23 +596,24 @@ Page: home. Selector: `"Docusign Assistant"`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 227.59 x 54 | = | = | - |
-| Padding | 16px 24px | = | = | - |
-| Gap | 8px | = | = | - |
-| Border | 1px solid #4014ea | = | = | - |
-| Radius | 9999px | = | = | - |
-| Background | #4014ea | #ffffff | #ffffff | - |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | = | = | - |
-| Outline | none | = | 2px solid #089b57 offset 2px | - |
-| Font | -apple-system 16px/normal 700 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #ffffff | #4014ea | #4014ea | - |
-| Text node | span.relative.shrink-0: -apple-system 16px/normal 700, #ffffff | span.relative.shrink-0: -apple-system 16px/normal 700, #4014ea | span.relative.shrink-0: -apple-system 16px/normal 700, #4014ea | - |
-| Transition | all 0.1s ease | = | = | - |
-| Cursor | pointer | = | = | - |
-| Icon | 20 x 20, colour #ffffff | 20 x 20, colour #4014ea | 20 x 20, colour #4014ea | - |
-| Painted layers | button.z-overlay.fixed 227.6x54.0 bg #4014ea border T:1px solid #4014ea / R:1px solid #4014ea / B:1px solid #4014ea / L:1px solid #4014ea r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | button.z-overlay.fixed 227.6x54.0 bg #ffffff border T:1px solid #4014ea / R:1px solid #4014ea / B:1px solid #4014ea / L:1px solid #4014ea r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | button.z-overlay.fixed 227.6x54.0 bg #ffffff border T:1px solid #4014ea / R:1px solid #4014ea / B:1px solid #4014ea / L:1px solid #4014ea r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px outline 2px solid #089b57 offset 2px | - |
-| How | at rest | mouse hover | focus failed | - |
+| Size (w x h) | 227.59 x 54 | = | - | - |
+| Padding | 16px 24px | = | - | - |
+| Gap | 8px | = | - | - |
+| Border | 1px solid #4014ea | = | - | - |
+| Radius | 9999px | = | - | - |
+| Background | #4014ea | #ffffff | - | - |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | = | - | - |
+| Outline | none | = | - | - |
+| Font | -apple-system 16px/normal 700 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #ffffff | #4014ea | - | - |
+| Text node | span.relative.shrink-0: -apple-system 16px/normal 700, #ffffff | span.relative.shrink-0: -apple-system 16px/normal 700, #4014ea | - | - |
+| Transition | all 0.1s ease | = | - | - |
+| Cursor | pointer | = | - | - |
+| Icon | 20 x 20, colour #ffffff | 20 x 20, colour #4014ea | - | - |
+| Painted layers | button.z-overlay.fixed 227.6x54.0 bg #4014ea border T:1px solid #4014ea / R:1px solid #4014ea / B:1px solid #4014ea / L:1px solid #4014ea r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | button.z-overlay.fixed 227.6x54.0 bg #ffffff border T:1px solid #4014ea / R:1px solid #4014ea / B:1px solid #4014ea / L:1px solid #4014ea r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | - | - |
+| How | at rest | mouse hover | - | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
 Crops: `assistant-default.png`, `assistant-hover.png`, `assistant-focus-visible.png`.
@@ -1071,21 +1072,22 @@ Page: signgen. Selector: `button "Clear"`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 83.48 x 35 | = | = | = |
-| Padding | 8px 12px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | DS Indigo 14px/normal 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #26065d @ 0.3 | = | = | = |
-| Transition | all 0.2s ease | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Icon | 18 x 18, colour #26065d @ 0.3 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 83.48 x 35 | = | - | = |
+| Padding | 8px 12px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | DS Indigo 14px/normal 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #26065d @ 0.3 | = | - | = |
+| Transition | all 0.2s ease | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Icon | 18 x 18, colour #26065d @ 0.3 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `sg-clear-default.png`, `sg-clear-hover.png`, `sg-clear-focus-visible.png`, `sg-clear-pressed.png`.
 
@@ -1097,22 +1099,23 @@ Page: signgen. Selector: `button "Download as PNG"`. States: default, hover, foc
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 438 x 48 | = | = | = |
-| Padding | 0px 24px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #cbc2ff | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | DS Indigo 16px/normal 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #26065d @ 0.5 | = | = | = |
-| Transition | all 0.3s ease | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Icon | 18 x 18, colour #26065d @ 0.5 | = | = | = |
-| Painted layers | button.css-1dchwxh.e1s1awzv0 438.0x48.0 bg #cbc2ff r 8px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 438 x 48 | = | - | = |
+| Padding | 0px 24px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | #cbc2ff | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | DS Indigo 16px/normal 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #26065d @ 0.5 | = | - | = |
+| Transition | all 0.3s ease | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Icon | 18 x 18, colour #26065d @ 0.5 | = | - | = |
+| Painted layers | button.css-1dchwxh.e1s1awzv0 438.0x48.0 bg #cbc2ff r 8px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `sg-download-default.png`, `sg-download-hover.png`, `sg-download-focus-visible.png`, `sg-download-pressed.png`.
 
@@ -1927,7 +1930,7 @@ Crops: `m-cta-default.png`, `m-cta-hover.png`, `m-cta-focus-visible.png`, `m-cta
 
 ## Transitions declared in the readable stylesheets
 
-Gauth's own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd's CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth's own rules.
+This list holds only what the CSSOM could read on each page (the inline Emotion blocks and same-origin sheets; cross-origin vendor sheets are skipped); the per-state Transition rows above are computed values and cover every rule.
 
 - esignature: `0.4s`, `all`, `none`, `visibility 0.1s, opacity 0.1s`, `visibility 1s, opacity 1s`, `0.2s`, `width 1s`, `visibility 0.1s, opacity 0.1s, height 0.1s, width 0.1s, left, top`, `left`, `width 0.1s`, `visibility 1s, opacity 1s, height 1s 1s, width 1s 1s, left 1s 1s, top 1s 1s`, `visibility 1s, opacity 1s, height 1s 1s, width 1s, left 1s 1s, top 1s 1s`
 

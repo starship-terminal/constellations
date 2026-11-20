@@ -15,7 +15,7 @@ onefinestay's public marketing site, measured on 2026-11-19 while signed out. Pa
 | [icons/](icons/) | The site favicon SVG and the header menu icon, with [icons/INDEX.tsv](icons/INDEX.tsv) |
 | [icon.png](icon.png) | The site favicon rasterised to 128 px |
 | [raw/](raw/) | Custom properties and computed styles the tokens were built from |
-| [tools/](tools/) | The capture kit, the builders, and a test of the token file |
+| [tools/](tools/) | The builders (`build_tokens.py`, `build_style_guide.py`) and a test that compares the token file with an in-memory build. `kit/capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`) |
 
 <!-- brief:start -->
 ## Brief

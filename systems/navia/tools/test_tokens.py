@@ -22,13 +22,8 @@ def walk(node, path=""):
 
 class TokensTest(unittest.TestCase):
     def test_every_token_has_a_source(self):
-        missing = [
-            path for path, token in walk(TOKENS)
-            if not (token.get("$extensions") or {}).get("source")
-            and "source" not in token.get("$extensions", {})
-        ]
-        # component tokens alias measured tokens and carry no extra source
-        missing = [p for p in missing if ".component." not in p]
+        # every token, component aliases included: a token without a source is a gap whatever it aliases
+        missing = [path for path, token in walk(TOKENS) if not (token.get("$extensions") or {}).get("source")]
         self.assertEqual(missing, [])
 
     def test_page_accent_and_orange_match_the_sheet(self):

@@ -63,8 +63,6 @@ html = f"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kickstarter style guide</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {{
     --page: #ffffff;
@@ -111,7 +109,7 @@ html = f"""<!doctype html>
   <nav><a href="#color">Colour</a><a href="#type">Type</a><a href="#space">Space</a><a href="#shape">Shape</a><a href="#components">Components</a></nav>
 </header>
 <main>
-  <p class="lead">Kickstarter's public KDS tokens, rendered from tokens.json. One light theme. Captured 2026-11-18, signed out. Inter stands in for the loaded webfont; the brand green is #05CE78.</p>
+  <p class="lead">Kickstarter's public KDS tokens, rendered from tokens.json. One light theme. Captured 2026-11-18, signed out. Inter is named but not loaded: the page fetches nothing, so it renders in a locally installed Inter or the sans-serif fallback; the brand green is #05CE78.</p>
   <h2 id="color">Colour</h2>
   <div class="grid">{''.join(swatches)}</div>
   <h2 id="type">Type</h2>

@@ -15,10 +15,13 @@
 // answered. Third-party ad and tracker requests are aborted before they leave the browser, so ad
 // slots paint as blank containers; the "Advertisement" furniture the page itself renders stays.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour originals stay outside the repo (quantize.py writes screenshots/ from them).
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'esquire', 'raw', 'full') // as README Rebuild;
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -158,7 +161,8 @@ for (const { k, mob } of runs) {
   // default while the renderer walks the page.
   p.setDefaultTimeout(120000);
   log(name);
-  const S = new Shooter(p, `${name}-${spec.theme}`, vw, vh, dpr, spec.url);
+  // The sidecar records the page without its query string (a search term or tracking id).
+  const S = new Shooter(p, `${name}-${spec.theme}`, vw, vh, dpr, spec.url && spec.url.split(/[?#]/)[0]);
   try {
     await p.goto(spec.url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.url); await ctx.close(); continue; }

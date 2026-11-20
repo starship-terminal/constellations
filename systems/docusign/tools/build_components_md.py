@@ -164,12 +164,28 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and listed as "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
+def visible(colour_value):
+    """False for a fully transparent colour: a `2px solid transparent` outline draws nothing."""
+    return not re.fullmatch(r"rgba\(\d+, \d+, \d+, 0\)|transparent", colour_value.strip())
+
+
 def state_rows(c):
-    # A state whose capture failed (e.g. via: "focus failed" — the element would
-    # not hold a real keyboard focus) is not a captured state: it is reported
-    # separately so a failed attempt can never read as a measured absence of a
-    # focus ring.
-    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
+    # A state whose capture failed (focus_not_captured) is not a captured state:
+    # it is reported separately so a failed attempt can never read as a measured
+    # absence of a focus ring.
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -198,7 +214,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -256,6 +272,14 @@ MOBILE = [
     ("mobile-pricing", "Pricing storefront, phone", "ecom /en-SG/"),
 ]
 
+# Descriptions the capture wrote that claim an interaction its S() call never ran (the raw keeps
+# them until a recapture; tools/capture/public/measure.mjs now writes these).
+DESC = {
+    "sg-color": "A signature colour swatch button (Cobalt), read at rest, hovered, focused and pressed; never selected here.",
+    "feature-row": "An expandable feature row on a plan card, read at rest, hovered, focused and pressed; never expanded here.",
+    "ec-billing-monthly": "The Monthly half of the billing toggle, read unselected; the monthly screenshot comes from the screenshot pass.",
+}
+
 L = []
 
 
@@ -293,7 +317,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-{theme}-state.png`: every captured surface paints `light` . Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-{theme}-state.png`: every captured surface paints `light` (the marketing .dark islands appear inside light shots). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -323,18 +347,20 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+foc, unfocused = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st or st.get("via") == "focus failed":
+    if st and focus_not_captured(st):
+        unfocused.append(f"`{k}`")
+    if not st or not measured(st):
         continue
     s = st["style"]
     base = next((v["style"] for v in c["states"].values() if "style" in v), s)
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and visible(s["outlineColor"])
     # A ring painted on a child layer instead of the wrapper: offer buttons
     # draw 1px dotted outlines on their inner anchor while the wrapper's own
     # outline stays none. Those states must count as ringed too.
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
+    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline") and visible(n["outline"].split(" offset")[0].split(" ", 2)[-1])), None)
     shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
@@ -354,6 +380,8 @@ if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
 if without:
     parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
+if unfocused:
+    parts.append(f"Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
 W()
 W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.")
@@ -365,7 +393,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -401,7 +429,7 @@ for k in ["trial-card", "plan-card", "auth-card", "story-card", "video-dialog", 
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)
@@ -424,7 +452,7 @@ for g in groups:
             continue
         W()
         W(f"#### {c['title']}")
-        desc = (c.get("desc") or "").strip()
+        desc = (DESC.get(k) or c.get("desc") or "").strip()
         if desc and not desc.endswith((".", ")", '"')):
             desc += "."
         where = PAGE_NAME.get(c["page"], c["page"])
@@ -433,7 +461,7 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
+        failed = [s for s, v in c["states"].items() if focus_not_captured(v)]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")

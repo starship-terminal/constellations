@@ -178,7 +178,7 @@
     "accent": {
      "value": "#2b7fff",
      "type": "color",
-     "source": "declared rgb(43 127 255) in the Tailwind utility layer (raw/css-vars.json palette); the blue of the gradients and links",
+     "source": "declared caret-color #2b7fff on the Tailwind utility class .caret-focus (raw/css-vars.json palette); the blue of the gradients and links",
      "description": "The blue accent (Tailwind blue-500) the gradients, links and interactive UI paint."
     },
     "destructive": {
@@ -204,13 +204,13 @@
     "muted": {
      "value": "#777169",
      "type": "color",
-     "source": "computed color of menu-link default (raw/components-computed.json)",
+     "source": "computed color of menu-link default (raw/components-computed.json); menu-link: read from the wrong element (its default and pressed states caught a same-href link far down the page, not the flyout's); recapture needed",
      "description": "The warm grey on flyout links, the product pill, the billing select and secondary text."
     },
     "white": {
      "value": "#ffffff",
      "type": "color",
-     "source": "computed ancestor-white of signup-submit default (raw/components-computed.json)",
+     "source": "computed backgroundColor of signin-card default (raw/components-computed.json)",
      "description": "The #ffffff surface: cards, the flyout panel, the auth card."
     },
     "wash-hover": {

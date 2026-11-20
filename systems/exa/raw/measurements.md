@@ -486,20 +486,21 @@ Page: home. Selector: `demo output tab`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 40.19 x 18.19 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ABCDiatype 13px/18.2px 400 | = | = | = |
-| Letter spacing | -0.26px | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Ancestor paint | 2 up div.relative.inline-flex bg #f2f1f0 shadow #000000 @ 0.04 0px 0px 0px 1px inset | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 40.19 x 18.19 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ABCDiatype 13px/18.2px 400 | = | - | = |
+| Letter spacing | -0.26px | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Ancestor paint | 2 up div.relative.inline-flex bg #f2f1f0 shadow #000000 @ 0.04 0px 0px 0px 1px inset | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `demo-output-tab-default.png`, `demo-output-tab-hover.png`, `demo-output-tab-focus-visible.png`, `demo-output-tab-pressed.png`.
 
@@ -912,21 +913,22 @@ Page: signin. Selector: `Continue with email`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 360 x 44 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 4px | = | = | = |
-| Background | #1f40ed | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ABC Diatype Unlicensed Trial 16px/32px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Opacity | 0.5 | = | = | = |
-| Cursor | default | = | = | = |
-| Painted layers | button.jsx-38cf25ff465a5e1d.h-11 360.0x44.0 bg #1f40ed r 4px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 360 x 44 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 4px | = | - | = |
+| Background | #1f40ed | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ABC Diatype Unlicensed Trial 16px/32px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Opacity | 0.5 | = | - | = |
+| Cursor | default | = | - | = |
+| Painted layers | button.jsx-38cf25ff465a5e1d.h-11 360.0x44.0 bg #1f40ed r 4px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `auth-email-btn-default.png`, `auth-email-btn-hover.png`, `auth-email-btn-focus-visible.png`, `auth-email-btn-pressed.png`.
 
@@ -1222,19 +1224,20 @@ Page: docs. Selector: `docs language tab`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 43 x 18 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 13px/18px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #0b0b0d | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 43 x 18 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 13px/18px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #0b0b0d | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `docs-tab-default.png`, `docs-tab-hover.png`, `docs-tab-focus-visible.png`, `docs-tab-pressed.png`.
 
@@ -1557,19 +1560,20 @@ Page: docsdark. Selector: `docs language tab`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 43 x 18 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 13px/18px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #f5f5f6 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 43 x 18 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 13px/18px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #f5f5f6 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `d-docs-tab-default.png`, `d-docs-tab-hover.png`, `d-docs-tab-focus-visible.png`, `d-docs-tab-pressed.png`.
 
