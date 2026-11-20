@@ -19,7 +19,7 @@ import time
 
 HERE = pathlib.Path(__file__).resolve().parent
 BIN = pathlib.Path.home() / ".design-systems/raycast-desktop/bin"
-THEME = sys.argv[1] if len(sys.argv) > 1 else "dark"
+THEME = "dark"   # set from argv in __main__; reading argv at import made a test runner's flags the theme
 ESC, RET, TAB, DEL, LEFT, RIGHT, DOWN, UP = 53, 36, 48, 51, 123, 124, 125, 126
 
 
@@ -125,6 +125,17 @@ def expect_row(x, y, label):
     got = ax("at", round(x), round(y))
     if not row_matches(got, label):
         raise SystemExit(f"{got.get('owner')!r} shows {got.get('texts')!r} at {x:.0f},{y:.0f}, not the {label!r} row; stopped before clicking")
+
+
+def expect_at(x, y, what, ok):
+    """Stop unless the element at global point (x, y) is in a Raycast window and its texts pass `ok`.
+    Used before every fixed-point click, so a layout shift cannot land a click on a real setting."""
+    got = ax("at", round(x), round(y))
+    if got.get("owner") != "Raycast" or not ok(got.get("texts") or []):
+        raise SystemExit(f"{got.get('owner')!r} shows {got.get('texts')!r} at {x:.0f},{y:.0f}, not {what}; stopped before clicking")
+
+
+THEME_VALUES = {"Light", "Dark", "System", "Follow System Appearance"}
 
 
 def wins():
@@ -233,6 +244,7 @@ def actions():
 def appmenu():
     launcher()
     x, y = at("Main Window", 25, 448)
+    expect_at(x, y, "the launcher's footer app button", lambda t: len(t) <= 3)
     mouse("click", x, y, wait=1.0)
     park()
     shot("08-app-menu", "Main Window")
@@ -338,6 +350,7 @@ for _n in SETTINGS:
 def settings_search():
     settings_open()
     x, y = at("Settings", 130, 68)
+    expect_at(x, y, "the Settings search field", lambda t: any("Search" in v for v in t))
     mouse("click", x, y, wait=0.6)
     park()
     shot("30-settings-search-focused", "Settings")
@@ -351,6 +364,9 @@ def settings_search():
 def settings_theme_menu():
     side(0, 176, "General")
     x, y = at("Settings", 700, 315)
+    # The theme select shows its value; anything else here (a checkbox after a layout shift) would be
+    # a real setting, so the click stops instead.
+    expect_at(x, y, "the General theme select", lambda t: bool(THEME_VALUES & set(t)))
     mouse("click", x, y, wait=1.0)
     park()
     shot("32-settings-select-open", "Settings")
@@ -358,5 +374,6 @@ def settings_theme_menu():
 
 
 if __name__ == "__main__":
+    THEME = sys.argv[1] if len(sys.argv) > 1 else "dark"
     for name in sys.argv[2:]:
         STEPS[name]()
