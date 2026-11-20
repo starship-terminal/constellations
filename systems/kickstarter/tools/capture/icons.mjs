@@ -42,11 +42,20 @@ const routes = [
   ['/projects/shirtaloon/hwfwm', 'project'],
   ['/login', 'login'],
 ];
+const failed = [];
 for (const [route, tag] of routes) {
   const ctx = await newContext(browser, { dpr: 1 });
   const page = await ctx.newPage();
-  await open(page, BASE + route, { wait: 1200 });
-  const list = await page.evaluate(collect);
+  let list;
+  try {
+    if (!(await open(page, BASE + route, { wait: 1200 }))) throw new Error('page did not open (challenge or timeout)');
+    list = await page.evaluate(collect);
+  } catch (e) {
+    console.log(tag, 'FAILED', String(e.message || e).split('\n')[0]);
+    failed.push(tag);
+    await ctx.close();
+    continue;
+  }
   let fresh = 0;
   for (const ic of list) {
     const key = crypto.createHash('md5').update(ic.html.replace(/\s(width|height)="[^"]*"/g, '')).digest('hex').slice(0, 8);
@@ -58,6 +67,20 @@ for (const [route, tag] of routes) {
   await ctx.close();
 }
 
+await browser.close();
+
+// The old set is replaced only after a complete collection (the kit's rule), so a run that dies
+// early or loses a page cannot leave icons/ emptied, stale or out of step with INDEX.tsv.
+if (failed.length || !seen.size) {
+  console.error(`not replacing icons/: ${failed.length ? 'failed pages: ' + failed.join(', ') : 'no icons collected'}`);
+  process.exit(1);
+}
+// The new set is written into a sibling folder first and swapped in only once it is complete, so
+// a write that fails part-way leaves the old icons/ and its INDEX.tsv untouched.
+const NEXT = OUT + '.next';
+fs.rmSync(NEXT, { recursive: true, force: true });
+fs.mkdirSync(NEXT, { recursive: true });
+
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 32) || 'icon';
 const used = new Set();
 const rows = ['file\trole\twhere'];
@@ -68,10 +91,14 @@ for (const ic of seen.values()) {
   let name = slug(label) || ('icon-' + ic.key);
   if (used.has(name)) name = name + '-' + ic.key;
   used.add(name);
-  fs.writeFileSync(path.join(OUT, name + '.svg'), ic.html + '\n');
+  fs.writeFileSync(path.join(NEXT, name + '.svg'), ic.html + '\n');
   rows.push(`${name}.svg\t${label || 'unlabelled'}\t${[...ic.where].join(',')}`);
   if (i >= 40) break;
 }
-fs.writeFileSync(path.join(OUT, 'INDEX.tsv'), rows.join('\n') + '\n');
+fs.writeFileSync(path.join(NEXT, 'INDEX.tsv'), rows.join('\n') + '\n');
+const OLD = OUT + '.old';
+fs.rmSync(OLD, { recursive: true, force: true });
+fs.renameSync(OUT, OLD);
+fs.renameSync(NEXT, OUT);
+fs.rmSync(OLD, { recursive: true, force: true });
 console.log('wrote', i, 'icons');
-await browser.close();
