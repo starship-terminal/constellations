@@ -58,28 +58,6 @@ test('mobile layout viewport may differ from configured screenshot viewport', as
   assert.equal(result.configuredViewport.width, 390);
 });
 
-test('body.theme-light is recorded; a missing body does not throw', async t => {
-  const root = { scrollWidth: 1440, clientWidth: 1440, scrollHeight: 900, clientHeight: 900,
-    classList: [], getAttribute: () => null };
-  const body = { scrollWidth: 1440, clientWidth: 1440, scrollHeight: 900, clientHeight: 900,
-    classList: ['theme-light', 'hashed'], getAttribute: () => null };
-  const page = fakePage(1440, 900, { width: 1440, height: 900 }, { ...actual, devicePixelRatio: 1 });
-  page.evaluate = async callback => vm.runInNewContext(`(${callback.toString()})()`, {
-    document: { documentElement: root, body }, window: { visualViewport: null },
-    innerWidth: 1440, innerHeight: 900, devicePixelRatio: 1, scrollX: 0, scrollY: 0,
-    getComputedStyle: () => ({ colorScheme: 'normal' }),
-  });
-  const report = await screenshotWithMetadata(page, { path: temporary(t) });
-  assert.deepEqual(JSON.parse(JSON.stringify(report.actual.theme.classes)), ['theme-light']);
-  page.evaluate = async callback => vm.runInNewContext(`(${callback.toString()})()`, {
-    document: { documentElement: root, body: null }, window: { visualViewport: null },
-    innerWidth: 1440, innerHeight: 900, devicePixelRatio: 1, scrollX: 0, scrollY: 0,
-    getComputedStyle: () => ({ colorScheme: 'normal' }),
-  });
-  const bare = await screenshotWithMetadata(page, { path: temporary(t) });
-  assert.deepEqual(JSON.parse(JSON.stringify(bare.actual.theme.classes)), []);
-});
-
 test('browser probe retains safe theme fields and never reads URL or arbitrary root attributes', async t => {
   const root = { scrollWidth: 884, clientWidth: 884, scrollHeight: 1104, clientHeight: 1104,
     classList: ['hashed-class', 'dark', 'owner@example.test'],
@@ -95,6 +73,27 @@ test('browser probe retains safe theme fields and never reads URL or arbitrary r
   const report = await screenshotWithMetadata(page, { path: temporary(t) });
   assert.deepEqual(JSON.parse(JSON.stringify(report.actual.theme)), {
     classes: ['dark'], attributes: { 'data-mode': 'dark', 'data-color-mode': 'system' }, colorScheme: 'dark',
+    body: null,
+  });
+  assert.equal(JSON.stringify(report).includes('owner@example.test'), false);
+});
+
+test('body.theme-light is recorded in theme.body, beside the root fields', async t => {
+  // The kit's root fields keep their meaning; <body>'s markers sit beside them in theme.body.
+  const root = { scrollWidth: 1440, clientWidth: 1440, scrollHeight: 900, clientHeight: 900,
+    classList: ['hashed-class'], getAttribute: () => null };
+  const body = { scrollWidth: 1440, scrollHeight: 900, classList: ['theme-light', 'hashed'],
+    getAttribute: name => ({ 'data-theme': 'owner@example.test' })[name] ?? null };
+  const page = fakePage(1440, 900, { width: 1440, height: 900 }, { ...actual, devicePixelRatio: 1 });
+  page.evaluate = async callback => vm.runInNewContext(`(${callback.toString()})()`, {
+    document: { documentElement: root, body }, window: { visualViewport: null },
+    innerWidth: 1440, innerHeight: 900, devicePixelRatio: 1, scrollX: 0, scrollY: 0,
+    getComputedStyle: () => ({ colorScheme: 'normal' }),
+  });
+  const report = await screenshotWithMetadata(page, { path: temporary(t) });
+  assert.deepEqual(JSON.parse(JSON.stringify(report.actual.theme)), {
+    classes: [], attributes: {}, colorScheme: 'normal',
+    body: { classes: ['theme-light'], attributes: {}, colorScheme: 'normal' },
   });
   assert.equal(JSON.stringify(report).includes('owner@example.test'), false);
 });
@@ -125,6 +124,14 @@ test('creates a fresh output directory and accepts only an explicit sanitized so
     { sanitizedSourceUrl: 'https://example.test/settings' });
   assert.equal(result.sanitizedSourceUrl, 'https://example.test/settings');
   assert.ok(fs.existsSync(`${output}.capture.json`));
+});
+
+test('a source URL passed as page.url() is recorded without its query, fragment or ids', async t => {
+  const output = temporary(t);
+  const result = await screenshotWithMetadata(fakePage(1768, 2208), { path: output },
+    { sanitizedSourceUrl: 'https://app.example.test/chat/1f2e-77?X-Amz-Signature=abc&q=x#access_token=y' });
+  assert.equal(result.sanitizedSourceUrl, 'https://app.example.test/chat/<id>');
+  assert.ok(!fs.readFileSync(`${output}.capture.json`, 'utf8').includes('Signature'));
 });
 
 test('dimension mismatch rejects the capture and retains its failing evidence', async t => {
