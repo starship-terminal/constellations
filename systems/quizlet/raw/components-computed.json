@@ -1,0 +1,65 @@
+{
+  "readAt": "2026-11-21",
+  "page": "https://quizlet.com/latest and https://quizlet.com/settings",
+  "theme": "theme-night",
+  "note": "Computed styles on the live signed-in page. Cross-origin CSSOM was blocked. Phone heading was read at the measured 430x932 viewport.",
+  "samples": {
+    "body": {
+      "backgroundColor": "rgb(10, 9, 45)",
+      "color": "rgb(246, 247, 251)",
+      "fontFamily": "hurme_no2-webfont, -apple-system, system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "26px"
+    },
+    "heading-section": {
+      "color": "rgb(246, 247, 251)",
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "lineHeight": "28px"
+    },
+    "heading-page-phone": {
+      "color": "rgb(246, 247, 251)",
+      "fontSize": "32px",
+      "fontWeight": "700",
+      "lineHeight": "40px"
+    },
+    "label": {
+      "color": "rgb(217, 221, 232)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "20px"
+    },
+    "search": {
+      "backgroundColor": "rgb(46, 56, 86)",
+      "borderRadius": "8px"
+    },
+    "button-primary": {
+      "backgroundColor": "rgb(66, 85, 255)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
+      "padding": "10px 16px",
+      "borderRadius": "200px"
+    },
+    "button-trial": {
+      "backgroundColor": "rgb(255, 205, 31)",
+      "color": "rgb(40, 46, 62)",
+      "borderRadius": "200px"
+    },
+    "button-edit": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(168, 177, 255)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "padding": "12px 24px",
+      "borderRadius": "200px",
+      "height": "48px",
+      "border": "2px solid transparent"
+    },
+    "nav-selected": {
+      "color": "rgb(117, 131, 255)"
+    }
+  }
+}

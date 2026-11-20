@@ -1,0 +1,16 @@
+{
+ "requested": "390x844",
+ "innerWidth": 430,
+ "innerHeight": 932,
+ "devicePixelRatio": 2,
+ "visualViewport": {
+  "width": 430,
+  "height": 932,
+  "scale": 1
+ },
+ "png": {
+  "pixelWidth": 860,
+  "pixelHeight": 1864
+ },
+ "note": "iphone-14-pro-max preset. Freeform 390x844 did not change the CSS viewport."
+}
