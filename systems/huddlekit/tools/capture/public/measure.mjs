@@ -31,6 +31,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium, BASE, APP, M, open, closePromo, setAppTheme, paintedTheme, styleOf, crop, centre, domFind, patch, UA, UA_MOBILE, RAW } from './lib.mjs';
+import { toggleBefore, toggleOpen, toggleRestore } from './toggle.mjs';
 import { safeUrl } from '../safe-url.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
@@ -262,13 +263,15 @@ const PRICING = [
   { key: 'billing-switch', group: 'Pricing', title: 'Billing switch',
     desc: 'A monthly/annual switch on the plan cards (role=switch, data-state=checked, bg-primary on). "off" is its own press — then pressed back.',
     sel: 'button[role="switch"]', find: (p) => p.locator('button[role="switch"]').filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible',
-      { name: 'off', via: 'the switch\'s own press (aria-checked flips; pressed again to restore)', fn: async (loc) => {
-        await loc.click({ timeout: 4000 }).catch(() => {});
-        await page.waitForTimeout(700);
-      }, restore: async (loc) => {
-        if ((await loc.getAttribute('aria-checked').catch(() => null)) === 'false') await loc.click({ timeout: 4000 }).catch(() => {});
-        await page.waitForTimeout(700);
-      } },
+      { name: 'off', via: 'the switch\'s own press (aria-checked flips; pressed again to restore)',
+        stateOf: async (loc) => await loc.getAttribute('aria-checked'),
+        fn: async (loc) => {
+          await loc.click({ timeout: 4000 });
+          await page.waitForTimeout(700);
+        }, restore: async (loc) => {
+          await loc.click({ timeout: 4000 });
+          await page.waitForTimeout(700);
+        } },
     ] },
   { key: 'plan-cta', group: 'Pricing', title: '"Sign up free" button',
     desc: 'A plan call-to-action — links to the app sign-up, measured never followed.',
@@ -492,7 +495,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
       // pressed/dark are cleared in finally so a failed read can never leak
       // the forced state into the next measurement.
       let pressed = null;
-      let toggled = null;  // the locator a toggled state pressed; finally restores it
+      let toggle = null;  // a toggled state's press and its state before, for the restore
       let darkOn = false;
       try {
         await reset();
@@ -514,7 +517,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
             loc = refound.first();
           } else { log(' ', spec.key, name, 'not refound after the dark reload — skipped'); continue; }
         }
-        else if (st && typeof st === 'object' && st.fn) { toggled = readLoc; const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
+        else if (st && typeof st === 'object' && st.fn) { toggle = await toggleBefore(st, readLoc); const alt = await toggleOpen(st, toggle); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
         else if (typeof st === 'function') { await st(readLoc); viaText = 'reached by the component\'s own UI toggle'; }
         await centre(readLoc).catch(() => {});
         const v = await styleOf(readLoc);
@@ -535,7 +538,12 @@ for (const [key, g] of Object.entries(GROUPS)) {
         if (pressed != null) await pressOff(pressed).catch(() => {});
         // a toggled state presses its control back, so later components are
         // read in the resting layout (the ifttt pattern; 2026-11 audit, not run)
-        if (toggled && st.restore) await st.restore(toggled).catch((e) => log(' ', spec.key, name, 'restore failed', e.message.split('\n')[0]));
+        // back to the state it had before its press (toggle.mjs): a press
+        // that never landed leaves nothing to undo
+        if (toggle && st.restore) {
+          const refind = async () => { const a = await spec.find(page).catch(() => null); return a && await a.count() ? a.first() : null; };
+          await toggleRestore(st, toggle, refind).catch((e) => log(' ', spec.key, name, 'restore failed', e.message.split('\n')[0]));
+        }
         if (darkOn) {
           let back = await darkFn(page, 'light').catch(() => false);
           if (!back) back = await darkFn(page, 'light').catch(() => false);
