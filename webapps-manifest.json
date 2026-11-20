@@ -5174,9 +5174,9 @@
       "description": "Tools for human imagination.",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://auth.runwayml.com sign-in shows username or email and password. Password not submitted.",
+      "notes": "Email probe: https://auth.runwayml.com sign-in shows username or email and password. Password not submitted. Public walk 2026-11-21: runwayml.com redirects to runway.com. Header hover menus open Creative, Dev, Robotics, Research, Resources, and Enterprise. Pricing, Enterprise Sales, Login, and Try Runway are links. Login stops at https://app.runwayml.com/login then https://auth.runwayml.com. Phone Menu opens the same sections. No password was typed. No form was submitted. Signed-in editor was not captured. Public package in PR 1573 at 96e6899926ad. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
@@ -5361,9 +5361,9 @@
       "description": "The global commerce platform",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://accounts.shopify.com/lookup shows email and password, or passkey, Google, Apple, Facebook, or WhatsApp. Password not submitted.",
+      "notes": "Email probe: https://accounts.shopify.com/lookup shows email and password, or passkey, Google, Apple, Facebook, or WhatsApp. Password not submitted. Public walk 2026-11-21: header Why Shopify and Products open mega menus. Pricing, Enterprise, and Fall '26 Edition are pages. Phone hamburger opens a drawer. Footer region button opens a region dialog. Login stops at https://accounts.shopify.com/lookup. Start for free stops at https://admin.shopify.com/signup and was not opened. Google, Apple, Facebook, and WhatsApp were not clicked. No email was typed. No form was submitted. Signed-in admin was not captured. Public package in PR 1572 at 04066101299f. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 16
     },
     {
