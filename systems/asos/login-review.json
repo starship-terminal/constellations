@@ -1,0 +1,134 @@
+{
+  "offered": {
+    "nav": {
+      "items": [
+        "My Account",
+        "My Orders",
+        "Saved Items",
+        "Bag"
+      ],
+      "reached": [
+        "My Account",
+        "My Orders",
+        "Saved Items",
+        "Bag"
+      ]
+    },
+    "settings": {
+      "items": [
+        "My orders",
+        "ASOS Premier",
+        "Gift cards & vouchers",
+        "My details",
+        "Address book",
+        "Payment methods",
+        "Contact preferences",
+        "Social accounts"
+      ],
+      "reached": [
+        "My orders",
+        "ASOS Premier",
+        "Gift cards & vouchers",
+        "My details",
+        "Address book",
+        "Payment methods",
+        "Contact preferences",
+        "Social accounts"
+      ]
+    },
+    "create": {
+      "items": [
+        "Create return"
+      ],
+      "reached": [
+        "Create return"
+      ]
+    }
+  },
+  "screens": [
+    {
+      "name": "Header account menu, desktop",
+      "file": "screenshots/signed-in-account-menu-desktop.png"
+    },
+    {
+      "name": "My Account hub, desktop",
+      "file": "screenshots/signed-in-my-account-desktop.png"
+    },
+    {
+      "name": "My Account hub, phone",
+      "file": "screenshots/signed-in-my-account-phone.png"
+    },
+    {
+      "name": "My orders, empty, desktop",
+      "file": "screenshots/signed-in-orders-empty-desktop.png"
+    },
+    {
+      "name": "ASOS Premier signup pitch, desktop",
+      "file": "screenshots/signed-in-premier-desktop.png"
+    },
+    {
+      "name": "Gift cards and vouchers, unavailable, desktop",
+      "file": "screenshots/signed-in-vouchers-unavailable-desktop.png"
+    },
+    {
+      "name": "Contact preferences, desktop",
+      "file": "screenshots/signed-in-contact-preferences-desktop.png"
+    },
+    {
+      "name": "Saved Items, empty, desktop",
+      "file": "screenshots/signed-in-saved-empty-desktop.png"
+    },
+    {
+      "name": "Bag, empty, desktop",
+      "file": "screenshots/signed-in-bag-empty-desktop.png"
+    },
+    {
+      "name": "Bag, empty, phone",
+      "file": "screenshots/signed-in-bag-empty-phone.png"
+    },
+    {
+      "name": "Payment methods, missing billing address, desktop",
+      "file": "screenshots/signed-in-payment-missing-address-desktop.png"
+    },
+    {
+      "name": "Social accounts, desktop",
+      "file": "screenshots/signed-in-social-accounts-desktop.png"
+    },
+    {
+      "name": "Address book, empty add form, desktop",
+      "file": "screenshots/signed-in-address-empty-desktop.png"
+    },
+    {
+      "name": "Create return landing, desktop",
+      "file": "screenshots/signed-in-create-return-desktop.png"
+    }
+  ],
+  "gaps": [
+    "Sign out is in the header account menu and the account nav. It was not used.",
+    "My details was opened. The page shows the account email and date of birth, so that screenshot was deleted and is not in this package.",
+    "Need help opens customer care while signed in. The preview stopped producing screenshot frames, so that page has no file.",
+    "Gift cards and vouchers rendered an unavailable page. The vouchers API returned 403. No code was entered.",
+    "ASOS Premier is a signup pitch. This account has no subscription.",
+    "Payment methods stops on a missing billing address. No card is saved.",
+    "Address book has no saved address. The empty add form was not filled.",
+    "Create return opens a public ReBOUND landing. Get started was not clicked, so no return exists.",
+    "The bag is empty, so checkout never started.",
+    "At 390 CSS width the empty bag panel is 500px wide, so the heading and button clip on the right.",
+    "Saved Items empty copy is dark grey on black. That is the product empty state.",
+    "Address book and social accounts PNGs are 2879px wide, one pixel under 2x of 1440. The measured CSS viewport was 1440x900. A recapture failed because the preview stopped producing frames.",
+    "The storefront offers no dark theme. Account pages are light grey.",
+    "Locale on this pass is Singapore (SGD, country SG, store ROW, lang en-GB)."
+  ],
+  "not_submitted": [
+    "Sign out",
+    "Contact preferences confirm",
+    "Google disconnect",
+    "Add new address",
+    "Add payment method",
+    "ASOS Premier signup",
+    "Create return Get started",
+    "Gift card or voucher redeem",
+    "My details form",
+    "Place an order"
+  ]
+}

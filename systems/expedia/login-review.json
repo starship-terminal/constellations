@@ -1,0 +1,82 @@
+{
+  "offered": {
+    "nav": {
+      "items": [
+        "Trips",
+        "Communication Center (notifications)",
+        "Shop travel",
+        "Support",
+        "Account home"
+      ],
+      "reached": [
+        "Trips",
+        "Communication Center (notifications)",
+        "Shop travel",
+        "Support",
+        "Account home"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Account home",
+        "Communications",
+        "Coupons",
+        "Credits",
+        "Reviews",
+        "Help and feedback",
+        "Rewards"
+      ],
+      "reached": [
+        "Account home",
+        "Communications",
+        "Coupons",
+        "Credits",
+        "Reviews",
+        "Help and feedback",
+        "Rewards"
+      ]
+    },
+    "create": {
+      "items": [
+        "Create a trip"
+      ],
+      "reached": [
+        "Create a trip"
+      ]
+    }
+  },
+  "screens": [
+    {"name": "Account home", "file": "screenshots/signed-in-account-light-desktop.png"},
+    {"name": "Account home, phone width", "file": "screenshots/signed-in-account-light-narrow.png"},
+    {"name": "Trips, booked empty", "file": "screenshots/signed-in-trips-light-desktop.png"},
+    {"name": "Trips, booked empty, phone width", "file": "screenshots/signed-in-trips-light-narrow.png"},
+    {"name": "Communications", "file": "screenshots/signed-in-communications-light-desktop.png"},
+    {"name": "Rewards", "file": "screenshots/signed-in-rewards-light-desktop.png"},
+    {"name": "Coupons", "file": "screenshots/signed-in-coupons-light-desktop.png"},
+    {"name": "Reviews", "file": "screenshots/signed-in-reviews-light-desktop.png"},
+    {"name": "Help and feedback", "file": "screenshots/signed-in-help-light-desktop.png"},
+    {"name": "Notifications", "file": "screenshots/signed-in-notifications-light-desktop.png"},
+    {"name": "Credits", "file": "screenshots/signed-in-credits-light-desktop.png"},
+    {"name": "Create a trip form, not submitted", "file": "screenshots/signed-in-create-trip-light-desktop.png"}
+  ],
+  "gaps": [
+    "This account has no bookings, saves, coupons, reviews, notifications, or airline credits, so those screens are empty states.",
+    "List of favorites (/lists) redirects to Trips Saved for this empty account. Saved shows No saves yet.",
+    "Profile was not opened. The account home offers it as personal details and travel documents, and those fields were not filled.",
+    "Security and settings was not opened. It offers email and password changes, and nothing was changed.",
+    "Payment methods was not opened, so no card or payment data is in this pass.",
+    "Messages, the other inbox tab, was not opened.",
+    "Checkout, booking, member pricing on a results page, and a submitted trip search were not reached.",
+    "Silver tier is not reached (0 of 5 trip elements). OneKeyCash shows $0.00.",
+    "List your property and Open app leave the signed-in product and were not followed.",
+    "catalog.json and webapps-manifest.json are deferred to a later PR, so login-extracted is not flipped in this commit."
+  ],
+  "not_submitted": [
+    "Create a trip was opened and closed without a name, a description, or Save.",
+    "No trip search, booking, or checkout was submitted.",
+    "Find your booking was not used.",
+    "No profile, phone, address, or payment field was filled.",
+    "Chat now and Share feedback were not opened.",
+    "Sign out was not clicked."
+  ]
+}

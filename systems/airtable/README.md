@@ -14,8 +14,10 @@ Airtable the product — the workspace, base editor, interfaces and automations 
 | [patterns.md](patterns.md) | How the components combine: the shared shell and nav drawer, the carousel marketing page, the index galleries, the pricing grid, the sales form, and the mobile fold, each with its components, layout and screens. |
 | [components/crops/](components/crops) | 168 element screenshots, `{component}-{state}.png`, at 2x. |
 | [icons/](icons) | 39 SVGs lifted from the pages (the Airtable brandmark and wordmark, chevrons, social icons, carousel and control glyphs), named by role in [icons/INDEX.tsv](icons/INDEX.tsv). Airtable's property, kept for reference only. |
-| [screenshots/](screenshots) | 33 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the same width; `mobile-*` shots are 390 wide. The home page also keeps the opened-nav-drawer and closed-promo states; the mobile home keeps the open sheet. |
-| [raw/](raw) | The unprocessed readings: every custom property the pages declare sorted by stylesheet owner (`css-vars.json`: 5,461 declarations; `site` is Airtable's own, `other` the consent/widget sheets), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at 1440/1024/390 (`layout.json`). The unquantised screenshot originals stay outside the repository (`RAW` in `tools/capture/public/lib.mjs`). |
+| [screenshots/](screenshots) | 33 `{page}-light-{state}.png` captures of the public marketing site, plus [screenshots/app/](screenshots/app) for the signed-in product. Marketing desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the same width; `mobile-*` shots are 390 wide. The home page also keeps the opened-nav-drawer and closed-promo states; the mobile home keeps the open sheet. |
+| [login-review.json](login-review.json) | Signed-in walk on 2026-11-20: nav, settings, and create items that were offered, the screens that were shot, the gaps, and what was not submitted. The shared manifest is not updated in this change. |
+| [notes.md](notes.md) | Viewport measurements and what each signed-in screenshot shows. |
+| [raw/](raw) | The unprocessed readings: every custom property the pages declare sorted by stylesheet owner (`css-vars.json`: 5,461 declarations; `site` is Airtable's own, `other` the consent/widget sheets), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at 1440/1024/390 (`layout.json`). The unquantised screenshot originals stay outside the repository (`RAW` in `tools/capture/public/lib.mjs`). `raw/signed-in/` holds the full-colour originals of the signed-in walk; `screenshots/app/` holds the 256-colour copies. |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild. |
 
 ## Brief
@@ -133,7 +135,7 @@ All are commercial faces served from Airtable's hosts (see `fontFaces` in [raw/c
 | Checkbox, radio, switch, tooltip, dialog, toast, avatar, badge | not present | none exist on the public marketing surface (the marketplace tab rail was not measured) |
 | States | captured | hover, focus-visible (2px ink ring / 1px #005fcc field ring), pressed (forced), open (nav drawer, Country combobox, FAQs, mobile sheet, promo closed), filled (fields); disabled, error, loading never appear on public pages |
 | App shell and navigation, marketing page, index galleries, pricing, forms, mobile fold | captured | [patterns.md](patterns.md) |
-| Signed-in app, signup, demo flow, checkout | not captured | app.airtable.com is a different product; the form's Submit was never pressed |
+| Signed-in app | partial | [screenshots/app/](screenshots/app) and [login-review.json](login-review.json): home, account menu, base grid, create menu, account overview. Phone grid, phone menu, automations, interfaces, forms, billing and onboarding were not reached. |
 | Light theme, 1440 and 390 | captured | [screenshots/](screenshots): 12 desktop pages (default + full) + home extras, 3 mobile pages |
 | Icons and fonts | captured | [icons/INDEX.tsv](icons/INDEX.tsv); Fonts above |
 
@@ -175,5 +177,20 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/remeasure.mjs
 ## Use in Figma
 
 Import `tokens.json` with Tokens Studio and choose the Light theme. Set text to Neue Haas Grotesk Text (or the closest grotesque), display to Neue Haas Grotesk Display, and keep the tiles at 32px radius.
+
+## Signed-in product
+
+A second walk on 2026-11-20 used the already signed-in T3 preview (Wenlong Chen, light theme). It is the product, not the marketing site. Tokens in this package are still the marketing readings. The signed-in shots are evidence of layout only.
+
+| File | Role |
+|---|---|
+| [screenshots/app/desktop-home.png](screenshots/app/desktop-home.png) | Workspaces home, appearance menu open. 1440×900 CSS, PNG 2880×1800. |
+| [screenshots/app/desktop-account-menu.png](screenshots/app/desktop-account-menu.png) | Account menu open, including Log out. |
+| [screenshots/app/desktop-base-grid.png](screenshots/app/desktop-base-grid.png) | Study Guides grid, onboarding card in front. Tour not started. |
+| [screenshots/app/desktop-create-menu.png](screenshots/app/desktop-create-menu.png) | Add or import menu. Nothing created. |
+| [screenshots/app/desktop-account.png](screenshots/app/desktop-account.png) | Account overview. |
+| [screenshots/app/phone-home.png](screenshots/app/phone-home.png) | Workspaces at 390×844 CSS. Icon rail, content overflows. |
+
+Phone grid, phone account menu, automations, interfaces, forms, billing, and dark theme were not captured. See [login-review.json](login-review.json).
 
 ## The screen to get right
