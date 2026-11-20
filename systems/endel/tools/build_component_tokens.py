@@ -261,13 +261,13 @@ for comp, state, key, prop, desc in [
         if key == "glowColour":
             m = re.search(r"rgba?\([^)]*\)", v or "")
             v = m.group(0) if m else ""
+        if not v or v == "transparent":
+            gap(f"measured.{key}: {comp} {state} {prop} is empty")
+            continue
         if key in ("fontStack", "appStack", "appMediumStack"):
             meas[key] = {"value": v, "type": "fontFamily",
                          "source": f"computed {prop} of {comp} {state} (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)",
                          "description": desc}
-            continue
-        if not v or v == "transparent":
-            gap(f"measured.{key}: {comp} {state} {prop} is empty")
             continue
         ty = "color" if re.match(r"rgba?\(|#", str(v)) else "dimension"
         meas[key] = {"value": norm_color(v) if ty == "color" else v, "type": ty,
@@ -352,28 +352,61 @@ def one(listed, what):
     return vals.pop()
 
 
-def sheet_animation(selector):
-    """(duration, easing) of a recorded animation rule (raw/components-computed.json _meta.sheets)."""
-    for rules in C["_meta"].get("sheets", {}).values():
-        for r in rules:
-            if r.get("selector") == selector and r.get("animation"):
-                m = re.match(r"([\d.]+m?s)\s+(cubic-bezier\([^)]*\)|[a-z-]+)", r["animation"])
-                if m:
-                    return m.group(1), m.group(2)
-    raise SystemExit(f"no recorded animation for {selector}")
+def sheet_animation(selector, page="app-explore"):
+    """(duration, easing) of a rule recorded on `page` (raw/components-computed.json
+    _meta.sheets). The same rule recorded on other pages must agree with it."""
+    def parse(r):
+        m = re.match(r"([\d.]+m?s)\s+(cubic-bezier\([^)]*\)|[a-z-]+)", r.get("animation") or "")
+        return (m.group(1), m.group(2)) if m else None
+    sheets = C["_meta"].get("sheets", {})
+    found = {pg: parse(r) for pg, rules in sheets.items() for r in rules
+             if r.get("selector") == selector and parse(r)}
+    if page not in found:
+        raise SystemExit(f"no recorded animation for {selector} on {page}")
+    if len(set(found.values())) != 1:
+        raise SystemExit(f"{selector} is recorded differently across pages: {found}")
+    return found[page]
 
 
 def gradient(css, alias=None):
-    """Stops of a linear-gradient(...) as DTCG stops; 8-digit hex kept as rgba()."""
+    """Stops of a linear-gradient(...) as DTCG stops; 8-digit hex kept as rgba().
+    A stop without a position takes CSS's default: the first 0%, the last
+    100%, and ones between spread evenly between their positioned neighbours.
+    Any argument that is neither the direction nor a colour stop stops the build."""
+    m = re.fullmatch(r"\s*linear-gradient\((.*)\)\s*", css or "")
+    if not m:
+        raise SystemExit(f"not a linear-gradient: {css!r}")
+    args = [a.strip() for a in re.split(r",(?![^()]*\))", m.group(1))]
+    if re.fullmatch(r"-?[\d.]+deg|to [a-z ]+", args[0]):
+        args = args[1:]
     stops = []
-    for m in re.finditer(r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+([\d.]+)%", css):
-        col = norm_color(m.group(1))
+    for a in args:
+        sm = re.fullmatch(r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}|transparent)(?:\s+([\d.]+)%)?", a)
+        if not sm:
+            raise SystemExit(f"unread gradient stop {a!r} in {css!r}")
+        col = "rgba(0, 0, 0, 0)" if sm.group(1) == "transparent" else norm_color(sm.group(1))
         if re.fullmatch(r"#[0-9a-f]{8}", col):
-            r, g, b, a = (int(col[i:i + 2], 16) for i in (1, 3, 5, 7))
-            col = "#%02x%02x%02x" % (r, g, b) if a == 255 else f"rgba({r}, {g}, {b}, {'%g' % round(a / 255, 3)})"
-        stops.append({"color": (alias or {}).get(col, col), "position": float(m.group(2)) / 100})
-    if not stops:
-        raise SystemExit(f"no gradient stops in {css!r}")
+            r, g, b, al = (int(col[i:i + 2], 16) for i in (1, 3, 5, 7))
+            col = "#%02x%02x%02x" % (r, g, b) if al == 255 else f"rgba({r}, {g}, {b}, {'%g' % round(al / 255, 3)})"
+        pos = float(sm.group(2)) / 100 if sm.group(2) else None
+        stops.append({"color": (alias or {}).get(col, col), "position": pos})
+    if len(stops) < 2:
+        raise SystemExit(f"fewer than two stops in {css!r}")
+    if stops[0]["position"] is None:
+        stops[0]["position"] = 0
+    if stops[-1]["position"] is None:
+        stops[-1]["position"] = 1
+    i = 0
+    while i < len(stops):
+        if stops[i]["position"] is None:
+            j = i
+            while stops[j]["position"] is None:
+                j += 1
+            a, b = stops[i - 1]["position"], stops[j]["position"]
+            for k in range(i, j):
+                stops[k]["position"] = round(a + (b - a) * (k - i + 1) / (j - i + 1), 4)
+            i = j
+        i += 1
     for s_ in stops:
         if s_["position"] == int(s_["position"]):
             s_["position"] = int(s_["position"])

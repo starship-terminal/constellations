@@ -114,6 +114,48 @@ class RebuildTest(unittest.TestCase):
         self.assertEqual([x["position"] for x in stops], [0, 0.5, 1])
         self.assertIn("rgba(0, 0, 0, 0.65) 50%", self.C["header"]["states"]["default"]["style"]["backgroundImage"])
 
+    def motion_helpers(self, sheets=None):
+        src = (PKG / "tools" / "build_component_tokens.py").read_text()
+        ns = {"re": re, "C": {"_meta": {"sheets": sheets if sheets is not None else J["_meta"]["sheets"]}},
+              "norm_color": NS["norm_color"]}
+        exec(src[src.index("def one("):src.index("\n_btn = st(")], ns)
+        return ns
+
+    def test_gradient_fills_omitted_stop_positions(self):
+        g = self.motion_helpers()["gradient"]
+        self.assertEqual(g("linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0))"),
+                         [{"color": "#000000", "position": 0}, {"color": "rgba(0, 0, 0, 0.65)", "position": 0.5},
+                          {"color": "rgba(0, 0, 0, 0)", "position": 1}])
+        self.assertEqual([x["position"] for x in g("linear-gradient(180deg, #111111, #222222, #333333)")], [0, 0.5, 1])
+        with self.assertRaises(SystemExit):
+            g("linear-gradient(rgb(0, 0, 0) 0%, var(--x) 100%)")
+
+    def test_sheet_motion_is_read_from_the_app_page(self):
+        sheets = json.loads(json.dumps(J["_meta"]["sheets"]))
+        self.assertEqual(self.motion_helpers(sheets)["sheet_animation"](".slide-in-out-enter"),
+                         ("0.3s", "cubic-bezier(0.25, 0.46, 0.45, 0.94)"))
+        sheets.pop("app-explore")
+        with self.assertRaises(SystemExit):
+            self.motion_helpers(sheets)["sheet_animation"](".slide-in-out-enter")
+        sheets = json.loads(json.dumps(J["_meta"]["sheets"]))
+        for r in sheets["app-explore"]:
+            r["animation"] = r["animation"].replace("0.3s", "0.4s")
+        with self.assertRaises(SystemExit):
+            self.motion_helpers(sheets)["sheet_animation"](".slide-in-out-enter")
+
+    def test_empty_font_reading_stops_the_build(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("capture", "__pycache__"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            f = root / "raw" / "components-computed.json"
+            j = json.loads(f.read_text())
+            j["components"]["banner"]["states"]["default"]["textStyle"]["fontFamily"] = ""
+            f.write_text(json.dumps(j))
+            r = subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, capture_output=True, text=True)
+            self.assertNotEqual(r.returncode, 0)
+            self.assertIn("appMediumStack", r.stderr)
+
     def test_flagged_components_are_refused_by_every_reader(self):
         comp = dict(self.C["btn-signin"], recaptureMissed="2026-11-20")
         ns = {"re": re, "COMP": {"x": comp}}
