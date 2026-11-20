@@ -38,5 +38,21 @@ class CommittedTokensTest(unittest.TestCase):
         self.assertEqual(missing, [])
 
 
+
+@unittest.skipUnless(TOKENS.exists(), "no tokens.json yet (kit copy)")
+class MeasuredRoleAliasTest(unittest.TestCase):
+    """A measured role aliases only a declared var of its own kind (an ink never a surface)."""
+
+    def test_roles_alias_their_kind(self):
+        m = json.loads(TOKENS.read_text())["light"]["measured"]["color"]
+        kinds = {"text": ("text",), "border": ("border",), "surface": ("surface",)}
+        for group, fams in kinds.items():
+            for key, tok in m.get(group, {}).items():
+                v = tok["$value"] if isinstance(tok, dict) and "$value" in tok else None
+                if isinstance(v, str) and v.startswith("{"):
+                    self.assertTrue(v[1:].split(".")[1] in fams, f"{group}.{key} -> {v}")
+        for key in ("ink", "footerInk"):
+            self.assertEqual(m["text"][key]["$value"], "{color.text.default}")
+
 if __name__ == "__main__":
     unittest.main()

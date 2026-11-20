@@ -509,10 +509,6 @@ async function mobile() {
 
 // The fundraiser page reads its slug the same way the shooter does: the first
 // live /f/<slug> card on /discover.
-const FURLS = { home: '/', discover: '/discover', search: '/s?q=medical', pricing: '/c/pricing', signin: LOGIN_URL, create: '/create/fundraiser/category', mobile: '/', fundraiser: null };
-URLS.home = '/'; URLS.discover = '/discover'; URLS.search = '/s?q=medical';
-URLS.pricing = '/c/pricing'; URLS.signin = LOGIN_URL; URLS.create = '/create/fundraiser/category'; URLS.mobile = '/';
-// URLS was declared at the top of this file from the kit copy; rebind it to gofundme's routes.
 async function resolveFundraiser() {
   if (URLS.fundraiser) return;
   try {
