@@ -3353,9 +3353,9 @@
       "description": "No-Code Workflow Automation",
       "status": "pending",
       "package": null,
-      "notes": "https://www.make.com/login asks for email and password, or Google or SSO. Password not submitted.",
+      "notes": "https://www.make.com/login asks for email and password, or Google or SSO. Password not submitted. Public walk 2026-11-21: header opened Product, Solutions, Resources, and Partners mega menus, plus Pricing, Enterprise, and Talk to sales. Sign in stops at https://www.make.com/login. Get started free stops at https://www.make.com/register. Both were not entered. One light theme. FAQ and the 404 are dark sections. No form was submitted. Public package in PR 1523 at a2783025c. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 10
     },
     {
@@ -3984,9 +3984,9 @@
       "description": "Making Nothing into something",
       "status": "pending",
       "package": null,
-      "notes": "https://nothing.tech/login is 404. https://account.nothing.tech/login/ asks for email and password. Password not submitted.",
+      "notes": "https://nothing.tech/login is 404. https://account.nothing.tech/login/ asks for email and password. Password not submitted. Public walk 2026-11-21: the yellow promo bar opened /collections/sale. AUDIO and PHONES opened mega menus. WATCHES, CMF, and COMMUNITY navigated. Cart opened an empty-cart dialog. Account redirects to https://account.nothing.tech/v2/login/ and was not entered. Account, checkout, and signup were not entered. No form was submitted. Public package in PR 1522 at 49d549272. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 12
     },
     {
