@@ -2538,11 +2538,6 @@
       "assignedMedia": 0
     },
     {
-      "referenceId": "systems:tome",
-      "media": 9,
-      "assignedMedia": 7
-    },
-    {
       "referenceId": "systems:travelperk",
       "media": 0,
       "assignedMedia": 0
@@ -375695,83 +375690,6 @@
           "termId": "web-ui-elements:text-field",
           "rule": "ui-text-field",
           "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:tome",
-      "mediaId": "systems/tome/screenshots/home-dark-desktop-focus.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:tome",
-      "mediaId": "systems/tome/screenshots/home-dark-desktop.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:tome",
-      "mediaId": "systems/tome/screenshots/home-dark-phone.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:tome",
-      "mediaId": "systems/tome/screenshots/home-light-desktop-focus.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:tome",
-      "mediaId": "systems/tome/screenshots/home-light-desktop.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:tome",
-      "mediaId": "systems/tome/screenshots/home-light-phone.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:tome",
-      "mediaId": "systems/tome/components/crops/error-heading-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:error",
-          "rule": "ux-error",
-          "reason": "Capture filename explicitly names error; local classification from recorded capture metadata."
         }
       ]
     },
