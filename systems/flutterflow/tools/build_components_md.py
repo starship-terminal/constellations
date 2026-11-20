@@ -24,6 +24,16 @@ T = json.load(open("tokens.json"))
 # --------------------------------------------------------------------------- colours and tokens
 
 
+
+def focus_not_captured(v):
+    """A state whose reading is not what its name says (decision D4, ported
+    from the kit's builder): a skipped one, or a focus-visible reading taken
+    where keyboard focus never landed (via "focus failed") or where the
+    element took focus but did not match :focus-visible. Its style is the
+    element at rest, so it is left out of every table and tally and listed as
+    "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
 def flat(node, prefix=""):
     for k, v in node.items():
         if k.startswith("$"):
@@ -194,7 +204,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if "style" in c["states"][s] and not focus_not_captured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -364,9 +374,13 @@ W()
 W("Values that apply across entries, from the measurement files.")
 W()
 foc = []
+no_focus = []  # focus-visible readings where focus never landed (D4)
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
+        continue
+    if focus_not_captured(st):
+        no_focus.append(k)
         continue
     s = st["style"]
     base = (c["states"].get("default") or {}).get("style") or {}
@@ -385,6 +399,8 @@ without = [f"`{k}`" for k, r in foc if not r]
 painted_txt = (f" {len(painted)} paint their focus instead of drawing an outline — a 4px ink-6% box-shadow "
                f"ring over a darker border on {', '.join(painted)}.") if painted else ""
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}.{painted_txt} The other {len(without)} show a keyboard user no change: {', '.join(without)}. The ring is `--ff-focus-width` 2px solid `--ff-color-focus` at `--ff-focus-offset` 2px — near-black on the ff-* layer's controls, the accent blue `#0a68e0` on the home skin's buttons and the composer's send.")
+if no_focus:
+    W(f"Focus could not be captured on {len(no_focus)}: keyboard focus never reached them (or they took focus without matching :focus-visible), so their focus look is unknown, not absent: {', '.join(f'`{k}`' for k in no_focus)}.")
 W()
 W("**Pressed.** FlutterFlow's buttons shrink when pressed instead of changing colour: the pill CTAs scale to about 0.94-0.97 (`transform: scale()` at a forced :active). The segmented options and quiet buttons do the same; colour changes on press are minimal.")
 W()

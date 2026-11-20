@@ -59,7 +59,8 @@ Screenshots are named `{page}-{theme}-{state}.png`; the dark set is `{page}-dark
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 27 components were given a real keyboard focus. 20 draw a ring: `banner-dismiss` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-menu-button` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-link` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-signin` (2px solid #1a1a1a `color.ink`, offset 2px), `billing-seg-option` (2px solid #1a1a1a `color.ink`, offset 2px), `plan-cta` (2px solid #1a1a1a `color.ink`, offset 2px), `plan-cta-primary` (2px solid #1a1a1a `color.ink`, offset 2px), `ff-composer-go` (2px solid #1a1a1a `color.ink`, offset 2px), `ff-composer-key` (2px solid #1a1a1a `color.ink`, offset 2px), `footer-link` (2px solid #1a1a1a `color.ink`, offset 3px), `theme-switch-pick` (2px solid #1a1a1a `color.ink`, offset 3px), `submit` (2px solid #1a1a1a `color.ink`, offset 2px), `tab-selected` (2px solid #1a1a1a `color.ink`, offset -2px), `tab` (2px solid #1a1a1a `color.ink`, offset -2px), `replay-btn` (2px solid #1a1a1a `color.ink`, offset 2px), `composer-go` (2px solid #0a68e0 `color.accent`, offset 2px), `btn-contrast` (2px solid #0a68e0 `color.accent`, offset 2px), `btn-quiet` (2px solid #0a68e0 `color.accent`, offset 2px), `m-open-menu` (2px solid #1a1a1a `color.ink`, offset 2px), `m-menu-close` (2px solid #1a1a1a `color.ink`, offset 2px). 2 paint their focus instead of drawing an outline — a 4px ink-6% box-shadow ring over a darker border on `select`, `select-trigger`. The other 5 show a keyboard user no change: `btn-primary-sm`, `link-go`, `composer-nav`, `composer-key`, `replay-btn-home`. The ring is `--ff-focus-width` 2px solid `--ff-color-focus` at `--ff-focus-offset` 2px — near-black on the ff-* layer's controls, the accent blue `#0a68e0` on the home skin's buttons and the composer's send.
+**Focus.** 22 components were given a real keyboard focus. 20 draw a ring: `banner-dismiss` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-menu-button` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-link` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-signin` (2px solid #1a1a1a `color.ink`, offset 2px), `billing-seg-option` (2px solid #1a1a1a `color.ink`, offset 2px), `plan-cta` (2px solid #1a1a1a `color.ink`, offset 2px), `plan-cta-primary` (2px solid #1a1a1a `color.ink`, offset 2px), `ff-composer-go` (2px solid #1a1a1a `color.ink`, offset 2px), `ff-composer-key` (2px solid #1a1a1a `color.ink`, offset 2px), `footer-link` (2px solid #1a1a1a `color.ink`, offset 3px), `theme-switch-pick` (2px solid #1a1a1a `color.ink`, offset 3px), `submit` (2px solid #1a1a1a `color.ink`, offset 2px), `tab-selected` (2px solid #1a1a1a `color.ink`, offset -2px), `tab` (2px solid #1a1a1a `color.ink`, offset -2px), `replay-btn` (2px solid #1a1a1a `color.ink`, offset 2px), `composer-go` (2px solid #0a68e0 `color.accent`, offset 2px), `btn-contrast` (2px solid #0a68e0 `color.accent`, offset 2px), `btn-quiet` (2px solid #0a68e0 `color.accent`, offset 2px), `m-open-menu` (2px solid #1a1a1a `color.ink`, offset 2px), `m-menu-close` (2px solid #1a1a1a `color.ink`, offset 2px). 2 paint their focus instead of drawing an outline — a 4px ink-6% box-shadow ring over a darker border on `select`, `select-trigger`. The other 0 show a keyboard user no change: . The ring is `--ff-focus-width` 2px solid `--ff-color-focus` at `--ff-focus-offset` 2px — near-black on the ff-* layer's controls, the accent blue `#0a68e0` on the home skin's buttons and the composer's send.
+Focus could not be captured on 5: keyboard focus never reached them (or they took focus without matching :focus-visible), so their focus look is unknown, not absent: `btn-primary-sm`, `link-go`, `composer-nav`, `composer-key`, `replay-btn-home`.
 
 **Pressed.** FlutterFlow's buttons shrink when pressed instead of changing colour: the pill CTAs scale to about 0.94-0.97 (`transform: scale()` at a forced :active). The segmented options and quiet buttons do the same; colour changes on press are minimal.
 
@@ -213,11 +214,11 @@ The small contrast pill in the nav: --ff-color-contrast fill, --ff-color-contras
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 183 x 32; padding 0px 14px; radius 999px; background #1a1a1a `color.ink`; text Inter 13/20.15 510, #ffffff `color.card`; transition transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94) |
+| default (same: hover) | size 183 x 32; padding 0px 14px; radius 999px; background #1a1a1a `color.ink`; text Inter 13/20.15 510, #ffffff `color.card`; transition transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94) |
 | pressed | size 177.51 x 31.04; transform scale(0.97) |
 | dark | background #ededed; text Inter 13/20.15 510, #111111 |
 
-![Start building (nav, small) default](components/crops/btn-primary-sm-default.png) ![Start building (nav, small) hover](components/crops/btn-primary-sm-hover.png) ![Start building (nav, small) focus-visible](components/crops/btn-primary-sm-focus-visible.png) ![Start building (nav, small) pressed](components/crops/btn-primary-sm-pressed.png) ![Start building (nav, small) dark](components/crops/btn-primary-sm-dark.png)
+![Start building (nav, small) default](components/crops/btn-primary-sm-default.png) ![Start building (nav, small) hover](components/crops/btn-primary-sm-hover.png) ![Start building (nav, small) pressed](components/crops/btn-primary-sm-pressed.png) ![Start building (nav, small) dark](components/crops/btn-primary-sm-dark.png)
 
 <a id="brand"></a>
 #### Brand lockup
@@ -325,7 +326,7 @@ The text link with a trailing arrow ("Contact us", question rows): --ff-lnk. Mea
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 174.53 x 26; background transparent; text Inter 15/26 510, #1a1a1a `color.ink`; icon 16.05 x 16.05, #1a1a1a `color.ink` |
+| default (same: pressed) | size 174.53 x 26; background transparent; text Inter 15/26 510, #1a1a1a `color.ink`; icon 16.05 x 16.05, #1a1a1a `color.ink` |
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -422,7 +423,6 @@ The previous/next idea arrows in the composer. Read as `composer-nav` on the hom
 |---|---|
 | default | size 30 x 30; radius 50%; background transparent; text Inter 16/24.8 400, #6b6b6b `color.muted`; transition background-color 0.15s ease, color 0.15s ease; icon 17 x 17, #6b6b6b `color.muted` |
 | hover | background rgba(26, 26, 26, 0.06); text Inter 16/24.8 400, #1a1a1a `color.ink`; icon 17 x 17, #1a1a1a `color.ink` |
-| focus-visible | size 0 x 0; icon none |
 | pressed | size 0 x 0; background rgba(26, 26, 26, 0.06); text Inter 16/24.8 400, #1a1a1a `color.ink`; icon none |
 
 ![Idea nav button default](components/crops/composer-nav-default.png) ![Idea nav button hover](components/crops/composer-nav-hover.png)
@@ -434,7 +434,6 @@ The "Use this idea" chip under the ghost text (home skin); only painted in the d
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 39 x 21; padding 0px 7px; border T: 1px solid rgba(0, 0, 0, 0.07) `legacy.edge`; R: 1px solid rgba(0, 0, 0, 0.07) `legacy.edge`; B: 2px solid rgba(0, 0, 0, 0.07) `legacy.edge`; L: 1px solid rgba(0, 0, 0, 0.07) `legacy.edge`; radius 6px; background #fcfcfb `color.page`; text Inter 12/18 500, #1a1a1a `color.ink` |
-| focus-visible | size 0 x 0 |
 | pressed | size 0 x 0; border T: 1px solid rgba(26, 26, 26, 0.3); R: 1px solid rgba(26, 26, 26, 0.3); B: 2px solid rgba(26, 26, 26, 0.3); L: 1px solid rgba(26, 26, 26, 0.3) |
 
 ![Idea key chip default](components/crops/composer-key-default.png)
@@ -749,7 +748,7 @@ The small outline Replay on the demo modules; never painted at rest on this page
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 0 x 0; padding 0px 12px; radius 24px; background transparent; shadow #dedede 0px 0px 0px 1px inset; text Inter 14/21.7 500, #6b6b6b `color.muted`; transition background 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease |
+| default | size 0 x 0; padding 0px 12px; radius 24px; background transparent; shadow #dedede 0px 0px 0px 1px inset; text Inter 14/21.7 500, #6b6b6b `color.muted`; transition background 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease |
 | pressed | background #ffffff `color.card`; shadow #a3a3a3 0px 0px 0px 1px inset; text Inter 14/21.7 500, #1a1a1a `color.ink` |
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
