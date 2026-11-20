@@ -12,7 +12,7 @@ The site: strict monochrome — black text and keylines on white with grey steps
 | [style-guide.html](style-guide.html) | Self-contained rendering of tokens and components |
 | [components.md](components.md) | Discovery list + component inventory (21 components, 41 states) with crops and Gaps |
 | [patterns.md](patterns.md) | How the components combine per surface |
-| [components/crops/](components/crops) | 41 element screenshots at 2x |
+| [components/crops/](components/crops) | 34 element screenshots at 2x |
 | [screenshots/](screenshots) | 17 `{page}-light-{state}.png` captures: desktop 1440x900, mobile 390x844 |
 | [raw/](raw) | `css-vars.json`, `components-computed.json`, `measurements.md`, `component-tokens.json`. Full-colour raws stay outside the repo at `~/.design-systems/adidas/raw-full/` |
 | [tools/](tools) | The builders and capture kit. See Rebuild |
@@ -48,7 +48,7 @@ Fonts: `core.font.family.din` is AdihausDIN, then 3 fallbacks; `core.font.family
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 38 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 34 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

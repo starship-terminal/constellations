@@ -12,7 +12,7 @@ Ballpark is worth a capture because it is a current reference for a clean, edito
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every measured component (41, ~109 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the fixed shell, the CTA vocabulary, the hero, pricing, forms, footer |
-| [components/crops/](components/crops) | 109 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 108 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 26 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-solutions-menu`/`-menu-open` the opened states |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the Framer bundle, binned token/app/framer, resolved in a probe), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
@@ -51,7 +51,7 @@ Fonts: the catalog preview names none. Scales, counted as [DESIGN.md](DESIGN.md)
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 109 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 108 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
