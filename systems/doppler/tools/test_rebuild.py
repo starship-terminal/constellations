@@ -69,3 +69,19 @@ class RebuildTest(unittest.TestCase):
         ns = runpy.run_path(str(pathlib.Path(self.tmp.name) / "tools" / "build_component_tokens.py"))
         self.assertEqual(ns["norm_color"]("rgb(28 22 36/var(--tw-bg-opacity,1))"), "#1c1624")
         self.assertEqual(ns["norm_color"]("rgb(28 22 36/var(--tw-bg-opacity,0.5))"), "rgba(28, 22, 36, 0.5)")
+
+
+    def test_measurements_rebuild_matches(self):
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node is not installed")
+        root = pathlib.Path(self.tmp.name)
+        (root / "tools" / "capture" / "public").mkdir(parents=True, exist_ok=True)
+        shutil.copy(PKG / "tools" / "capture" / "css-colour.mjs", root / "tools" / "capture")
+        shutil.copy(PKG / "tools" / "capture" / "public" / "build-measurements.mjs", root / "tools" / "capture" / "public")
+        subprocess.run([node, str(root / "tools" / "capture" / "public" / "build-measurements.mjs")], cwd=root, check=True, capture_output=True)
+        built = (root / "raw" / "measurements.md").read_text()
+        self.assertEqual((PKG / "raw" / "measurements.md").read_text(), built)
+
+if __name__ == "__main__":
+    unittest.main()
