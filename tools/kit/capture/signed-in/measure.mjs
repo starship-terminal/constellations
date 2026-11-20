@@ -32,6 +32,10 @@ import { chromium, REF, RAW, CROPS, SNAPS, SCROLL, PYTHON, metaOf, newContext, o
 import { safeUrl } from '../safe-url.mjs';
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
+// Every recorded string is written through noEmails, whatever recorded it: styleOf masks its own text,
+// but an attribute (aria-label="Switch to ..."), a selector or an error message can carry an address too.
+const EMAIL = /[\w.+%-]+@[\w-]+(?:\.[\w-]+)+/g;
+const noEmails = (k, v) => (typeof v === 'string' ? v.replace(EMAIL, '<email>') : v);
 const OUT = path.join(RAW, 'components-computed.json');
 const args = process.argv.slice(2);
 const jobsArg = args.indexOf('--jobs');
@@ -167,7 +171,7 @@ function styleOf(el, props) {
     rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
     style: pick(cs),
   };
-  for (const a of ['role', 'aria-label', 'data-cds', 'data-state', 'data-active', 'aria-checked', 'aria-selected', 'data-variant']) if (el.hasAttribute(a)) (out.attrs ||= {})[a] = el.getAttribute(a);
+  for (const a of ['role', 'aria-label', 'data-cds', 'data-state', 'data-active', 'aria-checked', 'aria-selected', 'data-variant']) if (el.hasAttribute(a)) (out.attrs ||= {})[a] = noEmail(el.getAttribute(a));
   for (const pe of ['::before', '::after']) {
     const p = getComputedStyle(el, pe);
     if (p.content && p.content !== 'none' && p.content !== 'normal') {
@@ -471,7 +475,7 @@ const save = () => {
     for (const n of names) { const l = n === 'default' ? 'light' : `light-${n}`; if (pick(l)) ordered[l] = pick(l); }
     comps[spec.key] = { ...c, states: ordered };
   }
-  fs.writeFileSync(OUT, JSON.stringify({ _meta: out._meta, components: comps }, null, 1) + '\n');
+  fs.writeFileSync(OUT, JSON.stringify({ _meta: out._meta, components: comps }, noEmails, 1) + '\n');
 };
 await Promise.all(Array.from({ length: Math.min(CONC, queue.length) }, async () => {
   while (queue.length) {

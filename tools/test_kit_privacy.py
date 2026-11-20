@@ -408,10 +408,25 @@ class JavaScriptHalves(unittest.TestCase):
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
 
+    def test_measure_scripts_write_every_string_through_the_email_mask(self):
+        # Greptile on PR 1298: styleOf masked text, but attrs['aria-label'] (and an error or a selector)
+        # still reached components-computed.json with the address in it
+        for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/measure.mjs"):
+            src = path.read_text()
+            writes = [l for l in src.splitlines() if "writeFileSync(OUT" in l]
+            self.assertTrue(writes, path)
+            for line in writes:
+                self.assertIn(", noEmails, 1)", line, path)
+            block = js_block(path, "const EMAIL", "const noEmails")
+            got = self.node(block + "\nconsole.log(JSON.stringify({ attrs: { 'aria-label': 'Switch to person.name@example.co' }, "
+                            "error: 'toggle refused: A \"a@b.example\"', n: 3, list: ['x', 'y@z.test'] }, noEmails))")
+            self.assertEqual(got, {"attrs": {"aria-label": "Switch to <email>"}, "error": 'toggle refused: A "<email>"', "n": 3, "list": ["x", "<email>"]}, path)
+        self.assertIn("(out.attrs ||= {})[a] = noEmail(el.getAttribute(a))", (SIGNED_IN / "measure.mjs").read_text())
+
     def test_recorded_text_masks_email_addresses(self):
         # finding 11e-22: a sign-in field's placeholder showed the product's inbox, and styleOf recorded it
         for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs"):
-            src = js_block(path, "const noEmail", "const noEmail")
+            src = js_block(path, "const noEmail = ", "const noEmail = ")
             got = self.node(src + "\nconsole.log(JSON.stringify(["
                             "noEmail('Email hello.team+news@example.co.uk to join'), noEmail('first.last@sub.example.com'),"
                             "noEmail('Sign in'), noEmail('@handle and a@b'), noEmail(null)]))")
