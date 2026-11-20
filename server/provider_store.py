@@ -125,7 +125,9 @@ def _db(create: bool):
                 pass
             else:
                 os.close(fd)
-                os.chmod(path, 0o600)
+            # By path, so no descriptor is opened: a restored or copied file
+            # with a looser mode is tightened before a key is written into it.
+            os.chmod(path, 0o600)
         else:
             os.stat(path)
     except FileNotFoundError:

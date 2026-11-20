@@ -698,6 +698,12 @@ class ProviderKeyTest(TempConfig):
         h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
         self.assertFalse(h.json()["ok"])
 
+    def test_a_save_tightens_a_loose_existing_file(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        os.chmod(self.config / "provider.db", 0o644)
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertEqual((self.config / "provider.db").stat().st_mode & 0o777, 0o600)
+
     def test_a_busy_database_is_never_deleted(self):
         import sqlite3
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
