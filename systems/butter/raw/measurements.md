@@ -271,7 +271,7 @@ Crops: none.
 
 #### cursor-badge
 
-Cursor badge. The custom-cursor pill ("Add butter") that follows the pointer; painted only while the pointer is on the page.
+Cursor badge. The custom-cursor pill ("Add butter") that follows the pointer. Captured in its hidden state (opacity 0, scale .6): it only paints while a real pointer follows the page, which synthetic movement does not wake — the reported box is the shrunken pill, not its visible size.
 
 Page: home. Selector: `span.CursorButter`. States: default.
 
