@@ -17,7 +17,7 @@ class Outputs(unittest.TestCase):
     def test_the_cta_glow_is_the_reading(self):
         glow = T["dark"]["shadow"]["ctaGlow"]["$value"][0]
         self.assertEqual(C["cta"]["states"]["default"]["style"]["boxShadow"],
-                         "rgba(255, 255, 255, 0.98) %s %s %s %s" % (glow["offsetX"], glow["offsetY"], glow["blur"], glow["spread"]))
+                         "%s %s %s %s %s" % (glow["color"], glow["offsetX"], glow["offsetY"], glow["blur"], glow["spread"]))
 
     def test_a_failed_focus_is_not_published_as_a_state(self):
         md = (ROOT / "components.md").read_text()
