@@ -53,9 +53,16 @@ class RebuildTest(unittest.TestCase):
             (cap / "public").mkdir(parents=True)
             shutil.copy2(PKG / "tools" / "capture" / "css-colour.mjs", cap / "css-colour.mjs")
             shutil.copy2(MEASUREMENTS, cap / "public" / "build-measurements.mjs")
+        # The copy starts without the outputs, so each comparison reads a freshly written file.
+        cls.expected = [rel for rel in OUTPUTS + ("raw/measurements.md",) if (PKG / rel).exists()]
+        for rel in cls.expected:
+            (root / rel).unlink()
         for b in BUILDERS:
             subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
         cls.built = json.loads((root / "tokens.json").read_text())
+        if NODE and MEASUREMENTS.exists():
+            subprocess.run([NODE, str(root / "tools" / "capture" / "public" / "build-measurements.mjs")],
+                           cwd=root, check=True, capture_output=True)
         cls.C = json.loads((PKG / "raw" / "components-computed.json").read_text())["components"]
 
     @classmethod
@@ -63,14 +70,14 @@ class RebuildTest(unittest.TestCase):
         cls.tmp.cleanup()
 
     def test_committed_output_matches_rebuild(self):
-        for rel in OUTPUTS:
-            if (PKG / rel).exists() and (self.root / rel).exists():
-                self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
+        for rel in self.expected:
+            if rel == "raw/measurements.md" and not NODE:
+                continue
+            self.assertTrue((self.root / rel).exists(), f"{rel} was not rebuilt")
+            self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
 
     @unittest.skipUnless(NODE and MEASUREMENTS.exists(), "needs node")
     def test_measurements_match_rebuild(self):
-        subprocess.run([NODE, str(self.root / "tools" / "capture" / "public" / "build-measurements.mjs")],
-                       cwd=self.root, check=True, capture_output=True)
         rel = "raw/measurements.md"
         self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
 
@@ -86,6 +93,23 @@ class RebuildTest(unittest.TestCase):
             src = (v.get("$extensions") or {}).get("source", "")
             for k in failed:
                 self.assertNotIn(f"of {k} focus-visible", src, path)
+
+    def test_wrong_element_warning_follows_the_reading(self):
+        # The warning shows for the bad reading and clears once a recapture reads another element.
+        md = (PKG / "components.md").read_text()
+        for k in ("designer-name", "m-search"):
+            self.assertIn("**Wrong element.**", md.split(f"Read as `{k}`", 1)[1].split("\n#### ", 1)[0], k)
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = pathlib.Path(tmp.name) / "pkg"
+        shutil.copytree(self.root, root)
+        raw = root / "raw" / "components-computed.json"
+        J = json.loads(raw.read_text())
+        J["components"]["designer-name"]["states"]["default"]["text"] = "Jane Studio"
+        raw.write_text(json.dumps(J))
+        subprocess.run([sys.executable, str(root / "tools" / "build_components_md.py")], cwd=root, check=True, capture_output=True)
+        md = (root / "components.md").read_text()
+        self.assertNotIn("**Wrong element.**", md.split("Read as `designer-name`", 1)[1].split("\n#### ", 1)[0])
 
     def test_dimensions_have_no_exponent(self):
         # 15-16: Chromium's 1e+07px pill radius was committed verbatim.

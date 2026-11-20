@@ -412,9 +412,11 @@ W()
 
 # Entries whose selector caught another element (the README's What to distrust
 # lists them): the values below are that element's, not the named component's.
+# Each is keyed to the bad reading's own text, so a recapture that reads the
+# right element clears the warning.
 WRONG = {
-    "designer-name": "The name filter's /LAB|STUDIO/ matched inside \"available\", so these are the \"15 Services available\" meta line's values, not a designer name.",
-    "m-search": "The union's `a[href*=\"/search\"]` matched first, so this is the \"dashboard\" tag chip, not the search field.",
+    "designer-name": ("15 Services available", "The name filter's /LAB|STUDIO/ matched inside \"available\", so these are the \"15 Services available\" meta line's values, not a designer name."),
+    "m-search": ("dashboard", "The union's `a[href*=\"/search\"]` matched first, so this is the \"dashboard\" tag chip, not the search field."),
 }
 
 # ------------------------------------------------ entries
@@ -442,8 +444,8 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        if k in WRONG:
-            W(f"**Wrong element.** {WRONG[k]} The selector is fixed in tools/capture/public/measure.mjs; the entry needs a recapture.")
+        if k in WRONG and (c["states"].get("default") or {}).get("text") == WRONG[k][0]:
+            W(f"**Wrong element.** {WRONG[k][1]} The selector is fixed in tools/capture/public/measure.mjs; the entry needs a recapture.")
             W()
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
