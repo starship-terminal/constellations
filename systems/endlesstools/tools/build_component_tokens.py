@@ -64,6 +64,16 @@ SPEC = {"_about": (
     "core": {}, "light": {}, "dark": {}, "component": {}}
 
 
+# A named row whose reading is missing is recorded here instead of being
+# dropped silently; the build stops on any gap not listed in KNOWN_GAPS (at the
+# end), and listed ones are written to raw/component-tokens.json `_gaps`.
+GAPS = []
+
+
+def gap(what):
+    GAPS.append(what)
+
+
 def descend(root, parts):
     node = root
     for p in parts[:-1]:
@@ -83,6 +93,8 @@ def descend(root, parts):
 
 def emit(root, name, leaf):
     node, last = descend(root, name[2:].split("-"))
+    if node.get(last) is not None:
+        raise SystemExit(f"duplicate token path for {name}: {last} is already set")
     node[last] = leaf
 
 
@@ -120,11 +132,22 @@ def norm_color(v):
 
 
 def have(comp, state, prop=None):
+    """Gate for one named row: a miss is recorded as a gap (see GAPS)."""
     try:
         s = st(comp, state)
-        return prop is None or bool((s.get(prop) or "").strip())
+        ok = prop is None or bool((s.get(prop) or "").strip())
     except KeyError:
-        return False
+        ok = False
+    if not ok:
+        gap(f"no {comp} {state} {prop or 'reading'}")
+    return ok
+
+
+def declared(vname):
+    """Gate for one named declared variable: a miss is recorded as a gap."""
+    if vname not in R:
+        gap(f"{vname} not declared")
+    return vname in R
 
 
 def painted(comp, state):
@@ -142,19 +165,78 @@ def painted(comp, state):
     return None
 
 
+CC = "raw/components-computed.json"
+HAND = "entered by hand at capture time, not measured: "
+
+
+def split_shadow(v):
+    """Top-level comma split of a computed box-shadow list."""
+    return [x.strip() for x in re.split(r",\s*(?![^()]*\))", v or "") if x.strip()]
+
+
+def reading(comp, state, prop):
+    """One raw reading: a computed style property; `placeholder` (the field's
+    placeholder colour); `ring` (the colour of the first visible box-shadow
+    layer with a spread, i.e. a 1px ring); `body` (the body fill among the
+    element's ancestors)."""
+    s = C[comp]["states"][state]
+    if prop == "placeholder":
+        return s["placeholder"]["color"]
+    if prop == "ring":
+        for layer in split_shadow(s["style"]["boxShadow"]):
+            m = re.match(r"^(rgba?\([^)]*\))\s+-?[\d.]+px\s+-?[\d.]+px\s+-?[\d.]+px\s+([\d.]+)px", layer)
+            if m and float(m.group(2)) > 0 and not m.group(1).replace(" ", "").endswith(",0)"):
+                return m.group(1)
+        raise KeyError("no ring layer")
+    if prop == "body":
+        return next(a["bg"] for a in s.get("ancestors") or [] if a.get("node", "").startswith("body") and a.get("bg"))
+    return s["style"][prop]
+
+
+def measured(rows, bag, ty, what):
+    """Rows of (key, [(comp, state), ...], prop, desc): each value is read from
+    the raw file, and every cited reading must agree, so a recapture that
+    changes one shows here instead of leaving a typed literal behind."""
+    for key, cites, prop, desc in rows:
+        try:
+            vals = [reading(c, st_, prop) for c, st_ in cites]
+        except (KeyError, StopIteration):
+            gap(f"{what}.{key}: no {prop} reading of {cites}")
+            continue
+        norm = {norm_color(v) for v in vals} if ty == "color" else set(vals)
+        if len(norm) != 1:
+            raise SystemExit(f"{what}.{key}: the cited readings disagree: {vals}")
+        label = {"ring": "boxShadow ring colour", "body": "body fill (ancestor)", "placeholder": "placeholder color"}.get(prop, prop)
+        bag[key] = {"value": vals[0], "type": ty,
+                    "source": f"computed {label} of " + " and ".join(f"{c} {st_}" for c, st_ in cites) + f" ({CC})",
+                    "description": desc}
+
+
+def declared_rule(selector, prop):
+    """A property of a rule recorded from the readable stylesheets (raw/css-vars.json)."""
+    for bin_ in ("tailwind", "theme", "utility", "app"):
+        for r in V.get(bin_) or []:
+            if r.get("selector") == selector and prop in (r.get("properties") or {}):
+                return r["properties"][prop]
+    raise KeyError(f"{selector} {prop}")
+
+
 # ------------------------------------------------------------------- fonts
 
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
-fam["sans"] = {"value": 'Inter, "Inter Fallback"', "type": "fontFamily",
-               "source": "computed fontFamily of every measured component (raw/components-computed.json); the Inter @font-face faces are in raw/css-vars.json fonts",
+_fams = {v["style"]["fontFamily"] for c in C.values() for v in c["states"].values() if "style" in v}
+if len(_fams) != 1:
+    raise SystemExit(f"font.family.sans: the measured components paint more than one family: {sorted(_fams)}")
+fam["sans"] = {"value": _fams.pop(), "type": "fontFamily",
+               "source": "computed fontFamily of every measured component, one stack (raw/components-computed.json); the Inter @font-face faces are in raw/css-vars.json fonts",
                "description": "Inter variable (100-900, woff2, swap) with next/font's Arial-metric 'Inter Fallback'; the only family any measured text paints."}
 fam["system"] = var("--font-sans", "fontFamily",
                   description="The plain ui-sans-serif system stack Tailwind v4 declares; painted as the login legal line's font.")
-if "--font-mono" in R:
+if declared("--font-mono"):
     fam["mono"] = var("--font-mono", "fontFamily",
                       description="The ui-monospace system stack (declared; no measured text paints it on the public surfaces).")
-fam["skeleton"] = {"value": '"Flow Rounded", "Flow Rounded Fallback"', "type": "fontFamily",
-                   "source": "@font-face 'Flow Rounded' declared as --font-skeleton in the app bundle (raw/css-vars.json fonts)",
+fam["skeleton"] = {"value": re.sub(r",\s*", ", ", declared_rule(".__variable_86b611", "--font-skeleton")), "type": "fontFamily",
+                   "source": "declared --font-skeleton on .__variable_86b611 in the app bundle (raw/css-vars.json theme; the Flow Rounded @font-face is in its fonts)",
                    "description": "Flow Rounded: the geometric placeholder face the app bundles for skeleton/loading text; no measured component paints it."}
 
 # ------------------------------------------------------------ declared ramp
@@ -172,7 +254,7 @@ for key, vname, desc in [
     ("body-primary", "--text-body-primary", "14px: lede, footer and consent text."),
     ("body-secondary", "--text-body-secondary", "12px: pill buttons, chips and small labels."),
 ]:
-    if vname in R:
+    if declared(vname):
         size[key] = var(vname, "dimension", description=desc)
 for key, vname in [
     ("title-primary", "--text-title-primary--line-height"),
@@ -181,20 +263,20 @@ for key, vname in [
     ("body-primary", "--text-body-primary--line-height"),
     ("body-secondary", "--text-body-secondary--line-height"),
 ]:
-    if vname in R:
+    if declared(vname):
         lead[key] = var(vname, "dimension")
 for key, vname, desc in [
     ("medium", "--font-weight-medium", "500: every title, button and label — no lighter or bolder weight paints."),
     ("title-primary", "--text-title-primary--font-weight", "500 on the 42px titles."),
     ("title-secondary", "--text-title-secondary--font-weight", "500 on the 24px heads."),
 ]:
-    if vname in R:
+    if declared(vname):
         wght[key] = var(vname, "fontWeight", description=desc)
 for key, vname, desc in [
     ("title", "--text-title-primary--letter-spacing", "-0.03em: the tight tracking on both title steps."),
     ("tight", "--tracking-tight", "-0.025em Tailwind tracking-tight (billing toggle, login labels)."),
 ]:
-    if vname in R:
+    if declared(vname):
         trck[key] = var(vname, "other" if RD[vname].get("kind") == "other" else "dimension", description=desc)
 
 # Measured type steps the ramp does not declare (app shell + specials).
@@ -258,53 +340,64 @@ for key, vname, desc in [
     ("grey-3", "--color-grey-3", "#555: secondary greys."),
     ("grey-4", "--color-grey-4", "#959595: muted text — ledes, footer, placeholders, helpers."),
 ]:
-    if vname in R:
+    if declared(vname):
         neutral[key] = var(vname, "color", description=desc)
 
-# Painted neutrals that are arbitrary utilities, never declared.
-for key, val, src, desc in [
-    ("page", "#000000", "the body.bg-[#000] literal on the marketing page + computed fills of header/nav gradient", "#000 marketing page field (Tailwind black, not the --color-black #0a0a0a)."),
-    ("card", "#121212", "computed backgroundColor of plan-card default (raw/components-computed.json)", "#121212 plan/testimonial card fill."),
-    ("card-hover", "#1d1d1d", "computed backgroundColor of plan-card hover; declared literal in hover:bg-[#1D1D1D]", "#1d1d1d card hover fill."),
-    ("inset", "#080808", "computed backgroundColor of social-card default (raw/components-computed.json)", "#080808 testimonial card fill."),
-    ("ring", "#222222", "computed boxShadow ring of plan-card default; declared literal in .ring-[#222222]", "#222 card hairline ring."),
-    ("thumb-border", "#343434", "computed borderTopColor of asset-thumb default (raw/components-computed.json)", "#343434 asset thumbnail border."),
-    ("ink", "#efefef", "computed color of login-field default and textStyle of login-card (raw/components-computed.json)", "#efefef app-shell text white (bg-white utility, not --color-white #fff)."),
-    ("hover-white", "#c4c4c4", "computed backgroundColor of plan-cta hover; declared literal in hover:bg-[#C4C4C4]", "#c4c4c4 white-button hover fill."),
-]:
-    neutral[key] = {"value": val, "type": "color", "source": src, "description": desc}
+# Painted neutrals that are arbitrary utilities, never declared: each read
+# from the component that paints it.
+measured([
+    ("page", [("header", "default")], "body", "#000 marketing page field (Tailwind black, not the --color-black #0a0a0a)."),
+    ("card", [("plan-card", "default")], "backgroundColor", "#121212 plan/testimonial card fill."),
+    ("card-hover", [("plan-card", "hover")], "backgroundColor", "#1d1d1d card hover fill."),
+    ("inset", [("social-card", "default")], "backgroundColor", "#080808 testimonial card fill."),
+    ("ring", [("plan-card", "default")], "ring", "#222 card hairline ring."),
+    ("thumb-border", [("asset-thumb", "default")], "borderTopColor", "#343434 asset thumbnail border."),
+    ("ink", [("login-field", "default")], "color", "#efefef app-shell text white (bg-white utility, not --color-white #fff)."),
+    ("hover-white", [("plan-cta", "hover")], "backgroundColor", "#c4c4c4 white-button hover fill."),
+], neutral, "color", "color.neutral")
 
 alpha = neutral.setdefault("alpha", {})
-for key, val, src, desc in [
-    ("veil-5", "rgba(239, 239, 239, 0.05)", "computed backgroundColor of login-card default (raw/components-computed.json)", "5% app-ink veil: the login card fill."),
-    ("ink-75", "rgba(239, 239, 239, 0.75)", "computed color of legal-signin hover / legal-link (raw/components-computed.json)", "75% app ink on hover/legal links."),
-    ("ink-90", "rgba(239, 239, 239, 0.9)", "computed backgroundColor of send-code hover (raw/components-computed.json)", "90% app ink: app-button hover fill."),
-    ("white-30", "oklab(0.999994 0.0000455678 0.0000200868 / 0.3)", "computed color of billing-monthly default (raw/components-computed.json); Tailwind white/30 color-mix", "30% white: unselected toggle label."),
-    ("white-75", "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)", "declared color-mix in hover:text-white/75 (raw/css-vars.json tailwind)", "75% white on text hover."),
-    ("white-85", "oklab(0.999994 0.0000455678 0.0000200868 / 0.85)", "computed backgroundColor of news-submit hover (raw/components-computed.json); Tailwind white/85", "85% white: marketing button hover."),
-    ("black-50", "oklab(0.144787 0.00000661612 0.00000289828 / 0.5)", "computed backgroundColor of carousel-prev default (raw/components-computed.json); Tailwind black/50", "50% black: carousel arrow rest fill."),
-    ("black-80", "oklab(0.144787 0.00000661612 0.00000289828 / 0.8)", "computed backgroundColor of carousel-prev hover; declared hover:bg-black/80", "80% black: carousel arrow hover fill."),
-    ("placeholder-50", "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)", "computed placeholder color of news-field (raw/components-computed.json)", "50% white: newsletter field placeholder."),
-]:
-    alpha[key] = {"value": val, "type": "color", "source": src, "description": desc}
+# Tailwind v4 colour-mix results compute as oklab(); build_tokens.py converts
+# them to sRGB and keeps the authored string in $extensions.authored.
+measured([
+    ("veil-5", [("login-card", "default")], "backgroundColor", "5% app-ink veil: the login card fill."),
+    ("ink-75", [("legal-signin", "hover"), ("legal-link", "default")], "color", "75% app ink on hover/legal links."),
+    ("ink-90", [("send-code", "hover")], "backgroundColor", "90% app ink: app-button hover fill."),
+    ("white-30", [("billing-monthly", "default")], "color", "30% white: unselected toggle label."),
+    ("white-75", [("billing-monthly", "hover")], "color", "75% white on text hover."),
+    ("white-85", [("news-submit", "hover")], "backgroundColor", "85% white: marketing button hover."),
+    ("black-50", [("carousel-prev", "default")], "backgroundColor", "50% black: carousel arrow rest fill."),
+    ("black-80", [("carousel-prev", "hover")], "backgroundColor", "80% black: carousel arrow hover fill."),
+    ("placeholder-50", [("news-field", "default")], "placeholder", "50% white: newsletter field placeholder."),
+], alpha, "color", "color.neutral.alpha")
 
 accent = SPEC["core"].setdefault("color", {}).setdefault("accent", {})
-for key, val, src, desc in [
-    ("pink", "#ff13b1", "computed backgroundColor of hero-cta default (raw/components-computed.json)", "#ff13b1 magenta: the hero Start-creating fill."),
-    ("pink-hover", "#ff4bc4", "computed backgroundColor of hero-cta hover; declared literal in hover:bg-[#FF4BC4]", "#ff4bc4 pink hover/pressed."),
-    ("pill", "#ff3dae", "computed backgroundColor of save-pill default and billing-yearly paint (raw/components-computed.json)", "#ff3dae pink: the 'Save 20%' pill."),
-    ("blue", "#2c5cff", "computed backgroundColor of plan-chip-edu and edu-cta default (raw/components-computed.json)", "#2c5cff blue: education chip and CTA."),
-    ("blue-hover", "#5a65ff", "computed backgroundColor of edu-cta hover; declared literal in hover:bg-[#5A65FF]", "#5a65ff blue hover/pressed."),
-    ("focus", "#005fcc", "computed outlineColor of footer-link/plan-cta focus-visible (raw/components-computed.json): the UA -webkit-focus-ring-color", "#005fcc: the browser's own keyboard focus ring on marketing links."),
-]:
-    accent[key] = {"value": val, "type": "color", "source": src, "description": desc}
+measured([
+    ("pink", [("hero-cta", "default")], "backgroundColor", "#ff13b1 magenta: the hero Start-creating fill."),
+    ("pink-hover", [("hero-cta", "hover")], "backgroundColor", "#ff4bc4 pink hover/pressed."),
+    ("pill", [("save-pill", "default")], "backgroundColor", "#ff3dae pink: the 'Save 20%' pill."),
+    ("blue", [("plan-chip-edu", "default"), ("edu-cta", "default")], "backgroundColor", "#2c5cff blue: education chip and CTA."),
+    ("blue-hover", [("edu-cta", "hover")], "backgroundColor", "#5a65ff blue hover/pressed."),
+], accent, "color", "color.accent")
+# The marketing links' focus outline is `auto`: the browser draws its own ring,
+# so this computed outline colour is the UA default the style reports, not a
+# colour the product paints (14-7).
+for k in ("footer-link", "plan-cta"):
+    if reading(k, "focus-visible", "outlineStyle") != "auto":
+        raise SystemExit(f"color.accent.focus: {k} focus-visible outline is no longer `auto`; read its painted ring instead")
+measured([("focus", [("footer-link", "focus-visible"), ("plan-cta", "focus-visible")], "outlineColor",
+           "#005fcc: the outline colour Chrome reports under outline-style auto (its -webkit-focus-ring-color). "
+           "The browser draws its own focus ring there, so this is the UA default, not a colour the product paints.")],
+         accent, "color", "color.accent")
+if "focus" in accent:
+    accent["focus"]["source"] += "; outline-style auto, so the UA draws the ring and this colour is not painted as recorded"
 
 grad = SPEC["core"].setdefault("gradient", {})
-for key, val, src, desc in [
-    ("nav", "linear-gradient(rgb(0, 0, 0) 14.73%, rgba(0, 10, 10, 0) 100%)", "computed backgroundImage of header default (raw/components-computed.json); declared .nav-gradient", "The black veil the sticky header fades from."),
-    ("overlay", "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 85.27%)", "declared .ui-overlay-gradient in the readable sheets (raw/css-vars.json tailwind)", "The bottom fade over media tiles."),
-]:
-    grad[key] = {"value": val, "type": "other", "source": src, "description": desc}
+measured([("nav", [("header", "default")], "backgroundImage", "The black veil the sticky header fades from.")],
+         grad, "other", "gradient")
+grad["overlay"] = {"value": "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 85.27%)", "type": "other",
+                   "source": HAND + "no rule named .ui-overlay-gradient and no component painting it is in raw/; recapture needed",
+                   "description": "The bottom fade over media tiles."}
 
 # ------------------------------------------------------------------- shape
 
@@ -313,20 +406,25 @@ for key, vname, desc in [
     ("base", "--radius-base", "10px: app-shell fields and buttons."),
     ("fill", "--radius-fill", "12px: inner tiles and card fills."),
 ]:
-    if vname in R:
+    if declared(vname):
         radius[key] = var(vname, "dimension", description=desc)
-for key, val, src, desc in [
-    ("thumb", "16px", "computed borderTopLeftRadius of asset-thumb default (raw/components-computed.json)", "16px asset thumbnails."),
-    ("login", "20px", "computed borderTopLeftRadius of login-card default (raw/components-computed.json)", "20px login card."),
-    ("card", "33px", "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)", "33px plan/testimonial cards."),
-    ("pill", "9999px", "computed radius of every rounded-full control (raw/components-computed.json): Chrome resolves Tailwind rounded-full (calc(infinity * 1px)) to 33554432px", "Fully rounded: buttons, chips, pills, checkboxes."),
-]:
-    radius[key] = {"value": val, "type": "dimension", "source": src, "description": desc}
+measured([
+    ("thumb", [("asset-thumb", "default")], "borderTopLeftRadius", "16px asset thumbnails."),
+    ("login", [("login-card", "default")], "borderTopLeftRadius", "20px login card."),
+    ("card", [("plan-card", "default")], "borderTopLeftRadius", "33px plan/testimonial cards."),
+], radius, "dimension", "radius")
+# Derived: Chrome resolves Tailwind rounded-full (calc(infinity * 1px)) to
+# 33554432px (3.35544e+07px); stored as the practical 9999px.
+if not reading("hero-cta", "default", "borderTopLeftRadius").startswith("3.35544e+07"):
+    raise SystemExit("radius.pill: hero-cta no longer computes rounded-full")
+radius["pill"] = {"value": "9999px", "type": "dimension",
+                  "source": "derived: computed borderTopLeftRadius of hero-cta default is 3.35544e+07px, Chrome's rounded-full (raw/components-computed.json); stored as 9999px",
+                  "description": "Fully rounded: buttons, chips, pills, checkboxes."}
 
 # ----------------------------------------------------------------- spacing
 
 sp = SPEC["core"].setdefault("spacing", {})
-if "--spacing" in R:
+if declared("--spacing"):
     sp["unit"] = var("--spacing", "dimension",
                      description="Tailwind v4's 4px spacing unit.")
 for key, comp, state, prop, desc in [
@@ -348,42 +446,41 @@ for key, comp, state, prop, desc in [
 # ------------------------------------------------------------------ motion
 
 mot = SPEC["core"].setdefault("motion", {})
-if "--default-transition-duration" in R:
+if declared("--default-transition-duration"):
     mot.setdefault("duration", {})["default"] = var("--default-transition-duration", "duration",
         description="150ms: the default transition duration on buttons and pills.")
-for key, val, src, desc in [
-    ("fast", "0.2s", "declared .duration-200 in the readable sheets (raw/css-vars.json tailwind)", "200ms duration used on toggles."),
-    ("slow", "0.3s", "declared .duration-300 in the readable sheets (raw/css-vars.json tailwind)", "300ms duration used on cards."),
+for key, sel, desc in [
+    ("fast", ".duration-200", "200ms duration used on toggles."),
+    ("slow", ".duration-300", "300ms duration used on cards."),
 ]:
-    mot.setdefault("duration", {})[key] = {"value": val, "type": "duration", "source": src, "description": desc}
-if "--ease-in-out" in R:
+    mot.setdefault("duration", {})[key] = {"value": declared_rule(sel, "--tw-duration"), "type": "duration",
+                                           "source": f"declared --tw-duration of {sel} in the readable sheets (raw/css-vars.json tailwind)",
+                                           "description": desc}
+if declared("--ease-in-out"):
     mot.setdefault("easing", {})["in-out"] = var("--ease-in-out", "cubicBezier",
         description="cubic-bezier(.4,0,.2,1): the default transition timing.")
-mot.setdefault("press", {})["scale"] = {"value": "scale(0.95)", "type": "other",
-    "source": "declared .active:scale-95 in the readable sheets (raw/css-vars.json tailwind)",
+_sx = declared_rule(".active\\:scale-95:active", "--tw-scale-x")
+mot.setdefault("press", {})["scale"] = {"value": "scale(%g)" % (float(_sx.rstrip("%")) / 100), "type": "other",
+    "source": "declared --tw-scale-x/-y of .active:scale-95 in the readable sheets (raw/css-vars.json tailwind)",
     "description": "Buttons scale to 95% while pressed."}
 # The keyframe animations recorded by measure.mjs's sheet walk
 # (raw/components-computed.json _meta.sheets): the marketing page's own two,
 # the app shell's Tailwind three.
-for key, val, src, desc in [
-    ("gradient-flow", "move-gradient 1.5s ease-in-out infinite alternate",
-     "recorded .animate-gradient-flow rule (raw/components-computed.json _meta.sheets.home)",
-     "The gradient drift on the hero title's marks."),
-    ("orbit", "et-orbit var(--orbit-duration, 28s) linear infinite",
-     "recorded .animate-orbit rule (raw/components-computed.json _meta.sheets.home)",
-     "The hero's orbiting asset marks."),
-    ("skeleton", "SkeletonLoading 1s linear infinite alternate",
-     "recorded .ui-skeleton__field/.ui-skeleton__unit rule (raw/components-computed.json _meta.sheets.login)",
-     "The app shell's skeleton shimmer (the Flow Rounded placeholder face)."),
-    ("pulse", "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-     "recorded .animate-pulse rule (raw/components-computed.json _meta.sheets.login)",
-     "Tailwind's pulse on the app shell."),
-    ("spin", "spin 1s linear infinite",
-     "recorded .animate-spin rule (raw/components-computed.json _meta.sheets.login)",
-     "Tailwind's spin on the app shell."),
+SHEETS = json.loads((RAW / "components-computed.json").read_text())["_meta"]["sheets"]
+for key, page, sel, desc in [
+    ("gradient-flow", "home", ".animate-gradient-flow", "The gradient drift on the hero title's marks."),
+    ("orbit", "home", ".animate-orbit", "The hero's orbiting asset marks."),
+    ("skeleton", "login", ".ui-skeleton__field, .ui-skeleton__unit", "The app shell's skeleton shimmer (the Flow Rounded placeholder face)."),
+    ("pulse", "login", ".animate-pulse", "Tailwind's pulse on the app shell."),
+    ("spin", "login", ".animate-spin", "Tailwind's spin on the app shell."),
 ]:
-    mot.setdefault("animation", {})[key] = {"value": val, "type": "other",
-        "source": src, "description": desc}
+    rule = next((r for r in SHEETS.get(page, []) if r.get("selector") == sel and r.get("animation")), None)
+    if rule is None:
+        gap(f"motion.animation.{key}: no recorded {sel} rule on {page}")
+        continue
+    mot.setdefault("animation", {})[key] = {"value": rule["animation"], "type": "other",
+        "source": f"recorded animation of the {sel} rule (raw/components-computed.json _meta.sheets.{page})",
+        "description": desc}
 
 # ---------------------------------------------------------------- gradients
 # (kept in core.color.gradient above)
@@ -498,27 +595,27 @@ def style(font, fz, lh, fw, ls, src, desc):
             "$description": desc}
 
 FAM = "{font.family.sans}"
-if "--text-title-primary" in R:
+if declared("--text-title-primary"):
     typ["title-primary"] = style(FAM, "{font.size.title-primary}", "{font.lineHeight.title-primary}",
                                  "{font.weight.title-primary}", "{font.tracking.title}",
                                  "declared --text-title-primary composite (raw/css-vars.json)",
                                  "Hero, section and newsletter titles: 42/46, 500, -0.03em.")
-if "--text-title-secondary" in R:
+if declared("--text-title-secondary"):
     typ["title-secondary"] = style(FAM, "{font.size.title-secondary}", "{font.lineHeight.title-secondary}",
                                    "{font.weight.title-secondary}", "{font.tracking.title}",
                                    "declared --text-title-secondary composite (raw/css-vars.json)",
                                    "Sub-heads and the mobile hero: 24/26, 500, -0.03em.")
-if "--text-subtitle" in R:
+if declared("--text-subtitle"):
     typ["subtitle"] = style(FAM, "{font.size.subtitle}", "{font.lineHeight.subtitle}",
                             "{font.weight.medium}", "normal",
                             "declared --text-subtitle composite (raw/css-vars.json)",
                             "18/20 subtitle step.")
-if "--text-body-primary" in R:
+if declared("--text-body-primary"):
     typ["body"] = style(FAM, "{font.size.body-primary}", "{font.lineHeight.body-primary}",
                         "{font.weight.regular}", "normal",
                         "declared --text-body-primary composite (raw/css-vars.json)",
                         "14/18 lede, footer and consent text.")
-if "--text-body-secondary" in R:
+if declared("--text-body-secondary"):
     typ["label"] = style(FAM, "{font.size.body-secondary}", "{font.lineHeight.body-secondary}",
                          "{font.weight.medium}", "normal",
                          "declared --text-body-secondary composite (raw/css-vars.json)",
@@ -611,7 +708,7 @@ if have("edu-cta", "default"):
 if have("send-code", "default"):
     comp_leaf("button-app", "bg", "color", "{action.app-bg}", "role alias", "#efefef app button.")
     comp_leaf("button-app", "bg-hover", "color", "{action.app-bg-hover}", "role alias", "90% ink hover.")
-    comp_leaf("button-app", "text", "color", "#000000", "computed color of send-code default (raw/components-computed.json)", "Black text on the app button.")
+    comp_leaf("button-app", "text", "color", reading("send-code", "default", "color"), "computed color of send-code default (raw/components-computed.json)", "Black text on the app button.")
     comp_leaf("button-app", "radius", "dimension", "{radius.base}", "role alias", "10px app radius.")
 if have("login-field", "default"):
     comp_leaf("field", "bg", "color", "{surface.field}", "role alias", "#1e1e1e app field.")
@@ -639,6 +736,14 @@ if have("login-card", "default"):
     comp_leaf("card-app", "bg", "color", "{surface.veil}", "role alias", "5% ink veil login card.")
     comp_leaf("card-app", "radius", "dimension", "{radius.login}", "role alias", "20px login card radius.")
     comp_leaf("card-app", "padding", "dimension", "{spacing.login-card}", "role alias", "50px login card padding.")
+
+# Rows missing from the committed readings, kept visible in `_gaps`.
+KNOWN_GAPS = set()
+_new = [g for g in GAPS if g not in KNOWN_GAPS]
+if _new:
+    raise SystemExit("missing readings for named token rows (recapture, or list them in KNOWN_GAPS):\n  " + "\n  ".join(_new))
+if GAPS:
+    SPEC["_gaps"] = GAPS
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 
