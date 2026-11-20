@@ -57,13 +57,15 @@ const fontFaces = await page.evaluate(() => {
 });
 
 const css = cssBodies.map((s) => s.body).join('\n') + '\n' + inline;
-const rootBlocks = [...css.matchAll(/:root\s*\{([^}]+)\}/g)].map((m) => m[1]);
-const declared = {};
 // Same guard as the in-page readers: never record a url() target (it can be a signed asset URL).
+// It runs on the whole block before the declarations are split, so a ';' inside a url() cannot
+// cut the url short and leave its query behind.
 const noUrl = (v) => v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)');
+const rootBlocks = [...css.matchAll(/:root\s*\{([^}]+)\}/g)].map((m) => noUrl(m[1]));
+const declared = {};
 for (const block of rootBlocks) {
   for (const m of block.matchAll(/(--[a-zA-Z0-9_-]+)\s*:\s*([^;]+)/g)) {
-    declared[m[1]] = noUrl(m[2].trim());
+    declared[m[1]] = m[2].trim();
   }
 }
 

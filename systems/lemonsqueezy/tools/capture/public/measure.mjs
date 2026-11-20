@@ -78,13 +78,18 @@ async function measure(key, state, loc, opts = {}) {
     c.states[state] = { ...s, crop: file, via: opts.via };
     log('  ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h), s.style.backgroundColor, s.style.color);
   } catch (e) {
-    // A failed re-read keeps the committed reading and notes the failure beside it.
-    const prior = c.states[state];
-    c.states[state] = prior && !prior.error
-      ? { ...prior, recaptureError: String(e.message || e).slice(0, 200) }
-      : { error: String(e.message || e).slice(0, 200) };
+    failState(key, state, e);
     log('  !', key, state, String(e.message).slice(0, 140));
   }
+}
+
+// A failed re-read keeps the committed reading and notes the failure beside it; a state with no
+// earlier reading records the error.
+function failState(key, state, e) {
+  const states = out.components[key].states;
+  const prior = states[state];
+  const msg = String(e.message || e).slice(0, 200);
+  states[state] = prior && !prior.error ? { ...prior, recaptureError: msg } : { error: msg };
 }
 
 function comp(key, meta) {
@@ -151,7 +156,7 @@ async function S(key, target, list, meta, opts = {}) {
       const measureLoc = opts.measure?.[st] ? opts.measure[st]() : loc;
       await measure(key, st, measureLoc, { ...opts, via });
     } catch (e) {
-      out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      failState(key, st, e);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
