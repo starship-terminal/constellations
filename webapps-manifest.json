@@ -6075,9 +6075,9 @@
       "description": "Breaking News, US News, World News",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.nytimes.com/ stopped on a bot check before a form. Not retried.",
+      "notes": "Email probe: https://myaccount.nytimes.com/auth/login Continue with Google signed in. Homepage shows Account. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 18
     },
     {
