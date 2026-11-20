@@ -2544,9 +2544,9 @@
       "description": "Hers for Women's Health ",
       "status": "pending",
       "package": null,
-      "notes": "https://www.forhers.com/ Continue with Google returned to the login form. The app did not open.",
+      "notes": "https://www.forhers.com/account/orders is signed in. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "oauth-only",
+      "login-probe": "signed-in",
       "batch": 8
     },
     {
@@ -2850,9 +2850,9 @@
       "description": "Kickstarter exists to help bring creative projects to life",
       "status": "captured",
       "package": "systems/kickstarter",
-      "notes": "https://www.kickstarter.com/login sent a verification code to the capture inbox. The code was accepted, then the page asked for a name to create an account. Name not entered.",
+      "notes": "https://www.kickstarter.com/login sent a verification code to the capture inbox. The recommendations page is signed in. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "needs-other-info",
+      "login-probe": "signed-in",
       "batch": 9
     },
     {
