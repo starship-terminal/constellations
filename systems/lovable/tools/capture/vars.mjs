@@ -17,7 +17,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BASE, launch } from './public/lib.mjs';
+import { BASE, launch, clearChallenge } from './public/lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
@@ -25,6 +25,8 @@ const REF = path.resolve(here, '..', '..');
 const { browser, context } = await launch();
 const page = await context.newPage();
 await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 });
+// A bot check that never clears stops the harvest before raw/css-vars.json is written.
+if (!(await clearChallenge(page))) { console.error('vars.mjs: bot check did not clear; nothing written'); await browser.close(); process.exit(1); }
 await page.waitForTimeout(6000);
 // all sheets read via CSSOM (the chunks are same-origin, so every rule is readable)
 const sheets = await page.evaluate(() => [...document.styleSheets].map((s, i) => {

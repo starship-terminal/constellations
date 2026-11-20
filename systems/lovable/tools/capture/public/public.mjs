@@ -151,7 +151,8 @@ for (const { k, mob } of runs) {
   const S = new Shooter(p, `${name}-${theme}`, vw, vh, dpr, theme);
   try {
     await p.goto(abs(spec), { waitUntil: 'domcontentloaded', timeout: 90000 });
-    await clearChallenge(p);
+    // A bot check that never clears is not the page: no shot is written for it.
+    if (!(await clearChallenge(p))) throw new Error('bot check did not clear');
     await wait(p, spec.wait || 3500);
     await closePromo(p);
     await spec.run(p, S);

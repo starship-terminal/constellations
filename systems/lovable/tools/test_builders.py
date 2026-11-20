@@ -56,16 +56,21 @@ class Builders(unittest.TestCase):
         self.assertEqual((root / "style-guide.html").read_text(), (PKG / "style-guide.html").read_text())
 
     def test_a_failed_focus_is_not_a_reading(self):
-        raw = json.loads((PKG / "raw" / "components-computed.json").read_text())["components"]
-        failed = sorted(k for k, c in raw.items() if (c.get("states", {}).get("focus-visible") or {}).get("via") == "focus failed")
-        self.assertTrue(failed)
-        md = (PKG / "components.md").read_text()
+        # A fixture, not the committed readings: a recapture that fixes the focus must not fail this.
+        with tempfile.TemporaryDirectory() as d:
+            raw = pathlib.Path(d) / "raw"
+            shutil.copytree(PKG / "raw", raw)
+            v = json.loads((raw / "components-computed.json").read_text())
+            v["components"]["nav-link"]["states"]["focus-visible"]["via"] = "focus failed"
+            (raw / "components-computed.json").write_text(json.dumps(v))
+            proc, root = self.build("build_components_md.py", raw=raw)
+            self.assertEqual(proc.returncode, 0, proc.stderr)
+            md = (root / "components.md").read_text()
         focus = md.split("**Focus.**", 1)[1].split("\n", 1)[0]
-        no_change = focus.split("show no change a keyboard user can see:", 1)[1].split(".", 1)[0] if "show no change" in focus else ""
-        for k in failed:
-            self.assertNotIn(f"`{k}`", no_change)
-            self.assertIn(f"`{k}`", focus.split("Focus could not be captured", 1)[1])
-            self.assertNotIn(f"components/crops/{k}-focus-visible.png", md)
+        shown, not_captured = focus.split("Focus could not be captured", 1)
+        self.assertNotIn("`nav-link`", shown)
+        self.assertIn("`nav-link`", not_captured)
+        self.assertNotIn("components/crops/nav-link-focus-visible.png", md)
 
     def test_aliases_carry_no_set_name(self):
         text = (PKG / "tokens.json").read_text()

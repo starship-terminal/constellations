@@ -89,9 +89,11 @@ async function forcePseudo(loc, classes) {
   return async () => { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {}); };
 }
 
+let currentSection = null;   // the measure section (home, mobile, ...) that owns a component
+
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] }, meta);
+  Object.assign(c, { page: current, section: currentSection, run, url: URLS[current] }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -259,25 +261,26 @@ const arg = (process.argv[2] || 'all').split(',').filter(Boolean);
 const { browser, context: root } = await launch();
 context = root;
 const want = (k) => arg.includes('all') || arg.includes(k);
-// Pages opened by a section that ran to the end. Only their components and states can be pruned: a
-// section that failed part-way keeps its earlier readings, since what it did not reach is not known
-// to be gone (the kit's prune, restored in the 2026-11 audit).
-const finishedPages = new Set();
-async function section(fn) {
-  const before = new Set(opened);
+// Sections that ran to the end. A component is pruned only when the section that owns it (c.section)
+// finished this run and did not measure it again: a section that was not selected or failed part-way
+// keeps its earlier readings, and home and mobile, which share the home page, prune only their own
+// (the kit's prune, restored in the 2026-11 audit). A reading saved before c.section existed is kept.
+const finishedSections = new Set();
+async function section(name, fn) {
+  currentSection = name;
   await fn();
-  for (const p of opened) if (!before.has(p)) finishedPages.add(p);
+  finishedSections.add(name);
 }
 try {
-  if (want('home')) await section(home);
-  if (want('pricing')) await section(pricing);
-  if (want('login')) await section(login);
-  if (want('docs')) await section(docs);
-  if (want('mobile')) await section(mobile);
+  if (want('home')) await section('home', home);
+  if (want('pricing')) await section('pricing', pricing);
+  if (want('login')) await section('login', login);
+  if (want('docs')) await section('docs', docs);
+  if (want('mobile')) await section('mobile', mobile);
 } finally {
-  for (const [key, c] of Object.entries(out.components)) if (finishedPages.has(c.page) && !touched.has(key)) { delete out.components[key]; log('dropped stale', key); }
+  for (const [key, c] of Object.entries(out.components)) if (finishedSections.has(c.section) && !touched.has(key)) { delete out.components[key]; log('dropped stale', key); }
   for (const [key, c] of Object.entries(out.components)) {
-    if (!finishedPages.has(c.page) || !listed.has(key)) continue;
+    if (!finishedSections.has(c.section) || !listed.has(key)) continue;
     for (const st of Object.keys(c.states || {})) if (!listed.get(key).has(st)) { delete c.states[st]; log('dropped stale state', key, st); }
   }
   save();
