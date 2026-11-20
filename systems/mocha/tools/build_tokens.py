@@ -222,13 +222,15 @@ tokens = {
     ],
 }
 
-# Motion, when the probe has run.
-try:
+# Motion, when the probe has run. motion.build returns (group, notTokenised): the group is the
+# token tree, and what DTCG cannot carry is kept beside core, as the kit does.
+if (RAW / "motion.json").exists():
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
     import motion
-    motion_raw = json.loads((RAW / "motion.json").read_text())
-    tokens["core"]["motion"] = motion.build(motion_raw)
-except Exception as exc:  # keep the colour build if motion is absent
-    print(f"motion skipped: {exc}", file=sys.stderr)
+    tokens["core"]["motion"], motion_not_core = motion.build(json.loads((RAW / "motion.json").read_text()))
+    if motion_not_core:
+        tokens["core"].setdefault("$extensions", {}).setdefault("notTokenised", []).extend(motion_not_core)
 
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print(f"wrote {HERE / 'tokens.json'}")
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+    print(f"wrote {HERE / 'tokens.json'}")
