@@ -175,20 +175,21 @@ Page: set-women. Selector: `ff-logo-global`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 201 x 24.95 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Farfetch Basis 15px/19.9995px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 201 x 24.95, colour #222222, fill #000000 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 201 x 24.95 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Farfetch Basis 15px/19.9995px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222222 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 201 x 24.95, colour #222222, fill #000000 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `logo-default.png`, `logo-hover.png`, `logo-focus-visible.png`, `logo-pressed.png`.
 
@@ -639,22 +640,23 @@ Page: set-women. Selector: `CarouselArrowSmall`. States: default, hover, focus-v
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | 1px solid #222222 | = | = | 1px solid #727272 |
-| Radius | 0px | = | = | = |
-| Background | #ffffff | = | = | #f5f5f5 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Farfetch Basis 15px/normal 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | = | = | #727272 |
-| Transition | background-color, border-color, opacity, color 0.3s cubic-bezier(0, 0, 0, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #222222 | = | = | 24 x 24, colour #727272 |
-| ::before | 44px x 44px, absolute, bg #000000 @ 0, radius 0px | = | = | = |
-| Painted layers | button.ltr-1ifd9st 32.0x32.0 bg #ffffff border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 | = | = | button.ltr-1ifd9st 32.0x32.0 bg #f5f5f5 border T:1px solid #727272 / R:1px solid #727272 / B:1px solid #727272 / L:1px solid #727272 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 32 x 32 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | 1px solid #222222 | = | - | 1px solid #727272 |
+| Radius | 0px | = | - | = |
+| Background | #ffffff | = | - | #f5f5f5 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Farfetch Basis 15px/normal 700 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222222 | = | - | #727272 |
+| Transition | background-color, border-color, opacity, color 0.3s cubic-bezier(0, 0, 0, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 24 x 24, colour #222222 | = | - | 24 x 24, colour #727272 |
+| ::before | 44px x 44px, absolute, bg #000000 @ 0, radius 0px | = | - | = |
+| Painted layers | button.ltr-1ifd9st 32.0x32.0 bg #ffffff border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 | = | - | button.ltr-1ifd9st 32.0x32.0 bg #f5f5f5 border T:1px solid #727272 / R:1px solid #727272 / B:1px solid #727272 / L:1px solid #727272 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `carousel-arrow-default.png`, `carousel-arrow-hover.png`, `carousel-arrow-pressed.png`.
 
@@ -944,22 +946,23 @@ Page: pdp. Selector: `CarouselArrowSmall`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | 1px solid #222222 | = | = | 1px solid #727272 |
-| Radius | 0px | = | = | = |
-| Background | #ffffff | = | = | #f5f5f5 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Farfetch Basis 15px/normal 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | = | = | #727272 |
-| Transition | background-color, border-color, opacity, color 0.3s cubic-bezier(0, 0, 0, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #222222 | = | = | 24 x 24, colour #727272 |
-| ::before | 44px x 44px, absolute, bg #000000 @ 0, radius 0px | = | = | = |
-| Painted layers | button.ltr-1ifd9st 32.0x32.0 bg #ffffff border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 | = | = | button.ltr-1ifd9st 32.0x32.0 bg #f5f5f5 border T:1px solid #727272 / R:1px solid #727272 / B:1px solid #727272 / L:1px solid #727272 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 32 x 32 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | 1px solid #222222 | = | - | 1px solid #727272 |
+| Radius | 0px | = | - | = |
+| Background | #ffffff | = | - | #f5f5f5 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Farfetch Basis 15px/normal 700 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222222 | = | - | #727272 |
+| Transition | background-color, border-color, opacity, color 0.3s cubic-bezier(0, 0, 0, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 24 x 24, colour #222222 | = | - | 24 x 24, colour #727272 |
+| ::before | 44px x 44px, absolute, bg #000000 @ 0, radius 0px | = | - | = |
+| Painted layers | button.ltr-1ifd9st 32.0x32.0 bg #ffffff border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 | = | - | button.ltr-1ifd9st 32.0x32.0 bg #f5f5f5 border T:1px solid #727272 / R:1px solid #727272 / B:1px solid #727272 / L:1px solid #727272 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `pdp-arrow-default.png`, `pdp-arrow-focus-visible.png`, `pdp-arrow-pressed.png`.
 
@@ -1044,22 +1047,23 @@ Page: pdp. Selector: `ScaledSizeSelector`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 452 x 44 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Farfetch Basis 15px/19.9995px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | = | = | = |
-| Text node | span.ltr-1mhgg20: Farfetch Basis 15px/19.9995px 400, #727272 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #222222, fill #000000 | = | = | = |
-| Painted layers | div.ltr-cubnbt 452.0x44.0 bg #ffffff border T:1px solid #727272 / R:1px solid #727272 / B:1px solid #727272 / L:1px solid #727272 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 452 x 44 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Farfetch Basis 15px/19.9995px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222222 | = | - | = |
+| Text node | span.ltr-1mhgg20: Farfetch Basis 15px/19.9995px 400, #727272 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 24 x 24, colour #222222, fill #000000 | = | - | = |
+| Painted layers | div.ltr-cubnbt 452.0x44.0 bg #ffffff border T:1px solid #727272 / R:1px solid #727272 / B:1px solid #727272 / L:1px solid #727272 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `size-selector-default.png`, `size-selector-hover.png`, `size-selector-focus-visible.png`, `size-selector-pressed.png`.
 
@@ -1586,21 +1590,22 @@ Page: home. Selector: `departments dropdown`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 62 x 44 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Farfetch Basis 15px/19.9995px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | = | = | = |
-| Text node | button.ey6fkr80.ltr-1iz9vsw: Farfetch Basis 15px/19.9995px 700, #222222 | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 24 x 24, colour #222222 | = | = | = |
-| Painted layers | button.ey6fkr80.ltr-1iz9vsw 215.0x44.0 bg #ffffff @ 0 border T:1px solid #ffffff @ 0 / R:1px solid #ffffff @ 0 / B:1px solid #ffffff @ 0 / L:1px solid #ffffff @ 0 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 62 x 44 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Farfetch Basis 15px/19.9995px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #222222 | = | - | = |
+| Text node | button.ey6fkr80.ltr-1iz9vsw: Farfetch Basis 15px/19.9995px 700, #222222 | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 24 x 24, colour #222222 | = | - | = |
+| Painted layers | button.ey6fkr80.ltr-1iz9vsw 215.0x44.0 bg #ffffff @ 0 border T:1px solid #ffffff @ 0 / R:1px solid #ffffff @ 0 / B:1px solid #ffffff @ 0 / L:1px solid #ffffff @ 0 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `m-dept-menu-default.png`, `m-dept-menu-hover.png`, `m-dept-menu-focus-visible.png`, `m-dept-menu-pressed.png`.
 

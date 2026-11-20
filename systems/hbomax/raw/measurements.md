@@ -57,21 +57,22 @@ Page: /sg/en. Selector: `a (text Sign In)`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 136 x 44 | = | = | = |
-| Padding | 10px 18px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Max Sans 18px/28.8px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 15.385px/20.7698px 700, #ffffff | = | = | = |
-| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| ::before | 136px x 44px, absolute, bg #000000 @ 0, radius 8px | = | = | = |
-| How | resting state | mouse hover over the element | focus failed | CDP CSS.forcePseudoState(:active:hover) — no real press |
+| Size (w x h) | 136 x 44 | = | - | = |
+| Padding | 10px 18px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Max Sans 18px/28.8px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 15.385px/20.7698px 700, #ffffff | = | - | = |
+| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| ::before | 136px x 44px, absolute, bg #000000 @ 0, radius 8px | = | - | = |
+| How | resting state | mouse hover over the element | - | CDP CSS.forcePseudoState(:active:hover) — no real press |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `header-signin-default.png`, `header-signin-hover.png`, `header-signin-focus-visible.png`, `header-signin-pressed.png`.
 
@@ -112,22 +113,23 @@ Page: /sg/en. Selector: `a (text Start Subscription/Subscribe/Sign Up)`. States:
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 140.41 x 44 | = | = | - |
-| Padding | 10px 18px | = | = | - |
-| Border | none | = | = | - |
-| Radius | 8px | = | = | - |
-| Background | transparent | = | = | - |
-| Box shadow | none | = | = | - |
-| Outline | none | = | = | - |
-| Font | Max Sans 18px/28.8px 400 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #000000 | = | = | - |
-| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 15.385px/20.7698px 700, #000000 | = | = | - |
-| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | = | - |
-| Cursor | pointer | = | = | - |
-| ::before | 140.406px x 44px, absolute, bg #dddddd, radius 8px | = | = | - |
-| Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px bg #dddddd r 8px | = | = | - |
-| How | resting state | mouse hover over the element | focus failed | - |
+| Size (w x h) | 140.41 x 44 | = | - | - |
+| Padding | 10px 18px | = | - | - |
+| Border | none | = | - | - |
+| Radius | 8px | = | - | - |
+| Background | transparent | = | - | - |
+| Box shadow | none | = | - | - |
+| Outline | none | = | - | - |
+| Font | Max Sans 18px/28.8px 400 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #000000 | = | - | - |
+| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 15.385px/20.7698px 700, #000000 | = | - | - |
+| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | - | - |
+| Cursor | pointer | = | - | - |
+| ::before | 140.406px x 44px, absolute, bg #dddddd, radius 8px | = | - | - |
+| Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px bg #dddddd r 8px | = | - | - |
+| How | resting state | mouse hover over the element | - | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
 Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`.
@@ -263,22 +265,23 @@ Page: /sg/en. Selector: `button/a (text Choose/Select/Continue)`. States: defaul
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 292.95 x 52 | = | = | - |
-| Padding | 10px 30px | = | = | - |
-| Border | none | = | = | - |
-| Radius | 8px | = | = | - |
-| Background | transparent | = | = | - |
-| Box shadow | none | = | = | - |
-| Outline | none | = | = | - |
-| Font | Max Sans 18px/28.8px 600 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #000000 | = | = | - |
-| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 20px/27px 700, #000000 | = | = | - |
-| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | = | - |
-| Cursor | pointer | = | = | - |
-| ::before | 292.953px x 52px, absolute, bg #dddddd, radius 8px | = | = | - |
-| Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 292.953pxx52px bg #dddddd r 8px | = | = | - |
-| How | resting state | mouse hover over the element | focus failed | - |
+| Size (w x h) | 292.95 x 52 | = | - | - |
+| Padding | 10px 30px | = | - | - |
+| Border | none | = | - | - |
+| Radius | 8px | = | - | - |
+| Background | transparent | = | - | - |
+| Box shadow | none | = | - | - |
+| Outline | none | = | - | - |
+| Font | Max Sans 18px/28.8px 600 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #000000 | = | - | - |
+| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 20px/27px 700, #000000 | = | - | - |
+| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | - | - |
+| Cursor | pointer | = | - | - |
+| ::before | 292.953px x 52px, absolute, bg #dddddd, radius 8px | = | - | - |
+| Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 292.953pxx52px bg #dddddd r 8px | = | - | - |
+| How | resting state | mouse hover over the element | - | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
 Crops: `plan-choose-default.png`, `plan-choose-hover.png`, `plan-choose-focus-visible.png`.
@@ -320,22 +323,23 @@ Page: /sg/en. Selector: `.max-section-faq button, [class*="faq" i] button`. Stat
 
 | Property | default | hover | focus-visible | opened |
 |---|---|---|---|---|
-| Size (w x h) | 920 x 55 | = | = | = |
-| Padding | 14px 24px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Max Sans 18px/28.8px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | div.sc-538ece39-1.dliVFk: Max Sans 20px/27px 700, #ffffff | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #ffffff | = | = | = |
-| Ancestor paint | 1 up div.sc-24ae6219-0.iVmMkq bg #dddddd @ 0.1 | = | = | = |
-| How | resting state | mouse hover over the element | focus failed | the item's own press — the answer expanded |
+| Size (w x h) | 920 x 55 | = | - | = |
+| Padding | 14px 24px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Max Sans 18px/28.8px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Text node | div.sc-538ece39-1.dliVFk: Max Sans 20px/27px 700, #ffffff | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 24 x 24, colour #ffffff | = | - | = |
+| Ancestor paint | 1 up div.sc-24ae6219-0.iVmMkq bg #dddddd @ 0.1 | = | - | = |
+| How | resting state | mouse hover over the element | - | the item's own press — the answer expanded |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `faq-item-default.png`, `faq-item-hover.png`, `faq-item-focus-visible.png`, `faq-item-opened.png`.
 
@@ -357,20 +361,21 @@ Page: /sg/en. Selector: `main a[href*="/show/"], main a[href*="/movie/"]`. State
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 350 x 141.05 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Max Sans 18px/28.8px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #ffffff | = | = |
-| Text node | p.sc-3477fb85-0.gpxYhN: Max Sans 14px/18.9px 600, #ffffff | = | = |
-| Transition | none | = | = |
-| Cursor | pointer | = | = |
-| How | resting state | mouse hover over the element | focus failed |
+| Size (w x h) | 350 x 141.05 | = | - |
+| Padding | 0px | = | - |
+| Border | none | = | - |
+| Radius | 0px | = | - |
+| Background | transparent | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Max Sans 18px/28.8px 400 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #ffffff | = | - |
+| Text node | p.sc-3477fb85-0.gpxYhN: Max Sans 14px/18.9px 600, #ffffff | = | - |
+| Transition | none | = | - |
+| Cursor | pointer | = | - |
+| How | resting state | mouse hover over the element | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
 Crops: `rail-card-default.png`, `rail-card-hover.png`, `rail-card-focus-visible.png`.
 
@@ -410,21 +415,22 @@ Page: /sg/en/movies. Selector: `main a[href*="/show/"], main a[href*="/movie/"]`
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 315 x 201.28 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Max Sans 18px/28.8px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #ffffff @ 0.8 | = | = |
-| Text node | span.sc-72c045a5-22.gRkBms: Max Sans 11.834px/16.0942px 700, #ffffff @ 0.8 | = | = |
-| Transition | none | = | = |
-| Cursor | pointer | = | = |
-| Painted layers | div.sc-72c045a5-0.emcCTt 323.0x185.2 border T:2px solid / R:2px solid / B:2px solid / L:2px solid r 4px | = | = |
-| How | resting state | mouse hover over the element | focus failed |
+| Size (w x h) | 315 x 201.28 | = | - |
+| Padding | 0px | = | - |
+| Border | none | = | - |
+| Radius | 0px | = | - |
+| Background | transparent | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Max Sans 18px/28.8px 400 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #ffffff @ 0.8 | = | - |
+| Text node | span.sc-72c045a5-22.gRkBms: Max Sans 11.834px/16.0942px 700, #ffffff @ 0.8 | = | - |
+| Transition | none | = | - |
+| Cursor | pointer | = | - |
+| Painted layers | div.sc-72c045a5-0.emcCTt 323.0x185.2 border T:2px solid / R:2px solid / B:2px solid / L:2px solid r 4px | = | - |
+| How | resting state | mouse hover over the element | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
 Crops: `browse-rail-card-default.png`, `browse-rail-card-hover.png`, `browse-rail-card-focus-visible.png`.
 
@@ -570,22 +576,23 @@ Page: /sg/en/show/e6e7bad9-d48d-4434-b334-7c651ffc4bdf. Selector: `a (text Start
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 140.41 x 44 | = | = | - |
-| Padding | 10px 18px | = | = | - |
-| Border | none | = | = | - |
-| Radius | 8px | = | = | - |
-| Background | transparent | = | = | - |
-| Box shadow | none | = | = | - |
-| Outline | none | = | = | - |
-| Font | Max Sans 18px/28.8px 400 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #000000 | = | = | - |
-| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 15.385px/20.7698px 700, #000000 | = | = | - |
-| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | = | - |
-| Cursor | pointer | = | = | - |
-| ::before | 140.406px x 44px, absolute, bg #dddddd, radius 8px | = | = | - |
-| Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px bg #dddddd r 8px | = | = | - |
-| How | resting state | mouse hover over the element | focus failed | - |
+| Size (w x h) | 140.41 x 44 | = | - | - |
+| Padding | 10px 18px | = | - | - |
+| Border | none | = | - | - |
+| Radius | 8px | = | - | - |
+| Background | transparent | = | - | - |
+| Box shadow | none | = | - | - |
+| Outline | none | = | - | - |
+| Font | Max Sans 18px/28.8px 400 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #000000 | = | - | - |
+| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 15.385px/20.7698px 700, #000000 | = | - | - |
+| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | - | - |
+| Cursor | pointer | = | - | - |
+| ::before | 140.406px x 44px, absolute, bg #dddddd, radius 8px | = | - | - |
+| Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px bg #dddddd r 8px | = | - | - |
+| How | resting state | mouse hover over the element | - | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
 Crops: `detail-cta-default.png`, `detail-cta-hover.png`, `detail-cta-focus-visible.png`.
@@ -658,22 +665,23 @@ Page: /sg/en/movie/710798da-f811-40be-9ed9-3a7443e36278. Selector: `a (text Star
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 140.41 x 44 | = | = | - |
-| Padding | 10px 18px | = | = | - |
-| Border | none | = | = | - |
-| Radius | 8px | = | = | - |
-| Background | transparent | = | = | - |
-| Box shadow | none | = | = | - |
-| Outline | none | = | = | - |
-| Font | Max Sans 18px/28.8px 400 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #000000 | = | = | - |
-| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 15.385px/20.7698px 700, #000000 | = | = | - |
-| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | = | - |
-| Cursor | pointer | = | = | - |
-| ::before | 140.406px x 44px, absolute, bg #dddddd, radius 8px | = | = | - |
-| Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px bg #dddddd r 8px | = | = | - |
-| How | resting state | mouse hover over the element | focus failed | - |
+| Size (w x h) | 140.41 x 44 | = | - | - |
+| Padding | 10px 18px | = | - | - |
+| Border | none | = | - | - |
+| Radius | 8px | = | - | - |
+| Background | transparent | = | - | - |
+| Box shadow | none | = | - | - |
+| Outline | none | = | - | - |
+| Font | Max Sans 18px/28.8px 400 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #000000 | = | - | - |
+| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 15.385px/20.7698px 700, #000000 | = | - | - |
+| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | - | - |
+| Cursor | pointer | = | - | - |
+| ::before | 140.406px x 44px, absolute, bg #dddddd, radius 8px | = | - | - |
+| Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px bg #dddddd r 8px | = | - | - |
+| How | resting state | mouse hover over the element | - | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
 Crops: `movie-detail-cta-default.png`, `movie-detail-cta-hover.png`, `movie-detail-cta-focus-visible.png`.

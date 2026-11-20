@@ -415,20 +415,21 @@ Page: pricing. Selector: `yearly billing toggle`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 85.61 x 19.59 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | p.framer-text.framer-styles-preset-rhbxb3: Inter Variable 14px/19.6px 400, #ffffff @ 0.6, ls -0.1px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 85.61 x 19.59 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | sans-serif 12px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | p.framer-text.framer-styles-preset-rhbxb3: Inter Variable 14px/19.6px 400, #ffffff @ 0.6, ls -0.1px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-focus-visible.png`, `billing-toggle-pressed.png`.
 
@@ -892,21 +893,22 @@ Page: mobile. Selector: `mobile nav toggle`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 64 x 64 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | sans-serif 12px/normal 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #000000 | = | = | = | = |
-| Transition | none | = | = | = | = |
-| Transform | matrix(1, 0, 0, 1, 0, -32) | = | = | = | matrix(1, 0, 0, 6.72655, 0, 183.25) |
-| Cursor | default | = | = | = | = |
-| Painted layers | div.framer-cw6b3u 20.0x2.0 bg #ffffff r 10px; div.framer-1ctjw9m 20.0x2.0 bg #ffffff r 10px | = | = | = | div.framer-cw6b3u 20.0x2.0 bg #ffffff r 50% / 500%; div.framer-1ctjw9m 20.0x2.0 bg #ffffff r 50% / 500% |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
+| Size (w x h) | 64 x 64 | = | - | = | = |
+| Padding | 0px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | sans-serif 12px/normal 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #000000 | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Transform | matrix(1, 0, 0, 1, 0, -32) | = | - | = | matrix(1, 0, 0, 6.72655, 0, 183.25) |
+| Cursor | default | = | - | = | = |
+| Painted layers | div.framer-cw6b3u 20.0x2.0 bg #ffffff r 10px; div.framer-1ctjw9m 20.0x2.0 bg #ffffff r 10px | = | - | = | div.framer-cw6b3u 20.0x2.0 bg #ffffff r 50% / 500%; div.framer-1ctjw9m 20.0x2.0 bg #ffffff r 50% / 500% |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `m-menu-btn-default.png`, `m-menu-btn-hover.png`, `m-menu-btn-focus-visible.png`, `m-menu-btn-pressed.png`, `m-menu-btn-opened.png`.
 

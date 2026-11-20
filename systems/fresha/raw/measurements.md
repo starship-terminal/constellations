@@ -582,20 +582,21 @@ Page: userflow. Selector: `a:has-text("Fresha for customers")`. States: default,
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 368 x 42 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Roobert 16px/18.4px 400 | = | = |
-| Letter spacing | -0.1px | = | = |
-| Colour | #0d0d0d | = | = |
-| Text node | h3.ta_inherit.wb_normal: Roobert 16px/22px 500, #0d0d0d, ls -0.1px | = | = |
-| Transition | none | = | = |
-| Cursor | pointer | = | = |
-| How | at rest | mouse hover | focus failed |
+| Size (w x h) | 368 x 42 | = | - |
+| Padding | 0px | = | - |
+| Border | none | = | - |
+| Radius | 0px | = | - |
+| Background | transparent | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Roobert 16px/18.4px 400 | = | - |
+| Letter spacing | -0.1px | = | - |
+| Colour | #0d0d0d | = | - |
+| Text node | h3.ta_inherit.wb_normal: Roobert 16px/22px 500, #0d0d0d, ls -0.1px | = | - |
+| Transition | none | = | - |
+| Cursor | pointer | = | - |
+| How | at rest | mouse hover | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
 Crops: `chooser-card-default.png`, `chooser-card-hover.png`, `chooser-card-focus-visible.png`.
 
@@ -1400,24 +1401,25 @@ Page: booking. Selector: `button "Continue"`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 380 x 48 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 999px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | 2px solid #000000 @ 0 offset 2px | = | = | = |
-| Font | Roobert 16px/18.4px 400 | = | = | = |
-| Letter spacing | -0.1px | = | = | = |
-| Colour | #0d0d0d | = | = | = |
-| Text node | span.ta_inherit.textStyle_body.m.semibold: Roobert 16px/22px 600, #ffffff, ls -0.1px | = | = | = |
-| Transition | max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 0 x 0, colour #ffffff | = | = | = |
-| ::before | 380px x 48px, absolute, bg #000000 @ 0, radius 999px, shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px | = | = | = |
-| Painted layers | button.ring_none.pos_relative 380.0x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 380pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 380.0x48.0 bg #0d0d0d border T:1px #0d0d0d / R:1px #0d0d0d / B:1px #0d0d0d / L:1px #0d0d0d r 999px | = | = | button.ring_none.pos_relative 380.0x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 380pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 364.8x46.1 bg #4a4a4a border T:1px #4a4a4a / R:1px #4a4a4a / B:1px #4a4a4a / L:1px #4a4a4a r 999px |
-| Ancestor paint | 1 up div.d_flex.pos_sticky bg #ffffff | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 380 x 48 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 999px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | 2px solid #000000 @ 0 offset 2px | = | - | = |
+| Font | Roobert 16px/18.4px 400 | = | - | = |
+| Letter spacing | -0.1px | = | - | = |
+| Colour | #0d0d0d | = | - | = |
+| Text node | span.ta_inherit.textStyle_body.m.semibold: Roobert 16px/22px 600, #ffffff, ls -0.1px | = | - | = |
+| Transition | max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 0 x 0, colour #ffffff | = | - | = |
+| ::before | 380px x 48px, absolute, bg #000000 @ 0, radius 999px, shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px | = | - | = |
+| Painted layers | button.ring_none.pos_relative 380.0x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 380pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 380.0x48.0 bg #0d0d0d border T:1px #0d0d0d / R:1px #0d0d0d / B:1px #0d0d0d / L:1px #0d0d0d r 999px | = | - | button.ring_none.pos_relative 380.0x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 380pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 364.8x46.1 bg #4a4a4a border T:1px #4a4a4a / R:1px #4a4a4a / B:1px #4a4a4a / L:1px #4a4a4a r 999px |
+| Ancestor paint | 1 up div.d_flex.pos_sticky bg #ffffff | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `booking-continue-default.png`, `booking-continue-hover.png`, `booking-continue-focus-visible.png`, `booking-continue-pressed.png`.
 

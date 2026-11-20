@@ -1284,20 +1284,21 @@ Page: careers. Selector: `a.social-icon-btn`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 175 x 40 | = | = | = |
-| Padding | 0px 10px 0px 37px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 15px/40px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #736b6b | = | = | = |
-| Transition | all 0.18s cubic-bezier(0.55, 0.025, 0.455, 0.98) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Ancestor paint | 1 up li.social-icon-btn.icon-xitter bg #ffffff; 2 up ul shadow #000000 @ 0.2 0px 1px 4px 1px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 175 x 40 | = | - | = |
+| Padding | 0px 10px 0px 37px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 15px/40px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #736b6b | = | - | = |
+| Transition | all 0.18s cubic-bezier(0.55, 0.025, 0.455, 0.98) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Ancestor paint | 1 up li.social-icon-btn.icon-xitter bg #ffffff; 2 up ul shadow #000000 @ 0.2 0px 1px 4px 1px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `careers-share-focus-visible.png`, `careers-share-pressed.png`.
 
@@ -1309,21 +1310,22 @@ Page: careers. Selector: `a.btn-all-jobs`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 179 x 59 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | T: none; R: none; B: 1px solid #466af6; L: none | = | = | = |
-| Radius | 12px | = | = | = |
-| Background | #466af6 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | GTAmerica-Regular 22px/34px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span: GTAmerica-Regular 22px/34px 400, #ffffff | = | = | = |
-| Transition | all 0.18s cubic-bezier(0.55, 0.025, 0.455, 0.98) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a.button.btn-all-jobs 179.0x59.0 bg #466af6 border B:1px solid #466af6 r 12px; i.icon-arrow-left 24.0x24.0 bg #ffffff | a.button.btn-all-jobs 179.0x59.0 bg #466af6 border B:1px solid #466af6 r 12px; span.content 179.0x58.0 bg #000000 @ 0.15 r 12px; i.icon-arrow-left 24.0x24.0 bg #ffffff | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 179 x 59 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | T: none; R: none; B: 1px solid #466af6; L: none | = | - | = |
+| Radius | 12px | = | - | = |
+| Background | #466af6 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | GTAmerica-Regular 22px/34px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Text node | span: GTAmerica-Regular 22px/34px 400, #ffffff | = | - | = |
+| Transition | all 0.18s cubic-bezier(0.55, 0.025, 0.455, 0.98) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a.button.btn-all-jobs 179.0x59.0 bg #466af6 border B:1px solid #466af6 r 12px; i.icon-arrow-left 24.0x24.0 bg #ffffff | a.button.btn-all-jobs 179.0x59.0 bg #466af6 border B:1px solid #466af6 r 12px; span.content 179.0x58.0 bg #000000 @ 0.15 r 12px; i.icon-arrow-left 24.0x24.0 bg #ffffff | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `careers-all-jobs-default.png`, `careers-all-jobs-hover.png`, `careers-all-jobs-focus-visible.png`, `careers-all-jobs-pressed.png`.
 

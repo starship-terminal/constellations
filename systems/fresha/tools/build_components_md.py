@@ -23,6 +23,16 @@ T = json.load(open("tokens.json"))
 # --------------------------------------------------------------------------- colours and tokens
 
 
+
+def focus_not_captured(v):
+    """A state whose reading is not what its name says (decision D4, ported
+    from the kit's builder): a skipped one, or a focus-visible reading taken
+    where keyboard focus never landed (via "focus failed") or where the
+    element took focus but did not match :focus-visible. Its style is the
+    element at rest, so it is left out of every table and tally and listed as
+    "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
 def flat(node, prefix=""):
     for k, v in node.items():
         if k.startswith("$"):
@@ -192,7 +202,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if "style" in c["states"][s] and not focus_not_captured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -388,9 +398,13 @@ def ring_of(st_f, st_d):
 
 
 foc = []
+no_focus = []  # focus-visible readings where focus never landed (D4)
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
+        continue
+    if focus_not_captured(st):
+        no_focus.append(k)
         continue
     base = c["states"].get("default") or next((s for s in c["states"].values() if "style" in s), None)
     foc.append((k, ring_of(st, base)))
@@ -403,6 +417,8 @@ for r in with_ring:
     W(f"- {r}: {', '.join(f'`{k}`' for k in ring_groups[r])}.")
 if None in ring_groups:
     W(f"The rest draw none — most declare only a 2px transparent outline that stays invisible: {', '.join(f'`{k}`' for k in ring_groups[None])}.")
+if no_focus:
+    W(f"Focus could not be captured on {len(no_focus)}: keyboard focus never reached them (or they took focus without matching :focus-visible), so their focus look is unknown, not absent: {', '.join(f'`{k}`' for k in no_focus)}.")
 W()
 W("**Pressed.** Measured by forcing :active through DevTools. Fresha's solid buttons (the auth/partner Continue, the B2B CTAs, the map button) shrink slightly on press (the B2B CTA goes from 180x48 to about 173x46); the text buttons barely change.")
 W()
