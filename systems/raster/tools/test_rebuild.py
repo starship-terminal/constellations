@@ -1,4 +1,4 @@
-"""tokens.json and style-guide.html must rebuild from the builders, byte for byte.
+"""tokens.json and style-guide.html must rebuild from the builders, byte for byte (compared as bytes).
 
 The builders run on a temporary copy of the package with both outputs removed first, so a builder
 that writes nothing, or one that drifted from the committed file (it once wrote a `light` set
@@ -28,7 +28,7 @@ class RebuildTest(unittest.TestCase):
             for out in OUTPUTS:
                 with self.subTest(out=out):
                     self.assertTrue((copy / out).exists(), f"{out} was not rebuilt")
-                    self.assertEqual((copy / out).read_text(), (PKG / out).read_text())
+                    self.assertEqual((copy / out).read_bytes(), (PKG / out).read_bytes())
 
 
 if __name__ == "__main__":
