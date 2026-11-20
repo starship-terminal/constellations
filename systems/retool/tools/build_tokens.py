@@ -387,6 +387,12 @@ def in_raw(value):
     m = re.fullmatch(r"(\d*\.?\d+)ms", v)
     if m:
         forms.add(f"{float(m.group(1)) / 1000:g}s")
+    m = re.fullmatch(r"(\d*\.?\d+)px", v)
+    if m:
+        n = float(m.group(1))
+        forms |= {f":{n:g},", f":{n:g}}}"}  # a box size stored as a bare number ("height": 40)
+    if v == "9999px":
+        forms |= {"16777215px", "16777200px", "1.67772e+07px"}  # the full pill a computed rounded-full radius reports
     return any(f in RAW_TEXT for f in forms)
 
 
