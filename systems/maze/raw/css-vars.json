@@ -1,0 +1,594 @@
+{
+  "product": "maze",
+  "capturedAt": "2026-11-20T21:07:11.448Z",
+  "url": "https://maze.co/",
+  "theme": "light",
+  "note": "Read from the live public homepage CSSOM. No dark theme switch exists on the captured pages. Tailwind --tw-* internals are omitted. url() values are stripped.",
+  "fonts": [
+    {
+      "family": "Phonic",
+      "weight": "400",
+      "style": "normal",
+      "src": "local(\"Phonic Regular\"), local(\"Phonic-Regular\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "400",
+      "style": "italic",
+      "src": "local(\"Phonic Regular Italic\"), local(\"Phonic-RegularItalic\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "300",
+      "style": "normal",
+      "src": "local(\"Phonic Light\"), local(\"Phonic-Light\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "300",
+      "style": "italic",
+      "src": "local(\"Phonic Light Italic\"), local(\"Phonic-LightItalic\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "500",
+      "style": "normal",
+      "src": "local(\"Phonic Medium\"), local(\"Phonic-Medium\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "500",
+      "style": "italic",
+      "src": "local(\"Phonic Medium Italic\"), local(\"Phonic-MediumItalic\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "700",
+      "style": "normal",
+      "src": "local(\"Phonic Bold\"), local(\"Phonic-Bold\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "700",
+      "style": "italic",
+      "src": "local(\"Phonic Bold Italic\"), local(\"Phonic-BoldItalic\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "400",
+      "style": "normal",
+      "src": "local(\"Phonic Regular\"), local(\"Phonic-Regular\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "400",
+      "style": "italic",
+      "src": "local(\"Phonic Regular Italic\"), local(\"Phonic-RegularItalic\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "300",
+      "style": "normal",
+      "src": "local(\"Phonic Light\"), local(\"Phonic-Light\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "300",
+      "style": "italic",
+      "src": "local(\"Phonic Light Italic\"), local(\"Phonic-LightItalic\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "500",
+      "style": "normal",
+      "src": "local(\"Phonic Medium\"), local(\"Phonic-Medium\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "500",
+      "style": "italic",
+      "src": "local(\"Phonic Medium Italic\"), local(\"Phonic-MediumItalic\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "700",
+      "style": "normal",
+      "src": "local(\"Phonic Bold\"), local(\"Phonic-Bold\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    },
+    {
+      "family": "Phonic",
+      "weight": "700",
+      "style": "italic",
+      "src": "local(\"Phonic Bold Italic\"), local(\"Phonic-BoldItalic\"), url(…) format(\"woff2\")",
+      "file": "https://maze.co/fonts/phonic/phonic.css"
+    }
+  ],
+  "resolved": {
+    "light": {
+      "--spacing": {
+        "raw": ".25rem",
+        "value": ".25rem"
+      },
+      "--breakpoint-2xl": {
+        "raw": "90rem",
+        "value": "90rem"
+      },
+      "--container-sm": {
+        "raw": "24rem",
+        "value": "24rem"
+      },
+      "--container-md": {
+        "raw": "28rem",
+        "value": "28rem"
+      },
+      "--container-3xl": {
+        "raw": "48rem",
+        "value": "48rem"
+      },
+      "--text-xs": {
+        "raw": ".75rem",
+        "value": ".75rem"
+      },
+      "--text-sm": {
+        "raw": ".875rem",
+        "value": ".875rem"
+      },
+      "--text-sm--line-height": {
+        "raw": "1.42857",
+        "value": "1.42857"
+      },
+      "--font-weight-light": {
+        "raw": "300",
+        "value": "300"
+      },
+      "--font-weight-normal": {
+        "raw": "400",
+        "value": "400"
+      },
+      "--font-weight-medium": {
+        "raw": "500",
+        "value": "500"
+      },
+      "--font-weight-semibold": {
+        "raw": "600",
+        "value": "600"
+      },
+      "--radius-xs": {
+        "raw": ".125rem",
+        "value": ".125rem"
+      },
+      "--radius-sm": {
+        "raw": ".25rem",
+        "value": ".25rem"
+      },
+      "--radius-md": {
+        "raw": ".375rem",
+        "value": ".375rem"
+      },
+      "--radius-lg": {
+        "raw": ".5rem",
+        "value": ".5rem"
+      },
+      "--radius-xl": {
+        "raw": ".75rem",
+        "value": ".75rem"
+      },
+      "--radius-2xl": {
+        "raw": "1rem",
+        "value": "1rem"
+      },
+      "--ease-out": {
+        "raw": "cubic-bezier(0,0,.2,1)",
+        "value": "cubic-bezier(0,0,.2,1)"
+      },
+      "--ease-in-out": {
+        "raw": "cubic-bezier(.4,0,.2,1)",
+        "value": "cubic-bezier(.4,0,.2,1)"
+      },
+      "--blur-xs": {
+        "raw": "4px",
+        "value": "4px"
+      },
+      "--blur-sm": {
+        "raw": "8px",
+        "value": "8px"
+      },
+      "--blur-md": {
+        "raw": "12px",
+        "value": "12px"
+      },
+      "--blur-lg": {
+        "raw": "16px",
+        "value": "16px"
+      },
+      "--perspective-distant": {
+        "raw": "1200px",
+        "value": "1200px"
+      },
+      "--aspect-video": {
+        "raw": "16/9",
+        "value": "16/9"
+      },
+      "--default-transition-duration": {
+        "raw": ".15s",
+        "value": ".15s"
+      },
+      "--default-transition-timing-function": {
+        "raw": "cubic-bezier(.4,0,.2,1)",
+        "value": "cubic-bezier(.4,0,.2,1)"
+      },
+      "--font-phonic": {
+        "raw": "\"Phonic\",sans-serif",
+        "value": "\"Phonic\",sans-serif"
+      },
+      "--nav-height": {
+        "raw": "48px",
+        "value": "80px"
+      },
+      "--banner-height": {
+        "raw": "0px",
+        "value": "49px"
+      },
+      "--container-8xl": {
+        "raw": "90rem",
+        "value": "90rem"
+      },
+      "--grid-col-value": {
+        "raw": "clamp(0px,4.166vw,42px)",
+        "value": "clamp(0px,2.777vw,40px)"
+      },
+      "--color-neutral-000": {
+        "raw": "oklch(100% 0 0)",
+        "value": "oklch(100% 0 0)"
+      },
+      "--color-neutral-100": {
+        "raw": "oklch(96.7% .005 95.1)",
+        "value": "oklch(96.7% .005 95.1)"
+      },
+      "--color-neutral-200": {
+        "raw": "oklch(92.7% .008 73.7)",
+        "value": "oklch(92.7% .008 73.7)"
+      },
+      "--color-neutral-300": {
+        "raw": "oklch(85.2% .012 84.6)",
+        "value": "oklch(85.2% .012 84.6)"
+      },
+      "--color-neutral-400": {
+        "raw": "oklch(69% .011 87.5)",
+        "value": "oklch(69% .011 87.5)"
+      },
+      "--color-neutral-500": {
+        "raw": "oklch(54.2% .005 91.5)",
+        "value": "oklch(54.2% .005 91.5)"
+      },
+      "--color-neutral-600": {
+        "raw": "oklch(35.6% 0 0)",
+        "value": "oklch(35.6% 0 0)"
+      },
+      "--color-neutral-700": {
+        "raw": "oklch(22.6% 0 0)",
+        "value": "oklch(22.6% 0 0)"
+      },
+      "--color-neutral-900": {
+        "raw": "oklch(0% 0 0)",
+        "value": "oklch(0% 0 0)"
+      },
+      "--color-blue-100": {
+        "raw": "oklch(97.7% .012 236.6)",
+        "value": "oklch(97.7% .012 236.6)"
+      },
+      "--color-blue-200": {
+        "raw": "oklch(91.6% .044 245.1)",
+        "value": "oklch(91.6% .044 245.1)"
+      },
+      "--color-blue-300": {
+        "raw": "oklch(81.8% .094 251.4)",
+        "value": "oklch(81.8% .094 251.4)"
+      },
+      "--color-blue-400": {
+        "raw": "oklch(70.2% .157 257.8)",
+        "value": "oklch(70.2% .157 257.8)"
+      },
+      "--color-blue-500": {
+        "raw": "oklch(53.6% .192 259.7)",
+        "value": "oklch(53.6% .192 259.7)"
+      },
+      "--color-blue-600": {
+        "raw": "oklch(43.9% .171 260.2)",
+        "value": "oklch(43.9% .171 260.2)"
+      },
+      "--color-blue-700": {
+        "raw": "oklch(29.6% .107 259.6)",
+        "value": "oklch(29.6% .107 259.6)"
+      },
+      "--color-cyan-100": {
+        "raw": "oklch(97.5% .014 174.2)",
+        "value": "oklch(97.5% .014 174.2)"
+      },
+      "--color-cyan-200": {
+        "raw": "oklch(94.8% .026 172.9)",
+        "value": "oklch(94.8% .026 172.9)"
+      },
+      "--color-cyan-300": {
+        "raw": "oklch(90% .071 173.6)",
+        "value": "oklch(90% .071 173.6)"
+      },
+      "--color-cyan-400": {
+        "raw": "oklch(83.1% .105 172.2)",
+        "value": "oklch(83.1% .105 172.2)"
+      },
+      "--color-cyan-500": {
+        "raw": "oklch(69.6% .115 169.9)",
+        "value": "oklch(69.6% .115 169.9)"
+      },
+      "--color-cyan-600": {
+        "raw": "oklch(53.05% .1 167.38)",
+        "value": "oklch(53.05% .1 167.38)"
+      },
+      "--color-cyan-700": {
+        "raw": "oklch(44% .091 165.3)",
+        "value": "oklch(44% .091 165.3)"
+      },
+      "--color-lime-100": {
+        "raw": "oklch(98.6% .047 115)",
+        "value": "oklch(98.6% .047 115)"
+      },
+      "--color-lime-200": {
+        "raw": "oklch(96.41% .1049 116.85)",
+        "value": "oklch(96.41% .1049 116.85)"
+      },
+      "--color-lime-300": {
+        "raw": "oklch(92.5% .161 118.9)",
+        "value": "oklch(92.5% .161 118.9)"
+      },
+      "--color-lime-400": {
+        "raw": "oklch(85.3% .205 122)",
+        "value": "oklch(85.3% .205 122)"
+      },
+      "--color-lime-500": {
+        "raw": "oklch(71.19% .1668 121.63)",
+        "value": "oklch(71.19% .1668 121.63)"
+      },
+      "--color-lime-600": {
+        "raw": "oklch(54.6% .127 121.6)",
+        "value": "oklch(54.6% .127 121.6)"
+      },
+      "--color-lime-700": {
+        "raw": "oklch(44.2% .101 121.2)",
+        "value": "oklch(44.2% .101 121.2)"
+      },
+      "--color-purple-100": {
+        "raw": "oklch(95.5% .025 305.9)",
+        "value": "oklch(95.5% .025 305.9)"
+      },
+      "--color-purple-200": {
+        "raw": "oklch(87.3% .072 304.9)",
+        "value": "oklch(87.3% .072 304.9)"
+      },
+      "--color-purple-300": {
+        "raw": "oklch(74.8% .146 302.8)",
+        "value": "oklch(74.8% .146 302.8)"
+      },
+      "--color-purple-400": {
+        "raw": "oklch(64.9% .218 298.5)",
+        "value": "oklch(64.9% .218 298.5)"
+      },
+      "--color-purple-500": {
+        "raw": "oklch(52.5% .27 292)",
+        "value": "oklch(52.5% .27 292)"
+      },
+      "--color-purple-600": {
+        "raw": "oklch(42% .235 290.7)",
+        "value": "oklch(42% .235 290.7)"
+      },
+      "--color-purple-700": {
+        "raw": "oklch(30.6% .169 289.2)",
+        "value": "oklch(30.6% .169 289.2)"
+      },
+      "--color-red-100": {
+        "raw": "oklch(94.5% .03 357.1)",
+        "value": "oklch(94.5% .03 357.1)"
+      },
+      "--color-red-200": {
+        "raw": "oklch(89.4% .061 358.9)",
+        "value": "oklch(89.4% .061 358.9)"
+      },
+      "--color-red-300": {
+        "raw": "oklch(73.7% .17 3.2)",
+        "value": "oklch(73.7% .17 3.2)"
+      },
+      "--color-red-400": {
+        "raw": "oklch(63.4% .248 14.8)",
+        "value": "oklch(63.4% .248 14.8)"
+      },
+      "--color-red-500": {
+        "raw": "oklch(54.7% .218 16.6)",
+        "value": "oklch(54.7% .218 16.6)"
+      },
+      "--color-red-600": {
+        "raw": "oklch(45.6% .18 15.5)",
+        "value": "oklch(45.6% .18 15.5)"
+      },
+      "--color-red-700": {
+        "raw": "oklch(36.2% .147 357.4)",
+        "value": "oklch(36.2% .147 357.4)"
+      },
+      "--color-yellow-100": {
+        "raw": "oklch(98.1% .027 93.1)",
+        "value": "oklch(98.1% .027 93.1)"
+      },
+      "--color-yellow-200": {
+        "raw": "oklch(94.5% .074 91.5)",
+        "value": "oklch(94.5% .074 91.5)"
+      },
+      "--color-yellow-300": {
+        "raw": "oklch(89.7% .129 91.1)",
+        "value": "oklch(89.7% .129 91.1)"
+      },
+      "--color-yellow-400": {
+        "raw": "oklch(84.8% .174 86.1)",
+        "value": "oklch(84.8% .174 86.1)"
+      },
+      "--color-yellow-500": {
+        "raw": "oklch(74.2% .158 73.3)",
+        "value": "oklch(74.2% .158 73.3)"
+      },
+      "--color-yellow-600": {
+        "raw": "oklch(62.2% .134 61.3)",
+        "value": "oklch(62.2% .134 61.3)"
+      },
+      "--color-yellow-700": {
+        "raw": "oklch(51.3% .122 58.6)",
+        "value": "oklch(51.3% .122 58.6)"
+      },
+      "--color-success": {
+        "raw": "var(--color-cyan-600)",
+        "value": "oklch(53.05% .1 167.38)"
+      },
+      "--color-error": {
+        "raw": "var(--color-red-500)",
+        "value": "oklch(54.7% .218 16.6)"
+      },
+      "--color-white": {
+        "raw": "var(--color-neutral-000)",
+        "value": "oklch(100% 0 0)"
+      },
+      "--color-transparent": {
+        "raw": "transparent",
+        "value": "transparent"
+      },
+      "--shadow-nav": {
+        "raw": "0px 4px 30px #0000000a",
+        "value": "0px 4px 30px #0000000a"
+      },
+      "--shadow-modal": {
+        "raw": "0 4px 20px #00000014",
+        "value": "0 4px 20px #00000014"
+      },
+      "--aspect-landscape": {
+        "raw": "640/440",
+        "value": "640/440"
+      },
+      "--aspect-portrait": {
+        "raw": "440/640",
+        "value": "440/640"
+      },
+      "--aspect-logo": {
+        "raw": "200/60",
+        "value": "200/60"
+      },
+      "--copy-color": {
+        "raw": "var(--color-neutral-700)",
+        "value": "oklch(22.6% 0 0)"
+      },
+      "--heading-color": {
+        "raw": "var(--color-neutral-700)",
+        "value": "oklch(22.6% 0 0)"
+      },
+      "--link-color": {
+        "raw": "var(--color-neutral-700)",
+        "value": "oklch(22.6% 0 0)"
+      },
+      "--list-bullet-color": {
+        "raw": "var(--copy-color)",
+        "value": "oklch(22.6% 0 0)"
+      },
+      "--list-icon-color": {
+        "raw": "var(--copy-color)",
+        "value": "oklch(22.6% 0 0)"
+      },
+      "--eyebrow-background": {
+        "raw": "transparent",
+        "value": "transparent"
+      },
+      "--eyebrow-text": {
+        "raw": "var(--color-neutral-700)",
+        "value": "oklch(22.6% 0 0)"
+      },
+      "--eyebrow-border": {
+        "raw": "var(--color-neutral-500)",
+        "value": "oklch(54.2% .005 91.5)"
+      },
+      "--chips-background": {
+        "raw": "var(--color-lime-300)",
+        "value": "oklch(92.5% .161 118.9)"
+      },
+      "--chips-text": {
+        "raw": "var(--color-neutral-700)",
+        "value": "oklch(22.6% 0 0)"
+      },
+      "--animate-subnav-appear": {
+        "raw": "subnav-appear .25s linear",
+        "value": "subnav-appear .25s linear"
+      },
+      "--animate-subnav-disappear": {
+        "raw": "subnav-disappear .25s linear",
+        "value": "subnav-disappear .25s linear"
+      },
+      "--animate-small-bounce": {
+        "raw": "small-bounce 1.5s ease-in-out infinite",
+        "value": "small-bounce 1.5s ease-in-out infinite"
+      },
+      "--animate-fade-in-up": {
+        "raw": "fade-in-up linear both",
+        "value": "fade-in-up linear both"
+      },
+      "--animate-roi-blur-focus": {
+        "raw": "roi-blur-focus linear both",
+        "value": "roi-blur-focus linear both"
+      },
+      "--animate-magnify": {
+        "raw": "magnify ease both",
+        "value": "magnify ease both"
+      },
+      "--fade-in-up-distance": {
+        "raw": "10px",
+        "value": ""
+      },
+      "--per-row": {
+        "raw": "3",
+        "value": ""
+      },
+      "--magnify-drift": {
+        "raw": "-20%",
+        "value": ""
+      },
+      "--magnify-to-scale": {
+        "raw": "1.75",
+        "value": ""
+      },
+      "--spara-nav-y-offset": {
+        "raw": "0px",
+        "value": "0px"
+      },
+      "--spara-vv-height": {
+        "raw": "100dvh",
+        "value": "900px"
+      },
+      "--spara-vv-offset-top": {
+        "raw": "0px",
+        "value": "0px"
+      },
+      "--spara-smartbar-height": {
+        "raw": "300px",
+        "value": "300px"
+      }
+    }
+  },
+  "declarations": 12
+}
