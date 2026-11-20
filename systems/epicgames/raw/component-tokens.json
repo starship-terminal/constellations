@@ -39,7 +39,7 @@
           "value": 500,
           "type": "fontWeight",
           "source": "computed fontWeight of card-price default (raw/components-computed.json)",
-          "description": "400 — card prices, body and meta text."
+          "description": "The card price weight (prices and meta text)."
         },
         "measured-medium": {
           "value": 500,
@@ -81,43 +81,43 @@
       "size": {
         "meta": {
           "value": "{size.font.14}",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of card-price default (raw/components-computed.json); matches declared --size-font-14",
           "description": "The 12px card price and meta size."
         },
         "ui": {
           "value": "{size.font.14}",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of hero-cta default (raw/components-computed.json); matches declared --size-font-14",
           "description": "The 14px CTA and button label size."
         },
         "body": {
           "value": "{size.font.16}",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of egs-nav default (raw/components-computed.json); matches declared --size-font-16",
           "description": "The 16px nav/body size."
         },
         "title": {
           "value": "{size.font.40}",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of p-title default (raw/components-computed.json); matches declared --size-font-40",
           "description": "The product page display size."
         },
         "browse-h1": {
           "value": "{size.font.32}",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of b-h1 default (raw/components-computed.json); matches declared --size-font-32",
           "description": "The 'Popular Genres' heading size."
         },
         "help-h1": {
           "value": "{size.font.64}",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of h-h1 default (raw/components-computed.json); matches declared --size-font-64",
           "description": "The support-centre display size."
         },
         "signin": {
           "value": "{size.font.24}",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of s-title default (raw/components-computed.json); matches declared --size-font-24",
           "description": "The sign-in dialog title size."
         }
@@ -3100,7 +3100,7 @@
         "value": "none",
         "type": "other",
         "source": "computed boxShadow of s-dialog default (raw/components-computed.json)",
-        "description": "The layered shadow the sign-in modal carries."
+        "description": "The sign-in modal's computed box-shadow (none on this capture)."
       }
     },
     "size": {
@@ -4381,7 +4381,7 @@
     },
     "motion": {
       "control": {
-        "value": "color, background-color 0.12s cubic-bezier(0.65, 0, 0.35, 1)",
+        "value": "color 0.12s cubic-bezier(0.65, 0, 0.35, 1), background-color 0.12s cubic-bezier(0.65, 0, 0.35, 1)",
         "type": "other",
         "source": "computed transition of nav-signin default (raw/components-computed.json)",
         "description": "The control transition on nav buttons and CTAs."
@@ -5408,7 +5408,7 @@
         "value": "{color.foreground.primary}",
         "type": "color",
         "source": "computed color of card-price default (raw/components-computed.json); matches declared color.foreground.primary",
-        "description": "The white-65% secondary text — prices, meta, footer links."
+        "description": "The card price and meta text ink (it paints the same value as the primary ink)."
       },
       "inverse": {
         "value": "{color.foreground.inverse}",
@@ -5452,13 +5452,13 @@
         "value": "#26bbff",
         "type": "color",
         "source": "computed backgroundColor of s-continue default (raw/components-computed.json)",
-        "description": "The #33bfff EDS accent on the sign-in Continue and free-games CTA."
+        "description": "The EDS accent fill on the sign-in Continue and free-games CTA."
       },
       "accent-eds-hover": {
         "value": "#61cdff",
         "type": "color",
         "source": "computed backgroundColor of s-continue hover (raw/components-computed.json)",
-        "description": "The #69d0ff the EDS accent lifts to on hover."
+        "description": "The lighter fill the EDS accent lifts to on hover."
       },
       "fill-subtle": {
         "value": "{color.background.fill.disabled.primary}",
@@ -5483,7 +5483,7 @@
       "focus": {
         "value": "{color.foreground.primary}",
         "type": "color",
-        "source": "computed focus outline/border of store-tab focus-visible (raw/components-computed.json); matches declared color.foreground.primary",
+        "source": "computed focus ring (outline 1px solid) of store-tab focus-visible (raw/components-computed.json); matches declared color.foreground.primary",
         "description": "The white focus ring drawn on keyboard focus."
       }
     }
@@ -5561,5 +5561,11 @@
       "source": "measured h of m-egs-nav default (raw/components-computed.json)",
       "description": "The mobile nav rail height."
     }
-  }
+  },
+  "_gaps": [
+    "background.free-badge: fg-badge default _paint-free paints nothing",
+    "background.tile: h-tile default backgroundColor paints nothing",
+    "shadow.drawer: no mobile-discover-dark-drawer default boxShadow reading",
+    "motion.card: game-card default has no transition"
+  ]
 }

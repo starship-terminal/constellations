@@ -3,6 +3,7 @@ urllib.request.urlopen and subprocess.run mocked: the page and sitemap GETs,
 the fetch pass's failure handling, the media backfill, the node export pass
 and the argument dispatch. Nothing touches the network or the real refero/
 store; every write lands in a temporary directory. Run with `make test`."""
+import contextlib
 import io
 import json
 import sqlite3
@@ -10,6 +11,7 @@ import sys
 import tempfile
 import unittest
 import urllib.error
+import urllib.request
 from pathlib import Path
 from types import SimpleNamespace
 from unittest import mock
@@ -17,6 +19,7 @@ from unittest import mock
 TOOLS = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS / "refero"))
 import fetch  # noqa: E402
+import fetch_collections  # noqa: E402
 
 UUID = "00000000-0000-0000-0000-00000000000a"
 UUID_B = "00000000-0000-0000-0000-00000000000b"
@@ -44,11 +47,12 @@ def page_for(result=RESULT, design_md="# Acme", video=None):
 class Resp:
     """A urlopen response with the surface fetch.get uses."""
 
-    def __init__(self, body):
+    def __init__(self, body, headers=None):
         self.body = body.encode() if isinstance(body, str) else body
+        self.headers = headers or {}
 
-    def read(self):
-        return self.body
+    def read(self, n=-1):
+        return self.body if n < 0 else self.body[:n]
 
     def __enter__(self):
         return self
@@ -57,8 +61,12 @@ class Resp:
         return False
 
 
+@contextlib.contextmanager
 def urlopen(side):
-    return mock.patch.object(fetch.urllib.request, "urlopen", side_effect=side)
+    """Stand in for the opener fetch.get builds; yields the open() mock."""
+    opened = mock.MagicMock(side_effect=side)
+    with mock.patch.object(fetch, "opener", return_value=SimpleNamespace(open=opened)):
+        yield opened
 
 
 class NoSleep(unittest.TestCase):
@@ -99,6 +107,80 @@ class GetTest(NoSleep):
         with urlopen([OSError("a"), OSError("b")]) as opened, self.assertRaises(OSError):
             fetch.get("https://x", tries=2)
         self.assertEqual(opened.call_count, 2)
+
+
+    def test_a_body_over_the_cap_raises_without_a_retry(self):
+        with mock.patch.object(fetch, "MAX_RESPONSE", 4), \
+                urlopen([Resp("12345"), Resp("ok")]) as opened, \
+                self.assertRaises(fetch.TooLarge):
+            fetch.get("https://x")
+        self.assertEqual(opened.call_count, 1)
+        with mock.patch.object(fetch, "MAX_RESPONSE", 4), urlopen([Resp("1234")]):
+            self.assertEqual(fetch.get("https://x"), b"1234")  # exactly the cap is fine
+
+
+    def test_a_body_short_of_its_content_length_is_retried(self):
+        cut = Resp("par", {"Content-Length": "7"})
+        with urlopen([cut, Resp("partial", {"Content-Length": "7"})]) as opened:
+            self.assertEqual(fetch.get("https://x"), b"partial")
+        self.assertEqual(opened.call_count, 2)
+        with urlopen([Resp("par", {"Content-Length": "7"})] * 4), \
+                self.assertRaises(fetch.http.client.IncompleteRead):
+            fetch.get("https://x")
+
+    def test_a_refused_redirect_is_not_retried(self):
+        refused = fetch.RedirectRefused("refusing a redirect")
+        with urlopen([refused, Resp("ok")]) as opened, self.assertRaises(fetch.RedirectRefused):
+            fetch.get("https://x")
+        self.assertEqual(opened.call_count, 1)
+
+
+class CheckedRedirectTest(unittest.TestCase):
+    def follow(self, allowed, target):
+        handler = fetch.CheckedRedirect(allowed)
+        req = urllib.request.Request("https://styles.refero.design/collections/a")
+        return handler.redirect_request(req, None, 302, "Found", {}, target)
+
+    def test_the_default_follows_only_https(self):
+        self.assertEqual(self.follow(fetch.https_only, "https://cdn.example/a").full_url,
+                         "https://cdn.example/a")
+        for target in ("http://styles.refero.design/a", "ftp://x/a"):
+            with self.assertRaises(fetch.RedirectRefused, msg=target):
+                self.follow(fetch.https_only, target)
+
+    def test_collections_follow_only_the_refero_host(self):
+        ok = fetch_collections.on_base
+        self.assertEqual(self.follow(ok, f"{fetch_collections.BASE}/collections/b").full_url,
+                         f"{fetch_collections.BASE}/collections/b")
+        for target in ("https://192.168.1.1/admin", "http://styles.refero.design/x",
+                       "https://styles.refero.design.example/x"):
+            with self.assertRaises(fetch.RedirectRefused, msg=target):
+                self.follow(ok, target)
+
+    def test_the_opener_carries_the_check(self):
+        built = fetch.opener(fetch.https_only)
+        self.assertTrue(any(isinstance(h, fetch.CheckedRedirect) for h in built.handlers))
+
+
+class CollectionUrlsTest(unittest.TestCase):
+    def test_only_https_pages_on_the_refero_host_are_kept(self):
+        base = fetch_collections.BASE
+        locs = [f"{base}/", f" {base}/collections/dark ", f"{base}/design-md/guide",
+                "file:///etc/passwd", "http://styles.refero.design/collections/x",
+                "https://192.168.1.1/admin", "https://styles.refero.design.example/x",
+                "ftp://styles.refero.design/x", base]
+        xml = "<urlset>" + "".join(f"<url><loc>{u}</loc></url>" for u in locs) + "</urlset>"
+        with mock.patch("sys.stderr", new_callable=io.StringIO) as err:
+            urls = fetch_collections.collection_urls(xml)
+        self.assertEqual(urls, [f"{base}/collections/dark", f"{base}/design-md/guide"])
+        self.assertEqual(err.getvalue().count("SKIP off-site sitemap url"), 5)
+        self.assertIn("'file:///etc/passwd'", err.getvalue())
+
+    def test_pages_are_fetched_through_the_capped_get_with_the_host_check(self):
+        with mock.patch.object(fetch_collections.refero_fetch, "get", return_value=b"x") as get:
+            self.assertEqual(fetch_collections.get(fetch_collections.SITEMAP), b"x")
+        get.assert_called_once_with(fetch_collections.SITEMAP, True, 4,
+                                    allowed=fetch_collections.on_base)
 
 
 class SitemapAndPageTest(NoSleep):

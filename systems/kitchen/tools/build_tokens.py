@@ -23,6 +23,14 @@ def src(where):
     return {"source": f"Measured computed style, {where}, kitchen.co 2026-11-18"}
 
 
+# docs/EVIDENCE.md: a value typed into the builder with no reading in raw/ is a Reconstruction.
+def hand(value, ty, note):
+    if ty == "fontWeight":
+        value = int(value)
+    return {"$type": ty, "$value": value,
+            "$extensions": {"source": f"Reconstruction: entered by hand at capture time; no reading in raw/ holds it. {note}"}}
+
+
 def color(value, where):
     return {"$type": "color", "$value": value, "$extensions": src(where)}
 
@@ -64,8 +72,13 @@ def rgb_hex(c):
 def px(v):
     m = re.fullmatch(r"(-?\d*\.?\d+)px", str(v).strip())
     if not m:
-        return None
+        raise ValueError(f"not a px length: {v!r}")
     return "%gpx" % round(float(m.group(1)), 2)
+
+
+def h(key, state="default"):
+    """The measured height of a component's box."""
+    return px(str(rect(key, state)["h"]) + "px")
 
 
 def fam(v):
@@ -83,6 +96,10 @@ plan = st("plan-card")
 faq = st("faq-row")
 field = st("search-field")
 footer = st("footer")
+signup = st("signup-field")
+logo = st("logo")
+if signup["borderTopLeftRadius"] != ink_btn["borderTopLeftRadius"]:
+    raise SystemExit("radius.control: the signup field and the small button no longer share one radius")
 
 core = {
     "font": {
@@ -90,10 +107,10 @@ core = {
             "sans": font_family(f'"{fam(hero["fontFamily"])}", "Helvetica Neue", Arial, sans-serif', "h1.hero__title font-family"),
         },
         "weight": {
-            "regular": weight(400, "body"),
-            "medium": weight(500, "Graphik Medium is declared in @font-face; UI buttons use 700"),
-            "bold": weight(700, "h1.hero__title and a.btn"),
-            "black": weight(900, "Graphik Black is declared in @font-face"),
+            "regular": weight(body["fontWeight"], ".hero__entry p fontWeight"),
+            "medium": weight(signup["fontWeight"], "the get-started signup field fontWeight (Graphik Medium); UI buttons use 700"),
+            "bold": weight(hero["fontWeight"], "h1.hero__title fontWeight, the same 700 as a.btn"),
+            "black": hand(900, "fontWeight", "Graphik Black is declared in main.css @font-face; raw/ holds no @font-face rule and no element paints 900."),
         },
         "size": {
             "nav": dim(px(nav["fontSize"]), "nav.nav a"),
@@ -106,7 +123,7 @@ core = {
     },
     "radius": {
         "button": dim(px(coral["borderTopLeftRadius"]), "a.btn border-radius"),
-        "control": dim("5px", "a.btn and form controls share 5px"),
+        "control": dim(px(signup["borderTopLeftRadius"]), "the get-started signup field border-radius, the same as a.btn.btn--small"),
     },
     "space": {
         "button-pad-y": dim(px(coral["paddingTop"]), "a.btn padding-top"),
@@ -115,27 +132,27 @@ core = {
         "small-pad-x": dim(px(ink_btn["paddingRight"]), "a.btn.btn--small padding-right"),
     },
     "size": {
-        "promo-bar": dim(px(str(rect("promo-bar")["h"]) + "px") or "56px", "a.bar height"),
-        "button-small": dim(px(str(rect("nav-try")["h"]) + "px") or "44px", "header Try it FREE height"),
-        "button": dim(px(str(rect("cta-coral")["h"]) + "px") or "52px", "coral CTA height"),
-        "shell": dim("1280px", ".shell content width on the home hero"),
+        "promo-bar": dim(h("promo-bar"), "a.bar height"),
+        "button-small": dim(h("nav-try"), "header Try it FREE height"),
+        "button": dim(h("cta-coral"), "coral CTA height"),
+        "shell": dim(px(hero["width"]), "h1.hero__title width, the .shell content column on the home hero"),
     },
 }
 
 light = {
     "background": {
-        "page": color("#ffffff", "body background-color rgb(255, 255, 255)"),
+        "page": hand("#ffffff", "color", "Typed from the marketing body background-color rgb(255, 255, 255); no element in raw/ reads the page field."),
         "promo": color(rgb_hex(promo["backgroundColor"]), "a.bar"),
-        "sand": color("#f8f6f4", "main.css sand field, the recurring warm surface"),
+        "sand": hand("#f8f6f4", "color", "Typed from the main.css sand field, the recurring warm surface. The signed-in workspace declares the same value as --k-color-gray-f8 (raw/app-vars.json)."),
         "footer": color(rgb_hex(footer["backgroundColor"]), "footer.footer"),
     },
     "text": {
         "primary": color(rgb_hex(hero["color"]), "h1.hero__title"),
-        "secondary": color("#707070", "main.css muted grey"),
+        "secondary": hand("#707070", "color", "Typed from the main.css muted grey."),
         "on-ink": color(rgb_hex(ink_btn["color"]), "a.btn.btn--dark"),
         "on-coral": color(rgb_hex(coral["color"]), "a.btn coral"),
-        "promo-gold": color("#ffdc4d", "promo bar strong, main.css"),
-        "link": color("#0000ee", "a.logo computed color, the UA link blue on the wordmark"),
+        "promo-gold": hand("#ffdc4d", "color", "Typed from the promo bar strong rule in main.css."),
+        "link": color(rgb_hex(logo["color"]), "a.logo computed color, the UA link blue on the wordmark"),
     },
     "action": {
         "ink": color(rgb_hex(ink_btn["backgroundColor"]), "a.btn.btn--dark"),
@@ -143,14 +160,14 @@ light = {
         "outline": color(rgb_hex(outline["borderTopColor"]), "a.btn.is-outline border"),
     },
     "border": {
-        "stroke": color("#e5e5e5", "main.css hairline"),
-        "field": color("#dcdcdc", "main.css field border"),
+        "stroke": hand("#e5e5e5", "color", "Typed from the main.css hairline."),
+        "field": hand("#dcdcdc", "color", "Typed from the main.css field border."),
         "strong": color(rgb_hex(outline["borderTopColor"]), "a.btn.is-outline"),
     },
     "component": {
         "button-radius": dim(px(coral["borderTopLeftRadius"]), "a.btn"),
-        "button-height": dim("52px", "a.btn"),
-        "button-small-height": dim("44px", "a.btn.btn--small"),
+        "button-height": dim(h("cta-coral"), "a.btn height (the coral CTA)"),
+        "button-small-height": dim(h("nav-try"), "a.btn.btn--small height (header Try it FREE)"),
         "plan-card-bg": color(rgb_hex(plan["backgroundColor"]), ".plan"),
     },
 }
@@ -161,15 +178,19 @@ if app_vars_path.exists():
     app_vars = json.loads(app_vars_path.read_text())
     prim = app_vars.get("primitives") or {}
     def k(name, fallback=None):
-        return prim.get(name) or fallback
+        # The fallback stays as documentation of what was read; a missing reading raises
+        # instead of publishing the fallback under a css-var source.
+        if not prim.get(name):
+            raise KeyError(f"{name}: not in raw/app-vars.json primitives")
+        return prim[name]
     workspace = {
         "accent": color(k("--k-accent-color", "#0165e1"), "--k-accent-color on the signed-in workspace"),
         "blue": color(k("--k-color-blue", "#0165e1"), "--k-color-blue"),
         "danger": color(k("--k-color-red", "#ee543b"), "--k-color-red"),
         "success": color(k("--k-color-green", "#41c660"), "--k-color-green"),
         "warning": color(k("--k-color-yellow", "#fec30c"), "--k-color-yellow"),
-        "text": color("#333333", "document.body color rgb(51, 51, 51) on the workspace"),
-        "page": color("#ffffff", "document.body background-color on the workspace"),
+        "text": color(rgb_hex(app_vars["bodyColor"]), "document.body color on the workspace (raw/app-vars.json bodyColor)"),
+        "page": color(rgb_hex(app_vars["bodyBg"]), "document.body background-color on the workspace (raw/app-vars.json bodyBg)"),
         "sand": color(k("--k-color-gray-f8", "#f8f6f4"), "--k-color-gray-f8"),
         "rail": color(k("--k-color-black-03-solid", "#f7f7f7"), "--k-color-black-03-solid, the rail surface"),
         "button-height": dim(k("--k-button-size-s-height", "28px"), "--k-button-size-s-height"),
@@ -178,7 +199,7 @@ if app_vars_path.exists():
         "font-14": dim(k("--k-font-size-14", "14px"), "--k-font-size-14"),
     }
     core["font"]["family"]["app"] = font_family(
-        app_vars.get("bodyFont") or '-apple-system, "system-ui", "Segoe UI", Roboto, "Noto Sans", Ubuntu, "Droid Sans", "Helvetica Neue", sans-serif',
+        app_vars["bodyFont"],
         "document.body font-family on the signed-in workspace",
     )
 
@@ -199,16 +220,18 @@ doc = {
     "light": light,
     "dark": {},
     "$themes": [
-        {"name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+        {"id": "light", "name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
     ],
 }
 
 motion_path = RAW / "motion.json"
 if motion_path.exists():
     from motion import build as motion_build
-    group, _skipped = motion_build(json.loads(motion_path.read_text()))
+    group, skipped = motion_build(json.loads(motion_path.read_text()))
     if group:
         core["motion"] = group
+    if skipped:  # what DTCG cannot carry is kept, as the kit does
+        core["$extensions"] = {"notTokenised": skipped}
 
 (HERE / "tokens.json").write_text(json.dumps(doc, indent=1) + "\n")
 print("tokens.json", "light colours", sum(1 for g in light.values() for v in g.values() if v.get("$type") == "color"))

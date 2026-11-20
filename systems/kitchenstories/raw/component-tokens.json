@@ -429,129 +429,129 @@
        "var": "--wpds-color-background-interactive-brand-strong",
        "type": "color",
        "source": "css-var --wpds-color-background-interactive-brand-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-interactive-brand-strong.",
-       "active": {
-        "var": "--wpds-color-background-interactive-brand-strong-active",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-brand-strong-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-brand-strong-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-background-interactive-brand-strong-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-brand-strong-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-brand-strong-disabled."
-       }
+       "description": "WPDS colour --wpds-color-background-interactive-brand-strong."
+      },
+      "strong-active": {
+       "var": "--wpds-color-background-interactive-brand-strong-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-strong-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-strong-active."
+      },
+      "strong-disabled": {
+       "var": "--wpds-color-background-interactive-brand-strong-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-strong-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-strong-disabled."
       },
       "weak": {
        "var": "--wpds-color-background-interactive-brand-weak",
        "type": "color",
        "source": "css-var --wpds-color-background-interactive-brand-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-interactive-brand-weak.",
-       "active": {
-        "var": "--wpds-color-background-interactive-brand-weak-active",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-brand-weak-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-brand-weak-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-background-interactive-brand-weak-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-brand-weak-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-brand-weak-disabled."
-       }
+       "description": "WPDS colour --wpds-color-background-interactive-brand-weak."
+      },
+      "weak-active": {
+       "var": "--wpds-color-background-interactive-brand-weak-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-weak-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-weak-active."
+      },
+      "weak-disabled": {
+       "var": "--wpds-color-background-interactive-brand-weak-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-weak-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-weak-disabled."
       }
      },
      "error": {
       "var": "--wpds-color-background-interactive-error",
       "type": "color",
       "source": "css-var --wpds-color-background-interactive-error resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-background-interactive-error.",
-      "active": {
-       "var": "--wpds-color-background-interactive-error-active",
-       "type": "color",
-       "source": "css-var --wpds-color-background-interactive-error-active resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-interactive-error-active."
-      },
-      "disabled": {
-       "var": "--wpds-color-background-interactive-error-disabled",
-       "type": "color",
-       "source": "css-var --wpds-color-background-interactive-error-disabled resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-interactive-error-disabled."
-      },
-      "strong": {
-       "var": "--wpds-color-background-interactive-error-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-background-interactive-error-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-interactive-error-strong.",
-       "active": {
-        "var": "--wpds-color-background-interactive-error-strong-active",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-error-strong-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-error-strong-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-background-interactive-error-strong-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-error-strong-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-error-strong-disabled."
-       }
-      },
-      "weak": {
-       "var": "--wpds-color-background-interactive-error-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-background-interactive-error-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-interactive-error-weak.",
-       "active": {
-        "var": "--wpds-color-background-interactive-error-weak-active",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-error-weak-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-error-weak-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-background-interactive-error-weak-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-error-weak-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-error-weak-disabled."
-       }
-      }
+      "description": "WPDS colour --wpds-color-background-interactive-error."
+     },
+     "error-active": {
+      "var": "--wpds-color-background-interactive-error-active",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-active."
+     },
+     "error-disabled": {
+      "var": "--wpds-color-background-interactive-error-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-disabled."
+     },
+     "error-strong": {
+      "var": "--wpds-color-background-interactive-error-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-strong."
+     },
+     "error-strong-active": {
+      "var": "--wpds-color-background-interactive-error-strong-active",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-strong-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-strong-active."
+     },
+     "error-strong-disabled": {
+      "var": "--wpds-color-background-interactive-error-strong-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-strong-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-strong-disabled."
+     },
+     "error-weak": {
+      "var": "--wpds-color-background-interactive-error-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-weak."
+     },
+     "error-weak-active": {
+      "var": "--wpds-color-background-interactive-error-weak-active",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-weak-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-weak-active."
+     },
+     "error-weak-disabled": {
+      "var": "--wpds-color-background-interactive-error-weak-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-weak-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-weak-disabled."
      },
      "neutral": {
       "strong": {
        "var": "--wpds-color-background-interactive-neutral-strong",
        "type": "color",
        "source": "css-var --wpds-color-background-interactive-neutral-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-interactive-neutral-strong.",
-       "active": {
-        "var": "--wpds-color-background-interactive-neutral-strong-active",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-neutral-strong-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-neutral-strong-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-background-interactive-neutral-strong-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-neutral-strong-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-neutral-strong-disabled."
-       }
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-strong."
+      },
+      "strong-active": {
+       "var": "--wpds-color-background-interactive-neutral-strong-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-strong-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-strong-active."
+      },
+      "strong-disabled": {
+       "var": "--wpds-color-background-interactive-neutral-strong-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-strong-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-strong-disabled."
       },
       "weak": {
        "var": "--wpds-color-background-interactive-neutral-weak",
        "type": "color",
        "source": "css-var --wpds-color-background-interactive-neutral-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-interactive-neutral-weak.",
-       "active": {
-        "var": "--wpds-color-background-interactive-neutral-weak-active",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-neutral-weak-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-neutral-weak-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-background-interactive-neutral-weak-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-background-interactive-neutral-weak-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-interactive-neutral-weak-disabled."
-       }
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-weak."
+      },
+      "weak-active": {
+       "var": "--wpds-color-background-interactive-neutral-weak-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-weak-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-weak-active."
+      },
+      "weak-disabled": {
+       "var": "--wpds-color-background-interactive-neutral-weak-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-weak-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-weak-disabled."
       }
      }
     },
@@ -566,79 +566,79 @@
       "var": "--wpds-color-background-surface-caution",
       "type": "color",
       "source": "css-var --wpds-color-background-surface-caution resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-background-surface-caution.",
-      "weak": {
-       "var": "--wpds-color-background-surface-caution-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-background-surface-caution-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-surface-caution-weak."
-      }
+      "description": "WPDS colour --wpds-color-background-surface-caution."
+     },
+     "caution-weak": {
+      "var": "--wpds-color-background-surface-caution-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-caution-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-caution-weak."
      },
      "error": {
       "var": "--wpds-color-background-surface-error",
       "type": "color",
       "source": "css-var --wpds-color-background-surface-error resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-background-surface-error.",
-      "weak": {
-       "var": "--wpds-color-background-surface-error-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-background-surface-error-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-surface-error-weak."
-      }
+      "description": "WPDS colour --wpds-color-background-surface-error."
+     },
+     "error-weak": {
+      "var": "--wpds-color-background-surface-error-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-error-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-error-weak."
      },
      "info": {
       "var": "--wpds-color-background-surface-info",
       "type": "color",
       "source": "css-var --wpds-color-background-surface-info resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-background-surface-info.",
-      "weak": {
-       "var": "--wpds-color-background-surface-info-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-background-surface-info-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-surface-info-weak."
-      }
+      "description": "WPDS colour --wpds-color-background-surface-info."
+     },
+     "info-weak": {
+      "var": "--wpds-color-background-surface-info-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-info-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-info-weak."
      },
      "neutral": {
       "var": "--wpds-color-background-surface-neutral",
       "type": "color",
       "source": "css-var --wpds-color-background-surface-neutral resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-background-surface-neutral.",
-      "strong": {
-       "var": "--wpds-color-background-surface-neutral-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-background-surface-neutral-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-surface-neutral-strong."
-      },
-      "weak": {
-       "var": "--wpds-color-background-surface-neutral-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-background-surface-neutral-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-surface-neutral-weak."
-      }
+      "description": "WPDS colour --wpds-color-background-surface-neutral."
+     },
+     "neutral-strong": {
+      "var": "--wpds-color-background-surface-neutral-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-neutral-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-neutral-strong."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-background-surface-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-neutral-weak."
      },
      "success": {
       "var": "--wpds-color-background-surface-success",
       "type": "color",
       "source": "css-var --wpds-color-background-surface-success resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-background-surface-success.",
-      "weak": {
-       "var": "--wpds-color-background-surface-success-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-background-surface-success-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-surface-success-weak."
-      }
+      "description": "WPDS colour --wpds-color-background-surface-success."
+     },
+     "success-weak": {
+      "var": "--wpds-color-background-surface-success-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-success-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-success-weak."
      },
      "warning": {
       "var": "--wpds-color-background-surface-warning",
       "type": "color",
       "source": "css-var --wpds-color-background-surface-warning resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-background-surface-warning.",
-      "weak": {
-       "var": "--wpds-color-background-surface-warning-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-background-surface-warning-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-surface-warning-weak."
-      }
+      "description": "WPDS colour --wpds-color-background-surface-warning."
+     },
+     "warning-weak": {
+      "var": "--wpds-color-background-surface-warning-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-warning-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-warning-weak."
      }
     },
     "thumb": {
@@ -646,19 +646,19 @@
       "var": "--wpds-color-background-thumb-brand",
       "type": "color",
       "source": "css-var --wpds-color-background-thumb-brand resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-background-thumb-brand.",
-      "active": {
-       "var": "--wpds-color-background-thumb-brand-active",
-       "type": "color",
-       "source": "css-var --wpds-color-background-thumb-brand-active resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-thumb-brand-active."
-      },
-      "disabled": {
-       "var": "--wpds-color-background-thumb-brand-disabled",
-       "type": "color",
-       "source": "css-var --wpds-color-background-thumb-brand-disabled resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-thumb-brand-disabled."
-      }
+      "description": "WPDS colour --wpds-color-background-thumb-brand."
+     },
+     "brand-active": {
+      "var": "--wpds-color-background-thumb-brand-active",
+      "type": "color",
+      "source": "css-var --wpds-color-background-thumb-brand-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-thumb-brand-active."
+     },
+     "brand-disabled": {
+      "var": "--wpds-color-background-thumb-brand-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-background-thumb-brand-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-thumb-brand-disabled."
      },
      "neutral": {
       "disabled": {
@@ -671,19 +671,19 @@
        "var": "--wpds-color-background-thumb-neutral-weak",
        "type": "color",
        "source": "css-var --wpds-color-background-thumb-neutral-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-thumb-neutral-weak.",
-       "active": {
-        "var": "--wpds-color-background-thumb-neutral-weak-active",
-        "type": "color",
-        "source": "css-var --wpds-color-background-thumb-neutral-weak-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-thumb-neutral-weak-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-background-thumb-neutral-weak-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-background-thumb-neutral-weak-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-background-thumb-neutral-weak-disabled."
-       }
+       "description": "WPDS colour --wpds-color-background-thumb-neutral-weak."
+      },
+      "weak-active": {
+       "var": "--wpds-color-background-thumb-neutral-weak-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-thumb-neutral-weak-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-thumb-neutral-weak-active."
+      },
+      "weak-disabled": {
+       "var": "--wpds-color-background-thumb-neutral-weak-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-thumb-neutral-weak-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-thumb-neutral-weak-disabled."
       }
      }
     },
@@ -692,13 +692,13 @@
       "var": "--wpds-color-background-track-neutral",
       "type": "color",
       "source": "css-var --wpds-color-background-track-neutral resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-background-track-neutral.",
-      "weak": {
-       "var": "--wpds-color-background-track-neutral-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-background-track-neutral-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-background-track-neutral-weak."
-      }
+      "description": "WPDS colour --wpds-color-background-track-neutral."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-background-track-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-track-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-track-neutral-weak."
      }
     }
    },
@@ -708,73 +708,73 @@
       "var": "--wpds-color-foreground-content-caution",
       "type": "color",
       "source": "css-var --wpds-color-foreground-content-caution resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-foreground-content-caution.",
-      "weak": {
-       "var": "--wpds-color-foreground-content-caution-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-content-caution-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-content-caution-weak."
-      }
+      "description": "WPDS colour --wpds-color-foreground-content-caution."
+     },
+     "caution-weak": {
+      "var": "--wpds-color-foreground-content-caution-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-caution-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-caution-weak."
      },
      "error": {
       "var": "--wpds-color-foreground-content-error",
       "type": "color",
       "source": "css-var --wpds-color-foreground-content-error resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-foreground-content-error.",
-      "weak": {
-       "var": "--wpds-color-foreground-content-error-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-content-error-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-content-error-weak."
-      }
+      "description": "WPDS colour --wpds-color-foreground-content-error."
+     },
+     "error-weak": {
+      "var": "--wpds-color-foreground-content-error-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-error-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-error-weak."
      },
      "info": {
       "var": "--wpds-color-foreground-content-info",
       "type": "color",
       "source": "css-var --wpds-color-foreground-content-info resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-foreground-content-info.",
-      "weak": {
-       "var": "--wpds-color-foreground-content-info-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-content-info-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-content-info-weak."
-      }
+      "description": "WPDS colour --wpds-color-foreground-content-info."
+     },
+     "info-weak": {
+      "var": "--wpds-color-foreground-content-info-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-info-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-info-weak."
      },
      "neutral": {
       "var": "--wpds-color-foreground-content-neutral",
       "type": "color",
       "source": "css-var --wpds-color-foreground-content-neutral resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-foreground-content-neutral.",
-      "weak": {
-       "var": "--wpds-color-foreground-content-neutral-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-content-neutral-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-content-neutral-weak."
-      }
+      "description": "WPDS colour --wpds-color-foreground-content-neutral."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-foreground-content-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-neutral-weak."
      },
      "success": {
       "var": "--wpds-color-foreground-content-success",
       "type": "color",
       "source": "css-var --wpds-color-foreground-content-success resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-foreground-content-success.",
-      "weak": {
-       "var": "--wpds-color-foreground-content-success-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-content-success-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-content-success-weak."
-      }
+      "description": "WPDS colour --wpds-color-foreground-content-success."
+     },
+     "success-weak": {
+      "var": "--wpds-color-foreground-content-success-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-success-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-success-weak."
      },
      "warning": {
       "var": "--wpds-color-foreground-content-warning",
       "type": "color",
       "source": "css-var --wpds-color-foreground-content-warning resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-foreground-content-warning.",
-      "weak": {
-       "var": "--wpds-color-foreground-content-warning-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-content-warning-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-content-warning-weak."
-      }
+      "description": "WPDS colour --wpds-color-foreground-content-warning."
+     },
+     "warning-weak": {
+      "var": "--wpds-color-foreground-content-warning-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-warning-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-warning-weak."
      }
     },
     "interactive": {
@@ -782,127 +782,127 @@
       "var": "--wpds-color-foreground-interactive-brand",
       "type": "color",
       "source": "css-var --wpds-color-foreground-interactive-brand resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-foreground-interactive-brand.",
-      "active": {
-       "var": "--wpds-color-foreground-interactive-brand-active",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-brand-active resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-brand-active."
-      },
-      "disabled": {
-       "var": "--wpds-color-foreground-interactive-brand-disabled",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-brand-disabled resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-brand-disabled."
-      },
-      "strong": {
-       "var": "--wpds-color-foreground-interactive-brand-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-brand-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-brand-strong.",
-       "active": {
-        "var": "--wpds-color-foreground-interactive-brand-strong-active",
-        "type": "color",
-        "source": "css-var --wpds-color-foreground-interactive-brand-strong-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-foreground-interactive-brand-strong-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-foreground-interactive-brand-strong-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-foreground-interactive-brand-strong-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-foreground-interactive-brand-strong-disabled."
-       }
-      }
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand."
+     },
+     "brand-active": {
+      "var": "--wpds-color-foreground-interactive-brand-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-active."
+     },
+     "brand-disabled": {
+      "var": "--wpds-color-foreground-interactive-brand-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-disabled."
+     },
+     "brand-strong": {
+      "var": "--wpds-color-foreground-interactive-brand-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-strong."
+     },
+     "brand-strong-active": {
+      "var": "--wpds-color-foreground-interactive-brand-strong-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-strong-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-strong-active."
+     },
+     "brand-strong-disabled": {
+      "var": "--wpds-color-foreground-interactive-brand-strong-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-strong-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-strong-disabled."
      },
      "error": {
       "var": "--wpds-color-foreground-interactive-error",
       "type": "color",
       "source": "css-var --wpds-color-foreground-interactive-error resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-foreground-interactive-error.",
-      "active": {
-       "var": "--wpds-color-foreground-interactive-error-active",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-error-active resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-error-active."
-      },
-      "disabled": {
-       "var": "--wpds-color-foreground-interactive-error-disabled",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-error-disabled resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-error-disabled."
-      },
-      "strong": {
-       "var": "--wpds-color-foreground-interactive-error-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-error-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-error-strong.",
-       "active": {
-        "var": "--wpds-color-foreground-interactive-error-strong-active",
-        "type": "color",
-        "source": "css-var --wpds-color-foreground-interactive-error-strong-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-foreground-interactive-error-strong-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-foreground-interactive-error-strong-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-foreground-interactive-error-strong-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-foreground-interactive-error-strong-disabled."
-       }
-      }
+      "description": "WPDS colour --wpds-color-foreground-interactive-error."
+     },
+     "error-active": {
+      "var": "--wpds-color-foreground-interactive-error-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-active."
+     },
+     "error-disabled": {
+      "var": "--wpds-color-foreground-interactive-error-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-disabled."
+     },
+     "error-strong": {
+      "var": "--wpds-color-foreground-interactive-error-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-strong."
+     },
+     "error-strong-active": {
+      "var": "--wpds-color-foreground-interactive-error-strong-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-strong-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-strong-active."
+     },
+     "error-strong-disabled": {
+      "var": "--wpds-color-foreground-interactive-error-strong-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-strong-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-strong-disabled."
      },
      "neutral": {
       "var": "--wpds-color-foreground-interactive-neutral",
       "type": "color",
       "source": "css-var --wpds-color-foreground-interactive-neutral resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-foreground-interactive-neutral.",
-      "active": {
-       "var": "--wpds-color-foreground-interactive-neutral-active",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-neutral-active resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-neutral-active."
-      },
-      "disabled": {
-       "var": "--wpds-color-foreground-interactive-neutral-disabled",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-neutral-disabled resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-neutral-disabled."
-      },
-      "strong": {
-       "var": "--wpds-color-foreground-interactive-neutral-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-neutral-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-neutral-strong.",
-       "active": {
-        "var": "--wpds-color-foreground-interactive-neutral-strong-active",
-        "type": "color",
-        "source": "css-var --wpds-color-foreground-interactive-neutral-strong-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-foreground-interactive-neutral-strong-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-foreground-interactive-neutral-strong-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-foreground-interactive-neutral-strong-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-foreground-interactive-neutral-strong-disabled."
-       }
-      },
-      "weak": {
-       "var": "--wpds-color-foreground-interactive-neutral-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-foreground-interactive-neutral-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-foreground-interactive-neutral-weak.",
-       "active": {
-        "var": "--wpds-color-foreground-interactive-neutral-weak-active",
-        "type": "color",
-        "source": "css-var --wpds-color-foreground-interactive-neutral-weak-active resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-foreground-interactive-neutral-weak-active."
-       },
-       "disabled": {
-        "var": "--wpds-color-foreground-interactive-neutral-weak-disabled",
-        "type": "color",
-        "source": "css-var --wpds-color-foreground-interactive-neutral-weak-disabled resolved (raw/css-vars.json)",
-        "description": "WPDS colour --wpds-color-foreground-interactive-neutral-weak-disabled."
-       }
-      }
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral."
+     },
+     "neutral-active": {
+      "var": "--wpds-color-foreground-interactive-neutral-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-active."
+     },
+     "neutral-disabled": {
+      "var": "--wpds-color-foreground-interactive-neutral-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-disabled."
+     },
+     "neutral-strong": {
+      "var": "--wpds-color-foreground-interactive-neutral-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-strong."
+     },
+     "neutral-strong-active": {
+      "var": "--wpds-color-foreground-interactive-neutral-strong-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-strong-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-strong-active."
+     },
+     "neutral-strong-disabled": {
+      "var": "--wpds-color-foreground-interactive-neutral-strong-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-strong-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-strong-disabled."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-foreground-interactive-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-weak."
+     },
+     "neutral-weak-active": {
+      "var": "--wpds-color-foreground-interactive-neutral-weak-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-weak-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-weak-active."
+     },
+     "neutral-weak-disabled": {
+      "var": "--wpds-color-foreground-interactive-neutral-weak-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-weak-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-weak-disabled."
      }
     }
    },
@@ -918,67 +918,67 @@
       "var": "--wpds-color-stroke-interactive-brand",
       "type": "color",
       "source": "css-var --wpds-color-stroke-interactive-brand resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-interactive-brand.",
-      "active": {
-       "var": "--wpds-color-stroke-interactive-brand-active",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-interactive-brand-active resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-interactive-brand-active."
-      },
-      "disabled": {
-       "var": "--wpds-color-stroke-interactive-brand-disabled",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-interactive-brand-disabled resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-interactive-brand-disabled."
-      }
+      "description": "WPDS colour --wpds-color-stroke-interactive-brand."
+     },
+     "brand-active": {
+      "var": "--wpds-color-stroke-interactive-brand-active",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-brand-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-brand-active."
+     },
+     "brand-disabled": {
+      "var": "--wpds-color-stroke-interactive-brand-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-brand-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-brand-disabled."
      },
      "error": {
       "var": "--wpds-color-stroke-interactive-error",
       "type": "color",
       "source": "css-var --wpds-color-stroke-interactive-error resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-interactive-error.",
-      "active": {
-       "var": "--wpds-color-stroke-interactive-error-active",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-interactive-error-active resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-interactive-error-active."
-      },
-      "disabled": {
-       "var": "--wpds-color-stroke-interactive-error-disabled",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-interactive-error-disabled resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-interactive-error-disabled."
-      },
-      "strong": {
-       "var": "--wpds-color-stroke-interactive-error-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-interactive-error-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-interactive-error-strong."
-      }
+      "description": "WPDS colour --wpds-color-stroke-interactive-error."
+     },
+     "error-active": {
+      "var": "--wpds-color-stroke-interactive-error-active",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-error-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-error-active."
+     },
+     "error-disabled": {
+      "var": "--wpds-color-stroke-interactive-error-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-error-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-error-disabled."
+     },
+     "error-strong": {
+      "var": "--wpds-color-stroke-interactive-error-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-error-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-error-strong."
      },
      "neutral": {
       "var": "--wpds-color-stroke-interactive-neutral",
       "type": "color",
       "source": "css-var --wpds-color-stroke-interactive-neutral resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-interactive-neutral.",
-      "active": {
-       "var": "--wpds-color-stroke-interactive-neutral-active",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-interactive-neutral-active resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-interactive-neutral-active."
-      },
-      "disabled": {
-       "var": "--wpds-color-stroke-interactive-neutral-disabled",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-interactive-neutral-disabled resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-interactive-neutral-disabled."
-      },
-      "strong": {
-       "var": "--wpds-color-stroke-interactive-neutral-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-interactive-neutral-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-interactive-neutral-strong."
-      }
+      "description": "WPDS colour --wpds-color-stroke-interactive-neutral."
+     },
+     "neutral-active": {
+      "var": "--wpds-color-stroke-interactive-neutral-active",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-neutral-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-neutral-active."
+     },
+     "neutral-disabled": {
+      "var": "--wpds-color-stroke-interactive-neutral-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-neutral-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-neutral-disabled."
+     },
+     "neutral-strong": {
+      "var": "--wpds-color-stroke-interactive-neutral-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-neutral-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-neutral-strong."
      }
     },
     "surface": {
@@ -986,91 +986,91 @@
       "var": "--wpds-color-stroke-surface-brand",
       "type": "color",
       "source": "css-var --wpds-color-stroke-surface-brand resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-surface-brand.",
-      "strong": {
-       "var": "--wpds-color-stroke-surface-brand-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-surface-brand-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-surface-brand-strong."
-      }
+      "description": "WPDS colour --wpds-color-stroke-surface-brand."
+     },
+     "brand-strong": {
+      "var": "--wpds-color-stroke-surface-brand-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-brand-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-brand-strong."
      },
      "caution": {
       "var": "--wpds-color-stroke-surface-caution",
       "type": "color",
       "source": "css-var --wpds-color-stroke-surface-caution resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-surface-caution.",
-      "strong": {
-       "var": "--wpds-color-stroke-surface-caution-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-surface-caution-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-surface-caution-strong."
-      }
+      "description": "WPDS colour --wpds-color-stroke-surface-caution."
+     },
+     "caution-strong": {
+      "var": "--wpds-color-stroke-surface-caution-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-caution-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-caution-strong."
      },
      "error": {
       "var": "--wpds-color-stroke-surface-error",
       "type": "color",
       "source": "css-var --wpds-color-stroke-surface-error resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-surface-error.",
-      "strong": {
-       "var": "--wpds-color-stroke-surface-error-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-surface-error-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-surface-error-strong."
-      }
+      "description": "WPDS colour --wpds-color-stroke-surface-error."
+     },
+     "error-strong": {
+      "var": "--wpds-color-stroke-surface-error-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-error-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-error-strong."
      },
      "info": {
       "var": "--wpds-color-stroke-surface-info",
       "type": "color",
       "source": "css-var --wpds-color-stroke-surface-info resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-surface-info.",
-      "strong": {
-       "var": "--wpds-color-stroke-surface-info-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-surface-info-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-surface-info-strong."
-      }
+      "description": "WPDS colour --wpds-color-stroke-surface-info."
+     },
+     "info-strong": {
+      "var": "--wpds-color-stroke-surface-info-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-info-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-info-strong."
      },
      "neutral": {
       "var": "--wpds-color-stroke-surface-neutral",
       "type": "color",
       "source": "css-var --wpds-color-stroke-surface-neutral resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-surface-neutral.",
-      "strong": {
-       "var": "--wpds-color-stroke-surface-neutral-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-surface-neutral-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-surface-neutral-strong."
-      },
-      "weak": {
-       "var": "--wpds-color-stroke-surface-neutral-weak",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-surface-neutral-weak resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-surface-neutral-weak."
-      }
+      "description": "WPDS colour --wpds-color-stroke-surface-neutral."
+     },
+     "neutral-strong": {
+      "var": "--wpds-color-stroke-surface-neutral-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-neutral-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-neutral-strong."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-stroke-surface-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-neutral-weak."
      },
      "success": {
       "var": "--wpds-color-stroke-surface-success",
       "type": "color",
       "source": "css-var --wpds-color-stroke-surface-success resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-surface-success.",
-      "strong": {
-       "var": "--wpds-color-stroke-surface-success-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-surface-success-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-surface-success-strong."
-      }
+      "description": "WPDS colour --wpds-color-stroke-surface-success."
+     },
+     "success-strong": {
+      "var": "--wpds-color-stroke-surface-success-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-success-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-success-strong."
      },
      "warning": {
       "var": "--wpds-color-stroke-surface-warning",
       "type": "color",
       "source": "css-var --wpds-color-stroke-surface-warning resolved (raw/css-vars.json)",
-      "description": "WPDS colour --wpds-color-stroke-surface-warning.",
-      "strong": {
-       "var": "--wpds-color-stroke-surface-warning-strong",
-       "type": "color",
-       "source": "css-var --wpds-color-stroke-surface-warning-strong resolved (raw/css-vars.json)",
-       "description": "WPDS colour --wpds-color-stroke-surface-warning-strong."
-      }
+      "description": "WPDS colour --wpds-color-stroke-surface-warning."
+     },
+     "warning-strong": {
+      "var": "--wpds-color-stroke-surface-warning-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-warning-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-warning-strong."
      }
     }
    }

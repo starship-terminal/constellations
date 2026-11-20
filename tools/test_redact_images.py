@@ -229,10 +229,10 @@ class Commands(unittest.TestCase):
                 return seen[0], out.getvalue()
 
             allow, out = run()                                      # no --rules: the package's own file
-            self.assertEqual(allow, ["@own\\.test$"])
+            self.assertEqual(allow, [re.escape("@own.test")])     # read as its plain text, escaped
             self.assertEqual(out.count("rules: tools/redact-rules/demo.json"), 1)
             allow, out = run("--rules", str(other))                 # an explicit file wins
-            self.assertEqual(allow, ["@other\\.test$"])
+            self.assertEqual(allow, [re.escape("@other.test")])
             self.assertIn(f"rules: {other}", out)
             self.assertNotIn("demo.json", out)
             own.unlink()                                            # no file for the package: nothing loaded
@@ -467,6 +467,156 @@ class Matching(unittest.TestCase):
             self.assertEqual(R.find_private(self.words("owner@mine.test"), [], True, allow), [])
             self.assertEqual(len(R.find_private(self.words("other@mine.test"), [], True, allow)), 1)
             self.assertEqual(R.load_email_allow([]), [])
+
+
+@unittest.skipIf(R is None, "Pillow and numpy are not installed")
+class RulesText(unittest.TestCase):
+    """A rules file is committed: its notes may say what a family hides, never hold the value."""
+
+    def test_leaks_are_named_by_path_and_kind_never_by_value(self):
+        rules = {"_note": "the popup shows jane.roe@acme-widgets.biz and +1 555 010 0199",
+                 "families": [{"name": "call 555-010-0199", "files": ["a.png"], "rects": [[0, 0, 10, 10]]}],
+                 "ocr": {"email_allow": ["^nobody@acme-widgets\\.biz$"]}}
+        leaks = R.rules_text_leaks(rules)
+        self.assertEqual(leaks, ["_note: an email address its email_allow does not pass",
+                                 "_note: a phone-number-shaped string",
+                                 "families[0].name: a phone-number-shaped string"])
+        self.assertFalse(any("555" in x or "jane" in x for x in leaks))
+
+    def test_escaped_addresses_and_crowded_numbers_are_still_found(self):
+        self.assertEqual(R.rules_text_leaks({"ocr": {"keep": ["^person@private-corp\\.biz$"]}}),
+                         ["ocr.keep[0]: an email address its email_allow does not pass"])
+        for text in ["555-010-0199 555-010-0200", "555-010-0199 (2026-10-23)", "call (555) 010-0199 today",
+                     "+44 20 7946 0958", "1 555 010 0199 and 1 555 010 0200 and 1 555 010 0201"]:
+            with self.subTest(text=text):
+                self.assertEqual(R.rules_text_leaks({"_note": text}), ["_note: a phone-number-shaped string"])
+        for text in ["2026-10-23 2026-10-24", "rects [[800, 25385, 1115, 25520]]", "1440 x 900 at 2x",
+                     "version 1.2.3", "id 1234567890"]:
+            with self.subTest(text=text):
+                self.assertEqual(R.rules_text_leaks({"_note": text}), [])
+
+    def test_allowed_reserved_and_non_phone_values_pass(self):
+        rules = {"_note": "placeholders name@example.com, a@b.test, support@vendor-x.biz; captured 2026-10-23; "
+                          "size [2880, 1800]; version 1.2.3.4",
+                 "families": [{"rects": [[800, 25385, 1115, 25520]], "size": [[2880, 1800]]}],
+                 "ocr": {"email_allow": ["^support@vendor-x\\.biz$", "nobody@listed-only-here\\.biz"],
+                         "keep": ["^support@vendor-x\\.biz$"]}}
+        self.assertEqual(R.rules_text_leaks(rules), [])     # email_allow itself is never read as text
+
+    def test_check_fails_on_a_rules_file_holding_a_value(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d)
+            Image.new("RGB", (4, 4)).save(pkg / "a.png")
+            pats = pkg / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]]}))
+            rules = pkg / "r.json"
+            rules.write_text(json.dumps({"_note": "painted out jane.roe@acme-widgets.biz"}))
+            with mock.patch.object(R, "ocr_words", return_value=[]), \
+                 contextlib.redirect_stdout(io.StringIO()) as out, self.assertRaises(SystemExit) as cm:
+                R.main(["check", d, "--patterns", str(pats), "--rules", str(rules)])
+            self.assertEqual(cm.exception.code, 1)
+            self.assertIn("LEAK r.json _note: an email address", out.getvalue())
+            self.assertNotIn("jane.roe", out.getvalue())
+            rules.write_text(json.dumps({"_note": "painted out a demo user's email address"}))
+            with mock.patch.object(R, "ocr_words", return_value=[]), \
+                 contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                R.main(["check", d, "--patterns", str(pats), "--rules", str(rules)])
+            self.assertEqual(cm.exception.code, 0)
+
+    def test_every_committed_rules_file_is_free_of_values(self):
+        for f in sorted(R.RULES_DIR.glob("*.json")):
+            with self.subTest(rules=f.name):
+                self.assertEqual(R.rules_text_leaks(json.loads(f.read_text())), [])
+
+
+@unittest.skipIf(R is None, "Pillow and numpy are not installed")
+class AllowEntries(unittest.TestCase):
+    """A package rules file's email_allow is exact addresses or one @domain each, never a pattern."""
+
+    def test_patterns_and_free_mail_domains_are_refused(self):
+        cases = {
+            "the three bypasses review found": [r"^(assistant)@[\w.-]+$", r"^[a-z]+@gmail\.com$",
+                                                r"^(?=vip)[a-z]+@gmail\.com$"],
+            "alternation": [r"@example\.(com|org)$", r"^(jane|john)@vendor\.biz$", "a@x\\.biz|.*"],
+            "character classes": [r"^sup[a-z]*@vendor\.biz$", r"^satoshi[0-9]@gmail\.com$", r"@\w+\.com$"],
+            "quantifiers": [r"^satoshi2?@gmail\.com$", ".*", "@.+", r"^a{2}@vendor\.biz$", r"^as+istant@vendor\.biz$"],
+            "groups": [r"^(?:a)@vendor\.biz$", r"^(a)@vendor\.biz$"],
+            "backreferences": [r"^(a)\1@vendor\.biz$"],
+            "lookarounds": [r"^[a-z]+(?<=vip)@gmail\.com$", r"^(?!x)a@vendor\.biz$"],
+            "inline flags": [r"(?i)a@vendor\.biz", r"(?x) a @vendor\.biz"],
+            "an unescaped dot": ["name@example.com", r"@vendor.biz$"],
+            "an empty or non-text entry": ["", 7, None],
+            "no domain": ["name@", "you@", r"^assistant@", "owner", r"\.example$", r"example\.com$"],
+            "a free-mail domain": [r"@gmail\.com$", r"@mail\.com$", r"@yahoo\.co\.jp$", r"@agentmail\.to\b",
+                                   r"@email\.com$", r"@mail\.gmail\.com", r"@GMAIL\.COM$"],
+            "non-ASCII spellings": ["@gma\u0131l\\.com$", "@gma\u0130l\\.com$", "@\uff47mail\\.com$",
+                                    "j\u00f6rg@vendor\\.biz", "@vend\u043er\\.biz"],
+        }
+        for kind, entries in cases.items():
+            for entry in entries:
+                with self.subTest(kind=kind, entry=entry):
+                    self.assertIsNotNone(R.allow_entry_problem(entry))
+
+    def test_exact_addresses_and_vendor_domains_pass(self):
+        for entry, text in [(r"^support@vendor\.biz$", "support@vendor.biz"), (r"@vendor\.biz$", "@vendor.biz"),
+                            (r"@example\.inc", "@example.inc"), (r"satoshi@gmail\.com$", "satoshi@gmail.com"),
+                            (r"^ALICE@gmail\.com$", "ALICE@gmail.com"), (r"john\.doe\+1@gmail\.com\b", "john.doe+1@gmail.com"),
+                            (r"^kaichen@agentm$", "kaichen@agentm"), (r"@my-shop\.biz", "@my-shop.biz")]:
+            with self.subTest(entry=entry):
+                self.assertEqual(R.allow_entry_text(entry), (text, None))
+
+    def test_an_address_matches_exactly_and_a_domain_matches_the_whole_domain(self):
+        allow = R.package_allow("r.json", [r"^ALICE@gmail\.com$", r"@vendor\.biz$"])
+        for addr, ok in [("alice@gmail.com", True), ("Alice@Gmail.com.", True), ("alice2@gmail.com", False),
+                         ("bob@gmail.com", False), ("xalice@gmail.com", False), ("a@vendor.biz", True),
+                         ("A@VENDOR.BIZ", True), ("a@sub.vendor.biz", False), ("a@vendor.biz.evil.test", False),
+                         ("vendor.biz@evil.test", False)]:
+            with self.subTest(addr=addr):
+                self.assertEqual(R.email_allowed(addr, allow), ok)
+
+    def test_a_dotless_i_domain_would_have_passed_gmail(self):
+        entry = "@gma\u0131l\\.com$"                                  # what review found
+        self.assertTrue(R.email_allowed("stranger@gmail.com", [entry]))     # the matcher folds it to gmail
+        self.assertIsNotNone(R.allow_entry_problem(entry))                  # so validation refuses it
+
+    def test_the_reserved_example_tld_needs_no_entry(self):
+        w = lambda a: [(a, 0, 0, 10, 10, ("1", "1", "1"))]
+        self.assertEqual(R.find_private(w("learner@acme.example"), [], True, []), [])
+        self.assertEqual(len(R.find_private(w("x@acme.example.evil.test"), [], True, [])), 1)
+
+    def test_check_and_apply_refuse_a_rules_file_with_a_pattern(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d) / "pkg"
+            pkg.mkdir()
+            Image.new("RGB", (4, 4)).save(pkg / "a.png")
+            pats = Path(d) / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]], "email_allow": ["^owner@"]}))
+            rules = Path(d) / "r.json"
+            rules.write_text(json.dumps({"ocr": {"email_allow": [r"@vendor\.biz$", ".*"]}}))
+            for argv in (["check", str(pkg), "--patterns", str(pats), "--rules", str(rules)],
+                         ["apply", str(pkg), "--rules", str(rules), "--patterns", str(pats)]):
+                err = io.StringIO()
+                with mock.patch.object(R, "ocr_words", return_value=[]), contextlib.redirect_stderr(err), \
+                     contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                    R.main(argv)
+                self.assertEqual(cm.exception.code, 2, argv)
+                self.assertIn('".*" is a regex pattern', err.getvalue())
+                self.assertNotIn("vendor", err.getvalue())                 # only the refused entry is named
+            # the private patterns file is the owner's: its pattern entry is not refused
+            rules.write_text(json.dumps({"ocr": {"email_allow": [r"@vendor\.biz$"]}}))
+            with mock.patch.object(R, "ocr_words", return_value=[]), contextlib.redirect_stdout(io.StringIO()), \
+                 self.assertRaises(SystemExit) as cm:
+                R.main(["check", str(pkg), "--patterns", str(pats), "--rules", str(rules)])
+            self.assertEqual(cm.exception.code, 0)
+
+    def test_every_committed_rules_file_lists_exact_entries(self):
+        for f in sorted(R.RULES_DIR.glob("*.json")):
+            allow = json.loads(f.read_text()).get("ocr", {}).get("email_allow", [])
+            for entry in allow:
+                with self.subTest(rules=f.name, entry=entry):
+                    self.assertIsNone(R.allow_entry_problem(entry))
 
 
 if __name__ == "__main__":

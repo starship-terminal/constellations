@@ -100,7 +100,6 @@ const mobile = {
   login: { url: APP + '/auth/login', theme: 'dark', wait: 5000, run: async (p, S) => { await S.view('default'); } },
 };
 
-const STATE = path.join(os.homedir(), '.design-systems', 'leonardo', 'storage.json');
 const b = await chromium.launch({ headless: true });
 let total = 0;
 const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
@@ -115,7 +114,6 @@ for (const { k, mob } of runs) {
     const ctx = await b.newContext({
       viewport: { width: vw, height: vh }, deviceScaleFactor: dpr,
       userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US', colorScheme: 'dark',
-      storageState: fs.existsSync(STATE) ? STATE : undefined,
     });
     await patch(ctx);
     const p = await ctx.newPage();
@@ -127,7 +125,8 @@ for (const { k, mob } of runs) {
         await ctx.close();
         continue;
       }
-      await ctx.storageState({ path: STATE }).catch(() => {});
+      // bot check: recorded as a boundary, not bypassed. Each context starts
+      // empty; challenge-clearance cookies are never saved or replayed.
       await wait(p, spec.wait || 5000);
       await spec.run(p, S);
       shot = S.count;

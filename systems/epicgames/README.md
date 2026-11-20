@@ -108,6 +108,12 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Tokens | `tools/build_component_tokens.py` → `raw/component-tokens.json` → `tools/build_tokens.py` → `tokens.json` |
 | Docs | `tools/build_components_md.py`, `tools/build_style_guide.py`, `tools/capture/public/build-measurements.mjs` |
 
+## What to distrust
+
+- **Three entries read the wrong element.** `m-hamburger` is the "Epic Ecosystem Dropdown" button, not the mobile menu button; `h-chat` is the "Back to top" button, not the chat launcher; `w-tile` read a different carousel tile in each state, so only its default row describes one tile. Recapture needed for all three; no token cites their non-default states.
+- **Nine focus-visible states are uncaptured, not ringless.** Keyboard focus did not reach `nav-signin`, `nav-download`, `nav-distribute`, `nav-locale` (inside the `<egs-navigation>` shadow root, which the focus test did not look into), `m-hamburger`, `h-chat`, `hero-cta`, `card-wishlist` and `p-subnav`. Their rows are left out of components.md and listed as Skipped in raw/measurements.md; the capture script now checks `:focus` inside shadow roots (edited, not re-run).
+- **Four planned tokens have no reading** and are listed under `_gaps` in raw/component-tokens.json: the free badge and the support tile paint no fill of their own, no mobile drawer component was measured, and the game card's transition computes as 0s.
+
 ## Coverage
 
 | Requirement | Status |

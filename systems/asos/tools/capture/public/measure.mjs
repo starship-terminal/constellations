@@ -311,7 +311,9 @@ async function plp() {
   await S('save-heart', card.locator('button[aria-label*="save" i]').first(), B4, { group: g, title: 'Save heart', desc: 'The heart on a product tile; a local save toggle, never pressed.', sel: 'tile button[aria-label*="Save"]' });
   await S('tile-name', card.locator('a[href*="/prd/"]').first(), B4, { group: g, title: 'Product link', desc: 'The whole-card link inside the tile: image, name and price.', sel: 'a.productLink' });
   await S('tile-price', card.locator('[class*="price" i], p, span').filter({ hasText: /SGD\$|\$\d/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Tile price', desc: 'SGD pricing on the geo-served surface.', sel: ':has-text("SGD$")' });
-  await S('tile-badge', card.locator('span, div, p').filter({ hasText: /selling fast|more colours/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Tile badge', desc: 'SELLING FAST or MORE COLOURS — the small status text under a tile.', sel: ':has-text("SELLING FAST")' });
+  // The label itself, not the first span/div/p whose text merely contains it
+  // (that is the tile's whole name-and-price block).
+  await S('tile-badge', card.getByText(/^\s*(selling fast|more colours)\s*$/i).filter({ visible: true }).first(), ['default'], { group: g, title: 'Tile badge', desc: 'SELLING FAST or MORE COLOURS — the small status text under a tile.', sel: ':has-text("SELLING FAST")' });
   await S('load-more', q(tid('loadMoreProducts') + ', [data-auto-id="loadMoreProducts"]').filter({ visible: true }).first(), B4, { group: g, title: 'Load more', desc: 'The grid pagination button. Measured, never pressed.', sel: '[data-auto-id="loadMoreProducts"]' });
   save();
 }

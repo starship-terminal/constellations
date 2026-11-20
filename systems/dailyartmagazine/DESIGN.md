@@ -158,3 +158,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 6. **Don't style a signed-in app from this package.** The magazine is read-only — every surface here is public; Shop and Courses are external stores, never captured.
 7. **Don't invent a dark theme.** The dark bands are surfaces inside the single theme, not a toggle; there is no dark token set.
 8. **Don't treat ad slots as design.** The third-party placements are measured as layout space only.
+
+### Known gaps (from README.md)
+
+- `light.component.nl-checkbox-box` (16px, the painted checkbox box) was entered by hand at capture time: a probe read the `.checkbox-style` label's `::after` on the live home page, but that reading was never saved, and `raw/components-computed.json` holds only the 13x13 input (`nl-checkbox`). Its source says so; a recapture should record the pseudo-element.

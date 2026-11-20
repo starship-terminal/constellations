@@ -22,12 +22,18 @@ sys.path.insert(0, str(HERE / "tools"))
 
 VARS = json.loads((RAW / "css-vars.json").read_text())
 LIGHT = VARS.get("root") or VARS["resolved"]["light"]
-DARK = VARS.get("dark-neutral-theme") or LIGHT
+if "dark-neutral-theme" not in VARS:
+    # Falling back to the light map would publish light values as the dark set.
+    raise SystemExit("raw/css-vars.json has no dark-neutral-theme readings")
+DARK = VARS["dark-neutral-theme"]
 S = "Resolved from mercury.com stylesheets, 2026-11-19, custom properties computed on a probe"
 M = "Measured computed style, public Mercury pages, 2026-11-19"
 
 
 def color(value, source):
+    # DTCG colours are six- or eight-digit hex; a declared "#fff" is written out in full.
+    if re.fullmatch(r"#[0-9a-fA-F]{3}", value):
+        value = "#" + "".join(c * 2 for c in value[1:])
     return {"$value": value, "$type": "color", "$extensions": {"source": source}}
 
 
@@ -44,7 +50,15 @@ def font(value, source):
 
 
 def cubic(value, source):
-    return {"$value": value, "$type": "cubicBezier", "$extensions": {"source": source}}
+    # DTCG cubicBezier is four numbers, not the CSS function text the stylesheet declares.
+    m = re.fullmatch(r"\s*cubic-bezier\(([^)]*)\)\s*", value or "")
+    if not m:
+        raise SystemExit(f"not a cubic-bezier(): {value!r}")
+    points = [float(x) for x in m.group(1).split(",")]
+    if len(points) != 4:
+        raise SystemExit(f"cubic-bezier() needs four numbers: {value!r}")
+    return {"$value": [int(x) if x == int(x) else x for x in points], "$type": "cubicBezier",
+            "$extensions": {"source": source}}
 
 
 def raw(name, bag=LIGHT):
@@ -310,5 +324,6 @@ tokens = {
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("tokens", len(names), "motion", motion_path.exists())
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+    print("tokens", len(names), "motion", motion_path.exists())

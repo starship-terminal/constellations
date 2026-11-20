@@ -44,7 +44,7 @@ const read = () => {
 
 const { browser } = await launch();
 const out = {
-  readAt: '2026-11-18',
+  readAt: new Date().toLocaleDateString('en-CA'),
   source: 'getBoundingClientRect on live signed-out withjulienne.com at 1440x900 and 390x844. Nothing typed or submitted.',
   pages: {},
 };

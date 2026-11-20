@@ -57,7 +57,10 @@ test("v3 migration preserves research state and seeds vocabulary atomically", as
   await store.putItem(collection.id, "systems:linear", "Keep this note");
   await store.putCollectionMedia(collection.id, "systems:linear", "screen.png");
   await store.saveMedia("systems:linear", "screen.png");
-  await store.saveSettings({ provider: "openai", model: "preserved" });
+  await store.updateSettings(() => ({
+    provider: "openai",
+    model: "preserved",
+  }));
   for (const table of [
     "reference_categories",
     "taxonomy_terms",

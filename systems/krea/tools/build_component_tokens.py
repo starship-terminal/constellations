@@ -18,6 +18,10 @@ resolved custom property aliases that property.
 import json
 import pathlib
 import re
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from oklab import oklab_or_oklch  # noqa: E402
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -154,6 +158,12 @@ def have(comp, state="default"):
 
 def norm_color(v):
     v = (v or "").strip()
+    ok = oklab_or_oklch(v.lower())
+    if ok:
+        return ok
+    m = re.fullmatch(r"#([0-9a-fA-F]{1,2}),\s*([0-9a-fA-F]{1,2}),\s*([0-9a-fA-F]{1,2})", v)
+    if m:  # vars.mjs wrote some resolved colours as "#rr,gg,bb" (fixed in vars.mjs; the committed raw keeps them)
+        return "#%02x%02x%02x" % tuple(int(x, 16) for x in m.groups())
     m = re.fullmatch(r"rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)", v)
     if m:
         r, g, b, a = m.groups()
@@ -188,6 +198,8 @@ def comp_color(comp, state, prop, token, desc):
         node[prop] = var(alias, "color", source=src, description=desc)
     else:
         node[prop] = lit(norm_color(raw), "color", src, desc)
+    if raw.strip().startswith(("oklab(", "oklch(")):
+        node[prop]["computed"] = raw.strip()  # the form Chromium reported, before the sRGB conversion
 
 
 def comp_dim(comp, state, prop, token, desc):
@@ -220,16 +232,41 @@ comp_dim("price-cta", "default", "borderTopLeftRadius", "plan-cta", "Plan button
 comp_dim("sidebar", "default", "width", "sidebar", "Sidebar width at 1440.")
 comp_dim("composer", "default", "borderTopLeftRadius", "composer", "Home composer radius.")
 
-# focus ring from a control that actually showed one
+# focus ring from a control that actually showed one. A drawn outline needs a style other than
+# none or auto (auto is the UA ring, whose colour is not the recorded outlineColor) and a width;
+# otherwise the ring is the outermost box-shadow layer with a spread (fal's painted_ring()).
+# nav-signin draws its ring as a 2px shadow and leaves outline at none, so its outlineColor
+# (#007aff, the UA default) is not what it paints.
+def split_shadow(v):
+    return [p.strip() for p in re.split(r",\s*(?![^()]*\))", v or "") if p.strip()]
+
+
+def painted_ring(sty):
+    """(colour, width, how) of the ring a focus-visible state paints, or None."""
+    style = sty.get("outlineStyle", "none")
+    width = float((sty.get("outlineWidth") or "0px")[:-2] or 0)
+    if style not in ("none", "auto") and width > 0 and norm_color(sty.get("outlineColor")) != "rgba(0, 0, 0, 0)":
+        return sty["outlineColor"], sty["outlineWidth"], f"outline {sty['outlineWidth']} {style}"
+    ring = None
+    for layer in split_shadow(sty.get("boxShadow")):
+        m = re.match(r"^((?:rgba?|oklab|oklch)\([^)]*\))\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(\s+inset)?$", layer)
+        if not m or m.group(6) or float(m.group(5)) <= 0 or norm_color(m.group(1)) == "rgba(0, 0, 0, 0)":
+            continue
+        ring = (m.group(1), m.group(5) + "px", f"box-shadow {m.group(5)}px spread; outline {style}")
+    return ring
+
+
 if have("nav-signin", "focus-visible"):
-    ow = st("nav-signin", "focus-visible").get("outlineWidth")
-    oc = st("nav-signin", "focus-visible").get("outlineColor")
-    if ow and ow != "0px":
-        SPEC["component"].setdefault("focus", {})["outline-width"] = lit(ow, "dimension", "computed outlineWidth of nav-signin/focus-visible", "Keyboard focus outline width.")
-    if oc and oc not in ("rgba(0, 0, 0, 0)", "transparent"):
-        alias = color_alias(oc)
-        src = "computed outlineColor of nav-signin/focus-visible"
-        SPEC["component"].setdefault("focus", {})["outline"] = var(alias, "color", source=src, description="Keyboard focus outline.") if alias else lit(norm_color(oc), "color", src, "Keyboard focus outline.")
+    found = painted_ring(st("nav-signin", "focus-visible"))
+    if found:
+        colour, width, how = found
+        src = f"computed focus-visible ring of nav-signin ({how})"
+        focus = SPEC["component"].setdefault("focus", {})
+        focus["ring-width"] = lit(width, "dimension", src, "Keyboard focus ring width.")
+        alias = color_alias(colour)
+        focus["ring"] = var(alias, "color", source=src, description="Keyboard focus ring.") if alias else lit(norm_color(colour), "color", src, "Keyboard focus ring.")
+        if colour.strip().startswith(("oklab(", "oklch(")):
+            focus["ring"]["computed"] = colour.strip()
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1) + "\n")
 print("wrote", RAW / "component-tokens.json", "components", len(C))

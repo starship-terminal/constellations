@@ -16,7 +16,7 @@
 // submit button is pressed. Promo overlays are hidden, never answered.
 import fs from 'fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, HIDE_LOGIN_QR } from './lib.mjs';
 
 const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
 fs.mkdirSync(RAW, { recursive: true });
@@ -130,7 +130,9 @@ const desktop = {
   } },
   login: { url: BASE + '/login', wait: 9000, shot: 'login', run: async (p, S) => {
     // The sign-in card is shot at rest; fields are never filled and Log In
-    // is never pressed.
+    // is never pressed. The QR code encodes a sign-in token: patch() hides it
+    // from the first paint, and this re-adds the mask right before the shots.
+    await p.addStyleTag({ content: HIDE_LOGIN_QR });
     await S.view('default');
     await S.full();
   } },

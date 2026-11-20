@@ -286,6 +286,31 @@ class MergeTest(Tmp):
             dump.load(self.a, quiet=True)
         self.assertEqual(self.a.read_bytes(), before)
 
+    def test_a_merged_statement_load_would_not_write_is_refused(self):
+        """schema.sql is a merge surface: only what render() writes may run."""
+        schema = self.root / "schema.sql"
+        good = schema.read_text()
+        before = self.a.read_bytes()
+        outside = self.tmp / "outside.db"
+        for bad in (f"ATTACH DATABASE '{outside}' AS x;",
+                    f"PRAGMA x.page_size=1; ATTACH '{outside}' AS y;",
+                    "PRAGMA writable_schema=1;",
+                    "PRAGMA user_version=7; PRAGMA journal_mode=delete;\nPRAGMA recursive_triggers=ON;",
+                    "INSERT INTO styles VALUES (1,2,3,4,5,6,7);",
+                    "DELETE FROM similar;",
+                    "CREATE TEMP TABLE t (a);"):
+            with self.subTest(bad=bad):
+                schema.write_text(good + "\n" + bad + "\n")
+                with self.assertRaisesRegex(dump.DumpError, "schema.sql: refusing"):
+                    dump.load(self.a, quiet=True)
+                self.assertFalse(outside.exists())
+                self.assertEqual(self.a.read_bytes(), before)
+        schema.write_text(good + "\nCREATE UNIQUE INDEX extra ON similar (uuid, rank, business);\n")
+        with self.assertRaises(sqlite3.IntegrityError):  # parsed, then the rows break it
+            dump.load(self.a, quiet=True)
+        schema.write_text(good + "\nCREATE INDEX extra ON similar (business);\n")
+        dump.load(self.a, quiet=True)  # an index is a statement render() writes
+
     def test_a_lost_table_file_is_refused_not_loaded_empty(self):
         before = snapshot(self.a)
         for lost in ("similar.jsonl", "styles"):
@@ -375,14 +400,36 @@ class ConcurrencyTest(Tmp):
         writer.execute("BEGIN IMMEDIATE")
         writer.execute("UPDATE styles SET name='mid-write' WHERE uuid='a-1'")
         (self.root / "styles" / "d-4.json").unlink()  # the rebuild drops a row
-        done = threading.Event()
-        loader = threading.Thread(
-            target=lambda: (dump.load(self.a, quiet=True), done.set()))
-        loader.start()
-        time.sleep(0.5)
-        self.assertFalse(done.is_set(), "load did not wait for the writer")
-        writer.commit()
-        loader.join(30)
+        done, reached = threading.Event(), threading.Event()
+        connect = sqlite3.connect
+
+        class Source:
+            """The rebuilt temp db's connection: flags the copy into the live
+            db just before it starts, so the wait below is measured from the
+            blocking call and not from a thread that has not run yet."""
+            def __init__(self, conn):
+                self.conn = conn
+
+            def backup(self, target):
+                reached.set()
+                return self.conn.backup(target)
+
+            def __getattr__(self, name):
+                return getattr(self.conn, name)
+
+        def connect_spy(database, *args, **kw):
+            conn = connect(database, *args, **kw)
+            return Source(conn) if ".load.tmp" in str(database) and kw.get("uri") else conn
+
+        with mock.patch.object(dump.sqlite3, "connect", side_effect=connect_spy):
+            loader = threading.Thread(
+                target=lambda: (dump.load(self.a, quiet=True), done.set()))
+            loader.start()
+            self.assertTrue(reached.wait(30), "load never reached the copy into the live db")
+            time.sleep(0.3)
+            self.assertFalse(done.is_set(), "load did not wait for the writer")
+            writer.commit()
+            loader.join(30)
         self.assertTrue(done.is_set())
         # The writer's connection keeps working, on the rebuilt db.
         writer.execute("UPDATE styles SET name='after' WHERE uuid='b-2'")
@@ -401,9 +448,20 @@ class ConcurrencyTest(Tmp):
         db.execute("UPDATE styles SET name='newer' WHERE uuid='a-1'")
         db.commit()
         db.close()
-        with dump._locked(self.a):
+        reached = threading.Event()
+        flock = dump.fcntl.flock
+
+        def flock_spy(f, op):
+            # Flag the worker's own lock request, just before it blocks.
+            if op == dump.fcntl.LOCK_EX and threading.current_thread() is t:
+                reached.set()
+            return flock(f, op)
+
+        with dump._locked(self.a), \
+                mock.patch.object(dump.fcntl, "flock", side_effect=flock_spy):
             t = threading.Thread(target=dump.write, args=(self.a, True))
             t.start()
+            self.assertTrue(reached.wait(30), "write never asked for the lock")
             time.sleep(0.3)
             self.assertTrue(t.is_alive(), "write did not wait for the lock")
             self.assertNotIn("newer", (self.root / "styles" / "a-1.json").read_text())

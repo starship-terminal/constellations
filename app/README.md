@@ -49,6 +49,16 @@ The UI follows the approved local Refero mockup and the measured [Refero package
 
 Measured package records and interpreted Refero styles retain separate source identities. The library does not represent the complete live Refero screenshot catalog. A screenshot folder is not presented as an ordered interaction flow without supporting metadata. Research must link recommendations to actual inspected references and acknowledge gaps in its evidence.
 
+## MCP endpoint
+
+`POST /api/mcp` serves the research tools to coding agents over MCP (streamable HTTP, JSON replies, no session); Settings > Agents shows the commands that add it. It differs from the two other MCP servers in this repository, `web/app/api/mcp/` and `server/mcp.py`, on purpose:
+
+- It announces itself as `constellations` and serves the research chat's tools, so a client configured for the `design-systems` servers needs its own entry.
+- A batch holds at most 8 calls, because one image tool reply can be several megabytes of base64; the other two have no cap.
+- A body without `Content-Length` is accepted and counted as it streams, refused past the 256 KB cap; `web/` refuses such a request with 411.
+
+Empty bodies (400, -32600) and bodies that are not UTF-8 or not JSON (400, -32700) are refused as `server/routes.py` refuses them. Before reading the body, the endpoint checks the Host header like every route and runs the same guard as the app's other writes: a foreign `Origin` or `Sec-Fetch-Site: cross-site` is refused (403), and the body must be sent as `Content-Type: application/json` (415 otherwise), so a page on another site cannot start tool calls with a no-preflight form or `text/plain` POST. MCP clients send no `Origin` or `Sec-Fetch-Site`, so they pass, through the private origin too ([private deployment](docs/DEPLOYMENT.md)).
+
 ## Categorisation
 
 Refero's recorded vocabulary is seeded into the app's SQLite database by migration v4. Web and iOS category headers read `/api/taxonomy` and preserve the original platform-specific labels and order, including categories with no local captures. App-owned assignments retag measured systems without rewriting captured token evidence. See [category migration](docs/category-migration.md) for mapping rationale. JSON files are versioned seed inputs; SQLite owns runtime vocabulary and assignments. Reopening the app preserves manual assignment changes. Seed rows added later (a new package in `system-categories.json` or `media-taxonomy.json`) reach an existing database on its next open: a seed ledger records which packages and media each database has been offered, so no per-package migration is needed and a label the user cleared is never restored.
