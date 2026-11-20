@@ -6,7 +6,8 @@
    "@forhers\\.com$",
    "@hims\\.com$",
    "@himsandhers\\.com$",
-   "@example\\.(com|org)$"
+   "@example\\.com$",
+   "@example\\.org$"
   ]
  },
  "families": []

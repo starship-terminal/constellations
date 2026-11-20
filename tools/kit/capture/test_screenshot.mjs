@@ -105,6 +105,14 @@ test('creates a fresh output directory and accepts only an explicit sanitized so
   assert.ok(fs.existsSync(`${output}.capture.json`));
 });
 
+test('a source URL passed as page.url() is recorded without its query, fragment or ids', async t => {
+  const output = temporary(t);
+  const result = await screenshotWithMetadata(fakePage(1768, 2208), { path: output },
+    { sanitizedSourceUrl: 'https://app.example.test/chat/1f2e-77?X-Amz-Signature=abc&q=x#access_token=y' });
+  assert.equal(result.sanitizedSourceUrl, 'https://app.example.test/chat/<id>');
+  assert.ok(!fs.readFileSync(`${output}.capture.json`, 'utf8').includes('Signature'));
+});
+
 test('dimension mismatch rejects the capture and retains its failing evidence', async t => {
   const output = temporary(t);
   await assert.rejects(screenshotWithMetadata(fakePage(1778, 1234), { path: output }), /dimension mismatch/);

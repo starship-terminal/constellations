@@ -3,8 +3,6 @@
 // call comes back as a tool error so the client's session keeps going.
 import { asSchema } from "ai";
 import { researchTools } from "@/server/research/agent";
-import { readLocalImage } from "@/server/sources/files";
-import { readReferenceImage } from "@/server/sources";
 
 export const MCP_BODY_LIMIT = 256_000;
 // One image tool can return a few megabytes of base64. A batch of them
@@ -48,16 +46,21 @@ async function jsonSchema(schema: unknown) {
   }
 }
 
-export async function toolSpecs(): Promise<ToolSpec[]> {
-  const tools = researchTools({ excludedIds: [] }, false);
-  return Promise.all(
-    Object.entries(tools).map(async ([name, spec]) => ({
-      name,
-      description:
-        typeof spec.description === "string" ? spec.description : undefined,
-      inputSchema: await jsonSchema(spec.inputSchema),
-    })),
+// The tool set never changes while the server runs, so its JSON schemas are
+// built once rather than on every tools/list and tools/call.
+let specs: Promise<ToolSpec[]> | undefined;
+export function toolSpecs(): Promise<ToolSpec[]> {
+  specs ??= Promise.all(
+    Object.entries(researchTools({ excludedIds: [] }, false)).map(
+      async ([name, spec]) => ({
+        name,
+        description:
+          typeof spec.description === "string" ? spec.description : undefined,
+        inputSchema: await jsonSchema(spec.inputSchema),
+      }),
+    ),
   );
+  return specs;
 }
 
 async function callTool(name: string, args: Record<string, unknown>) {
@@ -79,15 +82,16 @@ async function callTool(name: string, args: Record<string, unknown>) {
     };
   }
   try {
+    const input = parsed?.value ?? args;
     const out = await spec.execute(
-      (parsed?.value ?? args) as never,
+      input as never,
       {
         toolCallId: "mcp",
         messages: [],
         context: undefined,
       } as never,
     );
-    const image = await imageBlock(out);
+    const image = await imageBlock(spec, input, out);
     return {
       content: [
         { type: "text", text: JSON.stringify(out) },
@@ -107,31 +111,33 @@ async function callTool(name: string, args: Record<string, unknown>) {
   }
 }
 
-async function imageBlock(out: unknown) {
+// The image comes from the tool's own model output, which reuses the file
+// execute() already read and encoded to decide visualEvidence.
+async function imageBlock(
+  spec: { toModelOutput?: unknown },
+  input: unknown,
+  out: unknown,
+) {
   if (!isObj(out) || out.visualEvidence !== "image-supplied") return null;
-  const media = isObj(out.media) ? out.media : null;
-  const mediaUrl = media && typeof media.url === "string" ? media.url : "";
-  if (mediaUrl) {
-    const file = await readLocalImage(mediaUrl);
-    if (file) {
-      return {
-        type: "image",
-        data: Buffer.from(file.data).toString("base64"),
-        mimeType: file.mediaType,
-      };
-    }
+  if (typeof spec.toModelOutput !== "function") return null;
+  const model = (await spec.toModelOutput({
+    toolCallId: "mcp",
+    input,
+    output: out,
+  })) as { type?: string; value?: unknown };
+  if (model?.type !== "content" || !Array.isArray(model.value)) return null;
+  for (const part of model.value) {
+    if (
+      isObj(part) &&
+      part.type === "file" &&
+      isObj(part.data) &&
+      part.data.type === "data" &&
+      typeof part.data.data === "string" &&
+      typeof part.mediaType === "string"
+    )
+      return { type: "image", data: part.data.data, mimeType: part.mediaType };
   }
-  // inspectReference reports an image without a top-level media field.
-  // The screenshot is the first readable one on the reference.
-  const reference = isObj(out.reference) ? out.reference : null;
-  if (!reference) return null;
-  const file = await readReferenceImage(reference as never);
-  if (!file) return null;
-  return {
-    type: "image",
-    data: Buffer.from(file.data).toString("base64"),
-    mimeType: file.mediaType,
-  };
+  return null;
 }
 
 async function dispatch(req: Rpc) {
