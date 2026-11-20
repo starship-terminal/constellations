@@ -32,37 +32,37 @@ typography:
     fontSize: "56px"
     fontWeight: 400
     lineHeight: "67.2px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   title:
     fontFamily: "Inter Display"
     fontSize: "48px"
     fontWeight: 400
     lineHeight: "57.6px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   price:
     fontFamily: "Inter Display"
     fontSize: "36px"
     fontWeight: 400
     lineHeight: "36px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   body:
     fontFamily: "Inter Variable"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   ui:
     fontFamily: "Inter Variable"
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "20px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   small:
     fontFamily: "Inter Variable"
     fontSize: "12px"
     fontWeight: 500
     lineHeight: "16px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   mobile-nav:
     fontFamily: "Inter Variable"
     fontSize: "24px"

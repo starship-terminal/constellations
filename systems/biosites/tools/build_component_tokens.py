@@ -221,7 +221,8 @@ def typ(comp, state):
             "fontSize": t.get("fontSize") or s["fontSize"],
             "fontWeight": int(float(t.get("fontWeight") or s["fontWeight"])),
             "lineHeight": t.get("lineHeight") or s["lineHeight"],
-            "letterSpacing": (t.get("letterSpacing") or s["letterSpacing"]),
+            # computed "normal" is no tracking; DTCG wants a dimension, so it is written 0px
+            "letterSpacing": "0px" if (t.get("letterSpacing") or s["letterSpacing"]) == "normal" else (t.get("letterSpacing") or s["letterSpacing"]),
         },
         "$extensions": {"source": f"computed type of {comp} {state} (raw/components-computed.json)"},
     }

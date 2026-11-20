@@ -43,25 +43,25 @@ typography:
     fontSize: "56px"
     fontWeight: 700
     lineHeight: "67.2px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   heading:
     fontFamily: "Vend Sans"
     fontSize: "19.2px"
     fontWeight: 600
     lineHeight: "23.04px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   body:
     fontFamily: "Noto Color Emoji"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "16px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   button:
     fontFamily: "Noto Color Emoji"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
 components:
   control:
     height: "42px"
