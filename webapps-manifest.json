@@ -5803,7 +5803,7 @@
       "description": "Payment Processing Platform for the Internet",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://dashboard.stripe.com/login shows email and password, or Google, passkey, or SSO. Password not submitted.",
+      "notes": "Email probe: https://dashboard.stripe.com/login shows email and password, or Google, passkey, or SSO. Password not submitted. Public walk 2026-11-21: worker failed before any page loaded (usage limit). No package. Session not checked. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "password",
       "batch": 17
