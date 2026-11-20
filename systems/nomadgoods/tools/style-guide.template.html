@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nomad Goods style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Aleo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-display: "Gotham-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 40px/1 var(--sg-display); letter-spacing: -1.6px; margin: 0 0 8px; }
+h2 { font: 700 28px/1.1 var(--sg-display); letter-spacing: -1px; margin: 40px 0 12px; }
+p.lead { max-width: 68ch; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 72px; border-radius: 12px; border: 1px solid #00000014; }
+.sw b, .sw span { display: block; font-size: 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pill { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 100px; font: 700 16px/18px var(--sg-display); letter-spacing: -0.64px; text-decoration: none; }
+.pill.dark { color: #fff; background: linear-gradient(180deg, #2f2f2f, #2f2f2f); border: 1px solid #000; box-shadow: inset 0 -10px 15px 1px #0e0e0e, inset 0 0 0 1px #676767; }
+.pill.light { color: #000; background: linear-gradient(180deg, #fff 15%, #f1f1f1); box-shadow: inset 0 10px 15px 2px #fff, inset 0 0 0 1px #fff, 0 0 0 1px #0000000f; }
+.bar { height: 70px; border-radius: 25px; background: #fff; display: flex; align-items: center; padding: 0 24px; gap: 28px; box-shadow: rgba(0,0,0,.06) 0 0 0 1px, rgba(0,0,0,.06) 0 1px 1px -0.5px; }
+.bar b { font: 700 18px/1 var(--sg-display); letter-spacing: -0.4px; }
+.bar span { font-size: 16px; }
+.bar .sale { color: #c45a1a; }
+.hero { margin-top: 16px; background: #111; color: #fff; border-radius: 16px; padding: 48px 32px; }
+.hero h3 { margin: 0; font: 700 56px/0.95 var(--sg-display); letter-spacing: -2.2px; }
+.note { color: var(--text-muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Nomad Goods</h1>
+  <p class="lead">Rendered from tokens.json. Gotham Bold and Aleo are the product's faces and are not loaded here, so the guide falls back to Helvetica Neue. One light theme. Values were read from nomadgoods.com/sg/ on 2026-11-21.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Type</h2>
+  <p style="font:700 56px/53px var(--sg-display);letter-spacing:-2.24px;margin:0">Featured Deals</p>
+  <p class="note">heading, Gotham-Bold 56 / 53.2, tracking -2.24px</p>
+  <p style="margin:0">Body is Aleo 16 / 24 on the page ground.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="pill light">Shop Now</span>
+    <span class="pill dark">Sold Out | Join the Waitlist</span>
+  </div>
+  <p class="note">Pills are 48px tall, radius 100px, Gotham Bold 16. The dark face is #2f2f2f with an inset lip, from buttons-FS3QHQ7I.css.</p>
+  <h2>Nav bar</h2>
+  <div class="bar">
+    <b>NOMAD</b>
+    <span>Best Sellers</span>
+    <span>Cases</span>
+    <span>Watch</span>
+    <span class="sale">Sale</span>
+  </div>
+  <p class="note">The desktop bar is white, 70px tall, radius 25px. Sale's orange was seen in the screenshot and is not a measured token.</p>
+  <div class="hero">
+    <h3>35% Off<br>Stand One Max</h3>
+  </div>
+</div>
+<script>
+const tokens = /*TOKENS*/null;
+const roles = [
+  ['page', '--background-page'],
+  ['surface', '--background-surface'],
+  ['text', '--text-primary'],
+  ['muted', '--text-muted'],
+  ['accent', '--action-primary'],
+  ['border', '--border-default'],
+];
+const host = document.getElementById('swatches');
+for (const [name, v] of roles) {
+  const d = document.createElement('div');
+  d.className = 'sw';
+  d.innerHTML = '<i style="background:var(' + v + ')"></i><b>' + name + '</b><span>' + v + '</span>';
+  host.appendChild(d);
+}
+</script>
+</body>
+</html>
