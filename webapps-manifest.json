@@ -2510,9 +2510,9 @@
       "description": "The Project Management Tool for Creative Teams",
       "status": "pending",
       "package": null,
-      "notes": "https://app.helloivy.co/login asks for email and password, or Google. No code was sent.",
+      "notes": "https://app.helloivy.co/login asks for email and password, or Google. No code was sent. Public walk 2026-11-21: marketing header and the full-page menu opened feature and docs indexes, plus blog and release-note families. Get Started hops to complex.so. Login, signup, and the media-kit share URL stop at app.helloivy.co and were not entered. No form was submitted. Public package in PR 1524 at fca1d2743. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 8
     },
     {
