@@ -149,6 +149,17 @@ class IconPaint(unittest.TestCase):
         self.assertIn('fill="#00ff00"', box)
         self.assertNotIn("stroke=", box)
 
+    def test_a_fill_in_the_icons_own_colour_still_follows_it(self):
+        # Greptile on 9d4bd6843: with the fill judged apart, an explicit fill="#000000" equal to the icon's
+        # colour (black text) under a stroke-only group stopped becoming currentColor, so it no longer recoloured
+        page = ("<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'>"
+                "<g style='stroke:#ff0000'><path fill='#000000' d='M2 12h20'/></g></symbol></svg>"
+                "<button aria-label='Go' style='color:#000000'><svg width='24' height='24'><use href='#s'/></svg></button>")
+        (html,) = self.collect(page)
+        (path,) = re.findall(r"<path[^>]*>", html)
+        self.assertIn('fill="currentColor"', path)
+        self.assertIn('stroke="#ff0000"', path)
+
     def test_an_icon_drawn_from_another_files_sprite_is_left_out(self):
         # finding 20-8: <use href="/icons/sprite.svg#x"> draws nothing in the saved file, so it was saved blank
         page = ("<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'><path d='M0 0h24v24z'/></symbol></svg>"

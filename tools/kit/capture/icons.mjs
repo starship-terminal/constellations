@@ -49,11 +49,11 @@ function collect() {
         const own = !imported || e.hasAttribute('class') || e.hasAttribute('style');
         const fillSet = own || (outside && cs.fill !== outside.fill);
         const strokeSet = own || (outside && (cs.stroke !== outside.stroke || cs.strokeWidth !== outside.strokeWidth));
-        if (fillSet) {
-          if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
-          else if (imported && !t.hasAttribute('fill') && cs.fill === 'none') t.setAttribute('fill', 'none');   // its style goes below
-          else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
-        }
+        if (fillSet && !t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
+        else if (fillSet && imported && !t.hasAttribute('fill') && cs.fill === 'none') t.setAttribute('fill', 'none');   // its style goes below
+        // a fill the shape names itself, in the icon's own colour, follows that colour when the icon is recoloured
+        // (whatever set the stroke: this is the attribute already on the copy, not inherited paint)
+        else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
         if (strokeSet && !t.hasAttribute('stroke') && cs.stroke !== 'none') {
           t.setAttribute('stroke', rgb(cs.stroke) === col ? 'currentColor' : hex(cs.stroke));
           t.setAttribute('stroke-width', parseFloat(cs.strokeWidth) || 1);
