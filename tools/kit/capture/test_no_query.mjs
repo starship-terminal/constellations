@@ -60,6 +60,12 @@ const CUT = {
   '--x: avatar?token=secret': '--x: avatar',
   'img[srcset="a?sig=1 1x, b?sig=2 2x"]': 'img[srcset="a"]',
   'img[src="/a.png?ok"], img[href="/b#k=v"]': 'img[src="/a.png"], img[href="/b"]',
+  // "data:" inside a path is not a data: URL (review of the fail-closed rule)
+  '"https://cdn.example.test/data:avatar.png?token=secret"': '"https://cdn.example.test/data:avatar.png"',
+  'https://cdn.example.test/data:avatar.png?token=secret': 'https://cdn.example.test/data:avatar.png',
+  'url(/x/data:a.png?sig=1)': 'url(/x/data:a.png)',
+  'img[src="/data:a.png?sig=1"]': 'img[src="/data:a.png"]',
+  '"see /data:a.png?sig=1"': '"see /data:a.png"',
   // free text: no URL needed at all, only the query shape
   'What? a=b': 'What',
 };
@@ -68,6 +74,8 @@ const KEEP = [
   `url("data:image/svg+xml,<svg viewBox='0 0 1 1'/>?x=1")`,
   'data:image/png;base64,iVBOR?w0#AA=', 'image-set(data:image/png;base64,AA?x=1 1x)',
   'url(data:image/svg+xml;utf8,%3Csvg%3E?x=(1)%3C/svg%3E)',
+  // a bare data: URL runs through quotes inside it, up to the first unquoted space
+  `data:image/svg+xml,<svg/title="a?b=c"/>`, `--icon: data:image/svg+xml,'<path d="M0?x=1"/>'`,
   '"data:image/png;base64,iVBOR?w0#AAA="',
   'icons.svg#close', 'url(#clip)', 'a[href="#top"]', '#5e6ad2', 'calc(100% - 2px)', '0 1px 2px rgba(0, 0, 0, 0.1)',
   '1.5rem', 'url(…)', 'a // b', '', 'var(--x, 4px)', 'what? why?', '"Ready?"', '"Is it ready? Yes."', '"Yes. What?"', '"Да. Что?"', '"a data:image/png;base64,AA?x=1"', 'rotate(45deg)',

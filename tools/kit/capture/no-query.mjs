@@ -12,7 +12,9 @@
 //   - any other quoted text, and the text outside quotes and url( ) (the whole value), is free text: it
 //     is cut from the first ? that has an = after it before the span ends, or from a # whose name runs
 //     into = or &, whatever comes before it.
-// A data: URL (bare, quoted or in url( )) is left alone, = padding and all.
+// A data: URL (bare, quoted or in url( )) is left alone, = padding and all, but only where data: opens
+// a value: at its start or after a space, a quote, a bracket, a comma or = ("/x/data:a.png" is a path).
+// A bare one runs through any quoted text inside it and ends at the first unquoted space.
 //
 // What it over-cuts, knowingly: prose with a ? followed later by an = loses its tail ("What? a=b" keeps
 // "What"); a bare image-set() or srcset in free text loses everything after its first query, closing
@@ -21,6 +23,7 @@
 
 const FIELD = /(?:\[\s*(?:src|href|srcset|poster|action|data|xlink:href)\s*[~|^$*]?=\s*)$/i;
 const DATA = /^\s*data:/i;
+const DATA_OPENS = (before) => !before || /[\s"'(,=]/.test(before);   // data: here starts a data: URL
 const BASE = 'https://x.invalid/';
 
 // Splits a value into outer text, quoted strings, url( ) bodies and bare data: tokens.
@@ -53,8 +56,8 @@ function scan(s) {
       flush();
       out.push({ kind: 'quoted', quote: s[i], text: s.slice(i + 1, j), close: j < s.length ? s[i] : '', field });
       i = j + 1;
-    } else if (/^data:/i.test(s.slice(i, i + 5)) && !/[\w.-]/.test(before)) {
-      const m = s.slice(i).match(/^data:[^\s"']*/i);
+    } else if (/^data:/i.test(s.slice(i, i + 5)) && DATA_OPENS(before)) {
+      const m = s.slice(i).match(/^data:(?:"[^"]*"|'[^']*'|[^\s"'])*/i);
       flush();
       out.push({ kind: 'data', text: m[0] });
       i += m[0].length;
@@ -81,7 +84,7 @@ function cutField(v) {
 // The first point in free text a query could start: a ? with an = after it in `rest` (the text from
 // there to the end of the span), or a # whose name runs into = or &. data: tokens are skipped.
 function freeCut(text, restAfter = '') {
-  const skip = [...text.matchAll(/(?<![\w.-])data:\S*/gi)].map((m) => [m.index, m.index + m[0].length]);
+  const skip = [...text.matchAll(/(?<=^|[\s"'(,=])data:\S*/gi)].map((m) => [m.index, m.index + m[0].length]);
   const inData = (i) => skip.some(([a, b]) => i >= a && i < b);
   for (let i = 0; i < text.length; i++) {
     if (inData(i)) continue;
