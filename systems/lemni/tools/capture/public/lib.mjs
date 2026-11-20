@@ -31,7 +31,7 @@ export const M = (name) => `[data-framer-name="${name}"]`;
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // automation is not hidden: the webdriver flag stays as Chromium sets it (bot check: recorded as a boundary, not bypassed)
     // lemni.com/signin overwrites devicePixelRatio to 1 while the renderer
     // still paints at the context scale. Keep the launch-time value so the
     // screenshot sidecar can check the PNG against the real scale.

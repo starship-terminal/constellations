@@ -14,7 +14,7 @@ const [workspace, token] = fs.readFileSync(AUTH, 'utf8').trim().split('\n');
 const SPACE = `https://lemni.com/s/${workspace}`;
 const OUT = path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { _meta: {}, components: {} };
-out._meta = { ...out._meta, read: '2026-11-18', product: 'Lemni', route: 'public-web+signed-in-free' };
+out._meta = { ...out._meta, read: new Date().toLocaleDateString('en-CA'), product: 'Lemni', route: 'public-web+signed-in-free' };
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
@@ -26,7 +26,7 @@ const context = await chromium.launchPersistentContext(PROFILE, {
   deviceScaleFactor: 2,
   userAgent: UA,
   locale: 'en-US',
-  args: ['--disable-blink-features=AutomationControlled'],
+  // automation is not hidden: the AutomationControlled feature stays as Chromium sets it (bot check: recorded as a boundary, not bypassed)
 });
 await patch(context);
 await context.addInitScript(({ workspace, token }) => {

@@ -25,7 +25,9 @@ const ORIGIN = 'https://lemni.com';
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
-const sanitize = (url) => url.replace(workspace, 'XXXXX');
+// The recorded form of a page URL: the workspace id masked, and the query and fragment dropped
+// (a query can carry a search, an invite or a token).
+const sanitize = (url) => url.replace(workspace, 'XXXXX').split('#')[0].split('?')[0];
 
 async function injectAuth(context) {
   await context.addInitScript(({ workspace, token }) => {
@@ -77,8 +79,7 @@ const desktop = {
   inbox: { path: `${SPACE}/inbox`, run: async (p, S, url) => {
     await S.view('default', url);
     if ((p.viewportSize()?.width || 1440) <= 400) {
-      await openMobileNav(p);
-      await S.view('nav-open', url);
+      if (await openMobileNav(p)) await S.view('nav-open', url);
     }
   } },
   assigned: { path: `${SPACE}/assigned`, run: async (p, S, url) => { await S.view('default', url); } },
@@ -104,9 +105,9 @@ async function openMobileNav(p) {
       return true;
     }
   }
-  await p.mouse.click(196, 812).catch(() => {});
-  await wait(p, 700);
-  return true;
+  // No blind click at fixed coordinates: if no menu control was found, say so and skip the state.
+  log('  no mobile menu control found');
+  return false;
 }
 
 const mobileKeys = ['inbox', 'agents', 'knowledge', 'actions', 'subscribe'];
@@ -121,7 +122,7 @@ async function runWidth({ mob }) {
     isMobile: mob,
     hasTouch: mob,
     locale: 'en-US',
-    args: ['--disable-blink-features=AutomationControlled'],
+    // automation is not hidden: the AutomationControlled feature stays as Chromium sets it (bot check: recorded as a boundary, not bypassed)
   });
   await patch(context);
   await injectAuth(context);

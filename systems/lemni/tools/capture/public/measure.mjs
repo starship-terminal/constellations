@@ -13,13 +13,14 @@
 // :active, and are never clicked through.
 import fs from 'node:fs';
 import path from 'node:path';
+import { safeUrl } from '../safe-url.mjs';
 import { APP, BASE, launch, open, closePromo, clearChallenge, styleOf, crop, centre, mark, RAW, UA, UA_MOBILE } from './lib.mjs';
 
 const OUT = path.join(RAW, 'components-computed.json');
 fs.mkdirSync(RAW, { recursive: true });
 const ONLY = (process.argv[2] || '').split(',').filter(Boolean);
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { _meta: {}, components: {} };
-out._meta = { ...out._meta, read: '2026-11-18', product: 'Lemni', route: 'public-web' };
+out._meta = { ...out._meta, read: new Date().toLocaleDateString('en-CA'), product: 'Lemni', route: 'public-web' };
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
@@ -33,7 +34,7 @@ async function newPage(key, url, { mobile = false, wait = 4500 } = {}) {
   context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
-  await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // automation is not hidden: the webdriver flag stays as Chromium sets it (bot check: recorded as a boundary, not bypassed)
   page = await context.newPage();
   page.setDefaultTimeout(8000);
   cdp = await context.newCDPSession(page);
@@ -319,7 +320,7 @@ async function docs() {
 async function signin() {
   await newPage('signin', APP + '/signup', { wait: 3500 });
   await sheetsFor('signin');
-  const url = 'https://lemni.com/signin';
+  const url = safeUrl(page.url()); // /signup redirects to /signin: record where the page landed
   await S('auth-title', async () => {
     const ok = await page.evaluate(() => {
       const el = [...document.querySelectorAll('h1, h2, div, p')].find((n) => (n.innerText || '').trim() === 'Welcome to Lemni');

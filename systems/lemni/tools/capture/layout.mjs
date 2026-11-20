@@ -43,7 +43,7 @@ const pages = [
 ];
 
 const browser = await chromium.launch();
-const out = { readAt: '2026-11-18', pages: {} };
+const out = { readAt: new Date().toLocaleDateString('en-CA'), pages: {} };
 for (const [key, url, mobile] of pages) {
   const ctx = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
