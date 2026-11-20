@@ -274,9 +274,11 @@ try:
     fv = st("try-cta", "default")["borderTopLeftRadius"]
     # %g keeps a fractional radius; a computed rounded-full (the CSS maximum) is written 9999px, the kit's pill.
     n = float(fv[:-2]) if fv.endswith("px") else None
+    read = fv
     fv = ("9999px" if n > 9999 else "%gpx" % n) if n is not None else fv
     radii["full"] = {"value": fv, "type": "dimension",
-                     "source": "computed borderTopLeftRadius of try-cta default (raw/components-computed.json)",
+                     "source": "computed borderTopLeftRadius of try-cta default (raw/components-computed.json)"
+                               + (f"; the reading {read} is the browser's maximum radius, written as the kit's 9999px pill" if fv != read and fv == "9999px" else ""),
                      "description": "rounded-full computes to the CSS maximum — every pill control (CTAs, the billing toggle, platform buttons)."}
     radii["nav"] = {"value": st("header", "default")["borderTopLeftRadius"], "type": "dimension",
                     "source": "computed borderTopLeftRadius of header default (raw/components-computed.json)",

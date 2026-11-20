@@ -717,7 +717,7 @@
    "full": {
     "value": "9999px",
     "type": "dimension",
-    "source": "computed borderTopLeftRadius of try-cta default (raw/components-computed.json)",
+    "source": "computed borderTopLeftRadius of try-cta default (raw/components-computed.json); the reading 3.35544e+07px is the browser's maximum radius, written as the kit's 9999px pill",
     "description": "rounded-full computes to the CSS maximum — every pill control (CTAs, the billing toggle, platform buttons)."
    },
    "nav": {
