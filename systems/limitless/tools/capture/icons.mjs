@@ -42,8 +42,10 @@ const browser = await chromium.launch({ headless: true });
 const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
 const page = await ctx.newPage();
 const seen = new Map();
+const failed = [];
 for (const url of pages) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 }).catch(() => {});
+  const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 }).catch((e) => { failed.push(`${url}: ${String(e.message).split('\n')[0]}`); return null; });
+  if (!res || res.status() >= 400) { if (res) failed.push(`${url}: HTTP ${res.status()}`); continue; }
   await page.waitForTimeout(1600);
   await hideConsent(page);
   const icons = await page.evaluate(collect);
@@ -57,6 +59,13 @@ for (const url of pages) {
   console.log(url, icons.length);
 }
 await browser.close();
+// Replace icons/ only after a complete run: a page that failed to load leaves
+// the committed icons and INDEX.tsv as they were.
+if (failed.length) {
+  console.error('not written, pages failed:\n  ' + failed.join('\n  '));
+  process.exit(1);
+}
+for (const f of fs.readdirSync(OUT)) if (f.endsWith('.svg')) fs.unlinkSync(OUT + f);
 const rows = ['file\trole\tpages'];
 let i = 0;
 for (const [hash, rec] of seen) {
