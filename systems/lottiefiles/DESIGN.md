@@ -131,6 +131,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### What to distrust (from README.md)
 
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.
+- The committed readings and screenshots were taken with `navigator.webdriver` hidden by the capture scripts (`public/lib.mjs`, `public/public.mjs`, `vars.mjs`). The mask has been removed from them (2026-11 audit); a bot check is now a boundary, not something to get past.
 - The font weight of each `core.typography` role was typed in by hand at capture time, as the Tailwind step the role appears to use. No element's weight was read for it, so those tokens are labelled Reconstruction.
 - The Download tab entry in [components.md](components.md) was written by hand from [animation-light-download-tab.png](screenshots/animation-light-download-tab.png). No values were read for it.
 - The dark set was not painted by the public site. It is the stylesheet's `.dark` block.

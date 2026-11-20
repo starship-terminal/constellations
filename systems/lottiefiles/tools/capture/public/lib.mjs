@@ -25,9 +25,7 @@ export async function launch({ width = 1440, height = 900, mobile = false, dpr }
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: dpr ?? 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: dpr ?? 1, userAgent: UA, locale: 'en-US' });
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  });
+  // Automation is not hidden: no navigator.webdriver mask (bot check: recorded as a boundary, not bypassed).
   return { browser, context };
 }
 
