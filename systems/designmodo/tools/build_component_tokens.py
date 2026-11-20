@@ -546,19 +546,22 @@ for key, comp, state, prop, group, prefer, desc in [
 ]:
     try:
         if prop == "_body-bg":
-            raw = "#ffffff"
-            src = "the marketing surface paints white — site-footer default measures rgb(255,255,255) (raw/components-computed.json)"
+            raw = st(comp, state)["backgroundColor"]
+            src = f"computed backgroundColor of {comp} {state}: the marketing surface paints white (raw/components-computed.json)"
         elif prop == "_bg-app":
+            # No file in raw/ holds this: the recon read the app body background as
+            # rgb(244,244,244) but that reading was never saved. Kept, labelled as typed.
             raw = "#f4f4f4"
-            src = "the app gallery canvas paints #f4f4f4 (screenshots/app-*.png; body bg measured rgb(244,244,244) at recon)"
+            src = ("entered by hand at capture time, not measured: the recon's app body background "
+                   "rgb(244,244,244) was never saved to raw/ (compare screenshots/app-*.png); recapture needed")
         elif prop == "_card-face":
-            raw = "#f4f6f7"
-            src = "the gallery card faces paint #f4f6f7 (measured on sc-hBxvHn at recon; screenshots/app-*.png)"
+            raw = next(pl["bg"] for pl in C[comp]["states"][state]["paint"] if pl.get("node", "").startswith("div.sc-hBxvHn") and pl.get("bg"))
+            src = f"painted background of the div.sc-hBxvHn card face inside {comp} {state} (raw/components-computed.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         put_sem(sem, group, key, semcolor(raw, src, desc, prefer=prefer))
-    except KeyError:
+    except (KeyError, StopIteration):
         pass
 
 
@@ -676,6 +679,26 @@ for name, cname, state, prop, ty_, desc in [
                          ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
     except KeyError:
         pass
+
+# A component the last run could not find keeps its earlier states (measure.mjs marks it
+# recaptureMissed and keeps the first run's page/run/url). Say so on every token read from it,
+# so a kept reading never ships as if the latest run had confirmed it.
+FLAGGED = {k: v["recaptureMissed"] for k, v in C.items() if v.get("recaptureMissed")}
+
+
+def note_flagged(node):
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            for k, missed in FLAGGED.items():
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and f"{k} was not found" not in src:
+                    node["source"] = src = (src + f"; {k} was not found by the {missed} re-run (recaptureMissed),"
+                                            " so this is the reading kept from the earlier run")
+        for v in node.values():
+            note_flagged(v)
+
+
+note_flagged(SPEC)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})
