@@ -529,8 +529,8 @@
     },
     {
       "referenceId": "systems:airtable",
-      "media": 201,
-      "assignedMedia": 81
+      "media": 207,
+      "assignedMedia": 82
     },
     {
       "referenceId": "systems:allbirds",
@@ -594,8 +594,8 @@
     },
     {
       "referenceId": "systems:asos",
-      "media": 201,
-      "assignedMedia": 94
+      "media": 215,
+      "assignedMedia": 95
     },
     {
       "referenceId": "systems:attio",
@@ -829,8 +829,8 @@
     },
     {
       "referenceId": "systems:creativemarket",
-      "media": 140,
-      "assignedMedia": 140
+      "media": 143,
+      "assignedMedia": 143
     },
     {
       "referenceId": "systems:cron",
@@ -939,8 +939,8 @@
     },
     {
       "referenceId": "systems:doordash",
-      "media": 200,
-      "assignedMedia": 58
+      "media": 209,
+      "assignedMedia": 60
     },
     {
       "referenceId": "systems:dopper",
@@ -1054,8 +1054,8 @@
     },
     {
       "referenceId": "systems:exa",
-      "media": 196,
-      "assignedMedia": 196
+      "media": 216,
+      "assignedMedia": 216
     },
     {
       "referenceId": "systems:exactly",
@@ -1069,7 +1069,7 @@
     },
     {
       "referenceId": "systems:expedia",
-      "media": 131,
+      "media": 143,
       "assignedMedia": 84
     },
     {
@@ -1354,8 +1354,8 @@
     },
     {
       "referenceId": "systems:kickstarter",
-      "media": 115,
-      "assignedMedia": 115
+      "media": 128,
+      "assignedMedia": 128
     },
     {
       "referenceId": "systems:kinhive",
@@ -12975,6 +12975,22 @@
           "termId": "web-page-types:about",
           "rule": "page-about",
           "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:airtable",
+      "mediaId": "systems/airtable/screenshots/app/desktop-account-menu.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:user-menu",
+          "rule": "ux-user-menu",
+          "reason": "Capture filename explicitly names user menu; local classification from recorded capture metadata."
         }
       ]
     },
@@ -26597,6 +26613,22 @@
           "termId": "web-page-types:home-page",
           "rule": "page-home",
           "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asos",
+      "mediaId": "systems/asos/screenshots/signed-in-account-menu-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:user-menu",
+          "rule": "ux-user-menu",
+          "reason": "Capture filename explicitly names user menu; local classification from recorded capture metadata."
         }
       ]
     },
@@ -108283,6 +108315,49 @@
     },
     {
       "referenceId": "systems:creativemarket",
+      "mediaId": "systems/creativemarket/screenshots/signed-in-account-menu-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:user-menu",
+          "rule": "ux-user-menu",
+          "reason": "Capture filename explicitly names user menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:averta",
+          "rule": "font-primary",
+          "reason": "Exact primary family Averta from systems/creativemarket/tokens.json#core.font.family.averta. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:creativemarket",
+      "mediaId": "systems/creativemarket/screenshots/signed-in-profile-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:averta",
+          "rule": "font-primary",
+          "reason": "Exact primary family Averta from systems/creativemarket/tokens.json#core.font.family.averta. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:creativemarket",
+      "mediaId": "systems/creativemarket/screenshots/signed-in-purchases-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:averta",
+          "rule": "font-primary",
+          "reason": "Exact primary family Averta from systems/creativemarket/tokens.json#core.font.family.averta. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:creativemarket",
       "mediaId": "systems/creativemarket/screenshots/signin-light-default.png",
       "terms": [
         {
@@ -144885,6 +144960,33 @@
     },
     {
       "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/screenshots/signed-in-account-menu-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:user-menu",
+          "rule": "ux-user-menu",
+          "reason": "Capture filename explicitly names user menu; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/screenshots/signed-in-gift-cards-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
       "mediaId": "systems/doordash/components/crops/address-pill-default.png",
       "terms": [
         {
@@ -179523,6 +179625,241 @@
     {
       "referenceId": "systems:exa",
       "mediaId": "systems/exa/screenshots/product-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-agent-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-answer-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-api-keys-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-billing-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-billing-dark-narrow.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-contents-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-create-key-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-create-key-dark-narrow.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-home-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-home-dark-narrow.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-home-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-invite-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-monitors-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-nav-dark-narrow.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-requests-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-search-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-slack-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-team-settings-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-usage-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/exa/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:exa",
+      "mediaId": "systems/exa/screenshots/signed-in-websets-create-dark-desktop.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -258371,6 +258708,38 @@
     },
     {
       "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/account-menu-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:user-menu",
+          "rule": "ux-user-menu",
+          "reason": "Capture filename explicitly names user menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/activity-light-empty.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
       "mediaId": "systems/kickstarter/screenshots/blog-light-default.png",
       "terms": [
         {
@@ -258460,6 +258829,17 @@
     {
       "referenceId": "systems:kickstarter",
       "mediaId": "systems/kickstarter/screenshots/environment-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/following-light-empty.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -258587,6 +258967,22 @@
     },
     {
       "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/messages-light-empty.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:chat-messages",
+          "rule": "ux-chat",
+          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
       "mediaId": "systems/kickstarter/screenshots/mobile-discover-light-default.png",
       "terms": [
         {
@@ -258697,6 +259093,22 @@
     },
     {
       "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/profile-light-empty.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
       "mediaId": "systems/kickstarter/screenshots/project-light-default.png",
       "terms": [
         {
@@ -258719,6 +259131,28 @@
     },
     {
       "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/recommendations-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/recommendations-light-signed-in.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
       "mediaId": "systems/kickstarter/screenshots/rules-light-default.png",
       "terms": [
         {
@@ -258731,6 +259165,17 @@
     {
       "referenceId": "systems:kickstarter",
       "mediaId": "systems/kickstarter/screenshots/rules-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/saved-projects-light-empty.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -258773,6 +259218,54 @@
     },
     {
       "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/settings-account-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/settings-account-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/settings-notifications-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
       "mediaId": "systems/kickstarter/screenshots/start-light-default.png",
       "terms": [
         {
@@ -258785,6 +259278,17 @@
     {
       "referenceId": "systems:kickstarter",
       "mediaId": "systems/kickstarter/screenshots/start-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/screenshots/start-project-light-step1.png",
       "terms": [
         {
           "termId": "web-fonts:inter",
@@ -259364,6 +259868,17 @@
           "rule": "ux-search",
           "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
         },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/kickstarter/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:kickstarter",
+      "mediaId": "systems/kickstarter/components/crops/menu-account-open.png",
+      "terms": [
         {
           "termId": "web-fonts:inter",
           "rule": "font-primary",
