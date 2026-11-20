@@ -317,6 +317,722 @@
      28
     ]
    ]
+  },
+  {
+   "name": "other learners' avatars, leaderboard rows, dark desktop (2026-11-21: other learners' avatars pixelated; the own row, the Duolingo account and catalog art stay)",
+   "files": [
+    "screenshots/leaderboard-dark-row-hover.png",
+    "screenshots/leaderboard-dark-top.png"
+   ],
+   "rects": [
+    [
+     725,
+     505,
+     870,
+     -1,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "other learners' avatars, leaderboard rows, dark desktop, own row 12 kept",
+   "files": [
+    "screenshots/leaderboard-dark-populated.png"
+   ],
+   "rects": [
+    [
+     725,
+     440,
+     870,
+     1300,
+     "pixelate:32"
+    ],
+    [
+     725,
+     1405,
+     870,
+     -1,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "other learners' avatars, leaderboard rows, light desktop",
+   "files": [
+    "screenshots/leaderboard-light-default.png"
+   ],
+   "rects": [
+    [
+     795,
+     500,
+     945,
+     1545,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "other learners' avatars, leaderboard rows, dark mobile, own row 13 kept",
+   "files": [
+    "screenshots/leaderboard-dark-mobile.png",
+    "components/crops/leaderboard--mobile-dark.png"
+   ],
+   "rects": [
+    [
+     128,
+     480,
+     278,
+     1035,
+     "pixelate:32"
+    ],
+    [
+     128,
+     1170,
+     278,
+     1410,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "other learners' avatars, leaderboard rows, light mobile",
+   "files": [
+    "screenshots/leaderboard-light-mobile.png",
+    "components/crops/leaderboard--mobile-light.png"
+   ],
+   "rects": [
+    [
+     128,
+     500,
+     278,
+     1430,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "profile, dark: friend-update, following and friend-suggestion avatars",
+   "files": [
+    "screenshots/profile-dark-default.png"
+   ],
+   "rects": [
+    [
+     1648,
+     215,
+     1758,
+     325,
+     "pixelate:32"
+    ],
+    [
+     1648,
+     660,
+     1758,
+     770,
+     "pixelate:32"
+    ],
+    [
+     1645,
+     1360,
+     1755,
+     1468,
+     "pixelate:32"
+    ],
+    [
+     1645,
+     1528,
+     1755,
+     -1,
+     "pixelate:32"
+    ],
+    [
+     655,
+     1505,
+     765,
+     -1,
+     "pixelate:32"
+    ],
+    [
+     985,
+     1505,
+     1095,
+     -1,
+     "pixelate:32"
+    ],
+    [
+     1315,
+     1505,
+     1425,
+     -1,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "profile, dark, scrolled: friend-suggestion and following avatars",
+   "files": [
+    "screenshots/profile-dark-scrolled.png"
+   ],
+   "rects": [
+    [
+     655,
+     135,
+     765,
+     240,
+     "pixelate:32"
+    ],
+    [
+     985,
+     135,
+     1095,
+     240,
+     "pixelate:32"
+    ],
+    [
+     1315,
+     135,
+     1425,
+     240,
+     "pixelate:32"
+    ],
+    [
+     1645,
+     0,
+     1755,
+     95,
+     "pixelate:32"
+    ],
+    [
+     1645,
+     160,
+     1755,
+     262,
+     "pixelate:32"
+    ],
+    [
+     1645,
+     328,
+     1755,
+     432,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "profile, light: friend-update and following avatars",
+   "files": [
+    "screenshots/profile-light-default.png"
+   ],
+   "rects": [
+    [
+     1942,
+     214,
+     2054,
+     326,
+     "pixelate:32"
+    ],
+    [
+     1942,
+     658,
+     2054,
+     770,
+     "pixelate:32"
+    ],
+    [
+     1942,
+     1360,
+     2050,
+     1466,
+     "pixelate:32"
+    ],
+    [
+     1942,
+     1528,
+     2050,
+     -1,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "profile, light, scrolled: friend-suggestion and following avatars",
+   "files": [
+    "screenshots/profile-light-scrolled.png"
+   ],
+   "rects": [
+    [
+     765,
+     488,
+     875,
+     592,
+     "pixelate:32"
+    ],
+    [
+     1170,
+     488,
+     1280,
+     592,
+     "pixelate:32"
+    ],
+    [
+     1575,
+     488,
+     1685,
+     592,
+     "pixelate:32"
+    ],
+    [
+     1943,
+     0,
+     2050,
+     68,
+     "pixelate:32"
+    ],
+    [
+     1943,
+     130,
+     2050,
+     236,
+     "pixelate:32"
+    ],
+    [
+     1943,
+     300,
+     2050,
+     404,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "user search, dark: avatars of the rows after the Duolingo account",
+   "files": [
+    "screenshots/user-search-dark-results.png"
+   ],
+   "rects": [
+    [
+     605,
+     895,
+     760,
+     1050,
+     "pixelate:32"
+    ],
+    [
+     605,
+     1120,
+     760,
+     1275,
+     "pixelate:32"
+    ],
+    [
+     605,
+     1345,
+     760,
+     1500,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "user search, light: avatars of the rows after the Duolingo account",
+   "files": [
+    "screenshots/user-search-light-results.png"
+   ],
+   "rects": [
+    [
+     680,
+     898,
+     830,
+     1050,
+     "pixelate:32"
+    ],
+    [
+     680,
+     1120,
+     830,
+     1275,
+     "pixelate:32"
+    ],
+    [
+     680,
+     1345,
+     830,
+     1500,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "user search behind the invite modal, dark: avatars after the Duolingo account",
+   "files": [
+    "screenshots/user-search-dark-invite-modal.png"
+   ],
+   "rects": [
+    [
+     605,
+     900,
+     722,
+     1050,
+     "pixelate:32"
+    ],
+    [
+     605,
+     1125,
+     722,
+     1275,
+     "pixelate:32"
+    ],
+    [
+     605,
+     1350,
+     760,
+     1500,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "user search behind the invite modal, light: avatars and name stubs after the Duolingo account",
+   "files": [
+    "screenshots/user-search-light-invite-modal.png"
+   ],
+   "rects": [
+    [
+     680,
+     900,
+     830,
+     1050,
+     "pixelate:32"
+    ],
+    [
+     680,
+     1123,
+     830,
+     1275,
+     "pixelate:32"
+    ],
+    [
+     680,
+     1348,
+     830,
+     1500,
+     "pixelate:32"
+    ],
+    [
+     850,
+     920,
+     898,
+     1040,
+     "solid"
+    ],
+    [
+     850,
+     1145,
+     898,
+     1270,
+     "solid"
+    ]
+   ]
+  },
+  {
+   "name": "friend streak modal: the inviting friends' avatars",
+   "files": [
+    "screenshots/learn-light-friend-streak-modal.png"
+   ],
+   "rects": [
+    [
+     1180,
+     675,
+     1665,
+     850,
+     "pixelate:40"
+    ]
+   ]
+  },
+  {
+   "name": "friend streak invite list: avatars",
+   "files": [
+    "screenshots/lesson-dark-friend-streak-invite.png"
+   ],
+   "rects": [
+    [
+     1045,
+     760,
+     1137,
+     854,
+     "pixelate:32"
+    ],
+    [
+     1045,
+     912,
+     1137,
+     1006,
+     "pixelate:32"
+    ],
+    [
+     1045,
+     1064,
+     1137,
+     1158,
+     "pixelate:32"
+    ],
+    [
+     1045,
+     1216,
+     1137,
+     1310,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: friend streak invite list avatars",
+   "files": [
+    "components/crops/friend-streak-invite-dark.png"
+   ],
+   "rects": [
+    [
+     38,
+     708,
+     130,
+     800,
+     "pixelate:32"
+    ],
+    [
+     38,
+     861,
+     130,
+     952,
+     "pixelate:32"
+    ],
+    [
+     38,
+     1014,
+     130,
+     1106,
+     "pixelate:32"
+    ],
+    [
+     38,
+     1168,
+     130,
+     1258,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: friend-update card avatars",
+   "files": [
+    "components/crops/friend-update-card-dark.png",
+    "components/crops/friend-update-card-light.png"
+   ],
+   "rects": [
+    [
+     36,
+     40,
+     148,
+     150,
+     "pixelate:32"
+    ],
+    [
+     36,
+     485,
+     148,
+     595,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: friend-suggestion card avatars, dark",
+   "files": [
+    "components/crops/friend-suggestion-card-dark.png"
+   ],
+   "rects": [
+    [
+     105,
+     45,
+     210,
+     150,
+     "pixelate:32"
+    ],
+    [
+     436,
+     45,
+     540,
+     150,
+     "pixelate:32"
+    ],
+    [
+     767,
+     45,
+     872,
+     150,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: friend-suggestion card avatars, light",
+   "files": [
+    "components/crops/friend-suggestion-card-light.png"
+   ],
+   "rects": [
+    [
+     145,
+     48,
+     248,
+     152,
+     "pixelate:32"
+    ],
+    [
+     550,
+     48,
+     652,
+     152,
+     "pixelate:32"
+    ],
+    [
+     955,
+     48,
+     1055,
+     152,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: following list avatar",
+   "files": [
+    "components/crops/list-rows-following-*.png"
+   ],
+   "rects": [
+    [
+     35,
+     150,
+     140,
+     255,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: second search result avatar, dark",
+   "files": [
+    "components/crops/list-rows-search-dark.png"
+   ],
+   "rects": [
+    [
+     50,
+     262,
+     202,
+     415,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: second search result avatar, light",
+   "files": [
+    "components/crops/list-rows-search-light.png"
+   ],
+   "rects": [
+    [
+     55,
+     262,
+     205,
+     415,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: leaderboard avatars, dark desktop",
+   "files": [
+    "components/crops/leaderboard-dark.png"
+   ],
+   "rects": [
+    [
+     135,
+     505,
+     280,
+     -1,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: leaderboard avatars and the last row's name, light desktop",
+   "files": [
+    "components/crops/leaderboard-light.png"
+   ],
+   "rects": [
+    [
+     135,
+     500,
+     280,
+     -1,
+     "pixelate:32"
+    ],
+    [
+     285,
+     1555,
+     700,
+     -1
+    ]
+   ]
+  },
+  {
+   "name": "crop: hovered leaderboard row, dark: avatar and name",
+   "files": [
+    "components/crops/leaderboard--row-hover-dark.png"
+   ],
+   "rects": [
+    [
+     138,
+     12,
+     250,
+     128,
+     "pixelate:32"
+    ],
+    [
+     290,
+     40,
+     600,
+     105
+    ]
+   ]
+  },
+  {
+   "name": "crop: hovered leaderboard row, light: avatar",
+   "files": [
+    "components/crops/leaderboard--row-hover-light.png"
+   ],
+   "rects": [
+    [
+     138,
+     10,
+     278,
+     130,
+     "pixelate:32"
+    ]
+   ]
+  },
+  {
+   "name": "crop: another learner's letter avatar: the initial is painted out, the circle and presence dot stay",
+   "files": [
+    "components/crops/avatar-dark.png",
+    "components/crops/avatar-light.png"
+   ],
+   "rects": [
+    [
+     34,
+     30,
+     76,
+     82,
+     "solid"
+    ]
+   ]
   }
  ]
 }
